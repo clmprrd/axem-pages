@@ -1,0 +1,196 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Bleu : le logiciel des artisans, direction artistique 3 sur 5</title>
+<meta name="description" content="Le bleu de travail : simple, populaire, fait pour durer. Du tissu (sergé), des coutures apparentes, un orange de sécurité pour l'action, et un prix juste affiché sans détour.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Rubik:wght@400;500;600;700;800&family=Work+Sans:wght@400;500;600&display=swap">
+<style>:root{--bg:#FFFFFF;--ink:#14214F;--mut:#4A5578;--line:#C9D3F0;--acc:#2D44B8;--accInk:#FFFFFF;--acc2:#F58220;--r:10px;--rb:10px;--fd:'Rubik',Arial,sans-serif;--fb:'Work Sans',Arial,sans-serif;--fn:'Rubik',Arial,sans-serif;--bad:#D6382F;--ok:#1E7A3E;--okInk:#fff;--sheet:#fff;--sheetBorder:2px dashed #9FB0E6;--sheetShadow:none;--pillBg:#F58220;--pillInk:#14214F;--phBody:#14214F;--phScr:#fff;--phRow:#EEF1FB;--phSum:#2D44B8;--phSumInk:#fff;--phMut:#4A5578;--phInk:#14214F;--neu:#fff;--neuInk:#14214F}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;overflow-x:hidden;font-family:var(--fb);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:inherit}
+h1,h2,h3,p,ul,ol,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+button,input{font:inherit}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding-left:20px;padding-right:20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.axbar{background:#101114;color:#fff;font:500 14px/1.2 "Helvetica Neue",Arial,sans-serif}
+.axbar .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px;max-width:none}
+.axbar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:99px;border:1px solid rgba(255,255,255,.35);white-space:nowrap}
+.axbar a:hover{background:#fff;color:#101114}
+.axbar .sp{flex:1}
+.axbar .lb{color:#c9ccd6}
+@media (max-width:640px){.axbar .lb{display:none}.axbar .wrap{gap:8px}.axbar a{padding:6px 9px}}
+
+.vd{display:grid;grid-template-columns:minmax(0,1fr) minmax(0,1.15fr);gap:clamp(16px,3vw,36px);align-items:stretch}
+.vd-lab{font-family:var(--fn);font-size:13px;letter-spacing:.12em;text-transform:uppercase;color:var(--mut);margin-bottom:12px;font-weight:600}
+.vd-say,.vd-doc{min-width:0}
+.vd-mic{width:64px;height:64px;border-radius:var(--rb);background:var(--acc);color:var(--accInk);display:grid;place-items:center;margin-bottom:18px;position:relative}
+.vd-wave{display:flex;align-items:center;gap:4px;height:56px;margin-bottom:14px;overflow:hidden}
+.vd-wave i{flex:0 0 5px;width:5px;height:var(--h);background:var(--acc2,var(--acc));border-radius:3px;display:block}
+.vd-txt{font-family:var(--fb);font-size:clamp(17px,2vw,20px);line-height:1.5;color:var(--ink);margin:0}
+.vd-sheet{background:var(--sheet,#fff);color:var(--sheetInk,#111);border:var(--sheetBorder,1px solid var(--line));border-radius:var(--r);padding:clamp(16px,2.4vw,24px);box-shadow:var(--sheetShadow,none)}
+.vd-head{display:flex;justify-content:space-between;align-items:center;gap:10px;flex-wrap:wrap;font-family:var(--fd);font-size:18px}
+.vd-pill{position:relative;display:inline-grid;font-family:var(--fn);font-size:13px;font-weight:600;background:var(--pillBg,var(--acc));color:var(--pillInk,var(--accInk));border-radius:99px;padding:5px 12px;text-align:center}
+.vd-pill span{grid-area:1/1;opacity:0}.vd-pill span:first-child{opacity:1}
+.vd-cl{font-family:var(--fb);color:var(--sheetMut,#555);margin:8px 0 12px;font-size:16px}
+.vd-tb{width:100%;border-collapse:collapse;font-family:var(--fb);font-size:15px}
+.vd-tb th{text-align:left;font-weight:600;font-size:12px;letter-spacing:.08em;text-transform:uppercase;color:var(--sheetMut,#555);padding:6px 0;border-bottom:1.5px solid var(--sheetInk,#111)}
+.vd-tb td{padding:9px 0;border-bottom:1px solid var(--sheetLine,#e3e3e3)}
+.vd-tb th:nth-child(2),.vd-tb td:nth-child(2){text-align:center;width:16%}
+.vd-tb th:last-child,.vd-tb td:last-child{text-align:right;white-space:nowrap;font-family:var(--fn);width:34%}
+.vd-tot{margin-top:12px;font-family:var(--fb);font-size:15px}
+.vd-tot div{display:flex;justify-content:space-between;padding:3px 0}
+.vd-tot span:last-child{font-family:var(--fn);white-space:nowrap}
+.vd-tot .g{border-top:1.5px solid var(--sheetInk,#111);margin-top:6px;padding-top:8px;font-size:18px;font-weight:700}
+.vd-cmd{display:flex;flex-wrap:wrap;gap:8px;margin-top:14px}
+.vd-cmd span{font-family:var(--fb);font-size:14px;padding:7px 12px;border-radius:99px;border:1px solid var(--line);color:var(--ink);background:var(--cmdBg,transparent)}
+@media (max-width:820px){.vd{grid-template-columns:minmax(0,1fr)}}
+@media (prefers-reduced-motion:no-preference){
+.vd-wave i{animation:vdw 1.15s ease-in-out infinite;animation-delay:var(--d)}
+@keyframes vdw{0%,100%{transform:scaleY(.35)}50%{transform:scaleY(1.25)}}
+.vd-mic::after{content:"";position:absolute;inset:-6px;border-radius:inherit;border:2px solid var(--acc);animation:vdm 1.6s ease-out infinite}
+@keyframes vdm{0%{transform:scale(.92);opacity:.9}100%{transform:scale(1.35);opacity:0}}
+.vd-tb .r1{animation:vr1 14s infinite both}.vd-tb .r2{animation:vr2 14s infinite both}.vd-tb .r3{animation:vr3 14s infinite both}.vd-tot.r4{animation:vr4 14s infinite both}
+@keyframes vr1{0%,14%{opacity:0;transform:translateY(8px)}20%,95%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes vr2{0%,22%{opacity:0;transform:translateY(8px)}28%,95%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes vr3{0%,30%{opacity:0;transform:translateY(8px)}36%,95%{opacity:1;transform:none}100%{opacity:0}}
+@keyframes vr4{0%,38%{opacity:0;transform:translateY(8px)}44%,95%{opacity:1;transform:none}100%{opacity:0}}
+.vd-pill span:nth-child(1){animation:vp1 14s infinite both}.vd-pill span:nth-child(2){animation:vp2 14s infinite both}.vd-pill span:nth-child(3){animation:vp3 14s infinite both}.vd-pill span:nth-child(4){animation:vp4 14s infinite both}
+@keyframes vp1{0%,44%{opacity:0}48%,60%{opacity:1}64%,100%{opacity:0}}
+@keyframes vp2{0%,62%{opacity:0}66%,76%{opacity:1}80%,100%{opacity:0}}
+@keyframes vp3{0%,78%{opacity:0}82%,89%{opacity:1}92%,100%{opacity:0}}
+@keyframes vp4{0%,90%{opacity:0}93%,98%{opacity:1}100%{opacity:0}}
+}
+
+.ph{width:min(100%,290px);aspect-ratio:290/580;border-radius:calc(var(--r)*2.2);background:var(--phBody,#111);padding:9px;position:relative;box-shadow:var(--phShadow,0 24px 50px -18px rgba(0,0,0,.45))}
+.ph-n{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:84px;height:20px;border-radius:12px;background:var(--phBody,#111);z-index:3}
+.ph-s{position:relative;width:100%;height:100%;border-radius:calc(var(--r)*1.9);background:var(--phScr,#fff);color:var(--phInk,#111);padding:42px 14px 14px;overflow:hidden;font-family:var(--fb);display:flex;flex-direction:column;gap:9px}
+.ph-bar{display:flex;justify-content:space-between;align-items:center;font-size:14px;font-family:var(--fd)}
+.ph-bar span{font-family:var(--fn);font-size:12px;color:var(--phMut,#666)}
+.ph-sum{background:var(--phSum,var(--acc));color:var(--phSumInk,var(--accInk));border-radius:var(--r);padding:12px 14px;display:flex;flex-direction:column}
+.ph-sum span{font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.ph-sum b{font-family:var(--fn);font-size:28px;line-height:1.15}
+.ph-sum small{font-size:12px}
+.ph-row{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--phRow,#f4f4f4);border-radius:var(--r);padding:9px 11px;font-size:13px}
+.ph-row b{display:block;font-size:13.5px}
+.ph-row small{display:block;color:var(--phMut,#666);font-size:12px}
+.ph-row em{font-style:normal;font-size:11.5px;font-weight:700;padding:3px 8px;border-radius:99px;white-space:nowrap}
+.ph-row em.bad{background:var(--bad);color:#fff}.ph-row em.ok{background:var(--ok);color:var(--okInk,#fff)}.ph-row em.neu{background:var(--neu,#fff);color:var(--neuInk,#111);box-shadow:inset 0 0 0 1.5px var(--neuInk,#111)}
+.ph-act{display:flex;gap:7px;margin-top:2px}
+.ph-act span{flex:1;text-align:center;font-size:12.5px;font-weight:700;padding:10px 4px;border-radius:var(--rb);background:var(--acc);color:var(--accInk)}
+.ph-act span.sec{background:transparent;color:var(--phInk,#111);box-shadow:inset 0 0 0 1.5px var(--phInk,#111)}
+.ph-fab{position:absolute;right:14px;bottom:14px;width:52px;height:52px;border-radius:var(--rb);background:var(--acc);color:var(--accInk);display:grid;place-items:center;box-shadow:0 8px 18px -6px rgba(0,0,0,.5)}
+
+.nav{position:sticky;top:0;z-index:30;background:#fff;border-bottom:2px dashed #9FB0E6}
+.nav-in{display:flex;align-items:center;gap:18px;padding-top:8px;padding-bottom:8px}
+.brand{display:block;line-height:0}.brand svg{height:44px;width:auto}
+.nav nav{display:flex;gap:4px;margin-left:auto}.nav nav a{font-family:var(--fd);font-weight:500;text-decoration:none;padding:8px 14px;border-radius:8px}.nav nav a:hover{background:#DDE4F7}
+.b1,.b2,.b3,.b0{display:inline-block;font-family:var(--fd);font-weight:600;font-size:18px;line-height:1;padding:16px 26px;border-radius:10px;text-decoration:none;cursor:pointer;border:0;text-align:center}
+.b1{background:#2D44B8;color:#fff;outline:2px dashed rgba(255,255,255,.7);outline-offset:-6px}.b1:hover{background:#14214F}
+.b2{background:transparent;color:#14214F;box-shadow:inset 0 0 0 2px #14214F}.b2:hover{background:#DDE4F7}
+.b3{background:transparent;color:#2D44B8;text-decoration:underline;text-underline-offset:5px;padding-left:8px;padding-right:8px}
+.b0{background:#E3E6F0;color:#7C86A6;cursor:not-allowed}
+.hero .b1,.cta-s .b1{background:#F58220;color:#14214F;outline-color:rgba(20,33,79,.55)}.hero .b1:hover,.cta-s .b1:hover{background:#FFA04D}
+.hero .b2{color:#fff;box-shadow:inset 0 0 0 2px #fff}.hero .b2:hover{background:rgba(255,255,255,.14)}
+.nav .b1{font-size:16px;padding:12px 18px}
+.hero{background:#2D44B8 repeating-linear-gradient(135deg,rgba(255,255,255,.06) 0 2px,transparent 2px 7px);color:#fff;overflow:hidden}
+.hero-in{display:grid;grid-template-columns:minmax(0,1.2fr) minmax(0,.8fr);gap:40px;align-items:center;padding-top:clamp(44px,7vw,88px);padding-bottom:clamp(44px,7vw,88px)}
+.tag{display:inline-block;font-family:var(--fd);font-weight:600;font-size:14px;letter-spacing:.06em;text-transform:uppercase;background:#fff;color:#14214F;padding:6px 14px 6px 12px;border-radius:4px 14px 14px 4px;margin-bottom:20px;position:relative}
+.tag::before{content:"";display:inline-block;width:8px;height:8px;border-radius:50%;background:#F58220;margin-right:8px}
+.hero h1{font-family:var(--fd);font-weight:800;font-size:clamp(40px,6.2vw,80px);line-height:1;letter-spacing:-.02em}
+.hero h1 em{font-style:normal;color:#FFB877}
+.lead{font-size:clamp(18px,2vw,21px);max-width:31em;margin:22px 0 30px;color:#E3E9FF}
+.cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero .ph{margin:0 auto;rotate:3deg}
+.proof{background:#F2F3F7;border-bottom:2px dashed #9FB0E6}
+.proof ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0}
+.proof li{padding:24px 22px;border-right:2px dashed #9FB0E6}
+.proof li:last-child{border-right:0}
+.proof b{display:block;font-family:var(--fd);font-weight:800;font-size:clamp(30px,4.4vw,52px);line-height:1;color:#2D44B8}
+.proof span{font-size:15.5px;color:#4A5578}
+.sec{padding:clamp(52px,8vw,96px) 0}
+.sec h2{font-family:var(--fd);font-weight:800;font-size:clamp(32px,5vw,56px);line-height:1.04;letter-spacing:-.015em;margin-bottom:12px}
+.sec .sub{font-size:19px;color:#4A5578;max-width:36em;margin-bottom:34px}
+#demo{background:#fff}
+#demo .vd-sheet{background:#F8F9FD}
+#fonctions{background:#F2F3F7}
+.tabs{position:relative}
+.tabs input{position:absolute;opacity:0;pointer-events:none}
+.tl{display:flex;gap:8px;flex-wrap:wrap;margin-bottom:22px}
+.tl label{font-family:var(--fd);font-weight:600;font-size:18px;padding:12px 22px;border-radius:99px;background:#fff;border:2px solid #C9D3F0;cursor:pointer}
+.tl label:hover{border-color:#2D44B8}
+.pane{display:none;grid-template-columns:minmax(0,1fr) minmax(0,1fr);gap:26px;background:#fff;border:2px dashed #9FB0E6;border-radius:14px;padding:clamp(20px,3vw,34px);align-items:center}
+.pane h3{font-family:var(--fd);font-weight:700;font-size:clamp(26px,3.4vw,38px);line-height:1.08;margin-bottom:12px}
+.pane p{color:#4A5578;font-size:18px;margin-bottom:14px}
+.pane li{padding-left:28px;position:relative;margin:8px 0;font-weight:500}
+.pane li::before{content:"";position:absolute;left:0;top:.3em;width:16px;height:9px;border-left:3px solid #2D44B8;border-bottom:3px solid #2D44B8;transform:rotate(-45deg)}
+.snip{background:#14214F;color:#fff;border-radius:12px;padding:22px;font-size:17px;line-height:1.5;position:relative}
+.snip small{display:block;font-family:var(--fd);font-size:12px;letter-spacing:.1em;text-transform:uppercase;color:#FFB877;margin-bottom:8px;font-weight:600}
+.snip b{color:#FFB877}
+#t1:checked ~ .tl label[for=t1],#t2:checked ~ .tl label[for=t2],#t3:checked ~ .tl label[for=t3],#t4:checked ~ .tl label[for=t4]{background:#2D44B8;color:#fff;border-color:#2D44B8}
+#t1:checked ~ .panes #p1,#t2:checked ~ .panes #p2,#t3:checked ~ .panes #p3,#t4:checked ~ .panes #p4{display:grid}
+#t1:focus-visible ~ .tl label[for=t1],#t2:focus-visible ~ .tl label[for=t2],#t3:focus-visible ~ .tl label[for=t3],#t4:focus-visible ~ .tl label[for=t4]{outline:3px solid #F58220;outline-offset:2px}
+.cta-s{background:#14214F repeating-linear-gradient(135deg,rgba(255,255,255,.05) 0 2px,transparent 2px 7px);color:#fff}
+.cta-s h2{max-width:14em}
+.cta-s .sub{color:#D3DBF6}
+.mail{display:flex;gap:12px;flex-wrap:wrap;max-width:620px}
+.mail input{flex:1 1 240px;min-width:0;font-size:18px;padding:15px 18px;border:0;border-radius:10px;background:#fff;color:#14214F}
+.mail input::placeholder{color:#5C668A}
+.note{font-size:14.5px;margin-top:14px;color:#D3DBF6}
+footer.f{background:#0C1534;color:#D3DBF6;padding:26px 0;font-weight:500}
+footer.f .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer.f svg{height:38px}
+@media (max-width:900px){.hero-in{grid-template-columns:minmax(0,1fr)}.hero .ph{rotate:0deg}.nav nav{display:none}.nav .b1{margin-left:auto}.pane{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){.proof ul{grid-template-columns:minmax(0,1fr)}.proof li{border-right:0;border-bottom:2px dashed #9FB0E6}.proof li:last-child{border-bottom:0}.b1,.b2{width:100%}.tl label{padding:10px 16px;font-size:16px}}
+</style>
+</head>
+<body class="da3"><div class="axbar"><div class="wrap"><a href="../index.html#directions">&larr; Page principale</a><span class="lb">Direction 3 sur 5 : Bleu</span><span class="sp"></span><a href="planche.html">Planche de design</a><a href="../da-2/index.html">&lsaquo; Précédente</a><a href="../da-4/index.html">Suivante &rsaquo;</a></div></div>
+<header class="nav"><div class="wrap nav-in"><a class="brand" href="#top" aria-label="Bleu, accueil"><svg class="logo-h" viewBox="0 0 132 48" height="48" role="img" aria-label="Logo BLEU" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0 4) scale(0.400)"><g fill="none" stroke="#2D44B8" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"><path d="M36 12L50 26L64 12"/><path d="M36 12L26 17L34 31L50 26L66 31L74 17L64 12"/><path d="M26 17L10 30L5 78L19 80L23 50"/><path d="M74 17L90 30L95 78L81 80L77 50"/><path d="M23 50V90H77V50"/><path d="M50 26V90"/><rect x="29" y="52" width="15" height="15" rx="1"/><rect x="56" y="52" width="15" height="15" rx="1"/><path d="M29 58H44M56 58H71"/></g><g fill="#2D44B8"><circle cx="50" cy="38" r="2.2"/><circle cx="50" cy="50" r="2.2"/><circle cx="50" cy="62" r="2.2"/><circle cx="50" cy="74" r="2.2"/></g></g><text x="52.0" y="34.5" font-family="Rubik,Arial,sans-serif" font-weight="700" font-size="30" fill="#2D44B8" textLength="76" lengthAdjust="spacingAndGlyphs" >BLEU</text></svg></a><nav><a href="#demo">La démo</a><a href="#fonctions">Ce qu'il fait</a><a href="#commencer">Essayer</a></nav><a class="b1" href="#commencer">Essayer</a></div></header>
+<main>
+<section class="hero" id="top"><div class="wrap hero-in">
+<div><span class="tag">Pour les artisans du bâtiment</span>
+<h1>Le bleu de travail <em>de tes papiers.</em></h1>
+<p class="lead">Tu dictes ton devis, il se remplit seul, part en facture et se relance seul. Un outil simple, solide, fait pour les mains sales.</p>
+<div class="cta"><a class="b1" href="#demo">Voir la démo</a><a class="b2" href="#fonctions">Ce qu'il fait</a></div></div>
+<div><div class="ph " role="img" aria-label="Maquette de l'écran du logiciel sur téléphone : papiers à encaisser, trois lignes, bouton micro">
+<div class="ph-n"></div><div class="ph-s">
+<div class="ph-bar"><b>Bleu</b><span>9:41</span></div>
+<div class="ph-sum"><span>À encaisser</span><b>2&nbsp;840&nbsp;€</b><small>3 factures en attente</small></div>
+<div class="ph-row"><div><b>Facture Durand</b><small>Chauffe-eau, 1&nbsp;144&nbsp;€</small></div><em class="bad">21 j de retard</em></div>
+<div class="ph-row"><div><b>Devis Martin</b><small>Envoyé hier, 1&nbsp;144&nbsp;€</small></div><em class="neu">À relancer</em></div>
+<div class="ph-row"><div><b>Facture Lopez</b><small>Salle de bain, 696&nbsp;€</small></div><em class="ok">Payée</em></div>
+<div class="ph-act"><span>Relancer Durand</span><span class="sec">Voir le devis</span></div>
+<div class="ph-fab"><svg viewBox="0 0 24 24" width="26" height="26"><rect x="9" y="3" width="6" height="12" rx="3" fill="currentColor"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+</div></div></div></div></section>
+<section class="proof"><div class="wrap"><ul><li><b>1,9&nbsp;M</b><span>d'entreprises artisanales en France</span></li><li><b>13&nbsp;h&nbsp;21</b><span>de gestion et de papiers par semaine dans le BTP</span></li><li><b>01/09/2027</b><span>facture électronique pour toutes les TPE</span></li></ul></div></section>
+<section class="sec" id="demo"><div class="wrap"><h2>Dicte, et regarde faire</h2><p class="sub">Tu lis ton devis à voix haute. La feuille se remplit pendant que tu parles.</p><div class="vd d3">
+<div class="vd-say"><div class="vd-lab">Tu dictes</div>
+<div class="vd-mic" aria-hidden="true"><svg viewBox="0 0 24 24" width="30" height="30"><rect x="9" y="3" width="6" height="12" rx="3" fill="currentColor"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+<div class="vd-wave" aria-hidden="true"><i style="--d:0.00s;--h:8px"></i><i style="--d:0.13s;--h:18px"></i><i style="--d:0.26s;--h:28px"></i><i style="--d:0.39s;--h:13px"></i><i style="--d:0.52s;--h:23px"></i><i style="--d:0.65s;--h:8px"></i><i style="--d:0.78s;--h:18px"></i><i style="--d:0.91s;--h:28px"></i><i style="--d:1.04s;--h:13px"></i><i style="--d:0.07s;--h:23px"></i><i style="--d:0.20s;--h:8px"></i><i style="--d:0.33s;--h:18px"></i><i style="--d:0.46s;--h:28px"></i><i style="--d:0.59s;--h:13px"></i><i style="--d:0.72s;--h:23px"></i><i style="--d:0.85s;--h:8px"></i><i style="--d:0.98s;--h:18px"></i><i style="--d:0.01s;--h:28px"></i><i style="--d:0.14s;--h:13px"></i><i style="--d:0.27s;--h:23px"></i><i style="--d:0.40s;--h:8px"></i><i style="--d:0.53s;--h:18px"></i><i style="--d:0.66s;--h:28px"></i><i style="--d:0.79s;--h:13px"></i><i style="--d:0.92s;--h:23px"></i><i style="--d:1.05s;--h:8px"></i></div>
+<p class="vd-txt">« Devis pour madame Martin : remplacement d'un chauffe-eau 200 litres, 890 euros. Deux heures de main-d'œuvre à 55 euros. Déplacement 40 euros. »</p></div>
+<div class="vd-doc"><div class="vd-lab">Le devis</div>
+<div class="vd-sheet"><div class="vd-head"><b>Devis D-2026-0142</b><span class="vd-pill"><span>Devis prêt</span><span>Facture envoyée</span><span>Relance J+3</span><span>Payé</span></span></div>
+<div class="vd-cl">Madame Martin</div>
+<table class="vd-tb"><thead><tr><th>Désignation</th><th>Qté</th><th>Total HT</th></tr></thead><tbody>
+<tr class="r1"><td>Chauffe-eau 200 L</td><td>1</td><td>890,00&nbsp;€</td></tr>
+<tr class="r2"><td>Main-d'œuvre, 55&nbsp;€/h</td><td>2 h</td><td>110,00&nbsp;€</td></tr>
+<tr class="r3"><td>Déplacement</td><td>1</td><td>40,00&nbsp;€</td></tr></tbody></table>
+<div class="vd-tot r4"><div><span>Total HT</span><span>1&nbsp;040,00&nbsp;€</span></div><div><span>TVA 10&nbsp;%</span><span>104,00&nbsp;€</span></div><div class="g"><span>Total TTC</span><span>1&nbsp;144,00&nbsp;€</span></div></div>
+</div>
+<div class="vd-cmd"><span>« Facture-le »</span><span>« Relance-le »</span><span>« Il a payé »</span></div></div></div></div></section>
+<section class="sec" id="fonctions"><div class="wrap"><h2>Du devis à l'argent reçu</h2><p class="sub">Quatre étapes, un seul outil, ta voix pour tout piloter.</p>
+<div class="tabs"><input type="radio" name="tb" id="t1" checked><input type="radio" name="tb" id="t2"><input type="radio" name="tb" id="t3"><input type="radio" name="tb" id="t4"><div class="tl" role="tablist" aria-label="Les quatre étapes"><label for="t1">Chiffrer</label><label for="t2">Facturer</label><label for="t3">Encaisser</label><label for="t4">Relancer</label></div><div class="panes"><div class="pane" id="p1"><div><h3>Dicte ton devis, il se remplit.</h3><p>Tu décris le chantier depuis le camion ou le canapé. Les lignes, les quantités et la TVA se posent seules.</p><ul><li>Prix de ta propre bibliothèque</li><li>TVA à 10 % ou 20 % selon le chantier</li><li>Devis prêt à envoyer en quelques secondes</li></ul></div><div class="snip"><small>Tu dis</small>« Remplacement d'un chauffe-eau 200 litres, 890 euros. Deux heures de main-d'œuvre à 55 euros. »</div></div><div class="pane" id="p2"><div><h3>Une facture en un mot.</h3><p>« Facture-le » suffit. La facture reprend le devis et respecte la facture électronique obligatoire pour toutes les TPE au 01/09/2027.</p><ul><li>Format conforme à la loi</li><li>Envoi par mail en un geste</li><li>Rien à ressaisir</li></ul></div><div class="snip"><small>Résultat</small><b>Facture F-2026-0087</b> envoyée à Mme Martin.<br>Format facture électronique prêt.</div></div><div class="pane" id="p3"><div><h3>Ton client paie depuis son téléphone.</h3><p>Un lien de paiement part avec le devis ou la facture. L'acompte tombe avant le chantier.</p><ul><li>Paiement par carte, depuis le lien</li><li>Acompte possible dès la signature</li><li>Tu vois la coche « payé » arriver</li></ul></div><div class="snip"><small>Statut</small>Lien de paiement envoyé.<br><b>Payé</b> : 1&nbsp;144,00&nbsp;€ reçus.</div></div><div class="pane" id="p4"><div><h3>Les relances partent toutes seules.</h3><p>Un impayé ? Un premier mail, puis un SMS, puis un dernier rappel. Poli, régulier, sans que tu y penses.</p><ul><li>Mail et SMS programmés</li><li>Tu gardes la main : tu peux tout arrêter</li><li>Un seul tableau : qui doit quoi</li></ul></div><div class="snip"><small>Relances</small><b>J+3</b> mail · <b>J+10</b> SMS · <b>J+20</b> dernier rappel.<br>M. Durand : relance J+10 envoyée.</div></div></div></div></div></section>
+<section class="sec cta-s" id="commencer"><div class="wrap"><h2>Un outil de travail, pas un gadget.</h2><p class="sub">Laisse ton adresse : on te prévient dès que la première version est prête.</p>
+<form class="mail" action="#" onsubmit="return false"><label class="sr" for="em">Ton adresse mail</label><input id="em" type="email" placeholder="ton@mail.fr"><button class="b1" type="submit">Je veux l'essayer</button></form><p class="note">Version d'exemple : aucune adresse n'est enregistrée.</p></div></section>
+</main>
+<footer class="f"><div class="wrap"><svg class="logo-h" viewBox="0 0 132 48" height="48" role="img" aria-label="Logo BLEU" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0 4) scale(0.400)"><g fill="none" stroke="#fff" stroke-width="4.5" stroke-linejoin="round" stroke-linecap="round"><path d="M36 12L50 26L64 12"/><path d="M36 12L26 17L34 31L50 26L66 31L74 17L64 12"/><path d="M26 17L10 30L5 78L19 80L23 50"/><path d="M74 17L90 30L95 78L81 80L77 50"/><path d="M23 50V90H77V50"/><path d="M50 26V90"/><rect x="29" y="52" width="15" height="15" rx="1"/><rect x="56" y="52" width="15" height="15" rx="1"/><path d="M29 58H44M56 58H71"/></g><g fill="#fff"><circle cx="50" cy="38" r="2.2"/><circle cx="50" cy="50" r="2.2"/><circle cx="50" cy="62" r="2.2"/><circle cx="50" cy="74" r="2.2"/></g></g><text x="52.0" y="34.5" font-family="Rubik,Arial,sans-serif" font-weight="700" font-size="30" fill="#fff" textLength="76" lengthAdjust="spacingAndGlyphs" >BLEU</text></svg><span>Le bleu de travail de tes papiers.</span></div></footer>
+</body>
+</html>
