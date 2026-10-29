@@ -1,0 +1,186 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex">
+<title>Planche de design : Établi</title>
+<meta name="description" content="Le jaune et noir des engins et des panneaux de chantier : le contraste le plus lisible qui existe, que tout artisan connaît déjà.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Archivo:wdth,wght@62..125,400..900&family=IBM+Plex+Mono:wght@400;500;600&display=swap">
+<style>:root{--bg:#F5F2EA;--ink:#0A0A0A;--mut:#55554F;--line:#0A0A0A;--acc:#FFCD11;--accInk:#0A0A0A;--acc2:#0A0A0A;--r:0px;--rb:0px;--fd:'Archivo',Impact,sans-serif;--fb:'Archivo',Arial,sans-serif;--fn:'IBM Plex Mono',ui-monospace,monospace;--bad:#E5322D;--ok:#1FA94B;--okInk:#0A0A0A}
+*,*::before,*::after{box-sizing:border-box}
+html{-webkit-text-size-adjust:100%;scroll-behavior:smooth}
+body{margin:0;overflow-x:hidden;font-family:var(--fb);background:var(--bg);color:var(--ink);line-height:1.5;-webkit-font-smoothing:antialiased}
+img,svg{max-width:100%}
+a{color:inherit}
+h1,h2,h3,p,ul,ol,figure{margin:0}
+ul,ol{padding:0;list-style:none}
+button,input{font:inherit}
+.wrap{width:100%;max-width:1160px;margin:0 auto;padding-left:20px;padding-right:20px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+@media (prefers-reduced-motion:reduce){html{scroll-behavior:auto}}
+.axbar{background:#101114;color:#fff;font:500 14px/1.2 "Helvetica Neue",Arial,sans-serif}
+.axbar .wrap{display:flex;align-items:center;gap:14px;flex-wrap:wrap;padding-top:10px;padding-bottom:10px;max-width:none}
+.axbar a{color:#fff;text-decoration:none;padding:6px 10px;border-radius:99px;border:1px solid rgba(255,255,255,.35);white-space:nowrap}
+.axbar a:hover{background:#fff;color:#101114}
+.axbar .sp{flex:1}
+.axbar .lb{color:#c9ccd6}
+@media (max-width:640px){.axbar .lb{display:none}.axbar .wrap{gap:8px}.axbar a{padding:6px 9px}}
+
+.ph{width:min(100%,290px);aspect-ratio:290/580;border-radius:calc(var(--r)*2.2);background:var(--phBody,#111);padding:9px;position:relative;box-shadow:var(--phShadow,0 24px 50px -18px rgba(0,0,0,.45))}
+.ph-n{position:absolute;top:14px;left:50%;transform:translateX(-50%);width:84px;height:20px;border-radius:12px;background:var(--phBody,#111);z-index:3}
+.ph-s{position:relative;width:100%;height:100%;border-radius:calc(var(--r)*1.9);background:var(--phScr,#fff);color:var(--phInk,#111);padding:42px 14px 14px;overflow:hidden;font-family:var(--fb);display:flex;flex-direction:column;gap:9px}
+.ph-bar{display:flex;justify-content:space-between;align-items:center;font-size:14px;font-family:var(--fd)}
+.ph-bar span{font-family:var(--fn);font-size:12px;color:var(--phMut,#666)}
+.ph-sum{background:var(--phSum,var(--acc));color:var(--phSumInk,var(--accInk));border-radius:var(--r);padding:12px 14px;display:flex;flex-direction:column}
+.ph-sum span{font-size:12px;letter-spacing:.06em;text-transform:uppercase;font-weight:600}
+.ph-sum b{font-family:var(--fn);font-size:28px;line-height:1.15}
+.ph-sum small{font-size:12px}
+.ph-row{display:flex;justify-content:space-between;align-items:center;gap:8px;background:var(--phRow,#f4f4f4);border-radius:var(--r);padding:9px 11px;font-size:13px}
+.ph-row b{display:block;font-size:13.5px}
+.ph-row small{display:block;color:var(--phMut,#666);font-size:12px}
+.ph-row em{font-style:normal;font-size:11.5px;font-weight:700;padding:3px 8px;border-radius:99px;white-space:nowrap}
+.ph-row em.bad{background:var(--bad);color:#fff}.ph-row em.ok{background:var(--ok);color:var(--okInk,#fff)}.ph-row em.neu{background:var(--neu,#fff);color:var(--neuInk,#111);box-shadow:inset 0 0 0 1.5px var(--neuInk,#111)}
+.ph-act{display:flex;gap:7px;margin-top:2px}
+.ph-act span{flex:1;text-align:center;font-size:12.5px;font-weight:700;padding:10px 4px;border-radius:var(--rb);background:var(--acc);color:var(--accInk)}
+.ph-act span.sec{background:transparent;color:var(--phInk,#111);box-shadow:inset 0 0 0 1.5px var(--phInk,#111)}
+.ph-fab{position:absolute;right:14px;bottom:14px;width:52px;height:52px;border-radius:var(--rb);background:var(--acc);color:var(--accInk);display:grid;place-items:center;box-shadow:0 8px 18px -6px rgba(0,0,0,.5)}
+
+.nav{position:sticky;top:0;z-index:30;background:#0A0A0A;color:#fff}
+.nav-in{display:flex;align-items:center;gap:20px;padding-top:10px;padding-bottom:10px}
+.brand{display:block;line-height:0}.brand svg{height:44px;width:auto;display:block}
+.nav nav{display:flex;gap:6px;margin-left:auto}
+.nav nav a{font-family:var(--fn);font-size:14px;text-decoration:none;text-transform:uppercase;letter-spacing:.06em;padding:8px 12px;color:#fff}
+.nav nav a:hover{background:#2B2B2B}
+.b1,.b2,.b3,.b0{display:inline-block;font-family:var(--fd);font-stretch:75%;font-weight:900;text-transform:uppercase;letter-spacing:.03em;font-size:20px;line-height:1;padding:15px 24px;border:3px solid #0A0A0A;text-decoration:none;cursor:pointer;transition:transform .15s,box-shadow .15s}
+.b1{background:var(--acc);color:#0A0A0A;box-shadow:5px 5px 0 #0A0A0A}.b1:hover{transform:translate(-2px,-2px);box-shadow:7px 7px 0 #0A0A0A}
+.b2{background:#F5F2EA;color:#0A0A0A}.b2:hover{background:#fff}
+.b3{background:transparent;border-color:transparent;color:inherit;text-decoration:underline;text-underline-offset:5px;padding-left:6px;padding-right:6px}
+.b0{background:#d8d5cb;color:#77746b;border-color:#b9b6ab;cursor:not-allowed}
+.nav .b1{font-size:16px;padding:10px 16px;box-shadow:3px 3px 0 #fff;border-color:#fff}
+.hero{background:#0A0A0A;color:#fff;position:relative;overflow:hidden}
+.hero-in{display:grid;grid-template-columns:minmax(0,1.25fr) minmax(0,1fr);gap:40px;align-items:center;padding-top:clamp(48px,8vw,96px);padding-bottom:clamp(56px,8vw,104px)}
+.kick{font-family:var(--fn);font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#FFCD11;margin-bottom:18px}
+.hero h1{font-family:var(--fd);font-stretch:75%;font-weight:900;text-transform:uppercase;font-size:clamp(54px,9.6vw,128px);line-height:.9;letter-spacing:-.01em}
+.hero h1 span{color:#FFCD11;display:inline-block}
+.lead{font-size:clamp(18px,2vw,22px);max-width:34em;margin:24px 0 32px;color:#E9E6DC}
+.hero .cta{display:flex;gap:14px;flex-wrap:wrap}
+.hero .b2{border-color:#fff;background:transparent;color:#fff}.hero .b2:hover{background:#fff;color:#0A0A0A}
+.hero .b1{border-color:#FFCD11;box-shadow:5px 5px 0 #fff}
+.hero .b1:hover{box-shadow:7px 7px 0 #fff}
+.toasts{display:flex;flex-direction:column;gap:14px;position:relative;z-index:2}
+.toast{display:flex;gap:14px;align-items:center;background:#F5F2EA;color:#0A0A0A;border-left:10px solid #FFCD11;padding:14px 18px;max-width:420px;box-shadow:6px 6px 0 #FFCD11}
+.toast:nth-child(2){margin-left:36px}.toast:nth-child(3){margin-left:12px}
+.toast b{display:block;font-family:var(--fd);font-stretch:75%;font-weight:900;text-transform:uppercase;font-size:20px;line-height:1.05}
+.toast small{font-family:var(--fn);font-size:13px;color:#55554F}
+.toast .tk{flex:none;width:34px;height:34px;background:#0A0A0A;color:#FFCD11;display:grid;place-items:center}
+.toast.ok{border-left-color:#1FA94B}.toast.ok .tk{background:#1FA94B;color:#0A0A0A}
+.hero .wm{position:absolute;right:-60px;bottom:-30px;width:420px;opacity:.07;pointer-events:none}
+.hazard{height:18px;background:repeating-linear-gradient(135deg,#FFCD11 0 22px,#0A0A0A 22px 44px)}
+.stats{background:#FFCD11;color:#0A0A0A;border-bottom:3px solid #0A0A0A}
+.stats ul{display:grid;grid-template-columns:repeat(3,minmax(0,1fr))}
+.stats li{padding:26px 20px;border-right:3px solid #0A0A0A}
+.stats li:last-child{border-right:0}
+.stats b{display:block;font-family:var(--fd);font-stretch:75%;font-weight:900;font-size:clamp(40px,6vw,72px);line-height:1}
+.stats span{font-family:var(--fn);font-size:14px;text-transform:uppercase;letter-spacing:.04em}
+.sec{padding:clamp(56px,8vw,104px) 0}
+.sec h2{font-family:var(--fd);font-stretch:75%;font-weight:900;text-transform:uppercase;font-size:clamp(40px,6.4vw,84px);line-height:.92;margin-bottom:14px}
+.sec .sub{font-size:19px;max-width:38em;color:var(--mut);margin-bottom:36px}
+#demo{background:#F5F2EA}
+#demo h2 span{background:#FFCD11;padding:0 10px;display:inline-block}
+#fonctions{background:#0A0A0A;color:#fff}
+#fonctions .sub{color:#CFCBBE}
+.grid6{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:0;border:3px solid #FFCD11}
+.fc{padding:26px 24px 30px;border-right:3px solid #FFCD11;border-bottom:3px solid #FFCD11;background:#0A0A0A;position:relative}
+.fc:nth-child(3n){border-right:0}.fc:nth-child(n+4){border-bottom:0}
+.fc .n{font-family:var(--fn);font-size:15px;color:#FFCD11}
+.fc h3{font-family:var(--fd);font-stretch:75%;font-weight:900;text-transform:uppercase;font-size:30px;line-height:1;margin:14px 0 10px}
+.fc p{color:#D9D6CB;font-size:16px}
+.fc svg{width:44px;height:44px;margin-top:18px;stroke:#FFCD11;fill:none;stroke-width:2.4;stroke-linecap:square}
+.fc:hover{background:#FFCD11;color:#0A0A0A}.fc:hover .n{color:#0A0A0A}.fc:hover p{color:#0A0A0A}.fc:hover svg{stroke:#0A0A0A}
+.cta-s{background:#FFCD11;color:#0A0A0A;position:relative;border-top:3px solid #0A0A0A}
+.cta-s .hazard{position:absolute;left:0;right:0;top:0}
+.cta-s h2{margin-top:10px}
+.mail{display:flex;gap:0;flex-wrap:wrap;max-width:620px;margin-top:28px}
+.mail input{flex:1 1 240px;min-width:0;font-size:19px;padding:15px 16px;border:3px solid #0A0A0A;background:#fff;color:#0A0A0A;border-right:0;border-radius:0}
+.mail input::placeholder{color:#55554F}
+.mail .b1{background:#0A0A0A;color:#FFCD11;box-shadow:none}
+.mail .b1:hover{transform:none;background:#2B2B2B}
+.note{font-family:var(--fn);font-size:14px;margin-top:16px}
+footer.f{background:#0A0A0A;color:#CFCBBE;padding:28px 0;font-family:var(--fn);font-size:14px}
+footer.f .wrap{display:flex;justify-content:space-between;gap:16px;flex-wrap:wrap;align-items:center}
+footer.f svg{height:34px}
+@media (max-width:900px){.hero-in{grid-template-columns:minmax(0,1fr)}.toast:nth-child(n){margin-left:0}.grid6{grid-template-columns:minmax(0,1fr)}.fc{border-right:0!important;border-bottom:3px solid #FFCD11!important}.fc:last-child{border-bottom:0!important}.nav nav{display:none}.nav .b1{margin-left:auto}}
+@media (max-width:640px){.stats ul{grid-template-columns:minmax(0,1fr)}.stats li{border-right:0;border-bottom:3px solid #0A0A0A}.stats li:last-child{border-bottom:0}.b1,.b2{font-size:18px;padding:14px 18px}.hero h1{font-size:clamp(50px,17vw,80px)}.mail input{border-right:3px solid #0A0A0A;border-bottom:0}.mail .b1{width:100%;text-align:center}}
+@media (prefers-reduced-motion:no-preference){.toast{animation:fl 6s ease-in-out infinite}.toast:nth-child(2){animation-delay:-2s}.toast:nth-child(3){animation-delay:-4s}@keyframes fl{0%,100%{translate:0 0}50%{translate:0 -7px}}}
+
+body.pl{background:#F4F4F1;color:#16171B;font-family:"Helvetica Neue",Helvetica,Arial,sans-serif;--plink:#16171B}
+.pl-wrap{max-width:1160px;margin:0 auto;padding:0 20px 80px}
+.pl-h{padding:48px 0 28px}
+.pl-k{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#55575F;margin-bottom:10px}
+.pl-h h1{font-family:var(--fd);font-size:clamp(48px,8vw,96px);line-height:1;font-weight:700;margin-bottom:10px}
+.pl-h p.pl-i{font-size:19px;max-width:40em;color:#2B2D33}
+.pl-ref{margin-top:12px;font-size:15px;color:#55575F}
+.pl-ref b{color:#16171B}
+.pl-sec{padding:34px 0;border-top:1px solid #D8D8D2}
+.pl-sec>h2{font-size:14px;letter-spacing:.14em;text-transform:uppercase;color:#55575F;margin-bottom:22px;font-weight:600}
+.pl-logos{display:grid;grid-template-columns:repeat(3,minmax(0,1fr));gap:14px}
+.pl-lt{border-radius:10px;aspect-ratio:1/1;display:flex;align-items:center;justify-content:center;padding:8%;border:1px solid rgba(0,0,0,.08)}
+.pl-lt svg{width:100%;height:auto;max-height:100%}
+.pl-sizes{display:flex;flex-wrap:wrap;gap:22px;align-items:flex-end;margin-top:18px;padding:22px;background:#fff;border:1px solid #D8D8D2;border-radius:10px}
+.pl-sizes figure{display:flex;flex-direction:column;align-items:flex-start;gap:8px;font-size:13px;color:#55575F}
+.pl-app{border-radius:22%;display:grid;place-items:center;overflow:hidden}
+.pl-pal{display:grid;grid-template-columns:repeat(4,minmax(0,1fr));gap:12px}
+.pl-sw{border:1px solid rgba(0,0,0,.1);border-radius:10px;overflow:hidden;background:#fff;min-width:0}
+.pl-sw .c{height:92px;display:flex;align-items:flex-end;padding:10px 12px;font-weight:700;font-size:15px}
+.pl-sw .m{padding:10px 12px 12px;font-size:13.5px;line-height:1.4;color:#2B2D33}
+.pl-sw .m b{display:block;font-size:15px;color:#16171B}
+.pl-sw .m code{font-family:ui-monospace,Menlo,monospace;font-size:13px;color:#16171B}
+.pl-sw .m i{display:block;font-style:normal;color:#55575F}
+.pl-ty{display:grid;grid-template-columns:repeat(2,minmax(0,1fr));gap:14px}
+.pl-tc{background:#fff;border:1px solid #D8D8D2;border-radius:10px;padding:24px;min-width:0}
+.pl-tc .n{font-size:14px;letter-spacing:.1em;text-transform:uppercase;color:#55575F;margin-bottom:6px}
+.pl-tc .aa{font-size:clamp(44px,6vw,84px);line-height:1;margin:6px 0 10px}
+.pl-tc .al{font-size:19px;line-height:1.5;word-break:break-word}
+.pl-tc .u{font-family:"Helvetica Neue",Arial,sans-serif;font-size:14px;color:#55575F;margin-top:12px}
+.pl-btns{display:flex;gap:18px 20px;flex-wrap:wrap;align-items:center;padding:26px;border-radius:10px;border:1px solid #D8D8D2}
+.pl-btns small{display:block;font-family:"Helvetica Neue",Arial,sans-serif;font-size:12.5px;color:#55575F;margin-top:8px}
+.pl-btns div{min-width:0}
+.pl-ui{display:grid;grid-template-columns:minmax(0,320px) minmax(0,1fr);gap:30px;align-items:start}
+.pl-ui .bg{border-radius:10px;padding:30px 10px;display:flex;justify-content:center;border:1px solid #D8D8D2}
+.pl-ui ul{display:grid;gap:12px}
+.pl-ui li{background:#fff;border:1px solid #D8D8D2;border-radius:10px;padding:16px 18px;font-size:16px;line-height:1.5}
+.pl-ui li b{display:block;font-size:13px;letter-spacing:.1em;text-transform:uppercase;color:#55575F;margin-bottom:4px}
+.pl-rp{display:grid;gap:12px}
+.pl-rp li{background:#fff;border:1px solid #D8D8D2;border-radius:10px;padding:16px 18px;display:grid;grid-template-columns:150px minmax(0,1fr);gap:14px;font-size:16px;line-height:1.5}
+.pl-rp li b{font-size:15px}
+.pl-go{display:flex;gap:12px;flex-wrap:wrap;margin-top:8px}
+.pl-go a{font-size:15px;font-weight:600;text-decoration:none;padding:12px 18px;border-radius:99px;background:#16171B;color:#fff}
+.pl-go a.o{background:transparent;color:#16171B;box-shadow:inset 0 0 0 1.5px #16171B}
+@media (max-width:900px){.pl-pal{grid-template-columns:repeat(2,minmax(0,1fr))}.pl-ty{grid-template-columns:minmax(0,1fr)}.pl-ui{grid-template-columns:minmax(0,1fr)}}
+@media (max-width:640px){.pl-logos{grid-template-columns:minmax(0,1fr)}.pl-rp li{grid-template-columns:minmax(0,1fr)}.pl-btns{padding:18px}.pl-sw .c{height:70px}}
+</style>
+</head>
+<body class="pl da1"><div class="axbar"><div class="wrap"><a href="../index.html#directions">&larr; Page principale</a><span class="lb">Direction 1 sur 5 : Établi</span><span class="sp"></span><a href="index.html">Voir le site</a><a href="../da-5/planche.html">&lsaquo; Précédente</a><a href="../da-2/planche.html">Suivante &rsaquo;</a></div></div>
+
+<main class="pl-wrap">
+<header class="pl-h"><p class="pl-k">Direction 1 sur 5 · planche de design</p><h1>Établi</h1><p class="pl-i">Le jaune et noir des engins et des panneaux de chantier : le contraste le plus lisible qui existe, que tout artisan connaît déjà.</p><p class="pl-ref">Recette copiée sur : <b>Caterpillar et la signalétique de chantier</b>. Baseline : <b>Tu le dis. C'est fait.</b></p>
+<div class="pl-go" style="margin-top:18px"><a href="index.html">Ouvrir le site d'exemple</a><a class="o" href="../index.html#directions">Retour aux cinq directions</a></div></header>
+<section class="pl-sec"><h2>1. Logo</h2><div class="pl-logos"><div class="pl-lt" style="background:#FFCD11"><svg class="logo-v" viewBox="0 0 200 190" role="img" aria-label="Logo ÉTABLI" xmlns="http://www.w3.org/2000/svg"><g transform="translate(48.0 8) scale(1.000)"><g fill="#0A0A0A"><rect x="2" y="30" width="82" height="12"/><rect x="10" y="42" width="66" height="8"/><rect x="12" y="50" width="10" height="42"/><rect x="64" y="50" width="10" height="42"/><rect x="22" y="70" width="42" height="6"/><rect x="82" y="18" width="8" height="32"/><rect x="90" y="31" width="10" height="5"/><rect x="97" y="24" width="5" height="19"/></g></g><text x="100" y="176" text-anchor="middle" font-family="Archivo,Arial Black,sans-serif" font-weight="900" font-size="42" fill="#0A0A0A" textLength="132" lengthAdjust="spacingAndGlyphs" style="font-stretch:75%;text-transform:uppercase">ÉTABLI</text></svg></div><div class="pl-lt" style="background:#0A0A0A"><svg class="logo-v" viewBox="0 0 200 190" role="img" aria-label="Logo ÉTABLI" xmlns="http://www.w3.org/2000/svg"><g transform="translate(48.0 8) scale(1.000)"><g fill="#FFCD11"><rect x="2" y="30" width="82" height="12"/><rect x="10" y="42" width="66" height="8"/><rect x="12" y="50" width="10" height="42"/><rect x="64" y="50" width="10" height="42"/><rect x="22" y="70" width="42" height="6"/><rect x="82" y="18" width="8" height="32"/><rect x="90" y="31" width="10" height="5"/><rect x="97" y="24" width="5" height="19"/></g></g><text x="100" y="176" text-anchor="middle" font-family="Archivo,Arial Black,sans-serif" font-weight="900" font-size="42" fill="#FFCD11" textLength="132" lengthAdjust="spacingAndGlyphs" style="font-stretch:75%;text-transform:uppercase">ÉTABLI</text></svg></div><div class="pl-lt" style="background:#F5F2EA"><svg class="logo-v" viewBox="0 0 200 190" role="img" aria-label="Logo ÉTABLI" xmlns="http://www.w3.org/2000/svg"><g transform="translate(48.0 8) scale(1.000)"><g fill="#0A0A0A"><rect x="2" y="30" width="82" height="12"/><rect x="10" y="42" width="66" height="8"/><rect x="12" y="50" width="10" height="42"/><rect x="64" y="50" width="10" height="42"/><rect x="22" y="70" width="42" height="6"/><rect x="82" y="18" width="8" height="32"/><rect x="90" y="31" width="10" height="5"/><rect x="97" y="24" width="5" height="19"/></g></g><text x="100" y="176" text-anchor="middle" font-family="Archivo,Arial Black,sans-serif" font-weight="900" font-size="42" fill="#0A0A0A" textLength="132" lengthAdjust="spacingAndGlyphs" style="font-stretch:75%;text-transform:uppercase">ÉTABLI</text></svg></div></div><div class="pl-sizes"><figure><div class="pl-app" style="width:96px;height:96px;background:#FFCD11"><svg class="ico" viewBox="0 0 104 100" width="59" height="59" role="img" aria-label="" xmlns="http://www.w3.org/2000/svg"><g fill="#0A0A0A"><rect x="2" y="30" width="82" height="12"/><rect x="10" y="42" width="66" height="8"/><rect x="12" y="50" width="10" height="42"/><rect x="64" y="50" width="10" height="42"/><rect x="22" y="70" width="42" height="6"/><rect x="82" y="18" width="8" height="32"/><rect x="90" y="31" width="10" height="5"/><rect x="97" y="24" width="5" height="19"/></g></svg></div>96 px</figure><figure><div class="pl-app" style="width:56px;height:56px;background:#FFCD11"><svg class="ico" viewBox="0 0 104 100" width="34" height="34" role="img" aria-label="" xmlns="http://www.w3.org/2000/svg"><g fill="#0A0A0A"><rect x="2" y="30" width="82" height="12"/><rect x="10" y="42" width="66" height="8"/><rect x="12" y="50" width="10" height="42"/><rect x="64" y="50" width="10" height="42"/><rect x="22" y="70" width="42" height="6"/><rect x="82" y="18" width="8" height="32"/><rect x="90" y="31" width="10" height="5"/><rect x="97" y="24" width="5" height="19"/></g></svg></div>56 px</figure><figure><div class="pl-app" style="width:32px;height:32px;background:#FFCD11"><svg class="ico" viewBox="0 0 104 100" width="19" height="19" role="img" aria-label="" xmlns="http://www.w3.org/2000/svg"><g fill="#0A0A0A"><rect x="2" y="30" width="82" height="12"/><rect x="10" y="42" width="66" height="8"/><rect x="12" y="50" width="10" height="42"/><rect x="64" y="50" width="10" height="42"/><rect x="22" y="70" width="42" height="6"/><rect x="82" y="18" width="8" height="32"/><rect x="90" y="31" width="10" height="5"/><rect x="97" y="24" width="5" height="19"/></g></svg></div>32 px</figure><figure><div style="background:#F5F2EA;padding:12px 16px;border:1px solid #D8D8D2;border-radius:6px"><svg class="logo-h" viewBox="0 0 168 48" height="48" role="img" aria-label="Logo ÉTABLI" xmlns="http://www.w3.org/2000/svg"><g transform="translate(0 4) scale(0.400)"><g fill="#0A0A0A"><rect x="2" y="30" width="82" height="12"/><rect x="10" y="42" width="66" height="8"/><rect x="12" y="50" width="10" height="42"/><rect x="64" y="50" width="10" height="42"/><rect x="22" y="70" width="42" height="6"/><rect x="82" y="18" width="8" height="32"/><rect x="90" y="31" width="10" height="5"/><rect x="97" y="24" width="5" height="19"/></g></g><text x="53.6" y="33.8" font-family="Archivo,Arial Black,sans-serif" font-weight="900" font-size="28" fill="#0A0A0A" textLength="110" lengthAdjust="spacingAndGlyphs" style="font-stretch:75%;text-transform:uppercase">ÉTABLI</text></svg></div>version horizontale</figure></div></section>
+<section class="pl-sec"><h2>2. Palette</h2><div class="pl-pal"><div class="pl-sw"><div class="c" style="background:#FFCD11;color:#0B0B0B">Aa #FFCD11</div><div class="m"><b>Jaune Établi</b><code>#FFCD11</code><i>fond fort, boutons, accents</i><i>Texte noir dessus : contraste 13.1:1</i></div></div><div class="pl-sw"><div class="c" style="background:#0A0A0A;color:#FFFFFF">Aa #0A0A0A</div><div class="m"><b>Noir</b><code>#0A0A0A</code><i>texte, fonds sombres</i><i>Texte blanc dessus : contraste 19.8:1</i></div></div><div class="pl-sw"><div class="c" style="background:#F5F2EA;color:#0B0B0B">Aa #F5F2EA</div><div class="m"><b>Blanc chantier</b><code>#F5F2EA</code><i>fond clair</i><i>Texte noir dessus : contraste 17.6:1</i></div></div><div class="pl-sw"><div class="c" style="background:#2B2B2B;color:#FFFFFF">Aa #2B2B2B</div><div class="m"><b>Acier</b><code>#2B2B2B</code><i>cartes sur noir</i><i>Texte blanc dessus : contraste 14.2:1</i></div></div><div class="pl-sw"><div class="c" style="background:#55554F;color:#FFFFFF">Aa #55554F</div><div class="m"><b>Gris</b><code>#55554F</code><i>texte secondaire</i><i>Texte blanc dessus : contraste 7.5:1</i></div></div><div class="pl-sw"><div class="c" style="background:#E5322D;color:#0B0B0B">Aa #E5322D</div><div class="m"><b>Rouge signal</b><code>#E5322D</code><i>impayé, alerte</i><i>Texte noir dessus : contraste 4.5:1</i></div></div><div class="pl-sw"><div class="c" style="background:#1FA94B;color:#0B0B0B">Aa #1FA94B</div><div class="m"><b>Vert reçu</b><code>#1FA94B</code><i>payé</i><i>Texte noir dessus : contraste 6.4:1</i></div></div></div></section>
+<section class="pl-sec"><h2>3. Polices (Google Fonts)</h2><div class="pl-ty"><div class="pl-tc"><div class="n">Titres : Archivo</div><div class="aa" style="font-family:'Archivo',sans-serif;font-stretch:75%;font-weight:900;text-transform:uppercase">Aa 1 144 €</div><div class="al" style="font-family:'Archivo',sans-serif;font-stretch:75%;font-weight:700">ABCDEFGHIJKLM<br>abcdefghijklm 0123456789<br>Devis Martin : chauffe-eau, 1 144,00 €</div><div class="u">titres en capitales, chasse condensée (largeur 75 %), graisse 900</div></div><div class="pl-tc"><div class="n">Texte et chiffres : IBM Plex Mono</div><div class="aa" style="font-family:'IBM Plex Mono',sans-serif">Aa 1 144 €</div><div class="al" style="font-family:'IBM Plex Mono',sans-serif">ABCDEFGHIJKLM<br>abcdefghijklm 0123456789<br>Devis Martin : chauffe-eau, 1 144,00 €</div><div class="u">montants, numéros, étiquettes</div></div></div></section>
+<section class="pl-sec"><h2>4. Boutons</h2><div class="pl-btns" style="background:#F5F2EA"><div><a class="b1" href="#">Voir la démo</a><small>Principal</small></div><div><a class="b2" href="#">Ce qu'il fait</a><small>Secondaire</small></div><div><a class="b3" href="#">En savoir plus</a><small>Lien</small></div><div><span class="b0">Indisponible</span><small>Inactif</small></div></div></section>
+<section class="pl-sec"><h2>5. Carte d'interface sur téléphone</h2><div class="pl-ui"><div class="bg" style="background:#F5F2EA"><div class="ph " role="img" aria-label="Maquette de l'écran du logiciel sur téléphone : papiers à encaisser, trois lignes, bouton micro">
+<div class="ph-n"></div><div class="ph-s">
+<div class="ph-bar"><b>Établi</b><span>9:41</span></div>
+<div class="ph-sum"><span>À encaisser</span><b>2&nbsp;840&nbsp;€</b><small>3 factures en attente</small></div>
+<div class="ph-row"><div><b>Facture Durand</b><small>Chauffe-eau, 1&nbsp;144&nbsp;€</small></div><em class="bad">21 j de retard</em></div>
+<div class="ph-row"><div><b>Devis Martin</b><small>Envoyé hier, 1&nbsp;144&nbsp;€</small></div><em class="neu">À relancer</em></div>
+<div class="ph-row"><div><b>Facture Lopez</b><small>Salle de bain, 696&nbsp;€</small></div><em class="ok">Payée</em></div>
+<div class="ph-act"><span>Relancer Durand</span><span class="sec">Voir le devis</span></div>
+<div class="ph-fab"><svg viewBox="0 0 24 24" width="26" height="26"><rect x="9" y="3" width="6" height="12" rx="3" fill="currentColor"/><path d="M5 11a7 7 0 0 0 14 0M12 18v3" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round"/></svg></div>
+</div></div></div><ul><li><b>Ce qu'on voit</b>Le total à encaisser en haut, trois lignes (une facture en retard, un devis à relancer, une facture payée), deux gestes en bas et le bouton micro.</li><li><b>Comment on s'en sert</b>L'artisan appuie sur le micro et dit « relance Durand » : l'écran ne demande rien d'autre.</li><li><b>Pourquoi cette allure</b>Bandes de chantier jaune et noir en diagonale, coins carrés, ombres dures décalées, aucun dégradé.</li></ul></div></section>
+<section class="pl-sec"><h2>6. Ce qu'on reprend des leaders américains</h2><ul class="pl-rp"><li><b>Housecall Pro</b><span>Les notifications flottantes en haut de page (« Job booked », « Payment received ») : chez nous, trois pastilles « Devis envoyé », « Facture partie », « Payé ». La preuve que ça marche se voit avant même de lire.</span></li><li><b>ServiceTitan</b><span>Le titre en deux lignes, sans phrase d'introduction, et la bande de références juste sous le titre : chez nous, une bande jaune de trois chiffres.</span></li></ul></section>
+</main></body></html>
