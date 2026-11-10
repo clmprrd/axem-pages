@@ -1,0 +1,364 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<meta name="robots" content="noindex,nofollow">
+<meta name="axem-page" content="client">
+<!-- page client courte voulue par Clément (10/11/2026) : un lien, trois accès, pas de badge ni d'épingles -->
+<title>Le cockpit de Laurent</title>
+<meta name="description" content="Trois business prêts à vendre, chacun avec son site ou son application à tester.">
+<style>@font-face{font-family:'Fraunces';font-style:normal;font-weight:300 900;font-display:swap;src:url(fonts/Fraunces-normal-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:300 900;font-display:swap;src:url(fonts/Fraunces-normal-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:300 900;font-display:swap;src:url(fonts/Fraunces-italic-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:300 900;font-display:swap;src:url(fonts/Fraunces-italic-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/InstrumentSans-normal-latin.woff2) format('woff2');unicode-range:U+0000-00FF,U+0131,U+0152-0153,U+02BB-02BC,U+02C6,U+02DA,U+02DC,U+2000-206F,U+20AC,U+2122,U+2191,U+2193,U+2212,U+2215,U+FEFF,U+FFFD}
+@font-face{font-family:'Instrument Sans';font-style:normal;font-weight:400 700;font-display:swap;src:url(fonts/InstrumentSans-normal-latin-ext.woff2) format('woff2');unicode-range:U+0100-02BA,U+02BD-02C5,U+02C7-02CC,U+02CE-02D7,U+02DD-02FF,U+0304,U+0308,U+0329,U+1D00-1DBF,U+1E00-1E9F,U+1EF2-1EFF,U+2020,U+20A0-20AB,U+20AD-20C0,U+2113,U+2C60-2C7F,U+A720-A7FF}
+
+:root{--blue:#2349FF;--ink:#0B0D12;--grey:#3A3D45;--paper:#FFFDF7;--cream:#FAF6EA;--line:rgba(11,13,18,.13);
+--v:#FE4A25;--vd:#B32A0A;--vt:#FFF0EA;--s:#D7261E;--sd:#A81B14;--st:#FCEDEB;--n:#0C1440;--nt:#EEF1FF}
+*{box-sizing:border-box;margin:0}
+html{overflow-x:clip}
+body{background:var(--paper);color:var(--ink);font-family:'Instrument Sans',system-ui,sans-serif;font-size:18px;line-height:1.5;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+h1,h2,h3{font-family:'Fraunces',serif;font-weight:900;font-variation-settings:"SOFT" 100,"opsz" 144;letter-spacing:-.015em;word-spacing:.12em;line-height:1.1;color:var(--ink)}
+h1 em,h2 em{font-style:italic;font-weight:400;color:var(--blue)}
+a{color:inherit}
+img,video{max-width:100%;display:block}
+.wrap{max-width:1200px;margin:0 auto;padding:0 28px}
+.prog{position:fixed;left:0;top:0;height:3px;width:100%;background:var(--blue);transform:scaleX(0);transform-origin:0 50%;z-index:60}
+.bar{position:sticky;top:0;z-index:50;background:rgba(255,253,247,.92);backdrop-filter:blur(8px);border-bottom:1px solid var(--line)}
+.bar .wrap{display:flex;justify-content:space-between;align-items:center;gap:16px;padding-top:12px;padding-bottom:12px}
+.bar b{font-family:'Fraunces',serif;font-weight:900;font-size:20px}
+.bar nav{display:flex;gap:8px;flex-wrap:wrap}
+.bar nav a{font-size:15px;font-weight:700;text-decoration:none;padding:7px 14px;border-radius:99px;border:1.5px solid var(--line)}
+.bar nav a:hover{border-color:var(--blue);color:var(--blue)}
+.kick{font-size:15px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--blue)}
+.hero{padding:44px 0 56px}
+.hero h1{font-size:clamp(38px,5.2vw,74px);max-width:1000px;margin-top:14px}
+.sub{font-size:20px;color:var(--grey);max-width:720px;margin-top:16px}
+.doors{display:grid;grid-template-columns:repeat(3,1fr);gap:22px;margin-top:36px}
+.door{border-radius:24px;overflow:hidden;display:flex;flex-direction:column;background:var(--paper);border:1.5px solid var(--line)}
+.door .th{position:relative;display:block;aspect-ratio:16/10;overflow:hidden;background:#111}
+.door .th img{width:100%;height:100%;object-fit:cover}
+.door .th .pl{position:absolute;left:14px;bottom:14px;font-size:15px;font-weight:700;background:rgba(11,13,18,.82);color:#fff;padding:6px 12px;border-radius:99px}
+.door .bd{padding:18px 20px 20px;display:flex;flex-direction:column;gap:10px;flex:1}
+.door h2{font-size:32px}
+.door .n{display:inline-grid;place-items:center;width:34px;height:34px;border-radius:50%;color:#fff;font-weight:700;font-size:16px;margin-right:8px;vertical-align:middle}
+.door p{font-size:17px;color:var(--grey)}
+.acc{display:flex;flex-wrap:wrap;gap:8px;margin-top:auto;padding-top:6px}
+.btn{display:inline-block;text-decoration:none;font-weight:700;font-size:16px;padding:11px 18px;border-radius:99px;background:var(--c);color:var(--tc,#fff);transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.btn:hover{transform:translateY(-2px)}
+.btn.g{background:transparent;color:var(--c);border:1.5px solid var(--c)}
+.d1{--c:var(--vd)}.d2{--c:var(--sd)}.d3{--c:var(--blue)}
+.d1 .n{background:var(--v)}.d2 .n{background:var(--s)}.d3 .n{background:var(--n)}
+/* blocs business */
+.biz{padding:0 0 70px}
+.band{background:var(--bg);color:var(--fg);padding:64px 0 52px;margin-bottom:46px}
+.band .kick{color:var(--fg);opacity:.85}
+.band h2{font-size:clamp(34px,4.6vw,64px);color:var(--fg);max-width:1000px;margin-top:12px}
+.band h2 em{color:var(--fg2)}
+.band p.defn{font-size:clamp(24px,2.6vw,34px);line-height:1.25;max-width:900px;margin-top:22px;padding:18px 24px;border-radius:18px;background:rgba(255,255,255,.12)}.band p{font-size:20px;max-width:720px;margin-top:14px;color:var(--fg)}
+.b1{--bg:var(--v);--fg:#0B0D12;--fg2:#fff}.b2{--bg:var(--s);--fg:#fff;--fg2:#FFD9D5}.b3{--bg:var(--n);--fg:#fff;--fg2:#9DB0FF}
+.row{display:grid;gap:30px;grid-template-columns:1.25fr 1fr;align-items:center;margin-top:34px}
+.row.rev{grid-template-columns:1fr 1.25fr}
+.step{font-size:15px;letter-spacing:.12em;text-transform:uppercase;font-weight:700;color:var(--c);margin-top:46px;display:flex;align-items:center;gap:10px}
+.step::before{content:"";width:34px;height:3px;border-radius:3px;background:var(--c)}
+.row h3{font-size:clamp(26px,2.6vw,36px)}
+.row p{margin-top:10px;color:var(--grey)}
+.src{font-size:15px;color:var(--grey)}
+.fr{border-radius:18px;overflow:hidden;background:#111;position:relative;box-shadow:0 18px 50px -24px rgba(11,13,18,.5)}
+.fr img,.fr video{width:100%;height:auto}
+.zoom{cursor:zoom-in;display:block;width:100%;padding:0;border:0;background:none}
+.pill{display:inline-block;font-size:15px;font-weight:700;padding:6px 13px;border-radius:99px;background:var(--c);color:#fff}
+.pos{position:absolute;left:16px;top:16px}
+.cta{display:flex;flex-wrap:wrap;gap:10px;margin-top:18px}
+.phone{width:300px;margin:0 auto;border-radius:44px;background:#0B0D12;padding:12px;box-shadow:0 22px 50px -22px rgba(11,13,18,.6)}
+.phone .scr{width:276px;height:590px;border-radius:34px;overflow:hidden;background:#fff}.phone iframe{border:0;width:390px;height:833px;transform:scale(.7077);transform-origin:0 0;background:#fff;display:block;max-width:none}
+.phone video{border-radius:30px;width:100%;aspect-ratio:9/16;object-fit:cover;background:#000}
+.gains{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:20px}
+.g{border-radius:20px;padding:22px 22px 20px;background:var(--gt);border:1px solid var(--line)}
+.g b{display:block;font-family:'Fraunces',serif;font-weight:900;font-variation-settings:"SOFT" 100,"opsz" 144;font-size:clamp(34px,3.6vw,52px);line-height:1.05;letter-spacing:.01em;color:var(--c)}
+.g span{display:block;margin-top:8px;font-size:19px;line-height:1.35}.g strong{font-weight:700}
+.b1 .gains{--gt:var(--vt)}.b2 .gains{--gt:var(--st)}.b3 .gains{--gt:var(--nt)}
+.thumbs{display:flex;gap:8px;flex-wrap:wrap;margin-top:16px}
+.thumbs button{width:64px;aspect-ratio:9/16;border-radius:10px;overflow:hidden;border:2px solid transparent;padding:0;cursor:pointer;background:#000}
+.thumbs button img{width:100%;height:100%;object-fit:cover}
+.thumbs button.on{border-color:var(--sd)}
+.tl{display:flex;gap:0;margin-top:14px;flex-wrap:wrap}
+.tl div{flex:1;min-width:110px;font-size:15px;padding-top:26px;position:relative}
+.tl div::before{content:"";position:absolute;left:0;top:6px;width:16px;height:16px;border-radius:50%;background:var(--v)}
+.tl div::after{content:"";position:absolute;left:16px;right:0;top:12px;height:3px;background:var(--v)}
+.tl div:last-child::after{display:none}
+.tl b{display:block;font-size:17px}
+.met{display:grid;grid-template-columns:repeat(8,1fr);gap:8px;margin-top:16px}
+.met figure{border-radius:12px;overflow:hidden;position:relative;aspect-ratio:3/4;background:#ddd}
+.met img{width:100%;height:100%;object-fit:cover}
+.met figcaption{position:absolute;left:0;right:0;bottom:0;padding:16px 6px 5px;font-size:15px;font-weight:700;color:#fff;background:linear-gradient(0deg,rgba(0,0,0,.7),transparent)}
+.row.rowp{grid-template-columns:1fr 330px}.btn.big{font-size:19px;padding:15px 26px}.logo{width:230px;height:auto;filter:none;margin-bottom:14px}.fmts{display:grid;grid-template-columns:repeat(4,1fr);gap:14px;margin-top:16px}.fmts button{position:relative;border:0;padding:0;border-radius:16px;overflow:hidden;cursor:zoom-in;background:#eee}.fmts img{width:100%;aspect-ratio:4/3;object-fit:cover}.fmts span{position:absolute;left:10px;bottom:10px;background:var(--s);color:#fff;font-weight:700;font-size:18px;padding:5px 14px;border-radius:99px}.legrow{display:grid;grid-template-columns:repeat(3,1fr);gap:16px;margin-top:18px}.legrow li{font-size:18px;align-items:flex-start}.fnum .take{display:block;margin-top:12px;font-size:18px;font-weight:700;color:#fff}.leg{list-style:none;padding:0;display:flex;flex-direction:column;gap:9px;margin-top:14px}.leg li{display:flex;gap:11px;align-items:center;font-size:18px}.leg i{flex:none;width:30px;height:30px;border-radius:50%;background:var(--blue);color:#fff;font-style:normal;font-weight:700;display:grid;place-items:center}.fearband{background:var(--n);color:#fff;padding:20px 0 56px;margin-top:56px}.fnum{display:grid;grid-template-columns:repeat(3,1fr);gap:34px;margin-top:30px}.fnum b{display:block;font-family:'Fraunces',serif;font-weight:900;font-variation-settings:'SOFT' 100,'opsz' 144;font-size:clamp(44px,5vw,76px);line-height:1;color:#fff;letter-spacing:.01em}.fnum span{display:block;margin-top:12px;font-size:18px;color:#E4E9FF}.fnum small{display:block;margin-top:10px;font-size:15px;color:#B9C4FF}.fnum a{color:#fff}.fearband .ba{border-color:rgba(255,255,255,.2)}.lvl{display:flex;flex-direction:column;gap:14px;margin-top:20px}.lr{display:grid;grid-template-columns:60px 1fr;gap:20px;align-items:center;padding:18px 22px;border-radius:20px;background:#fff;border:1.5px solid var(--line)}.lr.rec{border-color:var(--blue);box-shadow:0 0 0 3px rgba(35,73,255,.15)}.lr>b{font-family:'Fraunces',serif;font-weight:900;font-size:44px;color:var(--blue);line-height:1}.lr h3{font-size:24px}.lr .map{margin:0}.lr p{font-size:19px;margin-top:4px;color:var(--ink)}.rc{display:inline-block;vertical-align:middle;margin-left:10px;font-family:'Instrument Sans',sans-serif;font-size:15px;font-weight:700;letter-spacing:0;word-spacing:0;background:var(--blue);color:#fff;padding:4px 12px;border-radius:99px}.vn{display:grid;grid-template-columns:1fr 1fr;border-radius:20px;overflow:hidden;margin:-18px 0 30px;border:1.5px solid var(--line)}.vn>div{padding:20px 26px;font-size:20px;line-height:1.35}.vn b{display:block;font-family:'Fraunces',serif;font-weight:900;font-size:30px;font-variation-settings:'SOFT' 100,'opsz' 144;margin-bottom:4px}.vn .v{background:#fff}.vn .n2{background:var(--vn,var(--nt))}.fl{position:absolute;z-index:3;background:#fff;color:var(--ink);font-weight:700;font-size:17px;padding:10px 16px;border-radius:14px;box-shadow:0 12px 30px -10px rgba(11,13,18,.45)}.fl b{font-family:'Fraunces',serif;font-weight:900;font-size:26px;display:block;line-height:1.05}.fr.par{overflow:hidden}.fr.par img{transform:scale(1.14);transform-origin:0 50%}.gains.g4{grid-template-columns:repeat(4,1fr)}.sig{margin-top:30px;font-family:'Fraunces',serif;font-weight:900;font-size:26px;font-variation-settings:'SOFT' 100,'opsz' 144}.soaposter{background:var(--s);display:flex;flex-direction:column;align-items:center;justify-content:center;gap:14px;padding:40px 28px;text-align:center;aspect-ratio:16/10}.door .th .soaposter img,.soaposter img{width:55%;height:auto;object-fit:contain;filter:brightness(0) invert(1)}.soaposter .tagl{font-family:'Fraunces',serif;font-weight:900;font-size:26px;line-height:1.15;color:#fff;font-variation-settings:'SOFT' 100,'opsz' 144;word-spacing:.12em}
+.li{display:flex;gap:14px;align-items:center;background:#fff;border:1px solid var(--line);border-radius:16px;padding:16px}
+.li .lg{flex:none;width:52px;height:52px;border-radius:10px;background:var(--s);display:grid;place-items:center;color:#fff;font-weight:700;font-size:15px}
+/* vistafam */
+.big{display:grid;gap:24px;grid-template-columns:1fr 1fr;margin-top:24px}
+.shot{background:var(--nt);border-radius:22px;padding:16px 16px 20px;display:flex;flex-direction:column;gap:14px}
+.shot ol{list-style:none;padding:0;display:flex;flex-direction:column;gap:9px}
+.shot li{display:flex;gap:11px;align-items:flex-start;font-size:17px;line-height:1.35}
+.shot li i{flex:none;width:28px;height:28px;border-radius:50%;background:var(--blue);color:#fff;font-style:normal;font-weight:700;display:grid;place-items:center;font-size:16px}
+.shot .zoom{border-radius:14px;overflow:hidden}
+.shot .cap{font-size:15px;color:var(--grey)}
+.fear{display:grid;gap:14px;margin-top:22px}
+.arg{display:grid;grid-template-columns:64px 1fr;gap:18px;padding:22px 24px;border-radius:22px;background:#fff;border:1.5px solid var(--line)}
+.arg .k{width:56px;height:56px;border-radius:50%;background:var(--n);color:#fff;display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:900;font-size:26px}
+.arg h3{font-size:clamp(24px,2.4vw,32px)}
+.arg p{margin-top:8px;font-size:18px}
+.arg p+p{margin-top:6px}
+.arg .src a{color:var(--blue)}
+.tag{display:inline-block;font-size:15px;font-weight:700;padding:3px 11px;border-radius:99px;margin-bottom:8px}
+.tag.ps{background:var(--nt);color:var(--blue)}.tag.tg{background:#E8F6EE;color:#0C5E41}
+.ba{color:var(--ink);display:grid;grid-template-columns:1fr 1fr;border-radius:24px;overflow:hidden;border:1.5px solid var(--line);margin-top:22px}
+.ba>div{padding:26px}
+.ba .bad{background:#FFF1EF}.ba .good{background:var(--nt)}
+.ba h3{font-size:clamp(24px,2.5vw,34px)}
+.ba ul{list-style:none;padding:0;margin-top:14px;display:flex;flex-direction:column;gap:11px}
+.ba li{font-size:18px;padding-left:34px;position:relative}
+.ba li::before{position:absolute;left:0;top:0;width:24px;height:24px;border-radius:50%;display:grid;place-items:center;font-weight:700;font-size:15px;color:#fff}
+.bad li::before{content:"×";background:#C62D22}.good li::before{content:"✓";background:var(--blue)}
+.lvls{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;margin-top:22px}
+.lv{border-radius:22px;background:#fff;border:1.5px solid var(--line);overflow:hidden;display:flex;flex-direction:column}
+.lv.rec{border-color:var(--blue);box-shadow:0 0 0 3px rgba(35,73,255,.15)}
+.lv .hd{padding:18px 20px 14px;background:var(--nt)}
+.lv .hd b{font-family:'Fraunces',serif;font-weight:900;font-size:30px;font-variation-settings:"SOFT" 100,"opsz" 144;letter-spacing:.01em;color:var(--blue)}
+.lv .hd h3{font-size:24px;margin-top:2px}
+.lv .map{display:flex;height:46px;margin:14px 20px 0;border-radius:12px;overflow:hidden;font-size:15px;font-weight:700;color:#fff}
+.lv .map span{display:grid;place-items:center;padding:0 6px;text-align:center;line-height:1.1}
+.m-you{background:#0C5E41}.m-fr{background:var(--blue)}.m-onl{background:#6B7BC9}
+.lv dl{padding:14px 20px 20px;display:grid;gap:10px;font-size:17px}
+.lv dt{font-weight:700;font-size:15px;letter-spacing:.06em;text-transform:uppercase;color:var(--grey)}
+.lv dd{margin-top:1px}
+.rect{margin:0 20px 16px;font-size:15px;font-weight:700;color:var(--blue)}
+.proof{width:100%;border-collapse:collapse;margin-top:20px;font-size:17px}
+.proof th,.proof td{padding:12px 14px;text-align:left;border-bottom:1px solid var(--line);vertical-align:top}
+.proof th{font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+.proof a{color:var(--blue);font-weight:700}
+.next{margin-top:34px;padding:28px 30px;border-radius:24px;background:var(--bgn,var(--vt));display:flex;flex-direction:column;gap:8px}
+.next h3{font-size:clamp(24px,2.6vw,34px)}
+.next.b3n{--bgn:var(--nt)}.next.b2n{--bgn:var(--st)}
+.chain{display:flex;align-items:center;gap:10px;flex-wrap:wrap;margin-top:4px}
+.dot{width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-weight:700;font-size:16px}
+.dot.m{background:var(--nt);color:var(--blue);border:2px solid var(--blue)}
+details{margin-top:12px;font-size:17px}
+summary{cursor:pointer;font-weight:700}
+details p{margin-top:8px}
+.end{padding:84px 0 60px;text-align:center}
+.end h2{font-size:clamp(34px,4.4vw,60px);max-width:860px;margin:0 auto}
+.end .doors{margin-top:30px;text-align:left}
+.end .btn{font-size:20px;padding:16px 26px;--tc:#fff}
+.end .stripe{display:flex;align-items:center;gap:16px;padding:22px 26px;border-radius:20px;text-decoration:none;color:#fff;font-family:'Fraunces',serif;font-weight:900;font-size:30px;font-variation-settings:"SOFT" 100,"opsz" 144;transition:transform .5s cubic-bezier(.16,1,.3,1)}
+.end .stripe:hover{transform:translateY(-4px)}
+.end .stripe i{font-style:normal;font-size:46px;opacity:.7}
+.s1{background:var(--v);color:#0B0D12!important}.s2{background:var(--s)}.s3{background:var(--n)}
+footer{padding:12px 0 50px;text-align:center;font-size:15px;color:var(--grey)}
+dialog{border:0;padding:0;background:transparent;max-width:96vw;max-height:94vh}
+dialog::backdrop{background:rgba(11,13,18,.82)}
+dialog img{max-width:96vw;max-height:90vh;border-radius:14px}
+dialog button{position:fixed;right:20px;top:16px;font:inherit;font-weight:700;font-size:17px;padding:10px 18px;border-radius:99px;border:0;background:#fff;cursor:pointer}
+@media(max-width:980px){.cta{flex-wrap:wrap!important}.vn{grid-template-columns:1fr}.gains.g4{grid-template-columns:1fr 1fr}.legrow{grid-template-columns:1fr}.row.rowp,.fnum,.lr,.fmts{grid-template-columns:1fr}.fmts{grid-template-columns:1fr 1fr}.doors,.row,.row.rev,.gains,.big,.ba,.lvls{grid-template-columns:1fr}.met{grid-template-columns:repeat(4,1fr)}.bar nav{display:none}.band{padding:44px 0 36px}.arg{grid-template-columns:1fr}}
+@media(max-width:520px){.phone .scr{width:100%}.phone iframe{width:calc(100%/.7077);transform:scale(.7077)}.btn{white-space:normal!important}.cta .btn{flex:1 1 auto;min-width:0;max-width:100%}.btn.big{padding:14px 16px!important;font-size:17px!important}.wrap{padding:0 16px}.phone{width:300px}.proof{display:block;overflow-x:auto}}
+.row>*{min-width:0}.btn.big{display:inline-block;gap:0;margin:0}.btn.g{padding:11px 18px;border-radius:99px;background:transparent;display:inline-block}.btn{white-space:nowrap;text-align:center}.cta{align-items:center;flex-wrap:nowrap}.cta .btn{flex:none}.row.rowp .cta .btn.big{font-size:17px;padding:13px 20px}.door .acc{flex-direction:column;align-items:flex-start;flex-wrap:nowrap}.door .btn{max-width:100%}
+.gl{font-size:17px;color:var(--grey);margin-top:8px;max-width:760px}.band .gl{color:var(--fg);opacity:.9;font-size:18px}
+.logobadge{display:inline-block;background:var(--s);padding:12px 18px;border-radius:14px;margin-bottom:14px}.logobadge .logo{width:190px;margin:0}
+.bil{margin-top:34px;padding:22px 26px;border-radius:22px;border:2px dashed var(--c);background:#fff}.bil[hidden]{display:none!important}
+.bil h3{font-size:24px}.bil h4{font-size:15px;letter-spacing:.1em;text-transform:uppercase;color:var(--c);margin:16px 0 6px;font-family:'Instrument Sans',sans-serif}
+.bil ul{padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:17px}.bil li small{display:block;color:var(--grey);font-size:15px}
+.bil .hook{font-family:'Fraunces',serif;font-weight:900;font-size:22px;line-height:1.2}
+.qs{display:grid;gap:16px;margin-top:30px;text-align:left}.qs a{display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:center;padding:24px 28px;border-radius:22px;text-decoration:none;color:#fff;font-family:'Fraunces',serif;font-weight:900;font-size:clamp(22px,2.4vw,32px);line-height:1.2;font-variation-settings:"SOFT" 100,"opsz" 144}.qs a i{font-style:normal;font-size:46px;opacity:.7}.qs small{display:block;font-family:'Instrument Sans',sans-serif;font-weight:700;font-size:15px;letter-spacing:.1em;text-transform:uppercase;opacity:.85;margin-bottom:4px}
+@media(prefers-reduced-motion:reduce){*{transition:none!important}}
+</style></head><body>
+<div class="prog"></div>
+<header class="bar"><div class="wrap"><b>AXEM IA</b><nav><a href="#voila">1 · voilà</a><a href="#soa">2 · Street of Osaka</a><a href="#vistafam">3 · Vistafam</a><a href="#parler">On en parle</a></nav></div></header>
+<main>
+<section class="hero"><div class="wrap">
+ <div class="kick">Pour toi, Laurent · 10/11/2026</div>
+ <h1>Choisis le business <em>que tu veux vendre en premier.</em></h1>
+ <p class="sub">Trois business prêts à vendre. Pour chacun : ce que c'est, ton rôle, et un accès à tester tout de suite.</p>
+ <div class="doors">
+<article class="door d1"><a class="th" href="#voila"><img src="img/v-hero.jpg" alt="Site voilà : un plombier au travail et l'appli dans la main"><span class="pl">Appli à tester</span></a>
+ <div class="bd"><h2><span class="n">1</span>voilà</h2><p>Pour les artisans : un devis dicté, signé et payé depuis le téléphone.</p>
+ <div class="acc"><a class="btn big" href="../Etabli/v7-marques/voila/appli/index.html" target="_blank" rel="noopener">Tester l'appli comme un artisan</a><a class="btn g" href="voila/site/index.html" target="_blank" rel="noopener">Voir le site</a></div></div></article>
+<article class="door d2"><a class="th" href="#soa"><img src="soa/corner-2.jpg" alt="Un corner Street of Osaka de 16,5 m²"><span class="pl">Corner de 16,5 m²</span></a>
+ <div class="bd"><h2><span class="n">2</span>Street of Osaka</h2><p>Pour les magasins : un corner de restauration japonaise, sans investissement.</p>
+ <div class="acc"><a class="btn big" href="#soa">Voir le corner fini</a><a class="btn g" href="https://www.linkedin.com/company/streetofosaka" target="_blank" rel="noopener">Page LinkedIn à montrer</a></div></div></article>
+<article class="door d3"><a class="th" href="#vistafam"><img src="vz/z-hero.jpg" alt="Application Vistafam, premier écran" style="object-position:left top"><span class="pl">Démo à tester</span></a>
+ <div class="bd"><h2><span class="n">3</span>Vistafam</h2><p>Pour les family offices : le patrimoine à jour chaque matin, la famille garde la main.</p>
+ <div class="acc"><a class="btn big" href="https://patrimoine-demo-h3v8n2p6.vercel.app" target="_blank" rel="noopener">Ouvrir le cockpit de démo</a><a class="btn g" href="#vistafam">Voir pourquoi c'est sûr</a></div></div></article></div>
+</div></section>
+
+<section class="biz b1 d1" id="voila" data-film="">
+<div class="band b1"><div class="wrap"><div class="kick">Business 1 · pour les artisans</div>
+ <h2>voilà : un devis dicté le matin est <em>payé avant midi.</em></h2></div></div>
+<div class="wrap">
+ <div class="vn" style="--vn:var(--vt)"><div class="v"><b>Vous</b>dictez le devis, vous travaillez.</div><div class="n2"><b>Nous</b>facturons, relançons, encaissons.</div></div>
+ <div class="step">1 · Le site</div>
+ <div class="row rev"><div><h3>Le site qui vend l'appli.</h3><p>Huit métiers, du plombier au vitrier.</p>
+   <div class="cta"><a class="btn big" href="voila/site/index.html" target="_blank" rel="noopener">Ouvrir le site vu par un artisan</a></div></div>
+  <a class="fr par" href="voila/site/index.html" target="_blank" rel="noopener" style="display:block"><span class="fl" style="left:16px;bottom:16px"><b>399,03 €</b>d'acompte reçu (exemple)</span><img data-par="1" src="img/v-metiers.jpg" alt="Le site voilà : huit métiers, du plombier au vitrier" loading="lazy"></a></div>
+ <div class="step">2 · Tester</div>
+ <div class="row rowp"><div><h3>Touche l'appli, signe, vois l'acompte tomber.</h3><p>Démo avec un faux client. Devis et facture : de vrais PDF.</p>
+   <div class="cta"><a class="btn big" href="../Etabli/v7-marques/voila/appli/index.html" target="_blank" rel="noopener">Tester l'appli comme un artisan</a><a class="btn g" href="voila/devis.pdf" target="_blank" rel="noopener">Le devis</a><a class="btn g" href="voila/facture.pdf" target="_blank" rel="noopener">La facture</a></div></div>
+  <div class="phone"><div class="scr"><iframe src="../Etabli/v7-marques/voila/appli/index.html" title="Appli voilà, démo" loading="lazy"></iframe></div></div></div>
+ <div class="step">3 · Ce que l'artisan gagne</div>
+ <div class="gains"><div class="g"><b>399,03 €</b><span><strong>L'acompte est payé à 11 h 31,</strong> pour un devis dicté à 9 h 41.</span></div>
+  <div class="g"><b>1 h 45</b><span><strong>Le client signe 1 h 45</strong> après l'envoi du devis.</span></div>
+  <div class="g"><b>8 outils</b><span><strong>Un seul outil en remplace huit :</strong> banque, facturation, agenda, WhatsApp, réseaux, site.</span></div></div>
+ <p class="src" style="margin-top:10px">Exemple de démonstration, pas une mesure.</p>
+ <div class="met"><figure><img src="voila/img/metier-plombier.jpg" alt="" loading="lazy"><figcaption>Plombier</figcaption></figure><figure><img src="voila/img/metier-electricien.jpg" alt="" loading="lazy"><figcaption>Électricien</figcaption></figure><figure><img src="voila/img/metier-peintre.jpg" alt="" loading="lazy"><figcaption>Peintre</figcaption></figure><figure><img src="voila/img/metier-serrurier.jpg" alt="" loading="lazy"><figcaption>Serrurier</figcaption></figure><figure><img src="voila/img/metier-macon.jpg" alt="" loading="lazy"><figcaption>Maçon</figcaption></figure><figure><img src="voila/img/metier-paysagiste.jpg" alt="" loading="lazy"><figcaption>Paysagiste</figcaption></figure><figure><img src="voila/img/metier-depanneur.jpg" alt="" loading="lazy"><figcaption>Dépanneur</figcaption></figure><figure><img src="voila/img/metier-vitres.jpg" alt="" loading="lazy"><figcaption>Vitrier</figcaption></figure></div>
+ <div class="step">4 · Ton rôle, Laurent</div>
+ <div class="next"><h3>Montrer l'appli sur ton téléphone à un artisan, lui faire dicter un vrai devis, puis lui laisser le lien.</h3>
+  <p>Deux minutes, sans créer de compte.</p>
+  <div class="cta"><a class="btn big" href="../Etabli/v7-marques/voila/appli/index.html" target="_blank" rel="noopener">Tester l'appli comme un artisan</a><a class="btn g" href="voila/site/index.html" target="_blank" rel="noopener">Ouvrir le site à lui montrer</a></div></div>
+ <aside class="bil" hidden aria-hidden="true" data-bil><h3>Les billes d'Alexis</h3>
+  <h4>Arguments pour Laurent</h4><ul>
+  <li>C'est ta propre définition : « tout ton écosystème business dans ta poche ».<small>Source : call du 05/11, 23:50.</small></li>
+  <li>Le vrai problème de l'artisan, c'est le temps : devis, facture, relance.<small>Source : call du 05/11, 23:23 et 25:26.</small></li>
+  <li>Ça s'adresse à tous les indépendants qui se déplacent, pas seulement au bâtiment.<small>Source : call du 05/11, 26:38.</small></li>
+  <li>Déjà construit : l'appli à toucher, le site, un vrai devis et une vraie facture en PDF.<small>Source : cette page.</small></li></ul>
+  <h4>Phrase d'accroche</h4><p class="hook">« Un artisan dicte son devis le matin, il est payé avant midi. »</p><p class="src">Source : titre de la page (exemple de démonstration).</p>
+  <h4>Objections probables</h4><ul>
+  <li>« Les artisans ne sont pas à l'aise avec le numérique. » Réponse : il dicte au micro, sans compte, en deux minutes.<small>Source : call du 05/11, 30:00 et 31:54.</small></li>
+  <li>« Ce n'est que pour le bâtiment ? » Réponse : non, c'est ouvert à tous les indépendants mobiles.<small>Source : call du 05/11, 26:38.</small></li></ul>
+  <h4>Sa part</h4><p>Sa part : à dire à l'oral, montant vu avec Clément avant le rendez-vous.</p><h4>La question qui fait parler</h4><p class="hook">« Quel artisan de ton entourage tu ferais tester voilà demain ? »</p></aside>
+</div></section>
+
+<section class="biz b2 d2" id="soa" data-film="">
+<div class="band b2"><div class="wrap"><div class="kick">Business 2 · pour les magasins</div>
+ <h2>Street of Osaka : vous fournissez les m², <em>nous faisons le reste.</em></h2>
+ <p>Un corner, c'est un espace de 4 à 23 m² dans le magasin, où le concept Street of Osaka arrive livré posé.</p></div></div>
+<div class="wrap">
+ <div class="vn" style="--vn:var(--st)"><div class="v"><b>Le magasin</b>fournit les m².</div><div class="n2"><b>Street of Osaka</b>installe, cuisine, gère.</div></div>
+ <div class="step">1 · Le corner fini</div>
+ <div class="row"><div class="fr par"><span class="fl" style="right:16px;top:16px"><b class="cnt" data-to="5" data-suf=" jours">5 jours</b>au plus pour ouvrir</span><button class="zoom" type="button" data-big="soa/corner-2.jpg"><img data-par="1" src="soa/corner-2.jpg" alt="Corner Street of Osaka de 16,5 m², le format mis en avant" loading="lazy"></button></div>
+  <div><span class="logobadge"><img class="logo" src="soa/soa-logo-blanc.png" alt="Street of Osaka"></span><h3>Le corner de 16,5 m², le format mis en avant.</h3><p>Sushi, wok, poké : un comptoir complet, décor japonais.</p></div></div>
+ <div class="fmts">
+  <button class="zoom" type="button" data-big="soa/corner-1.jpg"><img src="soa/corner-1.jpg" alt="Corner de 4 m²" loading="lazy"><span>4 m²</span></button>
+  <button class="zoom" type="button" data-big="soa/corner-2.jpg"><img src="soa/corner-2.jpg" alt="Corner de 16,5 m²" loading="lazy"><span>16,5 m²</span></button>
+  <button class="zoom" type="button" data-big="soa/corner-3.jpg"><img src="soa/corner-3.jpg" alt="Corner de 19,5 m²" loading="lazy"><span>19,5 m²</span></button>
+  <button class="zoom" type="button" data-big="soa/corner-4.jpg"><img src="soa/corner-4.jpg" alt="Corner de 23 m²" loading="lazy"><span>23 m²</span></button></div>
+ <div class="step">2 · Pourquoi un directeur de magasin dit oui</div>
+ <div class="gains g4"><div class="g"><b>0 €</b><span><strong>Zéro investissement</strong> pour le magasin.</span></div>
+  <div class="g"><b>0</b><span><strong>Zéro salarié</strong> à ajouter : nous gérons.</span></div>
+  <div class="g"><b>2 à 5 jours</b><span><strong>Ouvert en 2 à 5 jours,</strong> installation comprise.</span></div>
+  <div class="g"><b>Garanti</b><span>Selon le magasin, <strong>un minimum de chiffre d'affaires peut être garanti.</strong></span></div></div>
+ <div class="step">3 · Ton rôle, Laurent</div>
+ <div class="next b2n"><h3>Présenter le corner à un directeur de magasin, puis lui proposer l'étude gratuite.</h3>
+  <p>Étude gratuite = on calcule ce que le corner rapporterait dans ce magasin, sans engagement. Le corner fini ci-dessus et la page LinkedIn sont tes deux supports.</p>
+  <div class="cta"><a class="btn big" href="#soa">Montrer le corner fini</a><a class="btn g" href="https://www.linkedin.com/company/streetofosaka" target="_blank" rel="noopener">Montrer la page LinkedIn du concept</a></div></div>
+ <aside class="bil" hidden aria-hidden="true" data-bil><h3>Les billes d'Alexis</h3>
+  <h4>Arguments pour Laurent</h4><ul>
+  <li>Tu connais ce marché : 150 à 200 contrats de corners renouvelés par an.<small>Source : fiche CRM, call du 08/10.</small></li>
+  <li>Pour le magasin : zéro investissement, zéro salarié à ajouter, ouvert en 2 à 5 jours.<small>Source : cette page.</small></li>
+  <li>Déjà visible : quatre formats de corner de 4 à 23 m² et la page LinkedIn du concept.<small>Source : cette page ; call du 05/11, 54:24 (premiers posts partis).</small></li>
+  <li>L'étude gratuite est une porte d'entrée sans engagement.<small>Source : cette page.</small></li></ul>
+  <h4>Phrase d'accroche</h4><p class="hook">« Vous fournissez les m², nous faisons le reste. »</p><p class="src">Source : titre de la page.</p>
+  <h4>Objections probables</h4><ul>
+  <li>« Quel intérêt pour mon magasin ? » Réponse : rien à investir, et selon le magasin un minimum de chiffre d'affaires peut être garanti.<small>Source : cette page.</small></li>
+  <li>« Je n'ai pas la place. » Réponse : quatre formats, de 4 à 23 m².<small>Source : cette page.</small></li></ul>
+  <h4>Sa part</h4><p>Sa part : à dire à l'oral, montant vu avec Clément avant le rendez-vous.</p><h4>La question qui fait parler</h4><p class="hook">« Quel directeur de magasin tu appellerais en premier pour le corner ? »</p></aside>
+</div></section>
+
+<section class="biz b3 d3" id="vistafam" data-film="">
+<div class="band b3"><div class="wrap"><div class="kick">Business 3 · pour les family offices</div>
+ <h2>Vistafam : ton patrimoine à jour chaque matin, <em>et c'est toi qui gardes la main.</em></h2>
+ <p class="defn"><b>Un family office</b> = la société qui gère la fortune d'une famille.</p></div></div>
+<div class="wrap">
+ <div class="vn"><div class="v"><b>Vous</b>gardez la clé et l'accord.</div><div class="n2"><b>Nous</b>lisons et mettons à jour chaque matin.</div></div>
+ <div class="step" id="vz-demo">1 · L'application</div>
+ <div class="row rev" style="margin-top:20px"><div><h3>Le cockpit : tout le patrimoine en un écran.</h3><p>Démo avec des données fictives, prête à brancher sur les vrais comptes.</p>
+   <ol class="leg"><li><i>1</i>À jour chaque matin à 06:00.</li><li><i>2</i>Tes banques, en lecture seule : Vistafam voit les comptes, ne peut rien bouger.</li><li><i>3</i>Zéro mot de passe stocké.</li></ol>
+   <div class="cta"><a class="btn big" href="https://patrimoine-demo-h3v8n2p6.vercel.app" target="_blank" rel="noopener">Ouvrir le cockpit de démonstration</a></div></div>
+  <div class="fr par"><span class="fl" style="right:16px;top:16px"><b>06:00</b>à jour chaque matin</span><button class="zoom" type="button" data-big="vz/z-hero-ann.jpg"><img data-par="1" src="vz/z-hero-ann.jpg" alt="Application Vistafam, premier écran, repères 1 à 3" loading="lazy"></button></div></div>
+ <h3 style="margin-top:44px">Le patrimoine net, la courbe, les sources.</h3>
+ <div class="fr" style="margin-top:18px"><button class="zoom" type="button" data-big="vz/z-cockpit-ann.jpg"><img src="vz/z-cockpit-ann.jpg" alt="Application Vistafam, le patrimoine net et la courbe, repères 1 à 3" loading="lazy" style="aspect-ratio:1240/540;object-fit:cover;object-position:top"></button></div>
+ <ol class="leg legrow"><li><i>1</i>Le patrimoine net de la famille, en un chiffre.</li><li><i>2</i>La courbe sur 24 mois : il monte, il baisse.</li><li><i>3</i>Chaque banque, avec son état et l'heure de mise à jour.</li></ol>
+ <p class="src" style="margin-top:12px">Captures réelles de la démo, cliquables pour agrandir.</p>
+</div>
+<div class="fearband"><div class="wrap">
+ <div class="step" style="color:#9DB0FF;--c:#9DB0FF">2 · La peur du piratage, en face</div>
+ <h2 style="color:#fff;margin-top:14px;font-size:clamp(30px,3.6vw,50px);max-width:900px">Tu as raison d'avoir peur. <em style="color:#9DB0FF">Voilà pourquoi Vistafam ne peut rien déplacer.</em></h2>
+ <div class="fnum">
+  <div><b>1,5 Md$</b><span>volés à Bybit en 30 minutes (février 2025), par un fournisseur logiciel piraté. Le FBI cite la Corée du Nord. Binance, en 2019 : environ 7 000 bitcoins volés.</span><span class="take">Ce que ça veut dire pour une famille : le danger vient des accès donnés à des tiers. Vistafam n'en demande aucun.</span><small>Sources : <a href="https://thehackernews.com/2025/02/bybit-hack-traced-to-safewallet-supply.html" target="_blank" rel="noopener">The Hacker News</a>, <a href="https://www.techtarget.com/cybersecurity/news/366619872/FBI-Lazarus-Group-behind-15-billion-Bybit-heist" target="_blank" rel="noopener">TechTarget</a>, <a href="https://cointelegraph.com/news/hackers-withdraw-7-000-bitcoins-in-binance-crypto-exchange-security-breach" target="_blank" rel="noopener">Cointelegraph</a></small></div>
+  <div><b class="cnt" data-to="43" data-suf=" %">43 %</b><span>des family offices ont été attaqués en 2 ans, et 93 % de ces attaques par un faux mail. 31 % n'avaient aucun plan de réponse.</span><small>Source : <a href="https://www.deloitte.com/global/en/services/deloitte-private/about/family-office-cybersecurity-report.html" target="_blank" rel="noopener">Deloitte, rapport 2024</a></small></div>
+  <div><b>0</b><span>fonds et zéro clé de virement chez Vistafam : il lit, il ne peut rien déplacer. La famille renouvelle son accord tous les 180 jours. Notre point faible, on le dit : nos fournisseurs.</span></div></div>
+ <div class="ba"><div class="bad"><span class="tag" style="background:#C62D22;color:#fff">Aujourd'hui : Excel et mails</span><h3>Chaque fichier envoyé est une porte ouverte.</h3>
+   <ul><li>4 points de fuite : banquier, comptable, assistante, faux mail.</li><li>Mis à jour à la main.</li></ul></div>
+  <div class="good"><span class="tag" style="background:var(--blue);color:#fff">Avec Vistafam</span><h3>Une vue, rien qui sort.</h3>
+   <ul><li>0 fichier qui voyage au niveau 1.</li><li>À jour chaque matin à 06:00.</li></ul></div></div>
+</div></div>
+<div class="wrap">
+ <div class="step">3 · Trois niveaux, tu gardes la main</div>
+ <div class="lvl">
+  <div class="lr rec"><b>1</b><div><h3>Niveau 1 : chez vous <span class="rc">Pour commencer</span></h3><p>Tout reste chez toi : fichiers, données, clés. Rien ne passe en ligne.</p></div></div>
+  <div class="lr"><b>2</b><div><h3>Niveau 2 : coffre dédié</h3><p>Un serveur privé en France, rien que pour toi. La clé reste chez toi.</p></div></div>
+  <div class="lr"><b>3</b><div><h3>Niveau 3 : Vistafam en ligne</h3><p>Plateforme en ligne, données verrouillées par une clé, hébergeur français. Tes identifiants bancaires ne passent jamais chez nous.</p></div></div></div>
+ <p class="gl">Les niveaux = l'endroit où vivent les données : chez toi (1), sur un serveur privé en France (2), sur la plateforme Vistafam (3). Serveur hébergé en France, au niveau exigé par l'État.</p>
+
+ <div class="step">4 · Ton rôle, Laurent</div>
+ <div class="next b3n"><h3>Présenter le cockpit à un family office ou à une famille, puis proposer le niveau 1 en pilote de 4 semaines.</h3>
+  <p>Niveau 1 = tout reste chez eux, rien ne passe en ligne. Pilote sans donnée réelle au départ, ils sortent quand ils veulent.</p>
+  <div class="cta"><a class="btn big" href="https://patrimoine-demo-h3v8n2p6.vercel.app" target="_blank" rel="noopener">Ouvrir le cockpit de démonstration</a></div></div>
+ <aside class="bil" hidden aria-hidden="true" data-bil><h3>Les billes d'Alexis</h3>
+  <h4>Arguments pour Laurent</h4><ul>
+  <li>Tu as insisté sur la sécurité : c'est l'argument central, et la page y répond.<small>Source : call du 05/11, 43:04 ; call du 09/11.</small></li>
+  <li>Vistafam ne détient aucun fonds ni clé de virement : au pire il voit un patrimoine, il ne peut rien déplacer.<small>Source : note Vistafam du 09/11, partie 3.</small></li>
+  <li>43 % des family offices ont été attaqués en 2 ans, 93 % par un faux mail.<small>Source : Deloitte, rapport 2024.</small></li>
+  <li>Déjà construit : le cockpit à tester, des captures réelles, trois niveaux au choix.<small>Source : cette page.</small></li>
+  <li>Tu as dit que tu en parlerais à ton family office.<small>Source : call du 05/11, 53:00.</small></li></ul>
+  <h4>Phrase d'accroche</h4><p class="hook">« Tu gardes la clé, Vistafam lit et met à jour chaque matin. »</p><p class="src">Source : page (à jour à 06:00, la famille garde la clé).</p>
+  <h4>Objections probables</h4><ul>
+  <li>« Vous n'êtes pas certifiés. » Réponse : pas d'engagement de certification maintenant ; on prouve avec un pilote, puis on prend des experts sécurité.<small>Source : call du 05/11, 40:36 à 48:01.</small></li>
+  <li>« Où est votre point faible ? » Réponse : nos fournisseurs, et on le dit d'avance (cas Bybit).<small>Source : note Vistafam du 09/11 ; cette page.</small></li></ul>
+  <h4>Sa part</h4><p>Sa part : à dire à l'oral, montant vu avec Clément avant le rendez-vous.</p><h4>La question qui fait parler</h4><p class="hook">« Quelle famille ou quel family office te vient en tête pour Vistafam ? »</p></aside>
+ <div class="gains"><div class="g"><b>06:00</b><span>patrimoine à jour chaque matin, sans y toucher.</span></div>
+  <div class="g"><b>0</b><span>fichier qui voyage, zéro mot de passe stocké.</span></div>
+  <div class="g"><b>3 niveaux</b><span>au choix : tu décides où vivent tes données.</span></div></div>
+</div></section>
+<section class="end" id="parler"><div class="wrap">
+ <div class="kick">Pour finir</div>
+ <h2>On en parle : <em>trois questions, une par business.</em></h2>
+ <div class="qs"><a class="s1" href="#voila" style="color:#0B0D12"><i>1</i><span><small>voilà</small>Quel artisan de ton entourage tu ferais tester voilà demain ?</span></a>
+  <a class="s2" href="#soa"><i>2</i><span><small>Street of Osaka</small>Quel directeur de magasin tu appellerais en premier pour le corner ?</span></a>
+  <a class="s3" href="#vistafam"><i>3</i><span><small>Vistafam</small>Quelle famille ou quel family office te vient en tête pour Vistafam ?</span></a></div>
+ <div class="sig">Clément et Alexis, AXEM</div>
+</div></section>
+</main>
+<footer>AXEM IA · préparé pour Laurent Boukobza · page privée, ne pas diffuser</footer>
+<script src="vendor/gsap.min.js"></script><script src="vendor/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+if(/[?&]alexis\b/.test(location.search)||location.hash==='#alexis'){document.documentElement.classList.add('alexis');[].slice.call(document.querySelectorAll('[data-bil]')).forEach(function(b){b.hidden=false;b.removeAttribute('aria-hidden')})}
+var rm=window.matchMedia('(prefers-reduced-motion: reduce)').matches;
+function $$(s){return [].slice.call(document.querySelectorAll(s))}
+/* une seule vidéo à la fois */
+var vids=$$('video');
+vids.forEach(function(v){v.addEventListener('play',function(){vids.forEach(function(o){if(o!==v&&!o.paused)o.pause()})})});
+/* vignettes SOA : on charge la vidéo choisie dans le lecteur */
+var sv=document.getElementById('soavid');
+$$('#thumbs button').forEach(function(b){b.addEventListener('click',function(){
+ $$('#thumbs button').forEach(function(x){x.classList.remove('on')});b.classList.add('on');
+ sv.pause();sv.poster=b.getAttribute('data-p');sv.src=b.getAttribute('data-v');sv.muted=true;var p=sv.play();if(p&&p.catch)p.catch(function(){});});});
+/* images agrandissables */
+var dlg=document.createElement('dialog');dlg.innerHTML='<img alt=""><button type="button">Fermer</button>';document.body.appendChild(dlg);
+dlg.addEventListener('click',function(){dlg.close()});
+$$('.zoom').forEach(function(z){z.addEventListener('click',function(){dlg.querySelector('img').src=z.getAttribute('data-big');dlg.showModal&&dlg.showModal();});});
+/* mouvement sobre */
+$$('.cnt').forEach(function(e){e.setAttribute('data-fin',e.textContent)});
+if(!window.gsap||rm)return;
+$$('.cnt').forEach(function(e){var to=parseFloat(e.getAttribute('data-to')),d=parseInt(e.getAttribute('data-dec')||'0',10),suf=e.getAttribute('data-suf')||'',o={v:0};
+ ScrollTrigger.create({trigger:e,start:'top 85%',once:true,onEnter:function(){gsap.to(o,{v:to,duration:1.8,ease:'expo.out',onUpdate:function(){e.textContent=o.v.toFixed(d).replace('.',',')+suf},onComplete:function(){e.textContent=e.getAttribute('data-fin')}})}});});
+$$('.fr.par img').forEach(function(i){gsap.fromTo(i,{yPercent:-5},{yPercent:5,ease:'none',scrollTrigger:{trigger:i.parentNode,start:'top bottom',end:'bottom top',scrub:true}})});
+$$('.fl').forEach(function(f,i){gsap.to(f,{y:-9,duration:2.6+i*.3,ease:'sine.inOut',yoyo:true,repeat:-1})});
+gsap.registerPlugin(ScrollTrigger);
+var E='expo.out';
+gsap.to('.prog',{scaleX:1,ease:'none',scrollTrigger:{trigger:document.body,start:'top top',end:'bottom bottom',scrub:true}});
+gsap.from('.hero h1',{y:36,opacity:0,duration:1.2,ease:E});
+gsap.from('.hero .door',{y:60,opacity:0,duration:1.2,ease:E,stagger:.12,delay:.15,clearProps:'transform,opacity'});
+gsap.utils.toArray('.band h2').forEach(function(h){gsap.fromTo(h,{y:40,opacity:.15},{y:0,opacity:1,ease:E,scrollTrigger:{trigger:h,start:'top 95%',end:'top 55%',scrub:true}});});
+gsap.utils.toArray('.row,.g,.arg,.lv,.shot,.ba,.next,.proof').forEach(function(el){gsap.fromTo(el,{y:46,opacity:.2},{y:0,opacity:1,ease:E,scrollTrigger:{trigger:el,start:'top 100%',end:'top 70%',scrub:true}});});
+gsap.utils.toArray('.band').forEach(function(b){gsap.fromTo(b,{backgroundPositionY:'0%'},{ease:'none',scrollTrigger:{trigger:b,start:'top bottom',end:'bottom top',scrub:true}});});
+})();
+</script></body></html>
