@@ -174,6 +174,8 @@ dialog button{position:fixed;right:20px;top:16px;font:inherit;font-weight:700;fo
 .next.b2n{--c:var(--sd)}.next.b3n{--c:var(--blue)}
 @media(max-width:980px){.row.site{grid-template-columns:1fr}.row.rowp .g{grid-template-columns:1fr;gap:4px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
+.vzrow{display:flex;gap:18px;margin-top:18px;align-items:flex-start}.fx{position:relative;padding-left:46px;min-width:0}.fx .zoom{border-radius:18px;overflow:hidden;background:#0b0d18;box-shadow:0 18px 50px -24px rgba(11,13,18,.5)}.fx img{display:block;width:100%;height:auto}.pin{position:absolute;left:0;transform:translateY(-50%);width:34px;height:34px;border-radius:50%;background:var(--blue);color:#fff;font-style:normal;font-weight:700;font-size:18px;display:grid;place-items:center;box-shadow:0 0 0 3px #fff,0 6px 14px -4px rgba(11,13,18,.5)}.gains.g4{grid-template-columns:.8fr .8fr 1.35fr 1.5fr;align-items:start}
+@media(max-width:980px){.vzrow{flex-direction:column}.fx{width:100%}.gains.g4{grid-template-columns:1fr 1fr}}
 </style></head><body>
 <div class="prog"></div>
 <header class="bar"><div class="wrap"><b>AXEM IA</b><nav><a href="#voila">1 · voilà</a><a href="#soa">2 · Street of Osaka</a><a href="#vistafam">3 · Vistafam</a><a href="#parler">On en parle</a></nav></div></header>
@@ -236,7 +238,7 @@ dialog button{position:fixed;right:20px;top:16px;font:inherit;font-weight:700;fo
 <div class="wrap">
  <div class="vn" style="--vn:var(--st)"><div class="v"><b>Le magasin</b>fournit les m².</div><div class="n2"><b>Street of Osaka</b>installe, cuisine, gère.</div></div>
  <div class="step">1 · Le corner fini</div>
- <div class="row"><div class="fr par"><span class="fl" style="right:16px;top:16px"><b class="cnt" data-to="5" data-suf=" jours">5 jours</b>au plus pour ouvrir</span><button class="zoom" type="button" data-big="soa/corner-2.jpg"><img data-par="1" src="soa/corner-2.jpg" alt="Corner Street of Osaka de 16,5 m², le format mis en avant" loading="lazy"></button></div>
+ <div class="row"><div class="fr par"><span class="fl" style="right:16px;top:16px"><b>2 à 5 jours</b>pour ouvrir</span><button class="zoom" type="button" data-big="soa/corner-2.jpg"><img data-par="1" src="soa/corner-2.jpg" alt="Corner Street of Osaka de 16,5 m², le format mis en avant" loading="lazy"></button></div>
   <div><span class="logobadge"><img class="logo" src="soa/soa-logo-blanc.png" alt="Street of Osaka"></span><h3>Le corner de 16,5 m², le format mis en avant.</h3><p>Sushi, wok, poké : un comptoir complet, décor japonais.</p></div></div>
  <div class="fmts">
   <button class="zoom" type="button" data-big="soa/corner-1.jpg"><img src="soa/corner-1.jpg" alt="Corner de 4 m²" loading="lazy"><span>4 m²</span></button>
@@ -247,7 +249,7 @@ dialog button{position:fixed;right:20px;top:16px;font:inherit;font-weight:700;fo
  <div class="gains g4"><div class="g"><b>0 €</b><span><strong>Zéro investissement</strong> pour le magasin.</span></div>
   <div class="g"><b>0</b><span><strong>Zéro salarié</strong> à ajouter : nous gérons.</span></div>
   <div class="g"><b>2 à 5 jours</b><span><strong>Ouvert en 2 à 5 jours,</strong> installation comprise.</span></div>
-  <div class="g"><b>Étude gratuite</b><span><strong>On calcule d'abord ce que le corner rapporterait</strong> dans ton magasin, sans engagement.</span></div></div>
+  <div class="g"><b>Étude gratuite</b><span><strong>On calcule d'abord</strong> ce que le corner rapporterait, sans engagement.</span></div></div>
  <div class="step">3 · Ton rôle, Laurent : proposer l'étude gratuite</div>
  <div class="next b2n"><div class="say"><b>Étude gratuite</b><span>On calcule ce que le corner rapporterait dans ce magasin. Sans engagement.</span></div><h3>Présenter le corner à un directeur de magasin, puis lui proposer cette étude.</h3>
   <p>Le corner fini ci-dessus et la page LinkedIn sont tes deux supports.</p>
@@ -273,12 +275,13 @@ dialog button{position:fixed;right:20px;top:16px;font:inherit;font-weight:700;fo
  <div class="vn"><div class="v"><b>Vous</b>gardez la clé et l'accord.</div><div class="n2"><b>Nous</b>lisons et mettons à jour chaque matin.</div></div>
  <div class="step" id="vz-demo">1 · L'application</div>
  <h3 style="margin-top:20px;font-size:clamp(28px,3vw,42px)">Le cockpit : tout le patrimoine en un écran.</h3><p style="margin-top:10px;color:var(--grey)">Démo avec des données fictives, prête à brancher sur les vrais comptes.</p>
- <div class="fr nopar" style="margin-top:18px"><span class="fl" style="right:16px;top:16px"><b>06:00</b>à jour chaque matin</span><button class="zoom" type="button" data-big="vz/z-hero-ann.jpg"><img src="vz/z-hero-ann.jpg" alt="Application Vistafam, premier écran : les banques arrivent chaque matin, repères 1 à 3" loading="lazy"></button></div>
- <ol class="leg legrow"><li><i>1</i>À jour chaque matin à 06:00.</li><li><i>2</i>Tes banques, en lecture seule : Vistafam voit les comptes, ne peut rien bouger.</li><li><i>3</i>Zéro mot de passe stocké.</li></ol>
+ <div class="vzrow"><div class="fx" style="flex:1.9"><i class="pin" style="top:30%">1</i><i class="pin" style="top:92%">3</i><button class="zoom" type="button" data-big="vz/z-hero.jpg"><img src="vz/z-hero-a.jpg" alt="Application Vistafam : le titre « à jour chaque matin à 06:00 » et la mention zéro mot de passe stocké" loading="lazy"></button></div>
+ <div class="fx" style="flex:1"><i class="pin" style="top:52%">2</i><button class="zoom" type="button" data-big="vz/z-hero.jpg"><img src="vz/z-hero-b.jpg" alt="Application Vistafam : les banques arrivent par Powens, Bridge ou en direct" loading="lazy"></button></div></div>
+ <ol class="leg legrow"><li><i>1</i>À jour chaque matin à 06:00.</li><li><i>2</i>Tes banques arrivent en lecture seule : Vistafam voit les comptes, ne peut rien bouger.</li><li><i>3</i>Zéro mot de passe stocké.</li></ol>
  <div class="cta"><a class="btn big" href="https://patrimoine-demo-h3v8n2p6.vercel.app" target="_blank" rel="noopener">Ouvrir le cockpit de démonstration</a></div>
  <h3 style="margin-top:44px">Le patrimoine net, la courbe, les sources.</h3>
- <div class="fr" style="margin-top:18px"><button class="zoom" type="button" data-big="vz/z-cockpit-ann.jpg"><img src="vz/z-cockpit-ann.jpg" alt="Application Vistafam, le patrimoine net et la courbe, repères 1 à 3" loading="lazy" style="aspect-ratio:1240/540;object-fit:cover;object-position:top"></button></div>
- <ol class="leg legrow"><li><i>1</i>Le patrimoine net de la famille, en un chiffre.</li><li><i>2</i>La courbe sur 24 mois : il monte, il baisse.</li><li><i>3</i>Chaque banque, avec son état et l'heure de mise à jour.</li></ol>
+ <div class="vzrow"><div class="fx" style="flex:1"><i class="pin" style="top:6%">3</i><i class="pin" style="top:27%">1</i><i class="pin" style="top:60%">2</i><button class="zoom" type="button" data-big="vz/z-cockpit.jpg"><img src="vz/z-cockpit-top.jpg" alt="Application Vistafam : le patrimoine net et sa courbe sur 12 mois" loading="lazy"></button></div></div>
+ <ol class="leg legrow"><li><i>1</i>Le patrimoine net de la famille, en un chiffre.</li><li><i>2</i>La courbe : il monte, il baisse, on choisit la période.</li><li><i>3</i>« À jour ce matin, 06:00 » : l'heure de la dernière mise à jour est toujours affichée.</li></ol>
  <p class="src" style="margin-top:12px">Captures réelles de la démo, cliquables pour agrandir.</p>
 </div>
 <div class="fearband"><div class="wrap">
