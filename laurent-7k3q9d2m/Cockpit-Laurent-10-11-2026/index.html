@@ -168,6 +168,11 @@ dialog button{position:fixed;right:20px;top:16px;font:inherit;font-weight:700;fo
 .bil ul{padding-left:20px;display:flex;flex-direction:column;gap:6px;font-size:17px}.bil li small{display:block;color:var(--grey);font-size:15px}
 .bil .hook{font-family:'Fraunces',serif;font-weight:900;font-size:22px;line-height:1.2}
 .qs{display:grid;gap:16px;margin-top:30px;text-align:left}.qs a{display:grid;grid-template-columns:64px 1fr;gap:18px;align-items:center;padding:24px 28px;border-radius:22px;text-decoration:none;color:#fff;font-family:'Fraunces',serif;font-weight:900;font-size:clamp(22px,2.4vw,32px);line-height:1.2;font-variation-settings:"SOFT" 100,"opsz" 144}.qs a i{font-style:normal;font-size:46px;opacity:.7}.qs small{display:block;font-family:'Instrument Sans',sans-serif;font-weight:700;font-size:15px;letter-spacing:.1em;text-transform:uppercase;opacity:.85;margin-bottom:4px}
+.row.site{grid-template-columns:1fr 1.2fr;align-items:center}.row.site h3{font-size:clamp(30px,3.2vw,44px)}.fr.nopar img{transform:none}
+.row.rowp .gains{grid-template-columns:1fr;gap:12px;margin-top:22px}.row.rowp .g{display:grid;grid-template-columns:170px 1fr;gap:16px;align-items:center;padding:14px 18px}.row.rowp .g b{font-size:clamp(30px,2.8vw,40px)}.row.rowp .g span{margin-top:0;font-size:18px}
+.say{margin:6px 0 4px;padding:20px 26px;border-radius:20px;background:#fff;border:2px solid var(--c,var(--blue))}.say b{display:block;font-family:'Fraunces',serif;font-weight:900;font-variation-settings:"SOFT" 100,"opsz" 144;font-size:clamp(40px,5.2vw,72px);line-height:1;letter-spacing:-.01em;color:var(--ink)}.say span{display:block;margin-top:10px;font-size:20px;line-height:1.35;color:var(--ink)}
+.next.b2n{--c:var(--sd)}.next.b3n{--c:var(--blue)}
+@media(max-width:980px){.row.site{grid-template-columns:1fr}.row.rowp .g{grid-template-columns:1fr;gap:4px}}
 @media(prefers-reduced-motion:reduce){*{transition:none!important}}
 </style></head><body>
 <div class="prog"></div>
@@ -182,10 +187,10 @@ dialog button{position:fixed;right:20px;top:16px;font:inherit;font-weight:700;fo
  <div class="bd"><h2><span class="n">1</span>voilà</h2><p>Pour les artisans : un devis dicté, signé et payé depuis le téléphone.</p>
  <div class="acc"><a class="btn big" href="../Etabli/v7-marques/voila/appli/index.html" target="_blank" rel="noopener">Tester l'appli comme un artisan</a><a class="btn g" href="voila/site/index.html" target="_blank" rel="noopener">Voir le site</a></div></div></article>
 <article class="door d2"><a class="th" href="#soa"><img src="soa/corner-2.jpg" alt="Un corner Street of Osaka de 16,5 m²"><span class="pl">Corner de 16,5 m²</span></a>
- <div class="bd"><h2><span class="n">2</span>Street of Osaka</h2><p>Pour les magasins : un corner de restauration japonaise, sans investissement.</p>
+ <div class="bd"><h2><span class="n">2</span>Street of Osaka</h2><p>Pour les magasins : un corner de restauration japonaise, sans investissement. On commence par une étude gratuite.</p>
  <div class="acc"><a class="btn big" href="#soa">Voir le corner fini</a><a class="btn g" href="https://www.linkedin.com/company/streetofosaka" target="_blank" rel="noopener">Page LinkedIn à montrer</a></div></div></article>
 <article class="door d3"><a class="th" href="#vistafam"><img src="vz/z-hero.jpg" alt="Application Vistafam, premier écran" style="object-position:left top"><span class="pl">Démo à tester</span></a>
- <div class="bd"><h2><span class="n">3</span>Vistafam</h2><p>Pour les family offices : le patrimoine à jour chaque matin, la famille garde la main.</p>
+ <div class="bd"><h2><span class="n">3</span>Vistafam</h2><p>Pour les family offices : le patrimoine à jour chaque matin, la famille garde la main. On commence par un pilote de 4 semaines.</p>
  <div class="acc"><a class="btn big" href="https://patrimoine-demo-h3v8n2p6.vercel.app" target="_blank" rel="noopener">Ouvrir le cockpit de démo</a><a class="btn g" href="#vistafam">Voir pourquoi c'est sûr</a></div></div></article></div>
 </div></section>
 
@@ -195,20 +200,19 @@ dialog button{position:fixed;right:20px;top:16px;font:inherit;font-weight:700;fo
 <div class="wrap">
  <div class="vn" style="--vn:var(--vt)"><div class="v"><b>Vous</b>dictez le devis, vous travaillez.</div><div class="n2"><b>Nous</b>facturons, relançons, encaissons.</div></div>
  <div class="step">1 · Le site</div>
- <div class="row rev"><div><h3>Le site qui vend l'appli.</h3><p>Huit métiers, du plombier au vitrier.</p>
+ <div class="row rev site"><div><h3>Le site qui vend l'appli.</h3><p>Huit métiers, du plombier au vitrier.</p>
    <div class="cta"><a class="btn big" href="voila/site/index.html" target="_blank" rel="noopener">Ouvrir le site vu par un artisan</a></div></div>
-  <a class="fr par" href="voila/site/index.html" target="_blank" rel="noopener" style="display:block"><span class="fl" style="left:16px;bottom:16px"><b>399,03 €</b>d'acompte reçu (exemple)</span><img data-par="1" src="img/v-metiers.jpg" alt="Le site voilà : huit métiers, du plombier au vitrier" loading="lazy"></a></div>
- <div class="step">2 · Tester</div>
+  <a class="fr nopar" href="voila/site/index.html" target="_blank" rel="noopener" style="display:block"><span class="fl" style="left:16px;bottom:16px"><b>399,03 €</b>d'acompte reçu (exemple)</span><img src="img/v-metiers.jpg" alt="Le site voilà : huit métiers, du plombier au vitrier" loading="lazy"></a></div>
+ <div class="step">2 · Tester, et voir ce que l'artisan gagne</div>
  <div class="row rowp"><div><h3>Touche l'appli, signe, vois l'acompte tomber.</h3><p>Démo avec un faux client. Devis et facture : de vrais PDF.</p>
-   <div class="cta"><a class="btn big" href="../Etabli/v7-marques/voila/appli/index.html" target="_blank" rel="noopener">Tester l'appli comme un artisan</a><a class="btn g" href="voila/devis.pdf" target="_blank" rel="noopener">Le devis</a><a class="btn g" href="voila/facture.pdf" target="_blank" rel="noopener">La facture</a></div></div>
+   <div class="cta"><a class="btn big" href="../Etabli/v7-marques/voila/appli/index.html" target="_blank" rel="noopener">Tester l'appli comme un artisan</a><a class="btn g" href="voila/devis.pdf" target="_blank" rel="noopener">Le devis</a><a class="btn g" href="voila/facture.pdf" target="_blank" rel="noopener">La facture</a></div>
+   <div class="gains"><div class="g"><b>399,03 €</b><span><strong>L'acompte est payé à 11 h 31,</strong> pour un devis dicté à 9 h 41.</span></div>
+    <div class="g"><b>1 h 45</b><span><strong>Le client signe 1 h 45</strong> après l'envoi du devis.</span></div>
+    <div class="g"><b>8 outils</b><span><strong>Un seul outil en remplace huit :</strong> banque, facturation, agenda, WhatsApp, réseaux, site.</span></div></div>
+   <p class="src" style="margin-top:10px">Exemple de démonstration, pas une mesure.</p></div>
   <div class="phone"><div class="scr"><iframe src="../Etabli/v7-marques/voila/appli/index.html" title="Appli voilà, démo" loading="lazy"></iframe></div></div></div>
- <div class="step">3 · Ce que l'artisan gagne</div>
- <div class="gains"><div class="g"><b>399,03 €</b><span><strong>L'acompte est payé à 11 h 31,</strong> pour un devis dicté à 9 h 41.</span></div>
-  <div class="g"><b>1 h 45</b><span><strong>Le client signe 1 h 45</strong> après l'envoi du devis.</span></div>
-  <div class="g"><b>8 outils</b><span><strong>Un seul outil en remplace huit :</strong> banque, facturation, agenda, WhatsApp, réseaux, site.</span></div></div>
- <p class="src" style="margin-top:10px">Exemple de démonstration, pas une mesure.</p>
  <div class="met"><figure><img src="voila/img/metier-plombier.jpg" alt="" loading="lazy"><figcaption>Plombier</figcaption></figure><figure><img src="voila/img/metier-electricien.jpg" alt="" loading="lazy"><figcaption>Électricien</figcaption></figure><figure><img src="voila/img/metier-peintre.jpg" alt="" loading="lazy"><figcaption>Peintre</figcaption></figure><figure><img src="voila/img/metier-serrurier.jpg" alt="" loading="lazy"><figcaption>Serrurier</figcaption></figure><figure><img src="voila/img/metier-macon.jpg" alt="" loading="lazy"><figcaption>Maçon</figcaption></figure><figure><img src="voila/img/metier-paysagiste.jpg" alt="" loading="lazy"><figcaption>Paysagiste</figcaption></figure><figure><img src="voila/img/metier-depanneur.jpg" alt="" loading="lazy"><figcaption>Dépanneur</figcaption></figure><figure><img src="voila/img/metier-vitres.jpg" alt="" loading="lazy"><figcaption>Vitrier</figcaption></figure></div>
- <div class="step">4 · Ton rôle, Laurent</div>
+ <div class="step">3 · Ton rôle, Laurent</div>
  <div class="next"><h3>Montrer l'appli sur ton téléphone à un artisan, lui faire dicter un vrai devis, puis lui laisser le lien.</h3>
   <p>Deux minutes, sans créer de compte.</p>
   <div class="cta"><a class="btn big" href="../Etabli/v7-marques/voila/appli/index.html" target="_blank" rel="noopener">Tester l'appli comme un artisan</a><a class="btn g" href="voila/site/index.html" target="_blank" rel="noopener">Ouvrir le site à lui montrer</a></div></div>
@@ -243,10 +247,10 @@ dialog button{position:fixed;right:20px;top:16px;font:inherit;font-weight:700;fo
  <div class="gains g4"><div class="g"><b>0 €</b><span><strong>Zéro investissement</strong> pour le magasin.</span></div>
   <div class="g"><b>0</b><span><strong>Zéro salarié</strong> à ajouter : nous gérons.</span></div>
   <div class="g"><b>2 à 5 jours</b><span><strong>Ouvert en 2 à 5 jours,</strong> installation comprise.</span></div>
-  <div class="g"><b>Garanti</b><span>Selon le magasin, <strong>un minimum de chiffre d'affaires peut être garanti.</strong></span></div></div>
- <div class="step">3 · Ton rôle, Laurent</div>
- <div class="next b2n"><h3>Présenter le corner à un directeur de magasin, puis lui proposer l'étude gratuite.</h3>
-  <p>Étude gratuite = on calcule ce que le corner rapporterait dans ce magasin, sans engagement. Le corner fini ci-dessus et la page LinkedIn sont tes deux supports.</p>
+  <div class="g"><b>Étude gratuite</b><span><strong>On calcule d'abord ce que le corner rapporterait</strong> dans ton magasin, sans engagement.</span></div></div>
+ <div class="step">3 · Ton rôle, Laurent : proposer l'étude gratuite</div>
+ <div class="next b2n"><div class="say"><b>Étude gratuite</b><span>On calcule ce que le corner rapporterait dans ce magasin. Sans engagement.</span></div><h3>Présenter le corner à un directeur de magasin, puis lui proposer cette étude.</h3>
+  <p>Le corner fini ci-dessus et la page LinkedIn sont tes deux supports.</p>
   <div class="cta"><a class="btn big" href="#soa">Montrer le corner fini</a><a class="btn g" href="https://www.linkedin.com/company/streetofosaka" target="_blank" rel="noopener">Montrer la page LinkedIn du concept</a></div></div>
  <aside class="bil" hidden aria-hidden="true" data-bil><h3>Les billes d'Alexis</h3>
   <h4>Arguments pour Laurent</h4><ul>
@@ -268,10 +272,10 @@ dialog button{position:fixed;right:20px;top:16px;font:inherit;font-weight:700;fo
 <div class="wrap">
  <div class="vn"><div class="v"><b>Vous</b>gardez la clé et l'accord.</div><div class="n2"><b>Nous</b>lisons et mettons à jour chaque matin.</div></div>
  <div class="step" id="vz-demo">1 · L'application</div>
- <div class="row rev" style="margin-top:20px"><div><h3>Le cockpit : tout le patrimoine en un écran.</h3><p>Démo avec des données fictives, prête à brancher sur les vrais comptes.</p>
-   <ol class="leg"><li><i>1</i>À jour chaque matin à 06:00.</li><li><i>2</i>Tes banques, en lecture seule : Vistafam voit les comptes, ne peut rien bouger.</li><li><i>3</i>Zéro mot de passe stocké.</li></ol>
-   <div class="cta"><a class="btn big" href="https://patrimoine-demo-h3v8n2p6.vercel.app" target="_blank" rel="noopener">Ouvrir le cockpit de démonstration</a></div></div>
-  <div class="fr par"><span class="fl" style="right:16px;top:16px"><b>06:00</b>à jour chaque matin</span><button class="zoom" type="button" data-big="vz/z-hero-ann.jpg"><img data-par="1" src="vz/z-hero-ann.jpg" alt="Application Vistafam, premier écran, repères 1 à 3" loading="lazy"></button></div></div>
+ <h3 style="margin-top:20px;font-size:clamp(28px,3vw,42px)">Le cockpit : tout le patrimoine en un écran.</h3><p style="margin-top:10px;color:var(--grey)">Démo avec des données fictives, prête à brancher sur les vrais comptes.</p>
+ <div class="fr nopar" style="margin-top:18px"><span class="fl" style="right:16px;top:16px"><b>06:00</b>à jour chaque matin</span><button class="zoom" type="button" data-big="vz/z-hero-ann.jpg"><img src="vz/z-hero-ann.jpg" alt="Application Vistafam, premier écran : les banques arrivent chaque matin, repères 1 à 3" loading="lazy"></button></div>
+ <ol class="leg legrow"><li><i>1</i>À jour chaque matin à 06:00.</li><li><i>2</i>Tes banques, en lecture seule : Vistafam voit les comptes, ne peut rien bouger.</li><li><i>3</i>Zéro mot de passe stocké.</li></ol>
+ <div class="cta"><a class="btn big" href="https://patrimoine-demo-h3v8n2p6.vercel.app" target="_blank" rel="noopener">Ouvrir le cockpit de démonstration</a></div>
  <h3 style="margin-top:44px">Le patrimoine net, la courbe, les sources.</h3>
  <div class="fr" style="margin-top:18px"><button class="zoom" type="button" data-big="vz/z-cockpit-ann.jpg"><img src="vz/z-cockpit-ann.jpg" alt="Application Vistafam, le patrimoine net et la courbe, repères 1 à 3" loading="lazy" style="aspect-ratio:1240/540;object-fit:cover;object-position:top"></button></div>
  <ol class="leg legrow"><li><i>1</i>Le patrimoine net de la famille, en un chiffre.</li><li><i>2</i>La courbe sur 24 mois : il monte, il baisse.</li><li><i>3</i>Chaque banque, avec son état et l'heure de mise à jour.</li></ol>
@@ -297,9 +301,8 @@ dialog button{position:fixed;right:20px;top:16px;font:inherit;font-weight:700;fo
   <div class="lr"><b>3</b><div><h3>Niveau 3 : Vistafam en ligne</h3><p>Plateforme en ligne, données verrouillées par une clé, hébergeur français. Tes identifiants bancaires ne passent jamais chez nous.</p></div></div></div>
  <p class="gl">Les niveaux = l'endroit où vivent les données : chez toi (1), sur un serveur privé en France (2), sur la plateforme Vistafam (3). Serveur hébergé en France, au niveau exigé par l'État.</p>
 
- <div class="step">4 · Ton rôle, Laurent</div>
- <div class="next b3n"><h3>Présenter le cockpit à un family office ou à une famille, puis proposer le niveau 1 en pilote de 4 semaines.</h3>
-  <p>Niveau 1 = tout reste chez eux, rien ne passe en ligne. Pilote sans donnée réelle au départ, ils sortent quand ils veulent.</p>
+ <div class="step">4 · Ton rôle, Laurent : proposer le pilote de 4 semaines</div>
+ <div class="next b3n"><div class="say"><b>Pilote de 4 semaines</b><span>Niveau 1 : tout reste chez eux, rien ne passe en ligne. Sans donnée réelle au départ, ils sortent quand ils veulent.</span></div><h3>Présenter le cockpit à un family office ou à une famille, puis leur proposer ce pilote.</h3>
   <div class="cta"><a class="btn big" href="https://patrimoine-demo-h3v8n2p6.vercel.app" target="_blank" rel="noopener">Ouvrir le cockpit de démonstration</a></div></div>
  <aside class="bil" hidden aria-hidden="true" data-bil><h3>Les billes d'Alexis</h3>
   <h4>Arguments pour Laurent</h4><ul>
