@@ -1,0 +1,620 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta name="robots" content="noindex, nofollow">
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width,initial-scale=1">
+<title>voilà</title>
+<style>
+@font-face{font-family:"Bricolage";src:url(../polices/bricolage.woff2) format("woff2");font-weight:200 800;font-display:block}
+@font-face{font-family:"Figtree";src:url(../polices/figtree.woff2) format("woff2");font-weight:300 900;font-display:block}
+:root{--v:#FF4A26;--dh:min(88vh,860px)}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:var(--v);overflow-x:hidden}
+html{scroll-behavior:auto}
+body{font-family:"Figtree",-apple-system,sans-serif;color:#fff;min-height:100vh;background:var(--v)}
+button{font:inherit;border:0;background:none;color:inherit;cursor:pointer}
+.page{position:relative;height:900px;overflow:hidden;background:var(--v)}
+.hero{position:absolute;left:0;right:0;top:0;height:690px;overflow:hidden;border-radius:0 0 60px 60px;background:#2b2b2b}
+.stage{position:absolute;inset:0;z-index:1}
+.stage .ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;object-position:var(--p,50% 50%);transform:scale(var(--z,1)) scaleX(var(--f,1));transform-origin:var(--o,100% 50%);clip-path:circle(0px at 58% 45%)}
+.plate{position:absolute;inset:0;z-index:3;pointer-events:none}
+.plate>*{pointer-events:auto}
+.logo{position:absolute;left:56px;top:40px;width:140px;aspect-ratio:1000/450;z-index:1}
+.logo:before{content:"";position:absolute;inset:-12px -18px -10px -18px;background:var(--v);border-radius:24px;z-index:-1}
+.logo img{position:absolute;inset:0;width:100%;height:100%}
+h1{position:absolute;left:40px;top:122px;font-family:"Bricolage",sans-serif;font-weight:800;font-size:58px;line-height:1;letter-spacing:0;font-optical-sizing:auto;font-variation-settings:"opsz" 96}
+h1 .l{display:block;width:max-content;overflow:hidden;margin-bottom:6px;border-radius:16px}
+h1 .i{display:block;will-change:transform;background:var(--v);padding:0 .16em .09em;line-height:.95;border-radius:16px}
+h1 .m{display:none}
+.p{position:absolute;left:40px;top:532px;width:max-content;max-width:560px;background:#fff;color:var(--v);padding:12px 20px 13px;border-radius:22px;font-size:20px;line-height:1.25;font-weight:700;letter-spacing:-.01em}
+.btn{position:absolute;left:40px;top:610px;display:inline-flex;align-items:center;height:60px;padding:0 34px;border-radius:30px;background:var(--v);color:#fff;font-weight:800;font-size:21px;letter-spacing:-.02em;text-decoration:none;transition:background .4s cubic-bezier(.16,1,.3,1),transform .4s cubic-bezier(.16,1,.3,1)}
+.btn:hover{background:#E63B18;transform:scale(1.04)}
+.phone{position:absolute;left:1138px;top:118px;width:272px;z-index:4;filter:drop-shadow(0 22px 30px rgba(0,0,0,.4))}
+.phone img{display:block;width:100%;height:auto}
+.notifs{position:absolute;left:810px;top:24px;width:310px;z-index:5;display:flex;flex-direction:column;gap:8px}
+.notifs .n{width:310px}
+.strip{position:absolute;left:0;right:0;top:704px;height:190px;padding:0 40px}
+.track{display:grid;grid-template-columns:repeat(8,1fr);gap:14px;align-items:end;height:100%}
+.tile{position:relative;height:188px;border-radius:40px;overflow:hidden;background:#d93a1a}
+.tile:nth-child(even){height:158px}
+.tile img{width:100%;height:100%;object-fit:cover;display:block}
+.tile em{position:absolute;left:12px;bottom:12px;white-space:nowrap;font-style:normal;background:var(--v);color:#fff;font-weight:800;font-size:15px;letter-spacing:-.01em;padding:5px 12px;border-radius:20px}
+/* ===== sections au défilement ===== */
+.sec{position:relative;min-height:100vh;overflow:hidden;background:var(--v);color:#fff}
+.sec.w{background:#fff;color:var(--v)}
+.sec .txt{position:absolute;left:5.5vw;top:50%;width:39vw;transform:translateY(-50%);z-index:3}
+.sec .txt.r{left:auto;right:5.5vw;width:36vw}
+.k{display:inline-block;font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:#fff;color:var(--v);padding:7px 16px;border-radius:20px}
+.w .k{background:var(--v);color:#fff}
+.sec h2{font-family:"Bricolage",sans-serif;font-weight:800;font-size:clamp(52px,6vw,96px);line-height:.95;margin:22px 0 20px;letter-spacing:0}
+.sec h2 .l2{display:block;padding-bottom:.06em}
+.lead{font-size:24px;font-weight:600;max-width:500px;line-height:1.3;letter-spacing:-.01em}
+.lnk{display:inline-flex;align-items:center;height:56px;padding:0 30px;border-radius:28px;background:var(--v);color:#fff;font-weight:800;font-size:18px;text-decoration:none;letter-spacing:-.01em;transition:transform .4s cubic-bezier(.16,1,.3,1),background .4s cubic-bezier(.16,1,.3,1)}
+.lnk:hover{transform:scale(1.04)}
+.lnk.o{background:#fff;color:var(--v);box-shadow:inset 0 0 0 2.5px var(--v)}
+.v .lnk,.sec:not(.w) .lnk{background:#fff;color:var(--v)}
+.sec:not(.w) .lnk.o{background:transparent;color:#fff;box-shadow:inset 0 0 0 2.5px #fff}
+.dev{position:absolute;right:9vw;top:calc(50% - var(--dh)/2);height:var(--dh);aspect-ratio:1350/2760;z-index:5;filter:drop-shadow(0 30px 40px rgba(90,10,0,.35))}
+.w .dev{filter:drop-shadow(0 30px 40px rgba(0,0,0,.28))}
+.dev .scr{left:5.333%;top:2.5%}
+.dev .fr{position:absolute;inset:0;width:100%;height:100%;z-index:6;pointer-events:none}
+.dev .s{opacity:1}
+#dev2 .s[data-s="2"]{opacity:0}
+/* roue des outils */
+.wh{position:absolute;right:5vw;top:50%;transform:translateY(-50%);width:min(80vh,700px);aspect-ratio:1}
+.wh svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.wh .b{stroke:rgba(255,74,38,.16);stroke-width:3;stroke-linecap:round;fill:none;vector-effect:non-scaling-stroke}
+.wh .l{stroke:var(--v);stroke-width:4;stroke-linecap:round;fill:none;vector-effect:non-scaling-stroke}
+.wn{position:absolute;width:22%;height:12.5%;transform:translate(-50%,-50%);border-radius:26px;background:#fff;box-shadow:0 12px 30px rgba(255,74,38,.2),0 0 0 2.5px rgba(255,74,38,.16);display:flex;align-items:center;justify-content:center;gap:9px;color:#1b1b1f;font-weight:800;font-size:clamp(12px,1.05vw,16px);letter-spacing:-.01em;line-height:1.1;z-index:2;padding:0 8px;text-align:left}
+.wn img{display:block;max-width:74%;max-height:42%}
+.wn img.ic2{width:clamp(26px,2.9vw,44px);max-width:none;max-height:none;height:auto;flex:none}
+.wn svg{width:clamp(26px,2.9vw,42px);height:auto;flex:none;position:static;overflow:visible}
+.wn.on{box-shadow:0 12px 30px rgba(255,74,38,.3),0 0 0 3.5px var(--v)}
+.wc{position:absolute;left:50%;top:50%;width:27%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:var(--v);display:grid;place-items:center;box-shadow:0 0 0 16px rgba(255,74,38,.12);z-index:3}
+.wc img{width:72%;display:block}
+/* boucle */
+.lp{position:absolute;left:5vw;top:50%;transform:translateY(-50%);width:min(80vh,700px);aspect-ratio:1}
+.lp svg{position:absolute;inset:0;width:100%;height:100%;overflow:visible}
+.lp .b{stroke:rgba(255,255,255,.28);stroke-width:5;fill:none;vector-effect:non-scaling-stroke}
+.lp .l{stroke:#fff;stroke-width:6;fill:none;stroke-linecap:round;vector-effect:non-scaling-stroke}
+.st{position:absolute;transform:translate(-50%,-50%);padding:0 clamp(10px,1.2vw,20px) 0 8px;height:clamp(38px,4.6vw,66px);border-radius:40px;background:rgba(255,255,255,.2);color:#fff;font-weight:800;font-size:clamp(14px,1.45vw,23px);letter-spacing:-.01em;display:flex;align-items:center;gap:10px;white-space:nowrap;box-shadow:inset 0 0 0 2.5px rgba(255,255,255,.55);transition:background .45s cubic-bezier(.16,1,.3,1),color .45s cubic-bezier(.16,1,.3,1),transform .45s cubic-bezier(.16,1,.3,1);z-index:2}
+.st i{font-style:normal;display:grid;place-items:center;width:clamp(26px,3vw,44px);aspect-ratio:1;border-radius:50%;background:#fff;color:var(--v);font-size:clamp(13px,1.35vw,21px)}
+.st.on{background:#fff;color:var(--v);transform:translate(-50%,-50%) scale(1.08)}
+.st.on i{background:var(--v);color:#fff}
+.lc{position:absolute;left:50%;top:50%;transform:translate(-50%,-50%);width:30%;text-align:center;color:#fff;z-index:1}
+.lc img{width:100%;display:block}
+.lc b{display:block;font-size:clamp(14px,1.5vw,22px);margin-top:6px;font-weight:800}
+/* avant / après */
+.ab{padding:8vh 5vw 7vh}
+.ab .hd{margin-bottom:4vh;display:flex;justify-content:space-between;align-items:flex-end;gap:30px}
+.ab h2{margin:16px 0 0;font-size:clamp(46px,5.2vw,84px)}
+.ab .cards{display:grid;grid-template-columns:1.15fr 1fr;gap:22px;height:min(60vh,560px)}
+.cd{position:relative;border-radius:48px;overflow:hidden}
+.cd.av{background:#F1F1F3;color:#1b1b1f}
+.cd.ap{background:var(--v);color:#fff;display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center}
+.cd .tg2{position:absolute;left:24px;top:22px;font-size:15px;font-weight:800;letter-spacing:.08em;text-transform:uppercase;background:#1b1b1f;color:#fff;padding:7px 16px;border-radius:20px;z-index:3}
+.cd.ap .tg2{background:#fff;color:var(--v)}
+.cd .big2{position:absolute;right:28px;top:14px;font-family:"Bricolage",sans-serif;font-weight:800;font-size:88px;line-height:1;z-index:3}
+.chip{position:absolute;display:flex;align-items:center;gap:8px;height:54px;padding:0 18px 0 12px;background:#fff;border-radius:18px;box-shadow:0 8px 20px rgba(0,0,0,.14);font-weight:700;font-size:16px;white-space:nowrap}
+.chip img{height:26px;width:auto;max-width:74px;display:block}
+.chip em{font-style:normal}
+.cd.ap img.big{width:min(26vw,380px);display:block}
+.cd.ap p{font-size:26px;font-weight:700;margin-top:14px;max-width:420px;line-height:1.25}
+.cd.ap .big2{color:#fff}
+/* tableau de bord */
+.tdb{position:absolute;right:5vw;top:50%;transform:translateY(-50%);width:min(52vw,780px);border-radius:44px;background:#F6F6F8;color:#16161a;padding:30px 34px 28px;box-shadow:0 30px 60px rgba(0,0,0,.18),0 0 0 2px rgba(0,0,0,.04)}
+.tdb .top{display:flex;justify-content:space-between;align-items:center}
+.tdb .nm{font-weight:800;font-size:19px;display:flex;align-items:center;gap:10px}
+.tdb .nm img{width:34px;height:34px;border-radius:8px}
+.tdb .demo{font-size:13px;font-weight:800;letter-spacing:.06em;text-transform:uppercase;background:#16161a;color:#fff;border-radius:16px;padding:6px 13px}
+.tdb .lb{font-size:15px;font-weight:700;color:#6b6b74;margin-top:20px}
+.tdb .nb{font-family:"Bricolage",sans-serif;font-weight:800;font-size:clamp(54px,5.4vw,84px);line-height:1;letter-spacing:-.01em;color:#16161a;display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+.tdb .nb small{font-family:"Figtree",sans-serif;font-size:19px;font-weight:800;color:#12a150;letter-spacing:0}
+.tdb .chart{height:150px;margin:10px 0 16px}
+.tdb .chart svg{width:100%;height:100%;display:block;overflow:visible}
+.tdb .g4{display:grid;grid-template-columns:repeat(3,1fr);gap:12px}
+.tdb .t4{background:#fff;border-radius:24px;padding:16px 18px;box-shadow:0 0 0 1.5px rgba(0,0,0,.05)}
+.tdb .t4 span{display:block;font-size:14px;font-weight:700;color:#6b6b74}
+.tdb .t4 b{display:block;font-size:clamp(22px,2.2vw,32px);font-weight:800;letter-spacing:-.02em;margin-top:4px;white-space:nowrap}
+.tdb .t4 b i{font-style:normal;color:#f5a623}
+.tdb .ft{font-size:13px;font-weight:600;color:#6b6b74;margin-top:14px;display:flex;justify-content:space-between}
+/* signer */
+.ph3{position:absolute;left:3vw;top:6vh;bottom:6vh;width:56vw;border-radius:56px;overflow:hidden;background:#ddd}
+.ph3 img{width:100%;height:100%;object-fit:cover;object-position:60% 50%;display:block}
+.plates{position:absolute;left:6vw;bottom:12vh;z-index:4;width:36vw}
+.plates h2{font-size:clamp(40px,4.2vw,66px);margin:16px 0 0}
+.plates h2 .l2{width:max-content;margin-bottom:8px}
+.plates h2 .i{display:block;background:var(--v);color:#fff;padding:0 .18em .1em;border-radius:16px;line-height:.98}
+.plates .k{background:#fff;color:var(--v)}
+#dev3{right:auto;left:45vw;z-index:5}
+.nt{position:absolute;z-index:7;width:330px;right:2.5vw;top:34%}
+/* encaisser */
+.enc{display:flex;flex-direction:column;align-items:center;justify-content:center;text-align:center;padding:6vh 4vw}
+.enc h2{margin:14px 0 0;font-size:clamp(44px,5vw,78px)}
+.enc .num{font-family:"Bricolage",sans-serif;font-weight:800;font-size:min(19vw,32vh,300px);line-height:1;letter-spacing:-.01em;white-space:nowrap;margin-top:1vh}
+.enc .num small{font-size:.6em}
+.enc .sub2{font-size:24px;font-weight:700;margin-top:6px}
+.enc .nots{display:flex;gap:16px;margin-top:3vh;align-items:flex-start;justify-content:center}
+.enc .nots .n{width:380px}
+.enc .bar{display:flex;gap:14px;margin-top:3vh}
+.enc .bar div{background:rgba(255,255,255,.2);border-radius:26px;padding:12px 24px;box-shadow:inset 0 0 0 2.5px rgba(255,255,255,.55);text-align:left}
+.enc .bar span{display:block;font-size:14px;font-weight:700;opacity:.9}
+.enc .bar b{display:block;font-size:26px;font-weight:800;letter-spacing:-.02em}
+.enc .bar div.f{background:#fff;color:var(--v);box-shadow:none}
+/* métiers */
+.mt{height:auto;min-height:100vh;padding:56px 40px 40px}
+.mt .hd{display:flex;align-items:flex-end;justify-content:space-between;margin-bottom:28px}
+.mt h2{margin:14px 0 0;font-size:clamp(44px,5vw,76px)}
+.gr{display:grid;grid-template-columns:repeat(4,1fr);gap:14px}
+.gt{position:relative;height:calc((100vh - 210px)/2);min-height:300px;border-radius:40px;overflow:hidden;background:#eee;text-align:left}
+.gt img{width:100%;height:100%;object-fit:cover;display:block;transition:transform .7s cubic-bezier(.16,1,.3,1)}
+.gt:hover img{transform:scale(1.06)}
+.gt em{position:absolute;left:16px;bottom:16px;font-style:normal;background:var(--v);color:#fff;font-weight:800;font-size:19px;padding:7px 16px;border-radius:22px}
+.gt span{position:absolute;right:16px;bottom:16px;background:#fff;color:var(--v);font-weight:800;font-size:15px;padding:7px 14px;border-radius:22px;opacity:0;transform:translateY(8px);transition:opacity .4s cubic-bezier(.16,1,.3,1),transform .4s cubic-bezier(.16,1,.3,1)}
+.gt:hover span{opacity:1;transform:none}
+.md{position:fixed;inset:0;z-index:50;background:var(--v);color:#fff;display:none;align-items:center;justify-content:center;gap:6vw}
+.md.on{display:flex}
+.md .ph2{height:min(90vh,880px);filter:drop-shadow(0 30px 40px rgba(90,10,0,.4))}
+.md .info{width:min(38vw,520px)}
+.md h3{font-family:"Bricolage",sans-serif;font-weight:800;font-size:clamp(48px,5.4vw,84px);line-height:.95;margin:14px 0 6px}
+.md .o{font-size:22px;font-weight:600;margin-bottom:20px}
+.md .rw2{display:flex;justify-content:space-between;font-size:21px;font-weight:600;padding:11px 0;border-top:2px solid rgba(255,255,255,.45)}
+.md .rw2.t{font-size:30px;font-weight:800}
+.md .x{margin-top:26px;display:inline-flex;height:56px;align-items:center;padding:0 30px;border-radius:28px;background:#fff;color:var(--v);font-weight:800;font-size:19px}
+/* documents */
+.docs .txt{width:34vw}
+.dc{position:absolute;top:50%;width:24vw;transform:translateY(-50%)}
+.dc img{display:block;width:100%;border-radius:10px;box-shadow:0 24px 50px rgba(0,0,0,.28),0 0 0 1.5px rgba(0,0,0,.06)}
+.dc .cap2{font-weight:800;font-size:17px;margin:16px 0 10px;color:#1b1b1f}
+.dc .cap2 span{display:block;font-weight:600;font-size:15px;color:#6b6b74}
+.dc .bt2{display:flex;gap:10px;flex-wrap:wrap}
+.dc .lnk{height:46px;padding:0 20px;font-size:16px}
+#dcA{right:31vw}#dcB{right:5vw}
+/* installer */
+.inst{padding:7vh 4vw 6vh}
+.inst .hd{text-align:center;margin-bottom:3.5vh}
+.inst h2{margin:14px 0 8px;font-size:clamp(44px,4.8vw,76px)}
+.inst .lead{margin:0 auto;max-width:640px;font-size:21px}
+.two{display:grid;grid-template-columns:1fr 1fr;gap:22px;max-width:1360px;margin:0 auto}
+.opt{background:#fff;color:#1b1b1f;border-radius:44px;padding:30px 36px 28px}
+.opt h3{font-family:"Bricolage",sans-serif;font-weight:800;font-size:clamp(28px,2.6vw,40px);line-height:1;color:var(--v)}
+.opt .pr{font-family:"Bricolage",sans-serif;font-weight:800;font-size:clamp(54px,5vw,80px);line-height:1;color:var(--v);margin:8px 0 8px}
+.opt .pr small{font-size:.32em;font-family:"Figtree",sans-serif;color:#6b6b74;font-weight:700;margin-left:10px}
+.opt .r2{display:grid;grid-template-columns:128px 1fr;gap:14px;padding:11px 0;border-top:2px solid rgba(255,74,38,.18);font-size:17px;line-height:1.3;font-weight:600}
+.opt .r2 span{font-size:13px;font-weight:800;letter-spacing:.07em;text-transform:uppercase;color:var(--v);padding-top:3px}
+.src{max-width:1360px;margin:18px auto 0;font-size:14px;font-weight:600;opacity:.92;text-align:center}
+/* fin */
+.fin{display:grid;place-items:center;text-align:center;min-height:80vh}
+.fin img{width:min(46vw,520px);display:block;margin:0 auto 46px}
+.foot{background:var(--v);color:#fff;padding:34px 5vw;display:flex;justify-content:space-between;align-items:center;font-weight:700;font-size:16px;gap:20px}
+.foot img{height:40px}
+/* notifications iOS */
+.n{position:relative;width:330px;display:flex;gap:12px;align-items:flex-start;padding:12px 15px 13px 12px;border-radius:24px;background:rgba(246,246,248,.84);-webkit-backdrop-filter:blur(26px) saturate(1.8);backdrop-filter:blur(26px) saturate(1.8);color:#000;font-family:-apple-system,"SF Pro Text","Helvetica Neue",sans-serif;box-shadow:0 8px 30px rgba(0,0,0,.26),inset 0 0 0 .5px rgba(255,255,255,.6);text-align:left}
+.n .ic{flex:none;width:38px;height:38px;border-radius:9px;display:grid;place-items:center;background:#fff;overflow:hidden}
+.n .ic img{width:100%;height:100%;object-fit:contain}
+.n .ic.g img{width:26px;height:26px}
+.n b{display:block;font-size:15px;font-weight:600;line-height:20px;letter-spacing:-.01em;padding-right:64px;color:#000}
+.n span.t{display:block;font-size:15px;line-height:20px;color:rgba(0,0,0,.82);letter-spacing:-.01em;white-space:normal;font-weight:400}
+.n small{position:absolute;right:15px;top:12px;font-size:13px;color:rgba(0,0,0,.5);font-weight:400}
+.k.a,.k{white-space:nowrap}
+
+
+.scr{position:absolute;left:0;top:0;width:390px;height:844px;overflow:hidden;background:#F2F2F7;transform-origin:0 0;font-family:-apple-system,"SF Pro Text","Helvetica Neue",sans-serif;color:#000;-webkit-font-smoothing:antialiased;border-radius:60px;--g2:rgba(60,60,67,.6);--g3:rgba(60,60,67,.3);--sep:rgba(60,60,67,.18)}
+.scr *{box-sizing:border-box;margin:0;padding:0}
+.scr .s{position:absolute;inset:0;background:#F2F2F7;overflow:hidden}
+.scr .sb{position:absolute;left:0;right:0;top:0;height:54px;display:flex;justify-content:space-between;align-items:flex-end;padding:0 30px 10px 38px;font-size:17px;font-weight:600;letter-spacing:-.4px;z-index:9}
+.scr .sb .r{display:flex;gap:6px;align-items:center}
+.scr .sb svg{display:block}
+.scr .nav{position:absolute;top:54px;left:0;right:0;height:96px;padding:0 20px}
+.scr .nav .a{position:absolute;right:20px;top:2px;font-size:17px;color:#FF4A26;letter-spacing:-.4px}
+.scr .nav .d{position:absolute;left:20px;top:4px;font-size:15px;line-height:20px;color:var(--g2);letter-spacing:-.2px}
+.scr .nav h1{position:absolute;left:20px;top:34px;font-size:34px;line-height:41px;font-weight:700;letter-spacing:.4px}
+.scr .card{position:absolute;left:16px;right:16px;border-radius:20px;background:#fff;padding:16px}
+.scr .lab{font-size:13px;font-weight:700;letter-spacing:.04em;text-transform:uppercase;color:#FF4A26}
+.scr .big{font-size:22px;line-height:27px;font-weight:700;letter-spacing:-.4px;margin-top:6px}
+.scr .sub{font-size:15px;line-height:20px;color:var(--g2);letter-spacing:-.2px;margin-top:2px}
+.scr .bt{display:flex;align-items:center;justify-content:center;gap:10px;height:50px;border-radius:14px;background:#FF4A26;color:#fff;font-size:17px;font-weight:600;letter-spacing:-.4px;cursor:pointer;-webkit-user-select:none;user-select:none}
+.scr .bt.w{background:#fff;color:#FF4A26}
+.scr .bt img{width:24px;height:24px;object-fit:contain}
+.scr .bt img.wa{background:#fff;border-radius:50%;padding:1px;width:22px;height:22px}
+.scr .abs{position:absolute;left:16px;right:16px}
+.scr .tab{position:absolute;left:0;right:0;bottom:0;height:83px;background:rgba(249,249,249,.94);border-top:.5px solid rgba(60,60,67,.29);display:flex;padding:0 6px;z-index:8}
+.scr .tab div{flex:1;text-align:center;padding-top:12px;font-size:15px;font-weight:600;letter-spacing:-.08px;color:var(--g2);cursor:pointer}
+.scr .tab div.on{color:#FF4A26}
+.scr .tab div.on:after{content:"";display:block;width:24px;height:4px;border-radius:2px;background:#FF4A26;margin:6px auto 0}
+.scr .hb{position:absolute;bottom:8px;left:50%;margin-left:-67px;width:134px;height:5px;border-radius:3px;background:#000;z-index:10}
+.scr .hb.w{background:#fff}
+.scr .rw{display:flex;justify-content:space-between;align-items:center;height:44px;font-size:17px;letter-spacing:-.4px;position:relative}
+.scr .rw+.rw:before{content:"";position:absolute;left:0;right:0;top:0;height:.5px;background:var(--sep)}
+.scr .rw span{color:var(--g2);font-size:16px}
+.scr .rw b{font-weight:600;font-variant-numeric:tabular-nums;white-space:nowrap}
+.scr .dict{position:absolute;left:16px;right:16px;top:150px;height:236px;border-radius:20px;background:#fff;padding:16px 18px;overflow:hidden}
+.scr .dict .h{display:flex;align-items:center;justify-content:space-between}
+.scr .wave{display:flex;gap:3px;align-items:center;height:26px}
+.scr .wave i{display:block;width:3px;border-radius:2px;background:#FF4A26;height:8px}
+.scr .dict p{margin-top:14px;font-size:24px;line-height:31px;font-weight:600;letter-spacing:-.5px}
+.scr .dict p mark{background:none;color:#FF4A26}
+.scr .dict p .w{display:inline}
+.scr .chips{position:absolute;left:16px;right:16px;top:408px;display:flex;flex-wrap:wrap;gap:8px}
+.scr .chips span{background:#fff;border-radius:16px;padding:8px 14px;font-size:15px;font-weight:600;letter-spacing:-.2px}
+.scr .micg{position:absolute;left:50%;margin-left:-44px;top:560px;width:88px;height:88px;border-radius:50%;background:#FF4A26;cursor:pointer}
+.scr .micg img{position:absolute;width:58px;height:62px;left:15px;top:13px;object-fit:contain}
+.scr .micg+.mt{position:absolute;left:0;right:0;top:664px;text-align:center;font-size:15px;color:var(--g2)}
+.scr .cap{position:absolute;left:20px;top:150px;font-size:15px;line-height:20px;color:var(--g2);letter-spacing:-.2px}
+.scr .list{position:absolute;left:16px;right:16px;top:178px;border-radius:12px;background:#fff;overflow:hidden}
+.scr .row{display:flex;justify-content:space-between;align-items:center;padding:0 16px;height:56px;position:relative}
+.scr .row+.row:before{content:"";position:absolute;left:16px;right:0;top:0;height:.5px;background:var(--sep)}
+.scr .row div{min-width:0}
+.scr .row b{display:block;font-size:16px;font-weight:500;line-height:19px;letter-spacing:-.32px;white-space:nowrap;overflow:hidden;text-overflow:ellipsis}
+.scr .row s{display:block;text-decoration:none;font-size:15px;line-height:17px;color:var(--g2)}
+.scr .row em{font-style:normal;font-size:17px;letter-spacing:-.4px;font-variant-numeric:tabular-nums;margin-left:10px;white-space:nowrap}
+.scr .tot{position:absolute;left:16px;right:16px;top:476px;height:70px;display:flex;justify-content:space-between;align-items:center;padding:0 4px}
+.scr .tot .t{font-size:15px;color:var(--g2);line-height:20px}
+.scr .tot strong{white-space:nowrap;font-size:34px;line-height:40px;font-weight:700;letter-spacing:.4px;font-variant-numeric:tabular-nums}
+.scr .acc{position:absolute;left:16px;right:16px;top:556px;font-size:15px;color:var(--g2);padding:0 4px;line-height:20px}
+.scr .acc b{color:#000;font-weight:600}
+.scr .bub{background:#E7FFDB;border-radius:18px 18px 4px 18px;padding:12px 14px;font-size:16px;line-height:21px;letter-spacing:-.3px;margin-top:12px}
+.scr .pdf{display:flex;gap:12px;align-items:center;margin-top:12px;background:#F2F2F7;border-radius:12px;padding:10px}
+.scr .pdf img{width:62px;border-radius:4px;box-shadow:0 2px 8px rgba(0,0,0,.22);display:block}
+.scr .pdf b{display:block;font-size:15px;font-weight:600;letter-spacing:-.2px}
+.scr .pdf s{text-decoration:none;font-size:14px;color:var(--g2)}
+.scr .tl{margin-top:2px}
+.scr .tl .rw{height:42px}
+.scr .tl .rw i{display:inline-block;width:10px;height:10px;border-radius:50%;background:#FF4A26;margin-right:12px}
+.scr .tl .rw i.o{background:transparent;box-shadow:inset 0 0 0 2px var(--g3)}
+.scr .sig{height:120px;border-radius:14px;background:#fff;border:1.5px dashed var(--g3);display:grid;place-items:center;margin-top:12px;overflow:hidden}
+.scr .sig img{display:block;width:240px}
+.scr .dual .l0,.scr .dual .l1{position:absolute;inset:0}
+.scr .dual .l0{background:#fff;color:#FF4A26}
+.scr .dual .l1{background:#FF4A26;color:#fff;clip-path:circle(0px at 50% 44%)}
+.scr .dual .x{position:absolute;left:0;right:0;text-align:center}
+.scr .dual .am{top:250px;font-family:"Bricolage",sans-serif;font-weight:800;font-size:84px;line-height:1;letter-spacing:0;white-space:nowrap}
+.scr .dual .am small{font-size:56px}
+.scr .dual .t1{top:196px;font-size:21px;font-weight:700;letter-spacing:-.3px}
+.scr .dual .t2{top:372px;font-size:17px;line-height:24px;font-weight:600;padding:0 36px;letter-spacing:-.3px}
+.scr .dual .t3{top:470px;padding:0 24px}
+.scr .dual .t3 div{display:flex;justify-content:space-between;font-size:17px;font-weight:600;height:46px;align-items:center;border-top:1.5px solid rgba(255,255,255,.5)}
+.scr .dual .l0 .t3 div{border-color:rgba(255,74,38,.35)}
+.scr .tg{width:51px;height:31px;border-radius:16px;background:#FF4A26;position:relative;flex:none}
+.scr .tg:after{content:"";position:absolute;right:2px;top:2px;width:27px;height:27px;border-radius:50%;background:#fff;box-shadow:0 2px 4px rgba(0,0,0,.25)}
+.scr .msg{background:#F2F2F7;border-radius:14px;padding:12px 14px;font-size:16px;line-height:21px;letter-spacing:-.3px;margin-top:10px}
+.scr .cl{background:#fff}
+.scr .cl .hd{position:absolute;left:0;right:0;top:54px;padding:18px 24px 0}
+
+@media (max-width:900px){
+ .page{height:auto;padding-bottom:20px}
+ .hero{position:relative;height:640px;border-radius:0 0 36px 36px}
+ .logo{left:24px;top:26px;width:100px}
+ h1{left:12px;top:84px;font-size:min(11.8vw,46px)}
+ h1 .d{display:none}h1 .m{display:block}
+ h1 .l{margin-bottom:4px;border-radius:12px}h1 .i{border-radius:12px}
+ .p{left:12px;top:332px;max-width:300px;font-size:15px;padding:9px 14px 10px;border-radius:16px;white-space:normal}
+ .btn{left:12px;top:462px;height:52px;padding:0 26px;font-size:18px}
+ .stage .ph{object-position:var(--pm,50% 50%);transform:scale(var(--zm,1)) scaleX(var(--f,1));transform-origin:var(--om,70% 50%)}
+ .phone{display:none}
+ .notifs{left:16px !important;top:540px !important;width:358px;height:auto}
+ .notifs .n{width:358px}.n2,.n3{display:none}
+ .strip{position:relative;top:auto;height:auto;margin-top:18px;padding:0 16px}
+ .track{grid-template-columns:1fr 1fr;gap:10px;align-items:stretch}
+ .tile,.tile:nth-child(even){height:150px;border-radius:28px}
+ .sec{min-height:0;padding:60px 18px 52px}
+ .sec .txt,.sec .txt.r{position:relative;left:auto;right:auto;top:auto;width:auto;transform:none}
+ .sec h2{font-size:46px}
+ .lead{font-size:19px}
+ .dev{position:relative;right:auto;left:auto !important;top:auto;width:min(66vw,280px);height:auto;margin:30px auto 0}
+ .wh,.lp{position:relative;right:auto;left:auto;top:auto;transform:none;width:100%;margin:28px 0 0}
+ .wn{border-radius:16px;gap:5px;padding:0 4px;font-size:11px}
+ .wn img{max-width:80%}
+ .st{font-size:12px;height:34px;padding:0 9px 0 5px;gap:6px}
+ .st i{width:24px;font-size:12px}
+ .ab{padding:60px 16px 48px}
+ .ab .hd{flex-direction:column;align-items:flex-start}
+ .ab .cards{grid-template-columns:1fr;height:auto}
+ .cd.av{height:430px}.cd.ap{height:300px;padding:20px}
+ .cd .big2{font-size:60px}
+ .chip{height:44px;font-size:13px;padding:0 12px 0 8px}.chip img{height:20px}
+ .tdb{position:relative;right:auto;top:auto;transform:none;width:100%;margin-top:28px;padding:20px 18px;border-radius:30px}
+ .tdb .g4{grid-template-columns:1fr 1fr}
+ .tdb .t4 b{font-size:22px}
+ .ph3{position:relative;left:auto;top:auto;bottom:auto;width:100%;height:300px;border-radius:36px;margin-bottom:-10px}
+ .plates{position:relative;left:auto;bottom:auto;width:auto;margin-top:22px}
+ .plates h2{font-size:40px}
+ #dev3{left:auto}
+ .nt{position:relative;right:auto;top:auto;width:min(100%,330px);margin:20px auto 0}
+ .enc{padding:56px 14px}
+ .enc .num{font-size:21vw}
+ .enc .nots{flex-direction:column;align-items:center}.enc .nots .n{width:min(100%,360px)}
+ .enc .bar{flex-direction:column;width:100%}
+ .mt{padding:56px 16px}
+ .mt .hd{flex-direction:column;align-items:flex-start;gap:14px}
+ .gr{grid-template-columns:1fr 1fr;gap:10px}
+ .gt{height:210px;border-radius:28px}
+ .gt span{display:none}
+ .md{flex-direction:column;gap:10px;padding:16px;overflow:auto;justify-content:flex-start}
+ .md .ph2{height:46vh}.md .info{width:100%}.md h3{font-size:44px}
+ .dc{position:relative;right:auto !important;top:auto;width:100%;transform:none;margin-top:30px}
+ .docs .txt{width:auto}
+ .inst{padding:56px 16px 44px}
+ .two{grid-template-columns:1fr}
+ .opt{padding:24px 22px;border-radius:32px}
+ .opt .r2{grid-template-columns:1fr;gap:2px}
+ .fin{min-height:60vh}
+ .foot{flex-direction:column;align-items:flex-start;padding:26px 18px}
+}
+
+</style>
+</head>
+<body>
+<div class="page" id="page">
+ <div class="hero" id="hero">
+  <div class="plate">
+   <div class="logo" id="logo">
+    <img src="../img/mot-blanc-base.png" alt="voilà">
+    <img class="arc" src="../img/mot-blanc-arc1.png" alt=""><img class="arc" src="../img/mot-blanc-arc2.png" alt=""><img class="arc" src="../img/mot-blanc-arc3.png" alt="">
+   </div>
+   <h1 aria-label="Toute votre activité, dans votre poche."><span class="l d"><span class="i">Toute votre activité,</span></span><span class="l d"><span class="i">dans votre poche.</span></span><span class="l m"><span class="i">Toute votre</span></span><span class="l m"><span class="i">activité,</span></span><span class="l m"><span class="i">dans votre</span></span><span class="l m"><span class="i">poche.</span></span></h1>
+   <p class="p" id="p">voilà, l'appli tout-en-un des artisans : devis, signature, acompte, facture, compta et avis, au même endroit.</p>
+   <a class="btn" id="btn" href="../appli/index.html">Essayer l'appli</a>
+  </div>
+  <div class="stage" id="stage">
+   <img class="ph" src="../img/h8-plombier.jpg" alt="Plombier sous un évier" style="--p:50% 55%;--pm:60% 50%">
+   <img class="ph" src="../img/h8-electricien.jpg" alt="Électricien devant un tableau" style="--p:50% 40%;--pm:55% 50%">
+   <img class="ph" src="../img/h8-peintre.jpg" alt="Peintre en rappel sur une façade" style="--p:50% 50%;--f:-1;--o:50% 50%;--om:50% 50%;--pm:35% 50%">
+   <img class="ph" src="../img/h8-serrurier.jpg" alt="Serrurier à une porte" style="--p:50% 50%;--pm:100% 50%">
+   <img class="ph" src="../img/h8-macon.jpg" alt="Maçon qui monte un mur" style="--p:50% 50%;--pm:80% 50%">
+   <img class="ph" src="../img/h8-paysagiste.jpg" alt="Paysagiste qui plante" style="--p:50% 50%;--z:1.2;--o:0% 60%;--pm:50% 50%">
+   <img class="ph" src="../img/h8-depanneur.jpg" alt="Dépanneur sous le capot" style="--p:50% 45%;--pm:60% 50%">
+   <img class="ph" src="../img/h8-vitres.jpg" alt="Vitrier qui pose une vitre" style="--p:50% 45%;--pm:42% 50%">
+   <div class="phone" id="phone"><img src="../img/phone-plombier.png" alt="L'application voilà sur un iPhone, devis en cours"></div>
+   <div class="notifs" id="notifs">
+    <div class="n n1"><div class="ic"><img src="../img/icone.png" alt=""></div><div><b>voilà</b><span class="t">Acompte reçu : 120,84 €</span></div><small>maintenant</small></div>
+    <div class="n n2"><div class="ic g"><img src="../img/google-icon.svg" alt=""></div><div><b>Google Business</b><span class="t">Nouvel avis 5 étoiles sur votre fiche</span></div><small>il y a 2 min</small></div>
+    <div class="n n3"><div class="ic"><img src="../img/icone.png" alt=""></div><div><b>voilà</b><span class="t">M. Lefèvre a signé le devis D-2026-0140</span></div><small>il y a 6 min</small></div>
+   </div>
+  </div>
+ </div>
+ <div class="strip" id="strip"><div class="track" id="track">
+  <div class="tile"><img src="../img/metier-plombier.jpg" alt="Plombier" style="object-position:62% 50%"><em>Plombier</em></div><div class="tile"><img src="../img/metier-electricien.jpg" alt="Électricien" style="object-position:48% 50%"><em>Électricien</em></div><div class="tile"><img src="../img/metier-peintre.jpg" alt="Peintre" style="object-position:30% 60%"><em>Peintre</em></div><div class="tile"><img src="../img/metier-serrurier.jpg" alt="Serrurier" style="object-position:72% 40%"><em>Serrurier</em></div><div class="tile"><img src="../img/metier-macon.jpg" alt="Maçon" style="object-position:55% 50%"><em>Maçon</em></div><div class="tile"><img src="../img/metier-paysagiste.jpg" alt="Paysagiste" style="object-position:62% 40%"><em>Paysagiste</em></div><div class="tile"><img src="../img/metier-depanneur.jpg" alt="Dépanneur" style="object-position:45% 50%"><em>Dépanneur</em></div><div class="tile"><img src="../img/metier-vitres.jpg" alt="Vitrier" style="object-position:50% 35%"><em>Vitrier</em></div>
+ </div></div>
+</div>
+
+<section class="sec w" id="tout">
+ <div class="txt"><span class="k a">Tout-en-un</span><h2><span class="l2 a">Une seule appli.</span><span class="l2 a">Tous tes outils.</span></h2><p class="lead a">voilà se branche sur ce que tu utilises déjà et fait le lien entre eux. Tu ne jongles plus.</p></div>
+ <div class="wh" id="wh">
+  <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><line class="b" x1="50" y1="50" x2="50.00" y2="12.00"/><line class="l" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" x1="50" y1="50" x2="50.00" y2="12.00"/><line class="b" x1="50" y1="50" x2="76.87" y2="23.13"/><line class="l" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" x1="50" y1="50" x2="76.87" y2="23.13"/><line class="b" x1="50" y1="50" x2="88.00" y2="50.00"/><line class="l" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" x1="50" y1="50" x2="88.00" y2="50.00"/><line class="b" x1="50" y1="50" x2="76.87" y2="76.87"/><line class="l" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" x1="50" y1="50" x2="76.87" y2="76.87"/><line class="b" x1="50" y1="50" x2="50.00" y2="88.00"/><line class="l" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" x1="50" y1="50" x2="50.00" y2="88.00"/><line class="b" x1="50" y1="50" x2="23.13" y2="76.87"/><line class="l" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" x1="50" y1="50" x2="23.13" y2="76.87"/><line class="b" x1="50" y1="50" x2="12.00" y2="50.00"/><line class="l" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" x1="50" y1="50" x2="12.00" y2="50.00"/><line class="b" x1="50" y1="50" x2="23.13" y2="23.13"/><line class="l" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" x1="50" y1="50" x2="23.13" y2="23.13"/></svg>
+  <div class="wn" style="left:50.00%;top:12.00%"><img src="../img/qonto.svg" alt="Qonto"></div><div class="wn" style="left:76.87%;top:23.13%"><img src="../img/pennylane.svg" alt="Pennylane"></div><div class="wn" style="left:88.00%;top:50.00%"><img class="ic2" src="../img/whatsapp-icon.svg" alt=""><span>WhatsApp</span></div><div class="wn" style="left:76.87%;top:76.87%"><img class="ic2" src="../img/google-icon.svg" alt=""><span>Google My Business</span></div><div class="wn" style="left:50.00%;top:88.00%"><img class="ic2" src="../img/instagram.svg" alt=""><span>Instagram</span></div><div class="wn" style="left:23.13%;top:76.87%"><svg viewBox="0 0 48 48" fill="none" stroke="#FF4A26" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><circle cx="24" cy="24" r="19"/><ellipse cx="24" cy="24" rx="8" ry="19"/><path d="M5 24h38M8 14h32M8 34h32"/></svg><span>ton site</span></div><div class="wn" style="left:12.00%;top:50.00%"><svg viewBox="0 0 48 48" fill="none" stroke="#FF4A26" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><path d="M5 18L24 7l19 11zM9 40h30M10 22v14M19 22v14M29 22v14M38 22v14"/></svg><span>ta banque</span></div><div class="wn" style="left:23.13%;top:23.13%"><svg viewBox="0 0 48 48" fill="none" stroke="#FF4A26" stroke-width="3.2" stroke-linecap="round" stroke-linejoin="round"><rect x="6" y="9" width="36" height="32" rx="6"/><path d="M6 19h36M15 5v8M33 5v8"/><circle cx="17" cy="29" r="2" fill="#FF4A26"/><circle cx="24" cy="29" r="2" fill="#FF4A26"/><circle cx="31" cy="29" r="2" fill="#FF4A26"/></svg><span>ton agenda</span></div>
+  <div class="wc"><img src="../img/logo-voila-blanc.png" alt="voilà"></div>
+ </div>
+</section>
+
+<section class="sec" id="boucle">
+ <div class="lp" id="lp">
+  <svg viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><circle class="b" cx="50" cy="50" r="38"/><circle class="l" id="ring" cx="50" cy="50" r="38" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1" transform="rotate(-90 50 50)"/></svg>
+  <div class="st" style="left:50.00%;top:12.00%"><i>1</i>Demande</div><div class="st" style="left:76.87%;top:23.13%"><i>2</i>Devis</div><div class="st" style="left:88.00%;top:50.00%"><i>3</i>Signature</div><div class="st" style="left:76.87%;top:76.87%"><i>4</i>Acompte</div><div class="st" style="left:50.00%;top:88.00%"><i>5</i>Facture</div><div class="st" style="left:23.13%;top:76.87%"><i>6</i>Compta</div><div class="st" style="left:12.00%;top:50.00%"><i>7</i>Avis</div><div class="st" style="left:23.13%;top:23.13%"><i>8</i>Nouvelle demande</div>
+  <div class="lc"><img src="../img/logo-voila-blanc.png" alt="voilà"><b>tourne en boucle</b></div>
+ </div>
+ <div class="txt r"><span class="k a">La boucle du métier</span><h2><span class="l2 a">Une demande,</span><span class="l2 a">et tout suit.</span></h2><p class="lead a">Du premier message à l'avis Google, chaque étape déclenche la suivante. Et l'avis ramène la demande d'après.</p></div>
+</section>
+
+<section class="sec w ab" id="avant">
+ <div class="hd"><div><span class="k a">Avant, après</span><h2 class="a">9 applis éparpillées. Ou une.</h2></div><p class="lead a" style="max-width:380px">Tout ce que tu fais déjà, au même endroit, avec les mêmes chiffres.</p></div>
+ <div class="cards">
+  <div class="cd av a" id="av"><span class="tg2">Avant</span><span class="big2">9</span><div class="chip" style="left:8%;top:24%;transform:rotate(-6deg)"><img src="../img/whatsapp-icon.svg" alt=""><em>WhatsApp</em></div><div class="chip" style="left:40%;top:16%;transform:rotate(4deg)"><img src="../img/qonto.svg" alt=""></div><div class="chip" style="left:68%;top:28%;transform:rotate(-3deg)"><em>devis.docx</em></div><div class="chip" style="left:12%;top:46%;transform:rotate(5deg)"><img src="../img/pennylane.svg" alt=""></div><div class="chip" style="left:44%;top:42%;transform:rotate(-5deg)"><em>factures.xlsx</em></div><div class="chip" style="left:70%;top:56%;transform:rotate(4deg)"><img src="../img/google-icon.svg" alt=""><em>Mes avis</em></div><div class="chip" style="left:10%;top:70%;transform:rotate(-4deg)"><img src="../img/instagram.svg" alt=""><em>Instagram</em></div><div class="chip" style="left:40%;top:68%;transform:rotate(3deg)"><em>agenda papier</em></div><div class="chip" style="left:66%;top:80%;transform:rotate(-5deg)"><em>carnet de notes</em></div></div>
+  <div class="cd ap a"><span class="tg2">Après</span><span class="big2">1</span><img class="big" src="../img/logo-voila-blanc.png" alt="voilà"><p>Devis, signature, acompte, facture, compta, avis.</p></div>
+ </div>
+</section>
+
+<section class="sec" id="s2">
+ <div class="txt"><span class="k a">1 · Dicter</span><h2><span class="l2"><span class="a">Tu parles,</span></span><span class="l2"><span class="a">le devis</span></span><span class="l2"><span class="a">se fait.</span></span></h2><p class="lead a">Un geste parmi d'autres : tu sors de chez le client, tu dictes. Chaque ligne se construit toute seule, avec tes prix.</p></div>
+ <div class="dev" id="dev2"><div class="scr"><div class="s" data-s="1"><div class="sb"><span>9:41</span><span class="r"><svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#000"/><rect x="5" y="5.5" width="3" height="6.5" rx="1" fill="#000"/><rect x="10" y="3" width="3" height="9" rx="1" fill="#000"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#000"/></svg><svg width="27" height="13" viewBox="0 0 27 13"><rect x=".5" y=".5" width="22" height="12" rx="3.8" fill="none" stroke="#000" opacity=".4"/><rect x="2" y="2" width="19" height="9" rx="2.5" fill="#000"/></svg></span></div><div class="nav"><span class="a">Annuler</span><h1>Nouveau devis</h1></div>
+<div class="dict"><div class="h"><span class="lab">Je t'écoute</span><div class="wave"><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i><i></i></div></div><p class="tx">« Chez <mark>Mme Marchetti</mark>, <mark>serrure trois points</mark> A2P, <mark>blindage</mark> de la porte, <mark>trois heures et demie</mark> de pose. »</p></div>
+<div class="chips"><span>Mme Marchetti</span><span>Serrure 3 points A2P</span><span>Blindage de porte</span><span>3 h 30 de pose</span></div>
+<div class="micg" data-go="2"><img src="../img/sigle-blanc-base.png" alt=""><img class="ac" src="../img/sigle-blanc-arc1.png" alt=""><img class="ac" src="../img/sigle-blanc-arc2.png" alt=""><img class="ac" src="../img/sigle-blanc-arc3.png" alt=""></div><div class="mt">Touchez pour terminer</div><div class="tab"><div data-go="0">Aujourd'hui</div><div data-go="2" class=on>Devis</div><div data-go="4">Clients</div><div data-go="5">Argent</div></div><div class="hb"></div></div><div class="s" data-s="2"><div class="sb"><span>9:41</span><span class="r"><svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#000"/><rect x="5" y="5.5" width="3" height="6.5" rx="1" fill="#000"/><rect x="10" y="3" width="3" height="9" rx="1" fill="#000"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#000"/></svg><svg width="27" height="13" viewBox="0 0 27 13"><rect x=".5" y=".5" width="22" height="12" rx="3.8" fill="none" stroke="#000" opacity=".4"/><rect x="2" y="2" width="19" height="9" rx="2.5" fill="#000"/></svg></span></div><div class="nav"><span class="a">Modifier</span><h1>Devis</h1></div>
+<div class="cap">D-2026-0147 · Mme Hélène Marchetti</div><div class="list"><div class="row"><div><b>Dépose de l'ancienne serrure</b><s>1 forfait</s></div><em>45,00 €</em></div><div class="row"><div><b>Serrure 3 points A2P 2 étoiles</b><s>1 × 389,00 €</s></div><em>389,00 €</em></div><div class="row"><div><b>Blindage de porte</b><s>1 × 520,00 €</s></div><em>520,00 €</em></div><div class="row"><div><b>Main d'œuvre</b><s>3,5 h × 62,00 €</s></div><em>217,00 €</em></div><div class="row"><div><b>Déplacement</b><s>1 forfait</s></div><em>35,00 €</em></div></div>
+<div class="tot"><div class="t">Total HT 1 206,00 €<br>TVA 124,10 €</div><strong class="to">1 330,10 €</strong></div>
+<div class="acc">Acompte à la commande : <b>399,03 €</b> (30 %)</div>
+<div class="abs bt" data-go="3" style="top:636px"><img class="wa" src="../img/whatsapp-icon.svg" alt=""><span>Envoyer à Mme Marchetti</span></div><div class="tab"><div data-go="0">Aujourd'hui</div><div data-go="2" class=on>Devis</div><div data-go="4">Clients</div><div data-go="5">Argent</div></div><div class="hb"></div></div></div><img class="fr" src="../img/cadre-iphone-17-noir.png" alt=""></div>
+</section>
+
+<section class="sec w" id="s3">
+ <div class="ph3"><img src="../img/h8-serrurier.jpg" alt="Serrurier devant une porte"></div>
+ <div class="plates"><span class="k a">2 · Signer</span><h2><span class="l2 a"><span class="i">Le client signe</span></span><span class="l2 a"><span class="i">sur son téléphone.</span></span></h2></div>
+ <div class="dev" id="dev3"><div class="scr"><div class="s" data-s="8"><div class="sb"><span>11:26</span><span class="r"><svg width="18" height="12" viewBox="0 0 18 12"><rect x="0" y="8" width="3" height="4" rx="1" fill="#000"/><rect x="5" y="5.5" width="3" height="6.5" rx="1" fill="#000"/><rect x="10" y="3" width="3" height="9" rx="1" fill="#000"/><rect x="15" y="0" width="3" height="12" rx="1" fill="#000"/></svg><svg width="27" height="13" viewBox="0 0 27 13"><rect x=".5" y=".5" width="22" height="12" rx="3.8" fill="none" stroke="#000" opacity=".4"/><rect x="2" y="2" width="19" height="9" rx="2.5" fill="#000"/></svg></span></div><div class="cl" style="position:absolute;inset:0"><div class="hd"><img src="../img/logo-voila.png" style="width:96px;display:block" alt=""><div class="lab" style="margin-top:26px">Serrurerie Delmas vous écrit</div><div class="big" style="font-size:28px;line-height:33px">Devis D-2026-0147</div><div class="sub">Remplacement d'une serrure 3 points et blindage de porte</div><div class="big" style="font-size:48px;line-height:54px;margin-top:20px;font-variant-numeric:tabular-nums">1 330,10 €</div><div class="sub">TTC · acompte de 30 % à la signature : 399,03 €</div></div>
+<div class="abs" style="top:410px"><div class="sub" style="color:#000;font-weight:600">Signez ici</div><div class="sig" style="height:190px"><img class="sg" src="../img/signature.png" alt=""></div><div class="sub" style="margin-top:14px">Bon pour accord, le 09/11/2026. En signant, vous acceptez le devis et l'acompte de 30 %.</div></div>
+<div class="abs bt cs" style="top:700px"><span>Signer le devis</span></div></div></div></div><img class="fr" src="../img/cadre-iphone-17-noir.png" alt=""></div>
+ <div class="nt" id="nt3"><div class="n "><div class="ic"><img src="../img/icone.png" alt=""></div><div><b>voilà</b><span class="t">Mme Marchetti a signé le devis D-2026-0147</span></div><small>maintenant</small></div></div>
+</section>
+
+<section class="sec enc" id="s4">
+ <span class="k a">3 · Encaisser</span><h2 class="a">L'acompte tombe.</h2>
+ <div class="num a"><span id="cnt">399,03</span><small> €</small></div>
+ <div class="sub2 a">Acompte de Mme Marchetti, 30 % du devis D-2026-0147</div>
+ <div class="nots"><div class="n "><div class="ic"><img src="../img/icone.png" alt=""></div><div><b>voilà</b><span class="t">Mme Marchetti a signé le devis D-2026-0147</span></div><small>11 h 26</small></div><div class="n "><div class="ic"><img src="../img/icone.png" alt=""></div><div><b>voilà</b><span class="t">Acompte reçu : 399,03 €</span></div><small>maintenant</small></div></div>
+ <div class="bar a"><div><span>Devis signé</span><b>1 330,10 €</b></div><div class="f"><span>Acompte reçu</span><b>399,03 €</b></div><div><span>Reste à payer</span><b>931,07 €</b></div></div>
+</section>
+
+<section class="sec w" id="tdb">
+ <div class="txt"><span class="k a">Ton tableau de bord</span><h2><span class="l2 a">Ton argent,</span><span class="l2 a">d'un coup d'œil.</span></h2><p class="lead a">Ce qui est rentré, ce qui reste à rentrer, les devis en cours et ta note Google. Sans rien saisir.</p></div>
+ <div class="tdb a" id="tdbc">
+  <div class="top"><div class="nm"><img src="../img/icone.png" alt="">Serrurerie Delmas</div><span class="demo">Données de démo</span></div>
+  <div class="lb">Encaissé en novembre</div>
+  <div class="nb"><span id="cnt2">4 862,40 €</span><small>+ 12,4 % sur octobre</small></div>
+  <div class="chart"><svg viewBox="0 0 600 150" preserveAspectRatio="none"><path d="M0 150 L0 112 C40 108 70 118 105 96 C140 74 170 98 210 84 C250 70 275 40 320 52 C360 62 385 88 425 58 C470 24 505 36 545 18 L600 8 L600 150 Z" fill="rgba(255,74,38,.12)"/><path id="cpath" d="M0 112 C40 108 70 118 105 96 C140 74 170 98 210 84 C250 70 275 40 320 52 C360 62 385 88 425 58 C470 24 505 36 545 18 L600 8" fill="none" stroke="#FF4A26" stroke-width="5" stroke-linecap="round" vector-effect="non-scaling-stroke" pathLength="1" stroke-dasharray="1" stroke-dashoffset="1"/></svg></div>
+  <div class="g4"><div class="t4"><span>À encaisser</span><b>2 341,07 €</b></div><div class="t4"><span>Devis en cours</span><b>4 · 6 120 €</b></div><div class="t4"><span>Note Google</span><b>4,8 <i>★</i></b></div></div>
+  <div class="ft"><span>Facture F-2026-0147 · Mme Marchetti · 931,07 € à encaisser</span><span>Banque rapprochée</span></div>
+ </div>
+</section>
+
+<section class="sec mt" id="s5">
+ <div class="hd"><div><span class="k a">4 · Pour tous les métiers</span><h2 class="a">Du plombier au vitrier.</h2></div><p class="lead a" style="max-width:360px">Touche un métier : son devis s'ouvre.</p></div>
+ <div class="gr" id="gr"><button class="gt" data-k="plombier"><img src="../img/metier-plombier.jpg" alt="Plombier" style="object-position:62% 50%"><em>Plombier</em><span>Voir le devis</span></button><button class="gt" data-k="electricien"><img src="../img/metier-electricien.jpg" alt="Électricien" style="object-position:48% 50%"><em>Électricien</em><span>Voir le devis</span></button><button class="gt" data-k="peintre"><img src="../img/metier-peintre.jpg" alt="Peintre" style="object-position:30% 60%"><em>Peintre</em><span>Voir le devis</span></button><button class="gt" data-k="serrurier"><img src="../img/metier-serrurier.jpg" alt="Serrurier" style="object-position:72% 40%"><em>Serrurier</em><span>Voir le devis</span></button><button class="gt" data-k="macon"><img src="../img/metier-macon.jpg" alt="Maçon" style="object-position:55% 50%"><em>Maçon</em><span>Voir le devis</span></button><button class="gt" data-k="paysagiste"><img src="../img/metier-paysagiste.jpg" alt="Paysagiste" style="object-position:62% 40%"><em>Paysagiste</em><span>Voir le devis</span></button><button class="gt" data-k="depanneur"><img src="../img/metier-depanneur.jpg" alt="Dépanneur" style="object-position:45% 50%"><em>Dépanneur</em><span>Voir le devis</span></button><button class="gt" data-k="vitres"><img src="../img/metier-vitres.jpg" alt="Vitrier" style="object-position:50% 35%"><em>Vitrier</em><span>Voir le devis</span></button></div>
+</section>
+
+<section class="sec w docs" id="docs">
+ <div class="txt"><span class="k a">De vrais documents</span><h2><span class="l2 a">Ouvre-les.</span><span class="l2 a">Télécharge.</span></h2><p class="lead a">Le devis et la facture sont de vrais PDF, aux mentions légales, que ton client garde.</p></div>
+ <div class="dc a" id="dcA"><img src="../img/devis-apercu.jpg" alt="Devis D-2026-0147"><div class="cap2">devis.pdf<span>D-2026-0147 · 1 330,10 € TTC</span></div><div class="bt2"><a class="lnk" href="../devis.pdf" target="_blank" rel="noopener">Ouvrir</a><a class="lnk o" href="../devis.pdf" download="devis-D-2026-0147.pdf">Télécharger</a></div></div>
+ <div class="dc a" id="dcB"><img src="../img/facture-apercu.jpg" alt="Facture F-2026-0147"><div class="cap2">facture.pdf<span>F-2026-0147 · reste à payer 931,07 €</span></div><div class="bt2"><a class="lnk" href="../facture.pdf" target="_blank" rel="noopener">Ouvrir</a><a class="lnk o" href="../facture.pdf" download="facture-F-2026-0147.pdf">Télécharger</a></div></div>
+</section>
+
+<section class="sec inst" id="inst">
+ <div class="hd"><span class="k a">Déploiement</span><h2 class="a">Comment tes artisans l'installent</h2><p class="lead a">Deux chemins, mêmes critères côte à côte. Les deux marchent : voilà de quoi choisir.</p></div>
+ <div class="two">
+  <div class="opt a"><h3>Le lien web installable</h3><div class="pr">0 €</div>
+   <div class="r2"><span>Prix</span><div>Aucun compte à ouvrir, aucun frais.</div></div>
+   <div class="r2"><span>Prêt en</span><div>Quelques heures : notre appli est déjà du web.</div></div>
+   <div class="r2"><span>Pour l'artisan</span><div>3 gestes sur iPhone : Partager, « Sur l'écran d'accueil », Ajouter.</div></div>
+   <div class="r2"><span>Preuve</span><div>Starbucks, Pinterest et Uber en ont une.</div></div>
+   <div class="r2"><span>À savoir</span><div>Notifications après l'installation (iOS 16.4 et plus). Dictée vocale à tester sur un iPhone réel.</div></div>
+  </div>
+  <div class="opt a"><h3>L'App Store, par TestFlight</h3><div class="pr">99 $<small>par an, compte Apple</small></div>
+   <div class="r2"><span>Prix</span><div>99 $ par an pour le compte développeur Apple.</div></div>
+   <div class="r2"><span>Prêt en</span><div>1 à 2 jours de revue pour le premier envoi.</div></div>
+   <div class="r2"><span>Pour l'artisan</span><div>2 installations : l'appli TestFlight, puis voilà, depuis un lien.</div></div>
+   <div class="r2"><span>Preuve</span><div>Jusqu'à 10 000 testeurs par lien public (Apple).</div></div>
+   <div class="r2"><span>À savoir</span><div>Micro et notifications natifs. Le compte Apple est celui de la société.</div></div>
+  </div>
+ </div>
+ <p class="src a">Sources : Mobiloud et Cloud Four (lien web), Apple (99 $, 10 000 testeurs), newly.app (délai de revue, source secondaire).</p>
+</section>
+
+<section class="sec w fin" id="fin">
+ <div><img class="a" src="../img/logo-voila.png" alt="voilà"><a class="lnk a" style="height:76px;padding:0 54px;font-size:28px;border-radius:38px" href="../appli/index.html">Essayer l'appli</a></div>
+</section>
+<footer class="foot"><img src="../img/logo-voila-blanc.png" alt="voilà"><span>Démo de présentation : noms, montants et avis sont des exemples.</span></footer>
+
+<div class="md" id="md" role="dialog" aria-modal="true"><img class="ph2" id="mdi" src="data:image/gif;base64,R0lGODlhAQABAAAAACH5BAEKAAEALAAAAAABAAEAAAICTAEAOw==" alt="Devis du métier"><div class="info"><span class="k" id="mdk">Devis</span><h3 id="mdn"></h3><div class="o" id="mdo"></div><div id="mdr"></div><button class="x" id="mdx">Fermer</button></div></div>
+
+<script src="../vendor/gsap.min.js"></script>
+<script src="../vendor/ScrollTrigger.min.js"></script>
+<script>
+(function(){
+ var E="expo.out"; gsap.defaults({ease:E}); gsap.registerPlugin(ScrollTrigger);
+ var $=function(s,c){return (c||document).querySelector(s)}, $$=function(s,c){return Array.prototype.slice.call((c||document).querySelectorAll(s))};
+ var q=location.search, fige=/fige/.test(q), calme=matchMedia("(prefers-reduced-motion: reduce)").matches;
+ var m=/s=(\d)/.exec(q), start=m?+m[1]:0;
+ var imgs=$$("#stage .ph"), idx=start;
+ var POS=[[1135, 118, 272, 810, 24], [1135, 118, 272, 810, 24], [1135, 118, 272, 810, 24], [1135, 118, 272, 810, 24], [1135, 118, 272, 810, 24], [1135, 118, 272, 810, 24], [1135, 118, 272, 810, 24], [1135, 118, 272, 810, 24]]; var desk=function(){return innerWidth>900};
+ var NOT=[["plombier", "M. Lefèvre", "120,84 €", "D-2026-0140"], ["electricien", "Mme Garnier", "253,17 €", "D-2026-0141"], ["peintre", "M. Benali", "464,70 €", "D-2026-0142"], ["serrurier", "Mme Marchetti", "399,03 €", "D-2026-0147"], ["macon", "M. Roux", "340,95 €", "D-2026-0143"], ["paysagiste", "Mme Dubreuil", "316,95 €", "D-2026-0144"], ["depanneur", "M. Colin", "136,80 €", "D-2026-0145"], ["vitres", "Mme Perret", "137,01 €", "D-2026-0146"]]; NOT.forEach(function(n){var i=new Image();i.src="../img/phone-"+n[0]+".png"});
+ var contenu=function(k){var n=NOT[k]; if(!n)return; $("#phone img").src="../img/phone-"+n[0]+".png"; $(".n1 .t").textContent="Acompte reçu : "+n[2]; $(".n3 .t").textContent=n[1]+" a signé le devis "+n[3]};
+ var place=function(k,anim){ contenu(k); if(!desk())return; var c=POS[k]; if(!c)return; var o={left:c[0],top:c[1],width:c[2]}, n={left:c[3],top:c[4]}; if(anim){gsap.to("#phone",Object.assign({duration:.7},o));gsap.to("#notifs",Object.assign({duration:.7},n))}else{gsap.set("#phone",o);gsap.set("#notifs",n)} };
+ var FULL="circle(150% at 58% 45%)", ZERO="circle(0px at 58% 45%)";
+ gsap.timeline({repeat:-1,repeatDelay:.5}).to("#logo .arc",{opacity:.18,duration:.9,stagger:.16,yoyo:true,repeat:1});
+ place(idx,false); imgs.forEach(function(i){i.style.zIndex=0}); imgs[idx].style.zIndex=2;
+ /* échelle des iPhone */
+ function fit(){$$(".dev").forEach(function(d){d.querySelector(".scr").style.transform="scale("+(d.clientWidth*.8933/390)+","+(d.clientHeight*.95/844)+")"})}
+ fit(); addEventListener("resize",fit);
+ if(calme||fige){imgs[idx].style.clipPath=FULL}
+ else{
+ gsap.set("h1 .i",{yPercent:112}); gsap.set(["#p","#btn"],{opacity:0,y:26}); gsap.set("#logo",{opacity:0});
+ gsap.set("#notifs .n",{opacity:0,y:34,scale:.96}); gsap.set("#strip .tile",{opacity:0,y:70}); gsap.set("#phone img",{opacity:0,y:90});
+ gsap.timeline()
+  .to(imgs[idx],{clipPath:FULL,duration:.7},.1)
+  .to("#logo",{opacity:1,duration:.5},.35)
+  .to("h1 .i",{yPercent:0,duration:.7,stagger:.07},.35)
+  .to(["#p","#btn"],{opacity:1,y:0,duration:.6,stagger:.08},.7)
+  .to("#phone img",{opacity:1,y:0,duration:.7},.6)
+  .to("#notifs .n",{opacity:1,y:0,scale:1,duration:.6,stagger:.12},.9)
+  .to("#strip .tile",{opacity:1,y:0,duration:.6,stagger:.05},.8);
+ function suivant(){
+  var k=(idx+1)%imgs.length, a=imgs[idx], b=imgs[k];
+  gsap.set(b,{zIndex:2,clipPath:ZERO}); gsap.set(a,{zIndex:1});
+  gsap.to(b,{clipPath:FULL,duration:.7,onComplete:function(){a.style.clipPath=ZERO}});
+  idx=k; place(k,true);
+ }
+ setInterval(suivant,3000);
+ }
+  /* ===== sections au défilement ===== */
+ function fr(n){return n.toFixed(2).replace(".",",")}
+ function sp(n){return fr(n).replace(/\B(?=(\d{3})+(?!\d))/g," ")}
+ function mots(el){ (function w(n){ Array.prototype.slice.call(n.childNodes).forEach(function(c){
+   if(c.nodeType===3){var f=document.createDocumentFragment(); c.textContent.split(/(\s+)/).forEach(function(t){ if(!t)return; if(/^\s+$/.test(t)){f.appendChild(document.createTextNode(t))}else{var s=document.createElement("span");s.className="w";s.textContent=t;f.appendChild(s)} }); c.parentNode.replaceChild(f,c)}
+   else if(c.nodeType===1){w(c)} }) })(el); return $$(".w",el) }
+ var still=calme||fige;
+ function jouer(sec,tl,at){ if(still){tl.progress(1);return} tl.pause(); ScrollTrigger.create({trigger:sec,start:at||"top 62%",once:true,onEnter:function(){tl.play()}}) }
+ function entree(id){ if(still)return; gsap.from("#"+id+" .a",{opacity:0,y:44,duration:.7,stagger:.1,scrollTrigger:{trigger:"#"+id,start:"top 72%",once:true}}) }
+ ["tout","boucle","avant","s5","docs","inst","fin","tdb"].forEach(entree);
+ /* roue des outils : chaque trait s'allume au défilement */
+ (function(){
+  var ls=$$("#wh .l"), nd=$$("#wh .wn"), N=ls.length;
+  if(still){ls.forEach(function(l){l.style.strokeDashoffset=0});nd.forEach(function(n){n.classList.add("on")});return}
+  var tl=gsap.timeline({defaults:{ease:"none"}});
+  ls.forEach(function(l,i){tl.to(l,{strokeDashoffset:0,duration:1},i*.5)});
+  ScrollTrigger.create({trigger:"#tout",start:"top 70%",end:"top 6%",scrub:.5,animation:tl,onUpdate:function(){var t=tl.time();nd.forEach(function(n,i){n.classList.toggle("on",t>=i*.5+.9)})}});
+ })();
+ /* boucle du métier */
+ (function(){
+  var st=$$("#lp .st"), ring=$("#ring");
+  if(still){ring.style.strokeDashoffset=0;st.forEach(function(s){s.classList.add("on")});return}
+  ScrollTrigger.create({trigger:"#boucle",start:"top 70%",end:"top 6%",scrub:.5,onUpdate:function(self){ring.style.strokeDashoffset=1-self.progress;st.forEach(function(s,i){s.classList.toggle("on",self.progress>=(i+.4)/st.length)})}});
+ })();
+ /* avant : les outils éparpillés bougent */
+ (function(){
+  var ch=$$("#av .chip"); if(still)return;
+  gsap.from(ch,{opacity:0,scale:.6,duration:.6,stagger:.07,scrollTrigger:{trigger:"#avant",start:"top 62%",once:true}});
+  ch.forEach(function(c,i){gsap.to(c,{y:(i%2?-6:6),rotation:"+="+(i%2?2:-2),duration:1.8+i*.12,yoyo:true,repeat:-1,ease:"sine.inOut"})});
+ })();
+ /* 1 : dictée -> devis */
+ (function(){
+  var s=$("#s2"), d=$("#dev2"), sA=$('[data-s="1"]',d), sB=$('[data-s="2"]',d), w=mots($("p.tx",sA)), chips=$$(".chips span",sA), rows=$$(".row",sB), to=$(".to",sB), o={v:0};
+  var tl=gsap.timeline({defaults:{ease:E}});
+  tl.from("#s2 .txt .a",{opacity:0,y:50,duration:.6,stagger:.12},0)
+    .from(w,{opacity:0,y:8,duration:.35,stagger:.1},.5).from(chips,{opacity:0,y:14,duration:.4,stagger:.18},2.2)
+    .to(sB,{opacity:1,duration:.5},3.6).to(sA,{opacity:0,duration:.4},3.6)
+    .from(rows,{opacity:0,y:18,duration:.5,stagger:.28},3.9)
+    .from([$(".tot",sB),$(".acc",sB),$(".bt",sB)],{opacity:0,y:16,duration:.5,stagger:.15},5.5)
+    .to(o,{v:1330.10,duration:1.3,onUpdate:function(){to.textContent=sp(o.v)+" €"}},5.5);
+  if(!still)to.textContent="0,00 €";
+  jouer(s,tl); window.__t2=tl;
+ })();
+ /* 2 : signature */
+ (function(){
+  var d=$("#dev3"), sg=$(".sg",d), cs=$(".cs",d), nt=$("#nt3 .n"), lbl=$("span",cs);
+  var tl=gsap.timeline({defaults:{ease:E}});
+  tl.from(".ph3 img",{scale:1.14,duration:1.2},0).from("#s3 .plates .a",{opacity:0,y:40,duration:.6,stagger:.12},.2).from(d,{opacity:0,y:120,duration:.7},.3)
+    .fromTo(sg,{clipPath:"inset(0 100% 0 0)"},{clipPath:"inset(0 0% 0 0)",duration:1.8,ease:"power1.inOut"},1.4)
+    .to(cs,{scale:.95,duration:.3},3.3).to(cs,{scale:1,backgroundColor:"#111",duration:.4},3.6)
+    .add(function(){lbl.textContent="Devis signé"},3.6)
+    .from(nt,{opacity:0,y:-60,scale:.95,duration:.6},3.9);
+  gsap.set(sg,{clipPath:"inset(0 100% 0 0)"});
+  if(still){sg.style.clipPath="none";lbl.textContent="Devis signé"}
+  jouer($("#s3"),tl); window.__t3=tl;
+ })();
+ /* 3 : acompte, chiffre géant */
+ (function(){
+  var c=$("#cnt"), o={v:0};
+  var tl=gsap.timeline({defaults:{ease:E}});
+  tl.from("#s4 .a",{opacity:0,y:60,duration:.7,stagger:.12},0)
+    .from("#s4 .nots .n",{opacity:0,y:-70,scale:.95,duration:.6,stagger:.2},.9)
+    .to(o,{v:399.03,duration:1.3,ease:"expo.out",onUpdate:function(){c.textContent=fr(o.v)}},.3);
+  if(!still)c.textContent="0,00";
+  jouer($("#s4"),tl); window.__t4=tl;
+ })();
+ /* tableau de bord */
+ (function(){
+  var c=$("#cnt2"), p=$("#cpath"), o={v:0};
+  var tl=gsap.timeline({defaults:{ease:E}});
+  tl.to(o,{v:4862.40,duration:1.5,onUpdate:function(){c.textContent=sp(o.v)+" €"}},.2).to(p,{strokeDashoffset:0,duration:1.8},.2).from("#tdbc .t4",{opacity:0,y:20,duration:.5,stagger:.1},1);
+  if(still){p.style.strokeDashoffset=0}else{c.textContent="0,00 €"}
+  jouer($("#tdb"),tl);
+ })();
+ /* métiers + modale */
+ (function(){
+  var DEV={"plombier": {"nom": "Plombier", "obj": "Siphon et mitigeur de l'évier", "num": "D-2026-0140", "client": "M. Paul Lefèvre", "ht": "363,00 €", "tva": "39,80 €", "ttc": "402,80 €", "aco": "120,84 €", "reste": "281,96 €"}, "electricien": {"nom": "Électricien", "obj": "Tableau électrique neuf", "num": "D-2026-0141", "client": "Mme Sophie Garnier", "ht": "764,00 €", "tva": "79,90 €", "ttc": "843,90 €", "aco": "253,17 €", "reste": "590,73 €"}, "peintre": {"nom": "Peintre", "obj": "Salon, murs et plafond", "num": "D-2026-0142", "client": "M. Karim Benali", "ht": "1 405,00 €", "tva": "144,00 €", "ttc": "1 549,00 €", "aco": "464,70 €", "reste": "1 084,30 €"}, "serrurier": {"nom": "Serrurier", "obj": "Serrure 3 points et blindage", "num": "D-2026-0147", "client": "Mme Hélène Marchetti", "ht": "1 206,00 €", "tva": "124,10 €", "ttc": "1 330,10 €", "aco": "399,03 €", "reste": "931,07 €"}, "macon": {"nom": "Maçon", "obj": "Muret en parpaings", "num": "D-2026-0143", "client": "M. Denis Roux", "ht": "1 030,00 €", "tva": "106,50 €", "ttc": "1 136,50 €", "aco": "340,95 €", "reste": "795,55 €"}, "paysagiste": {"nom": "Paysagiste", "obj": "Taille de haie et plantations", "num": "D-2026-0144", "client": "Mme Claire Dubreuil", "ht": "955,00 €", "tva": "101,50 €", "ttc": "1 056,50 €", "aco": "316,95 €", "reste": "739,55 €"}, "depanneur": {"nom": "Dépanneur", "obj": "Boîtier de fusibles", "num": "D-2026-0145", "client": "M. Marc Colin", "ht": "380,00 €", "tva": "76,00 €", "ttc": "456,00 €", "aco": "136,80 €", "reste": "319,20 €"}, "vitres": {"nom": "Vitrier", "obj": "Deux doubles vitrages", "num": "D-2026-0146", "client": "Mme Julie Perret", "ht": "412,00 €", "tva": "44,70 €", "ttc": "456,70 €", "aco": "137,01 €", "reste": "319,69 €"}};
+  gsap.from("#gr .gt",{opacity:0,y:70,duration:.6,stagger:.07,scrollTrigger:{trigger:"#gr",start:"top 85%",once:true}});
+  var md=$("#md");
+  function ouvre(k){var x=DEV[k]; $("#mdi").src="../img/phone-"+k+".png"; $("#mdn").textContent=x.nom; $("#mdk").textContent="Devis "+x.num; $("#mdo").textContent=x.client+" · "+x.obj;
+   $("#mdr").innerHTML='<div class="rw2"><span>Total HT</span><span>'+x.ht+'</span></div><div class="rw2"><span>TVA</span><span>'+x.tva+'</span></div><div class="rw2 t"><span>Total TTC</span><span>'+x.ttc+'</span></div><div class="rw2"><span>Acompte de 30 %</span><span>'+x.aco+'</span></div>';
+   md.classList.add("on"); if(!calme){gsap.fromTo(md,{clipPath:"circle(0px at 50% 50%)"},{clipPath:"circle(150% at 50% 50%)",duration:.7}); gsap.from("#md .ph2,#md .info>*",{opacity:0,y:40,duration:.6,stagger:.08,delay:.15})} }
+  function ferme(){ if(calme){md.classList.remove("on");return} gsap.to(md,{clipPath:"circle(0px at 50% 50%)",duration:.5,onComplete:function(){md.classList.remove("on")}}) }
+  $$("#gr .gt").forEach(function(b){b.addEventListener("click",function(){ouvre(b.dataset.k)})});
+  $("#mdx").addEventListener("click",ferme); addEventListener("keydown",function(e){if(e.key==="Escape")ferme()});
+  window.__open=ouvre;
+ })();
+ /* aide à la capture : __sec(id) */
+ window.__sec=function(id,f){var el=document.getElementById(id);scrollTo(0,el.getBoundingClientRect().top+scrollY+(f||0))};
+ addEventListener("load",function(){ScrollTrigger.refresh()});
+})();
+</script>
+</body>
+</html>
