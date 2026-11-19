@@ -848,6 +848,40 @@ footer .big { font-size: var(--fs); }
 @media (max-width: 860px) { .b6-ph { width: clamp(112px, 30vw, 140px); } .hero.mk3 .mk-row { margin-top: 40px; } }
 
 </style>
+<style id="b7">
+/* b7 : relecture à deux, sections numérotées, 3 portes */
+.b7-rv { display: flex; flex-wrap: wrap; align-items: baseline; gap: 6px 18px; padding: 12px var(--gutter); background: #E6EBFF; color: #0B0D12; font: 500 15px/1.35 "Instrument Sans", system-ui, sans-serif; border-top: 1.5px solid #2349FF; border-bottom: 1.5px solid #2349FF; position: relative; z-index: 6; }
+.b7-rv b { background: #2349FF; color: #FAF6EA; border-radius: 999px; padding: 3px 14px; font-weight: 700; }
+.b7-rv span { font-weight: 700; }
+.b7-rv i { font-style: normal; opacity: .85; }
+html.b7-off .b7-rv { display: none; }
+.b7-tog { position: fixed; left: 14px; bottom: 14px; z-index: 60; border: 1.5px solid #0B0D12; background: #FAF6EA; color: #0B0D12; border-radius: 999px; padding: 9px 16px; font: 600 15px "Instrument Sans", system-ui, sans-serif; cursor: pointer; }
+.b7-cur { position: fixed; right: 14px; bottom: 14px; z-index: 60; background: #2349FF; color: #FAF6EA; border-radius: 999px; padding: 9px 18px; font: 700 16px "Instrument Sans", system-ui, sans-serif; }
+@media (max-width: 640px) { .b7-tog { font-size: 15px; padding: 8px 12px; } .b7-cur { bottom: 62px; } }
+.b7-3 { grid-template-columns: repeat(3, 1fr); }
+.b7-3 li:nth-child(3) { background: var(--blue); color: var(--cream); border-color: var(--blue); }
+.b7-3 li:nth-child(3) .k { color: var(--cream); }
+.b7-5 { grid-template-columns: repeat(5, 1fr); gap: 14px; }
+.b7-5 li { min-height: 270px; padding: 24px 20px 26px; }
+.b7-5 li:nth-child(4) { background: #FFFDF7; color: inherit; border-color: var(--ink); }
+.b7-5 li:nth-child(4) .k { color: var(--blue); }
+.b7-5 li:nth-child(5) { background: var(--blue); color: var(--cream); border-color: var(--blue); }
+.b7-5 li:nth-child(5) .k { color: var(--cream); }
+.b7-5 li:not(:last-child)::after { right: -17px; }
+.b7-lead { margin: 18px 0 0; max-width: 760px; font-size: clamp(17px, 1.5vw, 21px); line-height: 1.5; }
+.b7-chips { list-style: none; margin: 28px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px; }
+.b7-chips li { border: 1.5px solid var(--ink); border-radius: 999px; padding: 8px 18px; font-size: 16px; font-weight: 600; background: #FFFDF7; }
+.b7-chips-cap { margin: 34px 0 0; font-size: 15px; font-weight: 700; letter-spacing: .06em; text-transform: uppercase; color: var(--blue); }
+.b7-chips-cap + .b7-chips { margin-top: 12px; }
+.b7-grp { display: flex; align-items: baseline; gap: 16px; margin: 34px 0 6px; color: #FAF6EA; }
+.b7-grp:first-child { margin-top: 8px; }
+.b7-grp small { font: 700 15px "Instrument Sans", system-ui, sans-serif; letter-spacing: .08em; text-transform: uppercase; color: #9DB0FF; }
+.b7-grp b { font-size: clamp(30px, 3.4vw, 46px); font-weight: 400; font-style: italic; color: #9DB0FF; }
+@media (max-width: 1280px) { .b7-5 { grid-template-columns: repeat(3, 1fr); } .b7-5 li:nth-child(3)::after { display: none; } .b7-5 li:nth-child(2)::after { display: block; } }
+@media (max-width: 900px) { .b7-3 { grid-template-columns: 1fr; } .b7-5 { grid-template-columns: repeat(2, 1fr); } .b7-5 li:nth-child(2)::after, .b7-5 li:nth-child(4)::after { display: none; } .b7-3 li::after { display: none; } }
+@media (max-width: 640px) { .b7-5 { grid-template-columns: 1fr; } .b7-5 li { min-height: 0; } }
+
+</style>
 </head>
 <body class="home t17 t18 t19 t20 t19-k1 t20-k1">
 <div class="intro" aria-hidden="true"><div class="j3" aria-hidden="true">
@@ -871,17 +905,17 @@ footer .big { font-size: var(--fs); }
 
 <header class="nav" id="nav">
   <a href="index.html" class="logo" aria-label="AXEM IA, accueil"><span class="wm"><span class="nl"><span>a</span><span>x</span><span>e</span><span>m</span></span><sup>IA</sup></span></a>
-  <nav class="links" aria-label="Navigation principale"><a href="#offres">Offres<span class="na" aria-hidden="true">→</span></a><a href="#tiroirs">À la carte<span class="na" aria-hidden="true">→</span></a><a href="#methode">Méthode<span class="na" aria-hidden="true">→</span></a><a href="#avis">Avis<span class="na" aria-hidden="true">→</span></a></nav>
+  <nav class="links" aria-label="Navigation principale"><a href="#offres">Offres<span class="na" aria-hidden="true">→</span></a><a href="#diagnostic">Diagnostic IA<span class="na" aria-hidden="true">→</span></a><a href="#tiroirs">À la carte<span class="na" aria-hidden="true">→</span></a><a href="#avis">Avis<span class="na" aria-hidden="true">→</span></a></nav>
   <a href="#" class="book" data-book><span class="long">Réserver un échange offert</span><span class="short">Réserver</span><span class="bk-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a>
   <button class="burger" type="button" aria-expanded="false" aria-controls="m-menu" aria-label="Ouvrir le menu"><i></i><i></i></button>
 </header>
 <div class="m-menu" id="m-menu" aria-hidden="true">
-  <nav aria-label="Menu mobile"><a href="#offres">Offres</a><a href="#tiroirs">À la carte</a><a href="#methode">Méthode</a><a href="#avis">Avis</a><a href="#faq">Questions</a></nav>
+  <nav aria-label="Menu mobile"><a href="#offres">Offres</a><a href="#licences">Licences</a><a href="#diagnostic">Diagnostic IA</a><a href="#tiroirs">À la carte</a><a href="#avis">Avis</a><a href="#faq">Questions</a></nav>
   <a href="#" class="btn" data-book>Réserver un échange offert <span class="ar">→</span></a>
 </div>
 
 <main id="main">
-  <section class="hero mk3" aria-labelledby="h">
+  <section class="hero mk3" data-sec="1" aria-labelledby="h">
     <div class="grid" id="grid" aria-hidden="true"></div>
     <h1 class="f" id="h" data-split data-label="Votre partenaire IA, de A à Z.">Votre partenaire</h1>
     <div class="l2">
@@ -924,7 +958,9 @@ footer .big { font-size: var(--fs); }
     <div class="scroll-hint cap fade" style="--d: 1400" aria-hidden="true"><span>Défiler</span><i></i></div>
   </section>
 
-  <section class="c5" id="bandeau" aria-label="Ils nous font confiance">
+  <div class="b7-rv"><b>Section 1</b><span>A (en place) : « Votre partenaire IA, de A à Z. »</span><i>B : « L'IA dans vos équipes, de la formation au déploiement. »</i><i>C : « Vos équipes passent à l'IA, on s'occupe de tout. »</i></div>
+  <div class="b7-rv"><b>Section 2</b><span>A (en place) : « Ils nous font confiance »</span><i>B : « +300 entreprises nous ont confié leurs équipes »</i><i>C : « Déjà chez eux, bientôt chez vous »</i></div>
+  <section class="c5" id="bandeau" data-sec="2" aria-label="Ils nous font confiance">
   <div class="c5-top">
     <h2 class="f">Ils nous font <span>confiance</span></h2>
     <p class="c5-hint"><span class="h-m">Survolez un logo, ou laissez défiler.</span><span class="h-t">Touchez un logo, ou laissez défiler.</span></p>
@@ -954,93 +990,124 @@ footer .big { font-size: var(--fs); }
 </section>
 
 
-  <section id="offres" class="offres18" aria-labelledby="o">
+  <div class="b7-rv"><b>Section 3</b><span>A (en place) : « Former, équiper, automatiser : on s'occupe de tout, vous gardez la main. »</span><i>B : « Trois portes pour faire passer vos équipes à l'IA »</i><i>C : « Par quelle porte voulez-vous entrer ? »</i></div>
+  <section id="offres" class="offres18" data-sec="3" aria-labelledby="o">
     <div class="sec-head">
       <div class="num f rv">02</div>
       <div class="txt rv" style="--d: 120">
         <div class="cap" id="o">Ce qu'on fait</div>
-        <div>Conseil, licences, formation : on s'occupe de tout, <span class="i" style="font-weight: 400;">vous gardez la main.</span></div>
+        <div>Former, équiper, automatiser : on s'occupe de tout, <span class="i" style="font-weight: 400;">vous gardez la main.</span></div>
       </div>
     </div>
     <div class="fl" id="fl">
       <div class="fl-sticky">
         <ol class="fl-list">
           <li class="fl-item" tabindex="0">
-            <div class="fl-h"><span class="fl-n">01</span><h3 class="f">Conseil</h3></div>
-            <div class="fl-more"><div class="fl-in">
-              <p>De l'audit des usages à l'outil qui tourne : on repère où l'IA vous fait gagner du temps, on choisit les outils, on cadre le déploiement.</p>
-              <a class="fl-go" href="#" data-book>Réserver un échange offert <i aria-hidden="true">→</i></a>
-            </div></div>
-            <div class="fl-obj"><div class="fl-card"><p class="fl-cap">De l'audit au déploiement</p><ol class="o-steps"><li><b>01</b><span>Auditer vos usages</span></li><li><b>02</b><span>Construire agents et outils</span></li><li><b>03</b><span>Accompagner le changement</span></li></ol></div></div>
-          </li>
-          <li class="fl-item" tabindex="0">
-            <div class="fl-h"><span class="fl-n">02</span><h3 class="f">Licences</h3></div>
-            <div class="fl-more"><div class="fl-in">
-              <p>On achète vos licences IA, on s'occupe de tout : achat, paramétrage, support. Un seul interlocuteur pour Claude, ChatGPT, Copilot, Gemini ou Mistral.</p>
-              <a class="fl-go" href="#" data-book>Réserver un échange offert <i aria-hidden="true">→</i></a>
-            </div></div>
-            <div class="fl-obj"><div class="fl-card"><p class="fl-cap">Vos outils, gérés pour vous</p><div class="o-logos"><span class="o-lg"><img src="../img/logos-ia/claude.svg" alt="Claude" loading="lazy"></span><span class="o-lg"><img src="../img/logos-ia/openai.svg" alt="ChatGPT" loading="lazy"></span><span class="o-lg"><img src="../img/logos-ia/copilot.svg" alt="Copilot" loading="lazy"></span><span class="o-lg"><img src="../img/logos-ia/gemini.svg" alt="Gemini" loading="lazy"></span><span class="o-lg"><img src="../img/logos-ia/mistral.svg" alt="Mistral" loading="lazy"></span></div><ul class="o-chips"><li>Achat des licences</li><li>Paramétrage</li><li>Support à distance</li></ul></div></div>
-          </li>
-          <li class="fl-item" tabindex="0">
-            <div class="fl-h"><span class="fl-n">03</span><h3 class="f">Formation</h3></div>
+            <div class="fl-h"><span class="fl-n">01</span><h3 class="f">Former</h3></div>
             <div class="fl-more"><div class="fl-in">
               <p>Des formations IA pour chaque équipe : dirigeants, équipes métier, champions IA. Sur vos vrais dossiers, avec les outils que vous avez déjà.</p>
-              <a class="fl-go" href="#" data-book>Réserver un échange offert <i aria-hidden="true">→</i></a>
+              <a class="fl-go" href="#tiroirs">Voir les options de formation <i aria-hidden="true">→</i></a>
             </div></div>
             <div class="fl-obj"><div class="fl-card"><p class="fl-cap">Formés sur les outils qu'ils ont déjà</p><div class="o-logos"><span class="o-lg"><img src="../img/logos-ia/claude.svg" alt="Claude" loading="lazy"></span><span class="o-lg"><img src="../img/logos-ia/openai.svg" alt="OpenAI" loading="lazy"></span><span class="o-lg"><img src="../img/logos-ia/mistral.svg" alt="Mistral" loading="lazy"></span><span class="o-lg"><img src="../img/logos-ia/deepseek.svg" alt="DeepSeek" loading="lazy"></span><span class="o-lg"><img src="../img/logos-ia/gemini.svg" alt="Gemini" loading="lazy"></span><span class="o-lg"><img src="../img/logos-ia/qwen.svg" alt="Qwen" loading="lazy"></span><span class="o-lg"><img src="../img/logos-ia/minimax.svg" alt="MiniMax" loading="lazy"></span><span class="o-lg"><img src="../img/logos-ia/kimi.svg" alt="Kimi" loading="lazy"></span><span class="o-lg"><img src="../img/logos-ia/grok.svg" alt="Grok" loading="lazy"></span><span class="o-lg"><img src="../img/logos-ia/perplexity.svg" alt="Perplexity" loading="lazy"></span><span class="o-lg"><img src="../img/logos-ia/meta.svg" alt="Meta" loading="lazy"></span><span class="o-lg"><img src="../img/logos-ia/copilot.svg" alt="Copilot" loading="lazy"></span></div><ul class="o-chips"><li>Dirigeants</li><li>Équipes métier</li><li>Champions IA</li><li>Coaching individuel</li></ul></div></div>
           </li>
           <li class="fl-item" tabindex="0">
-            <div class="fl-h"><span class="fl-n">04</span><h3 class="f">Sur mesure</h3></div>
+            <div class="fl-h"><span class="fl-n">02</span><h3 class="f">Équiper</h3></div>
             <div class="fl-more"><div class="fl-in">
-              <p>Des automatisations et des agents IA construits pour vos équipes, testés, déployés chez vous, puis suivis. Chaque outil est cadré avec votre IT.</p>
-              <a class="fl-go" href="#" data-book>Réserver un échange offert <i aria-hidden="true">→</i></a>
+              <p>On achète vos licences IA, on s'occupe de tout : choix, achat, installation, prise en main, suivi. Un seul interlocuteur.</p>
+              <a class="fl-go" href="#licences">Voir comment ça se passe <i aria-hidden="true">→</i></a>
             </div></div>
-            <div class="fl-obj"><div class="fl-card"><p class="fl-cap">Avec les outils d'automatisation</p><div class="o-flow"><span class="o-node"><span class="o-lg big"><img src="../img/logos-ia/n8n.svg" alt="n8n" loading="lazy"></span><small>n8n</small></span><i aria-hidden="true">→</i><span class="o-node"><span class="o-lg big"><img src="../img/logos-ia/make.svg" alt="Make" loading="lazy"></span><small>Make</small></span><i aria-hidden="true">→</i><span class="o-node"><span class="o-lg big"><img src="../img/logos-ia/zapier.svg" alt="Zapier" loading="lazy"></span><small>Zapier</small></span></div><ul class="o-chips"><li>Construits</li><li>Testés</li><li>Déployés chez vous</li><li>Suivis</li></ul></div></div>
+            <div class="fl-obj"><div class="fl-card"><p class="fl-cap">Vos outils, gérés pour vous</p><div class="o-logos"><span class="o-lg"><img src="../img/logos-ia/claude.svg" alt="Claude" loading="lazy"></span><span class="o-lg"><img src="../img/logos-ia/openai.svg" alt="ChatGPT" loading="lazy"></span><span class="o-lg"><img src="../img/logos-ia/copilot.svg" alt="Copilot" loading="lazy"></span><span class="o-lg"><img src="../img/logos-ia/gemini.svg" alt="Gemini" loading="lazy"></span><span class="o-lg"><img src="../img/logos-ia/mistral.svg" alt="Mistral" loading="lazy"></span></div><ul class="o-chips"><li>Achat des licences</li><li>Paramétrage</li><li>Support à distance</li></ul></div></div>
+          </li>
+          <li class="fl-item" tabindex="0">
+            <div class="fl-h"><span class="fl-n">03</span><h3 class="f">Automatiser</h3></div>
+            <div class="fl-more"><div class="fl-in">
+              <p>Un diagnostic IA par métier, puis le déploiement : agents, automatisations et outils sur mesure, cadrés avec votre IT.</p>
+              <a class="fl-go" href="#diagnostic">Voir le diagnostic IA <i aria-hidden="true">→</i></a>
+            </div></div>
+            <div class="fl-obj"><div class="fl-card"><p class="fl-cap">Avec les outils d'automatisation</p><div class="o-flow"><span class="o-node"><span class="o-lg big"><img src="../img/logos-ia/n8n.svg" alt="n8n" loading="lazy"></span><small>n8n</small></span><i aria-hidden="true">→</i><span class="o-node"><span class="o-lg big"><img src="../img/logos-ia/make.svg" alt="Make" loading="lazy"></span><small>Make</small></span><i aria-hidden="true">→</i><span class="o-node"><span class="o-lg big"><img src="../img/logos-ia/zapier.svg" alt="Zapier" loading="lazy"></span><small>Zapier</small></span></div><ul class="o-chips"><li>Diagnostiqués</li><li>Construits</li><li>Déployés chez vous</li><li>Suivis</li></ul></div></div>
           </li>
         </ol>
       </div>
     </div>
   </section>
 
-  <section id="tiroirs" class="b6-dr" aria-labelledby="drh">
+  <div class="b7-rv"><b>Section 4</b><span>A (en place) : « On achète vos licences IA, on s'occupe de tout »</span><i>B : « Vos licences IA, sans rien à gérer »</i><i>C : « Des licences IA clés en main »</i></div>
+  <section id="licences" class="b6-me" data-sec="4" aria-labelledby="lich">
+    <div class="b6-me-head"><div class="cap rv">Équiper</div><h2 class="f rv" id="lich" style="--d:100">On achète vos licences IA, <span class="i">on s'occupe de tout.</span></h2>
+    <p class="b7-lead rv" style="--d:180">Un seul interlocuteur, de l'achat au suivi. Vous gardez la main sur vos outils et vos données.</p></div>
+    <ol class="b6-me-list b7-5">
+      <li><span class="k f">1</span><b>On choisit</b><p>Avec vous et votre IT : les outils (Claude, ChatGPT, Copilot, Gemini, Mistral) et le bon niveau de licence pour chaque équipe.</p></li>
+      <li><span class="k f">2</span><b>On achète</b><p>On souscrit les licences à votre place. Aucune démarche de votre côté.</p></li>
+      <li><span class="k f">3</span><b>On installe et on branche</b><p>Comptes, droits, connexion à la messagerie et aux documents, validés par votre IT.</p></li>
+      <li><span class="k f">4</span><b>On forme</b><p>Chaque équipe prend l'outil en main sur ses vrais dossiers.</p></li>
+      <li><span class="k f">5</span><b>On suit</b><p>Support à distance, points de pilotage, licences ajustées à l'usage réel.</p></li>
+    </ol>
+    <ul class="b7-chips"><li>Un seul interlocuteur</li><li>Rien sans la validation de votre IT</li><li>Vous gardez la main</li></ul>
+  </section>
+
+  <div class="b7-rv"><b>Section 5</b><span>A (en place) : « Un diagnostic IA par métier, puis on déploie »</span><i>B : « On diagnostique chaque métier, puis on passe à l'action »</i><i>C : « Du diagnostic au déploiement, métier par métier »</i></div>
+  <section id="diagnostic" class="b6-me" data-sec="5" aria-labelledby="dgh">
+    <div class="b6-me-head"><div class="cap rv">Automatiser</div><h2 class="f rv" id="dgh" style="--d:100">Un diagnostic IA <span class="i">par métier,</span> puis on déploie.</h2>
+    <p class="b7-lead rv" style="--d:180">On découpe avec vous par métier et par périmètre. Chaque volet est diagnostiqué, puis mis en place avec l'équipe.</p></div>
+    <ol class="b6-me-list b7-3">
+      <li><span class="k f">1</span><b>Le diagnostic, volet par volet</b><p>Un point avec le responsable du métier, puis du temps avec l'équipe pendant qu'elle travaille. Rien à installer, aucun accès à vos systèmes.</p></li>
+      <li><span class="k f">2</span><b>Ce que vous recevez</b><p>Chaque usage cartographié et noté, le temps gagné, des indicateurs précis, les gains rapides et une feuille de route.</p></li>
+      <li><span class="k f">3</span><b>Le déploiement, concrètement</b><p>Webinaires et séminaires pour tous, formations par équipe, agents et outils construits avec le métier, champions IA, comités de pilotage.</p></li>
+    </ol>
+    <p class="b7-chips-cap rv">Exemples de volets métier</p>
+    <ul class="b7-chips"><li>Finance</li><li>Achats</li><li>Ressources humaines</li><li>Opérations</li><li>Accueil et admissions</li><li>Information médicale</li><li>Secrétariats</li></ul>
+  </section>
+
+  <div class="b7-rv"><b>Section 6</b><span>A (en place) : « Composez votre accompagnement »</span><i>B : « Ajoutez ce dont vos équipes ont besoin »</i><i>C : « Vos options, à la carte »</i></div>
+  <section id="tiroirs" class="b6-dr" data-sec="6" aria-labelledby="drh">
     <div class="b6-dr-head">
       <div class="cap rv">À la carte</div>
       <h2 class="f rv" id="drh" style="--d:100">Composez votre <span class="i">accompagnement</span></h2>
-      <p class="rv" style="--d:200">Un socle pour démarrer, puis les options que vous choisissez, quand vous le décidez. Chaque étape fait l'objet d'un devis au forfait.</p>
+      <p class="rv" style="--d:200">Trois portes, chacune s'ouvre sur ses options. Vous choisissez quand vous le décidez. Chaque étape fait l'objet d'un devis au forfait.</p>
     </div>
     <div class="b6-dr-list" id="drList">
-      <article class="b6-d on">
+      <div class="b7-grp"><small>Porte 1</small><b class="f">Former</b></div><article class="b6-d on">
         <button class="b6-d-h" type="button" aria-expanded="true"><span class="n">01</span><span class="t f">Séminaire IA et comité IA</span><span class="pl" aria-hidden="true"></span><svg class="u" viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 9 C 70 2, 170 12, 297 5"/></svg></button>
         <div class="b6-d-b"><div class="b6-d-in">
           <p class="lead">Toute la direction aligne ses décisions IA.</p>
-          <ul><li><b>Atelier avec le comité de direction</b><span>Une demi-journée pour trancher les décisions IA du groupe.</span></li><li><b>Séminaire pour toute la direction</b><span>Un temps fort pour partager la vision et la feuille de route.</span></li><li><b>Comité IA trimestriel</b><span>Un point de pilotage entre les étapes, animé par nous.</span></li></ul>
+          <ul><li><b>Atelier avec le comité de direction</b><span>Une demi-journée pour trancher les décisions IA du groupe.</span></li><li><b>Séminaire pour toute la direction</b><span>Un temps fort pour partager la vision et la feuille de route.</span></li><li><b>Comité IA trimestriel</b><span>Un point de pilotage entre les étapes, animé par nous.</span></li><li><b>Webinaires IA pour tous</b><span>Des sessions courtes en visio pour embarquer l'ensemble des collaborateurs.</span></li></ul>
         </div></div>
-      </article>
-      <article class="b6-d">
+      </article><article class="b6-d">
         <button class="b6-d-h" type="button" aria-expanded="false"><span class="n">02</span><span class="t f">Formation et coaching</span><span class="pl" aria-hidden="true"></span><svg class="u" viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 9 C 70 2, 170 12, 297 5"/></svg></button>
         <div class="b6-d-b"><div class="b6-d-in">
           <p class="lead">Tout le monde autour de la table, au bon niveau.</p>
           <ul><li><b>Journées de formation</b><span>Une équipe de plus, un approfondissement, les nouveaux arrivants.</span></li><li><b>Coaching individuel</b><span>Dirigeants et responsables de métier, un usage qui tourne à chaque séance.</span></li><li><b>E-learning</b><span>Un kit de démarrage par métier, pour que chacun avance à son rythme.</span></li><li><b>Journée d'évaluation</b><span>Une épreuve pratique et un badge de réussite pour valider les acquis.</span></li></ul>
         </div></div>
-      </article>
-      <article class="b6-d">
-        <button class="b6-d-h" type="button" aria-expanded="false"><span class="n">03</span><span class="t f">Création d'agents IA</span><span class="pl" aria-hidden="true"></span><svg class="u" viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 9 C 70 2, 170 12, 297 5"/></svg></button>
+      </article><article class="b6-d">
+        <button class="b6-d-h" type="button" aria-expanded="false"><span class="n">03</span><span class="t f">Champions IA internes</span><span class="pl" aria-hidden="true"></span><svg class="u" viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 9 C 70 2, 170 12, 297 5"/></svg></button>
+        <div class="b6-d-b"><div class="b6-d-in">
+          <p class="lead">Des relais dans vos équipes, pour que l'IA continue sans nous.</p>
+          <ul><li><b>Séminaire des champions</b><span>Ils apprennent à embarquer leur propre équipe.</span></li><li><b>Une nouvelle promotion</b><span>Une deuxième vague de relais, dans un autre pays ou une autre enseigne.</span></li><li><b>Permanence IA chaque semaine</b><span>Une heure en visio, ouverte à tous, pour débloquer les usages.</span></li></ul>
+        </div></div>
+      </article><div class="b7-grp"><small>Porte 2</small><b class="f">Équiper</b></div><article class="b6-d">
+        <button class="b6-d-h" type="button" aria-expanded="false"><span class="n">04</span><span class="t f">Licences et outils</span><span class="pl" aria-hidden="true"></span><svg class="u" viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 9 C 70 2, 170 12, 297 5"/></svg></button>
+        <div class="b6-d-b"><div class="b6-d-in">
+          <p class="lead">Vos outils IA, choisis, achetés et suivis par nous.</p>
+          <ul><li><b>Achat des licences</b><span>On souscrit à votre place, au bon niveau pour chaque équipe.</span></li><li><b>Paramétrage et connexion</b><span>Messagerie, documents, outils métiers, avec les droits de chacun, validés par votre IT.</span></li><li><b>Test de plusieurs outils</b><span>On fait lire vos vrais dossiers à plusieurs outils, avec un plan B si les conditions changent.</span></li><li><b>Charte d'usage</b><span>Une charte courte : ce qui est autorisé, les preuves de formation, la conformité.</span></li><li><b>Support à distance</b><span>Quelqu'un répond dès qu'une équipe bloque.</span></li></ul>
+        </div></div>
+      </article><div class="b7-grp"><small>Porte 3</small><b class="f">Automatiser</b></div><article class="b6-d">
+        <button class="b6-d-h" type="button" aria-expanded="false"><span class="n">05</span><span class="t f">Diagnostic IA</span><span class="pl" aria-hidden="true"></span><svg class="u" viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 9 C 70 2, 170 12, 297 5"/></svg></button>
+        <div class="b6-d-b"><div class="b6-d-in">
+          <p class="lead">Métier par métier, on voit où l'IA fait gagner du temps.</p>
+          <ul><li><b>Un diagnostic par volet métier</b><span>On définit avec vous les métiers et le périmètre à regarder.</span></li><li><b>Mesure avant et après</b><span>On chronomètre le temps passé aujourd'hui, puis à 6 et à 12 mois.</span></li><li><b>Nouveau diagnostic au sixième mois</b><span>On refait le tour des métiers et on recale la feuille de route.</span></li></ul>
+        </div></div>
+      </article><article class="b6-d">
+        <button class="b6-d-h" type="button" aria-expanded="false"><span class="n">06</span><span class="t f">Création d'agents IA</span><span class="pl" aria-hidden="true"></span><svg class="u" viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 9 C 70 2, 170 12, 297 5"/></svg></button>
         <div class="b6-d-b"><div class="b6-d-in">
           <p class="lead">Ce que vos équipes imaginent, on le construit avec elles.</p>
           <ul><li><b>Une automatisation de plus chaque mois</b><span>Tri des mails, tableaux de suivi, comptes rendus : le temps rendu à l'équipe.</span></li><li><b>Un outil sur mesure</b><span>Un outil complet pour une équipe, cadré avec votre IT.</span></li><li><b>Un agent qui lit vos documents</b><span>Il lit des dossiers longs et livre un résultat exploitable.</span></li><li><b>Une journée de construction</b><span>Vos équipes construisent leurs propres outils, avec nous à côté.</span></li></ul>
         </div></div>
       </article>
-      <article class="b6-d">
-        <button class="b6-d-h" type="button" aria-expanded="false"><span class="n">04</span><span class="t f">Champions IA internes</span><span class="pl" aria-hidden="true"></span><svg class="u" viewBox="0 0 300 14" preserveAspectRatio="none" aria-hidden="true"><path d="M3 9 C 70 2, 170 12, 297 5"/></svg></button>
-        <div class="b6-d-b"><div class="b6-d-in">
-          <p class="lead">Des relais dans vos équipes, pour que l'IA continue sans nous.</p>
-          <ul><li><b>Séminaire des champions</b><span>Ils apprennent à embarquer leur propre équipe.</span></li><li><b>Une nouvelle promotion</b><span>Une deuxième vague de relais, dans un autre pays ou une autre enseigne.</span></li><li><b>Permanence IA chaque semaine</b><span>Une heure en visio, ouverte à tous, pour débloquer les usages.</span></li></ul>
-        </div></div>
-      </article>
     </div>
   </section>
 
-  <section class="duo5" id="duo" aria-label="Le duo, Clément Predo et Alexis Zeitoun">
+  <div class="b7-rv"><b>Section 7</b><span>A (en place) : « Vous travaillez avec nous deux »</span><i>B : « Deux associés, aucun intermédiaire »</i><i>C : « Clément et Alexis, directement »</i></div>
+  <section class="duo5" id="duo" data-sec="7" aria-label="Le duo, Clément Predo et Alexis Zeitoun">
   <div class="duo-top">
     <h2 class="f">Vous travaillez <u>avec nous deux<svg viewBox="0 0 300 30" preserveAspectRatio="none" aria-hidden="true"><path d="M4 20 C 70 8, 170 6, 296 16"/></svg></u></h2>
     <p>Clément pour la stratégie, Alexis pour la technique. Ce qu'on fait chez nos clients, on le montre chaque semaine sur LinkedIn.</p>
@@ -1064,7 +1131,8 @@ footer .big { font-size: var(--fs); }
   </div>
 </section>
 
-  <section class="av6" id="avis" aria-label="Ce que disent nos clients">
+  <div class="b7-rv"><b>Section 8</b><span>A (en place) : « Ce que disent nos clients »</span><i>B : « Ils l'ont fait, ils en parlent »</i><i>C : « Leurs mots, pas les nôtres »</i></div>
+  <section class="av6" id="avis" data-sec="8" aria-label="Ce que disent nos clients">
   <div class="av-top">
     <h2 class="f">Ce que disent <span>nos clients</span></h2>
     <div class="av6-side">
@@ -1076,20 +1144,22 @@ footer .big { font-size: var(--fs); }
   <p class="av-foot">Phrases prononcées en séance, relevées dans nos enregistrements d'appels.</p>
 </section>
 
-  <section id="methode" class="b6-me" aria-labelledby="meh">
+  <div class="b7-rv"><b>Section 9</b><span>A (en place) : « Quatre étapes, du premier échange au résultat »</span><i>B : « De l'idée à l'outil qui tourne, en quatre étapes »</i><i>C : « Comment ça se passe, concrètement »</i></div>
+  <section id="methode" class="b6-me" data-sec="9" aria-labelledby="meh">
     <div class="b6-me-head"><div class="cap rv">Comment on travaille</div><h2 class="f rv" id="meh" style="--d:100">Quatre étapes, <span class="i">du premier échange au résultat</span></h2></div>
     <ol class="b6-me-list">
-      <li><span class="k f">1</span><b>On repère</b><p>Un point pour cadrer vos attentes, puis une demi-journée avec l'équipe. Chaque usage est cartographié et le temps gagné chiffré.</p></li>
+      <li><span class="k f">1</span><b>On diagnostique</b><p>Un point pour cadrer vos attentes, puis du temps avec l'équipe. Chaque usage est cartographié et le temps gagné mesuré.</p></li>
       <li><span class="k f">2</span><b>On choisit</b><p>Les outils et les licences, avec vous et votre IT. Rien ne se met en place sans leur validation.</p></li>
       <li><span class="k f">3</span><b>On déploie</b><p>Formations, automatisations, agents : construits sur vos vrais dossiers, avec les équipes.</p></li>
       <li><span class="k f">4</span><b>On suit</b><p>Points de pilotage et comités IA. Vous gardez la main, nous restons à côté.</p></li>
     </ol>
   </section>
 
-  <section id="faq" class="b6-fq" aria-labelledby="fqh">
+  <div class="b7-rv"><b>Section 10</b><span>A (en place) : « Vos questions, nos réponses »</span><i>B : « Ce qu'on nous demande le plus »</i><i>C : « Avant de nous écrire »</i></div>
+  <section id="faq" class="b6-fq" data-sec="10" aria-labelledby="fqh">
     <div class="b6-fq-head"><div class="cap rv">Questions fréquentes</div><h2 class="f rv" id="fqh" style="--d:100">Vos questions, <span class="i">nos réponses</span></h2></div>
     <div class="b6-fq-list" id="fqList">
-      <div class="b6-q"><button type="button" aria-expanded="false"><span>Par où commencer ?</span><i aria-hidden="true"></i></button><div class="a"><p>Par un seul métier. Nous recueillons vos attentes, passons une demi-journée sur place avec l'équipe concernée, puis nous vous présentons le rendu dans la semaine qui suit : chaque usage identifié, le temps gagné et nos recommandations.</p></div></div>
+      <div class="b6-q"><button type="button" aria-expanded="false"><span>Par où commencer ?</span><i aria-hidden="true"></i></button><div class="a"><p>Par un seul métier. Nous recueillons vos attentes, passons du temps avec l'équipe concernée, puis nous vous présentons le rendu dans la semaine qui suit : chaque usage identifié, le temps gagné et nos recommandations.</p></div></div>
       <div class="b6-q"><button type="button" aria-expanded="false"><span>Faut-il changer les outils que nous avons déjà ?</span><i aria-hidden="true"></i></button><div class="a"><p>Non. Nous formons sur les outils que vos équipes utilisent déjà : Claude, ChatGPT, Copilot, Gemini, Mistral. Si vous n'en avez pas, nous achetons et paramétrons les licences pour vous.</p></div></div>
       <div class="b6-q"><button type="button" aria-expanded="false"><span>Que devient la sécurité de nos données ?</span><i aria-hidden="true"></i></button><div class="a"><p>Le diagnostic ne demande aucun accès à vos systèmes ni aucune installation. Pour la suite, nous définissons avec votre IT la détention des comptes, l'hébergement des données et les connexions. Rien ne se met en place sans sa validation.</p></div></div>
       <div class="b6-q"><button type="button" aria-expanded="false"><span>Qui travaille avec nous ?</span><i aria-hidden="true"></i></button><div class="a"><p>Clément Predo et Alexis Zeitoun, les deux associés, sans intermédiaire. Pour les accompagnements plus larges, nous pouvons proposer un consultant dédié.</p></div></div>
@@ -1097,7 +1167,8 @@ footer .big { font-size: var(--fs); }
     </div>
   </section>
 
-  <section id="contact" class="b6-ct" aria-labelledby="cth">
+  <div class="b7-rv"><b>Section 11</b><span>A (en place) : « Parlons de vos équipes. »</span><i>B : « Commençons par un échange »</i><i>C : « Dites-nous où l'IA peut vous faire gagner du temps »</i></div>
+  <section id="contact" class="b6-ct" data-sec="11" aria-labelledby="cth">
     <div class="b6-ct-in">
       <h2 class="f rv" id="cth">Parlons de <span class="i">vos équipes.</span></h2>
       <p class="rv" style="--d:120">Un échange offert, sans engagement. Vous nous dites où l'IA pourrait vous faire gagner du temps, nous vous disons par où commencer.</p>
@@ -2146,7 +2217,7 @@ window.T10_INTRO = (release) => {
   const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
   const hasGsap = typeof gsap !== 'undefined';
   const sound = name => window.dispatchEvent(new CustomEvent('axem:sound', { detail: { name } }));
-  const fmtEur = n => Math.round(n).toLocaleString('fr-FR').replace(/ | /g, ' ') + ' € HT';
+  const fmtEur = n => Math.round(n).toLocaleString('fr-FR').replace(/ | /g, ' ') + '';
 
   // ---- contenu exact (source : brief coaching), un groupe = un tas de logos qui tombent ensemble ----
   const DATA = {
@@ -2572,6 +2643,20 @@ window.T10_INTRO = (release) => {
       const open = q.classList.contains('on'); qs.forEach(o => { if (o !== q && o.classList.contains('on')) setQ(o, false); }); setQ(q, !open);
     }); });
   }
+})();
+
+</script>
+<script id="b7js">
+(function(){
+  var root=document.documentElement;
+  try{ if(/[?&]propre\b/.test(location.search)) root.classList.add('b7-off'); }catch(e){}
+  var tog=document.createElement('button'); tog.className='b7-tog'; tog.type='button';
+  function lab(){ tog.textContent=root.classList.contains('b7-off')?'Afficher les notes de relecture':'Masquer les notes de relecture'; }
+  tog.addEventListener('click',function(){ root.classList.toggle('b7-off'); lab(); }); lab(); document.body.appendChild(tog);
+  var cur=document.createElement('div'); cur.className='b7-cur'; cur.textContent='Section 1'; cur.setAttribute('aria-live','off'); document.body.appendChild(cur);
+  var secs=[].slice.call(document.querySelectorAll('[data-sec]'));
+  function upd(){ var mid=window.innerHeight*.4, best=null; secs.forEach(function(s){ var r=s.getBoundingClientRect(); if(r.top<=mid && r.bottom>mid) best=s; }); if(best) cur.textContent='Section '+best.getAttribute('data-sec'); }
+  window.addEventListener('scroll',upd,{passive:true}); window.addEventListener('resize',upd); setTimeout(upd,500);
 })();
 
 </script>
