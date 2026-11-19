@@ -1,0 +1,2496 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AXEM IA · Votre partenaire IA, de A à Z</title>
+<script>if (/[?&]pal=blanc\b/.test(location.search)) document.documentElement.classList.add('pal-blanc');</script>
+<meta name="description" content="Deux associés qui déploient l'IA dans vos équipes, sur vos vrais dossiers. Conseil, formation et coaching IA à Paris, sans intermédiaire.">
+<link rel="icon" href="../img/favicon-ax-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../img/favicon-ax-180.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="AXEM IA">
+<meta property="og:title" content="AXEM IA, votre partenaire IA de A à Z">
+<meta property="og:description" content="Clément Predo et Alexis Zeitoun déploient l’IA dans vos équipes, sur vos vrais dossiers. Conseil, formation et coaching IA.">
+<meta property="og:url" content="https://axem-ia.fr/">
+<meta property="og:image" content="https://axem-ia.fr/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://axem-ia.fr/">
+<link rel="canonical" href="https://axem-ia.fr/">
+<noscript><style>.fade, .rv { opacity: 1 !important; transform: none !important; }</style></noscript>
+<link href="../vendor/fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="../assets/axem.css">
+<link rel="stylesheet" href="../assets/t2.css">
+<meta name="robots" content="noindex">
+<style>
+.hero .l2 [data-h1l2] { margin: 0; font-size: clamp(64px, 16.4vw, 236px); white-space: nowrap; color: var(--blue); flex: none; }
+.home .hero .l2 [data-h1l2] { font-size: clamp(56px, 13vw, 188px); }
+.home .hero.mk3 .l2 [data-h1l2] { font-size: clamp(56px, min(13vw, 18.5svh), 188px); }
+@media (max-width: 860px) { .home .hero .l2 [data-h1l2], .home .hero.mk3 .l2 [data-h1l2] { font-size: 16vw; white-space: normal; line-height: 0.92; } }
+/* Tour 10 : socle commun (écran bleu, chiffres alignés sur la grille, barre de maquette) */
+.intro { position: fixed; inset: 0; z-index: 60; background: var(--blue); display: flex; align-items: center; justify-content: center; }
+.hold .word > span { transform: translateY(105%) !important; transition: none !important; }
+.hold .fade { opacity: 0 !important; transition: none !important; }
+.hold .grid i { transform: scaleY(0) !important; transition: none !important; }
+.hero > .kick, .hero > h1, .hero > .l2, .hero > .kt, .hero > .band { position: relative; z-index: 2; }
+.grid i { transition: transform 1.4s var(--ease); }
+
+.kt { display: grid; grid-template-columns: repeat(12, 1fr); margin-bottom: auto; padding-bottom: 40px; }
+.kt .k { position: relative; padding: 2px 0 0 14px; cursor: default; }
+.kt .k:nth-child(1) { grid-column: 7 / 9; }
+.kt .k:nth-child(2) { grid-column: 9 / 11; }
+.kt .k:nth-child(3) { grid-column: 11 / 13; }
+.kt .k::before { content: ""; position: absolute; left: 0; top: 0; bottom: 0; width: 1px; background: var(--ink); transform-origin: top; transform: scaleY(0); transition: transform 1s var(--ease), background-color .4s var(--ease); transition-delay: calc(var(--d, 0) * 1ms); }
+.ready:not(.hold) .kt .k::before { transform: scaleY(1); }
+.kt b { display: block; font-weight: 900; font-size: clamp(40px, 4.2vw, 62px); line-height: .95; letter-spacing: -.01em; transition: transform .35s var(--ease), color .35s var(--ease); }
+.kt .k.s b { font-size: clamp(26px, 2.3vw, 34px); color: rgba(11, 13, 18, .6); padding-top: .35em; }
+.kt small { display: block; margin-top: 10px; font-size: 13px; line-height: 1.35; color: rgba(11, 13, 18, .68); max-width: 17ch; }
+.kt .k:hover b { transform: translateY(-4px); color: var(--blue); }
+.kt .k:hover::before { background: var(--blue); transition-delay: 0s; }
+
+.proto { position: fixed; left: var(--gutter); bottom: 12px; z-index: 55; margin: 0; font: 500 12px/1 "Instrument Sans", sans-serif; background: var(--ink); color: var(--cream); padding: 8px 12px; }
+.proto a { margin-left: 12px; color: var(--cream); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+
+@media (max-width: 860px) {
+  .kt { grid-template-columns: repeat(3, 1fr); gap: 0 10px; padding-bottom: 36px; }
+  .kt .k:nth-child(n) { grid-column: auto; padding-left: 10px; }
+  .kt b { font-size: clamp(28px, 8vw, 40px); }
+  .kt .k.s b { font-size: clamp(20px, 5.6vw, 26px); }
+  .kt small { font-size: 11.5px; margin-top: 6px; }
+}
+@media (max-width: 700px) {
+  .proto { position: static; display: block; width: auto; line-height: 1.6; margin: 14px var(--gutter) 18px; }
+}
+
+
+/* Tour 13, le hero mixe. Base du tour 11 proposition 3 (le tableau d'atelier annote au feutre bleu),
+   plus le petit schema a fleches Probleme > Cas d'usage > Gain de la variation 3a, les trois chiffres
+   traites pareil en bleu a la main, le survol du chiffre LinkedIn qui ouvre les deux profils, et deux
+   moments au defilement : le schema qui se trace, puis le tableau qu'on efface en quittant le hero. */
+.hero.mk3 { padding-bottom: 108px; }
+
+/* ---- ancres du titre : transparentes, servent au calque de tracés ---- */
+.mk-ia, .mk-phrase { white-space: nowrap; }
+
+/* ---- calque des tracés au feutre, par dessus le texte ---- */
+.mk-svg { position: absolute; inset: 0; width: 100%; height: 100%; overflow: visible; pointer-events: none; z-index: 3; }
+.mk-svg .mk { fill: none; stroke: var(--blue); stroke-linecap: round; stroke-linejoin: round; filter: url(#mkRough); mix-blend-mode: multiply; }
+.mk-svg .mk.halo { stroke-width: 6.5; opacity: .15; }
+.mk-svg .mk.core { stroke-width: 2.5; opacity: .86; }
+.mk-svg .mk.thin { stroke-width: 2.1; opacity: .82; }
+
+/* ---- note manuscrite courte, pres de l'accolade et du bouton ---- */
+.mk-note { position: absolute; z-index: 4; pointer-events: none; font-family: "Marker Felt", "Bradley Hand", "Noteworthy", "Chalkboard SE", cursive, sans-serif; color: var(--blue); font-size: 16px; line-height: 1.1; white-space: nowrap; opacity: 0; mix-blend-mode: multiply; }
+.mk-note-side { transform: rotate(-2.6deg); }
+.mk-note-btn { transform: rotate(-3.4deg); }
+
+/* ---- chiffres au tableau, en bas a droite, ecrits a la main ---- */
+.hero.mk3 > .l2 { margin-bottom: 6px; }
+.mk-kpis { display: flex; align-items: flex-end; gap: clamp(20px, 2.8vw, 40px); align-self: flex-end; margin: 40px 0 0; z-index: 2; }
+.mk-kpi { text-align: right; }
+.mk-num { display: block; font-family: "Marker Felt", "Bradley Hand", "Noteworthy", "Chalkboard SE", cursive, sans-serif; font-weight: 400; color: var(--blue); font-size: clamp(32px, 3.6vw, 48px); line-height: 1; letter-spacing: .01em; }
+.mk-lbl { display: block; margin-top: 7px; font-size: 11.5px; font-weight: 600; letter-spacing: .06em; text-transform: uppercase; color: rgba(11, 13, 18, .58); font-style: normal; }
+.mk-kpi-1 { transform: rotate(-1.8deg); }
+.mk-kpi-2 { transform: rotate(1.3deg); }
+.mk-kpi-3 { transform: rotate(-1deg); position: relative; }
+.mk-kpi-3:focus-visible { outline: 2px solid var(--blue); outline-offset: 6px; }
+
+@media (max-width: 1180px) {
+  .mk-kpis { align-self: flex-start; margin-top: 30px; }
+}
+@media (max-width: 860px) {
+  .hero.mk3 { padding-bottom: 60px; }
+  .mk-kpis { gap: 18px 24px; flex-wrap: wrap; margin-top: 34px; }
+  .mk-num { font-size: clamp(28px, 9vw, 36px); }
+  .mk-note { font-size: 13px; }
+  .mk-note-side { display: none; }
+}
+@media (max-width: 480px) {
+  .mk-kpis { gap: 14px 20px; }
+}
+
+/* ---- le petit schema a fleches, sous le bouton ---- */
+.mk-flow { display: flex; align-items: center; gap: 4px; margin-top: 14px; flex-wrap: wrap; }
+.mk-tag { font-size: 12.5px; font-weight: 600; letter-spacing: .01em; color: var(--ink); padding: 7px 12px; border: 1.6px solid var(--blue); background: rgba(35, 73, 255, .05); white-space: nowrap; }
+.mk-tag-1 { border-radius: 3px 9px 4px 10px; transform: rotate(-1.3deg); }
+.mk-tag-2 { border-radius: 9px 4px 10px 3px; transform: rotate(1deg); }
+.mk-tag-3 { border-radius: 5px 10px 3px 9px; transform: rotate(-.8deg); color: var(--cream); background: var(--blue); border-color: var(--blue); }
+.mk-fa { width: 34px; height: 15px; flex: none; overflow: visible; }
+.mk-fa path { fill: none; stroke: var(--blue); stroke-width: 2; stroke-linecap: round; stroke-linejoin: round; opacity: .8; filter: none; mix-blend-mode: normal; }
+
+/* ---- les deux profils LinkedIn, au survol du chiffre d'abonnes ---- */
+.mk-li { position: absolute; right: 0; bottom: calc(100% + 8px); z-index: 6; display: flex; flex-direction: column; align-items: flex-end; gap: 4px; padding: 9px 12px; background: var(--cream); border: 1.6px solid var(--blue); border-radius: 4px 11px 4px 11px; opacity: 0; visibility: hidden; transform: translateY(5px) rotate(.9deg); transition: opacity .22s ease, transform .22s cubic-bezier(.16, 1, .3, 1), visibility .22s; }
+.mk-li a { font-family: "Marker Felt", "Bradley Hand", "Noteworthy", "Chalkboard SE", cursive, sans-serif; font-size: 16px; line-height: 1.2; color: var(--blue); text-decoration: none; white-space: nowrap; border-bottom: 1.6px solid transparent; }
+.mk-li a:hover, .mk-li a:focus-visible { border-bottom-color: var(--blue); }
+.mk-kpi-3:hover .mk-li, .mk-kpi-3:focus-within .mk-li { opacity: 1; visibility: visible; transform: none; }
+
+@media (max-width: 860px) {
+  .mk-flow { margin-top: 12px; gap: 3px; }
+  .mk-tag { font-size: 11px; padding: 6px 10px; }
+  .mk-fa { width: 24px; }
+  .mk-li { right: auto; left: 0; align-items: flex-start; }
+}
+@media (prefers-reduced-motion: reduce) { .mk-li { transition: none; } }
+
+
+/* Tour 14 : tout le hero tient dans l'ecran d'arrivee, chiffres compris. Le titre suit la hauteur
+   de fenetre autant que la largeur, et les marges se resserrent sur les ecrans bas. */
+@media (min-width: 861px) {
+  .home .hero.mk3 { padding-top: clamp(96px, 15svh, 150px); padding-bottom: clamp(40px, 7svh, 108px); }
+  .home .hero.mk3 h1 { font-size: clamp(56px, min(13vw, 18.5svh), 188px); }
+  .hero.mk3 > .kick { margin-bottom: clamp(10px, 2.2svh, 28px); }
+  .mk-kpis { margin-top: clamp(18px, 3.4svh, 40px); }
+}
+@media (max-width: 860px) {
+  .home .hero.mk3 { padding-top: 100px; padding-bottom: 40px; }
+}
+/* La legende passe sous le trait de feutre du chiffre, jamais dessous. */
+.mk-lbl { margin-top: 15px; }
+
+/* L'indication "Défiler" se posait sur le libellé de 94 292 : les chiffres suffisent à dire qu'il y a
+   une suite, on la retire du hero. */
+.hero.mk3 .scroll-hint { display: none; }
+/* Mobile : les trois chiffres sur une seule rangée, alignés à gauche, pour tenir dans l'écran d'arrivée. */
+@media (max-width: 860px) {
+  .mk-kpis { display: grid; grid-template-columns: repeat(3, minmax(0, 1fr)); gap: 0 14px; width: 100%; margin-top: 30px; }
+  .mk-kpi { text-align: left; }
+  .mk-num { font-size: clamp(22px, 6.6vw, 30px); white-space: nowrap; }
+  .mk-lbl { font-size: 9.5px; letter-spacing: .04em; line-height: 1.35; margin-top: 12px; }
+}
+/* Le chiffre n'occupe que sa propre largeur : le cercle et les soulignés l'épousent. */
+.mk-num { display: inline-block; }
+/* Mobile : un peu d'air entre "partenaire" et "IA, de A à Z." pour que la flèche passe entre les deux. */
+@media (max-width: 860px) { .hero.mk3 .l2 { margin-top: 14px; } }
+
+/* ---- Tour 15 ---- */
+/* Le fond d'origine revient : les douze traits verticaux, comme sur la banniere LinkedIn et la section
+   coaching en bas de page. Ils se deroulent a l'arrivee, puis ne bougent plus : aucun survol. */
+.hero.mk3 .grid { display: grid; z-index: 0; }
+.hero.mk3 .grid i { pointer-events: none; }
+
+/* Le schema de methode grandit : deux lignes par etape, un verbe puis ce qu'on fait. */
+.hero.mk3 .side { max-width: 560px; gap: 26px; }
+.mk-flow { gap: 6px 4px; margin-top: 4px; flex-wrap: nowrap; align-items: stretch; }
+.mk-tag { display: flex; flex-direction: column; justify-content: center; gap: 3px; padding: 11px 15px 12px; white-space: nowrap; transition: transform .35s var(--ease), background-color .35s var(--ease), color .35s var(--ease); }
+.mk-tag small { font-size: 11.5px; font-weight: 600; letter-spacing: .02em; color: rgba(11, 13, 18, .58); }
+.mk-tag b { font-family: "Fraunces", serif; font-weight: 800; font-variation-settings: "SOFT" 100, "opsz" 48; font-size: 18px; line-height: 1.1; letter-spacing: -.005em; }
+.mk-tag-3 small { color: rgba(250, 246, 234, .78); }
+.mk-ia2 { color: var(--blue); }
+.mk-fa { align-self: center; width: 40px; height: 18px; }
+.mk-tag:hover { transform: translateY(-3px) rotate(0deg); }
+.mk-tag-1:hover, .mk-tag-2:hover { background: rgba(35, 73, 255, .12); }
+
+@media (max-width: 1180px) { .mk-flow { flex-wrap: wrap; } }
+@media (max-width: 860px) {
+  .hero.mk3 .side { max-width: none; gap: 20px; }
+  .mk-tag { padding: 8px 10px 9px; }
+  .mk-tag small { font-size: 10px; }
+  .mk-tag b { font-size: 14px; }
+  .mk-fa { width: 22px; }
+}
+@media (max-width: 480px) {
+  .mk-flow { display: grid; grid-template-columns: auto; justify-items: start; gap: 4px; }
+  .mk-fa { transform: rotate(90deg); margin-left: 14px; width: 22px; height: 14px; }
+}
+
+/* Le schema a sa propre ligne, a gauche, en face des trois chiffres : il ne deborde plus. */
+.mk-row { position: relative; z-index: 2; display: flex; align-items: flex-end; justify-content: space-between; gap: 28px 48px; margin-top: clamp(22px, 4svh, 48px); }
+.mk-row .mk-kpis { margin: 0; align-self: flex-end; }
+.mk-row .mk-flow { margin: 0; padding-bottom: 6px; }
+.mk-ia2 { display: inline-block; margin-left: 11px; padding: 0 2px; }
+@media (max-width: 1180px) { .mk-row { flex-wrap: wrap; } .mk-row .mk-kpis { align-self: flex-start; } }
+@media (max-width: 860px) { .mk-row { flex-direction: column; align-items: flex-start; gap: 26px; margin-top: 26px; } .mk-row .mk-kpis { width: 100%; } }
+
+/* Tour 18, ecran bleu j3, "le bleu qui se replie". Meme grammaire que i1 : les deux portraits, le
+   prenom de chacun qui s'ecrit, un trait de feutre sous A et x (Alexis) puis sous é et m (Clément),
+   le reste des prenoms qui s'efface, les quatre lettres gardees qui rejoignent axem, IA qui se
+   pose, tout qui atterrit sur le logo. La mise en scene change : les portraits sont grands, cote a
+   cote, cernes d'un cadre bleu qui fait office de fond (jamais de teinte sur les visages : les
+   photos restent en couleur naturelle, seul un degrade sombre neutre en bas assure la lisibilite du
+   prenom). Une fois les lettres envolees, ce grand aplat se replie et se retracte d'un seul geste,
+   avec le mot, jusqu'a se poser exactement sur le logo. L'ecran .intro reste transparent : c'est
+   .j3 (fond bleu) + .j3-fold (les deux photos encadrees) qui fait office de decor. */
+
+.intro { background: transparent; }
+.j3 { position: absolute; inset: 0; overflow: hidden; background: var(--blue); }
+
+.j3-fold { position: absolute; inset: 0; display: flex; gap: clamp(10px, 1.6vw, 18px); padding: clamp(10px, 1.6vw, 18px); box-sizing: border-box; }
+.j3-half { position: relative; margin: 0; width: 50%; height: 100%; overflow: hidden; opacity: 0; background: var(--blue); border-radius: 10px; }
+.j3-photo { position: absolute; inset: 0; display: block; }
+.j3-photo img { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; }
+.j3-half-a .j3-photo img { object-position: 50% 30%; }
+.j3-half-c .j3-photo img { object-position: 50% 30%; }
+.j3-photo::after { content: ""; position: absolute; inset: 0; z-index: 2; background: linear-gradient(to top, rgba(11, 13, 18, .64), rgba(11, 13, 18, 0) 40%); }
+
+.j3-name { position: absolute; left: 0; right: 0; bottom: 0; z-index: 3; display: flex; justify-content: center; padding: 0 0 clamp(28px, 5vh, 60px); }
+.j3-l { display: inline-block; overflow: hidden; opacity: 0; font-family: 'Fraunces', serif; font-weight: 900; font-variation-settings: "SOFT" 100, "WONK" 0, "opsz" 144; letter-spacing: -.01em; line-height: .9; font-size: clamp(34px, 5.2vw, 56px); color: var(--cream); white-space: nowrap; }
+.j3-l.keep { position: relative; z-index: 2; overflow: visible; } /* le trait de feutre sort de la boite de la lettre */
+.j3-l.keep + .j3-l.keep { margin-left: .05em; } /* é et m de Clément : un souffle les separe */
+
+/* Le vrai trait de feutre : un <svg> fixed, un <path> irregulier (sketchLine dans j3.js) qui se
+   DESSINE via stroke-dasharray/dashoffset. Jamais un simple scaleX. */
+.j3-mark { position: absolute; overflow: visible; pointer-events: none; z-index: 4; }
+.j3-mark path { fill: none; stroke: var(--cream); stroke-width: 7; stroke-linecap: round; stroke-linejoin: round; }
+
+.j3-final { position: absolute; inset: 0; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 16px; pointer-events: none; z-index: 5; }
+.j3-wm { font-size: clamp(40px, 7.2vw, 96px); color: var(--cream); }
+.j3-logo { opacity: 0; }
+.j3-logo span { display: inline-block; font-weight: 900; font-variation-settings: "SOFT" 100, "WONK" 0, "opsz" 144; letter-spacing: -0.02em; }
+.j3-ia { opacity: 0; transform: translateY(-6px) scale(.7); }
+.j3-tag { margin: 0; font: 600 15px/1.35 "Instrument Sans", sans-serif; letter-spacing: 0.01em; color: rgba(250, 246, 234, .86); opacity: 0; text-align: center; max-width: min(90vw, 440px); padding: 0 20px; box-sizing: border-box; }
+
+@media (max-width: 700px) {
+  .j3-fold { flex-direction: column; }
+  .j3-half { width: 100%; height: 50%; }
+  .j3-l { font-size: clamp(20px, 7.4vw, 30px); }
+  .j3-name { padding-bottom: clamp(14px, 3.4vh, 26px); }
+  .j3-wm { font-size: clamp(26px, 11.5vw, 44px); }
+  .j3-tag { font-size: 12.5px; }
+}
+
+.hold .nav .logo .wm, .j3-flying .nav .logo .wm { visibility: hidden; }
+.j3-wm-blue { color: var(--blue); opacity: 0; }
+.j3-wm-blue .j3-logo, .j3-wm-blue .j3-ia { opacity: 1 !important; transform: none !important; }
+
+/* Tour 15, style Awwwards s1 : "Aimant". Personnalite calme et premium : le remplissage bleu du
+   bouton entre du cote exact ou arrive la souris, la fleche sort puis rentre par l'autre bord, le
+   lien du haut recoit le meme reflexe (un petit point qui glisse). Le titre garde son masque mot a
+   mot d'origine mais avec un leger ressort, plus un trait qui se tire sous "partenaire" une fois
+   pose. Au premier defilement, tout le hero se souleve et s'estompe doucement, comme une page qui
+   se tourne, pendant que le bandeau clients approche. Aucun survol sur le fond : uniquement bouton,
+   lien et texte de titre. */
+
+/* ---- bouton : remplissage directionnel (piloté par --ex/--ey, voir s1.js) ---- */
+.t16 .hero.mk3 .btn { --ex: 0%; --ey: 115%; }
+.t16 .hero.mk3 .btn::before { transform: translate(var(--ex), var(--ey)); transition: transform 520ms var(--ease); }
+.t16 .hero.mk3 .btn .ar { transition: transform 400ms var(--ease); }
+.t16 .hero.mk3 .btn:hover .ar, .t16 .hero.mk3 .btn:focus-visible .ar { animation: s1ar 620ms var(--ease) 1; }
+@keyframes s1ar {
+  0% { transform: translateX(0) rotate(-45deg); opacity: 1; }
+  42% { transform: translateX(12px) rotate(-45deg); opacity: 0; }
+  43% { transform: translateX(-12px) rotate(-45deg); opacity: 0; }
+  100% { transform: translateX(0) rotate(-45deg); opacity: 1; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .t16 .hero.mk3 .btn::before { transition: none; }
+  .t16 .hero.mk3 .btn:hover .ar, .t16 .hero.mk3 .btn:focus-visible .ar { animation: none; }
+}
+
+/* ---- titre : ressort leger sur le masque mot a mot existant (aucun trait ajoute pres du feutre) ---- */
+.t16 #h .word > span { transition-timing-function: cubic-bezier(.18, 1.32, .32, 1); transition-duration: 980ms; }
+
+/* ---- premier defilement : le hero se souleve et s'estompe (page qui se tourne) ---- */
+.t16 .hero.mk3 { will-change: transform, opacity; }
+
+/* ---- Tour 16 : fluidite. Plus de flou derriere la barre (il se recalculait a chaque image de
+   defilement), le bandeau clients tourne en CSS sur la carte graphique. ---- */
+.nav.solid { background: rgba(250, 246, 234, .97); backdrop-filter: none; -webkit-backdrop-filter: none; }
+.t2 .mq { animation: mq 42s linear infinite; will-change: transform; }
+.marquee:hover .mq { animation-play-state: paused; }
+.mk-svg .mk { filter: none; }
+
+/* ---- Tour 16 : le logo de la barre = le mot « axem IA » de l'ecran bleu, meme police, meme balisage ---- */
+.nav .logo { display: inline-flex; background: transparent; padding: 0; box-shadow: none; }
+.nav .logo .wm { font-size: 38px; color: var(--blue); transition: color .35s var(--ease); }
+.nav .logo .nl span { display: inline-block; font-weight: 900; font-variation-settings: "SOFT" 100, "WONK" 0, "opsz" 144; letter-spacing: -0.02em; }
+.nav .logo:hover { transform: none; box-shadow: none; }
+.nav .logo:hover .wm { color: var(--ink); }
+@media (max-width: 860px) { .nav .logo .wm { font-size: 30px; } }
+
+/* ---- Tour 16 : liens de la barre = de vrais boutons, comme les lignes d'offres. Au survol, une
+   pastille bleue monte du bas, deborde le mot, le texte passe en creme et une fleche sort. ---- */
+.nav .links { gap: 4px; }
+.nav .links a { position: relative; display: inline-flex; align-items: center; gap: 0; padding: 12px 18px; border-radius: 999px; font-size: 15px; font-weight: 600; isolation: isolate; transition: color .35s var(--ease), padding .45s var(--ease); }
+.nav .links a::after { display: none; }
+.nav .links a::before { content: ""; position: absolute; inset: -3px -4px; margin: 0; width: auto; height: auto; border-radius: 999px; background: var(--blue); z-index: -1; transform: scale(.55, 0); transform-origin: 50% 100%; transition: transform .45s var(--ease); flex: none; }
+.nav .links a .na { display: inline-block; width: 0; overflow: hidden; opacity: 0; font-size: 17px; line-height: 1; transform: translateX(-6px) rotate(0); transition: width .45s var(--ease), opacity .3s var(--ease), transform .45s var(--ease), margin .45s var(--ease); }
+.nav .links a:hover, .nav .links a:focus-visible { color: var(--cream); padding-left: 22px; padding-right: 20px; }
+.nav .links a:hover::before, .nav .links a:focus-visible::before { transform: none; }
+.nav .links a:hover .na, .nav .links a:focus-visible .na { width: 16px; margin-left: 8px; opacity: 1; transform: rotate(-45deg); }
+.nav .links a.on { color: var(--blue); }
+.nav .links a.on:hover { color: var(--cream); }
+
+/* ---- Tour 16 : « Reserver un echange offert », un vrai bouton cale a droite. Une grosse fleche
+   dans une pastille creme apparait apres l'arrivee, rebondit de temps en temps pour attirer l'oeil ;
+   au survol le fond encre entre du cote d'ou vient la souris (reflexe s1 Aimant). ---- */
+.nav .book { position: relative; display: inline-flex; align-items: center; gap: 14px; padding: 7px 7px 7px 24px; border: 0; border-radius: 999px; background: var(--blue); color: var(--cream); font-size: 15px; font-weight: 600; letter-spacing: 0; text-transform: none; overflow: hidden; isolation: isolate; --ex: 0%; --ey: 115%; transition: box-shadow .35s var(--ease); }
+.nav .book::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--ink); z-index: -1; transform: translate(var(--ex), var(--ey)); transition: transform 520ms var(--ease); }
+.nav .book:hover::before, .nav .book:focus-visible::before { transform: none; }
+.nav .book::after { display: none; }
+.nav .book .short { display: none; }
+.nav .book .bk-ar { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--cream); color: var(--blue); transform: scale(0) rotate(-90deg); transition: transform .5s var(--ease), color .35s var(--ease); }
+.nav .book .bk-ar svg { width: 20px; height: 20px; display: block; }
+.ready:not(.hold) .nav .book .bk-ar { transform: none; transition: transform .8s cubic-bezier(.34, 1.8, .5, 1) .9s; }
+.ready:not(.hold) .nav .book .bk-ar svg { animation: bkBounce 3.2s cubic-bezier(.3, 0, .2, 1) 2.2s infinite; }
+@keyframes bkBounce { 0%, 62%, 100% { transform: translateX(0); } 70% { transform: translateX(6px); } 78% { transform: translateX(-2px); } 86% { transform: translateX(4px); } 93% { transform: translateX(0); } }
+.nav .book:hover .bk-ar { transform: rotate(-45deg) scale(1.08); transition-delay: 0s; }
+.nav .book:hover .bk-ar svg { animation: none; }
+@media (max-width: 860px) {
+  .nav .book { gap: 10px; padding: 5px 5px 5px 16px; font-size: 14px; }
+  .nav .book .long { display: none; }
+  .nav .book .short { display: inline; }
+  .nav .book .bk-ar { width: 34px; height: 34px; }
+  .nav .book .bk-ar svg { width: 17px; height: 17px; }
+}
+@media (prefers-reduced-motion: reduce) { .ready .nav .book .bk-ar svg { animation: none !important; } }
+
+/* ---- Tour 16 : hero s1 range. Titre remonte, bouton cale sur le bord droit de la grille, « c'est
+   ici » plus gros, pose sous le bouton et toujours visible, schema et chiffres en pied de hero. ---- */
+@media (min-width: 861px) {
+  .home .hero.mk3 { justify-content: flex-start; padding-top: clamp(112px, 17svh, 176px); }
+  .home .hero.mk3 { min-height: 0; height: auto; padding-bottom: clamp(40px, 6svh, 64px); }
+  .hero.mk3 .mk-row { margin-top: clamp(120px, 19svh, 190px); padding-top: 0; }
+  .hero.mk3 .l2 { justify-content: space-between; }
+  .hero.mk3 .side { margin-left: auto; align-items: flex-end; max-width: none; }
+  .hero.mk3 .side .btn { align-self: flex-end !important; }
+}
+.hero.mk3 .btn { font-size: 17px; padding: 22px 32px; }
+.mk-note-btn { font-size: 30px; }
+@media (max-width: 860px) { .mk-note-btn { font-size: 22px; } }
+
+/* ---- Tour 17 : socle commun aux 6 pages (v1 v2 v3 d1 d2 d3), injecte par le build juste apres
+   nav.css et avant le CSS propre a chaque page. Regle de Clement : un seul bouton Reserver visible
+   a la fois, plus le bouton son, plus l'habillage du pied de page legal. ---- */
+
+/* Reserver un seul a la fois (regle Clement, tour 17). La barre garde un bouton .book (nav.css) ;
+   il est masque tant que le grand bouton du hero est a l'ecran, invisible sur les pages duo car
+   elles n'ont pas de hero : voir base17.js. Aujourd'hui assets/axem.js masque toute la barre au
+   defilement vers le bas (classe .hide, assets/axem.css ligne 39) : on neutralise ce comportement
+   ici, la barre du tour 17 ne se cache plus jamais. */
+.t17 .nav.hide { transform: none; }
+
+.t17 .nav .book[data-book] { transition: opacity .4s var(--ease), transform .4s var(--ease); }
+.t17 .nav .book[data-book].rs-hidden { opacity: 0; transform: translateY(-10px); pointer-events: none; }
+.t17 .nav .book[data-book].rs-show { opacity: 1; transform: none; }
+
+/* Bouton son : egaliseur discret en bas a gauche, coupe par defaut. Barres immobiles quand coupe,
+   ondulent (scaleY, CSS pur) quand actif. Ne tourne jamais tant que le bouton n'est pas active :
+   c'est une animation CSS bornee par la classe .on, pas une boucle JS permanente. */
+.t17 .snd-btn { position: fixed; left: 18px; bottom: 18px; z-index: 56; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: rgba(250, 246, 234, .88); display: grid; place-items: center; cursor: pointer; padding: 0; transition: background-color .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease); }
+.t17 .snd-btn:hover { border-color: var(--blue); transform: translateY(-2px); }
+.t17 .snd-btn:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.t17 .snd-bars { display: flex; align-items: center; justify-content: center; gap: 3px; width: 18px; height: 16px; pointer-events: none; }
+.t17 .snd-bars i { display: block; width: 2.5px; height: 100%; border-radius: 2px; background: var(--ink); transform: scaleY(.28); transform-origin: center; transition: background-color .3s var(--ease); }
+.t17 .snd-btn.on .snd-bars i { background: var(--blue); animation: t17SndWave 1.15s ease-in-out infinite; }
+.t17 .snd-btn.on .snd-bars i:nth-child(1) { animation-delay: 0s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(2) { animation-delay: .18s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(3) { animation-delay: .36s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(4) { animation-delay: .12s; }
+@keyframes t17SndWave { 0%, 100% { transform: scaleY(.28); } 50% { transform: scaleY(1); } }
+/* le bandeau de maquette se range a droite du bouton son, jamais dessous */
+.t17 .proto { left: 76px; bottom: 24px; }
+@media (max-width: 860px) { .t17 .snd-btn { left: 14px; bottom: 14px; width: 40px; height: 40px; } }
+@media (max-width: 860px) and (min-width: 701px) { .t17 .proto { left: 68px; bottom: 20px; } }
+@media (prefers-reduced-motion: reduce) { .t17 .snd-btn.on .snd-bars i { animation: none !important; } }
+
+/* Pied de page legal : une ligne sous le meta existant (axem-ia.fr / Paris / Reserver), au-dessus du
+   mot-symbole geant. Le meta original (footer .meta, assets/axem.css ligne 146) est en position
+   absolue a taille fixe ; sur mobile il retombe sur 2 lignes (peu de largeur pour 3 items), ce qui
+   ferait chevaucher une ligne suivante a decalage fixe. On enveloppe donc meta + legal-links dans un
+   bloc .ft-top en flux normal (empile en colonne), et on neutralise le positionnement absolu du
+   meta a l'interieur : la ligne des liens legaux suit toujours meta, jamais de chevauchement. */
+.t17 footer .ft-top { position: absolute; top: 28px; left: var(--gutter); right: var(--gutter); display: flex; flex-direction: column; gap: 10px; }
+.t17 footer .ft-top .meta { position: static; top: auto; left: auto; right: auto; flex-wrap: wrap; row-gap: 6px; }
+.t17 footer .legal-links { position: static; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 11px; font-weight: 600; letter-spacing: .04em; margin: 0; }
+.t17 footer .legal-links a { color: rgba(250, 246, 234, .62); text-decoration: none; transition: color .25s var(--ease); }
+.t17 footer .legal-links a:hover, .t17 footer .legal-links a:focus-visible { color: var(--blue); }
+@media (max-width: 860px) { .t17 footer .ft-top { gap: 8px; } .t17 footer .legal-links { gap: 5px 16px; } }
+
+/* Pages juridiques (mentions-legales.html, confidentialite.html) : mise en page simple, DA du site. */
+.t17-legal { max-width: 760px; margin: 0 auto; padding: clamp(90px, 12vh, 140px) var(--gutter) 120px; }
+.t17-legal .back { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--blue); margin-bottom: 48px; }
+.t17-legal .back:hover, .t17-legal .back:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.t17-legal h1 { font-size: clamp(32px, 5vw, 48px); margin: 0 0 8px; }
+.t17-legal .maj { font-size: 13px; color: var(--grey); margin: 0 0 48px; }
+.t17-legal h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(20px, 2.4vw, 26px); margin: 44px 0 14px; }
+.t17-legal p { font-size: 16px; line-height: 1.65; color: var(--grey); margin: 0 0 14px; }
+.t17-legal a { color: var(--blue); }
+.t17-legal a:hover, .t17-legal a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.t17-legal .todo { color: var(--blue); font-weight: 600; }
+
+/* Tour 19, commun a toutes les pages : le monogramme ax (enregistre par Clement le 25/09) en logo de la
+   barre des pages duo et reservation, et la barre de prototype en bas a gauche. */
+.axm { display: inline-block; width: 46px; height: 31px; vertical-align: middle; background: var(--blue); -webkit-mask: url(../img/logo-ax-mask.png) center / contain no-repeat; mask: url(../img/logo-ax-mask.png) center / contain no-repeat; transition: transform 0.4s var(--ease); }
+.nav .logo:hover .axm, .nav .logo:focus-visible .axm { transform: rotate(-8deg) scale(1.08); }
+.t19 .proto { position: fixed; left: 76px; bottom: 24px; z-index: 55; margin: 0; font: 500 12px/1 "Instrument Sans", sans-serif; background: var(--ink); color: var(--cream); padding: 8px 12px; }
+.t19 .proto a { margin-left: 12px; color: var(--cream); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+@media (max-width: 700px) {
+  .t19 .proto { position: static; display: block; width: auto; line-height: 1.6; margin: 14px var(--gutter) 18px; }
+}
+
+/* Tour 20 : reglages communs. */
+/* Pages de paiement : le bouton son recouvrait le prix de la barre collante, il n'a pas de role au moment de payer. */
+.t20-r1 .snd-btn, .t20-r2 .snd-btn, .t20-r3 .snd-btn { display: none !important; }
+
+/* Tour 18, section offres (commune aux accueils w1 w2 w3). Base : t17/v1, ligne + zone de schéma
+   séparée du texte (jamais de chevauchement, colonne de grille à part). Scope sous .t18 #offres
+   plus .offres18. Transform et opacity uniquement pour les boucles bornées au survol/focus/défilement
+   tactile. Quatre schémas distincts : 01 Conseil (trait abstrait, sans logo, bleu et crème),
+   02 Formation (nuée de logos IA qui arrive en vague et se range en grille), 03 Automatisation
+   (flux n8n/Make/Zapier, noeuds qui s'allument), 04 Coaching (le vrai logo Claude en aiguille sur
+   un cadran). La zone du schéma prend l'espace libre de la ligne, entre la fin du texte et la
+   flèche : aucun fond, aucune bordure de conteneur, les objets flottent sur la crème. */
+
+.t18 #offres.offres18 .row { position: relative; display: grid; grid-template-columns: 56px minmax(260px, 1fr) clamp(560px, 40vw, 640px) 40px; column-gap: 26px; align-items: center; min-height: clamp(168px, 20vh, 236px); padding: 22px var(--gutter); isolation: isolate; }
+.t18 #offres.offres18 .row::before { content: none; }
+.t18 #offres.offres18 .row:hover, .t18 #offres.offres18 .row:focus-within { color: var(--ink); }
+.t18 #offres.offres18 .row .r-num { font-size: 13px; opacity: .55; align-self: start; margin-top: 8px; }
+.t18 #offres.offres18 .row .r-body h3 { margin: 0 0 8px; font-size: clamp(34px, 4.4vw, 62px); letter-spacing: -.02em; transition: transform 500ms var(--ease); }
+.t18 #offres.offres18 .row:hover .r-body h3, .t18 #offres.offres18 .row:focus-within .r-body h3 { transform: translateX(8px); }
+.t18 #offres.offres18 .row .r-body p { margin: 0; max-width: 40ch; font-size: 15px; line-height: 1.5; }
+.t18 #offres.offres18 .row .arr { font-size: 30px; }
+
+/* Zone réservée du schéma : colonne de grille à part, jamais superposée au texte, prend tout
+   l'espace libre entre le texte et la flèche. Pas de fond ni de bordure : les objets flottent
+   directement sur la crème de la page. Rien au repos (opacité 0), révélée par transform/opacity au
+   survol, au focus clavier, ou (tactile, sans hover) quand la ligne entre dans l'écran, classe
+   .play posée par IntersectionObserver. */
+.t18 #offres.offres18 .r-zone { position: relative; align-self: stretch; min-height: 130px; overflow: hidden; opacity: 0; transform: translateY(10px) scale(.98); transition: opacity .5s var(--ease), transform .5s var(--ease); }
+.t18 #offres.offres18 .row:hover .r-zone, .t18 #offres.offres18 .row:focus-within .r-zone, .t18 #offres.offres18 .row.play .r-zone { opacity: 1; transform: none; }
+.t18 #offres.offres18 .rz-svg { position: absolute; inset: 0; width: 100%; height: 100%; }
+.t18 #offres.offres18 .rz-mark { position: absolute; width: 22px; height: 22px; opacity: 0; }
+
+/* 01 Conseil : pas de logo, un trait bleu élégant, un repère à deux tons (bleu et crème, 34px) qui
+   avance de point en point sur toute la largeur de la zone. */
+.t18 #offres.offres18 .rz-path { opacity: .5; }
+.t18 #offres.offres18 .rz-dot { fill: var(--blue); opacity: .4; }
+.t18 #offres.offres18 .rz-mark-trace { left: 0; top: 0; width: 34px; height: 34px; border-radius: 50%; background: var(--cream); border: 2px solid var(--blue); box-shadow: 0 3px 12px rgba(35, 73, 255, .3); }
+.t18 #offres.offres18 .rz-mark-trace .tr-core { position: absolute; inset: 7px; border-radius: 50%; background: var(--blue); }
+
+/* 02 Formation : douze pastilles de logos IA (44px), en nuée qui arrive en vague depuis la droite,
+   se range en grille nette de 6 colonnes sur 2 rangées et bien lisible quand la ligne joue. */
+.t18 #offres.offres18 .rz-grid { position: absolute; inset: 0; }
+.t18 #offres.offres18 .lg { position: absolute; width: 44px; height: 44px; margin: -22px 0 0 -22px; border-radius: 50%; background: var(--cream); box-shadow: 0 3px 10px rgba(11, 13, 18, .16); display: grid; place-items: center; overflow: hidden; opacity: 0; }
+.t18 #offres.offres18 .lg-img { width: 66%; height: 66%; object-fit: contain; display: block; }
+.t18 #offres.offres18 .lg.lg-fail .lg-img { display: none; }
+.t18 #offres.offres18 .lg.lg-fail::after { content: attr(data-tool); font: 700 8px/1.05 "Instrument Sans", sans-serif; letter-spacing: .01em; text-align: center; text-transform: uppercase; color: var(--ink); padding: 0 2px; }
+.t18 #offres.offres18 .lg-1  { left: 8%; top: 30%; }
+.t18 #offres.offres18 .lg-2  { left: 25%; top: 30%; }
+.t18 #offres.offres18 .lg-3  { left: 42%; top: 30%; }
+.t18 #offres.offres18 .lg-4  { left: 58%; top: 30%; }
+.t18 #offres.offres18 .lg-5  { left: 75%; top: 30%; }
+.t18 #offres.offres18 .lg-6  { left: 92%; top: 30%; }
+.t18 #offres.offres18 .lg-7  { left: 8%; top: 72%; }
+.t18 #offres.offres18 .lg-8  { left: 25%; top: 72%; }
+.t18 #offres.offres18 .lg-9  { left: 42%; top: 72%; }
+.t18 #offres.offres18 .lg-10 { left: 58%; top: 72%; }
+.t18 #offres.offres18 .lg-11 { left: 75%; top: 72%; }
+.t18 #offres.offres18 .lg-12 { left: 92%; top: 72%; }
+/* Kimi : tracé blanc sur fond transparent dans le SVG source, invisible sur la pastille crème.
+   Fond encre pour retrouver le contraste de son identité (blanc et bleu sur noir). */
+.t18 #offres.offres18 .lg[data-tool="Kimi"] { background: var(--ink); }
+
+/* 03 Automatisation : n8n, Make, Zapier (40px) espacés sur toute la largeur de la zone, reliés par
+   un flux bleu bien visible ; les noeuds s'allument au passage du signal. */
+.t18 #offres.offres18 .rz-flow { position: absolute; inset: 0; }
+.t18 #offres.offres18 .rz-flow .lg { width: 60px; height: 60px; margin: -30px 0 0 -30px; }
+.t18 #offres.offres18 .rz-flow .lg-img { width: 72%; height: 72%; }
+.t18 #offres.offres18 .lg-a1 { left: 10%; top: 30%; }
+.t18 #offres.offres18 .lg-a2 { left: 50%; top: 80%; }
+.t18 #offres.offres18 .lg-a3 { left: 90%; top: 25%; }
+.t18 #offres.offres18 .rz-link { stroke: var(--blue); stroke-width: 2.4; opacity: 0; }
+.t18 #offres.offres18 .rz-signal { fill: var(--blue); opacity: 0; }
+
+/* 04 Coaching : le cadran de 60 minutes, le vrai logo Claude (ClaudeMark, 64px) en aiguille au
+   pivot, à l'échelle de la nouvelle zone. */
+.t18 #offres.offres18 .rz-dial { fill: none; stroke: var(--blue); stroke-width: 1.8; opacity: .35; }
+.t18 #offres.offres18 .rz-ticks line { stroke: var(--blue); stroke-width: 1.8; opacity: .4; }
+.t18 #offres.offres18 .rz-pivot { position: absolute; inset: 0; display: grid; place-items: center; transform-box: fill-box; }
+.t18 #offres.offres18 .rz-hand { position: static; width: 64px; height: 64px; opacity: .95; transform: translateY(-54px); }
+.t18 #offres.offres18 .rz-hand svg { width: 100%; height: 100%; overflow: visible; }
+
+/* Filet de sécurité : si le JS ne joue jamais (mouvement réduit, JS coupé), tout ce qui dépend
+   normalement d'une animation reste au moins visible dès que la ligne est révélée (survol, focus,
+   ou .play tactile). Un style en ligne posé par GSAP prime toujours sur ces règles, donc aucun
+   conflit avec les animations elles-mêmes. */
+.t18 #offres.offres18 .row:hover .lg, .t18 #offres.offres18 .row:focus-within .lg, .t18 #offres.offres18 .row.play .lg,
+.t18 #offres.offres18 .row:hover .rz-mark, .t18 #offres.offres18 .row:focus-within .rz-mark, .t18 #offres.offres18 .row.play .rz-mark,
+.t18 #offres.offres18 .row:hover .rz-link, .t18 #offres.offres18 .row:focus-within .rz-link, .t18 #offres.offres18 .row.play .rz-link,
+.t18 #offres.offres18 .row:hover .rz-signal, .t18 #offres.offres18 .row:focus-within .rz-signal, .t18 #offres.offres18 .row.play .rz-signal { opacity: 1; }
+
+@media (max-width: 1100px) {
+  .t18 #offres.offres18 .row { grid-template-columns: 46px minmax(220px, 1fr) clamp(380px, 46vw, 460px) 34px; column-gap: 18px; }
+}
+@media (max-width: 860px) {
+  .t18 #offres.offres18 .row { grid-template-columns: 1fr; row-gap: 14px; padding: 26px var(--gutter); min-height: 0; }
+  .t18 #offres.offres18 .row > * { grid-column: 1; grid-row: auto; } /* axem.css place .arr et .r-num en colonnes fixes : on les remet en une seule colonne */
+  .t18 #offres.offres18 .r-num { order: 1; margin: 0; }
+  .t18 #offres.offres18 .r-body { order: 2; }
+  .t18 #offres.offres18 .r-zone { order: 3; min-height: 110px; }
+  .t18 #offres.offres18 .arr { order: 4; justify-self: start; }
+  .t18 #offres.offres18 .lg { width: 34px; height: 34px; margin: -17px 0 0 -17px; }
+  .t18 #offres.offres18 .rz-flow .lg { width: 44px; height: 44px; margin: -22px 0 0 -22px; }
+  .t18 #offres.offres18 .rz-mark-trace { width: 28px; height: 28px; }
+  .t18 #offres.offres18 .rz-hand { width: 48px; height: 48px; transform: translateY(-40px); }
+}
+@media (hover: none) {
+  .t18 #offres.offres18 .r-zone { transform: translateY(6px) scale(.99); }
+}
+@media (prefers-reduced-motion: reduce) {
+  .t18 #offres.offres18 .r-zone { transition: none; }
+  .t18 #offres.offres18 .lg, .t18 #offres.offres18 .rz-link, .t18 #offres.offres18 .rz-signal, .t18 #offres.offres18 .rz-mark { transition: none; }
+}
+
+/* Tour 20, coaching k1, « Le distributeur de séances ». Une machine centrale (tube en verre)
+   surmontée d'un symbole Claude au repos, trois touches juicy (séance, parcours 5, parcours 10) qui
+   font tomber des symboles Claude dans le tube, un afficheur qui fait rouler le prix et le total, et
+   à côté une liste qui se remplit au même rythme. Réutilise .f, .i, .cap, .rv, [data-lines], [data-mag]
+   déjà chargés (assets/axem.css, outils/t16/lite.js). Scope : .t20 .k1 uniquement. Deux palettes :
+   bleu et argile par défaut (texte crème, fond bleu), blanche sous html.pal-blanc (fond blanc, texte
+   encre) : l'orange #D97757 ne sert qu'au symbole Claude, jamais au texte ni aux boutons, leçon du
+   tour 19 (le texte orange sur bleu ne se lit pas). */
+
+.t20 .k1 { position: relative; background: var(--blue); color: var(--cream); padding: 104px var(--gutter) 100px; }
+html.pal-blanc .t20 .k1 { background: #FFFFFF; color: var(--ink); }
+
+.t20 .k1-head { max-width: 760px; margin: 0 auto 56px; }
+.t20 .k1-head .cap { color: var(--cream); opacity: .72; }
+html.pal-blanc .t20 .k1-head .cap { color: var(--blue); opacity: 1; }
+.t20 .k1-head h2 { margin: 14px 0 0; font-size: clamp(32px, 4.6vw, 56px); color: var(--cream); }
+html.pal-blanc .t20 .k1-head h2 { color: var(--ink); }
+.t20 .k1-head h2 .i { color: var(--cream); opacity: .82; }
+html.pal-blanc .t20 .k1-head h2 .i { color: var(--blue); opacity: 1; }
+.t20 .k1-head h2 .ln { overflow: hidden; }
+
+/* ---------- mise en page : machine a gauche, detail a droite ---------- */
+.t20 .k1-app { display: grid; grid-template-columns: minmax(300px, 420px) 1fr; gap: 20px 64px; align-items: start; max-width: 1180px; margin: 0 auto; }
+
+/* ---------- la machine ---------- */
+.t20 .k1-machine { display: flex; flex-direction: column; gap: 14px; }
+
+.t20 .k1-tube { position: relative; height: 320px; border-radius: 32px; overflow: hidden; background: linear-gradient(180deg, rgba(250,246,234,.14), rgba(250,246,234,.03) 55%, rgba(250,246,234,.08)); border: 1px solid rgba(250,246,234,.26); box-shadow: inset 0 1px 0 rgba(250,246,234,.35), inset 0 -30px 40px -30px rgba(11,13,18,.3); }
+html.pal-blanc .t20 .k1-tube { background: linear-gradient(180deg, rgba(35,73,255,.07), rgba(35,73,255,.015) 55%, rgba(35,73,255,.05)); border-color: rgba(35,73,255,.22); box-shadow: inset 0 1px 0 rgba(255,255,255,.7), inset 0 -30px 40px -30px rgba(35,73,255,.12); }
+.t20 .k1-tube::before { content: ""; position: absolute; left: 14%; right: 14%; top: 16px; height: 1px; background: rgba(250,246,234,.3); }
+html.pal-blanc .t20 .k1-tube::before { background: rgba(35,73,255,.22); }
+
+.t20 .k1-idle { position: absolute; left: 50%; top: 40px; width: 58px; height: 58px; margin-left: -29px; transform-origin: 50% 78%; cursor: default; }
+.t20 .k1-idle svg { width: 100%; height: 100%; display: block; }
+.t20 .k1-idle.jump { animation: k1jump .62s cubic-bezier(.3,1.4,.4,1); }
+@keyframes k1jump {
+  0% { transform: translateY(0) scale(1,1) rotate(0deg); }
+  32% { transform: translateY(-18px) scale(1.1,.88) rotate(-6deg); }
+  58% { transform: translateY(3px) scale(.92,1.1) rotate(4deg); }
+  100% { transform: translateY(0) scale(1,1) rotate(0deg); }
+}
+
+.t20 .k1-stack { position: absolute; left: 20px; right: 20px; bottom: 18px; min-height: 96px; display: flex; flex-wrap: wrap-reverse; align-content: flex-start; justify-content: center; gap: 8px; }
+.t20 .k1-chip { width: 34px; height: 34px; flex: none; opacity: 0; transform: translateY(-260px) scale(.7); }
+.t20 .k1-chip svg { width: 100%; height: 100%; display: block; }
+
+.t20 .k1-readout { display: flex; gap: 1px; border-radius: 18px; overflow: hidden; background: rgba(11,13,18,.22); }
+html.pal-blanc .t20 .k1-readout { background: rgba(35,73,255,.1); }
+.t20 .k1-readout-cell { flex: 1; padding: 14px 18px; display: flex; flex-direction: column; gap: 4px; background: rgba(11,13,18,.14); }
+html.pal-blanc .t20 .k1-readout-cell { background: rgba(255,255,255,.6); }
+.t20 .k1-readout-lbl { font-size: 11px; font-weight: 600; letter-spacing: .1em; text-transform: uppercase; opacity: .68; }
+.t20 .k1-readout-val { font-size: clamp(20px, 2.5vw, 26px); font-weight: 700; font-variant-numeric: tabular-nums; letter-spacing: -.01em; }
+.t20 .k1-readout-val.roll { animation: k1roll .5s cubic-bezier(.3,1.4,.4,1); }
+@keyframes k1roll { 0% { transform: scale(1); } 40% { transform: scale(1.14); } 100% { transform: scale(1); } }
+
+.t20 .k1-fmts { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; touch-action: pan-y; }
+.t20 .k1-fmt { display: flex; flex-direction: column; align-items: flex-start; gap: 6px; min-height: 92px; padding: 16px 14px; border-radius: 20px; background: rgba(250,246,234,.08); border: 1px solid rgba(250,246,234,.22); color: inherit; text-align: left; cursor: pointer; transition: background .32s var(--ease), border-color .32s var(--ease), box-shadow .32s var(--ease), transform .18s var(--ease); }
+html.pal-blanc .t20 .k1-fmt { background: rgba(35,73,255,.05); border-color: rgba(35,73,255,.2); }
+.t20 .k1-fmt:hover { border-color: rgba(250,246,234,.5); transform: translateY(-3px); }
+html.pal-blanc .t20 .k1-fmt:hover { border-color: rgba(35,73,255,.45); }
+.t20 .k1-fmt:active { transform: translateY(-1px) scale(.96); }
+.t20 .k1-fmt[aria-pressed="true"] { background: var(--cream); border-color: var(--cream); color: var(--blue); box-shadow: 0 12px 20px rgba(11,13,18,.26); transform: translateY(-4px); }
+html.pal-blanc .t20 .k1-fmt[aria-pressed="true"] { background: var(--blue); border-color: var(--blue); color: var(--cream); box-shadow: 0 12px 20px rgba(35,73,255,.26); }
+.t20 .k1-fmt[aria-pressed="true"].nudge { animation: k1nudge .4s cubic-bezier(.3,1.4,.4,1); }
+@keyframes k1nudge { 0% { transform: translateY(-4px); } 35% { transform: translateY(-11px); } 100% { transform: translateY(-4px); } }
+.t20 .k1-fmt-n { font-family: 'Fraunces', serif; font-weight: 900; font-size: 26px; line-height: 1; }
+.t20 .k1-fmt-t { font-size: 13px; font-weight: 600; opacity: .86; }
+.t20 .k1-fmt-p { margin-top: auto; font-size: 15px; font-weight: 700; }
+
+/* ---------- le detail ---------- */
+.t20 .k1-detail { padding-top: 6px; min-height: 320px; }
+.t20 .k1-detail-lede { margin: 0 0 20px; font-size: clamp(22px, 2.6vw, 28px); color: var(--cream); }
+html.pal-blanc .t20 .k1-detail-lede { color: var(--blue); }
+
+.t20 .k1-solo p, .t20 .k1-degr { margin: 0; font-size: 16px; line-height: 1.6; color: rgba(250,246,234,.88); }
+html.pal-blanc .t20 .k1-solo p, html.pal-blanc .t20 .k1-degr { color: rgba(11,13,18,.78); }
+.t20 .k1-degr { margin-top: 20px; font-size: 14px; opacity: .82; }
+
+.t20 .k1-rows { list-style: none; margin: 0; padding: 0; display: flex; flex-direction: column; gap: 10px; }
+.t20 .k1-row { display: flex; align-items: center; gap: 16px; padding: 14px 18px; border-radius: 16px; background: rgba(250,246,234,.05); border: 1px solid rgba(250,246,234,.14); opacity: .42; transform: translateX(-8px); transition: opacity .5s var(--ease), transform .5s var(--ease), background .4s var(--ease), border-color .4s var(--ease); }
+html.pal-blanc .t20 .k1-row { background: rgba(35,73,255,.04); border-color: rgba(35,73,255,.14); }
+.t20 .k1-row.on { opacity: 1; transform: none; background: rgba(250,246,234,.12); border-color: rgba(250,246,234,.34); }
+html.pal-blanc .t20 .k1-row.on { background: rgba(35,73,255,.08); border-color: rgba(35,73,255,.32); }
+.t20 .k1-row-n { flex: none; min-width: 52px; padding: 4px 10px; border-radius: 999px; text-align: center; font-size: 12px; font-weight: 700; letter-spacing: .02em; border: 1px solid rgba(250,246,234,.35); }
+html.pal-blanc .t20 .k1-row-n { border-color: rgba(35,73,255,.35); }
+.t20 .k1-row.on .k1-row-n { background: var(--cream); color: var(--blue); border-color: var(--cream); }
+html.pal-blanc .t20 .k1-row.on .k1-row-n { background: var(--blue); color: var(--cream); border-color: var(--blue); }
+.t20 .k1-row-t { font-size: 15px; line-height: 1.4; }
+
+/* ---------- le bas de section ---------- */
+.t20 .k1-end { max-width: 720px; margin: 64px auto 0; text-align: left; }
+.t20 .k1-price-line { margin: 0; font-size: clamp(20px, 2.4vw, 24px); }
+.t20 .k1-price-line b { font-weight: 800; }
+.t20 .k1-meta { margin: 10px 0 0; font-size: 14px; line-height: 1.6; opacity: .78; max-width: 560px; }
+
+.t20 .k1-cta { position: relative; display: inline-flex; align-items: center; gap: 12px; margin-top: 26px; padding: 20px 32px; border-radius: 999px; background: var(--cream); color: var(--blue); font-size: 16px; font-weight: 700; overflow: visible; will-change: transform; }
+html.pal-blanc .t20 .k1-cta { background: var(--blue); color: var(--cream); }
+.t20 .k1-cta-ar { transition: transform .35s var(--ease); }
+.t20 .k1-cta:hover .k1-cta-ar { transform: translateX(5px); }
+.t20 .k1-burst { position: absolute; left: 50%; top: 50%; width: 18px; height: 18px; margin: -9px 0 0 -9px; pointer-events: none; }
+.t20 .k1-burst svg { width: 100%; height: 100%; display: block; }
+
+@media (max-width: 860px) {
+  .t20 .k1 { padding: 72px var(--gutter) 72px; }
+  .t20 .k1-head { margin-bottom: 34px; }
+  .t20 .k1-app { grid-template-columns: 1fr; gap: 34px; }
+  .t20 .k1-tube { height: 236px; border-radius: 26px; }
+  .t20 .k1-stack { left: 14px; right: 14px; min-height: 78px; }
+  .t20 .k1-fmt { min-height: 88px; padding: 14px 12px; }
+  .t20 .k1-fmt-n { font-size: 22px; }
+  .t20 .k1-fmt-t { font-size: 12px; }
+  .t20 .k1-fmt-p { font-size: 14px; }
+  .t20 .k1-readout-val { font-size: 19px; }
+  .t20 .k1-end { margin-top: 40px; }
+  .t20 .k1-cta { width: 100%; justify-content: center; padding: 19px 24px; }
+}
+
+.t18 .duo2 { padding: 104px var(--gutter) 112px; background: var(--cream); }
+.t18 .d2-head { max-width: 1040px; margin: 0 auto 56px; }
+/* Deux visions qui fusionnent en une (tour 18) : sans script, les trois blocs s'empilent et tout se lit. */
+.t18 .dm { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 20px clamp(28px, 5vw, 72px); margin-bottom: 34px; }
+.t18 .dm-v { display: flex; flex-direction: column; gap: 12px; }
+.t18 .dm-b { text-align: right; align-items: flex-end; }
+.t18 .dm-k { font-size: 13px; font-weight: 600; color: var(--blue); }
+.t18 .dm-p { margin: 0; font-size: clamp(26px, 3.1vw, 44px); line-height: 1.08; max-width: 15ch; }
+.t18 .dm-who { font-size: 13px; opacity: .6; }
+.t18 .dm-seam { display: none; }
+.t18 .dm-one { grid-column: 1 / -1; margin: 18px 0 0; font-size: clamp(38px, 5.4vw, 80px); line-height: 1.02; text-wrap: balance; }
+.t18 .dm-one span { display: block; color: var(--blue); }
+.t18 .dm.live { min-height: clamp(260px, 30vw, 380px); }
+.t18 .dm.live .dm-one { position: absolute; left: 0; right: 0; top: 50%; margin: 0; text-align: center; transform: translateY(-50%); opacity: 0; }
+.t18 .dm.live .dm-seam { display: block; position: absolute; left: 50%; top: 4%; bottom: 4%; width: 2px; margin-left: -1px; background: var(--blue); transform-origin: 50% 50%; }
+.t18 .dm.live .dm-v { align-self: center; }
+.t18 .d2-arrow-wrap { display: flex; align-items: center; gap: 4px; }
+.t18 .d2-arrow { width: 100px; height: 44px; overflow: visible; flex: none; }
+.t18 .d2-ar-path { filter: url(#d2Rough); mix-blend-mode: multiply; }
+.t18 .d2-link { font-weight: 600; font-size: 16px; color: var(--ink); text-decoration: none; border-bottom: 2px solid var(--blue); padding-bottom: 3px; transition: color .3s; }
+.t18 .d2-link:hover, .t18 .d2-link:focus-visible { color: var(--blue); }
+
+.t18 .d2-photos { display: grid; grid-template-columns: 1fr 1fr; gap: clamp(20px, 3vw, 40px); max-width: 1040px; margin: 0 auto; }
+.t18 .d2-ph { margin: 0; }
+.t18 .d2-mask { display: block; position: relative; overflow: hidden; border-radius: 4px; aspect-ratio: 4 / 5; }
+.t18 .d2-mask img { position: absolute; inset: -8% -8%; width: 116%; height: 116%; object-fit: cover; }
+.t18 .d2-ph[data-who="alexis"] .d2-mask { aspect-ratio: 4 / 5; }
+.t18 .d2-ph figcaption { display: flex; flex-direction: column; gap: 4px; margin-top: 16px; }
+.t18 .d2-name { font-size: clamp(22px, 2.4vw, 32px); line-height: 1; }
+.t18 .d2-name em { font-style: italic; font-weight: 400; font-variation-settings: "SOFT" 100, "WONK" 1, "opsz" 144; }
+.t18 .d2-role { font-size: 13px; opacity: .65; }
+
+@media (max-width: 860px) {
+  .t18 .duo2 { padding: 76px var(--gutter) 80px; }
+  .t18 .d2-head { margin-bottom: 40px; }
+  .t18 .d2-photos { grid-template-columns: 1fr; gap: 32px; }
+  .t18 .dm { grid-template-columns: 1fr; }
+  .t18 .dm-b { text-align: left; align-items: flex-start; }
+  .t18 .dm.live { min-height: 0; }
+  .t18 .dm.live .dm-seam { left: 0; right: 0; top: 50%; bottom: auto; width: auto; height: 2px; margin: -1px 0 0; }
+}
+</style>
+<link rel="stylesheet" href="../outils/t25/accueil.css">
+<link rel="stylesheet" href="../outils/t26/logos.css">
+</head>
+<body class="home t17 t18 t19 t20 t19-k1 t20-k1">
+<div class="intro" aria-hidden="true"><div class="j3" aria-hidden="true">
+  <div class="j3-fold">
+    <figure class="j3-half j3-half-a">
+      <span class="j3-photo"><img src="../img/duo/hd/alexis-1600.jpg" alt=""></span>
+      <div class="j3-name j3-name-a" data-word="Alexis"></div>
+    </figure>
+    <figure class="j3-half j3-half-c">
+      <span class="j3-photo"><img src="../img/duo/hd/clement-1600.jpg" alt=""></span>
+      <div class="j3-name j3-name-c" data-word="Clément"></div>
+    </figure>
+  </div>
+  <div class="j3-final">
+    <div class="j3-wm wm"><span class="j3-logo"><span>a</span><span>x</span><span>e</span><span>m</span></span><sup class="j3-ia">IA</sup></div>
+    <p class="j3-tag">deux associés, une seule équipe</p>
+  </div>
+</div></div>
+<svg aria-hidden="true" focusable="false" style="position:absolute;width:0;height:0"><defs><filter id="feutre" x="-10%" y="-10%" width="120%" height="120%"><feTurbulence type="fractalNoise" baseFrequency=".035" numOctaves="2" seed="7"/><feDisplacementMap in="SourceGraphic" scale="3.2"/></filter></defs></svg>
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="nav" id="nav">
+  <a href="index.html" class="logo" aria-label="AXEM IA, accueil"><span class="wm"><span class="nl"><span>a</span><span>x</span><span>e</span><span>m</span></span><sup>IA</sup></span></a>
+  <nav class="links" aria-label="Navigation principale">
+    <a href="#offres">Conseil<span class="na" aria-hidden="true">→</span></a><a href="#offres">Formation<span class="na" aria-hidden="true">→</span></a><a href="../coaching/">Coaching<span class="na" aria-hidden="true">→</span></a><a href="#duo">Le duo<span class="na" aria-hidden="true">→</span></a>
+  </nav>
+  <a href="#" class="book" data-book><span class="long">Réserver un échange offert</span><span class="short">Réserver</span><span class="bk-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a>
+</header>
+
+<main id="main">
+  <section class="hero mk3" aria-labelledby="h">
+    <div class="grid" id="grid" aria-hidden="true"></div>
+    <h1 class="f" id="h" data-split data-label="Votre partenaire IA, de A à Z.">Votre partenaire</h1>
+    <div class="l2">
+      <div class="f fade" style="--d: 500" aria-hidden="true" data-h1l2><span class="mk-ia">IA</span>, <span class="mk-phrase">de <span class="mk-a">A</span> à <span class="mk-z">Z</span></span>.</div>
+      <div class="side fade" style="--d: 900">
+        <a href="#" class="btn" data-book data-magnetic data-cursor="Réserver">Réserver un échange offert <span class="ar">→</span></a>
+      </div>
+    </div>
+    <svg class="mk-svg" aria-hidden="true" focusable="false">
+      <defs>
+        <filter id="mkRough" x="-30%" y="-30%" width="160%" height="160%">
+          <feTurbulence type="fractalNoise" baseFrequency="0.9" numOctaves="2" seed="7" result="n"></feTurbulence>
+          <feDisplacementMap in="SourceGraphic" in2="n" scale="1.6"></feDisplacementMap>
+        </filter>
+      </defs>
+      <path class="mk halo" data-mk="ia"></path><path class="mk core" data-mk="ia"></path>
+      <path class="mk halo" data-mk="arrow"></path><path class="mk core" data-mk="arrow"></path>
+      <path class="mk halo" data-mk="u1"></path><path class="mk core" data-mk="u1"></path>
+      <path class="mk halo" data-mk="u2"></path><path class="mk core" data-mk="u2"></path>
+      <path class="mk halo" data-mk="ring"></path><path class="mk core" data-mk="ring"></path>
+      <path class="mk thin" data-mk="k1"></path>
+      <path class="mk thin" data-mk="k2"></path>
+      <path class="mk thin" data-mk="k3"></path>
+      <path class="mk thin" data-mk="ia2"></path>
+      <path class="mk thin" data-mk="hv-btn"></path>
+    </svg>
+    <span class="mk-note mk-note-btn" aria-hidden="true">c'est ici</span>
+    <div class="mk-row">
+    <div class="mk-flow fade" style="--d: 900" aria-label="Notre méthode : on repère ce qui bloque, on trouve les cas d'usage IA, on les applique chez vous">
+      <span class="mk-tag mk-tag-1" tabindex="0"><small>On repère</small><b>ce qui bloque</b><span class="a-say">On cartographie vos usages, tâche par tâche.</span></span>
+      <svg class="mk-fa" viewBox="0 0 46 20" aria-hidden="true"><path class="mk thin" data-mk="flowA"></path></svg>
+      <span class="mk-tag mk-tag-2" tabindex="0"><small>On trouve</small><b>les cas d'usage <span class="mk-ia2">IA</span></b><span class="a-say">On choisit les outils, on cadre le déploiement.</span></span>
+      <svg class="mk-fa" viewBox="0 0 46 20" aria-hidden="true"><path class="mk thin" data-mk="flowB"></path></svg>
+      <span class="mk-tag mk-tag-3" tabindex="0"><small>On les applique</small><b>chez vous</b><span class="a-say">Ateliers sur vos cas, automatisations déployées et suivies.</span></span>
+    </div>
+      <div class="kpis mk-kpis fade" style="--d: 1000">
+        <div class="kpi mk-kpi mk-kpi-1" tabindex="0"><span class="a-pop"><em>dont</em><span class="a-logos"><span class="lg" role="img" aria-label="Carrefour" style="-webkit-mask-image:url(../img/logos/carrefour.svg);mask-image:url(../img/logos/carrefour.svg)"></span><span class="lg" role="img" aria-label="GEODIS" style="-webkit-mask-image:url(../img/logos/geodis.svg);mask-image:url(../img/logos/geodis.svg)"></span><span class="lg" role="img" aria-label="Nina Ricci" style="-webkit-mask-image:url(../img/logos/puig.svg);mask-image:url(../img/logos/puig.svg)"></span><span class="lg" role="img" aria-label="K.I.T. Group" style="-webkit-mask-image:url(../img/logos/kit.png);mask-image:url(../img/logos/kit.png)"></span><span class="lg" role="img" aria-label="Crédit Agricole Assurances" style="-webkit-mask-image:url(../img/logos/credit-agricole-assurances.svg);mask-image:url(../img/logos/credit-agricole-assurances.svg)"></span></span></span><b class="mk-num" data-to="200" data-pre="+">+200</b><small class="mk-lbl">entreprises accompagnées</small></div>
+        <div class="kpi mk-kpi mk-kpi-2" tabindex="0"><span class="a-pop"><em>formés sur les outils qu'ils ont déjà</em><span class="a-tools"><img src="../img/logos-ia/claude.svg" alt="Claude"><img src="../img/logos-ia/openai.svg" alt="ChatGPT"><img src="../img/logos-ia/copilot.svg" alt="Copilot"><img src="../img/logos-ia/gemini.svg" alt="Gemini"><img src="../img/logos-ia/mistral.svg" alt="Mistral"></span></span><b class="mk-num" data-to="3000" data-pre="+">+3 000</b><small class="mk-lbl">collaborateurs formés</small></div>
+        <div class="kpi mk-kpi mk-kpi-3" tabindex="0"><b class="mk-num" data-to="94292" data-abo-total>94 292</b><small class="mk-lbl">abonnés LinkedIn cumulés</small>
+          <span class="mk-li">
+            <a href="https://www.linkedin.com/in/clement-predo/" target="_blank" rel="noopener">Clément Predo</a>
+            <a href="https://www.linkedin.com/in/alexiszeitoun/" target="_blank" rel="noopener">Alexis Zeitoun</a>
+          </span>
+        </div>
+    </div>
+    </div>
+    <div class="fb-wrap">
+        <div class="fb-slot">
+          <svg class="fb-ring" viewBox="0 0 332 201" preserveAspectRatio="none" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M20 10 C 110 4, 230 6, 318 12 C 326 60, 324 140, 318 190 C 220 196, 110 197, 14 190 C 8 130, 9 60, 16 6 L 60 8"/></svg>
+          <div class="fb" tabindex="0" role="button" aria-label="Voir le film AXEM">
+            <img src="../showreel/media/reel-1-casse.jpg" alt="">
+            <video muted playsinline preload="none" data-prev="../showreel/media/reel-1-casse-720.mp4" data-full="../showreel/media/reel-1-casse.mp4"></video>
+            <span class="tag"><i></i>Le film</span>
+            <span class="bar"></span>
+          </div>
+        </div>
+        <div class="fb-cap"><b>AXEM en film</b><span>Restez dessus pour l'agrandir</span></div>
+      </div>
+    <div class="scroll-hint cap fade" style="--d: 1400" aria-hidden="true"><span>Défiler</span><i></i></div>
+  </section>
+
+  <section class="c5" id="bandeau" aria-label="Ils nous font confiance">
+  <div class="c5-top">
+    <h2 class="f">Ils nous font <span>confiance</span></h2>
+    <p class="c5-hint"><span class="h-m">Survolez un logo, ou laissez défiler.</span><span class="h-t">Touchez un logo, ou laissez défiler.</span></p>
+  </div>
+  <div class="c5-grid">
+    <div class="c5-wall"></div>
+    <aside class="c5-card" aria-live="polite">
+      <span class="disc" aria-hidden="true"></span>
+      <div class="c5-in">
+        <div class="c5-body">
+          <div class="top"><span class="pill"></span><span class="chip"></span></div>
+          <b class="nm f"></b>
+          <p class="meta"></p>
+          <div class="fig"><b class="f"></b><span></span></div>
+          <p class="what"></p>
+          <div class="tools"></div>
+          <div class="plate" aria-hidden="true"></div>
+        </div>
+        <div class="cta">
+          <b class="f">Vous avez un projet similaire ?</b>
+          <a class="btn" href="https://calendly.com/clem-pred/30min" target="_blank" rel="noopener">Réserver un appel de 30 minutes</a>
+        </div>
+      </div>
+    </aside>
+    <svg class="c5-arrow" aria-hidden="true"><defs><linearGradient id="c5g" gradientUnits="userSpaceOnUse" x1="0" y1="0" x2="1" y2="0"><stop offset="0.5" stop-color="#2349FF"/><stop offset="0.5" stop-color="#FAF6EA"/></linearGradient></defs><path class="ln"/><path class="hd"/></svg>
+  </div>
+</section>
+<p class="lg-foot solo">Logos affichés sous réserve de l'accord écrit de chaque client avant la mise en ligne.</p>
+
+
+  <section id="offres" class="offres18" aria-labelledby="o">
+    <div class="sec-head">
+      <div class="num f rv">02</div>
+      <div class="txt rv" style="--d: 120">
+        <div class="cap" id="o">Ce qu'on fait</div>
+        <div>Quatre portes d'entrée, <span class="i" style="font-weight: 400;">une seule</span> méthode : partir de la tâche réelle.</div>
+      </div>
+    </div>
+    <div class="rows">
+      <article class="row rv" data-schema="trace" tabindex="0">
+        <div class="r-num cap">01</div>
+        <div class="r-body"><h3 class="f">Conseil</h3><p>Cartographier les usages, choisir les outils, cadrer le déploiement.</p></div>
+        <div class="r-zone" aria-hidden="true">
+          <svg class="rz-svg" viewBox="0 0 600 140" preserveAspectRatio="xMidYMid meet">
+            <path class="rz-path" d="M55 119 C 180 108, 260 88, 322 77 S 480 40, 545 22" fill="none" stroke="var(--blue)" stroke-width="2.4" stroke-linecap="round" stroke-dasharray="1 11"/>
+            <circle class="rz-dot" cx="55" cy="119" r="5"></circle>
+            <circle class="rz-dot" cx="322" cy="77" r="5"></circle>
+            <circle class="rz-dot" cx="545" cy="22" r="5"></circle>
+          </svg>
+          <div class="rz-mark rz-mark-trace"><span class="tr-core"></span></div>
+        </div>
+        <div class="arr" aria-hidden="true">→</div>
+      </article>
+
+      <article class="row rv" data-schema="swarm" tabindex="0" style="--d: 90">
+        <div class="r-num cap">02</div>
+        <div class="r-body"><h3 class="f">Formation</h3><p>Des ateliers sur vos cas, pour des équipes qui repartent autonomes.<span class="px">À partir de 200 € HT par personne</span></p></div>
+        <div class="r-zone" aria-hidden="true">
+          <div class="rz-grid">
+            <span class="lg lg-1" data-tool="Claude"><img class="lg-img" src="../img/logos-ia/claude.svg" alt="" loading="lazy"></span>
+            <span class="lg lg-2" data-tool="OpenAI"><img class="lg-img" src="../img/logos-ia/openai.svg" alt="" loading="lazy"></span>
+            <span class="lg lg-3" data-tool="Mistral"><img class="lg-img" src="../img/logos-ia/mistral.svg" alt="" loading="lazy"></span>
+            <span class="lg lg-4" data-tool="DeepSeek"><img class="lg-img" src="../img/logos-ia/deepseek.svg" alt="" loading="lazy"></span>
+            <span class="lg lg-5" data-tool="Gemini"><img class="lg-img" src="../img/logos-ia/gemini.svg" alt="" loading="lazy"></span>
+            <span class="lg lg-6" data-tool="Qwen"><img class="lg-img" src="../img/logos-ia/qwen.svg" alt="" loading="lazy"></span>
+            <span class="lg lg-7" data-tool="MiniMax"><img class="lg-img" src="../img/logos-ia/minimax.svg" alt="" loading="lazy"></span>
+            <span class="lg lg-8" data-tool="Kimi"><img class="lg-img" src="../img/logos-ia/kimi.svg" alt="" loading="lazy"></span>
+            <span class="lg lg-9" data-tool="Grok"><img class="lg-img" src="../img/logos-ia/grok.svg" alt="" loading="lazy"></span>
+            <span class="lg lg-10" data-tool="Perplexity"><img class="lg-img" src="../img/logos-ia/perplexity.svg" alt="" loading="lazy"></span>
+            <span class="lg lg-11" data-tool="Meta"><img class="lg-img" src="../img/logos-ia/meta.svg" alt="" loading="lazy"></span>
+            <span class="lg lg-12" data-tool="Copilot"><img class="lg-img" src="../img/logos-ia/copilot.svg" alt="" loading="lazy"></span>
+          </div>
+        </div>
+        <div class="arr" aria-hidden="true">→</div>
+      </article>
+
+      <article class="row rv" data-schema="flow" tabindex="0" style="--d: 180">
+        <div class="r-num cap">03</div>
+        <div class="r-body"><h3 class="f">Automatisation</h3><p>Des automatisations construites, testées et déployées chez vous, puis suivies.</p></div>
+        <div class="r-zone" aria-hidden="true">
+          <svg class="rz-svg" viewBox="0 0 600 140" preserveAspectRatio="xMidYMid meet">
+            <line class="rz-link rz-link-1" x1="60" y1="42" x2="300" y2="112"></line>
+            <line class="rz-link rz-link-2" x1="300" y1="112" x2="540" y2="35"></line>
+            <line class="rz-link rz-link-3" x1="540" y1="35" x2="60" y2="42"></line>
+            <circle class="rz-signal" cx="60" cy="42" r="6"></circle>
+          </svg>
+          <div class="rz-flow">
+            <span class="lg lg-a1" data-tool="n8n"><img class="lg-img" src="../img/logos-ia/n8n.svg" alt="" loading="lazy"></span>
+            <span class="lg lg-a2" data-tool="Make"><img class="lg-img" src="../img/logos-ia/make.svg" alt="" loading="lazy"></span>
+            <span class="lg lg-a3" data-tool="Zapier"><img class="lg-img" src="../img/logos-ia/zapier.svg" alt="" loading="lazy"></span>
+          </div>
+        </div>
+        <div class="arr" aria-hidden="true">→</div>
+      </article>
+
+      <a class="row rv" data-schema="dial" href="#coaching" style="--d: 270">
+        <div class="r-num cap">04</div>
+        <div class="r-body"><h3 class="f">Coaching</h3><p>Une séance, un usage qui tourne. En individuel, avec Clément ou Alexis.<span class="px">À partir de 250 € HT la séance, sur Claude</span></p></div>
+        <div class="r-zone" aria-hidden="true">
+          <svg class="rz-svg" viewBox="0 0 240 240" preserveAspectRatio="xMidYMid meet">
+            <circle class="rz-dial" cx="120" cy="120" r="96"></circle>
+            <g class="rz-ticks">
+              <line x1="120.0" y1="34.0" x2="120.0" y2="14.0"></line>
+              <line x1="163.0" y1="45.5" x2="173.0" y2="28.2"></line>
+              <line x1="194.5" y1="77.0" x2="211.8" y2="67.0"></line>
+              <line x1="206.0" y1="120.0" x2="226.0" y2="120.0"></line>
+              <line x1="194.5" y1="163.0" x2="211.8" y2="173.0"></line>
+              <line x1="163.0" y1="194.5" x2="173.0" y2="211.8"></line>
+              <line x1="120.0" y1="206.0" x2="120.0" y2="226.0"></line>
+              <line x1="77.0" y1="194.5" x2="67.0" y2="211.8"></line>
+              <line x1="45.5" y1="163.0" x2="28.2" y2="173.0"></line>
+              <line x1="34.0" y1="120.0" x2="14.0" y2="120.0"></line>
+              <line x1="45.5" y1="77.0" x2="28.2" y2="67.0"></line>
+              <line x1="77.0" y1="45.5" x2="67.0" y2="28.2"></line>
+            </g>
+          </svg>
+          <div class="rz-pivot"><div class="rz-hand" data-mark></div></div>
+        </div>
+        <div class="arr" aria-hidden="true">→</div>
+      </a>
+    </div>
+  </section>
+
+  <section id="coaching" class="k1" aria-labelledby="k1h">
+    <div class="k1-head rv">
+      <div class="cap">04 · Coaching individuel</div>
+      <h2 class="f" id="k1h" data-lines>Une séance. <span class="i">Puis un parcours, si vous le décidez.</span></h2>
+    </div>
+
+    <div class="k1-app rv">
+      <div class="k1-machine">
+        <div class="k1-tube" id="k1Tube">
+          <div class="k1-idle" id="k1Idle" aria-hidden="true"></div>
+          <div class="k1-stack" id="k1Stack" aria-hidden="true">
+            <div class="k1-chip" data-mount></div>
+          </div>
+        </div>
+
+        <div class="k1-readout" id="k1Readout">
+          <div class="k1-readout-cell">
+            <span class="k1-readout-lbl">Prix par séance</span>
+            <span class="k1-readout-val" id="k1Unit">250&nbsp;€ HT</span>
+          </div>
+          <div class="k1-readout-cell k1-readout-total">
+            <span class="k1-readout-lbl">Total</span>
+            <span class="k1-readout-val" id="k1Total">250&nbsp;€ HT</span>
+          </div>
+        </div>
+
+        <div class="k1-fmts" id="k1Fmts" role="group" aria-label="Choisir un format">
+          <button type="button" class="k1-fmt" data-f="seance" aria-pressed="true">
+            <span class="k1-fmt-n">1</span>
+            <span class="k1-fmt-t">Séance seule</span>
+            <span class="k1-fmt-p">250&nbsp;€ HT</span>
+          </button>
+          <button type="button" class="k1-fmt" data-f="p5" aria-pressed="false">
+            <span class="k1-fmt-n">5</span>
+            <span class="k1-fmt-t">Parcours 5 séances</span>
+            <span class="k1-fmt-p">220&nbsp;€ la séance</span>
+          </button>
+          <button type="button" class="k1-fmt" data-f="p10" aria-pressed="false">
+            <span class="k1-fmt-n">10</span>
+            <span class="k1-fmt-t">Parcours 10 séances</span>
+            <span class="k1-fmt-p">200&nbsp;€ la séance</span>
+          </button>
+        </div>
+      </div>
+
+      <div class="k1-detail" id="k1Detail" aria-live="polite">
+        <p class="k1-detail-lede i" id="k1Lede">Une heure, pour juger sur pièce.</p>
+
+        <div class="k1-solo" id="k1Solo">
+          <p>Deux usages, au choix : la séance découverte, on traite un vrai dossier de votre semaine et vous jugez la méthode sur pièce, ou la séance paramétrage, on installe l'outil avec vous et on le règle sur votre métier (vos documents, votre façon d'écrire, vos règles).</p>
+        </div>
+
+        <ol class="k1-rows" id="k1Rows" hidden></ol>
+
+        <p class="k1-degr" id="k1Degr">Sans engagement. Vous commencez par une séance, puis vous passez à un parcours ? Elle est recalculée au tarif du parcours.</p>
+      </div>
+    </div>
+
+    <div class="k1-end rv">
+      <p class="k1-price-line">La séance <b>250&nbsp;€ HT</b>, sans engagement.</p>
+      <p class="k1-meta">Prérequis, un abonnement Claude Pro, environ 20&nbsp;€ par mois, à votre charge. Format, 1&nbsp;h en visio, écran partagé, 1 ou 2 séances par semaine, avec Clément Predo ou Alexis Zeitoun.</p>
+      <a class="k1-cta" id="k1Cta" href="../variantes/t20-reserver.html?f=seance" data-mag>
+        <span class="k1-cta-t" id="k1CtaT">Choisir et payer ma séance</span>
+        <span class="k1-cta-ar" aria-hidden="true">→</span>
+      </a>
+    </div>
+  </section>
+
+  <section class="duo5" id="duo" aria-label="Le duo, Clément Predo et Alexis Zeitoun">
+  <div class="duo-top">
+    <h2 class="f">Deux associés, <u>une seule voix<svg viewBox="0 0 300 30" preserveAspectRatio="none" aria-hidden="true"><path d="M4 20 C 70 8, 170 6, 296 16"/></svg></u></h2>
+    <p>Ce qu'on fait chez nos clients, on le montre chaque semaine sur LinkedIn. Suivez-nous avant même de nous appeler.</p>
+    <a class="duo-more" href="../variantes/t21-d8.html">Notre histoire, le duo en entier<svg viewBox="0 0 24 24" aria-hidden="true"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></a>
+  </div>
+  <div class="duo-grid">
+    <figure class="scene">
+      <img src="../img/duo/propositions/axem-duo-2-scene.jpg" alt="Alexis Zeitoun et Clément Predo sur scène" width="1600" height="1066">
+      <svg class="faces" viewBox="0 0 1600 1066" preserveAspectRatio="xMidYMid slice" aria-hidden="true">
+        <path class="alexis" d="M354 304 C336 132 436 46 529 54 C638 61 697 175 686 291 C678 416 582 486 494 474 C392 458 326 330 366 147"/>
+        <path class="clement" d="M904 330 C886 154 988 66 1082 74 C1193 81 1253 198 1242 316 C1234 444 1136 517 1047 503 C943 488 876 356 917 169"/>
+      </svg>
+      <a class="spot" data-k="alexis" href="https://www.linkedin.com/in/alexiszeitoun/" target="_blank" rel="noopener" aria-label="Alexis Zeitoun sur LinkedIn" style="left:21%;top:4%;width:23%;height:42%"></a>
+      <a class="spot" data-k="clement" href="https://www.linkedin.com/in/clement-predo/" target="_blank" rel="noopener" aria-label="Clément Predo sur LinkedIn" style="left:55%;top:6%;width:23%;height:42%"></a>
+      <span class="who alexis" style="left:33%;top:46%">Alexis · la tech</span>
+      <span class="who clement" style="left:66.5%;top:49%">Clément · la stratégie</span>
+      <figcaption>Image générée par IA à partir de nos photos</figcaption>
+    </figure>
+    <div class="cards">
+      <a class="pc clement" data-k="clement" href="https://www.linkedin.com/in/clement-predo/" target="_blank" rel="noopener">
+        <svg class="burst" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M3 30 L10 34"/><path vector-effect="non-scaling-stroke" d="M1 42 L9 42"/><path vector-effect="non-scaling-stroke" d="M3 54 L10 50"/><path vector-effect="non-scaling-stroke" d="M97 30 L90 34"/><path vector-effect="non-scaling-stroke" d="M99 42 L91 42"/><path vector-effect="non-scaling-stroke" d="M97 54 L90 50"/></svg>
+        <span class="in"><i>in</i><span>Suivre · <b data-abo="clement">61 662</b> abonnés</span></span>
+        <span class="pph"><img src="../img/duo/hd/clement-1600.jpg" alt="Clément Predo" loading="lazy"></span>
+        <span class="txt"><b class="f">Clément</b><small>Stratégie · ESSEC</small><span class="follow">Voir son profil<svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+      </a>
+      <a class="pc alexis" data-k="alexis" href="https://www.linkedin.com/in/alexiszeitoun/" target="_blank" rel="noopener">
+        <svg class="burst" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true"><path vector-effect="non-scaling-stroke" d="M3 30 L10 34"/><path vector-effect="non-scaling-stroke" d="M1 42 L9 42"/><path vector-effect="non-scaling-stroke" d="M3 54 L10 50"/><path vector-effect="non-scaling-stroke" d="M97 30 L90 34"/><path vector-effect="non-scaling-stroke" d="M99 42 L91 42"/><path vector-effect="non-scaling-stroke" d="M97 54 L90 50"/></svg>
+        <span class="in"><i>in</i><span>Suivre · <b data-abo="alexis">32 630</b> abonnés</span></span>
+        <span class="pph"><img src="../img/duo/hd/alexis-1600.jpg" alt="Alexis Zeitoun" loading="lazy"></span>
+        <span class="txt"><b class="f">Alexis</b><small>Tech · Polytechnique</small><span class="follow">Voir son profil<svg viewBox="0 0 24 24"><path d="M4 12h15M13 6l6 6-6 6" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round" stroke-linejoin="round"/></svg></span></span>
+      </a>
+      <a class="both" href="https://www.linkedin.com/in/clement-predo/" target="_blank" rel="noopener"><span class="n"><b data-abo-total>94 292</b><small>abonnés LinkedIn à nous deux</small></span><span>Nous suivre tous les deux →</span></a>
+    </div>
+  </div>
+</section>
+
+  <section class="av6" id="avis" aria-label="Ce que disent nos clients">
+  <div class="av-top">
+    <h2 class="f">Ce qu'ils en disent, <span>à chaud</span></h2>
+    <div class="av6-side">
+      <div class="score"><span class="stars" aria-hidden="true"><i></i><i></i><i></i><i></i><i></i></span><span><b>Google et Trustpilot</b><small>les notes s'affichent dès les premiers avis</small></span></div>
+      <div class="av6-legend"><span class="t-co">Coaching</span><span class="t-fo">Formation</span><span class="t-de">Déploiement</span></div>
+    </div>
+  </div>
+  <div class="belt6" data-dir="-1"><div class="track6"></div></div>
+  <div class="belt6" data-dir="1"><div class="track6"></div></div>
+  <p class="av-foot">Phrases prononcées en séance, relevées dans nos enregistrements d'appels. Aucune n'est publiée sans l'accord écrit de la personne.</p>
+</section>
+</main>
+
+<div class="fx-back"></div>
+<div class="fx-ui"><button class="snd" hidden>Activer le son</button><button class="close">Fermer</button></div>
+<div class="cur-in" aria-hidden="true"><i>in</i><span>Suivre</span></div>
+<footer>
+  <div class="ft-top">
+    <div class="meta cap"><span>axem-ia.fr</span><span>Paris</span><a href="#" data-book>Réserver un échange offert →</a></div>
+    <div class="legal-links cap"><a href="../variantes/mentions-legales.html">Mentions légales</a><a href="../variantes/confidentialite.html">Confidentialité</a><a href="../variantes/nos-resultats.html">Nos résultats</a><a href="../variantes/accessibilite.html">Accessibilité</a><a href="../variantes/reclamations.html">Réclamations</a><a href="mailto:contact@axem-ia.fr">contact@axem-ia.fr</a></div>
+  </div>
+  <div class="wm big" aria-hidden="true">axem<sup>IA</sup></div>
+</footer>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AXEM IA",
+  "url": "https://axem-ia.fr",
+  "email": "contact@axem-ia.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3 rue Françoise Dolto",
+    "postalCode": "75013",
+    "addressLocality": "Paris",
+    "addressCountry": "FR"
+  },
+  "founder": [
+    { "@type": "Person", "name": "Clément Predo", "sameAs": "https://www.linkedin.com/in/clement-predo" },
+    { "@type": "Person", "name": "Alexis Zeitoun", "sameAs": "https://www.linkedin.com/in/alexiszeitoun" }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/clement-predo",
+    "https://www.linkedin.com/in/alexiszeitoun"
+  ]
+}
+</script>
+
+<script src="../vendor/gsap/gsap.min.js"></script>
+<script src="../vendor/gsap/ScrollTrigger.min.js"></script>
+<script src="../vendor/gsap/SplitText.min.js"></script>
+<script src="../assets/abonnes.js"></script>
+<script src="../assets/avis.js"></script>
+<script src="../assets/axem.js"></script>
+<script>
+(() => {
+  // Tour 16 : la couche d'interactions du tour 2, allegee apres mesure (CPU x4, defilement molette).
+  // Retire : le defilement doux Lenis (il gardait la main sur la molette), le bandeau pilote image par
+  // image (il relisait la largeur de la page a chaque image : 1,8 s de mise en page sur 5 s), le
+  // brouillage des lettres. Garde, mais ne calcule plus que quand la souris bouge : le curseur a
+  // etiquette, la graisse du titre, l'apercu des offres, le portrait du duo, le mot du pied de page.
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const still = reduce || /[?&]static\b/.test(location.search);
+  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const hasGsap = typeof gsap !== 'undefined';
+  document.body.classList.add('t2', 't16-lite');
+  if (hasGsap) gsap.registerPlugin(...[window.ScrollTrigger, window.SplitText].filter(Boolean));
+
+  const mouse = { x: innerWidth / 2, y: innerHeight / 2 };
+  const moveFns = [];
+  let mq = 0;
+  addEventListener('pointermove', e => {
+    mouse.x = e.clientX; mouse.y = e.clientY;
+    if (!mq) mq = requestAnimationFrame(() => { mq = 0; moveFns.forEach(f => f()); });
+  }, { passive: true });
+
+  // Curseur a etiquette : la boucle ne tourne que tant qu'il reste du chemin a faire.
+  if (fine && !reduce) {
+    document.documentElement.classList.add('has-cur');
+    const l = document.createElement('div'); l.className = 'cur-l';
+    document.body.append(l);
+    const p = { x: mouse.x, y: mouse.y };
+    let run = 0;
+    const loop = () => {
+      p.x += (mouse.x - p.x) * 0.35; p.y += (mouse.y - p.y) * 0.35;
+      l.style.transform = `translate3d(${p.x.toFixed(1)}px, ${p.y.toFixed(1)}px, 0)`;
+      run = Math.abs(mouse.x - p.x) + Math.abs(mouse.y - p.y) > .4 ? requestAnimationFrame(loop) : 0;
+    };
+    moveFns.push(() => { if (!run) run = requestAnimationFrame(loop); });
+    document.addEventListener('pointerover', e => {
+      const lab = e.target.closest('[data-cursor]');
+      const hide = e.target.closest('[data-cursor-off]');
+      l.textContent = lab && !hide ? lab.dataset.cursor : '';
+      l.classList.toggle('on', !!(lab && !hide));
+    });
+  }
+
+  // Titre du hero : graisse variable selon la distance au curseur. Les centres des lettres sont
+  // mesures une fois (et au redimensionnement), jamais pendant le mouvement.
+  const heroH = document.querySelector('.hero');
+  if (heroH) {
+    document.querySelectorAll('.hero h1 .word > span').forEach(s => { s.innerHTML = [...s.textContent].map(ch => `<span class="ch">${ch}</span>`).join(''); });
+    if (fine && !still && hasGsap) {
+      const chars = [...heroH.querySelectorAll('.ch')];
+      let centers = null, active = false;
+      const measure = () => { centers = chars.map(ch => { const r = ch.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2 + scrollY]; }); };
+      // Changer la graisse d'une police variable oblige le navigateur a remettre en forme les glyphes :
+      // mesure du 24/09, 1,5 s de mise en page sur 5 s de geste, pour 36 objets seulement. Le cout vient
+      // de ce que chaque image demandait une graisse inedite (valeur continue, cache de forme rate).
+      // La graisse suit donc la souris par un amorti maison, mais n'est ecrite que par paliers de 50 :
+      // 13 graisses possibles, toutes deja en cache apres le premier passage.
+      const cur = chars.map(() => 900), tgt = chars.map(() => 900), shown = chars.map(() => 900);
+      let run = 0;
+      const tick = () => {
+        let moving = false;
+        for (let i = 0; i < chars.length; i++) {
+          const d = tgt[i] - cur[i];
+          if (Math.abs(d) > 2) { cur[i] += d * 0.18; moving = true; } else cur[i] = tgt[i];
+          const q = Math.round(cur[i] / 50) * 50;
+          if (q !== shown[i]) { shown[i] = q; chars[i].style.setProperty('--wg', q); }
+        }
+        run = moving ? requestAnimationFrame(tick) : 0;
+      };
+      const kick = () => { if (!run) run = requestAnimationFrame(tick); };
+      heroH.addEventListener('pointerenter', () => { active = true; measure(); });
+      heroH.addEventListener('pointerleave', () => { active = false; tgt.fill(900); kick(); });
+      addEventListener('resize', () => { centers = null; });
+      moveFns.push(() => {
+        if (!active) return;
+        if (!centers) measure();
+        const y = mouse.y + scrollY;
+        centers.forEach(([cx, cy], i) => { tgt[i] = 300 + 600 * Math.min(1, Math.hypot(mouse.x - cx, y - cy) / 420); });
+        kick();
+      });
+    }
+  }
+
+  // Apercu flottant sur les offres
+  const rows = document.querySelectorAll('.row[data-peek]');
+  if (rows.length && fine && !reduce && hasGsap) {
+    const pk = document.createElement('div'); pk.className = 'peek'; pk.setAttribute('aria-hidden', 'true');
+    pk.innerHTML = '<span class="sq"></span><div class="k"></div><div class="v"></div><img class="pi" alt="">';
+    document.body.appendChild(pk);
+    const xTo = gsap.quickTo(pk, 'x', { duration: 0.55, ease: 'power3.out' }), yTo = gsap.quickTo(pk, 'y', { duration: 0.55, ease: 'power3.out' });
+    const rTo = gsap.quickTo(pk, 'rotation', { duration: 0.5, ease: 'power3.out' });
+    let lastX = mouse.x, on = false;
+    moveFns.push(() => { if (!on) return; xTo(mouse.x + 70); yTo(mouse.y + 30); rTo(gsap.utils.clamp(-8, 8, (mouse.x - lastX) * 0.6)); lastX = mouse.x; });
+    rows.forEach(r => {
+      r.addEventListener('pointerenter', () => { on = true; gsap.set(pk, { x: mouse.x + 70, y: mouse.y + 30 }); pk.querySelector('.k').textContent = r.dataset.peekK || ''; pk.querySelector('.v').textContent = r.dataset.peek; const pi = pk.querySelector('.pi'); if (r.dataset.peekImg) { pi.src = new URL(r.dataset.peekImg, document.baseURI).href; } pk.classList.toggle('has-img', !!r.dataset.peekImg); gsap.to(pk, { opacity: 1, scale: 1, duration: 0.45, ease: 'back.out(1.6)' }); });
+      r.addEventListener('pointerleave', () => { on = false; gsap.to(pk, { opacity: 0, scale: 0.6, duration: 0.3 }); });
+    });
+  }
+
+  // Wordmark du pied de page : lettres qui se soulevent pres du curseur (positions mesurees a l'entree).
+  const big = document.querySelector('footer .big');
+  if (big) {
+    const tn = [...big.childNodes].find(n => n.nodeType === 3 && n.textContent.trim());
+    if (tn) { const w = document.createElement('span'); w.innerHTML = [...tn.textContent.trim()].map(ch => `<span class="fl">${ch}</span>`).join(''); big.replaceChild(w, tn); }
+    if (fine && !reduce) {
+      const fls = [...big.querySelectorAll('.fl')], foot = big.closest('footer');
+      let xs = null, inF = false;
+      foot.addEventListener('pointerenter', () => { inF = true; xs = fls.map(f => { const r = f.getBoundingClientRect(); return r.left + r.width / 2; }); });
+      foot.addEventListener('pointerleave', () => { inF = false; fls.forEach(f => { f.style.transform = ''; }); });
+      moveFns.push(() => { if (!inF || !xs) return; fls.forEach((f, i) => { f.style.transform = `translateY(${(-Math.max(0, 1 - Math.abs(mouse.x - xs[i]) / 260) * 0.14).toFixed(3)}em)`; }); });
+    }
+  }
+
+  // Liens forts magnetiques (hors barre du haut, qui a son propre bouton)
+  if (fine && !reduce && hasGsap) document.querySelectorAll('.teaser .more, [data-mag]').forEach(b => {
+    const xTo = gsap.quickTo(b, 'x', { duration: 0.5, ease: 'power3.out' }), yTo = gsap.quickTo(b, 'y', { duration: 0.5, ease: 'power3.out' });
+    b.addEventListener('pointermove', e => { const r = b.getBoundingClientRect(); xTo((e.clientX - r.left - r.width / 2) * 0.3); yTo((e.clientY - r.top - r.height / 2) * 0.4); });
+    b.addEventListener('pointerleave', () => { xTo(0); yTo(0); });
+  });
+
+  // Lignes revelees au defilement
+  if (hasGsap && window.SplitText && window.ScrollTrigger && !still) {
+    document.fonts.ready.then(() => document.querySelectorAll('[data-lines]').forEach(el => {
+      SplitText.create(el, { type: 'lines', mask: 'lines', linesClass: 'ln', autoSplit: true, onSplit: self => gsap.from(self.lines, { yPercent: 105, duration: 1.1, ease: 'expo.out', stagger: 0.09, scrollTrigger: { trigger: el, start: 'top 85%', once: true } }) });
+    }));
+  }
+
+  // Duo : portrait qui suit le curseur sur les noms
+  const dn = document.querySelector('.dn-list');
+  const fl = document.querySelector('.dn-float');
+  if (dn && fl && fine && !reduce && hasGsap) {
+    const xTo = gsap.quickTo(fl, 'x', { duration: 0.7, ease: 'power3.out' }), yTo = gsap.quickTo(fl, 'y', { duration: 0.7, ease: 'power3.out' });
+    const rTo = gsap.quickTo(fl, 'rotation', { duration: 0.6, ease: 'power3.out' });
+    let lx = mouse.x, on = false;
+    moveFns.push(() => { if (!on) return; xTo(mouse.x + 22); yTo(mouse.y + 16); rTo(gsap.utils.clamp(-10, 10, (mouse.x - lx) * 0.5)); lx = mouse.x; });
+    dn.querySelectorAll('.dn-row').forEach(r => {
+      r.addEventListener('pointerenter', () => { on = true; fl.classList.add('on'); fl.querySelectorAll('img').forEach(i => i.classList.toggle('on', i.dataset.who === r.dataset.who)); });
+    });
+    dn.addEventListener('pointerleave', () => { on = false; fl.classList.remove('on'); });
+  }
+})();
+</script>
+<script>(()=>{const m=location.search.match(/[?&]photo=(\d)/), P={1:'1-table',2:'2-scene',3:'3-marches'}; if (m && P[m[1]]) document.querySelectorAll('img[src$="img/duo/duo.jpg"]').forEach(i=>{i.src='../img/duo/propositions/axem-duo-'+P[m[1]]+'.jpg'; i.closest('[hidden]')?.removeAttribute('hidden');});})();</script>
+
+<script>
+// Tour 18, ecran bleu j3, "le bleu qui se replie". Meme grammaire que i1 : les deux portraits, le
+// prenom de chacun qui s'ecrit, un trait de feutre sous A et x (Alexis) puis sous é et m (Clément),
+// le reste des prenoms qui s'efface, les quatre lettres gardees qui rejoignent axem, IA qui se
+// pose, tout qui atterrit exactement sur le logo. Ce qui change : les portraits sont grands, cote a
+// cote, cernes d'un cadre bleu (jamais de teinte sur les visages). Une fois les lettres envolees
+// vers axem, ce grand aplat se replie et se retracte en meme temps que le mot, par la meme courbe,
+// jusqu'a se poser exactement sur le logo : un seul geste, deux elements qui convergent vers le
+// meme point.
+// Corrections du 25/09 (relecture) : le soulignage devient un vrai trait de feutre trace en SVG
+// (stroke-dasharray/dashoffset), les prenoms grossissent, les lettres non gardees sont totalement
+// effacees avant que les lettres gardees ne bougent, et les portraits entrent des 0-250ms.
+window.T10_INTRO = (release) => {
+  const intro = document.querySelector('.intro');
+  const finish = () => { if (intro) intro.style.display = 'none'; };
+  if (!intro) { release(); return; }
+
+  const fold = intro.querySelector('.j3-fold');
+  const halfA = intro.querySelector('.j3-half-a');
+  const halfC = intro.querySelector('.j3-half-c');
+  const rowA = intro.querySelector('.j3-name-a');
+  const rowC = intro.querySelector('.j3-name-c');
+  const logo = intro.querySelector('.j3-logo');
+  const ia = intro.querySelector('.j3-ia');
+  const tag = intro.querySelector('.j3-tag');
+  const targets = logo ? [...logo.children] : [];
+  if (!fold || !halfA || !halfC || !rowA || !rowC || !logo || !ia || !tag || targets.length < 4) { release(); finish(); return; }
+
+  const build = (row, keep) => {
+    row.innerHTML = '';
+    [...(row.dataset.word || '')].forEach((ch, i) => {
+      const s = document.createElement('span');
+      s.className = 'j3-l' + (keep.includes(i) ? ' keep' : '');
+      s.textContent = ch;
+      row.appendChild(s);
+    });
+    return { all: [...row.children], kept: [...row.querySelectorAll('.keep')], rest: [...row.querySelectorAll('.j3-l:not(.keep)')] };
+  };
+  const A = build(rowA, [0, 3]); // A, x
+  const C = build(rowC, [2, 3]); // é, m
+  if (A.kept.length < 2 || C.kept.length < 2) { release(); finish(); return; }
+
+  // Interpolation cubique de Bezier : sert a courber tous les deplacements de cet ecran.
+  const bez = (p0, p1, p2, p3, t) => {
+    const u = 1 - t, uu = u * u, tt = t * t, a = uu * u, b = 3 * uu * t, c = 3 * u * tt, d = tt * t;
+    return { x: a * p0.x + b * p1.x + c * p2.x + d * p3.x, y: a * p0.y + b * p1.y + c * p2.y + d * p3.y };
+  };
+
+  // Un vrai trait de feutre a main levee : trace SVG irregulier (bow + jitter), bouts arrondis,
+  // qui se DESSINE (stroke-dasharray/dashoffset) au lieu d'un simple scaleX.
+  const SVGNS = 'http://www.w3.org/2000/svg';
+  const jit = (n) => (Math.random() - .5) * n * 2;
+  const sketchLine = (x1, y1, x2, y2, bow, segs, jAmt) => {
+    const dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy) || 1;
+    const nx = -dy / len, ny = dx / len;
+    const pts = [{ x: x1, y: y1 }];
+    for (let i = 1; i < segs; i++) {
+      const t = i / segs;
+      pts.push({ x: x1 + dx * t + nx * bow * Math.sin(Math.PI * t) + jit(jAmt), y: y1 + dy * t + ny * bow * Math.sin(Math.PI * t) + jit(jAmt) });
+    }
+    pts.push({ x: x2, y: y2 });
+    let d = `M${pts[0].x.toFixed(1)},${pts[0].y.toFixed(1)}`;
+    for (let i = 1; i < pts.length - 1; i++) {
+      const p0 = pts[i - 1], p1 = pts[i], mx = (p0.x + p1.x) / 2, my = (p0.y + p1.y) / 2;
+      d += ` Q${p0.x.toFixed(1)},${p0.y.toFixed(1)} ${mx.toFixed(1)},${my.toFixed(1)}`;
+    }
+    const pen = pts[pts.length - 2];
+    d += ` Q${pen.x.toFixed(1)},${pen.y.toFixed(1)} ${x2.toFixed(1)},${y2.toFixed(1)}`;
+    return d;
+  };
+
+  const TILTS = [1.7, -1.3, 1.9, -1.5];
+  const marks = [0, 1, 2, 3].map(() => {
+    const svg = document.createElementNS(SVGNS, 'svg');
+    svg.setAttribute('class', 'j3-mark');
+    const p = document.createElementNS(SVGNS, 'path');
+    svg.appendChild(p);
+    intro.appendChild(svg);
+    return { svg, p };
+  });
+  const placeMark = (mark, el, tilt) => {
+    // Le trait vit DANS la lettre : il suit la lettre quelle que soit la transformation de la carte
+    // (un position:fixed sous un parent transforme se decalait et debordait sous la photo).
+    const lw = el.offsetWidth, lh = el.offsetHeight;
+    const pad = Math.max(4, lw * .16); // a peine plus large que la lettre, comme au tour 16
+    const w = lw + pad * 2, h = 16;
+    const y1 = 5 + tilt * .6, y2 = 8 - tilt * .6;
+    if (mark.svg.parentNode !== el) el.appendChild(mark.svg);
+    mark.svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    Object.assign(mark.svg.style, { left: -pad + 'px', top: Math.round(lh * .96) + 'px', width: w + 'px', height: h + 'px', opacity: 1 });
+    const d = sketchLine(2, y1, w - 2, y2, 2.2, 4, 1.6);
+    mark.p.setAttribute('d', d);
+    const len = mark.p.getTotalLength();
+    mark.p.style.strokeDasharray = len;
+    mark.p.style.strokeDashoffset = len;
+  };
+  const drawMark = (mark, delay) => gsap.to(mark.p, { strokeDashoffset: 0, duration: .38, delay, ease: 'power2.out' });
+
+  // Vol courbe d'un element vers une cible : jamais une ligne droite, transform seul (translate + scale).
+  const flyCurved = (el, target, delay, dur) => {
+    const r = el.getBoundingClientRect(), tr = target.getBoundingClientRect();
+    const sx = r.left, sy = r.top, dx = tr.left, dy = tr.top;
+    const targetSize = parseFloat(getComputedStyle(target).fontSize) || parseFloat(getComputedStyle(el).fontSize);
+    const startSize = parseFloat(getComputedStyle(el).fontSize);
+    const k = targetSize / startSize;
+    const bow = -Math.max(30, Math.abs(dy - sy) * .5);
+    const cx1 = sx + (dx - sx) * .3, cy1 = sy + bow;
+    const cx2 = sx + (dx - sx) * .7, cy2 = dy + bow * .4;
+    intro.appendChild(el);
+    Object.assign(el.style, { position: 'fixed', left: sx + 'px', top: sy + 'px', margin: '0', zIndex: 6, opacity: 1, transformOrigin: '0 0' });
+    const proxy = { t: 0 };
+    gsap.to(proxy, {
+      t: 1, duration: dur, delay, ease: 'power3.inOut',
+      onUpdate: () => {
+        const p = bez({ x: sx, y: sy }, { x: cx1, y: cy1 }, { x: cx2, y: cy2 }, { x: dx, y: dy }, proxy.t);
+        const sc = 1 + (k - 1) * proxy.t;
+        el.style.transform = `translate(${(p.x - sx).toFixed(1)}px, ${(p.y - sy).toFixed(1)}px) scale(${sc.toFixed(3)})`;
+      }
+    });
+  };
+
+  const fly = () => {
+    const map = [[A.kept[0], targets[0], 'a'], [A.kept[1], targets[1], 'x'], [C.kept[0], targets[2], 'e'], [C.kept[1], targets[3], 'm']];
+    map.forEach(([el, t, glyph], i) => { el.textContent = glyph; flyCurved(el, t, i * .04, .78); });
+  };
+
+  // La fin : le grand aplat des deux portraits ET le mot repartent ensemble, par la meme courbe,
+  // se poser exactement sur le logo. Une copie bleue du mot reste a opacite 0 jusqu'a son propre fondu.
+  const retract = () => {
+    const navWm = document.querySelector('.nav .logo .wm');
+    const word = intro.querySelector('.j3-wm');
+    const kept = [A.kept[0], A.kept[1], C.kept[0], C.kept[1]];
+    if (!navWm || !word) { release(); gsap.delayedCall(.3, finish); return; }
+
+    gsap.set(logo, { opacity: 1 });
+    gsap.set(kept, { opacity: 0 });
+
+    const src = word.getBoundingClientRect(), dst = navWm.getBoundingClientRect();
+    const k = dst.width / src.width;
+    const sx = src.left, sy = src.top, dx = dst.left, dy = dst.top;
+    const bow = -Math.max(60, (sy - dy) * .45);
+    const cx1 = sx + (dx - sx) * .3, cy1 = sy + bow * .4;
+    const cx2 = sx + (dx - sx) * .7, cy2 = dy - bow * .15;
+
+    const foldRect = fold.getBoundingClientRect();
+    const fcx = foldRect.left + foldRect.width / 2, fcy = foldRect.top + foldRect.height / 2;
+    const tcx = dst.left + dst.width / 2, tcy = dst.top + dst.height / 2;
+    const fbow = -Math.max(90, (fcy - tcy) * .4);
+    const fcx1 = fcx + (tcx - fcx) * .3, fcy1 = fcy + fbow * .5;
+    const fcx2 = fcx + (tcx - fcx) * .7, fcy2 = tcy - fbow * .2;
+
+    const blueCopy = word.cloneNode(true);
+    blueCopy.classList.add('j3-wm-blue');
+    Object.assign(blueCopy.style, { position: 'fixed', left: sx + 'px', top: sy + 'px', margin: 0, zIndex: 59, transformOrigin: '0 0', pointerEvents: 'none', opacity: 0 });
+    document.body.appendChild(blueCopy);
+    Object.assign(word.style, { position: 'fixed', left: sx + 'px', top: sy + 'px', margin: 0, transformOrigin: '0 0' });
+    intro.querySelector('.j3-final').style.gap = '0';
+    fold.style.transformOrigin = '50% 50%';
+
+    const DUR = 1.1;
+    const proxy = { t: 0 };
+    document.body.classList.add('j3-flying');
+    const tl = gsap.timeline({ onComplete: () => { blueCopy.remove(); document.body.classList.remove('j3-flying'); finish(); } });
+    tl.to(proxy, {
+      t: 1, duration: DUR, ease: 'power3.inOut',
+      onUpdate: () => {
+        const t = proxy.t;
+        const p = bez({ x: sx, y: sy }, { x: cx1, y: cy1 }, { x: cx2, y: cy2 }, { x: dx, y: dy }, t);
+        const sc = 1 + (k - 1) * t;
+        const trv = `translate(${(p.x - sx).toFixed(1)}px, ${(p.y - sy).toFixed(1)}px) scale(${sc.toFixed(3)})`;
+        word.style.transform = trv; blueCopy.style.transform = trv;
+
+        const fp = bez({ x: fcx, y: fcy }, { x: fcx1, y: fcy1 }, { x: fcx2, y: fcy2 }, { x: tcx, y: tcy }, t);
+        const fsc = 1 + (0.03 - 1) * t;
+        const frot = -9 * t;
+        fold.style.transform = `translate(${(fp.x - fcx).toFixed(1)}px, ${(fp.y - fcy).toFixed(1)}px) scale(${fsc.toFixed(4)}) rotate(${frot.toFixed(2)}deg)`;
+        fold.style.opacity = t < .6 ? '1' : String(Math.max(0, 1 - (t - .6) / .35));
+      }
+    }, 0)
+      .to(blueCopy, { opacity: 1, duration: .35, ease: 'power1.inOut' }, DUR - .35)
+      .to(word, { opacity: 0, duration: .35, ease: 'power1.inOut' }, DUR - .35)
+      .call(release, null, DUR * .5);
+  };
+
+  const tl = gsap.timeline();
+  // Les portraits entrent vite (power2.out, .6s) : des les 200-250ms le mouvement est deja net,
+  // aucun ecran bleu vide en debut de course.
+  tl.fromTo([halfA, halfC], { opacity: 0, scale: 1.05 }, { opacity: 1, scale: 1, duration: .6, ease: 'power2.out', stagger: .08 }, 0)
+    .fromTo(A.all, { yPercent: 90, opacity: 0 }, { yPercent: 0, opacity: 1, duration: .42, ease: 'power3.out', stagger: .045 }, .46)
+    .fromTo(C.all, { yPercent: 90, opacity: 0 }, { yPercent: 0, opacity: 1, duration: .42, ease: 'power3.out', stagger: .045 }, .62)
+    .call(() => { placeMark(marks[0], A.kept[0], TILTS[0]); placeMark(marks[1], A.kept[1], TILTS[1]); placeMark(marks[2], C.kept[0], TILTS[2]); placeMark(marks[3], C.kept[1], TILTS[3]); }, null, 1.2)
+    .call(() => { drawMark(marks[0], 0); drawMark(marks[1], .05); drawMark(marks[2], .1); drawMark(marks[3], .15); }, null, 1.2)
+    // Traits pleinement traces a ~1.73s ; ils restent lisibles au moins 400ms avant que le reste des
+    // prenoms ne s'efface (fade a 2.2s).
+    .to(marks.map(m => m.svg), { opacity: 0, duration: .22, ease: 'power1.in' }, 2.2)
+    .to([...A.rest, ...C.rest], { opacity: 0, yPercent: -26, duration: .28, ease: 'power2.in', stagger: .015 }, 2.2)
+    // Les lettres gardees ne bougent qu'une fois le reste des prenoms completement efface : plus
+    // jamais deux lettres l'une sur l'autre pendant la transition.
+    .call(fly, null, 2.62)
+    .to(ia, { opacity: 1, y: 0, scale: 1, duration: .4, ease: 'power3.out' }, 3.5)
+    .to(tag, { opacity: 1, duration: .3, ease: 'power1.out' }, 3.78)
+    .to(tag, { opacity: 0, duration: .2, ease: 'power1.in' }, 4.2)
+    .call(retract, null, 4.35);
+};
+</script>
+<script>
+// Socle : écran bleu d'arrivée, chiffres qui comptent, colonnes au survol
+(() => {
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches || /[?&]static\b/.test(location.search);
+  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const fmt = n => Math.round(n).toLocaleString('fr-FR').replace(/[  ]/g, ' ');
+  const body = document.body, grid = document.getElementById('grid');
+  const nums = [...document.querySelectorAll('.kpis [data-to], .kpi [data-to]')];
+  window.T10 = { reduce, fine, fmt };
+
+  const release = () => {
+    body.classList.remove('hold');
+    setTimeout(() => grid && grid.classList.add('settled'), 2200);
+    nums.forEach((el, i) => {
+      const to = +el.dataset.to, pre = el.dataset.pre || '';
+      if (reduce) { el.textContent = pre + fmt(to); return; }
+      const o = { v: 0 }; el.textContent = pre + '0';
+      gsap.to(o, { v: to, duration: 1.6, delay: 0.8 + i * 0.12, ease: 'power3.out', onUpdate: () => { el.textContent = pre + fmt(o.v); } });
+    });
+    document.dispatchEvent(new Event('t10:go'));
+  };
+
+  // Tour 15 : le fond ne reagit plus a la souris (Clement : ca alourdit). Fonction gardee inerte.
+  window.T10.cols = () => {
+    const hero = document.querySelector('.hero'), cols = [...document.querySelectorAll('#grid i')];
+    return;
+    let cur = -1;
+    const set = k => { if (k === cur) return; if (cur >= 0) cols[cur].classList.remove('hi'); if (k >= 0) cols[k].classList.add('hi'); cur = k; };
+    hero.addEventListener('pointermove', e => { set(cols.findIndex(c => { const r = c.getBoundingClientRect(); return e.clientX >= r.left && e.clientX < r.right; })); });
+    hero.addEventListener('pointerleave', () => set(-1));
+  };
+
+  document.querySelectorAll('.replay').forEach(b => b.addEventListener('click', () => location.reload()));
+  const intro = document.querySelector('.intro');
+  if (reduce) { if (intro) intro.remove(); release(); return; }
+  body.classList.add('hold');
+  // Filet de securite : il part du vrai debut de l'animation, pas du chargement, sinon une police
+  // lente coupe l'ecran bleu en plein milieu. Si les polices ne repondent jamais, on libere a 6 s.
+  const net = () => { if (body.classList.contains('hold')) { if (intro) intro.remove(); release(); } };
+  let started = false;
+  document.fonts.ready.then(() => {
+    started = true;
+    setTimeout(net, 7500); // l'ecran bleu du tour 15 dure environ 5,6 s
+    if (window.T10_INTRO) { window.T10_INTRO(release); return; }
+    gsap.timeline()
+      .from('.intro b', { autoAlpha: 0, scale: .92, duration: .5, ease: 'expo.out' }, 0)
+      .to('.intro b', { autoAlpha: 0, scale: 1.06, duration: .3, ease: 'power2.in' }, .7)
+      .to('.intro', { yPercent: -100, duration: .8, ease: 'expo.inOut' }, .9)
+      .add(release, 1.2)
+      .set('.intro', { display: 'none' });
+  });
+  setTimeout(() => { if (!started) net(); }, 6000);
+})();
+</script>
+<script>
+// Tour 15 : plus de surtitre, plus de phrase ni d'accolade, plus de trait au survol du titre, et le
+// fond ne reagit plus a la souris. Le schema grandit et dit la methode : on repere ce qui bloque, on
+// trouve les cas d'usage IA, on les applique ; il se construit etape par etape a l'arrivee.
+// Tour 13, le hero mixe : le tableau d'atelier du tour 11, plus le petit schema a fleches
+// Probleme > Cas d'usage > Gain, plus deux moments au defilement. Premier moment : le feutre
+// entoure l'etape suivante du schema au fur et a mesure qu'on descend. Deuxieme moment : en
+// quittant le hero, tous les traits se retirent, comme un tableau qu'on efface.
+(() => {
+  const hero = document.querySelector('.hero.mk3');
+  if (!hero) return;
+  const svg = hero.querySelector('.mk-svg');
+  const q = sel => hero.querySelector(sel);
+  const ia = q('.mk-ia'), phrase = q('.mk-phrase'), aL = q('.mk-a'), zL = q('.mk-z'), l2h1 = q('.l2 [data-h1l2]');
+  const h1a = document.getElementById('h');
+  const sideP = q('.side p'), sideStrong = q('.mk-si');
+  const btn = q('.btn');
+  const noteSide = null, noteBtn = q('.mk-note-btn');
+  const ia2 = q('.mk-ia2');
+  const kpiNums = [...hero.querySelectorAll('.mk-kpi .mk-num')];
+  const flowArrows = [...hero.querySelectorAll('.mk-fa path')];
+  const flowTags = [...hero.querySelectorAll('.mk-tag')];
+
+  const setD = (name, d) => svg.querySelectorAll(`[data-mk="${name}"]`).forEach(p => p.setAttribute('d', d));
+  const rectIn = el => {
+    const r = el.getBoundingClientRect(), h = hero.getBoundingClientRect();
+    return { l: r.left - h.left, r: r.right - h.left, t: r.top - h.top, b: r.bottom - h.top, w: r.width, hgt: r.height, cx: r.left - h.left + r.width / 2, cy: r.top - h.top + r.height / 2, heroW: h.width };
+  };
+  const jit = (n = 2) => (Math.random() - .5) * n * 2;
+  const clamp = (v, lo, hi) => Math.max(lo, Math.min(hi, v));
+
+  // Une ligne a main levee : segments jitteres, courbes douces, un leger arc (bow).
+  function sketchLine(x1, y1, x2, y2, bow = 0, segs = 4, jAmt = 2) {
+    const dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy) || 1;
+    const nx = -dy / len, ny = dx / len;
+    const pts = [{ x: x1, y: y1 }];
+    for (let i = 1; i < segs; i++) {
+      const t = i / segs;
+      pts.push({ x: x1 + dx * t + nx * bow * Math.sin(Math.PI * t) + jit(jAmt), y: y1 + dy * t + ny * bow * Math.sin(Math.PI * t) + jit(jAmt) });
+    }
+    pts.push({ x: x2, y: y2 });
+    let d = `M${pts[0].x.toFixed(1)},${pts[0].y.toFixed(1)}`;
+    for (let i = 1; i < pts.length - 1; i++) {
+      const p0 = pts[i - 1], p1 = pts[i], mx = (p0.x + p1.x) / 2, my = (p0.y + p1.y) / 2;
+      d += ` Q${p0.x.toFixed(1)},${p0.y.toFixed(1)} ${mx.toFixed(1)},${my.toFixed(1)}`;
+    }
+    const pen = pts[pts.length - 2];
+    d += ` Q${pen.x.toFixed(1)},${pen.y.toFixed(1)} ${x2.toFixed(1)},${y2.toFixed(1)}`;
+    return d;
+  }
+
+  // Une boucle griffonnee autour d'un mot : le trait depasse legerement son point de depart.
+  function sketchLoop(cx, cy, rx, ry, jAmt = 2.4, segs = 20) {
+    const start = -.09 * Math.PI * 2, end = 1.07 * Math.PI * 2;
+    const pts = [];
+    for (let i = 0; i <= segs; i++) {
+      const t = start + (end - start) * (i / segs);
+      pts.push({ x: cx + Math.cos(t) * (rx + jit(jAmt)), y: cy + Math.sin(t) * (ry + jit(jAmt)) });
+    }
+    let d = `M${pts[0].x.toFixed(1)},${pts[0].y.toFixed(1)}`;
+    for (let i = 1; i < pts.length; i++) {
+      const p0 = pts[i - 1], p1 = pts[i], mx = (p0.x + p1.x) / 2, my = (p0.y + p1.y) / 2;
+      d += ` Q${p0.x.toFixed(1)},${p0.y.toFixed(1)} ${mx.toFixed(1)},${my.toFixed(1)}`;
+    }
+    return d;
+  }
+
+  // Une accolade manuscrite, pointe vers x + tip.
+  function bracePath(x, top, bottom, depth = 12, tip = 9) {
+    const h = bottom - top, mid = (top + bottom) / 2, j = () => jit(1.5);
+    const P = n => n.toFixed(1);
+    return `M${P(x + j())},${P(top + j())} ` +
+      `Q${P(x - depth + j())},${P(top + h * .1 + j())} ${P(x - depth * .55 + j())},${P(top + h * .24 + j())} ` +
+      `Q${P(x - depth * 1.5 + j())},${P(top + h * .4 + j())} ${P(x + tip + j())},${P(mid + j())} ` +
+      `Q${P(x - depth * 1.5 + j())},${P(top + h * .6 + j())} ${P(x - depth * .55 + j())},${P(bottom - h * .24 + j())} ` +
+      `Q${P(x - depth + j())},${P(bottom - h * .1 + j())} ${P(x + j())},${P(bottom + j())}`;
+  }
+
+  // Une fleche a main levee : hampe courbe + pointe a deux traits.
+  function arrowPath(x1, y1, x2, y2, bow) {
+    const ang = Math.atan2(y2 - y1, x2 - x1);
+    const tx = x2 - 9 * Math.cos(ang), ty = y2 - 9 * Math.sin(ang);
+    const shaft = sketchLine(x1, y1, tx, ty, bow, 4, 1.6);
+    const hx1 = x2 - 11 * Math.cos(ang - .48), hy1 = y2 - 11 * Math.sin(ang - .48);
+    const hx2 = x2 - 11 * Math.cos(ang + .48), hy2 = y2 - 11 * Math.sin(ang + .48);
+    return `${shaft} M${x2.toFixed(1)},${y2.toFixed(1)} L${hx1.toFixed(1)},${hy1.toFixed(1)} M${x2.toFixed(1)},${y2.toFixed(1)} L${hx2.toFixed(1)},${hy2.toFixed(1)}`;
+  }
+
+  let genH1, genSide, genBtn, ringPaths = [];
+
+  function layout() {
+    if (!ia || !phrase || !aL || !zL || !l2h1) return;
+    // Les spans du titre partagent la boite de ligne (metriques Fraunces tres etendues) : on s'en sert
+    // pour la largeur (fiable), mais la hauteur visuelle vient de la boite du h1 parent, plus juste.
+    const iaR = rectIn(ia), phR = rectIn(phrase), aR = rectIn(aL), zR = rectIn(zL), lnR = rectIn(l2h1);
+    const lnH = lnR.b - lnR.t;
+    // Sur telephone les lignes du titre se touchent presque : le cercle reste dans sa ligne et ne
+    // sort pas de l'ecran a gauche.
+    const tight = innerWidth <= 860;
+    const rx = iaR.w / 2 + (tight ? 7 : 12);
+    setD('ia', sketchLoop(Math.max(iaR.cx, rx + 3), (lnR.t + lnR.b) / 2, rx, lnH / 2 + (tight ? 3 : 10)));
+    const bow = lnH * .11, gapY = lnR.t - lnH * .08;
+    setD('arrow', arrowPath(aR.r + 6, gapY, zR.l - 5, gapY, -bow));
+    setD('u1', sketchLine(phR.l - 3, lnR.b + 7, phR.r + 3, lnR.b + 4, 3, 5, 1.8));
+    setD('u2', sketchLine(phR.l + 2, lnR.b + 15, phR.r - 8, lnR.b + 17, -2.5, 5, 1.8));
+
+    if (sideP) {
+      const sR = rectIn(sideP);
+      const compact = matchMedia('(max-width: 1180px)').matches;
+      if (compact) {
+        setD('brace', sketchLine(sR.l + 2, sR.t - 5, sR.l + Math.min(sR.w * .32, 60), sR.t - 12, 4, 4, 1.4));
+        if (noteSide) {
+          noteSide.style.left = clamp(sR.l, 6, sR.heroW - 150) + 'px';
+          noteSide.style.top = Math.max(sR.t - 26, 4) + 'px';
+        }
+      } else {
+        const depth = clamp(sR.l - 8, 7, 13);
+        setD('brace', bracePath(sR.l - 15, sR.t + 3, sR.b - 3, depth, depth * .78));
+        if (noteSide) {
+          // La note se range a gauche de l'accolade, au milieu de sa hauteur : a cet endroit il n'y a
+          // que du vide entre la fin de "partenaire" et la fleche au dessus de "de A a Z".
+          const nw = noteSide.offsetWidth || 120;
+          noteSide.style.left = clamp(sR.l - depth - 26 - nw, 6, sR.heroW - nw - 6) + 'px';
+          noteSide.style.top = (sR.t + sR.hgt / 2 - 8) + 'px';
+        }
+      }
+    }
+    if (sideStrong) {
+      const sR = rectIn(sideStrong);
+      genSide = () => sketchLine(sR.l, sR.b + 3, sR.r, sR.b + 4.5, 2.4, 4, 1.6);
+    }
+    if (btn) {
+      const bR = rectIn(btn);
+      // Au-dessus du bouton, la note touchait le paragraphe des qu'il n'y a pas de marge (telephone) :
+      // quand la place existe a droite du bouton, elle s'y range, fleche vers le bord du bouton.
+      const nw = (noteBtn && noteBtn.offsetWidth) || 70;
+      const right = bR.r + 16 + nw < bR.heroW - 4;
+      genBtn = right
+        ? () => arrowPath(bR.r + 18 + nw / 3, bR.t + 4, bR.r + 5, bR.cy + 4, 10)
+        : () => arrowPath(bR.r - nw - 26, bR.b + 40, bR.l + bR.w * .42, bR.b + 8, -14);
+      // Bouton cale sur le bord droit (tour 16) : la note passe sous lui, alignee a droite, et la fleche
+      // remonte vers le bouton. Au-dessus, elle touchait la fin de « partenaire ».
+      if (noteBtn) {
+        noteBtn.style.left = (right ? bR.r + 16 : clamp(bR.r - nw - 6, 6, bR.heroW - nw - 6)) + 'px';
+        noteBtn.style.top = (right ? bR.t - 16 : bR.b + 22) + 'px';
+      }
+    }
+    if (ia2) {
+      const r = rectIn(ia2);
+      setD('ia2', sketchLoop(r.cx, r.cy, r.w / 2 + 8, r.hgt / 2 + 5, 1.6, 16));
+    }
+    // Les deux fleches du schema, et les trois cercles qui entoureront chaque etape au defilement.
+    flowArrows.forEach(p => p.setAttribute('d', arrowPath(2, 10, 40, 10, jit(3))));
+    ringPaths = flowTags.map(el => {
+      const r = rectIn(el);
+      return sketchLoop(r.cx, r.cy, r.w / 2 + 9, r.hgt / 2 + 7, 2, 18);
+    });
+    kpiNums.forEach((el, i) => {
+      // Le compteur peut etre en cours : on mesure le chiffre sous sa forme finale, puis on remet
+      // ce qui etait affiche, pour que le trait epouse le vrai nombre et non "+0".
+      const shown = el.textContent;
+      const to = +el.dataset.to;
+      if (to) el.textContent = (el.dataset.pre || '') + to.toLocaleString('fr-FR').replace(/\u202f|\u00a0/g, ' ');
+      const r = rectIn(el);
+      el.textContent = shown;
+      if (i === 0) setD('k1', sketchLoop(r.cx, r.cy - 1, r.w / 2 + 14, r.hgt / 2 + 5, 2, 18));
+      if (i === 1) setD('k2', sketchLine(r.l - 4, r.b + 5, r.r + 4, r.b + 7, 2.5, 5, 1.4));
+      if (i === 2) setD('k3', sketchLine(r.l - 2, r.b + 3, r.r + 2, r.b + 3.4, 1, 4, 1));
+    });
+  }
+
+  // Trace un chemin deja pose dans le DOM (dash de 0 a plein), ou immediatement s'il faut reduire le mouvement.
+  function draw(name, delay = 0, dur = .5, ease = 'power2.out') {
+    svg.querySelectorAll(`[data-mk="${name}"]`).forEach(p => {
+      const len = p.getTotalLength();
+      p.style.strokeDasharray = len;
+      if (T10.reduce) { p.style.strokeDashoffset = 0; return; }
+      p.style.strokeDashoffset = len;
+      gsap.to(p, { strokeDashoffset: 0, duration: dur, delay: delay + 0.9, ease, overwrite: true });
+    });
+  }
+
+  function reveal() {
+    layout();
+    draw('ia', .35, .6, 'power3.out');
+    draw('arrow', .95, .55, 'power2.out');
+    draw('u1', 1.55, .4, 'power2.out');
+    draw('u2', 1.82, .35, 'power2.out');
+    draw('k1', 1.9, .5, 'power2.out');
+    draw('k2', 2.55, .4, 'power2.out');
+    draw('k3', 2.85, .35, 'power2.out');
+    // Le schema se construit dans l'ordre de la methode : chaque etape se pose, la fleche part vers
+    // la suivante, et le feutre entoure le mot IA au moment ou il apparait.
+    if (!T10.reduce) {
+      flowTags.forEach((t, i) => gsap.fromTo(t, { opacity: 0, y: 14, scale: .9 }, { opacity: 1, y: 0, scale: 1, duration: .6, delay: 1.25 + i * .62, ease: 'back.out(1.7)', clearProps: 'transform' }));
+    }
+    draw('flowA', 1.72, .42, 'power2.out');
+    draw('ia2', 2.2, .5, 'power2.out');
+    draw('flowB', 2.34, .42, 'power2.out');
+    if (noteSide) { if (T10.reduce) noteSide.style.opacity = .92; else gsap.to(noteSide, { opacity: .92, duration: .5, delay: 2.55 }); }
+    // Tour 16 : « c'est ici » ne se cache plus derriere un survol, il se pose apres les chiffres.
+    if (noteBtn && genBtn) {
+      if (T10.reduce) { toggle('hv-btn', true, genBtn); noteBtn.style.opacity = .92; }
+      else gsap.delayedCall(3.1, () => { toggle('hv-btn', true, genBtn); gsap.to(noteBtn, { opacity: .92, duration: .4 }); });
+    }
+  }
+
+  // ---- premier moment au defilement : le feutre entoure l'etape suivante du schema ----
+  // ---- second moment : en quittant le hero, tous les traits se retirent, le tableau s'efface ----
+  const ringEls = [...svg.querySelectorAll('[data-mk="ring"]')];
+  const wipeEls = () => [...svg.querySelectorAll('.mk')].filter(p => p.getAttribute('data-mk') !== 'ring');
+  let stage = -1;
+
+  function setStage(i) {
+    if (i === stage || !ringPaths[i]) return;
+    stage = i;
+    ringEls.forEach(el => {
+      el.setAttribute('d', ringPaths[i]);
+      const len = el.getTotalLength();
+      el.style.strokeDasharray = len;
+      el.style.opacity = '';
+      if (T10.reduce) { el.style.strokeDashoffset = 0; return; }
+      el.style.strokeDashoffset = len;
+      gsap.to(el, { strokeDashoffset: 0, duration: .34, ease: 'power2.out', overwrite: true });
+    });
+  }
+
+  function scrollScene() {
+    if (T10.reduce || !window.gsap || !window.ScrollTrigger) { setStage(2); return; }
+    gsap.registerPlugin(ScrollTrigger);
+    let wiped = null;
+    ScrollTrigger.create({
+      trigger: hero, start: 'top top', end: 'bottom top', scrub: .4, invalidateOnRefresh: true,
+      onUpdate(self) {
+        const p = self.progress;
+        setStage(p < .2 ? 0 : p < .42 ? 1 : 2);
+        // Au dela de 62 %, chaque trait se retire a la vitesse du defilement : le tableau s'efface.
+        const w = p <= .62 ? 0 : Math.min(1, (p - .62) / .34);
+        if (wiped === w) return;
+        wiped = w;
+        [...wipeEls(), ...ringEls].forEach(el => {
+          const len = parseFloat(el.style.strokeDasharray) || el.getTotalLength();
+          if (!el.style.strokeDasharray) el.style.strokeDasharray = len;
+          if (w > 0) el.style.strokeDashoffset = len * w;
+          else if (el.dataset.mk !== 'ring') el.style.strokeDashoffset = 0;
+        });
+        if (noteSide) noteSide.style.opacity = w > 0 ? String(.92 * (1 - w)) : '.92';
+        if (noteBtn && w > 0) noteBtn.style.opacity = String(parseFloat(noteBtn.style.opacity || 0) * (1 - w));
+      }
+    });
+  }
+
+  // Une annotation d'appel (titre / texte / bouton) qui se trace au survol, et se retire quand on part.
+  function toggle(name, show, gen) {
+    const el = svg.querySelector(`[data-mk="${name}"]`);
+    if (!el || !gen) return;
+    if (show) {
+      el.setAttribute('d', gen());
+      const len = el.getTotalLength();
+      el.style.strokeDasharray = len;
+      if (T10.reduce) { el.style.strokeDashoffset = 0; return; }
+      el.style.strokeDashoffset = len;
+      gsap.to(el, { strokeDashoffset: 0, duration: .42, ease: 'power2.out', overwrite: true });
+    } else if (!T10.reduce) {
+      gsap.to(el, { strokeDashoffset: el.getTotalLength(), duration: .28, ease: 'power1.in', overwrite: true });
+    }
+  }
+
+  function wireHover() {
+    if (T10.fine && !T10.reduce) {
+      if (btn) {
+        // Au survol, la fleche se retrace : le trait reste pose ensuite.
+        btn.addEventListener('pointerenter', () => { toggle('hv-btn', true, genBtn); gsap.to(noteBtn, { opacity: 1, rotation: -6, scale: 1.08, duration: .35, ease: 'back.out(2)' }); });
+        btn.addEventListener('pointerleave', () => { gsap.to(noteBtn, { opacity: .92, rotation: -3.4, scale: 1, duration: .3 }); });
+      }
+      return;
+    }
+    // Tactile ou mouvement reduit : les annotations d'appel se posent au premier geste (toucher ou defilement).
+    const showAll = () => {
+      toggle('hv-btn', true, genBtn);
+      if (noteBtn) noteBtn.style.opacity = .92;
+    };
+    if (T10.reduce) { showAll(); return; }
+    let done = false;
+    const trigger = () => { if (done) return; done = true; showAll(); };
+    addEventListener('scroll', trigger, { once: true, passive: true });
+    if (btn) btn.addEventListener('touchstart', trigger, { once: true, passive: true });
+  }
+
+  let laid = false;
+  const boot = () => { layout(); laid = true; wireHover(); };
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(boot); else boot();
+  document.addEventListener('t10:go', () => {
+    if (!laid) layout();
+    reveal();
+    gsap.delayedCall(T10.reduce ? 0 : 2.9, scrollScene);
+  });
+  let rt;
+  addEventListener('resize', () => { clearTimeout(rt); rt = setTimeout(layout, 120); });
+})();
+</script>
+<script>
+// Tour 15, style s1 "Aimant" : remplissage directionnel du bouton et du lien du haut (le bleu entre
+// du cote ou arrive la souris, ressort du cote ou elle part), plus le soulevement du hero au premier
+// defilement. Rien ici ne touche au fond ni aux traits de la grille.
+(() => {
+  if (!window.T10) return;
+  const hero = document.querySelector('.hero.mk3');
+  if (!hero) return;
+  const btn = hero.querySelector('.btn');
+  const book = document.querySelector('.nav .book');
+  // Tour 16 : le bouton de la barre recoit le meme remplissage directionnel que celui du hero.
+
+  // Cote le plus proche du point d'entree ou de sortie, exprime en decalage --ex/--ey.
+  function side(el, x, y) {
+    const r = el.getBoundingClientRect();
+    const dl = x - r.left, dr = r.right - x, dt = y - r.top, db = r.bottom - y;
+    const m = Math.min(dl, dr, dt, db);
+    if (m === dl) return ['-130%', '0%'];
+    if (m === dr) return ['130%', '0%'];
+    if (m === dt) return ['0%', '-130%'];
+    return ['0%', '130%'];
+  }
+
+  function wireDir(el) {
+    if (!el) return;
+    el.addEventListener('pointerenter', e => {
+      const [ex, ey] = side(el, e.clientX, e.clientY);
+      el.style.transition = 'none';
+      el.style.setProperty('--ex', ex); el.style.setProperty('--ey', ey);
+      requestAnimationFrame(() => requestAnimationFrame(() => {
+        el.style.transition = '';
+        el.style.setProperty('--ex', '0%'); el.style.setProperty('--ey', '0%');
+      }));
+    });
+    el.addEventListener('pointerleave', e => {
+      const [ex, ey] = side(el, e.clientX, e.clientY);
+      el.style.setProperty('--ex', ex); el.style.setProperty('--ey', ey);
+    });
+  }
+
+  if (T10.fine && !T10.reduce) { wireDir(btn); wireDir(book); }
+
+  if (T10.reduce || !window.gsap || !window.ScrollTrigger) return;
+  document.addEventListener('t10:go', () => {
+    gsap.registerPlugin(ScrollTrigger);
+    ScrollTrigger.create({
+      trigger: hero, start: 'bottom bottom', end: 'bottom top', scrub: .5, invalidateOnRefresh: true,
+      onUpdate(self) {
+        const p = self.progress;
+        gsap.set(hero, { yPercent: -3 * p, opacity: 1 - .42 * p, scale: 1 - .012 * p, transformOrigin: '50% 0%' });
+      }
+    });
+  });
+})();
+</script>
+<script>
+(() => {
+  // ---- Tour 17 : socle commun (Reserver un seul a la fois, bouton son WebAudio). Charge sur les
+  // 6 pages, avant claude-mark.js et le script propre a chaque page (voir outils/build_t17.py). ----
+
+  // 1) Reserver un seul a la fois. La barre garde .nav .book[data-book] (nav.css). Tant que le grand
+  // bouton du hero (.hero .btn[data-book]) est a l'ecran, celui de la barre reste cache, invisible aux
+  // lecteurs d'ecran et non focusable. Des qu'il en sort, il apparait et reste, meme en remontant. Sur
+  // les pages duo il n'y a pas de hero : le bouton de la barre est visible d'emblee.
+  (() => {
+    const navBook = document.querySelector('#nav .book[data-book]');
+    if (!navBook) return;
+    const heroBook = document.querySelector('.hero .btn[data-book]');
+    if (!heroBook) { navBook.classList.add('rs-show'); return; }
+    navBook.classList.add('rs-hidden');
+    navBook.setAttribute('tabindex', '-1');
+    navBook.setAttribute('aria-hidden', 'true');
+    const reveal = () => {
+      navBook.classList.remove('rs-hidden');
+      navBook.classList.add('rs-show');
+      navBook.removeAttribute('tabindex');
+      navBook.removeAttribute('aria-hidden');
+    };
+    if (!('IntersectionObserver' in window)) { reveal(); return; }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (!entry.isIntersecting) { reveal(); io.disconnect(); } });
+    }, { threshold: 0 });
+    io.observe(heroBook);
+  })();
+
+  // 2) Bouton son : petit egaliseur en bas a gauche, coupe par defaut. Sons synthetises en WebAudio,
+  // aucun fichier. Rien ne joue avant un premier clic (ou une preference deja enregistree). Expose
+  // window.AxemSound = { play(name), on() } et ecoute l'evenement axem:sound emis ailleurs (survols,
+  // ecrans bleus). Chaque lecture/ecriture localStorage est dans un try/catch.
+  (() => {
+    const KEY = 'axem-son';
+    let enabled = false;
+    try { enabled = localStorage.getItem(KEY) === '1'; } catch (e) { enabled = false; }
+
+    let ctx = null;
+    const audioCtx = () => {
+      if (ctx) return ctx;
+      const Ctor = window.AudioContext || window.webkitAudioContext;
+      if (!Ctor) return null;
+      try { ctx = new Ctor(); } catch (e) { ctx = null; }
+      return ctx;
+    };
+
+    const soundWhoosh = c => {
+      const dur = 0.6;
+      const buf = c.createBuffer(1, Math.round(c.sampleRate * dur), c.sampleRate);
+      const d = buf.getChannelData(0);
+      for (let i = 0; i < d.length; i++) { const t = i / d.length; d[i] = (Math.random() * 2 - 1) * Math.pow(1 - t, 2.2); }
+      const src = c.createBufferSource(); src.buffer = buf;
+      const filt = c.createBiquadFilter(); filt.type = 'bandpass'; filt.Q.value = 0.7;
+      filt.frequency.setValueAtTime(500, c.currentTime);
+      filt.frequency.exponentialRampToValueAtTime(2000, c.currentTime + dur * 0.8);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.0001, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.13, c.currentTime + 0.09);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + dur);
+      src.connect(filt).connect(g).connect(c.destination);
+      src.start(); src.stop(c.currentTime + dur + 0.05);
+    };
+
+    const soundTick = c => {
+      const osc = c.createOscillator(); osc.type = 'square'; osc.frequency.setValueAtTime(1900, c.currentTime);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.08, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 0.045);
+      osc.connect(g).connect(c.destination);
+      osc.start(); osc.stop(c.currentTime + 0.06);
+    };
+
+    const soundPop = c => {
+      const osc = c.createOscillator(); osc.type = 'sine';
+      osc.frequency.setValueAtTime(420, c.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(760, c.currentTime + 0.1);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.0001, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.15, c.currentTime + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 0.24);
+      osc.connect(g).connect(c.destination);
+      osc.start(); osc.stop(c.currentTime + 0.26);
+    };
+
+    const SOUNDS = { whoosh: soundWhoosh, tick: soundTick, pop: soundPop };
+
+    const play = name => {
+      if (!enabled || !SOUNDS[name]) return;
+      try {
+        const c = audioCtx();
+        if (!c) return;
+        if (c.state === 'suspended') c.resume().catch(() => {});
+        SOUNDS[name](c);
+      } catch (e) { /* silencieux : le son n'est jamais bloquant */ }
+    };
+
+    window.AxemSound = { play, on: () => enabled };
+    window.addEventListener('axem:sound', e => { try { play(e.detail && e.detail.name); } catch (er) {} });
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'snd-btn';
+    btn.setAttribute('aria-pressed', 'false');
+    btn.setAttribute('aria-label', 'Activer le son');
+    btn.innerHTML = '<span class="snd-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>';
+    document.body.appendChild(btn);
+
+    const sync = () => {
+      btn.classList.toggle('on', enabled);
+      btn.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+      btn.setAttribute('aria-label', enabled ? 'Couper le son' : 'Activer le son');
+    };
+    sync();
+
+    btn.addEventListener('click', () => {
+      enabled = !enabled;
+      try { localStorage.setItem(KEY, enabled ? '1' : '0'); } catch (e) { /* prive ou bloque : tant pis */ }
+      sync();
+      if (enabled) play('pop');
+    });
+  })();
+})();
+</script>
+<script>
+/*
+ * ClaudeMark : trace officiel du symbole Claude (etoile / spark), sans dependance.
+ * Source : Wikimedia Commons, File:Claude_AI_symbol.svg
+ *   https://upload.wikimedia.org/wikipedia/commons/b/b0/Claude_AI_symbol.svg
+ * Le trace original est un SEUL <path> avec un seul sous-tracé (un seul "M" au debut,
+ * 159 segments, une seule fermeture "Z") : les 6 rayons ne sont pas des sous-tracés
+ * separes dans le fichier source, donc pas de decoupage "un <path> par rayon" possible
+ * ici sans reconstruire des tracés synthetiques. Conformement à la consigne du brief
+ * pour ce cas ("un seul contour continu impossible a separer proprement"), ClaudeMark
+ * expose `rays: []` et `root` anime en bloc (rotation / echelle / masque).
+ *
+ * Le trace ci-dessous est le trace officiel, translate pour que le centre visuel de
+ * l'etoile (centre de sa bounding box, cx=49.95 cy=50 dans le fichier source, sur un
+ * viewBox 0 0 100 100) tombe exactement sur (0,0). Le viewBox monte par mount() est
+ * donc centre : "-50 -50 100 100".
+ */
+(function (global) {
+  "use strict";
+
+  var PATH_D =
+    "m -30.35,16.5 l 19.7,-11 l 0.3,-1 l -0.3,-0.5 l -1,0 l -3.3,-0.2 l -11.2,-0.3 " +
+    "L -35.95,3 l -9.5,-0.5 l -2.4,-0.5 L -49.95,-1 l 0.2,-1.5 l 2,-1.3 l 2.9,0.2 " +
+    "l 6.3,0.5 l 9.5,0.6 l 6.9,0.4 L -11.95,-0.9 l 1.6,0 l 0.2,-0.7 l -0.5,-0.4 " +
+    "l -0.4,-0.4 L -20.95,-9 l -10.6,-7 l -5.6,-4.1 l -3,-2 l -1.5,-2 l -0.6,-4.2 " +
+    "l 2.7,-3 l 3.7,0.3 l 0.9,0.2 l 3.7,2.9 l 8,6.1 L -12.95,-14 l 1.5,1.2 l 0.6,-0.4 " +
+    "l 0.1,-0.3 l -0.7,-1.1 L -16.95,-25 l -6,-10.4 l -2.7,-4.3 l -0.7,-2.6 " +
+    "c -0.3,-1 -0.4,-2 -0.4,-3 l 3,-4.2 L -21.95,-50 l 4.2,0.6 L -16.15,-48 l 2.6,6 " +
+    "l 4.1,9.3 L -2.95,-20.1 l 2,3.8 l 1,3.4 l 0.3,1 l 0.7,0 l 0,-0.5 l 0.5,-7.2 " +
+    "l 1,-8.7 l 1,-11.2 l 0.3,-3.2 l 1.6,-3.8 l 3,-2 L 11.05,-47.4 l 2,2.9 l -0.3,1.8 " +
+    "l -1.1,7.7 L 9.05,-22.9 l -1.5,8.2 l 0.9,0 l 1,-1.1 l 4.1,-5.4 l 6.9,-8.6 l 3,-3.5 " +
+    "L 27.05,-37 l 2.3,-1.8 l 4.3,0 l 3.1,4.7 l -1.4,4.9 l -4.4,5.6 l -3.7,4.7 l -5.3,7.1 " +
+    "l -3.2,5.7 l 0.3,0.4 l 0.7,0 l 12,-2.6 l 6.4,-1.1 l 7.6,-1.3 l 3.5,1.6 l 0.4,1.6 " +
+    "l -1.4,3.4 l -8.2,2 l -9.6,2 l -14.3,3.3 l -0.2,0.1 l 0.2,0.3 l 6.4,0.6 l 2.8,0.2 " +
+    "l 6.8,0 l 12.6,1 l 3.3,2 l 1.9,2.7 l -0.3,2 l -5.1,2.6 l -6.8,-1.6 l -16,-3.8 " +
+    "l -5.4,-1.3 l -0.8,0 l 0,0.4 l 4.6,4.5 l 8.3,7.5 L 39.05,30.1 l 0.5,2.4 l -1.3,2 " +
+    "l -1.4,-0.2 l -9.2,-7 l -3.6,-3 l -8,-6.8 l -0.5,0 l 0,0.7 l 1.8,2.7 l 9.8,14.7 " +
+    "l 0.5,4.5 l -0.7,1.4 l -2.6,1 l -2.7,-0.6 l -5.8,-8 l -6,-9 l -4.7,-8.2 l -0.5,0.4 " +
+    "l -2.9,30.2 l -1.3,1.5 l -3,1.2 l -2.5,-2 l -1.4,-3 l 1.4,-6.2 l 1.6,-8 l 1.3,-6.4 " +
+    "l 1.2,-7.9 l 0.7,-2.6 l 0,-0.2 L -0.95,13.7 L -6.95,22 l -9,12.3 l -7.2,7.6 " +
+    "l -1.7,0.7 l -3,-1.5 l 0.3,-2.8 L -25.95,36 l 10,-12.8 l 6,-7.9 l 4,-4.6 l -0.1,-0.5 " +
+    "l -0.3,0 L -32.75,27.4 l -4.7,0.6 l -2,-2 l 0.2,-3 l 1,-1 l 8,-5.5 Z";
+
+  var DEFAULT_COLOR = "#D97757";
+  var SVG_NS = "http://www.w3.org/2000/svg";
+
+  function mount(el, opts) {
+    opts = opts || {};
+    var color = opts.color || DEFAULT_COLOR;
+
+    var svg;
+    if (el && el.tagName && el.tagName.toLowerCase() === "svg") {
+      svg = el;
+    } else {
+      svg = document.createElementNS(SVG_NS, "svg");
+      if (el) el.appendChild(svg);
+    }
+
+    svg.setAttribute("viewBox", "-50 -50 100 100");
+    if (!svg.hasAttribute("width") && opts.size) svg.setAttribute("width", opts.size);
+    if (!svg.hasAttribute("height") && opts.size) svg.setAttribute("height", opts.size);
+    svg.setAttribute("aria-hidden", "true");
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+
+    // root : groupe anime en bloc (rotation/echelle/masque), origine CSS forcee a
+    // (0,0) qui correspond deja au centre visuel de l'etoile dans ce viewBox recentre.
+    var root = document.createElementNS(SVG_NS, "g");
+    root.setAttribute("class", "claude-mark-root");
+    root.style.transformOrigin = "0px 0px";
+    root.style.transformBox = "view-box";
+
+    var path = document.createElementNS(SVG_NS, "path");
+    path.setAttribute("d", PATH_D);
+    path.setAttribute("fill", color);
+    path.setAttribute("class", "claude-mark-path");
+    root.appendChild(path);
+    svg.appendChild(root);
+
+    return {
+      svg: svg,
+      root: root,
+      rays: [], // tracé source en un seul sous-chemin : rayons non individualisables
+      core: null, // idem : pas de hub separe dans le tracé source
+      color: color
+    };
+  }
+
+  global.ClaudeMark = { mount: mount, PATH_D: PATH_D, DEFAULT_COLOR: DEFAULT_COLOR };
+})(window);
+</script>
+<script>
+(() => {
+  // Tour 18, section offres (commune w1 w2 w3). Quatre schémas, un seul par ligne, chacun une
+  // boucle bornée : joue une fois au survol / focus, se joue une fois au défilement sur tactile
+  // (classe .play), jamais de requestAnimationFrame permanent. Le vrai logo Claude (ClaudeMark)
+  // n'est mobilisé que pour la ligne Coaching (04) : les trois autres schémas n'en dépendent pas.
+  const T = window.T10 || {};
+  const reduce = T.reduce || matchMedia('(prefers-reduced-motion: reduce)').matches || /[?&]static\b/.test(location.search);
+  const hasGsap = typeof gsap !== 'undefined';
+  const hasMark = typeof window.ClaudeMark !== 'undefined';
+  const $ = (s, r) => (r || document).querySelector(s);
+  const $$ = (s, r) => [...(r || document).querySelectorAll(s)];
+  const coarse = matchMedia('(hover: none)').matches;
+
+  const section = $('#offres.offres18');
+  if (!section) return;
+
+  // Repli des logos manquants : le nom de l'outil en texte, dans la même pastille, même taille.
+  $$('.lg-img', section).forEach(img => {
+    img.addEventListener('error', () => { img.closest('.lg')?.classList.add('lg-fail'); }, { once: true });
+  });
+
+  // Le vrai logo Claude : uniquement l'aiguille du cadran de la ligne Coaching.
+  if (hasMark) $$('[data-mark]', section).forEach(m => ClaudeMark.mount(m, { size: 64 }));
+
+  const rows = $$('.row[data-schema]', section);
+  rows.forEach(row => {
+    const zone = $('.r-zone', row);
+    if (!zone) return;
+    const kind = row.dataset.schema;
+
+    const play = () => {
+      if (!hasGsap) return;
+
+      if (kind === 'trace') {
+        // 01 Conseil : pas de logo, un repère à deux tons avance de point en point sur le tracé.
+        const mark = $('.rz-mark-trace', zone);
+        if (!mark) return;
+        const r = zone.getBoundingClientRect(), half = 17;
+        const pts = [[.091, .853], [.536, .547], [.909, .16]].map(([fx, fy]) => ({ x: fx * r.width - half, y: fy * r.height - half }));
+        gsap.killTweensOf(mark);
+        gsap.set(mark, { x: pts[0].x, y: pts[0].y, opacity: 1, scale: .8 });
+        gsap.timeline()
+          .to(mark, { x: pts[1].x, y: pts[1].y, scale: 1, duration: .7, ease: 'power1.inOut' })
+          .to(mark, { x: pts[2].x, y: pts[2].y, scale: .85, duration: .7, ease: 'power1.inOut' })
+          .to(mark, { opacity: .92, duration: .3 });
+
+      } else if (kind === 'swarm') {
+        // 02 Formation : la nuée des douze outils IA arrive en vague depuis la droite, freine puis
+        // se pose alignée en grille. Amplitude large (jusqu'à ~270px) pour que le mouvement se voie
+        // vraiment, freinage franc (power3.out), un vrai moment de motion design.
+        const pills = $$('.lg', zone);
+        gsap.killTweensOf(pills);
+        pills.forEach((p, i) => {
+          const col = i % 6, row = Math.floor(i / 6);
+          const dx = 230 + col * 22;
+          const dy = (row - .5) * 24 + (col % 2 ? 16 : -16);
+          const rot = (col % 2 ? 1 : -1) * (14 + row * 6);
+          gsap.set(p, { x: dx, y: dy, rotation: rot, scale: .35, opacity: 0 });
+        });
+        gsap.to(pills, { x: 0, y: 0, rotation: 0, scale: 1, opacity: 1, duration: .9, ease: 'power3.out', stagger: { each: .045, from: 'end' }, overwrite: true });
+
+      } else if (kind === 'flow') {
+        // 03 Automatisation : n8n, Make, Zapier s'allument tour à tour, un signal file de l'un à l'autre.
+        const pills = $$('.lg', zone), lines = $$('.rz-link', zone), signal = $('.rz-signal', zone);
+        if (pills.length < 3 || lines.length < 3 || !signal) return;
+        gsap.killTweensOf([...pills, ...lines, signal]);
+        gsap.set(pills, { scale: .85, opacity: .5 });
+        gsap.set(lines, { opacity: 0 });
+        gsap.set(signal, { x: 0, y: 0, opacity: 0 });
+        const D = [[240, 70], [240, -77], [-480, 7]]; // deltas n8n→make, make→zapier, zapier→n8n (unités du viewBox 600×140)
+        const tl = gsap.timeline();
+        tl.to(pills[0], { scale: 1.12, opacity: 1, duration: .3, ease: 'back.out(2)' }, 0)
+          .set(signal, { opacity: 1 }, .05)
+          .to(lines[0], { opacity: .55, duration: .25 }, .05)
+          .to(signal, { x: D[0][0], y: D[0][1], duration: .55, ease: 'power1.inOut' }, .1)
+          .to(pills[1], { scale: 1.12, opacity: 1, duration: .3, ease: 'back.out(2)' }, .55)
+          .to(pills[0], { scale: .85, opacity: .6, duration: .3 }, .6)
+          .to(lines[1], { opacity: .55, duration: .25 }, .55)
+          .to(signal, { x: D[0][0] + D[1][0], y: D[0][1] + D[1][1], duration: .55, ease: 'power1.inOut' }, .75)
+          .to(pills[2], { scale: 1.12, opacity: 1, duration: .3, ease: 'back.out(2)' }, 1.2)
+          .to(pills[1], { scale: .85, opacity: .6, duration: .3 }, 1.25)
+          .to(lines[2], { opacity: .55, duration: .25 }, 1.2)
+          .to(signal, { x: 0, y: 0, duration: .55, ease: 'power1.inOut' }, 1.4)
+          .to(pills[0], { scale: 1.12, opacity: 1, duration: .3, ease: 'back.out(2)' }, 1.9)
+          .to(pills[2], { scale: .85, opacity: .6, duration: .3 }, 1.95)
+          .to(signal, { opacity: 0, duration: .25 }, 2.05)
+          .to(pills[0], { scale: .85, opacity: .6, duration: .3 }, 2.15);
+
+      } else if (kind === 'dial') {
+        // 04 Coaching : le vrai logo Claude fait le tour du cadran comme une aiguille.
+        const pivot = $('.rz-pivot', zone);
+        gsap.killTweensOf(pivot);
+        gsap.fromTo(pivot, { rotation: 0 }, { rotation: 360, duration: 2.4, ease: 'power1.inOut', transformOrigin: '50% 50%' });
+      }
+    };
+
+    const reset = () => {
+      if (!hasGsap) return;
+      if (kind === 'trace') { const mark = $('.rz-mark-trace', zone); if (mark) gsap.to(mark, { opacity: 0, duration: .25, overwrite: true }); }
+      else if (kind === 'swarm') { const pills = $$('.lg', zone); gsap.to(pills, { opacity: 0, scale: .5, duration: .25, overwrite: true }); }
+      else if (kind === 'flow') {
+        const pills = $$('.lg', zone), lines = $$('.rz-link', zone), signal = $('.rz-signal', zone);
+        gsap.to([...lines, signal], { opacity: 0, duration: .2, overwrite: true });
+        gsap.to(pills, { scale: .85, opacity: .5, duration: .2, overwrite: true });
+      }
+    };
+
+    const ping = () => window.dispatchEvent(new CustomEvent('axem:sound', { detail: { name: 'tick' } }));
+
+    if (!coarse && !reduce) {
+      row.addEventListener('pointerenter', () => { ping(); play(); });
+      row.addEventListener('pointerleave', reset);
+      row.addEventListener('focusin', () => { ping(); play(); });
+      row.addEventListener('focusout', e => { if (!row.contains(e.relatedTarget)) reset(); });
+    } else {
+      // Mobile / tactile, ou mouvement réduit : révélation et lecture une fois au défilement.
+      const io = new IntersectionObserver(es => es.forEach(e => {
+        if (!e.isIntersecting) return;
+        row.classList.add('play');
+        if (!reduce) play();
+        io.unobserve(row);
+      }), { threshold: .45 });
+      io.observe(row);
+    }
+  });
+})();
+</script>
+<script>
+(() => {
+  // Coaching k1, « Le distributeur de séances ». Trois touches choisissent le format : des symboles
+  // Claude tombent dans le tube, rebondissent, s'empilent, le prix par séance et le total roulent, et
+  // la liste des séances se remplit au même rythme que les chutes. Le bouton final est magnétique
+  // (data-mag, déjà câblé par lite.js), s'écrase à l'appui et lâche un éclat de petits logos.
+  const section = document.querySelector('.k1');
+  if (!section) return;
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const hasGsap = typeof gsap !== 'undefined';
+  const sound = name => window.dispatchEvent(new CustomEvent('axem:sound', { detail: { name } }));
+  const fmtEur = n => Math.round(n).toLocaleString('fr-FR').replace(/ | /g, ' ') + ' € HT';
+
+  // ---- contenu exact (source : brief coaching), un groupe = un tas de logos qui tombent ensemble ----
+  const DATA = {
+    seance: {
+      unit: 250, drops: [1], cta: 'Choisir et payer ma séance', href: '../variantes/t20-reserver.html?f=seance',
+      lede: 'Une heure, pour juger sur pièce.',
+      solo: "Deux usages, au choix : la séance découverte, on traite un vrai dossier de votre semaine et vous jugez la méthode sur pièce, ou la séance paramétrage, on installe l'outil avec vous et on le règle sur votre métier (vos documents, votre façon d'écrire, vos règles).",
+      degr: "Sans engagement. Vous commencez par une séance, puis vous passez à un parcours ? Elle est recalculée au tarif du parcours.",
+      rows: null,
+    },
+    p5: {
+      unit: 220, drops: [1, 1, 1, 1, 1], cta: 'Choisir ce parcours', href: 't20-reserver.html?f=p5',
+      lede: "Apprendre l'IA, de A à Z.",
+      solo: null, degr: '',
+      rows: [
+        { n: '1', t: 'Votre poste, équipé' },
+        { n: '2', t: 'Un premier vrai dossier' },
+        { n: '3', t: 'Un deuxième, sans nous' },
+        { n: '4', t: 'Le rodage' },
+        { n: '5', t: "Votre mode d'emploi" },
+      ],
+    },
+    p10: {
+      unit: 200, drops: [1, 2, 4, 1, 1, 1], cta: 'Choisir ce parcours', href: 't20-reserver.html?f=p10',
+      lede: 'Mener votre projet au bout.',
+      solo: null, degr: '',
+      rows: [
+        { n: '1', t: 'Le cadrage' },
+        { n: '2 et 3', t: 'Un premier prototype, sur vos vrais fichiers' },
+        { n: '4 à 7', t: 'La chaîne complète, de bout en bout, avec les contrôles écrits' },
+        { n: '8', t: 'Vos modèles, une bibliothèque réutilisable' },
+        { n: '9', t: 'La transmission, un collègue reprend la main' },
+        { n: '10', t: 'Le plan à 90 jours' },
+      ],
+    },
+  };
+
+  const els = {
+    tube: section.querySelector('#k1Tube'),
+    idle: section.querySelector('#k1Idle'),
+    stack: section.querySelector('#k1Stack'),
+    unit: section.querySelector('#k1Unit'),
+    total: section.querySelector('#k1Total'),
+    fmtsBox: section.querySelector('#k1Fmts'),
+    fmts: [...section.querySelectorAll('.k1-fmt')],
+    lede: section.querySelector('#k1Lede'),
+    solo: section.querySelector('#k1Solo'),
+    rows: section.querySelector('#k1Rows'),
+    degr: section.querySelector('#k1Degr'),
+    cta: section.querySelector('#k1Cta'),
+    ctaT: section.querySelector('#k1CtaT'),
+  };
+
+  // Symbole au repos, dans le haut du tube.
+  const idleMark = window.ClaudeMark && els.idle ? window.ClaudeMark.mount(els.idle, { size: '100%', color: '#D97757' }) : null;
+  // Le seul chip déjà présent en HTML (secours sans JS) reçoit lui aussi son vrai symbole.
+  const firstChip = els.stack.querySelector('.k1-chip');
+  if (firstChip && window.ClaudeMark) window.ClaudeMark.mount(firstChip, { size: '100%', color: '#D97757' });
+
+  let current = 'seance';
+  let seq = 0; // annule une transition en cours si une autre touche est pressée entre temps
+
+  // ---- le symbole au repos penche vers le curseur, saute a l'entree ----
+  if (fine && !reduce && hasGsap) {
+    const rotTo = gsap.quickTo(els.idle, 'rotation', { duration: .5, ease: 'power3.out' });
+    els.tube.addEventListener('pointermove', e => {
+      const r = els.tube.getBoundingClientRect();
+      rotTo(gsap.utils.clamp(-14, 14, ((e.clientX - r.left) / r.width - .5) * 32));
+    });
+    els.tube.addEventListener('pointerleave', () => rotTo(0));
+    els.idle.addEventListener('pointerenter', () => { els.idle.classList.remove('jump'); void els.idle.offsetWidth; els.idle.classList.add('jump'); });
+  }
+
+  // ---- construit un chip (symbole Claude a monter dans le tas) ----
+  const makeChip = () => {
+    const chip = document.createElement('div');
+    chip.className = 'k1-chip';
+    chip.setAttribute('aria-hidden', 'true');
+    if (window.ClaudeMark) window.ClaudeMark.mount(chip, { size: '100%', color: '#D97757' });
+    return chip;
+  };
+
+  // ---- fait rouler un nombre affiche, avec un petit coup d'oeil (transform) a la fin. Un seul
+  //      proxy par afficheur : une nouvelle cible reprend toujours depuis la valeur en cours,
+  //      jamais deux animations qui se disputent le meme texte (overwrite:true). ----
+  const unitProxy = { v: 250 };
+  const totalProxy = { v: 250 };
+  const rollTo = (proxy, el, to, dur) => {
+    if (reduce || !hasGsap) { proxy.v = to; el.textContent = fmtEur(to); return; }
+    gsap.to(proxy, {
+      v: to, duration: dur, ease: 'power2.out', overwrite: true,
+      onUpdate: () => { el.textContent = fmtEur(proxy.v); },
+      onComplete: () => {
+        el.textContent = fmtEur(to);
+        el.classList.remove('roll'); void el.offsetWidth; el.classList.add('roll');
+      },
+    });
+  };
+
+  // ---- remplit la liste (ou le paragraphe seul pour la seance) sans encore l'allumer ----
+  const buildDetail = fmt => {
+    const d = DATA[fmt];
+    els.lede.textContent = d.lede;
+    if (d.rows) {
+      els.solo.hidden = true;
+      els.degr.hidden = true;
+      els.rows.hidden = false;
+      els.rows.innerHTML = d.rows.map(r => `<li class="k1-row"><span class="k1-row-n">${r.n}</span><span class="k1-row-t">${r.t}</span></li>`).join('');
+      return [...els.rows.children];
+    }
+    els.rows.hidden = true;
+    els.solo.hidden = false;
+    els.solo.querySelector('p').textContent = d.solo;
+    els.degr.hidden = false;
+    els.degr.textContent = d.degr;
+    return [];
+  };
+
+  // ---- selectionne un format : vide le tube, puis fait tomber les symboles groupe par groupe ----
+  const selectFormat = (fmt, instant) => {
+    const my = ++seq;
+    const d = DATA[fmt];
+    current = fmt;
+
+    els.fmts.forEach(b => b.setAttribute('aria-pressed', String(b.dataset.f === fmt)));
+    els.cta.href = d.href;
+    els.ctaT.textContent = d.cta;
+
+    const rowEls = buildDetail(fmt);
+
+    if (instant || reduce || !hasGsap) {
+      els.stack.querySelectorAll('.k1-chip').forEach(c => c.remove());
+      const total = d.unit * d.drops.reduce((a, b) => a + b, 0);
+      d.drops.forEach(() => { const c = makeChip(); c.style.opacity = 1; c.style.transform = 'none'; els.stack.appendChild(c); });
+      unitProxy.v = d.unit; totalProxy.v = total;
+      els.unit.textContent = fmtEur(d.unit);
+      els.total.textContent = fmtEur(total);
+      rowEls.forEach(r => r.classList.add('on'));
+      return;
+    }
+
+    sound('whoosh');
+    const old = [...els.stack.querySelectorAll('.k1-chip')];
+    const clear = gsap.timeline();
+    if (old.length) clear.to(old, { opacity: 0, scale: .5, y: -16, duration: .28, stagger: .02, ease: 'power2.in', onComplete: () => old.forEach(c => c.remove()) });
+
+    rollTo(unitProxy, els.unit, d.unit, .5);
+
+    clear.call(() => {
+      if (my !== seq) return;
+      let running = 0;
+      d.drops.forEach((count, gi) => {
+        for (let k = 0; k < count; k++) {
+          const delay = gi * .16 + k * .09;
+          gsap.delayedCall(delay, () => {
+            if (my !== seq) return;
+            const chip = makeChip();
+            els.stack.appendChild(chip);
+            const tubeH = els.tube.clientHeight;
+            gsap.fromTo(chip, { opacity: 0, y: -(tubeH * .62), scale: .7, rotation: gsap.utils.random(-30, 30) },
+              { opacity: 1, y: 0, scale: 1, rotation: 0, duration: .6, ease: 'bounce.out' });
+            gsap.fromTo(chip, { scaleY: 1, scaleX: 1 }, { scaleY: .68, scaleX: 1.28, duration: .09, delay: .42, yoyo: true, repeat: 1, ease: 'power1.inOut' });
+            sound('tick');
+            running += d.unit;
+            rollTo(totalProxy, els.total, running, .35);
+            if (rowEls[gi] && k === 0) rowEls[gi].classList.add('on');
+          });
+        }
+      });
+    });
+  };
+
+  els.fmts.forEach(btn => {
+    btn.addEventListener('click', () => {
+      if (btn.dataset.f === current) { if (!reduce) { btn.classList.remove('nudge'); void btn.offsetWidth; btn.classList.add('nudge'); } return; }
+      sound('tick');
+      selectFormat(btn.dataset.f, false);
+    });
+  });
+
+  // Etat initial : place la seance sans animation (deja presente en HTML), pour ne pas dupliquer le
+  // premier rendu et laisser un vrai contenu meme sans JS.
+  buildDetail('seance').forEach(r => r.classList.add('on'));
+
+  // ---- glissement au toucher : en plus du tap sur chaque touche, un glissement change de format ----
+  const touch = matchMedia('(hover: none)').matches;
+  if (touch) {
+    const order = ['seance', 'p5', 'p10'];
+    let sx = 0, sy = 0, tracking = false;
+    els.fmtsBox.addEventListener('pointerdown', e => { sx = e.clientX; sy = e.clientY; tracking = true; }, { passive: true });
+    els.fmtsBox.addEventListener('pointerup', e => {
+      if (!tracking) return; tracking = false;
+      const dx = e.clientX - sx, dy = e.clientY - sy;
+      if (Math.abs(dx) < 40 || Math.abs(dx) < Math.abs(dy)) return;
+      const i = order.indexOf(current);
+      const next = order[Math.min(2, Math.max(0, i + (dx < 0 ? 1 : -1)))];
+      if (next !== current) { sound('tick'); selectFormat(next, false); }
+    }, { passive: true });
+  }
+
+  // ---- bouton final : magnetique (data-mag, deja cable), ecrasement a l'appui, eclat au clic ----
+  if (hasGsap) {
+    els.cta.addEventListener('pointerdown', () => { gsap.to(els.cta, { scale: .94, duration: .12, ease: 'power2.out' }); });
+    const release = () => gsap.to(els.cta, { scale: 1, duration: .55, ease: 'elastic.out(1,.45)' });
+    els.cta.addEventListener('pointerup', release);
+    els.cta.addEventListener('pointerleave', release);
+  }
+
+  els.cta.addEventListener('click', e => {
+    if (e.defaultPrevented || e.button !== 0 || e.metaKey || e.ctrlKey || e.shiftKey || e.altKey) return;
+    e.preventDefault();
+    sound('pop');
+    if (hasGsap && !reduce) {
+      for (let i = 0; i < 9; i++) {
+        const b = document.createElement('span');
+        b.className = 'k1-burst';
+        if (window.ClaudeMark) window.ClaudeMark.mount(b, { size: '100%', color: '#D97757' });
+        els.cta.appendChild(b);
+        const ang = (i / 9) * Math.PI * 2 + gsap.utils.random(-.3, .3);
+        const dist = gsap.utils.random(50, 92);
+        gsap.fromTo(b, { opacity: 1, scale: .5, x: 0, y: 0 },
+          { opacity: 0, scale: gsap.utils.random(.8, 1.3), x: Math.cos(ang) * dist, y: Math.sin(ang) * dist - 18, rotation: gsap.utils.random(-160, 160), duration: gsap.utils.random(.5, .75), ease: 'power2.out', onComplete: () => b.remove() });
+      }
+    }
+    const go = () => { window.location.href = els.cta.href; };
+    if (reduce) go(); else setTimeout(go, 320);
+  });
+})();
+</script>
+<script>
+(() => {
+  // Bloc duo de l'accueil, repris du tour 17 (proposition 1) : fleche manuscrite tracee au defilement.
+  const T = window.T10 || {};
+  const reduce = T.reduce || matchMedia('(prefers-reduced-motion: reduce)').matches || /[?&]static\b/.test(location.search);
+  const hasGsap = typeof gsap !== 'undefined';
+  const hasMark = typeof window.ClaudeMark !== 'undefined';
+  const $ = (s, r) => (r || document).querySelector(s);
+  const $$ = (s, r) => [...(r || document).querySelectorAll(s)];
+  const arrowPath = $('.d2-ar-path');
+  if (arrowPath) {
+    const jit = n => (Math.random() * 2 - 1) * n;
+    const sketchLine = (x1, y1, x2, y2, bow = 0, segs = 4, jAmt = 1.6) => {
+      const dx = x2 - x1, dy = y2 - y1, len = Math.hypot(dx, dy) || 1, nx = -dy / len, ny = dx / len;
+      const pts = [{ x: x1, y: y1 }];
+      for (let i = 1; i < segs; i++) { const t = i / segs; pts.push({ x: x1 + dx * t + nx * bow * Math.sin(Math.PI * t) + jit(jAmt), y: y1 + dy * t + ny * bow * Math.sin(Math.PI * t) + jit(jAmt) }); }
+      pts.push({ x: x2, y: y2 });
+      let d = `M${pts[0].x.toFixed(1)},${pts[0].y.toFixed(1)}`;
+      for (let i = 1; i < pts.length - 1; i++) { const p0 = pts[i - 1], p1 = pts[i], mx = (p0.x + p1.x) / 2, my = (p0.y + p1.y) / 2; d += ` Q${p0.x.toFixed(1)},${p0.y.toFixed(1)} ${mx.toFixed(1)},${my.toFixed(1)}`; }
+      const pen = pts[pts.length - 2];
+      d += ` Q${pen.x.toFixed(1)},${pen.y.toFixed(1)} ${x2.toFixed(1)},${y2.toFixed(1)}`;
+      return d;
+    };
+    const arrow = (x1, y1, x2, y2, bow) => {
+      const ang = Math.atan2(y2 - y1, x2 - x1);
+      const tx = x2 - 9 * Math.cos(ang), ty = y2 - 9 * Math.sin(ang);
+      const shaft = sketchLine(x1, y1, tx, ty, bow, 4, 1.6);
+      const hx1 = x2 - 10 * Math.cos(ang - .48), hy1 = y2 - 10 * Math.sin(ang - .48);
+      const hx2 = x2 - 10 * Math.cos(ang + .48), hy2 = y2 - 10 * Math.sin(ang + .48);
+      return `${shaft} M${x2.toFixed(1)},${y2.toFixed(1)} L${hx1.toFixed(1)},${hy1.toFixed(1)} M${x2.toFixed(1)},${y2.toFixed(1)} L${hx2.toFixed(1)},${hy2.toFixed(1)}`;
+    };
+    arrowPath.setAttribute('d', arrow(6, 14, 132, 42, 16));
+
+    const draw = () => {
+      const len = arrowPath.getTotalLength();
+      arrowPath.style.strokeDasharray = len;
+      if (reduce || !hasGsap) { arrowPath.style.strokeDashoffset = 0; return; }
+      arrowPath.style.strokeDashoffset = len;
+      if (window.ScrollTrigger) {
+        gsap.to(arrowPath, {
+          strokeDashoffset: 0, duration: .7, ease: 'power2.out',
+          scrollTrigger: { trigger: arrowPath.closest('.d2-head'), start: 'top 78%', once: true }
+        });
+      } else {
+        gsap.to(arrowPath, { strokeDashoffset: 0, duration: .7, ease: 'power2.out' });
+      }
+    };
+    if (document.fonts && document.fonts.ready) document.fonts.ready.then(draw); else draw();
+  }
+
+  // Deux visions, une seule : au defilement, strategie et technique glissent l'une vers l'autre, la couture
+  // bleue se referme, et la phrase commune prend leur place. Scrub sans pin (le pin de la page est au coaching).
+  const dm = $('.dm');
+  if (dm && hasGsap && !reduce && typeof ScrollTrigger !== 'undefined') {
+    dm.classList.add('live');
+    const a = $('.dm-a', dm), b = $('.dm-b', dm), seam = $('.dm-seam', dm), one = $('.dm-one', dm);
+    const mm = gsap.matchMedia();
+    const build = (axis) => {
+      const k = axis === 'x' ? { a: { xPercent: 42 }, b: { xPercent: -42 }, s: { scaleY: 0 } } : { a: { xPercent: -28 }, b: { xPercent: 28 }, s: { scaleX: 0 } };
+      const tl = gsap.timeline({ scrollTrigger: { trigger: dm, start: 'top 72%', end: 'bottom 38%', scrub: 0.6 } });
+      // Les deux visions sont parties avant que la phrase commune arrive : jamais deux textes l'un sur l'autre.
+      tl.to([a, b], { opacity: 0, ease: 'power1.in', duration: 0.42 }, 0.12)
+        .to(a, { ...k.a, ease: 'power2.in', duration: 0.54 }, 0)
+        .to(b, { ...k.b, ease: 'power2.in', duration: 0.54 }, 0)
+        .to(seam, { ...k.s, ease: 'power2.inOut', duration: 0.4 }, 0.3)
+        .fromTo(one, { opacity: 0, scale: 0.94 }, { opacity: 1, scale: 1, ease: 'power2.out', duration: 0.4 }, 0.56)
+        .to({}, { duration: 0.2 });
+      return () => tl.scrollTrigger && tl.scrollTrigger.kill();
+    };
+    mm.add('(min-width: 861px)', () => build('x'));
+    mm.add('(max-width: 860px)', () => build('y'));
+  }
+})();
+</script>
+<script src="../outils/t25/accueil.js"></script>
+<script src="../outils/t26/logos.js"></script>
+</body>
+</html>
