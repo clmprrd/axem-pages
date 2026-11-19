@@ -1,0 +1,1208 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Réserver un coaching · AXEM IA</title>
+<script>if (/[?&]pal=blanc\b/.test(location.search)) document.documentElement.classList.add('pal-blanc');</script>
+<meta name="description" content="Deux associés qui déploient l'IA dans vos équipes, sur vos vrais dossiers. Conseil, formation et coaching IA à Paris, sans intermédiaire.">
+<link rel="icon" href="../img/favicon-ax-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../img/favicon-ax-180.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="AXEM IA">
+<meta property="og:title" content="AXEM IA, votre partenaire IA de A à Z">
+<meta property="og:description" content="Clément Predo et Alexis Zeitoun déploient l’IA dans vos équipes, sur vos vrais dossiers. Conseil, formation et coaching IA.">
+<meta property="og:url" content="https://axem-ia.fr/">
+<meta property="og:image" content="https://axem-ia.fr/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://axem-ia.fr/">
+<noscript><style>.fade, .rv { opacity: 1 !important; transform: none !important; }</style></noscript>
+<link href="../vendor/fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="../assets/axem.css">
+<link rel="stylesheet" href="../assets/t2.css">
+<meta name="robots" content="noindex">
+<style>
+/* ---- Tour 16 : fluidite. Plus de flou derriere la barre (il se recalculait a chaque image de
+   defilement), le bandeau clients tourne en CSS sur la carte graphique. ---- */
+.nav.solid { background: rgba(250, 246, 234, .97); backdrop-filter: none; -webkit-backdrop-filter: none; }
+.t2 .mq { animation: mq 42s linear infinite; will-change: transform; }
+.marquee:hover .mq { animation-play-state: paused; }
+.mk-svg .mk { filter: none; }
+
+/* ---- Tour 16 : le logo de la barre = le mot « axem IA » de l'ecran bleu, meme police, meme balisage ---- */
+.nav .logo { display: inline-flex; background: transparent; padding: 0; box-shadow: none; }
+.nav .logo .wm { font-size: 38px; color: var(--blue); transition: color .35s var(--ease); }
+.nav .logo .nl span { display: inline-block; font-weight: 900; font-variation-settings: "SOFT" 100, "WONK" 0, "opsz" 144; letter-spacing: -0.02em; }
+.nav .logo:hover { transform: none; box-shadow: none; }
+.nav .logo:hover .wm { color: var(--ink); }
+@media (max-width: 860px) { .nav .logo .wm { font-size: 30px; } }
+
+/* ---- Tour 16 : liens de la barre = de vrais boutons, comme les lignes d'offres. Au survol, une
+   pastille bleue monte du bas, deborde le mot, le texte passe en creme et une fleche sort. ---- */
+.nav .links { gap: 4px; }
+.nav .links a { position: relative; display: inline-flex; align-items: center; gap: 0; padding: 12px 18px; border-radius: 999px; font-size: 15px; font-weight: 600; isolation: isolate; transition: color .35s var(--ease), padding .45s var(--ease); }
+.nav .links a::after { display: none; }
+.nav .links a::before { content: ""; position: absolute; inset: -3px -4px; margin: 0; width: auto; height: auto; border-radius: 999px; background: var(--blue); z-index: -1; transform: scale(.55, 0); transform-origin: 50% 100%; transition: transform .45s var(--ease); flex: none; }
+.nav .links a .na { display: inline-block; width: 0; overflow: hidden; opacity: 0; font-size: 17px; line-height: 1; transform: translateX(-6px) rotate(0); transition: width .45s var(--ease), opacity .3s var(--ease), transform .45s var(--ease), margin .45s var(--ease); }
+.nav .links a:hover, .nav .links a:focus-visible { color: var(--cream); padding-left: 22px; padding-right: 20px; }
+.nav .links a:hover::before, .nav .links a:focus-visible::before { transform: none; }
+.nav .links a:hover .na, .nav .links a:focus-visible .na { width: 16px; margin-left: 8px; opacity: 1; transform: rotate(-45deg); }
+.nav .links a.on { color: var(--blue); }
+.nav .links a.on:hover { color: var(--cream); }
+
+/* ---- Tour 16 : « Reserver un echange offert », un vrai bouton cale a droite. Une grosse fleche
+   dans une pastille creme apparait apres l'arrivee, rebondit de temps en temps pour attirer l'oeil ;
+   au survol le fond encre entre du cote d'ou vient la souris (reflexe s1 Aimant). ---- */
+.nav .book { position: relative; display: inline-flex; align-items: center; gap: 14px; padding: 7px 7px 7px 24px; border: 0; border-radius: 999px; background: var(--blue); color: var(--cream); font-size: 15px; font-weight: 600; letter-spacing: 0; text-transform: none; overflow: hidden; isolation: isolate; --ex: 0%; --ey: 115%; transition: box-shadow .35s var(--ease); }
+.nav .book::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--ink); z-index: -1; transform: translate(var(--ex), var(--ey)); transition: transform 520ms var(--ease); }
+.nav .book:hover::before, .nav .book:focus-visible::before { transform: none; }
+.nav .book::after { display: none; }
+.nav .book .short { display: none; }
+.nav .book .bk-ar { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--cream); color: var(--blue); transform: scale(0) rotate(-90deg); transition: transform .5s var(--ease), color .35s var(--ease); }
+.nav .book .bk-ar svg { width: 20px; height: 20px; display: block; }
+.ready:not(.hold) .nav .book .bk-ar { transform: none; transition: transform .8s cubic-bezier(.34, 1.8, .5, 1) .9s; }
+.ready:not(.hold) .nav .book .bk-ar svg { animation: bkBounce 3.2s cubic-bezier(.3, 0, .2, 1) 2.2s infinite; }
+@keyframes bkBounce { 0%, 62%, 100% { transform: translateX(0); } 70% { transform: translateX(6px); } 78% { transform: translateX(-2px); } 86% { transform: translateX(4px); } 93% { transform: translateX(0); } }
+.nav .book:hover .bk-ar { transform: rotate(-45deg) scale(1.08); transition-delay: 0s; }
+.nav .book:hover .bk-ar svg { animation: none; }
+@media (max-width: 860px) {
+  .nav .book { gap: 10px; padding: 5px 5px 5px 16px; font-size: 14px; }
+  .nav .book .long { display: none; }
+  .nav .book .short { display: inline; }
+  .nav .book .bk-ar { width: 34px; height: 34px; }
+  .nav .book .bk-ar svg { width: 17px; height: 17px; }
+}
+@media (prefers-reduced-motion: reduce) { .ready .nav .book .bk-ar svg { animation: none !important; } }
+
+/* ---- Tour 16 : hero s1 range. Titre remonte, bouton cale sur le bord droit de la grille, « c'est
+   ici » plus gros, pose sous le bouton et toujours visible, schema et chiffres en pied de hero. ---- */
+@media (min-width: 861px) {
+  .home .hero.mk3 { justify-content: flex-start; padding-top: clamp(112px, 17svh, 176px); }
+  .home .hero.mk3 { min-height: 0; height: auto; padding-bottom: clamp(40px, 6svh, 64px); }
+  .hero.mk3 .mk-row { margin-top: clamp(120px, 19svh, 190px); padding-top: 0; }
+  .hero.mk3 .l2 { justify-content: space-between; }
+  .hero.mk3 .side { margin-left: auto; align-items: flex-end; max-width: none; }
+  .hero.mk3 .side .btn { align-self: flex-end !important; }
+}
+.hero.mk3 .btn { font-size: 17px; padding: 22px 32px; }
+.mk-note-btn { font-size: 30px; }
+@media (max-width: 860px) { .mk-note-btn { font-size: 22px; } }
+
+/* ---- Tour 17 : socle commun aux 6 pages (v1 v2 v3 d1 d2 d3), injecte par le build juste apres
+   nav.css et avant le CSS propre a chaque page. Regle de Clement : un seul bouton Reserver visible
+   a la fois, plus le bouton son, plus l'habillage du pied de page legal. ---- */
+
+/* Reserver un seul a la fois (regle Clement, tour 17). La barre garde un bouton .book (nav.css) ;
+   il est masque tant que le grand bouton du hero est a l'ecran, invisible sur les pages duo car
+   elles n'ont pas de hero : voir base17.js. Aujourd'hui assets/axem.js masque toute la barre au
+   defilement vers le bas (classe .hide, assets/axem.css ligne 39) : on neutralise ce comportement
+   ici, la barre du tour 17 ne se cache plus jamais. */
+.t17 .nav.hide { transform: none; }
+
+.t17 .nav .book[data-book] { transition: opacity .4s var(--ease), transform .4s var(--ease); }
+.t17 .nav .book[data-book].rs-hidden { opacity: 0; transform: translateY(-10px); pointer-events: none; }
+.t17 .nav .book[data-book].rs-show { opacity: 1; transform: none; }
+
+/* Bouton son : egaliseur discret en bas a gauche, coupe par defaut. Barres immobiles quand coupe,
+   ondulent (scaleY, CSS pur) quand actif. Ne tourne jamais tant que le bouton n'est pas active :
+   c'est une animation CSS bornee par la classe .on, pas une boucle JS permanente. */
+.t17 .snd-btn { position: fixed; left: 18px; bottom: 18px; z-index: 56; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: rgba(250, 246, 234, .88); display: grid; place-items: center; cursor: pointer; padding: 0; transition: background-color .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease); }
+.t17 .snd-btn:hover { border-color: var(--blue); transform: translateY(-2px); }
+.t17 .snd-btn:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.t17 .snd-bars { display: flex; align-items: center; justify-content: center; gap: 3px; width: 18px; height: 16px; pointer-events: none; }
+.t17 .snd-bars i { display: block; width: 2.5px; height: 100%; border-radius: 2px; background: var(--ink); transform: scaleY(.28); transform-origin: center; transition: background-color .3s var(--ease); }
+.t17 .snd-btn.on .snd-bars i { background: var(--blue); animation: t17SndWave 1.15s ease-in-out infinite; }
+.t17 .snd-btn.on .snd-bars i:nth-child(1) { animation-delay: 0s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(2) { animation-delay: .18s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(3) { animation-delay: .36s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(4) { animation-delay: .12s; }
+@keyframes t17SndWave { 0%, 100% { transform: scaleY(.28); } 50% { transform: scaleY(1); } }
+/* le bandeau de maquette se range a droite du bouton son, jamais dessous */
+.t17 .proto { left: 76px; bottom: 24px; }
+@media (max-width: 860px) { .t17 .snd-btn { left: 14px; bottom: 14px; width: 40px; height: 40px; } }
+@media (max-width: 860px) and (min-width: 701px) { .t17 .proto { left: 68px; bottom: 20px; } }
+@media (prefers-reduced-motion: reduce) { .t17 .snd-btn.on .snd-bars i { animation: none !important; } }
+
+/* Pied de page legal : une ligne sous le meta existant (axem-ia.fr / Paris / Reserver), au-dessus du
+   mot-symbole geant. Le meta original (footer .meta, assets/axem.css ligne 146) est en position
+   absolue a taille fixe ; sur mobile il retombe sur 2 lignes (peu de largeur pour 3 items), ce qui
+   ferait chevaucher une ligne suivante a decalage fixe. On enveloppe donc meta + legal-links dans un
+   bloc .ft-top en flux normal (empile en colonne), et on neutralise le positionnement absolu du
+   meta a l'interieur : la ligne des liens legaux suit toujours meta, jamais de chevauchement. */
+.t17 footer .ft-top { position: absolute; top: 28px; left: var(--gutter); right: var(--gutter); display: flex; flex-direction: column; gap: 10px; }
+.t17 footer .ft-top .meta { position: static; top: auto; left: auto; right: auto; flex-wrap: wrap; row-gap: 6px; }
+.t17 footer .legal-links { position: static; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 11px; font-weight: 600; letter-spacing: .04em; margin: 0; }
+.t17 footer .legal-links a { color: rgba(250, 246, 234, .62); text-decoration: none; transition: color .25s var(--ease); }
+.t17 footer .legal-links a:hover, .t17 footer .legal-links a:focus-visible { color: var(--blue); }
+@media (max-width: 860px) { .t17 footer .ft-top { gap: 8px; } .t17 footer .legal-links { gap: 5px 16px; } }
+
+/* Pages juridiques (mentions-legales.html, confidentialite.html) : mise en page simple, DA du site. */
+.t17-legal { max-width: 760px; margin: 0 auto; padding: clamp(90px, 12vh, 140px) var(--gutter) 120px; }
+.t17-legal .back { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--blue); margin-bottom: 48px; }
+.t17-legal .back:hover, .t17-legal .back:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.t17-legal h1 { font-size: clamp(32px, 5vw, 48px); margin: 0 0 8px; }
+.t17-legal .maj { font-size: 13px; color: var(--grey); margin: 0 0 48px; }
+.t17-legal h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(20px, 2.4vw, 26px); margin: 44px 0 14px; }
+.t17-legal p { font-size: 16px; line-height: 1.65; color: var(--grey); margin: 0 0 14px; }
+.t17-legal a { color: var(--blue); }
+.t17-legal a:hover, .t17-legal a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.t17-legal .todo { color: var(--blue); font-weight: 600; }
+
+/* Tour 19, commun a toutes les pages : le monogramme ax (enregistre par Clement le 25/09) en logo de la
+   barre des pages duo et reservation, et la barre de prototype en bas a gauche. */
+.axm { display: inline-block; width: 46px; height: 31px; vertical-align: middle; background: var(--blue); -webkit-mask: url(../img/logo-ax-mask.png) center / contain no-repeat; mask: url(../img/logo-ax-mask.png) center / contain no-repeat; transition: transform 0.4s var(--ease); }
+.nav .logo:hover .axm, .nav .logo:focus-visible .axm { transform: rotate(-8deg) scale(1.08); }
+.t19 .proto { position: fixed; left: 76px; bottom: 24px; z-index: 55; margin: 0; font: 500 12px/1 "Instrument Sans", sans-serif; background: var(--ink); color: var(--cream); padding: 8px 12px; }
+.t19 .proto a { margin-left: 12px; color: var(--cream); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+@media (max-width: 700px) {
+  .t19 .proto { position: static; display: block; width: auto; line-height: 1.6; margin: 14px var(--gutter) 18px; }
+}
+
+/* Tour 20 : reglages communs. */
+/* Pages de paiement : le bouton son recouvrait le prix de la barre collante, il n'a pas de role au moment de payer. */
+.t20-r1 .snd-btn, .t20-r2 .snd-btn, .t20-r3 .snd-btn { display: none !important; }
+/* Pages de paiement : le bandeau de maquette masquait le prix de la barre collante du bas, il remonte sous la nav. */
+@media (min-width: 701px) { .t20-r1 .proto, .t20-r2 .proto, .t20-r3 .proto { top: 84px; bottom: auto; left: auto; right: 24px; } }
+
+/* Tour 21 : reglages communs. */
+
+/* ---- Tour 21, paiement r4 : melange de r1 (les 3 cartes de format) et de r3 (le one-pager, aplat
+   bleu, ticket vivant, logo Claude qui rebondit). Une seule page, aucune etape : le format choisi en
+   haut met a jour tout le reste (ticket, barre collante, textes) sans jamais changer d'ecran. Corrige
+   les deux defauts releves sur r3 : la barre collante apparait par un FONDU D'OPACITE seul, jamais un
+   glissement de position (impossible donc qu'elle affiche un texte coupe en cours d'entree) ; la
+   mention des creneaux d'exemple reste discrete, en minuscules, jamais en capitales. Tout est scope
+   sous .t21-r4. ---- */
+
+.t21-r4 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.t21-r4 main, .t21-r4 #main { display: block; }
+.t21-r4 .r4 { position: relative; }
+
+/* Un seul bouton "Reserver" a la fois (regle du site) : cette page a deja son propre bouton Payer. */
+.t21-r4 .nav [data-book], .t21-r4 .nav .book { display: none !important; }
+
+/* La barre reste toujours lisible sur l'aplat bleu du haut de page. */
+.t21-r4 .nav { background: var(--cream) !important; border-bottom-color: var(--line) !important; }
+
+/* ===== Bandeau Instagram ===== */
+.t21-r4 .r4-ig[hidden] { display: none; }
+.t21-r4 .r4-ig { position: relative; z-index: 46; display: flex; align-items: center; justify-content: center; gap: 16px; padding: 14px var(--gutter); padding-top: calc(76px + 14px); background: var(--ink); color: var(--cream); text-align: center; }
+.t21-r4 .r4-ig p { margin: 0; font-size: 13.5px; line-height: 1.5; max-width: 640px; }
+.t21-r4 .r4-ig b { color: var(--blue); }
+.t21-r4 .r4-ig-close { position: absolute; right: var(--gutter); top: 50%; transform: translateY(-50%); width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgba(250,246,234,0.3); background: none; color: var(--cream); font-size: 18px; line-height: 1; cursor: pointer; }
+.t21-r4 .r4-ig-close:hover, .t21-r4 .r4-ig-close:focus-visible { border-color: var(--cream); }
+
+/* ===== Ouverture, aplat bleu, courte (les cartes doivent se voir vite, pas en bas d'un ecran plein) ===== */
+.t21-r4 .r4-hero[hidden] { display: none; }
+.t21-r4 .r4-hero { position: relative; background: var(--blue); color: var(--cream); display: flex; flex-direction: column; gap: 14px; padding: 148px var(--gutter) 56px; }
+.t21-r4 .r4-back { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: rgba(250,246,234,0.85); width: fit-content; min-height: 44px; }
+.t21-r4 .r4-back:hover, .t21-r4 .r4-back:focus-visible { color: var(--cream); text-decoration: underline; text-underline-offset: 3px; }
+.t21-r4 .r4-kick { color: rgba(250,246,234,0.72); margin: 0; }
+.t21-r4 .r4-hero h1 { margin: 0; font-size: clamp(34px, 4.4vw, 58px); line-height: 1.03; color: var(--cream); max-width: 18ch; }
+.t21-r4 .r4-phrase { margin: 0; font-size: clamp(15px, 1.3vw, 17px); line-height: 1.5; color: rgba(250,246,234,0.85); max-width: 52ch; }
+
+/* ===== Barre collante : position fixe des le depart, uniquement un fondu d'opacite pour apparaitre.
+   Jamais de position:sticky ici (ce glissement documentaire faisait passer la barre par le bas de
+   l'ecran avant de se figer, moment ou un texte pouvait paraitre coupe). Corps du choix : opacity
+   seule, comme l'exige la regle de performance (transform/opacity uniquement). ===== */
+.t21-r4 .r4-sticky[hidden] { display: none; }
+.t21-r4 .r4-sticky { position: fixed; left: 0; right: 0; bottom: 0; z-index: 44; display: flex; align-items: center; justify-content: space-between; gap: 14px; padding: 12px var(--gutter) calc(12px + env(safe-area-inset-bottom)); background: var(--cream); border-top: 1px solid var(--line); box-shadow: 0 -12px 24px -20px rgba(11,13,18,0.3); opacity: 0; pointer-events: none; transition: opacity 320ms var(--ease); }
+.t21-r4 .r4-sticky.is-visible { opacity: 1; pointer-events: auto; }
+.t21-r4 .r4-sticky-name { font-size: 12.5px; font-weight: 700; color: var(--grey); flex: 1; min-width: 0; overflow: hidden; text-overflow: ellipsis; white-space: nowrap; }
+.t21-r4 .r4-sticky-price { font-size: 14px; font-weight: 600; color: var(--ink); display: flex; align-items: baseline; gap: 6px; flex: none; }
+.t21-r4 .r4-sticky-price b { font-size: 18px; color: var(--blue); }
+.t21-r4 .r4-sticky-cta { flex: none; display: inline-flex; align-items: center; gap: 8px; min-height: 44px; padding: 0 18px; border-radius: 999px; background: var(--ink); color: var(--cream); font-size: 13.5px; font-weight: 700; transition: background-color 250ms var(--ease); }
+.t21-r4 .r4-sticky-cta:hover, .t21-r4 .r4-sticky-cta:focus-visible { background: var(--blue); }
+@media (min-width: 861px) { .t21-r4 .r4-sticky { display: none; } }
+
+/* ===== Corps, une colonne de blocs numerotes + le ticket qui suit en bureau ===== */
+.t21-r4 .r4-body[hidden] { display: none; }
+.t21-r4 .r4-body { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; max-width: 1180px; margin: 0 auto; padding: 44px var(--gutter) 110px; }
+.t21-r4 .r4-main { min-width: 0; display: flex; flex-direction: column; gap: 52px; }
+
+.t21-r4 .r4-block { position: relative; padding-top: 4px; }
+.t21-r4 .r4-num { margin: 0 0 10px; font-family: 'Fraunces', serif; font-weight: 700; font-size: 13px; color: var(--blue); border: 1.5px solid var(--blue); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.t21-r4 .r4-block h2 { margin: 0 0 8px; font-size: clamp(24px, 2.6vw, 32px); }
+.t21-r4 .r4-lead { margin: 0 0 22px; font-size: 15px; color: var(--grey); max-width: 46em; }
+
+/* ===== Cartes de format (matiere r1), en pile compacte partout en dessous de 860px : jamais un
+   carrousel horizontal a une carte visible a la fois (defaut releve sur r1). ===== */
+.t21-r4 .r4-cards { display: grid; grid-template-columns: 1fr; gap: 14px; margin: 0 0 22px; }
+.t21-r4 .r4-card { position: relative; cursor: pointer; }
+.t21-r4 .r4-radio { position: absolute; opacity: 0; width: 1px; height: 1px; pointer-events: none; }
+.t21-r4 .r4-card-in { position: relative; display: block; background: #fff; border: 1.5px solid var(--line); border-radius: 16px; padding: 16px 18px; overflow: hidden; transition: border-color 220ms var(--ease), box-shadow 220ms var(--ease), transform 220ms var(--ease); }
+.t21-r4 .r4-card:hover .r4-card-in { border-color: var(--ink); }
+.t21-r4 .r4-radio:checked + .r4-card-in { border-color: var(--blue); box-shadow: 0 12px 26px rgba(35,73,255,0.16); transform: translateY(-2px); }
+.t21-r4 .r4-radio:focus-visible + .r4-card-in { outline: 2px solid var(--blue); outline-offset: 3px; }
+@media (prefers-reduced-motion: reduce) { .t21-r4 .r4-card-in, .t21-r4 .r4-radio:checked + .r4-card-in { transition: border-color 160ms ease; transform: none; } }
+
+.t21-r4 .r4-badge { display: inline-block; margin: 0 0 8px; background: var(--blue); color: var(--cream); font-size: 10.5px; font-weight: 700; letter-spacing: 0.04em; padding: 5px 11px; border-radius: 999px; }
+.t21-r4 .r4-jouet { position: absolute; top: -4px; right: 18px; width: 26px; height: 26px; pointer-events: none; z-index: 5; }
+.t21-r4 .r4-jouet span { position: absolute; inset: 0; }
+
+.t21-r4 .r4-card-top { display: flex; align-items: baseline; justify-content: space-between; gap: 10px; margin-bottom: 6px; }
+.t21-r4 .r4-card-id { display: flex; align-items: center; gap: 8px; }
+.t21-r4 .r4-card-id .cap { color: var(--blue); }
+.t21-r4 .r4-dot { width: 16px; height: 16px; border-radius: 50%; border: 2px solid var(--line); flex: none; transition: background-color 220ms var(--ease), border-color 220ms var(--ease); }
+.t21-r4 .r4-radio:checked + .r4-card-in .r4-dot { background: var(--blue); border-color: var(--blue); box-shadow: inset 0 0 0 3px #fff; }
+
+.t21-r4 .r4-price { display: flex; align-items: baseline; gap: 6px; flex: none; }
+.t21-r4 .r4-price b { font-size: clamp(22px, 3.4vw, 26px); color: var(--ink); }
+.t21-r4 .r4-price-u { font-size: 11px; font-weight: 700; letter-spacing: 0.05em; opacity: 0.6; text-transform: uppercase; }
+
+.t21-r4 .r4-card h3.f { font-size: clamp(19px, 2.6vw, 22px); margin: 0 0 4px; }
+.t21-r4 .r4-card-desc { margin: 0 0 10px; font-size: 13px; color: var(--grey); line-height: 1.4; }
+
+.t21-r4 .r4-inc { list-style: none; margin: 0; padding: 10px 0 0; border-top: 1px dashed var(--line); display: flex; flex-direction: column; gap: 5px; }
+.t21-r4 .r4-inc li { font-size: 12.5px; padding-left: 18px; position: relative; line-height: 1.35; color: var(--ink); }
+.t21-r4 .r4-inc li::before { content: ""; position: absolute; left: 0; top: 4px; width: 12px; height: 12px; border-radius: 50%; background: var(--blue); mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/60% no-repeat; -webkit-mask: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' viewBox='0 0 24 24' fill='none' stroke='white' stroke-width='3' stroke-linecap='round' stroke-linejoin='round'%3E%3Cpath d='M20 6 9 17l-5-5'/%3E%3C/svg%3E") center/60% no-repeat; }
+
+@media (min-width: 760px) {
+  .t21-r4 .r4-cards { grid-template-columns: repeat(3, 1fr); gap: 18px; }
+  .t21-r4 .r4-card--feat .r4-card-in { transform: translateY(-6px); }
+  .t21-r4 .r4-radio:checked + .r4-card-in { transform: translateY(-8px); }
+  .t21-r4 .r4-card--feat .r4-radio:checked + .r4-card-in { transform: translateY(-8px); }
+}
+
+.t21-r4 .r4-degressive { margin: 4px 0 10px; font-size: 13.5px; line-height: 1.55; color: var(--grey); padding: 14px 16px; background: rgba(35,73,255,0.06); border-left: 2px solid var(--blue); max-width: 46em; border-radius: 0 8px 8px 0; }
+.t21-r4 .r4-fine { margin: 0 0 14px; font-size: 12px; line-height: 1.55; color: var(--grey); max-width: 62ch; }
+.t21-r4 .r4-human { margin: 0; font-size: 13.5px; color: var(--grey); }
+.t21-r4 .r4-human a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
+.t21-r4 .r4-human[hidden] { display: none; }
+
+/* ===== Selecteur segmente (particulier / pro) ===== */
+.t21-r4 .r4-seg { border: 0; padding: 0; margin: 0; display: grid; gap: 12px; }
+.t21-r4 .r4-seg-2 { grid-template-columns: repeat(2, 1fr); max-width: 420px; margin-bottom: 26px; }
+.t21-r4 .r4-seg-opt { position: relative; display: block; cursor: pointer; }
+.t21-r4 .r4-seg-opt input { position: absolute; opacity: 0; width: 1px; height: 1px; overflow: hidden; pointer-events: none; }
+.t21-r4 .r4-seg-in { display: flex; align-items: center; justify-content: center; gap: 6px; padding: 15px 14px; min-height: 48px; border: 1.5px solid var(--line); background: var(--cream); transition: border-color 160ms, background-color 160ms, transform 160ms var(--ease); text-align: center; }
+.t21-r4 .r4-seg-in b { font-size: 15.5px; line-height: 1.1; }
+.t21-r4 .r4-seg-opt:hover .r4-seg-in { border-color: var(--ink); }
+.t21-r4 .r4-seg-opt input:checked + .r4-seg-in { border-color: var(--blue); background: var(--blue); color: var(--cream); transform: translateY(-2px); }
+.t21-r4 .r4-seg-opt input:focus-visible + .r4-seg-in { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+/* ===== Champs ===== */
+.t21-r4 .r4-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 560px; margin-top: 4px; }
+.t21-r4 .r4-field-w { grid-column: 1 / -1; }
+.t21-r4 .r4-field { display: flex; flex-direction: column; gap: 6px; }
+.t21-r4 .r4-field label { font-size: 12.5px; font-weight: 600; color: var(--grey); }
+.t21-r4 .r4-field input { font: inherit; font-size: 16px; padding: 13px 14px; border: 1.5px solid var(--line); background: var(--cream); color: var(--ink); min-height: 48px; }
+.t21-r4 .r4-field input:hover { border-color: var(--ink); }
+.t21-r4 .r4-field input:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-color: var(--blue); }
+.t21-r4 .r4-pro-link { margin: 18px 0 0; }
+.t21-r4 .r4-pro-link a { font-size: 13.5px; font-weight: 600; color: var(--blue); text-decoration: underline; text-underline-offset: 3px; min-height: 44px; display: inline-flex; align-items: center; }
+.t21-r4 .r4-pro-sim { margin: 12px 0 0; font-size: 13.5px; font-weight: 600; color: var(--blue); background: rgba(35,73,255,0.08); padding: 12px 14px; max-width: 460px; }
+.t21-r4 [data-pro-only][hidden] { display: none; }
+
+/* ===== Creneau (regle : discret, jamais en capitales criardes) ===== */
+.t21-r4 [data-slot-block][hidden] { display: none; }
+.t21-r4 .r4-slots-note { margin: 0 0 14px; font-size: 12.5px; font-weight: 600; color: var(--grey); text-transform: none; letter-spacing: normal; }
+.t21-r4 .r4-slot-grid { display: grid; grid-template-columns: repeat(3, 1fr); gap: 10px; max-width: 480px; }
+.t21-r4 .r4-slot { min-height: 48px; border: 1.5px solid var(--line); border-radius: 12px; background: var(--cream); font: inherit; font-size: 14px; font-weight: 600; cursor: pointer; display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 2px; color: var(--ink); transition: border-color 220ms var(--ease), background-color 220ms var(--ease), color 220ms var(--ease); }
+.t21-r4 .r4-slot span { font-weight: 400; opacity: 0.6; font-size: 12px; }
+.t21-r4 .r4-slot:hover { border-color: var(--ink); }
+.t21-r4 .r4-slot:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.t21-r4 .r4-slot[aria-pressed="true"] { border-color: var(--blue); background: var(--blue); color: var(--cream); }
+.t21-r4 .r4-slot[aria-pressed="true"] span { opacity: 0.8; }
+.t21-r4 .r4-slot-picked { margin: 14px 0 0; font-size: 13.5px; font-weight: 600; color: var(--blue); }
+.t21-r4 .r4-parcours-phrase { margin: 0; font-size: 14px; color: var(--grey); background: rgba(35,73,255,0.06); border-left: 2px solid var(--blue); padding: 12px 16px; max-width: 46em; border-radius: 0 8px 8px 0; }
+.t21-r4 .r4-parcours-phrase[hidden] { display: none; }
+
+/* ===== Cases legales ===== */
+.t21-r4 .r4-checks { display: flex; flex-direction: column; gap: 12px; margin-bottom: 14px; max-width: 620px; }
+.t21-r4 .r4-check { display: flex; align-items: flex-start; gap: 12px; font-size: 14px; line-height: 1.5; cursor: pointer; max-width: 620px; }
+.t21-r4 .r4-check input { width: 22px; height: 22px; min-width: 48px; min-height: 22px; flex: none; margin: 0; accent-color: var(--blue); cursor: pointer; }
+.t21-r4 .r4-check span { padding-top: 2px; }
+.t21-r4 .r4-check a { color: var(--blue); text-decoration: underline; text-underline-offset: 2px; }
+.t21-r4 [data-part-only][hidden] { display: none; }
+
+/* ===== Ticket de caisse, vivant, colle a droite en bureau ===== */
+.t21-r4 .r4-ticket { position: relative; }
+.t21-r4 .r4-ticket-in { position: relative; background: var(--cream); border: 1.5px solid var(--ink); padding: 24px; overflow: hidden; border-radius: 4px; }
+.t21-r4 .r4-ticket-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.t21-r4 .r4-ticket-head .cap { color: var(--blue); margin: 0; }
+.t21-r4 .r4-mk { width: 26px; height: 26px; display: block; }
+.t21-r4 .r4-mk.jump span, .t21-r4 .r4-mk.jump svg { animation: r4MkJump 700ms cubic-bezier(.34,1.6,.5,1) 1; }
+@keyframes r4MkJump { 0% { transform: translateY(0) scale(1); } 30% { transform: translateY(-16px) scale(1.12, 0.9); } 55% { transform: translateY(0) scale(0.94, 1.08); } 78% { transform: translateY(-5px) scale(1.03, 0.98); } 100% { transform: translateY(0) scale(1); } }
+.t21-r4 .r4-ticket-name { margin: 0 0 14px; font-size: 21px; }
+.t21-r4 .r4-ticket-rows { display: flex; flex-direction: column; gap: 10px; padding: 16px 0; border-top: 1px dashed var(--line); border-bottom: 1px dashed var(--line); margin: 0 0 20px; }
+.t21-r4 .r4-ticket-rows div { display: flex; justify-content: space-between; gap: 12px; font-size: 14.5px; }
+.t21-r4 .r4-ticket-rows dt { color: var(--grey); margin: 0; }
+.t21-r4 .r4-ticket-rows dd { margin: 0; font-weight: 600; }
+.t21-r4 .r4-ticket-total { font-size: 17px !important; padding-top: 6px; }
+.t21-r4 .r4-ticket-total dd { color: var(--blue); font-size: 22px; }
+/* .btn (assets/axem.css) pose white-space:nowrap + overflow:hidden pour son remplissage au survol :
+   sans correctif, un libelle long ("Payer … TTC, commande avec obligation de paiement") deborde et
+   se fait couper des deux cotes par le centrage flex. On autorise ici le retour a la ligne. */
+.t21-r4 .r4-buy { width: 100%; justify-content: center; text-align: center; min-height: 56px; padding: 14px 20px; font-size: 14.5px; line-height: 1.3; white-space: normal; }
+.t21-r4 .r4-buy span { white-space: normal; }
+.t21-r4 .r4-buy:disabled { opacity: 0.4; cursor: not-allowed; }
+.t21-r4 .r4-buy:disabled::before { display: none; }
+.t21-r4 .r4-buy:not(:disabled):active { transform: scale(0.97); }
+.t21-r4 .r4-buy-hint { margin: 10px 0 0; font-size: 12.5px; color: var(--grey); text-align: center; }
+.t21-r4 .r4-buy:not(:disabled) ~ .r4-buy-hint { display: none; }
+.t21-r4 .r4-ticket-note { margin: 16px 0 0; font-size: 11.5px; line-height: 1.5; color: var(--grey); text-align: center; }
+
+/* Tampon "Paye" : cache jusqu'a validation, pose en biais sur le ticket. */
+.t21-r4 .r4-stamp { position: absolute; top: 38%; left: 50%; font-family: 'Fraunces', serif; font-weight: 900; font-size: 38px; color: #C4372B; border: 4px solid #C4372B; padding: 6px 20px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0; transform: translate(-50%, -50%) rotate(-11deg) scale(1.5); transition: opacity 320ms var(--ease), transform 420ms cubic-bezier(.34,1.6,.5,1); pointer-events: none; mix-blend-mode: multiply; }
+.t21-r4 .r4-ticket-in.is-paid .r4-stamp { opacity: 0.92; transform: translate(-50%, -50%) rotate(-11deg) scale(1); }
+
+/* ===== Confirmation, remplace la page : jamais un second ecran de choix, seulement le recap. ===== */
+.t21-r4 .r4-confirm[hidden] { display: none; }
+.t21-r4 .r4-confirm { max-width: 640px; margin: 0 auto; padding: 96px var(--gutter) 120px; }
+.t21-r4 .r4-confirm .cap { color: var(--blue); margin: 0 0 12px; }
+.t21-r4 .r4-confirm h2 { margin: 0 0 14px; font-size: clamp(30px, 4vw, 44px); outline: none; }
+.t21-r4 .r4-confirm-text { margin: 0 0 10px; font-size: 15.5px; color: var(--grey); line-height: 1.55; max-width: 46em; }
+.t21-r4 .r4-confirm-text[hidden] { display: none; }
+.t21-r4 .r4-home { display: inline-block; margin-top: 12px; font-size: 13.5px; font-weight: 600; color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ===== Bureau, deux colonnes, ticket colle ===== */
+@media (min-width: 861px) {
+  .t21-r4 .r4-body { grid-template-columns: minmax(0, 1fr) 340px; align-items: start; gap: 60px; }
+  .t21-r4 .r4-ticket { position: sticky; top: 132px; }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 860px) {
+  .t21-r4 .r4-hero { padding: 128px var(--gutter) 40px; }
+  .t21-r4 .r4-ig { padding-top: calc(76px + 12px); }
+  .t21-r4 .r4-body { padding: 36px var(--gutter) 140px; gap: 40px; }
+  .t21-r4 .r4-main { gap: 40px; }
+  .t21-r4 .r4-fields { grid-template-columns: 1fr; }
+  .t21-r4 .r4-slot-grid { gap: 8px; }
+  .t21-r4 .r4-slot { padding: 10px 4px; font-size: 13px; }
+
+  /* Le bouton final, plein largeur, colle en bas une fois toutes les conditions reunies. */
+  .t21-r4.r4-ready .r4-ticket-in { padding-bottom: 100px; }
+  .t21-r4.r4-ready .r4-buy { position: fixed; left: 0; right: 0; bottom: 0; z-index: 55; border-radius: 0; box-shadow: 0 -16px 32px -18px rgba(11,13,18,0.4); }
+  .t21-r4.r4-ready .r4-buy-hint, .t21-r4.r4-ready .r4-ticket-note { display: none; }
+  .t21-r4.r4-ready .r4-body { padding-bottom: 96px; }
+  /* La barre collante s'efface une fois le bouton final pris le relais en bas d'ecran. */
+  .t21-r4.r4-ready .r4-sticky { opacity: 0 !important; pointer-events: none !important; }
+}
+
+/* ===== Mouvement reduit : tout est present, rien ne joue en boucle, seule l'opacite change ===== */
+@media (prefers-reduced-motion: reduce) {
+  .t21-r4 *, .t21-r4 *::before, .t21-r4 *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+}
+
+/* ===== Obligatoire : le bouton son et le bandeau de maquette ne recouvrent jamais le prix de la
+   barre collante, a toutes les largeurs (regle equivalente a outils/t20/base20.css, etendue au
+   mobile ou le defaut avait ete releve). ===== */
+.t21-r4 .snd-btn { display: none !important; }
+.t21-r4 .proto { left: auto !important; right: 12px !important; bottom: auto !important; top: 8px !important; z-index: 2 !important; }
+@media (min-width: 701px) { .t21-r4 .proto { top: 84px !important; right: 24px !important; } }
+</style>
+</head>
+<body class="t17 t18 t19 t20 t21 t19-r4 t20-r4 t21-r4">
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="nav" id="nav">
+  <a href="../index.html" class="logo" aria-label="AXEM IA, accueil"><span class="axm" aria-hidden="true"></span></a>
+  <nav class="links" aria-label="Navigation principale">
+    <a href="#offres">Conseil<span class="na" aria-hidden="true">→</span></a><a href="#offres">Formation<span class="na" aria-hidden="true">→</span></a><a href="../coaching/">Coaching<span class="na" aria-hidden="true">→</span></a><a href="#duo">Le duo<span class="na" aria-hidden="true">→</span></a>
+  </nav>
+  <a href="#" class="book" data-book><span class="long">Réserver un échange offert</span><span class="short">Réserver</span><span class="bk-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a>
+</header>
+
+<main id="main">
+<section class="r4" aria-labelledby="r4-h" data-format="seance">
+  <div class="grid" id="grid" aria-hidden="true"></div>
+
+  <div class="r4-ig" id="r4Ig" hidden role="status">
+    <p><b>Ouvrir dans Safari pour payer en un geste.</b> Appuyez sur les trois points en haut à droite, puis « Ouvrir dans le navigateur ».</p>
+    <button type="button" class="r4-ig-close" id="r4IgClose" aria-label="Fermer ce message">&times;</button>
+  </div>
+
+  <header class="r4-hero">
+    <a class="r4-back" href="t21-r4.html#coaching"><span aria-hidden="true">&larr;</span> Retour à l'accueil</a>
+    <p class="cap r4-kick">Réservation en ligne</p>
+    <h1 class="f" id="r4-h">Choisissez votre format,<br>réglez en un geste.</h1>
+    <p class="r4-phrase">Le prix TTC tout de suite, le détail inclus dans chaque carte. Vous choisissez, vous remplissez, vous payez, sur cette même page.</p>
+  </header>
+
+  <div class="r4-sticky" id="r4Sticky">
+    <span class="r4-sticky-name" data-name>Une séance</span>
+    <span class="r4-sticky-price"><b class="f" data-roll="ttc">300 €</b> TTC</span>
+    <a class="r4-sticky-cta" href="#r4-ticket" data-scroll-to="#r4-ticket">Payer <span aria-hidden="true">&rarr;</span></a>
+  </div>
+
+  <div class="r4-body" id="r4Body">
+    <div class="r4-main">
+
+      <section class="r4-block r4-block-cards" id="r4-f1" aria-labelledby="r4-f1h">
+        <p class="r4-num" aria-hidden="true">1</p>
+        <h2 class="f" id="r4-f1h">Votre format.</h2>
+        <p class="r4-lead">Une séance pour juger sur pièce, ou un parcours pour aller jusqu'au bout. Survolez ou touchez pour voir le détail.</p>
+
+        <div class="r4-cards" data-cards>
+
+          <label class="r4-card" data-card="seance">
+            <input class="r4-radio" type="radio" name="r4-format" value="seance" data-ht="250" data-ttc="300" data-name="Une séance" data-desc="Une heure, pour juger sur pièce.">
+            <span class="r4-card-in">
+              <span class="r4-jouet" data-jouet aria-hidden="true"></span>
+              <span class="r4-card-top">
+                <span class="r4-card-id"><span class="cap">Séance</span><span class="r4-dot" aria-hidden="true"></span></span>
+                <span class="r4-price"><b class="f" data-ttc>300 €</b><span class="r4-price-u">TTC</span></span>
+              </span>
+              <h3 class="f">Une séance</h3>
+              <p class="r4-card-desc">Une heure, pour juger sur pièce. 250 € HT.</p>
+              <ul class="r4-inc">
+                <li>1 h en visio, écran partagé</li>
+                <li>Avec Clément Predo ou Alexis Zeitoun</li>
+                <li>Sans engagement</li>
+              </ul>
+            </span>
+          </label>
+
+          <label class="r4-card r4-card--feat" data-card="p5">
+            <input class="r4-radio" type="radio" name="r4-format" value="p5" data-ht="1100" data-ttc="1320" data-name="Le parcours 5 séances" data-desc="Apprendre l'IA, de A à Z.">
+            <span class="r4-card-in">
+              <span class="r4-badge">Pour apprendre de A à Z</span>
+              <span class="r4-jouet" data-jouet aria-hidden="true"></span>
+              <span class="r4-card-top">
+                <span class="r4-card-id"><span class="cap">Parcours</span><span class="r4-dot" aria-hidden="true"></span></span>
+                <span class="r4-price"><b class="f" data-ttc>1 320 €</b><span class="r4-price-u">TTC</span></span>
+              </span>
+              <h3 class="f">5 séances</h3>
+              <p class="r4-card-desc">Apprendre l'IA, de A à Z. 1 100 € HT, soit 220 € HT la séance.</p>
+              <ul class="r4-inc">
+                <li>Montée en compétences</li>
+                <li>Travail sur vos projets</li>
+                <li>Paramétrage inclus</li>
+              </ul>
+            </span>
+          </label>
+
+          <label class="r4-card" data-card="p10">
+            <input class="r4-radio" type="radio" name="r4-format" value="p10" data-ht="2000" data-ttc="2400" data-name="Le parcours 10 séances" data-desc="Mener votre projet au bout.">
+            <span class="r4-card-in">
+              <span class="r4-jouet" data-jouet aria-hidden="true"></span>
+              <span class="r4-card-top">
+                <span class="r4-card-id"><span class="cap">Parcours</span><span class="r4-dot" aria-hidden="true"></span></span>
+                <span class="r4-price"><b class="f" data-ttc>2 400 €</b><span class="r4-price-u">TTC</span></span>
+              </span>
+              <h3 class="f">10 séances</h3>
+              <p class="r4-card-desc">Mener votre projet au bout. 2 000 € HT, soit 200 € HT la séance.</p>
+              <ul class="r4-inc">
+                <li>Le cadrage, puis la chaîne complète, bout en bout</li>
+                <li>Une bibliothèque de modèles réutilisables</li>
+                <li>Le plan à 90 jours</li>
+              </ul>
+            </span>
+          </label>
+
+        </div>
+
+        <p class="r4-degressive">Vous commencez par une séance, puis vous passez à un parcours ? Elle est recalculée au tarif du parcours. Sans engagement.</p>
+        <p class="r4-fine">Une séance suivie d'un parcours est recalculée au tarif du parcours. Prérequis, un abonnement Claude Pro, environ 20 € par mois, à votre charge.</p>
+        <p class="r4-human" data-human hidden>Une question avant de choisir ? <a href="https://calendly.com/clem-pred">Échangez avec nous</a>.</p>
+      </section>
+
+      <section class="r4-block" id="r4-f2" aria-labelledby="r4-f2h">
+        <p class="r4-num" aria-hidden="true">2</p>
+        <h2 class="f" id="r4-f2h">Vous êtes.</h2>
+        <p class="r4-lead">Le nécessaire pour établir votre facture, rien d'autre.</p>
+
+        <fieldset class="r4-seg r4-seg-2">
+          <legend class="sr-only">Vous êtes</legend>
+          <label class="r4-seg-opt"><input type="radio" name="r4-qui" value="particulier" checked><span class="r4-seg-in"><b class="f">Particulier</b></span></label>
+          <label class="r4-seg-opt"><input type="radio" name="r4-qui" value="pro"><span class="r4-seg-in"><b class="f">Professionnel</b></span></label>
+        </fieldset>
+
+        <div class="r4-fields">
+          <div class="r4-field"><label for="r4-fname">Prénom</label><input id="r4-fname" type="text" autocomplete="given-name"></div>
+          <div class="r4-field"><label for="r4-lname">Nom</label><input id="r4-lname" type="text" autocomplete="family-name"></div>
+          <div class="r4-field r4-field-w"><label for="r4-email">E-mail</label><input id="r4-email" type="email" autocomplete="email"></div>
+          <div class="r4-field r4-field-w" data-pro-only hidden><label for="r4-company">Société (facture à ce nom)</label><input id="r4-company" type="text" autocomplete="organization"></div>
+        </div>
+
+        <p class="r4-pro-link" data-pro-only hidden><a href="#" id="r4Qonto">Payer sur facture ou par virement</a></p>
+        <p class="r4-pro-sim" id="r4ProSim" hidden role="status">Lien de paiement envoyé par e-mail (simulé). Vous pouvez aussi régler par carte ci-dessous.</p>
+      </section>
+
+      <section class="r4-block" id="r4-f3" aria-labelledby="r4-f3h">
+        <p class="r4-num" aria-hidden="true">3</p>
+        <h2 class="f" id="r4-f3h" data-slot-title>Votre créneau.</h2>
+        <p class="r4-lead" data-slot-lead>Choisissez un créneau, il sera confirmé par e-mail après le paiement.</p>
+
+        <div data-slot-block>
+          <p class="r4-slots-note">Créneaux d'exemple, sans date réelle.</p>
+          <div class="r4-slot-grid" id="r4SlotGrid" role="group" aria-label="Créneaux d'exemple">
+            <button type="button" class="r4-slot" data-slot="Lundi, 9 h" aria-pressed="false">Lun <span>9 h</span></button>
+            <button type="button" class="r4-slot" data-slot="Lundi, 14 h" aria-pressed="false">Lun <span>14 h</span></button>
+            <button type="button" class="r4-slot" data-slot="Mardi, 10 h" aria-pressed="false">Mar <span>10 h</span></button>
+            <button type="button" class="r4-slot" data-slot="Mardi, 16 h" aria-pressed="false">Mar <span>16 h</span></button>
+            <button type="button" class="r4-slot" data-slot="Mercredi, 9 h" aria-pressed="false">Mer <span>9 h</span></button>
+            <button type="button" class="r4-slot" data-slot="Mercredi, 15 h" aria-pressed="false">Mer <span>15 h</span></button>
+          </div>
+          <p class="r4-slot-picked" id="r4SlotPicked" role="status" hidden></p>
+        </div>
+
+        <p class="r4-parcours-phrase" data-parcours-phrase hidden>Vous recevez par e-mail votre lien pour réserver vos <b data-parcours-n>5</b> séances à votre rythme.</p>
+      </section>
+
+      <section class="r4-block r4-block-last" id="r4-f4" aria-labelledby="r4-f4h">
+        <p class="r4-num" aria-hidden="true">4</p>
+        <h2 class="f" id="r4-f4h">Votre accord.</h2>
+
+        <div class="r4-checks" data-part-only>
+          <label class="r4-check"><input type="checkbox" id="r4-c1"><span>Je demande que le coaching commence avant la fin du délai de rétractation de 14 jours.</span></label>
+          <label class="r4-check"><input type="checkbox" id="r4-c2"><span>Je reconnais perdre mon droit de rétractation une fois la prestation entièrement exécutée.</span></label>
+        </div>
+        <label class="r4-check"><input type="checkbox" id="r4-cgv"><span>J'accepte les <a href="#cgv">conditions générales de vente</a>.</span></label>
+      </section>
+
+    </div>
+
+    <aside class="r4-ticket" id="r4-ticket" aria-label="Récapitulatif de votre commande">
+      <div class="r4-ticket-in">
+        <div class="r4-ticket-head">
+          <p class="cap">Ticket</p>
+          <span class="r4-mk" id="r4Mk" aria-hidden="true"></span>
+        </div>
+        <p class="r4-ticket-name f" data-name>Une séance</p>
+        <dl class="r4-ticket-rows">
+          <div><dt>Prix</dt><dd data-roll="ht">250 €</dd></div>
+          <div><dt>TVA, 20 %</dt><dd data-roll="tva">50 €</dd></div>
+          <div class="r4-ticket-total"><dt>Total TTC</dt><dd data-roll="ttc">300 €</dd></div>
+        </dl>
+
+        <button type="button" class="btn r4-buy" id="r4Buy" disabled>
+          <span id="r4BuyLabel">Payer 300 € TTC, commande avec obligation de paiement</span>
+        </button>
+        <p class="r4-buy-hint" id="r4BuyHint" role="status">Choisissez un créneau et cochez les cases ci-dessus pour activer le paiement.</p>
+        <p class="r4-ticket-note">Paiement simulé pour la démonstration, aucune transaction réelle. Carte bancaire, Apple Pay et Google Pay acceptés.</p>
+
+        <div class="r4-stamp" id="r4Stamp" aria-hidden="true">Payé</div>
+      </div>
+    </aside>
+  </div>
+
+  <section class="r4-confirm" id="r4Confirm" hidden aria-labelledby="r4-confirm-h">
+    <p class="cap">C'est payé</p>
+    <h2 class="f" id="r4-confirm-h" tabindex="-1">C'est réservé.</h2>
+    <p class="r4-confirm-text" id="r4ConfirmSlotText">Une heure, en visio, avec Clément Predo ou Alexis Zeitoun. Rendez-vous, <span data-confirm-slot></span>.</p>
+    <p class="r4-confirm-text" id="r4ConfirmParcoursText" hidden>Vous recevez par e-mail votre lien pour réserver vos <b data-confirm-n>5</b> séances à votre rythme.</p>
+    <a class="r4-home" href="t21-r4.html#coaching">Retour à l'accueil</a>
+  </section>
+
+</section>
+</main>
+
+<footer>
+  <div class="ft-top">
+    <div class="meta cap"><span>axem-ia.fr</span><span>Paris</span><a href="#" data-book>Réserver un échange offert →</a></div>
+    <div class="legal-links cap"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="mailto:contact@axem-ia.fr">contact@axem-ia.fr</a></div>
+  </div>
+  <div class="wm big" aria-hidden="true">axem<sup>IA</sup></div>
+</footer>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AXEM IA",
+  "url": "https://axem-ia.fr",
+  "email": "contact@axem-ia.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3 rue Françoise Dolto",
+    "postalCode": "75013",
+    "addressLocality": "Paris",
+    "addressCountry": "FR"
+  },
+  "founder": [
+    { "@type": "Person", "name": "Clément Predo", "sameAs": "https://www.linkedin.com/in/clement-predo" },
+    { "@type": "Person", "name": "Alexis Zeitoun", "sameAs": "https://www.linkedin.com/in/alexiszeitoun" }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/clement-predo",
+    "https://www.linkedin.com/in/alexiszeitoun"
+  ]
+}
+</script>
+
+<script src="../vendor/gsap/gsap.min.js"></script>
+<script src="../vendor/gsap/ScrollTrigger.min.js"></script>
+<script src="../vendor/gsap/SplitText.min.js"></script>
+<script src="../assets/abonnes.js"></script>
+<script src="../assets/avis.js"></script>
+<script src="../assets/axem.js"></script>
+<script>
+(() => {
+  // Tour 16 : la couche d'interactions du tour 2, allegee apres mesure (CPU x4, defilement molette).
+  // Retire : le defilement doux Lenis (il gardait la main sur la molette), le bandeau pilote image par
+  // image (il relisait la largeur de la page a chaque image : 1,8 s de mise en page sur 5 s), le
+  // brouillage des lettres. Garde, mais ne calcule plus que quand la souris bouge : le curseur a
+  // etiquette, la graisse du titre, l'apercu des offres, le portrait du duo, le mot du pied de page.
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const still = reduce || /[?&]static\b/.test(location.search);
+  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const hasGsap = typeof gsap !== 'undefined';
+  document.body.classList.add('t2', 't16-lite');
+  if (hasGsap) gsap.registerPlugin(...[window.ScrollTrigger, window.SplitText].filter(Boolean));
+
+  const mouse = { x: innerWidth / 2, y: innerHeight / 2 };
+  const moveFns = [];
+  let mq = 0;
+  addEventListener('pointermove', e => {
+    mouse.x = e.clientX; mouse.y = e.clientY;
+    if (!mq) mq = requestAnimationFrame(() => { mq = 0; moveFns.forEach(f => f()); });
+  }, { passive: true });
+
+  // Curseur a etiquette : la boucle ne tourne que tant qu'il reste du chemin a faire.
+  if (fine && !reduce) {
+    document.documentElement.classList.add('has-cur');
+    const l = document.createElement('div'); l.className = 'cur-l';
+    document.body.append(l);
+    const p = { x: mouse.x, y: mouse.y };
+    let run = 0;
+    const loop = () => {
+      p.x += (mouse.x - p.x) * 0.35; p.y += (mouse.y - p.y) * 0.35;
+      l.style.transform = `translate3d(${p.x.toFixed(1)}px, ${p.y.toFixed(1)}px, 0)`;
+      run = Math.abs(mouse.x - p.x) + Math.abs(mouse.y - p.y) > .4 ? requestAnimationFrame(loop) : 0;
+    };
+    moveFns.push(() => { if (!run) run = requestAnimationFrame(loop); });
+    document.addEventListener('pointerover', e => {
+      const lab = e.target.closest('[data-cursor]');
+      const hide = e.target.closest('[data-cursor-off]');
+      l.textContent = lab && !hide ? lab.dataset.cursor : '';
+      l.classList.toggle('on', !!(lab && !hide));
+    });
+  }
+
+  // Titre du hero : graisse variable selon la distance au curseur. Les centres des lettres sont
+  // mesures une fois (et au redimensionnement), jamais pendant le mouvement.
+  const heroH = document.querySelector('.hero');
+  if (heroH) {
+    document.querySelectorAll('.hero h1 .word > span').forEach(s => { s.innerHTML = [...s.textContent].map(ch => `<span class="ch">${ch}</span>`).join(''); });
+    if (fine && !still && hasGsap) {
+      const chars = [...heroH.querySelectorAll('.ch')];
+      let centers = null, active = false;
+      const measure = () => { centers = chars.map(ch => { const r = ch.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2 + scrollY]; }); };
+      // Changer la graisse d'une police variable oblige le navigateur a remettre en forme les glyphes :
+      // mesure du 24/09, 1,5 s de mise en page sur 5 s de geste, pour 36 objets seulement. Le cout vient
+      // de ce que chaque image demandait une graisse inedite (valeur continue, cache de forme rate).
+      // La graisse suit donc la souris par un amorti maison, mais n'est ecrite que par paliers de 50 :
+      // 13 graisses possibles, toutes deja en cache apres le premier passage.
+      const cur = chars.map(() => 900), tgt = chars.map(() => 900), shown = chars.map(() => 900);
+      let run = 0;
+      const tick = () => {
+        let moving = false;
+        for (let i = 0; i < chars.length; i++) {
+          const d = tgt[i] - cur[i];
+          if (Math.abs(d) > 2) { cur[i] += d * 0.18; moving = true; } else cur[i] = tgt[i];
+          const q = Math.round(cur[i] / 50) * 50;
+          if (q !== shown[i]) { shown[i] = q; chars[i].style.setProperty('--wg', q); }
+        }
+        run = moving ? requestAnimationFrame(tick) : 0;
+      };
+      const kick = () => { if (!run) run = requestAnimationFrame(tick); };
+      heroH.addEventListener('pointerenter', () => { active = true; measure(); });
+      heroH.addEventListener('pointerleave', () => { active = false; tgt.fill(900); kick(); });
+      addEventListener('resize', () => { centers = null; });
+      moveFns.push(() => {
+        if (!active) return;
+        if (!centers) measure();
+        const y = mouse.y + scrollY;
+        centers.forEach(([cx, cy], i) => { tgt[i] = 300 + 600 * Math.min(1, Math.hypot(mouse.x - cx, y - cy) / 420); });
+        kick();
+      });
+    }
+  }
+
+  // Apercu flottant sur les offres
+  const rows = document.querySelectorAll('.row[data-peek]');
+  if (rows.length && fine && !reduce && hasGsap) {
+    const pk = document.createElement('div'); pk.className = 'peek'; pk.setAttribute('aria-hidden', 'true');
+    pk.innerHTML = '<span class="sq"></span><div class="k"></div><div class="v"></div><img class="pi" alt="">';
+    document.body.appendChild(pk);
+    const xTo = gsap.quickTo(pk, 'x', { duration: 0.55, ease: 'power3.out' }), yTo = gsap.quickTo(pk, 'y', { duration: 0.55, ease: 'power3.out' });
+    const rTo = gsap.quickTo(pk, 'rotation', { duration: 0.5, ease: 'power3.out' });
+    let lastX = mouse.x, on = false;
+    moveFns.push(() => { if (!on) return; xTo(mouse.x + 70); yTo(mouse.y + 30); rTo(gsap.utils.clamp(-8, 8, (mouse.x - lastX) * 0.6)); lastX = mouse.x; });
+    rows.forEach(r => {
+      r.addEventListener('pointerenter', () => { on = true; gsap.set(pk, { x: mouse.x + 70, y: mouse.y + 30 }); pk.querySelector('.k').textContent = r.dataset.peekK || ''; pk.querySelector('.v').textContent = r.dataset.peek; const pi = pk.querySelector('.pi'); if (r.dataset.peekImg) { pi.src = new URL(r.dataset.peekImg, document.baseURI).href; } pk.classList.toggle('has-img', !!r.dataset.peekImg); gsap.to(pk, { opacity: 1, scale: 1, duration: 0.45, ease: 'back.out(1.6)' }); });
+      r.addEventListener('pointerleave', () => { on = false; gsap.to(pk, { opacity: 0, scale: 0.6, duration: 0.3 }); });
+    });
+  }
+
+  // Wordmark du pied de page : lettres qui se soulevent pres du curseur (positions mesurees a l'entree).
+  const big = document.querySelector('footer .big');
+  if (big) {
+    const tn = [...big.childNodes].find(n => n.nodeType === 3 && n.textContent.trim());
+    if (tn) { const w = document.createElement('span'); w.innerHTML = [...tn.textContent.trim()].map(ch => `<span class="fl">${ch}</span>`).join(''); big.replaceChild(w, tn); }
+    if (fine && !reduce) {
+      const fls = [...big.querySelectorAll('.fl')], foot = big.closest('footer');
+      let xs = null, inF = false;
+      foot.addEventListener('pointerenter', () => { inF = true; xs = fls.map(f => { const r = f.getBoundingClientRect(); return r.left + r.width / 2; }); });
+      foot.addEventListener('pointerleave', () => { inF = false; fls.forEach(f => { f.style.transform = ''; }); });
+      moveFns.push(() => { if (!inF || !xs) return; fls.forEach((f, i) => { f.style.transform = `translateY(${(-Math.max(0, 1 - Math.abs(mouse.x - xs[i]) / 260) * 0.14).toFixed(3)}em)`; }); });
+    }
+  }
+
+  // Liens forts magnetiques (hors barre du haut, qui a son propre bouton)
+  if (fine && !reduce && hasGsap) document.querySelectorAll('.teaser .more, [data-mag]').forEach(b => {
+    const xTo = gsap.quickTo(b, 'x', { duration: 0.5, ease: 'power3.out' }), yTo = gsap.quickTo(b, 'y', { duration: 0.5, ease: 'power3.out' });
+    b.addEventListener('pointermove', e => { const r = b.getBoundingClientRect(); xTo((e.clientX - r.left - r.width / 2) * 0.3); yTo((e.clientY - r.top - r.height / 2) * 0.4); });
+    b.addEventListener('pointerleave', () => { xTo(0); yTo(0); });
+  });
+
+  // Lignes revelees au defilement
+  if (hasGsap && window.SplitText && window.ScrollTrigger && !still) {
+    document.fonts.ready.then(() => document.querySelectorAll('[data-lines]').forEach(el => {
+      SplitText.create(el, { type: 'lines', mask: 'lines', linesClass: 'ln', autoSplit: true, onSplit: self => gsap.from(self.lines, { yPercent: 105, duration: 1.1, ease: 'expo.out', stagger: 0.09, scrollTrigger: { trigger: el, start: 'top 85%', once: true } }) });
+    }));
+  }
+
+  // Duo : portrait qui suit le curseur sur les noms
+  const dn = document.querySelector('.dn-list');
+  const fl = document.querySelector('.dn-float');
+  if (dn && fl && fine && !reduce && hasGsap) {
+    const xTo = gsap.quickTo(fl, 'x', { duration: 0.7, ease: 'power3.out' }), yTo = gsap.quickTo(fl, 'y', { duration: 0.7, ease: 'power3.out' });
+    const rTo = gsap.quickTo(fl, 'rotation', { duration: 0.6, ease: 'power3.out' });
+    let lx = mouse.x, on = false;
+    moveFns.push(() => { if (!on) return; xTo(mouse.x + 22); yTo(mouse.y + 16); rTo(gsap.utils.clamp(-10, 10, (mouse.x - lx) * 0.5)); lx = mouse.x; });
+    dn.querySelectorAll('.dn-row').forEach(r => {
+      r.addEventListener('pointerenter', () => { on = true; fl.classList.add('on'); fl.querySelectorAll('img').forEach(i => i.classList.toggle('on', i.dataset.who === r.dataset.who)); });
+    });
+    dn.addEventListener('pointerleave', () => { on = false; fl.classList.remove('on'); });
+  }
+})();
+</script>
+<script>(()=>{const m=location.search.match(/[?&]photo=(\d)/), P={1:'1-table',2:'2-scene',3:'3-marches'}; if (m && P[m[1]]) document.querySelectorAll('img[src$="img/duo/duo.jpg"]').forEach(i=>{i.src='../img/duo/propositions/axem-duo-'+P[m[1]]+'.jpg'; i.closest('[hidden]')?.removeAttribute('hidden');});})();</script>
+<p class="proto">Tour 21 : Paiement du coaching, proposition 4 <a class="replay" role="button" tabindex="0">Rejouer</a><a href="../tour21.html">Toutes les propositions</a></p>
+<script>
+(() => {
+  // ---- Tour 17 : socle commun (Reserver un seul a la fois, bouton son WebAudio). Charge sur les
+  // 6 pages, avant claude-mark.js et le script propre a chaque page (voir outils/build_t17.py). ----
+
+  // 1) Reserver un seul a la fois. La barre garde .nav .book[data-book] (nav.css). Tant que le grand
+  // bouton du hero (.hero .btn[data-book]) est a l'ecran, celui de la barre reste cache, invisible aux
+  // lecteurs d'ecran et non focusable. Des qu'il en sort, il apparait et reste, meme en remontant. Sur
+  // les pages duo il n'y a pas de hero : le bouton de la barre est visible d'emblee.
+  (() => {
+    const navBook = document.querySelector('#nav .book[data-book]');
+    if (!navBook) return;
+    const heroBook = document.querySelector('.hero .btn[data-book]');
+    if (!heroBook) { navBook.classList.add('rs-show'); return; }
+    navBook.classList.add('rs-hidden');
+    navBook.setAttribute('tabindex', '-1');
+    navBook.setAttribute('aria-hidden', 'true');
+    const reveal = () => {
+      navBook.classList.remove('rs-hidden');
+      navBook.classList.add('rs-show');
+      navBook.removeAttribute('tabindex');
+      navBook.removeAttribute('aria-hidden');
+    };
+    if (!('IntersectionObserver' in window)) { reveal(); return; }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (!entry.isIntersecting) { reveal(); io.disconnect(); } });
+    }, { threshold: 0 });
+    io.observe(heroBook);
+  })();
+
+  // 2) Bouton son : petit egaliseur en bas a gauche, coupe par defaut. Sons synthetises en WebAudio,
+  // aucun fichier. Rien ne joue avant un premier clic (ou une preference deja enregistree). Expose
+  // window.AxemSound = { play(name), on() } et ecoute l'evenement axem:sound emis ailleurs (survols,
+  // ecrans bleus). Chaque lecture/ecriture localStorage est dans un try/catch.
+  (() => {
+    const KEY = 'axem-son';
+    let enabled = false;
+    try { enabled = localStorage.getItem(KEY) === '1'; } catch (e) { enabled = false; }
+
+    let ctx = null;
+    const audioCtx = () => {
+      if (ctx) return ctx;
+      const Ctor = window.AudioContext || window.webkitAudioContext;
+      if (!Ctor) return null;
+      try { ctx = new Ctor(); } catch (e) { ctx = null; }
+      return ctx;
+    };
+
+    const soundWhoosh = c => {
+      const dur = 0.6;
+      const buf = c.createBuffer(1, Math.round(c.sampleRate * dur), c.sampleRate);
+      const d = buf.getChannelData(0);
+      for (let i = 0; i < d.length; i++) { const t = i / d.length; d[i] = (Math.random() * 2 - 1) * Math.pow(1 - t, 2.2); }
+      const src = c.createBufferSource(); src.buffer = buf;
+      const filt = c.createBiquadFilter(); filt.type = 'bandpass'; filt.Q.value = 0.7;
+      filt.frequency.setValueAtTime(500, c.currentTime);
+      filt.frequency.exponentialRampToValueAtTime(2000, c.currentTime + dur * 0.8);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.0001, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.13, c.currentTime + 0.09);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + dur);
+      src.connect(filt).connect(g).connect(c.destination);
+      src.start(); src.stop(c.currentTime + dur + 0.05);
+    };
+
+    const soundTick = c => {
+      const osc = c.createOscillator(); osc.type = 'square'; osc.frequency.setValueAtTime(1900, c.currentTime);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.08, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 0.045);
+      osc.connect(g).connect(c.destination);
+      osc.start(); osc.stop(c.currentTime + 0.06);
+    };
+
+    const soundPop = c => {
+      const osc = c.createOscillator(); osc.type = 'sine';
+      osc.frequency.setValueAtTime(420, c.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(760, c.currentTime + 0.1);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.0001, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.15, c.currentTime + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 0.24);
+      osc.connect(g).connect(c.destination);
+      osc.start(); osc.stop(c.currentTime + 0.26);
+    };
+
+    const SOUNDS = { whoosh: soundWhoosh, tick: soundTick, pop: soundPop };
+
+    const play = name => {
+      if (!enabled || !SOUNDS[name]) return;
+      try {
+        const c = audioCtx();
+        if (!c) return;
+        if (c.state === 'suspended') c.resume().catch(() => {});
+        SOUNDS[name](c);
+      } catch (e) { /* silencieux : le son n'est jamais bloquant */ }
+    };
+
+    window.AxemSound = { play, on: () => enabled };
+    window.addEventListener('axem:sound', e => { try { play(e.detail && e.detail.name); } catch (er) {} });
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'snd-btn';
+    btn.setAttribute('aria-pressed', 'false');
+    btn.setAttribute('aria-label', 'Activer le son');
+    btn.innerHTML = '<span class="snd-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>';
+    document.body.appendChild(btn);
+
+    const sync = () => {
+      btn.classList.toggle('on', enabled);
+      btn.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+      btn.setAttribute('aria-label', enabled ? 'Couper le son' : 'Activer le son');
+    };
+    sync();
+
+    btn.addEventListener('click', () => {
+      enabled = !enabled;
+      try { localStorage.setItem(KEY, enabled ? '1' : '0'); } catch (e) { /* prive ou bloque : tant pis */ }
+      sync();
+      if (enabled) play('pop');
+    });
+  })();
+})();
+</script>
+<script>
+/*
+ * ClaudeMark : trace officiel du symbole Claude (etoile / spark), sans dependance.
+ * Source : Wikimedia Commons, File:Claude_AI_symbol.svg
+ *   https://upload.wikimedia.org/wikipedia/commons/b/b0/Claude_AI_symbol.svg
+ * Le trace original est un SEUL <path> avec un seul sous-tracé (un seul "M" au debut,
+ * 159 segments, une seule fermeture "Z") : les 6 rayons ne sont pas des sous-tracés
+ * separes dans le fichier source, donc pas de decoupage "un <path> par rayon" possible
+ * ici sans reconstruire des tracés synthetiques. Conformement à la consigne du brief
+ * pour ce cas ("un seul contour continu impossible a separer proprement"), ClaudeMark
+ * expose `rays: []` et `root` anime en bloc (rotation / echelle / masque).
+ *
+ * Le trace ci-dessous est le trace officiel, translate pour que le centre visuel de
+ * l'etoile (centre de sa bounding box, cx=49.95 cy=50 dans le fichier source, sur un
+ * viewBox 0 0 100 100) tombe exactement sur (0,0). Le viewBox monte par mount() est
+ * donc centre : "-50 -50 100 100".
+ */
+(function (global) {
+  "use strict";
+
+  var PATH_D =
+    "m -30.35,16.5 l 19.7,-11 l 0.3,-1 l -0.3,-0.5 l -1,0 l -3.3,-0.2 l -11.2,-0.3 " +
+    "L -35.95,3 l -9.5,-0.5 l -2.4,-0.5 L -49.95,-1 l 0.2,-1.5 l 2,-1.3 l 2.9,0.2 " +
+    "l 6.3,0.5 l 9.5,0.6 l 6.9,0.4 L -11.95,-0.9 l 1.6,0 l 0.2,-0.7 l -0.5,-0.4 " +
+    "l -0.4,-0.4 L -20.95,-9 l -10.6,-7 l -5.6,-4.1 l -3,-2 l -1.5,-2 l -0.6,-4.2 " +
+    "l 2.7,-3 l 3.7,0.3 l 0.9,0.2 l 3.7,2.9 l 8,6.1 L -12.95,-14 l 1.5,1.2 l 0.6,-0.4 " +
+    "l 0.1,-0.3 l -0.7,-1.1 L -16.95,-25 l -6,-10.4 l -2.7,-4.3 l -0.7,-2.6 " +
+    "c -0.3,-1 -0.4,-2 -0.4,-3 l 3,-4.2 L -21.95,-50 l 4.2,0.6 L -16.15,-48 l 2.6,6 " +
+    "l 4.1,9.3 L -2.95,-20.1 l 2,3.8 l 1,3.4 l 0.3,1 l 0.7,0 l 0,-0.5 l 0.5,-7.2 " +
+    "l 1,-8.7 l 1,-11.2 l 0.3,-3.2 l 1.6,-3.8 l 3,-2 L 11.05,-47.4 l 2,2.9 l -0.3,1.8 " +
+    "l -1.1,7.7 L 9.05,-22.9 l -1.5,8.2 l 0.9,0 l 1,-1.1 l 4.1,-5.4 l 6.9,-8.6 l 3,-3.5 " +
+    "L 27.05,-37 l 2.3,-1.8 l 4.3,0 l 3.1,4.7 l -1.4,4.9 l -4.4,5.6 l -3.7,4.7 l -5.3,7.1 " +
+    "l -3.2,5.7 l 0.3,0.4 l 0.7,0 l 12,-2.6 l 6.4,-1.1 l 7.6,-1.3 l 3.5,1.6 l 0.4,1.6 " +
+    "l -1.4,3.4 l -8.2,2 l -9.6,2 l -14.3,3.3 l -0.2,0.1 l 0.2,0.3 l 6.4,0.6 l 2.8,0.2 " +
+    "l 6.8,0 l 12.6,1 l 3.3,2 l 1.9,2.7 l -0.3,2 l -5.1,2.6 l -6.8,-1.6 l -16,-3.8 " +
+    "l -5.4,-1.3 l -0.8,0 l 0,0.4 l 4.6,4.5 l 8.3,7.5 L 39.05,30.1 l 0.5,2.4 l -1.3,2 " +
+    "l -1.4,-0.2 l -9.2,-7 l -3.6,-3 l -8,-6.8 l -0.5,0 l 0,0.7 l 1.8,2.7 l 9.8,14.7 " +
+    "l 0.5,4.5 l -0.7,1.4 l -2.6,1 l -2.7,-0.6 l -5.8,-8 l -6,-9 l -4.7,-8.2 l -0.5,0.4 " +
+    "l -2.9,30.2 l -1.3,1.5 l -3,1.2 l -2.5,-2 l -1.4,-3 l 1.4,-6.2 l 1.6,-8 l 1.3,-6.4 " +
+    "l 1.2,-7.9 l 0.7,-2.6 l 0,-0.2 L -0.95,13.7 L -6.95,22 l -9,12.3 l -7.2,7.6 " +
+    "l -1.7,0.7 l -3,-1.5 l 0.3,-2.8 L -25.95,36 l 10,-12.8 l 6,-7.9 l 4,-4.6 l -0.1,-0.5 " +
+    "l -0.3,0 L -32.75,27.4 l -4.7,0.6 l -2,-2 l 0.2,-3 l 1,-1 l 8,-5.5 Z";
+
+  var DEFAULT_COLOR = "#D97757";
+  var SVG_NS = "http://www.w3.org/2000/svg";
+
+  function mount(el, opts) {
+    opts = opts || {};
+    var color = opts.color || DEFAULT_COLOR;
+
+    var svg;
+    if (el && el.tagName && el.tagName.toLowerCase() === "svg") {
+      svg = el;
+    } else {
+      svg = document.createElementNS(SVG_NS, "svg");
+      if (el) el.appendChild(svg);
+    }
+
+    svg.setAttribute("viewBox", "-50 -50 100 100");
+    if (!svg.hasAttribute("width") && opts.size) svg.setAttribute("width", opts.size);
+    if (!svg.hasAttribute("height") && opts.size) svg.setAttribute("height", opts.size);
+    svg.setAttribute("aria-hidden", "true");
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+
+    // root : groupe anime en bloc (rotation/echelle/masque), origine CSS forcee a
+    // (0,0) qui correspond deja au centre visuel de l'etoile dans ce viewBox recentre.
+    var root = document.createElementNS(SVG_NS, "g");
+    root.setAttribute("class", "claude-mark-root");
+    root.style.transformOrigin = "0px 0px";
+    root.style.transformBox = "view-box";
+
+    var path = document.createElementNS(SVG_NS, "path");
+    path.setAttribute("d", PATH_D);
+    path.setAttribute("fill", color);
+    path.setAttribute("class", "claude-mark-path");
+    root.appendChild(path);
+    svg.appendChild(root);
+
+    return {
+      svg: svg,
+      root: root,
+      rays: [], // tracé source en un seul sous-chemin : rayons non individualisables
+      core: null, // idem : pas de hub separe dans le tracé source
+      color: color
+    };
+  }
+
+  global.ClaudeMark = { mount: mount, PATH_D: PATH_D, DEFAULT_COLOR: DEFAULT_COLOR };
+})(window);
+</script>
+<script>
+(() => {
+  // Tour 21, paiement r4 : melange de r1 (les 3 cartes de format en haut) et de r3 (le one-pager en
+  // dessous). Une seule page, aucun ecran intermediaire avant la confirmation : le format choisi met
+  // a jour le ticket, la barre collante et les textes de parcours sans jamais quitter la page. Tout
+  // est simule, aucun fetch, aucun stockage, aucun vrai paiement.
+  const root = document.querySelector('.t21-r4 .r4');
+  if (!root) return;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const gsapOk = window.gsap && !reduce;
+
+  const fmtEUR = n => Math.round(n).toLocaleString('fr-FR') + ' €';
+
+  // ---- Format, presectionne depuis ?f=seance|p5|p10 ----
+  const params = new URLSearchParams(location.search);
+  const wanted = ['seance', 'p5', 'p10'].includes(params.get('f')) ? params.get('f') : 'seance';
+  const formatRadios = [...root.querySelectorAll('input[name="r4-format"]')];
+  const cards = [...root.querySelectorAll('.r4-card')];
+  const initial = formatRadios.find(r => r.value === wanted) || formatRadios[0];
+  if (initial) initial.checked = true;
+
+  const currentFormat = () => formatRadios.find(r => r.checked) || formatRadios[0];
+
+  const rollTo = (el, to) => {
+    if (!el) return;
+    const from = parseInt((el.textContent || '0').replace(/[^\d]/g, ''), 10) || 0;
+    if (!gsapOk || from === to) { el.textContent = fmtEUR(to); return; }
+    const obj = { v: from };
+    gsap.to(obj, { v: to, duration: 0.5, ease: 'power2.out', onUpdate: () => { el.textContent = fmtEUR(Math.round(obj.v)); } });
+  };
+
+  // ---- Petit jouet : le logo Claude qui rebondit dans la carte choisie ----
+  const bounceCard = card => {
+    if (!gsapOk || !card) return;
+    const slot = card.querySelector('[data-jouet]');
+    if (!slot || !window.ClaudeMark) return;
+    slot.innerHTML = '';
+    const mk = window.ClaudeMark.mount(slot, { size: 26 });
+    gsap.fromTo(mk.svg, { y: 18, scale: 0.4, opacity: 0, rotate: -14 },
+      { y: 0, scale: 1, opacity: 1, rotate: 0, duration: 0.5, ease: 'back.out(2.2)',
+        onComplete: () => gsap.to(mk.svg, { opacity: 0, duration: 0.4, delay: 0.6 }) });
+  };
+
+  const humanLink = root.querySelector('[data-human]');
+  const slotTitle = root.querySelector('[data-slot-title]');
+  const slotLead = root.querySelector('[data-slot-lead]');
+  const slotBlock = root.querySelector('[data-slot-block]');
+  const parcoursPhrase = root.querySelector('[data-parcours-phrase]');
+  const parcoursN = root.querySelector('[data-parcours-n]');
+  const buyLabel = root.querySelector('#r4BuyLabel');
+
+  const syncFormat = animate => {
+    const r = currentFormat();
+    if (!r) return;
+    const { ht, ttc, name, desc } = r.dataset;
+    root.querySelectorAll('[data-name]').forEach(el => { el.textContent = name; });
+    root.querySelectorAll('[data-roll="ht"]').forEach(el => rollTo(el, +ht));
+    root.querySelectorAll('[data-roll="tva"]').forEach(el => rollTo(el, +ttc - +ht));
+    root.querySelectorAll('[data-roll="ttc"]').forEach(el => rollTo(el, +ttc));
+    if (buyLabel) buyLabel.textContent = `Payer ${fmtEUR(+ttc)} TTC, commande avec obligation de paiement`;
+
+    const isParcours = r.value === 'p5' || r.value === 'p10';
+    if (humanLink) humanLink.hidden = !isParcours;
+    if (slotTitle) slotTitle.textContent = isParcours ? 'Votre rythme.' : 'Votre créneau.';
+    if (slotLead) slotLead.textContent = isParcours
+      ? 'Vous réservez chaque séance à votre rythme, après le paiement.'
+      : 'Choisissez un créneau, il sera confirmé par e-mail après le paiement.';
+    if (slotBlock) slotBlock.hidden = isParcours;
+    if (parcoursPhrase) parcoursPhrase.hidden = !isParcours;
+    if (parcoursN) parcoursN.textContent = r.value === 'p10' ? '10' : '5';
+
+    cards.forEach(c => c.classList.toggle('is-picked', c.querySelector('.r4-radio') === r));
+    if (animate) bounceCard(r.closest('.r4-card'));
+    updateReady();
+  };
+  formatRadios.forEach(r => r.addEventListener('change', () => syncFormat(true)));
+
+  // ---- Particulier ou professionnel ----
+  const quiRadios = [...root.querySelectorAll('input[name="r4-qui"]')];
+  const partOnly = [...root.querySelectorAll('[data-part-only]')];
+  const proOnly = [...root.querySelectorAll('[data-pro-only]')];
+  const c1 = root.querySelector('#r4-c1');
+  const c2 = root.querySelector('#r4-c2');
+
+  const syncQui = () => {
+    const isPro = quiRadios.find(r => r.checked && r.value === 'pro');
+    partOnly.forEach(el => { el.hidden = !!isPro; });
+    proOnly.forEach(el => { el.hidden = !isPro; });
+    if (isPro) { if (c1) c1.checked = false; if (c2) c2.checked = false; }
+    updateReady();
+  };
+  quiRadios.forEach(r => r.addEventListener('change', syncQui));
+
+  // ---- Lien pro simule, jamais de reseau, jamais de navigation ----
+  const qontoLink = root.querySelector('#r4Qonto');
+  const proSim = root.querySelector('#r4ProSim');
+  if (qontoLink) qontoLink.addEventListener('click', e => { e.preventDefault(); if (proSim) proSim.hidden = false; });
+
+  // ---- Creneau (obligatoire pour une seance seule, pas pour un parcours) ----
+  const slotGrid = root.querySelector('#r4SlotGrid');
+  const slotPicked = root.querySelector('#r4SlotPicked');
+  let chosenSlot = null;
+  if (slotGrid) slotGrid.addEventListener('click', e => {
+    const btn = e.target.closest('.r4-slot');
+    if (!btn) return;
+    slotGrid.querySelectorAll('.r4-slot').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+    chosenSlot = btn.dataset.slot;
+    if (slotPicked) { slotPicked.hidden = false; slotPicked.textContent = `Créneau choisi, ${chosenSlot}.`; }
+    updateReady();
+  });
+
+  // ---- Cases legales et validation du bouton final ----
+  const cgv = root.querySelector('#r4-cgv');
+  const buyBtn = root.querySelector('#r4Buy');
+  const buyHint = root.querySelector('#r4BuyHint');
+
+  const isReady = () => {
+    if (!cgv || !cgv.checked) return false;
+    const isPro = quiRadios.find(r => r.checked && r.value === 'pro');
+    if (!isPro && !(c1 && c1.checked && c2 && c2.checked)) return false;
+    const isParcours = currentFormat().value !== 'seance';
+    if (!isParcours && !chosenSlot) return false;
+    return true;
+  };
+
+  function updateReady() {
+    const ready = isReady();
+    if (buyBtn) buyBtn.disabled = !ready;
+    if (buyHint) buyHint.hidden = ready;
+    document.body.classList.toggle('r4-ready', ready);
+  }
+  [cgv, c1, c2].forEach(el => { if (el) el.addEventListener('change', updateReady); });
+
+  // Tout ce dont syncFormat/updateReady dependent est maintenant defini : on peut lancer le
+  // premier calcul (sinon "isReady" est appele avant son initialisation, la carte
+  // preselectionnee par ?f= ne doit rien afficher de faux le temps d'un rendu).
+  syncFormat(false);
+
+  // ---- Defilement doux vers une ancre, sans rechargement ----
+  root.querySelectorAll('[data-scroll-to]').forEach(btn => btn.addEventListener('click', e => {
+    const target = document.querySelector(btn.dataset.scrollTo);
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  }));
+
+  // ---- Logo Claude dans le ticket, decor discret ----
+  const mkHost = root.querySelector('#r4Mk');
+  if (mkHost && window.ClaudeMark) window.ClaudeMark.mount(mkHost, { size: '100%', color: '#D97757' });
+
+  // ---- Barre collante : fondu d'opacite seul des qu'on a depasse l'ouverture, jamais un
+  // glissement de position (defaut corrige releve sur r3). position:fixed en CSS, ici on ne
+  // change qu'une classe qui pilote l'opacite. ----
+  const stickyBar = root.querySelector('#r4Sticky');
+  const heroEl = root.querySelector('.r4-hero');
+  if (stickyBar && heroEl && 'IntersectionObserver' in window) {
+    const io = new IntersectionObserver(entries => {
+      const heroVisible = entries[0].isIntersecting;
+      stickyBar.classList.toggle('is-visible', !heroVisible);
+    }, { rootMargin: '-72px 0px 0px 0px', threshold: 0 });
+    io.observe(heroEl);
+  } else if (stickyBar) {
+    stickyBar.classList.add('is-visible');
+  }
+
+  // ---- Paiement simule (aucun reseau, aucun stockage) : le tampon, le saut, puis la confirmation ----
+  const ticketIn = root.querySelector('.r4-ticket-in');
+  const confirmSection = root.querySelector('#r4Confirm');
+  const bodyEl = root.querySelector('#r4Body');
+  const heroWrap = root.querySelector('.r4-hero');
+  const stickyEl = root.querySelector('#r4Sticky');
+  const confirmSlotText = root.querySelector('#r4ConfirmSlotText');
+  const confirmParcoursText = root.querySelector('#r4ConfirmParcoursText');
+  const confirmSlotSpan = root.querySelector('[data-confirm-slot]');
+  const confirmN = root.querySelector('[data-confirm-n]');
+
+  if (buyBtn) buyBtn.addEventListener('click', () => {
+    if (buyBtn.disabled) return;
+    buyBtn.disabled = true;
+    if (ticketIn) ticketIn.classList.add('is-paid');
+    if (mkHost) {
+      mkHost.classList.add('jump');
+      mkHost.addEventListener('animationend', () => mkHost.classList.remove('jump'), { once: true });
+    }
+    const r = currentFormat();
+    const isParcours = r.value !== 'seance';
+    const goConfirm = () => {
+      if (heroWrap) heroWrap.hidden = true;
+      if (stickyEl) stickyEl.hidden = true;
+      if (bodyEl) bodyEl.hidden = true;
+      if (confirmSlotText) confirmSlotText.hidden = isParcours;
+      if (confirmParcoursText) confirmParcoursText.hidden = !isParcours;
+      if (confirmSlotSpan) confirmSlotSpan.textContent = chosenSlot || '';
+      if (confirmN) confirmN.textContent = r.value === 'p10' ? '10' : '5';
+      if (confirmSection) {
+        confirmSection.hidden = false;
+        const h = confirmSection.querySelector('h2[id]');
+        if (h) h.focus({ preventScroll: true });
+        confirmSection.scrollIntoView({ behavior: 'auto', block: 'start' });
+      }
+      document.body.classList.remove('r4-ready');
+    };
+    setTimeout(goConfirm, reduce ? 0 : 900);
+  });
+
+  // ---- Bandeau Instagram, ouvrir dans Safari ----
+  const ig = root.querySelector('#r4Ig');
+  const igClose = root.querySelector('#r4IgClose');
+  const ua = navigator.userAgent || '';
+  const isIg = /Instagram|FBAN|FBAV/.test(ua) || params.get('ig') === '1';
+  if (ig && isIg) ig.hidden = false;
+  if (igClose) igClose.addEventListener('click', () => { if (ig) ig.hidden = true; });
+})();
+</script>
+</body>
+</html>
