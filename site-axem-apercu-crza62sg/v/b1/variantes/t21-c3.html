@@ -1,0 +1,1480 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coaching Claude · AXEM IA</title>
+<script>if (/[?&]pal=blanc\b/.test(location.search)) document.documentElement.classList.add('pal-blanc');</script>
+<meta name="description" content="Deux associés qui déploient l'IA dans vos équipes, sur vos vrais dossiers. Conseil, formation et coaching IA à Paris, sans intermédiaire.">
+<link rel="icon" href="../img/favicon-ax-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../img/favicon-ax-180.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="AXEM IA">
+<meta property="og:title" content="AXEM IA, votre partenaire IA de A à Z">
+<meta property="og:description" content="Clément Predo et Alexis Zeitoun déploient l’IA dans vos équipes, sur vos vrais dossiers. Conseil, formation et coaching IA.">
+<meta property="og:url" content="https://axem-ia.fr/">
+<meta property="og:image" content="https://axem-ia.fr/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://axem-ia.fr/">
+<noscript><style>.fade, .rv { opacity: 1 !important; transform: none !important; }</style></noscript>
+<link href="../vendor/fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="../assets/axem.css">
+<link rel="stylesheet" href="../assets/t2.css">
+<meta name="robots" content="noindex">
+<style>
+/* ---- Tour 16 : fluidite. Plus de flou derriere la barre (il se recalculait a chaque image de
+   defilement), le bandeau clients tourne en CSS sur la carte graphique. ---- */
+.nav.solid { background: rgba(250, 246, 234, .97); backdrop-filter: none; -webkit-backdrop-filter: none; }
+.t2 .mq { animation: mq 42s linear infinite; will-change: transform; }
+.marquee:hover .mq { animation-play-state: paused; }
+.mk-svg .mk { filter: none; }
+
+/* ---- Tour 16 : le logo de la barre = le mot « axem IA » de l'ecran bleu, meme police, meme balisage ---- */
+.nav .logo { display: inline-flex; background: transparent; padding: 0; box-shadow: none; }
+.nav .logo .wm { font-size: 38px; color: var(--blue); transition: color .35s var(--ease); }
+.nav .logo .nl span { display: inline-block; font-weight: 900; font-variation-settings: "SOFT" 100, "WONK" 0, "opsz" 144; letter-spacing: -0.02em; }
+.nav .logo:hover { transform: none; box-shadow: none; }
+.nav .logo:hover .wm { color: var(--ink); }
+@media (max-width: 860px) { .nav .logo .wm { font-size: 30px; } }
+
+/* ---- Tour 16 : liens de la barre = de vrais boutons, comme les lignes d'offres. Au survol, une
+   pastille bleue monte du bas, deborde le mot, le texte passe en creme et une fleche sort. ---- */
+.nav .links { gap: 4px; }
+.nav .links a { position: relative; display: inline-flex; align-items: center; gap: 0; padding: 12px 18px; border-radius: 999px; font-size: 15px; font-weight: 600; isolation: isolate; transition: color .35s var(--ease), padding .45s var(--ease); }
+.nav .links a::after { display: none; }
+.nav .links a::before { content: ""; position: absolute; inset: -3px -4px; margin: 0; width: auto; height: auto; border-radius: 999px; background: var(--blue); z-index: -1; transform: scale(.55, 0); transform-origin: 50% 100%; transition: transform .45s var(--ease); flex: none; }
+.nav .links a .na { display: inline-block; width: 0; overflow: hidden; opacity: 0; font-size: 17px; line-height: 1; transform: translateX(-6px) rotate(0); transition: width .45s var(--ease), opacity .3s var(--ease), transform .45s var(--ease), margin .45s var(--ease); }
+.nav .links a:hover, .nav .links a:focus-visible { color: var(--cream); padding-left: 22px; padding-right: 20px; }
+.nav .links a:hover::before, .nav .links a:focus-visible::before { transform: none; }
+.nav .links a:hover .na, .nav .links a:focus-visible .na { width: 16px; margin-left: 8px; opacity: 1; transform: rotate(-45deg); }
+.nav .links a.on { color: var(--blue); }
+.nav .links a.on:hover { color: var(--cream); }
+
+/* ---- Tour 16 : « Reserver un echange offert », un vrai bouton cale a droite. Une grosse fleche
+   dans une pastille creme apparait apres l'arrivee, rebondit de temps en temps pour attirer l'oeil ;
+   au survol le fond encre entre du cote d'ou vient la souris (reflexe s1 Aimant). ---- */
+.nav .book { position: relative; display: inline-flex; align-items: center; gap: 14px; padding: 7px 7px 7px 24px; border: 0; border-radius: 999px; background: var(--blue); color: var(--cream); font-size: 15px; font-weight: 600; letter-spacing: 0; text-transform: none; overflow: hidden; isolation: isolate; --ex: 0%; --ey: 115%; transition: box-shadow .35s var(--ease); }
+.nav .book::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--ink); z-index: -1; transform: translate(var(--ex), var(--ey)); transition: transform 520ms var(--ease); }
+.nav .book:hover::before, .nav .book:focus-visible::before { transform: none; }
+.nav .book::after { display: none; }
+.nav .book .short { display: none; }
+.nav .book .bk-ar { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--cream); color: var(--blue); transform: scale(0) rotate(-90deg); transition: transform .5s var(--ease), color .35s var(--ease); }
+.nav .book .bk-ar svg { width: 20px; height: 20px; display: block; }
+.ready:not(.hold) .nav .book .bk-ar { transform: none; transition: transform .8s cubic-bezier(.34, 1.8, .5, 1) .9s; }
+.ready:not(.hold) .nav .book .bk-ar svg { animation: bkBounce 3.2s cubic-bezier(.3, 0, .2, 1) 2.2s infinite; }
+@keyframes bkBounce { 0%, 62%, 100% { transform: translateX(0); } 70% { transform: translateX(6px); } 78% { transform: translateX(-2px); } 86% { transform: translateX(4px); } 93% { transform: translateX(0); } }
+.nav .book:hover .bk-ar { transform: rotate(-45deg) scale(1.08); transition-delay: 0s; }
+.nav .book:hover .bk-ar svg { animation: none; }
+@media (max-width: 860px) {
+  .nav .book { gap: 10px; padding: 5px 5px 5px 16px; font-size: 14px; }
+  .nav .book .long { display: none; }
+  .nav .book .short { display: inline; }
+  .nav .book .bk-ar { width: 34px; height: 34px; }
+  .nav .book .bk-ar svg { width: 17px; height: 17px; }
+}
+@media (prefers-reduced-motion: reduce) { .ready .nav .book .bk-ar svg { animation: none !important; } }
+
+/* ---- Tour 16 : hero s1 range. Titre remonte, bouton cale sur le bord droit de la grille, « c'est
+   ici » plus gros, pose sous le bouton et toujours visible, schema et chiffres en pied de hero. ---- */
+@media (min-width: 861px) {
+  .home .hero.mk3 { justify-content: flex-start; padding-top: clamp(112px, 17svh, 176px); }
+  .home .hero.mk3 { min-height: 0; height: auto; padding-bottom: clamp(40px, 6svh, 64px); }
+  .hero.mk3 .mk-row { margin-top: clamp(120px, 19svh, 190px); padding-top: 0; }
+  .hero.mk3 .l2 { justify-content: space-between; }
+  .hero.mk3 .side { margin-left: auto; align-items: flex-end; max-width: none; }
+  .hero.mk3 .side .btn { align-self: flex-end !important; }
+}
+.hero.mk3 .btn { font-size: 17px; padding: 22px 32px; }
+.mk-note-btn { font-size: 30px; }
+@media (max-width: 860px) { .mk-note-btn { font-size: 22px; } }
+
+/* ---- Tour 17 : socle commun aux 6 pages (v1 v2 v3 d1 d2 d3), injecte par le build juste apres
+   nav.css et avant le CSS propre a chaque page. Regle de Clement : un seul bouton Reserver visible
+   a la fois, plus le bouton son, plus l'habillage du pied de page legal. ---- */
+
+/* Reserver un seul a la fois (regle Clement, tour 17). La barre garde un bouton .book (nav.css) ;
+   il est masque tant que le grand bouton du hero est a l'ecran, invisible sur les pages duo car
+   elles n'ont pas de hero : voir base17.js. Aujourd'hui assets/axem.js masque toute la barre au
+   defilement vers le bas (classe .hide, assets/axem.css ligne 39) : on neutralise ce comportement
+   ici, la barre du tour 17 ne se cache plus jamais. */
+.t17 .nav.hide { transform: none; }
+
+.t17 .nav .book[data-book] { transition: opacity .4s var(--ease), transform .4s var(--ease); }
+.t17 .nav .book[data-book].rs-hidden { opacity: 0; transform: translateY(-10px); pointer-events: none; }
+.t17 .nav .book[data-book].rs-show { opacity: 1; transform: none; }
+
+/* Bouton son : egaliseur discret en bas a gauche, coupe par defaut. Barres immobiles quand coupe,
+   ondulent (scaleY, CSS pur) quand actif. Ne tourne jamais tant que le bouton n'est pas active :
+   c'est une animation CSS bornee par la classe .on, pas une boucle JS permanente. */
+.t17 .snd-btn { position: fixed; left: 18px; bottom: 18px; z-index: 56; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: rgba(250, 246, 234, .88); display: grid; place-items: center; cursor: pointer; padding: 0; transition: background-color .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease); }
+.t17 .snd-btn:hover { border-color: var(--blue); transform: translateY(-2px); }
+.t17 .snd-btn:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.t17 .snd-bars { display: flex; align-items: center; justify-content: center; gap: 3px; width: 18px; height: 16px; pointer-events: none; }
+.t17 .snd-bars i { display: block; width: 2.5px; height: 100%; border-radius: 2px; background: var(--ink); transform: scaleY(.28); transform-origin: center; transition: background-color .3s var(--ease); }
+.t17 .snd-btn.on .snd-bars i { background: var(--blue); animation: t17SndWave 1.15s ease-in-out infinite; }
+.t17 .snd-btn.on .snd-bars i:nth-child(1) { animation-delay: 0s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(2) { animation-delay: .18s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(3) { animation-delay: .36s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(4) { animation-delay: .12s; }
+@keyframes t17SndWave { 0%, 100% { transform: scaleY(.28); } 50% { transform: scaleY(1); } }
+/* le bandeau de maquette se range a droite du bouton son, jamais dessous */
+.t17 .proto { left: 76px; bottom: 24px; }
+@media (max-width: 860px) { .t17 .snd-btn { left: 14px; bottom: 14px; width: 40px; height: 40px; } }
+@media (max-width: 860px) and (min-width: 701px) { .t17 .proto { left: 68px; bottom: 20px; } }
+@media (prefers-reduced-motion: reduce) { .t17 .snd-btn.on .snd-bars i { animation: none !important; } }
+
+/* Pied de page legal : une ligne sous le meta existant (axem-ia.fr / Paris / Reserver), au-dessus du
+   mot-symbole geant. Le meta original (footer .meta, assets/axem.css ligne 146) est en position
+   absolue a taille fixe ; sur mobile il retombe sur 2 lignes (peu de largeur pour 3 items), ce qui
+   ferait chevaucher une ligne suivante a decalage fixe. On enveloppe donc meta + legal-links dans un
+   bloc .ft-top en flux normal (empile en colonne), et on neutralise le positionnement absolu du
+   meta a l'interieur : la ligne des liens legaux suit toujours meta, jamais de chevauchement. */
+.t17 footer .ft-top { position: absolute; top: 28px; left: var(--gutter); right: var(--gutter); display: flex; flex-direction: column; gap: 10px; }
+.t17 footer .ft-top .meta { position: static; top: auto; left: auto; right: auto; flex-wrap: wrap; row-gap: 6px; }
+.t17 footer .legal-links { position: static; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 11px; font-weight: 600; letter-spacing: .04em; margin: 0; }
+.t17 footer .legal-links a { color: rgba(250, 246, 234, .62); text-decoration: none; transition: color .25s var(--ease); }
+.t17 footer .legal-links a:hover, .t17 footer .legal-links a:focus-visible { color: var(--blue); }
+@media (max-width: 860px) { .t17 footer .ft-top { gap: 8px; } .t17 footer .legal-links { gap: 5px 16px; } }
+
+/* Pages juridiques (mentions-legales.html, confidentialite.html) : mise en page simple, DA du site. */
+.t17-legal { max-width: 760px; margin: 0 auto; padding: clamp(90px, 12vh, 140px) var(--gutter) 120px; }
+.t17-legal .back { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--blue); margin-bottom: 48px; }
+.t17-legal .back:hover, .t17-legal .back:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.t17-legal h1 { font-size: clamp(32px, 5vw, 48px); margin: 0 0 8px; }
+.t17-legal .maj { font-size: 13px; color: var(--grey); margin: 0 0 48px; }
+.t17-legal h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(20px, 2.4vw, 26px); margin: 44px 0 14px; }
+.t17-legal p { font-size: 16px; line-height: 1.65; color: var(--grey); margin: 0 0 14px; }
+.t17-legal a { color: var(--blue); }
+.t17-legal a:hover, .t17-legal a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.t17-legal .todo { color: var(--blue); font-weight: 600; }
+
+/* Tour 19, commun a toutes les pages : le monogramme ax (enregistre par Clement le 25/09) en logo de la
+   barre des pages duo et reservation, et la barre de prototype en bas a gauche. */
+.axm { display: inline-block; width: 46px; height: 31px; vertical-align: middle; background: var(--blue); -webkit-mask: url(../img/logo-ax-mask.png) center / contain no-repeat; mask: url(../img/logo-ax-mask.png) center / contain no-repeat; transition: transform 0.4s var(--ease); }
+.nav .logo:hover .axm, .nav .logo:focus-visible .axm { transform: rotate(-8deg) scale(1.08); }
+.t19 .proto { position: fixed; left: 76px; bottom: 24px; z-index: 55; margin: 0; font: 500 12px/1 "Instrument Sans", sans-serif; background: var(--ink); color: var(--cream); padding: 8px 12px; }
+.t19 .proto a { margin-left: 12px; color: var(--cream); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+@media (max-width: 700px) {
+  .t19 .proto { position: static; display: block; width: auto; line-height: 1.6; margin: 14px var(--gutter) 18px; }
+}
+
+/* Tour 20 : reglages communs. */
+/* Pages de paiement : le bouton son recouvrait le prix de la barre collante, il n'a pas de role au moment de payer. */
+.t20-r1 .snd-btn, .t20-r2 .snd-btn, .t20-r3 .snd-btn { display: none !important; }
+/* Pages de paiement : le bandeau de maquette masquait le prix de la barre collante du bas, il remonte sous la nav. */
+@media (min-width: 701px) { .t20-r1 .proto, .t20-r2 .proto, .t20-r3 .proto { top: 84px; bottom: auto; left: auto; right: 24px; } }
+
+/* Tour 21 : reglages communs. */
+.t21 .is-provisoire { position: relative; }
+.t21 .is-provisoire::before { content: "Photo provisoire : la scène arrive"; position: absolute; z-index: 3; top: 10px; left: 10px; padding: 4px 9px; border-radius: 999px; background: #0E0F1A; color: #FBF8F1; font: 600 11px/1.3 "Instrument Sans", system-ui, sans-serif; letter-spacing: .02em; pointer-events: none; }
+
+/* Tour 21, coaching c3 : "Branchez Claude à vos outils." Refonte niveau showreel (26/09/2026) : le
+   défilement devient le spectacle (voir c3.js), un seul moment fort épinglé (.c3-stage.is-stage,
+   1 pin ScrollTrigger) où les câbles se tracent un par un, un compteur avance, puis le schéma se
+   replie sur une scène de travail réelle avec en fond une vidéo motion design du showreel. Sans JS
+   ou en prefers-reduced-motion : tout reste visible en flux normal (fallback complet, voir plus
+   bas). Trois formats côte à côte repris de outils/t20/k3.css lignes 190 à 252, rendu plus net
+   (bordure fine plutôt que carte sombre, ombre légère). Scopé sous .t21-c3, comme demandé par
+   BRIEF-T21.md. Couleurs : crème, bleu, encre ; l'orange #D97757 ne sert qu'au logo Claude. */
+
+.t21-c3 .c3 {
+  --c3-line: rgba(11, 13, 18, .14);
+  --c3-dim: rgba(11, 13, 18, .62);
+  --c3-orange: #D97757;
+  position: relative;
+  padding-top: clamp(118px, 16vh, 160px);
+  padding-bottom: clamp(80px, 10vw, 130px);
+  background: var(--cream);
+  color: var(--ink);
+}
+
+.t21-c3 .c3-inner { max-width: 1180px; margin-left: auto; margin-right: auto; padding-left: var(--gutter); padding-right: var(--gutter); box-sizing: border-box; }
+
+/* ---------------------------------------------------------------------------------------- Retour */
+.t21-c3 .c3-back { display: inline-flex; align-items: center; gap: 8px; margin-bottom: clamp(28px, 4vw, 44px); font-size: 13px; font-weight: 600; color: var(--c3-dim); }
+.t21-c3 .c3-back:hover, .t21-c3 .c3-back:focus-visible { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ------------------------------------------------------------------------------------------ Hero */
+.t21-c3 .c3-hero { display: flex; flex-direction: column; gap: 18px; margin-bottom: clamp(56px, 8vw, 96px); }
+.t21-c3 .c3-eyebrow { color: var(--blue); }
+.t21-c3 .c3-hero h1 { font-size: clamp(40px, 7vw, 84px); margin: 0; max-width: 16ch; }
+.t21-c3 .c3-hero h1 .i { color: var(--blue); }
+.t21-c3 .c3-lead { max-width: 56ch; font-size: clamp(16px, 1.6vw, 19px); line-height: 1.55; color: var(--c3-dim); margin: 0; }
+.t21-c3 .c3-meta { list-style: none; margin: 8px 0 0; padding: 0; display: flex; flex-wrap: wrap; gap: 10px 14px; }
+.t21-c3 .c3-meta li { display: flex; align-items: center; padding: 10px 16px; border-radius: 999px; border: 1px solid var(--c3-line); font-size: 13.5px; color: var(--c3-dim); }
+.t21-c3 .c3-meta li b { color: var(--ink); font-weight: 700; margin: 0 2px; }
+
+/* --------------------------------------------------------------------------------- Le schéma : socle */
+.t21-c3 .c3-board-wrap { position: relative; }
+.t21-c3 .c3-board-cap { display: flex; flex-wrap: wrap; align-items: baseline; gap: 8px 16px; color: var(--c3-dim); margin: 0 0 24px; }
+.t21-c3 .c3-since { font-weight: 600; letter-spacing: 0; text-transform: none; color: var(--blue); font-size: 12px; }
+
+.t21-c3 .c3-board {
+  position: relative;
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  grid-template-areas: "tools core bricks";
+  align-items: center;
+  gap: clamp(16px, 4vw, 56px);
+  min-height: 420px;
+  padding: clamp(28px, 5vw, 48px) clamp(16px, 4vw, 40px);
+  border: 1px solid var(--c3-line);
+  border-radius: 28px;
+  background: rgba(11, 13, 18, .025);
+}
+
+.t21-c3 .c3-cables { position: absolute; inset: 0; width: 100%; height: 100%; z-index: 0; overflow: visible; }
+.t21-c3 .c3-cable-ghost { fill: none; stroke: rgba(11, 13, 18, .16); stroke-width: 1.6; }
+.t21-c3 .c3-cable-bold { fill: none; stroke: var(--blue); stroke-width: 2.6; stroke-linecap: round; transition: stroke-dashoffset .5s var(--ease); }
+.t21-c3 .c3-cables.c3-no-anim .c3-cable-bold { transition: none; }
+
+.t21-c3 .c3-col { position: relative; z-index: 1; display: grid; grid-template-columns: 1fr; gap: 12px; }
+.t21-c3 .c3-col-tools { grid-area: tools; justify-self: end; }
+.t21-c3 .c3-col-bricks { grid-area: bricks; justify-self: start; }
+.t21-c3 .c3-col-cap { margin: 0 0 4px; color: var(--c3-dim); }
+.t21-c3 .c3-col-tools .c3-col-cap { text-align: right; }
+.t21-c3 .c3-col-bricks .c3-col-cap { text-align: left; }
+
+.t21-c3 .c3-pill {
+  appearance: none; border: 1px solid var(--c3-line); background: var(--cream); color: var(--ink);
+  border-radius: 999px; padding: 12px 22px; min-height: 48px; width: 100%; max-width: 210px;
+  display: flex; align-items: center; justify-content: center; white-space: nowrap;
+  font: 700 14px "Instrument Sans", sans-serif; cursor: pointer;
+  transition: background-color .25s var(--ease), border-color .25s var(--ease), color .25s var(--ease), transform .18s var(--ease);
+}
+.t21-c3 .c3-col-tools .c3-pill { margin-left: auto; }
+.t21-c3 .c3-col-bricks .c3-pill { margin-right: auto; }
+.t21-c3 .c3-pill:hover, .t21-c3 .c3-pill:focus-visible, .t21-c3 .c3-pill.on { background: var(--blue); border-color: var(--blue); color: var(--cream); transform: translateY(-2px); }
+.t21-c3 .c3-pill:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.t21-c3 .c3-pill:active { transform: translateY(0) scale(.96); }
+
+.t21-c3 .c3-core { grid-area: core; position: relative; z-index: 2; width: clamp(112px, 13vw, 150px); height: clamp(112px, 13vw, 150px); border-radius: 50%; background: var(--ink); display: flex; flex-direction: column; align-items: center; justify-content: center; gap: 8px; box-shadow: 0 18px 40px rgba(11, 13, 18, .28); }
+.t21-c3 .c3-core-mk { display: block; width: 44%; height: 44%; }
+.t21-c3 .c3-core-lbl { font: 700 12px "Instrument Sans", sans-serif; letter-spacing: .08em; text-transform: uppercase; color: var(--cream); opacity: .82; }
+
+/* --------------------------------------------------------------------- La mise en scène au défilement */
+.t21-c3 .c3-stage { position: relative; }
+.t21-c3 .c3-layers { display: flex; flex-direction: column; gap: 24px; }
+.t21-c3 .c3-board-layer { display: flex; flex-direction: column; gap: 20px; }
+.t21-c3 .c3-counter { margin: 0; text-align: center; font: 700 13px "Instrument Sans", sans-serif; letter-spacing: .02em; color: var(--blue); min-height: 1.4em; }
+
+/* Mode spectacle : posé en JS seulement si GSAP + ScrollTrigger + pas de reduced-motion */
+.t21-c3 .c3-stage.is-stage { min-height: 100vh; overflow: hidden; }
+.t21-c3 .c3-stage.is-stage .c3-layers { position: absolute; inset: 0; display: block; }
+.t21-c3 .c3-stage.is-stage .c3-board-layer { position: absolute; inset: 0; display: flex; flex-direction: column; justify-content: center; gap: 16px; padding: 84px 0 96px; box-sizing: border-box; will-change: transform, opacity; }
+.t21-c3 .c3-stage.is-stage .c3-board-layer > * { flex: none; }
+.t21-c3 .c3-stage.is-stage .c3-board { min-height: 0; }
+.t21-c3 .c3-stage.is-stage .c3-scene { position: absolute; inset: 0; opacity: 0; display: flex; align-items: center; justify-content: center; padding: 24px; box-sizing: border-box; will-change: transform, opacity; }
+
+.t21-c3 .c3-scene { position: relative; min-height: 380px; border-radius: 28px; overflow: hidden; display: flex; align-items: center; justify-content: center; background: var(--ink); }
+.t21-c3 .c3-scene-bg { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .32; }
+.t21-c3 .c3-scene-veil { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11, 13, 18, .35), rgba(11, 13, 18, .8)); }
+.t21-c3 .c3-scene-card { position: relative; z-index: 1; max-width: 620px; width: 100%; margin: 0 auto; padding: clamp(24px, 4vw, 40px); box-sizing: border-box; color: var(--cream); }
+.t21-c3 .c3-scene-tag { margin: 0 0 18px; text-align: center; font: 700 11px "Instrument Sans", sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--c3-orange); }
+.t21-c3 .c3-scene-chat { display: flex; flex-direction: column; gap: 14px; }
+.t21-c3 .c3-msg { margin: 0; padding: 14px 18px; border-radius: 18px; font-size: 14.5px; line-height: 1.55; box-sizing: border-box; }
+.t21-c3 .c3-msg b { display: block; font-size: 11px; letter-spacing: .08em; text-transform: uppercase; margin-bottom: 4px; opacity: .7; }
+.t21-c3 .c3-msg-user { align-self: flex-end; max-width: 86%; background: var(--blue); color: var(--cream); }
+.t21-c3 .c3-msg-claude { display: flex; gap: 12px; align-items: flex-start; max-width: 96%; background: rgba(250, 246, 234, .08); border: 1px solid rgba(250, 246, 234, .16); }
+.t21-c3 .c3-msg-claude b { display: none; }
+.t21-c3 .c3-msg-mk { display: block; flex: none; width: 22px; height: 22px; margin-top: 2px; }
+
+/* ---------------------------------------------------------------------------------------- Panneau */
+.t21-c3 .c3-panel { max-width: 620px; margin: 28px auto 0; padding: 18px 26px; border-radius: 20px; background: var(--ink); color: var(--cream); text-align: center; min-height: 92px; display: flex; flex-direction: column; justify-content: center; gap: 6px; }
+.t21-c3 .c3-panel-lbl { margin: 0; font: 700 11px "Instrument Sans", sans-serif; letter-spacing: .14em; text-transform: uppercase; color: var(--c3-orange); }
+.t21-c3 .c3-panel-txt { margin: 0; font-size: 15px; line-height: 1.55; }
+
+/* ------------------------------------------------------------------------------------ Tout brancher */
+.t21-c3 .c3-all-btn { position: relative; display: flex; align-items: center; justify-content: center; gap: 10px; margin: 22px auto 0; padding: 15px 28px; border: 0; border-radius: 999px; background: var(--blue); color: var(--cream); font: 700 14.5px "Instrument Sans", sans-serif; cursor: pointer; box-shadow: 0 10px 24px rgba(35, 73, 255, .3); }
+.t21-c3 .c3-all-btn.on { background: var(--ink); }
+.t21-c3 .c3-all-btn:focus-visible { outline: 2px solid var(--ink); outline-offset: 3px; }
+.t21-c3 .c3-all-ar { display: flex; width: 16px; height: 16px; }
+.t21-c3 .c3-all-ar svg { width: 100%; height: 100%; }
+
+/* Éclat de petits logos Claude, retiré après coup, borné dans le temps */
+.t21-c3 .c3-burst { position: fixed; z-index: 90; width: 18px; height: 18px; pointer-events: none; opacity: 0; }
+
+/* ------------------------------------------------------------------- Le coaching en 25 secondes */
+.t21-c3 .c3-explainer { margin-top: clamp(72px, 10vw, 120px); text-align: center; }
+.t21-c3 .c3-explainer-cap { color: var(--c3-dim); margin: 0 0 22px; }
+.t21-c3 .c3-explainer-frame { position: relative; max-width: 860px; margin: 0 auto; aspect-ratio: 16 / 9; border-radius: 24px; overflow: hidden; background: var(--ink); box-shadow: 0 24px 60px rgba(11, 13, 18, .18); }
+.t21-c3 .c3-explainer-video { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; display: block; background: transparent; }
+.t21-c3 .c3-explainer-play { position: absolute; top: 50%; left: 50%; transform: translate(-50%, -50%); width: 72px; height: 72px; border: 0; border-radius: 50%; background: var(--blue); color: var(--cream); display: flex; align-items: center; justify-content: center; cursor: pointer; box-shadow: 0 14px 34px rgba(11, 13, 18, .32); transition: transform .25s var(--ease), background-color .25s var(--ease); }
+.t21-c3 .c3-explainer-play:hover, .t21-c3 .c3-explainer-play:focus-visible { transform: translate(-50%, -50%) scale(1.08); background: var(--ink); }
+.t21-c3 .c3-explainer-play svg { width: 28px; height: 28px; margin-left: 3px; }
+.t21-c3 .c3-explainer-soon { position: absolute; left: 50%; bottom: 18px; transform: translateX(-50%); margin: 0; padding: 8px 16px; border-radius: 999px; background: rgba(11, 13, 18, .55); color: var(--cream); font: 600 12px "Instrument Sans", sans-serif; }
+
+/* --------------------------------------------------------------------------------------- Résultats */
+.t21-c3 .c3-results { margin-top: clamp(72px, 10vw, 120px); text-align: center; }
+.t21-c3 .c3-results-cap { color: var(--c3-dim); margin: 0 0 30px; }
+.t21-c3 .c3-results-list { list-style: none; margin: 0 auto; padding: 0; max-width: 760px; display: flex; flex-direction: column; gap: 22px; text-align: left; }
+.t21-c3 .c3-results-list li { position: relative; padding-left: 60px; cursor: pointer; border-radius: 8px; }
+.t21-c3 .c3-results-list li:focus-visible { outline: 2px solid var(--blue); outline-offset: 8px; }
+.t21-c3 .c3-results-list li::before { content: attr(data-n); position: absolute; left: 0; top: -2px; width: 42px; height: 42px; border-radius: 999px; border: 1px solid var(--c3-line); color: var(--blue); font: 700 12.5px "Instrument Sans", sans-serif; display: flex; align-items: center; justify-content: center; transition: background-color .2s var(--ease), border-color .2s var(--ease), color .2s var(--ease); }
+.t21-c3 .c3-results-list li:hover::before, .t21-c3 .c3-results-list li:focus-visible::before { background: var(--blue); border-color: var(--blue); color: var(--cream); }
+.t21-c3 .c3-results-list b { display: block; font-size: clamp(19px, 2.2vw, 24px); margin: 0 0 4px; }
+.t21-c3 .c3-results-list span { display: block; color: var(--c3-dim); font-size: 15.5px; line-height: 1.55; max-width: 58ch; }
+
+/* ----------------------------------------------------------------------------- Les trois formats */
+.t21-c3 .c3-formats { margin-top: clamp(80px, 10vw, 130px); }
+.t21-c3 .c3-formats-cap { text-align: center; display: block; color: var(--c3-dim); margin: 0 0 28px; }
+.t21-c3 .c3-keys { display: grid; grid-template-columns: repeat(3, 1fr); gap: 20px; align-items: stretch; }
+
+.t21-c3 .c3-key {
+  position: relative; display: flex; flex-direction: column; gap: 10px;
+  background: var(--cream); color: var(--ink); border: 1px solid var(--c3-line);
+  border-radius: 22px; padding: 26px 24px 24px;
+  box-shadow: 0 1px 0 var(--c3-line);
+  transform: translateY(0);
+  transition: transform .2s var(--ease), box-shadow .2s var(--ease), border-color .2s var(--ease);
+  will-change: transform;
+}
+.t21-c3 .c3-key:hover, .t21-c3 .c3-key:focus-within { transform: translateY(-5px); border-color: var(--blue); box-shadow: 0 20px 34px rgba(11, 13, 18, .12); }
+.t21-c3 .c3-key.c3-press { transform: translateY(2px); box-shadow: 0 1px 0 var(--c3-line); }
+
+.t21-c3 .c3-key-top { display: flex; align-items: center; gap: 10px; }
+.t21-c3 .c3-key-mk { display: block; width: 26px; height: 26px; flex: none; }
+.t21-c3 .c3-key-top h3 { font-size: clamp(19px, 2vw, 23px); margin: 0; }
+.t21-c3 .c3-key-tag { font-size: 13.5px; color: var(--c3-dim); margin: 0; }
+.t21-c3 .c3-key-price { display: flex; align-items: baseline; gap: 2px; margin: 6px 0 0; font: 700 clamp(34px, 4vw, 44px) "Instrument Sans", sans-serif; }
+.t21-c3 .c3-key-price small { font-size: 13.5px; font-weight: 600; color: var(--c3-dim); }
+.t21-c3 .c3-price-num { position: relative; display: inline-block; }
+.t21-c3 .c3-reel-fx { position: absolute; inset: 0; display: flex; opacity: 0; pointer-events: none; }
+.t21-c3 .c3-reel-col { position: relative; overflow: hidden; height: 1em; }
+.t21-c3 .c3-reel-strip { position: absolute; left: 0; top: 0; display: flex; flex-direction: column; }
+.t21-c3 .c3-reel-strip span { display: block; height: 1em; line-height: 1; }
+
+.t21-c3 .c3-key-detail { font-size: 13.5px; line-height: 1.5; color: var(--c3-dim); flex: 1; margin: 0; }
+
+.t21-c3 .c3-key-btn {
+  position: relative; align-self: flex-start; display: inline-flex; align-items: center; gap: 10px;
+  margin-top: 6px; padding: 13px 20px; border-radius: 999px; background: var(--ink); color: var(--cream);
+  font: 700 13.5px "Instrument Sans", sans-serif; overflow: visible;
+}
+.t21-c3 .c3-key-btn:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.t21-c3 .c3-key-ar { display: flex; width: 16px; height: 16px; }
+.t21-c3 .c3-key-ar svg { width: 100%; height: 100%; }
+
+.t21-c3 .c3-fine { margin-top: 30px; text-align: center; font-size: 13px; color: var(--c3-dim); max-width: 640px; margin-left: auto; margin-right: auto; }
+
+/* ------------------------------------------------------------------------------------- Révélations */
+.t21-c3 .rv { transition: opacity .6s var(--ease), transform .6s var(--ease); transition-delay: var(--d, 0ms); }
+.t21-c3 .c3-hide { opacity: 0; transform: translateY(18px); }
+.t21-c3 .c3-hide.on { opacity: 1; transform: none; }
+
+/* ------------------------------------------------------------------------------------------ Mobile */
+@media (max-width: 860px) {
+  .t21-c3 .c3-hero h1 { max-width: none; }
+  .t21-c3 .c3-board { grid-template-columns: 1fr; grid-template-areas: "core" "tools" "bricks"; row-gap: 28px; min-height: 0; padding: 28px 16px 32px; }
+  .t21-c3 .c3-core { justify-self: center; width: 108px; height: 108px; }
+  .t21-c3 .c3-col-tools, .t21-c3 .c3-col-bricks { justify-self: stretch; }
+  /* Les câbles verticaux (pathV) montent des pastilles vers Claude en traversant la ligne de
+     l'intitulé de colonne : un fond (même teinte que le socle du schéma) posé sous le texte les
+     fait passer derrière proprement, au lieu de les laisser barrer les lettres. */
+  .t21-c3 .c3-col-tools .c3-col-cap, .t21-c3 .c3-col-bricks .c3-col-cap { text-align: center; position: relative; z-index: 1; background: rgba(11, 13, 18, .025); padding: 3px 0; margin: 0 0 1px; }
+  .t21-c3 .c3-pills { display: grid; grid-template-columns: repeat(2, 1fr); gap: 10px; }
+  .t21-c3 .c3-pill { max-width: none; margin: 0 !important; }
+  .t21-c3 .c3-keys { grid-template-columns: 1fr; }
+  .t21-c3 .c3-formats { margin-top: 64px; }
+  .t21-c3 .c3-all-btn { width: 100%; }
+  /* Schéma vertical : les 12 câbles gris en permanence font un fouillis entre et sous les pastilles.
+     Seul le câble de l'outil actif (bold, tracé via JS) reste visible. */
+  .t21-c3 .c3-cable-ghost { opacity: 0; }
+  .t21-c3 .c3-stage.is-stage { min-height: 100svh; }
+  .t21-c3 .c3-stage.is-stage .c3-board-layer { gap: 9px; padding: 86px 0 68px; }
+  .t21-c3 .c3-stage.is-stage .c3-board { padding: 14px 16px 16px; }
+  .t21-c3 .c3-stage.is-stage .c3-pills { gap: 7px; }
+  .t21-c3 .c3-stage.is-stage .c3-pill { min-height: 40px; padding: 8px 14px; font-size: 12.5px; }
+  .t21-c3 .c3-stage.is-stage .c3-core { width: 84px; height: 84px; }
+  .t21-c3 .c3-stage.is-stage .c3-panel { min-height: 0; padding: 12px 18px; }
+  .t21-c3 .c3-stage.is-stage .c3-panel-txt { font-size: 13px; }
+  .t21-c3 .c3-stage.is-stage .c3-all-btn { margin-top: 0; padding: 12px 22px; }
+  .t21-c3 .c3-scene { min-height: 320px; }
+  .t21-c3 .c3-scene-card { padding: 20px; }
+  .t21-c3 .c3-msg { font-size: 13.5px; padding: 12px 15px; }
+}
+
+/* ------------------------------------------------------------------------------- Réduction du mouvement */
+@media (prefers-reduced-motion: reduce) {
+  .t21-c3 .rv { transition: none !important; }
+  .t21-c3 .c3-cable-bold { transition: none !important; }
+  .t21-c3 .c3-pill, .t21-c3 .c3-key, .t21-c3 .c3-key-btn, .t21-c3 .c3-all-btn, .t21-c3 .claude-mark-root { transition: none !important; animation: none !important; }
+  /* Le spectacle épinglé n'est jamais activé en JS quand reduced-motion est vrai (voir c3.js), mais
+     ce filet de sécurité garde tout lisible si la classe est malgré tout posée. */
+  .t21-c3 .c3-stage.is-stage { min-height: 0; display: block; }
+  .t21-c3 .c3-stage.is-stage .c3-board-layer { position: static; }
+  .t21-c3 .c3-stage.is-stage .c3-scene { position: static; opacity: 1 !important; margin-top: 24px; }
+}
+</style>
+</head>
+<body class="t17 t18 t19 t20 t21 t19-c3 t20-c3 t21-c3">
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="nav" id="nav">
+  <a href="../index.html" class="logo" aria-label="AXEM IA, accueil"><span class="axm" aria-hidden="true"></span></a>
+  <nav class="links" aria-label="Navigation principale">
+    <a href="#offres">Conseil<span class="na" aria-hidden="true">→</span></a><a href="#offres">Formation<span class="na" aria-hidden="true">→</span></a><a href="../coaching/">Coaching<span class="na" aria-hidden="true">→</span></a><a href="#duo">Le duo<span class="na" aria-hidden="true">→</span></a>
+  </nav>
+  <a href="#" class="book" data-book><span class="long">Réserver un échange offert</span><span class="short">Réserver</span><span class="bk-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a>
+</header>
+
+<main id="main">
+<!--
+  Tour 21, page coaching c3 : "Branchez Claude à vos outils." Refonte niveau showreel (26/09/2026,
+  demande verbatim de Clément : "pas assez Awwwards au scroll, pas assez d'effet wow [...] go all
+  out"). Le schéma de branchement reste (Claude au centre, "Vos outils" à gauche, "Claude s'équipe"
+  à droite), mais le DÉFILEMENT devient le spectacle : un seul moment fort épinglé (1 pin) où les
+  câbles se tracent un par un vers Claude, un compteur avance ("1 outil branché" à "6 outils
+  branchés"), le symbole Claude rebondit à chaque branchement, puis tout le schéma se replie pour
+  laisser place à une scène de travail réelle (une demande en français, la réponse de Claude qui
+  cite les outils branchés), avec en fond une des vidéos motion design du showreel
+  (showreel/media/reel-2-champ, un champ de points qui illustre le réseau de connexions).
+
+  Fallback sans JS / prefers-reduced-motion : le schéma, le panneau, le bouton "Tout brancher" et la
+  scène de travail restent tous visibles en flux normal, empilés, aucune information perdue.
+
+  Après le schéma : un emplacement vidéo 16/9 mis en valeur, "Le coaching en 25 secondes", affiche
+  reel-3-plan-sequence.jpg. La vidéo réelle (coaching-25s.mp4) n'est testée (HEAD fetch) qu'au clic
+  sur "Lire" : elle arrive plus tard, donc tant qu'elle n'existe pas, l'affiche reste et aucune
+  requête n'est jamais faite au chargement de la page (donc aucune erreur au chargement).
+
+  Vocabulaire vérifié le 26/09/2026 par WebSearch et WebFetch sur les pages officielles, aucun outil
+  ni aucune fonction Claude inventée. Sources par terme :
+  - Gmail, Google Drive, Google Agenda : connecteurs natifs Google Workspace, disponibles sur tous
+    les plans Claude, y compris gratuit :
+    https://support.claude.com/en/articles/10166901-use-google-workspace-connectors
+  - Notion et Slack : connecteurs vérifiés Anthropic, place de marché des connecteurs :
+    https://www.claude.com/connectors
+  - Connecteurs, fonctionnement général (protocole MCP) :
+    https://support.claude.com/en/articles/11176164-use-connectors-to-extend-claude-s-capabilities
+  - Excel : ce n'est pas un connecteur classique, on le dit honnêtement dans le panneau. Il se
+    branche par l'extension officielle "Claude pour Excel" (Claude for Microsoft 365) :
+    https://support.claude.com/en/articles/12650343-use-claude-for-excel et
+    https://claude.com/claude-for-microsoft-365
+  - Skills : dossiers d'instructions que Claude charge à la demande :
+    https://platform.claude.com/docs/en/agents-and-tools/agent-skills/overview
+  - Cowork : Claude travaille seul sur un dossier et revient avec le résultat fini :
+    https://www.anthropic.com/product/claude-cowork et
+    https://support.claude.com/en/articles/13345190-get-started-with-claude-cowork
+  - Claude in Chrome : extension officielle, Claude agit dans le navigateur :
+    https://claude.com/claude-in-chrome et
+    https://support.claude.com/en/articles/12012173-get-started-with-claude-in-chrome
+  - Projets : espace qui garde documents et instructions à disposition :
+    https://support.claude.com/en/articles/9517075-what-are-projects
+  - MCP (Model Context Protocol) : protocole ouvert créé par Anthropic :
+    https://www.anthropic.com/news/model-context-protocol et https://modelcontextprotocol.io
+
+  Contenu coaching (prix, déroulé des séances, règle dégressive) : outils/t19/BRIEF-T19.md et
+  matiere/coaching-argumentaire.md. Aucun chiffre au delà de la liste autorisée par BRIEF-T21.md.
+-->
+<section class="c3" aria-labelledby="c3-h">
+
+  <div class="grid" id="grid" aria-hidden="true"></div>
+
+  <a class="c3-back c3-inner" href="../index.html"><span aria-hidden="true">&larr;</span> Retour à l'accueil</a>
+
+  <header class="c3-hero c3-inner">
+    <p class="cap c3-eyebrow rv">Coaching individuel &middot; sur Claude</p>
+    <h1 class="f" id="c3-h">Branchez Claude<br><span class="i">à vos outils.</span></h1>
+    <p class="c3-lead rv">Une heure en visio, avec Clément Predo ou Alexis Zeitoun. Claude s'installe dans ce que vous utilisez déjà, et se règle sur votre métier, en direct sous vos yeux.</p>
+    <ul class="c3-meta rv">
+      <li><b>1&#8202;h</b> en visio</li>
+      <li>Séance seule, ou parcours de <b>5</b> ou <b>10</b></li>
+      <li>À partir de <b>200&#8202;€ HT</b> la séance</li>
+      <li>Prérequis&#8202;: Claude Pro, environ <b>20&#8202;€</b> par mois</li>
+    </ul>
+  </header>
+
+  <div class="c3-board-wrap c3-inner">
+    <h2 class="cap c3-board-cap rv">Le schéma de branchement <span class="c3-since">Sur Claude depuis 2023</span></h2>
+
+    <div class="c3-stage" id="c3Stage">
+      <div class="c3-layers" id="c3Layers">
+
+        <div class="c3-board-layer" id="c3BoardLayer">
+          <p class="c3-counter" id="c3Counter" aria-live="polite">Douze branchements possibles, un par un en séance.</p>
+
+          <div class="c3-board" id="c3Board">
+            <svg class="c3-cables" id="c3Cables" viewBox="0 0 100 100" preserveAspectRatio="none" aria-hidden="true" focusable="false"></svg>
+
+            <div class="c3-col c3-col-tools">
+              <p class="cap c3-col-cap">Vos outils</p>
+              <div class="c3-pills" id="c3Tools">
+                <button type="button" class="c3-pill" data-id="gmail">Gmail</button>
+                <button type="button" class="c3-pill" data-id="drive">Google Drive</button>
+                <button type="button" class="c3-pill" data-id="agenda">Google Agenda</button>
+                <button type="button" class="c3-pill" data-id="notion">Notion</button>
+                <button type="button" class="c3-pill" data-id="slack">Slack</button>
+                <button type="button" class="c3-pill" data-id="excel">Excel</button>
+              </div>
+            </div>
+
+            <div class="c3-core" id="c3Core">
+              <span class="c3-core-mk" id="c3CoreMk" data-look aria-hidden="true"></span>
+              <span class="c3-core-lbl">Claude</span>
+            </div>
+
+            <div class="c3-col c3-col-bricks">
+              <p class="cap c3-col-cap">Claude s'équipe</p>
+              <div class="c3-pills" id="c3Bricks">
+                <button type="button" class="c3-pill" data-id="connecteurs">Connecteurs</button>
+                <button type="button" class="c3-pill" data-id="skills">Skills</button>
+                <button type="button" class="c3-pill" data-id="cowork">Cowork</button>
+                <button type="button" class="c3-pill" data-id="projets">Projets</button>
+                <button type="button" class="c3-pill" data-id="chrome">Claude in Chrome</button>
+                <button type="button" class="c3-pill" data-id="mcp">MCP</button>
+              </div>
+            </div>
+          </div>
+
+          <div class="c3-panel" id="c3Panel" aria-live="polite">
+            <p class="c3-panel-lbl" id="c3PanelLbl">À vous de jouer</p>
+            <p class="c3-panel-txt" id="c3PanelTxt">Survolez, touchez ou appuyez sur Tab pour explorer un outil ou une brique. Ou faites défiler.</p>
+          </div>
+
+          <button type="button" class="c3-all-btn" id="c3AllBtn" data-magnet>
+            <span id="c3AllLbl">Tout brancher</span>
+            <span class="c3-all-ar" aria-hidden="true">
+              <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg>
+            </span>
+          </button>
+        </div>
+
+        <div class="c3-scene" id="c3Scene" aria-hidden="true">
+          <video class="c3-scene-bg" id="c3SceneBg" muted playsinline loop preload="none" aria-hidden="true">
+            <source data-src="../showreel/media/reel-2-champ-720.mp4" media="(max-width: 700px)">
+            <source data-src="../showreel/media/reel-2-champ.mp4">
+          </video>
+          <div class="c3-scene-veil" aria-hidden="true"></div>
+          <div class="c3-scene-card">
+            <p class="c3-scene-tag">Douze branchements plus tard</p>
+            <div class="c3-scene-chat">
+              <p class="c3-msg c3-msg-user"><b>Vous</b><span>Relancez les prospects qui n'ont pas répondu depuis lundi, et préparez le prochain atelier Claude.</span></p>
+              <p class="c3-msg c3-msg-claude"><span class="c3-msg-mk" data-look aria-hidden="true"></span><b>Claude</b><span>C'est fait. J'ai relu vos échanges dans Gmail et relancé les trois prospects, retrouvé le bon modèle dans Google Drive, posé un créneau dans Google Agenda, mis à jour la page de suivi dans Notion, prévenu l'équipe sur Slack, et corrigé le classeur dans Excel.</span></p>
+            </div>
+          </div>
+        </div>
+
+      </div>
+    </div>
+  </div>
+
+  <div class="c3-explainer c3-inner">
+    <h2 class="cap c3-explainer-cap rv">Le coaching en 25 secondes</h2>
+    <div class="c3-explainer-frame rv">
+      <video id="c3ExplainerVideo" class="c3-explainer-video" poster="../showreel/media/reel-3-plan-sequence.jpg" muted playsinline loop preload="none" data-src="../showreel/media/coaching-25s.mp4" aria-label="Le coaching en 25 secondes" tabindex="-1"></video>
+      <button type="button" class="c3-explainer-play" id="c3ExplainerPlay" aria-label="Lire la vidéo : le coaching en 25 secondes">
+        <svg viewBox="0 0 24 24" fill="currentColor" aria-hidden="true"><path d="M8 5v14l11-7z"/></svg>
+      </button>
+      <p class="c3-explainer-soon" id="c3ExplainerSoon" hidden>La vidéo arrive bientôt.</p>
+    </div>
+  </div>
+
+  <div class="c3-results c3-inner">
+    <h2 class="cap c3-results-cap rv">Ce que ça change, séance après séance</h2>
+    <ul class="c3-results-list" id="c3ResultsList">
+      <li class="rv" style="--d:0ms" data-n="01" data-ids="projets,connecteurs" tabindex="0"><b class="f">Après une séance</b><span>Claude Pro est réglé sur votre métier, un Projet garde vos documents et vos règles, un ou deux Connecteurs sont branchés sur ce que vous utilisez déjà.</span></li>
+      <li class="rv" style="--d:90ms" data-n="02" data-ids="skills,cowork,chrome" tabindex="0"><b class="f">Après le parcours de 5</b><span>Des Skills sont écrits pour vos tâches précises, Cowork travaille seul dans vos fichiers, Claude in Chrome agit dans votre navigateur.</span></li>
+      <li class="rv" style="--d:180ms" data-n="03" data-ids="gmail,drive,agenda,notion,slack,excel,connecteurs,skills,cowork,projets,chrome,mcp" tabindex="0"><b class="f">Après le parcours de 10</b><span>Votre propre chaîne tourne de bout en bout, jusqu'au MCP si un de vos outils maison le mérite.</span></li>
+    </ul>
+  </div>
+
+  <div class="c3-formats c3-inner" id="c3Formats">
+    <h2 class="cap c3-formats-cap rv">Trois formats, un prix par séance qui baisse</h2>
+
+    <div class="c3-keys" id="c3Keys">
+      <article class="c3-key" style="--d:0">
+        <div class="c3-key-top"><span class="c3-key-mk" data-look aria-hidden="true"></span><h3 class="f">Séance seule</h3></div>
+        <p class="c3-key-tag">Une heure, pour juger sur pièce.</p>
+        <p class="c3-key-price"><b class="c3-price-num" data-target="250">250</b><small>&#8202;€ HT</small></p>
+        <p class="c3-key-detail">Séance découverte ou séance paramétrage, sans engagement. Vous commencez par une séance, puis vous passez à un parcours&#8202;? Elle est recalculée au tarif du parcours.</p>
+        <a class="c3-key-btn" href="t21-reserver.html?f=seance" data-magnet data-burst>
+          <span>Choisir et payer ma séance</span>
+          <span class="c3-key-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </article>
+
+      <article class="c3-key" style="--d:90">
+        <div class="c3-key-top"><span class="c3-key-mk" data-look aria-hidden="true"></span><h3 class="f">Parcours 5 séances</h3></div>
+        <p class="c3-key-tag">Apprendre l'IA, de A à Z.</p>
+        <p class="c3-key-price"><b class="c3-price-num" data-target="220">220</b><small>&#8202;€ HT la séance</small></p>
+        <p class="c3-key-detail">Montée en compétences, travail sur vos projets, paramétrage. De votre poste équipé à votre mode d'emploi en deux pages.</p>
+        <a class="c3-key-btn" href="t21-reserver.html?f=p5" data-magnet data-burst>
+          <span>Choisir ce parcours</span>
+          <span class="c3-key-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </article>
+
+      <article class="c3-key" style="--d:180">
+        <div class="c3-key-top"><span class="c3-key-mk" data-look aria-hidden="true"></span><h3 class="f">Parcours 10 séances</h3></div>
+        <p class="c3-key-tag">Mener votre projet au bout.</p>
+        <p class="c3-key-price"><b class="c3-price-num" data-target="200">200</b><small>&#8202;€ HT la séance</small></p>
+        <p class="c3-key-detail">Du cadrage au plan à 90 jours&#8202;: un prototype, la chaîne complète, une bibliothèque de modèles, la transmission.</p>
+        <a class="c3-key-btn" href="t21-reserver.html?f=p10" data-magnet data-burst>
+          <span>Choisir ce parcours</span>
+          <span class="c3-key-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+        </a>
+      </article>
+    </div>
+
+    <p class="c3-fine rv">1 h en visio, écran partagé, 1 ou 2 séances par semaine. Avec Clément Predo ou Alexis Zeitoun. Prérequis&#8202;: un abonnement Claude Pro, environ 20&#8202;€ par mois, à votre charge. À partir de 200&#8202;€ HT la séance.</p>
+  </div>
+
+</section>
+</main>
+
+<footer>
+  <div class="ft-top">
+    <div class="meta cap"><span>axem-ia.fr</span><span>Paris</span><a href="#" data-book>Réserver un échange offert →</a></div>
+    <div class="legal-links cap"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="mailto:contact@axem-ia.fr">contact@axem-ia.fr</a></div>
+  </div>
+  <div class="wm big" aria-hidden="true">axem<sup>IA</sup></div>
+</footer>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AXEM IA",
+  "url": "https://axem-ia.fr",
+  "email": "contact@axem-ia.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3 rue Françoise Dolto",
+    "postalCode": "75013",
+    "addressLocality": "Paris",
+    "addressCountry": "FR"
+  },
+  "founder": [
+    { "@type": "Person", "name": "Clément Predo", "sameAs": "https://www.linkedin.com/in/clement-predo" },
+    { "@type": "Person", "name": "Alexis Zeitoun", "sameAs": "https://www.linkedin.com/in/alexiszeitoun" }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/clement-predo",
+    "https://www.linkedin.com/in/alexiszeitoun"
+  ]
+}
+</script>
+
+<script src="../vendor/gsap/gsap.min.js"></script>
+<script src="../vendor/gsap/ScrollTrigger.min.js"></script>
+<script src="../vendor/gsap/SplitText.min.js"></script>
+<script src="../assets/abonnes.js"></script>
+<script src="../assets/avis.js"></script>
+<script src="../assets/axem.js"></script>
+<script>
+(() => {
+  // Tour 16 : la couche d'interactions du tour 2, allegee apres mesure (CPU x4, defilement molette).
+  // Retire : le defilement doux Lenis (il gardait la main sur la molette), le bandeau pilote image par
+  // image (il relisait la largeur de la page a chaque image : 1,8 s de mise en page sur 5 s), le
+  // brouillage des lettres. Garde, mais ne calcule plus que quand la souris bouge : le curseur a
+  // etiquette, la graisse du titre, l'apercu des offres, le portrait du duo, le mot du pied de page.
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const still = reduce || /[?&]static\b/.test(location.search);
+  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const hasGsap = typeof gsap !== 'undefined';
+  document.body.classList.add('t2', 't16-lite');
+  if (hasGsap) gsap.registerPlugin(...[window.ScrollTrigger, window.SplitText].filter(Boolean));
+
+  const mouse = { x: innerWidth / 2, y: innerHeight / 2 };
+  const moveFns = [];
+  let mq = 0;
+  addEventListener('pointermove', e => {
+    mouse.x = e.clientX; mouse.y = e.clientY;
+    if (!mq) mq = requestAnimationFrame(() => { mq = 0; moveFns.forEach(f => f()); });
+  }, { passive: true });
+
+  // Curseur a etiquette : la boucle ne tourne que tant qu'il reste du chemin a faire.
+  if (fine && !reduce) {
+    document.documentElement.classList.add('has-cur');
+    const l = document.createElement('div'); l.className = 'cur-l';
+    document.body.append(l);
+    const p = { x: mouse.x, y: mouse.y };
+    let run = 0;
+    const loop = () => {
+      p.x += (mouse.x - p.x) * 0.35; p.y += (mouse.y - p.y) * 0.35;
+      l.style.transform = `translate3d(${p.x.toFixed(1)}px, ${p.y.toFixed(1)}px, 0)`;
+      run = Math.abs(mouse.x - p.x) + Math.abs(mouse.y - p.y) > .4 ? requestAnimationFrame(loop) : 0;
+    };
+    moveFns.push(() => { if (!run) run = requestAnimationFrame(loop); });
+    document.addEventListener('pointerover', e => {
+      const lab = e.target.closest('[data-cursor]');
+      const hide = e.target.closest('[data-cursor-off]');
+      l.textContent = lab && !hide ? lab.dataset.cursor : '';
+      l.classList.toggle('on', !!(lab && !hide));
+    });
+  }
+
+  // Titre du hero : graisse variable selon la distance au curseur. Les centres des lettres sont
+  // mesures une fois (et au redimensionnement), jamais pendant le mouvement.
+  const heroH = document.querySelector('.hero');
+  if (heroH) {
+    document.querySelectorAll('.hero h1 .word > span').forEach(s => { s.innerHTML = [...s.textContent].map(ch => `<span class="ch">${ch}</span>`).join(''); });
+    if (fine && !still && hasGsap) {
+      const chars = [...heroH.querySelectorAll('.ch')];
+      let centers = null, active = false;
+      const measure = () => { centers = chars.map(ch => { const r = ch.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2 + scrollY]; }); };
+      // Changer la graisse d'une police variable oblige le navigateur a remettre en forme les glyphes :
+      // mesure du 24/09, 1,5 s de mise en page sur 5 s de geste, pour 36 objets seulement. Le cout vient
+      // de ce que chaque image demandait une graisse inedite (valeur continue, cache de forme rate).
+      // La graisse suit donc la souris par un amorti maison, mais n'est ecrite que par paliers de 50 :
+      // 13 graisses possibles, toutes deja en cache apres le premier passage.
+      const cur = chars.map(() => 900), tgt = chars.map(() => 900), shown = chars.map(() => 900);
+      let run = 0;
+      const tick = () => {
+        let moving = false;
+        for (let i = 0; i < chars.length; i++) {
+          const d = tgt[i] - cur[i];
+          if (Math.abs(d) > 2) { cur[i] += d * 0.18; moving = true; } else cur[i] = tgt[i];
+          const q = Math.round(cur[i] / 50) * 50;
+          if (q !== shown[i]) { shown[i] = q; chars[i].style.setProperty('--wg', q); }
+        }
+        run = moving ? requestAnimationFrame(tick) : 0;
+      };
+      const kick = () => { if (!run) run = requestAnimationFrame(tick); };
+      heroH.addEventListener('pointerenter', () => { active = true; measure(); });
+      heroH.addEventListener('pointerleave', () => { active = false; tgt.fill(900); kick(); });
+      addEventListener('resize', () => { centers = null; });
+      moveFns.push(() => {
+        if (!active) return;
+        if (!centers) measure();
+        const y = mouse.y + scrollY;
+        centers.forEach(([cx, cy], i) => { tgt[i] = 300 + 600 * Math.min(1, Math.hypot(mouse.x - cx, y - cy) / 420); });
+        kick();
+      });
+    }
+  }
+
+  // Apercu flottant sur les offres
+  const rows = document.querySelectorAll('.row[data-peek]');
+  if (rows.length && fine && !reduce && hasGsap) {
+    const pk = document.createElement('div'); pk.className = 'peek'; pk.setAttribute('aria-hidden', 'true');
+    pk.innerHTML = '<span class="sq"></span><div class="k"></div><div class="v"></div><img class="pi" alt="">';
+    document.body.appendChild(pk);
+    const xTo = gsap.quickTo(pk, 'x', { duration: 0.55, ease: 'power3.out' }), yTo = gsap.quickTo(pk, 'y', { duration: 0.55, ease: 'power3.out' });
+    const rTo = gsap.quickTo(pk, 'rotation', { duration: 0.5, ease: 'power3.out' });
+    let lastX = mouse.x, on = false;
+    moveFns.push(() => { if (!on) return; xTo(mouse.x + 70); yTo(mouse.y + 30); rTo(gsap.utils.clamp(-8, 8, (mouse.x - lastX) * 0.6)); lastX = mouse.x; });
+    rows.forEach(r => {
+      r.addEventListener('pointerenter', () => { on = true; gsap.set(pk, { x: mouse.x + 70, y: mouse.y + 30 }); pk.querySelector('.k').textContent = r.dataset.peekK || ''; pk.querySelector('.v').textContent = r.dataset.peek; const pi = pk.querySelector('.pi'); if (r.dataset.peekImg) { pi.src = new URL(r.dataset.peekImg, document.baseURI).href; } pk.classList.toggle('has-img', !!r.dataset.peekImg); gsap.to(pk, { opacity: 1, scale: 1, duration: 0.45, ease: 'back.out(1.6)' }); });
+      r.addEventListener('pointerleave', () => { on = false; gsap.to(pk, { opacity: 0, scale: 0.6, duration: 0.3 }); });
+    });
+  }
+
+  // Wordmark du pied de page : lettres qui se soulevent pres du curseur (positions mesurees a l'entree).
+  const big = document.querySelector('footer .big');
+  if (big) {
+    const tn = [...big.childNodes].find(n => n.nodeType === 3 && n.textContent.trim());
+    if (tn) { const w = document.createElement('span'); w.innerHTML = [...tn.textContent.trim()].map(ch => `<span class="fl">${ch}</span>`).join(''); big.replaceChild(w, tn); }
+    if (fine && !reduce) {
+      const fls = [...big.querySelectorAll('.fl')], foot = big.closest('footer');
+      let xs = null, inF = false;
+      foot.addEventListener('pointerenter', () => { inF = true; xs = fls.map(f => { const r = f.getBoundingClientRect(); return r.left + r.width / 2; }); });
+      foot.addEventListener('pointerleave', () => { inF = false; fls.forEach(f => { f.style.transform = ''; }); });
+      moveFns.push(() => { if (!inF || !xs) return; fls.forEach((f, i) => { f.style.transform = `translateY(${(-Math.max(0, 1 - Math.abs(mouse.x - xs[i]) / 260) * 0.14).toFixed(3)}em)`; }); });
+    }
+  }
+
+  // Liens forts magnetiques (hors barre du haut, qui a son propre bouton)
+  if (fine && !reduce && hasGsap) document.querySelectorAll('.teaser .more, [data-mag]').forEach(b => {
+    const xTo = gsap.quickTo(b, 'x', { duration: 0.5, ease: 'power3.out' }), yTo = gsap.quickTo(b, 'y', { duration: 0.5, ease: 'power3.out' });
+    b.addEventListener('pointermove', e => { const r = b.getBoundingClientRect(); xTo((e.clientX - r.left - r.width / 2) * 0.3); yTo((e.clientY - r.top - r.height / 2) * 0.4); });
+    b.addEventListener('pointerleave', () => { xTo(0); yTo(0); });
+  });
+
+  // Lignes revelees au defilement
+  if (hasGsap && window.SplitText && window.ScrollTrigger && !still) {
+    document.fonts.ready.then(() => document.querySelectorAll('[data-lines]').forEach(el => {
+      SplitText.create(el, { type: 'lines', mask: 'lines', linesClass: 'ln', autoSplit: true, onSplit: self => gsap.from(self.lines, { yPercent: 105, duration: 1.1, ease: 'expo.out', stagger: 0.09, scrollTrigger: { trigger: el, start: 'top 85%', once: true } }) });
+    }));
+  }
+
+  // Duo : portrait qui suit le curseur sur les noms
+  const dn = document.querySelector('.dn-list');
+  const fl = document.querySelector('.dn-float');
+  if (dn && fl && fine && !reduce && hasGsap) {
+    const xTo = gsap.quickTo(fl, 'x', { duration: 0.7, ease: 'power3.out' }), yTo = gsap.quickTo(fl, 'y', { duration: 0.7, ease: 'power3.out' });
+    const rTo = gsap.quickTo(fl, 'rotation', { duration: 0.6, ease: 'power3.out' });
+    let lx = mouse.x, on = false;
+    moveFns.push(() => { if (!on) return; xTo(mouse.x + 22); yTo(mouse.y + 16); rTo(gsap.utils.clamp(-10, 10, (mouse.x - lx) * 0.5)); lx = mouse.x; });
+    dn.querySelectorAll('.dn-row').forEach(r => {
+      r.addEventListener('pointerenter', () => { on = true; fl.classList.add('on'); fl.querySelectorAll('img').forEach(i => i.classList.toggle('on', i.dataset.who === r.dataset.who)); });
+    });
+    dn.addEventListener('pointerleave', () => { on = false; fl.classList.remove('on'); });
+  }
+})();
+</script>
+<script>(()=>{const m=location.search.match(/[?&]photo=(\d)/), P={1:'1-table',2:'2-scene'}; if (m && P[m[1]]) document.querySelectorAll('img[src$="img/duo/duo.jpg"]').forEach(i=>{i.src='../img/duo/propositions/axem-duo-'+P[m[1]]+'.jpg'; i.closest('[hidden]')?.removeAttribute('hidden');});})();</script>
+<p class="proto">Tour 21 : Page coaching, proposition 3 <a class="replay" role="button" tabindex="0">Rejouer</a><a href="../tour21.html">Toutes les propositions</a></p>
+<script>
+(() => {
+  // ---- Tour 17 : socle commun (Reserver un seul a la fois, bouton son WebAudio). Charge sur les
+  // 6 pages, avant claude-mark.js et le script propre a chaque page (voir outils/build_t17.py). ----
+
+  // 1) Reserver un seul a la fois. La barre garde .nav .book[data-book] (nav.css). Tant que le grand
+  // bouton du hero (.hero .btn[data-book]) est a l'ecran, celui de la barre reste cache, invisible aux
+  // lecteurs d'ecran et non focusable. Des qu'il en sort, il apparait et reste, meme en remontant. Sur
+  // les pages duo il n'y a pas de hero : le bouton de la barre est visible d'emblee.
+  (() => {
+    const navBook = document.querySelector('#nav .book[data-book]');
+    if (!navBook) return;
+    const heroBook = document.querySelector('.hero .btn[data-book]');
+    if (!heroBook) { navBook.classList.add('rs-show'); return; }
+    navBook.classList.add('rs-hidden');
+    navBook.setAttribute('tabindex', '-1');
+    navBook.setAttribute('aria-hidden', 'true');
+    const reveal = () => {
+      navBook.classList.remove('rs-hidden');
+      navBook.classList.add('rs-show');
+      navBook.removeAttribute('tabindex');
+      navBook.removeAttribute('aria-hidden');
+    };
+    if (!('IntersectionObserver' in window)) { reveal(); return; }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (!entry.isIntersecting) { reveal(); io.disconnect(); } });
+    }, { threshold: 0 });
+    io.observe(heroBook);
+  })();
+
+  // 2) Bouton son : petit egaliseur en bas a gauche, coupe par defaut. Sons synthetises en WebAudio,
+  // aucun fichier. Rien ne joue avant un premier clic (ou une preference deja enregistree). Expose
+  // window.AxemSound = { play(name), on() } et ecoute l'evenement axem:sound emis ailleurs (survols,
+  // ecrans bleus). Chaque lecture/ecriture localStorage est dans un try/catch.
+  (() => {
+    const KEY = 'axem-son';
+    let enabled = false;
+    try { enabled = localStorage.getItem(KEY) === '1'; } catch (e) { enabled = false; }
+
+    let ctx = null;
+    const audioCtx = () => {
+      if (ctx) return ctx;
+      const Ctor = window.AudioContext || window.webkitAudioContext;
+      if (!Ctor) return null;
+      try { ctx = new Ctor(); } catch (e) { ctx = null; }
+      return ctx;
+    };
+
+    const soundWhoosh = c => {
+      const dur = 0.6;
+      const buf = c.createBuffer(1, Math.round(c.sampleRate * dur), c.sampleRate);
+      const d = buf.getChannelData(0);
+      for (let i = 0; i < d.length; i++) { const t = i / d.length; d[i] = (Math.random() * 2 - 1) * Math.pow(1 - t, 2.2); }
+      const src = c.createBufferSource(); src.buffer = buf;
+      const filt = c.createBiquadFilter(); filt.type = 'bandpass'; filt.Q.value = 0.7;
+      filt.frequency.setValueAtTime(500, c.currentTime);
+      filt.frequency.exponentialRampToValueAtTime(2000, c.currentTime + dur * 0.8);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.0001, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.13, c.currentTime + 0.09);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + dur);
+      src.connect(filt).connect(g).connect(c.destination);
+      src.start(); src.stop(c.currentTime + dur + 0.05);
+    };
+
+    const soundTick = c => {
+      const osc = c.createOscillator(); osc.type = 'square'; osc.frequency.setValueAtTime(1900, c.currentTime);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.08, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 0.045);
+      osc.connect(g).connect(c.destination);
+      osc.start(); osc.stop(c.currentTime + 0.06);
+    };
+
+    const soundPop = c => {
+      const osc = c.createOscillator(); osc.type = 'sine';
+      osc.frequency.setValueAtTime(420, c.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(760, c.currentTime + 0.1);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.0001, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.15, c.currentTime + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 0.24);
+      osc.connect(g).connect(c.destination);
+      osc.start(); osc.stop(c.currentTime + 0.26);
+    };
+
+    const SOUNDS = { whoosh: soundWhoosh, tick: soundTick, pop: soundPop };
+
+    const play = name => {
+      if (!enabled || !SOUNDS[name]) return;
+      try {
+        const c = audioCtx();
+        if (!c) return;
+        if (c.state === 'suspended') c.resume().catch(() => {});
+        SOUNDS[name](c);
+      } catch (e) { /* silencieux : le son n'est jamais bloquant */ }
+    };
+
+    window.AxemSound = { play, on: () => enabled };
+    window.addEventListener('axem:sound', e => { try { play(e.detail && e.detail.name); } catch (er) {} });
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'snd-btn';
+    btn.setAttribute('aria-pressed', 'false');
+    btn.setAttribute('aria-label', 'Activer le son');
+    btn.innerHTML = '<span class="snd-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>';
+    document.body.appendChild(btn);
+
+    const sync = () => {
+      btn.classList.toggle('on', enabled);
+      btn.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+      btn.setAttribute('aria-label', enabled ? 'Couper le son' : 'Activer le son');
+    };
+    sync();
+
+    btn.addEventListener('click', () => {
+      enabled = !enabled;
+      try { localStorage.setItem(KEY, enabled ? '1' : '0'); } catch (e) { /* prive ou bloque : tant pis */ }
+      sync();
+      if (enabled) play('pop');
+    });
+  })();
+})();
+</script>
+<script>
+/*
+ * ClaudeMark : trace officiel du symbole Claude (etoile / spark), sans dependance.
+ * Source : Wikimedia Commons, File:Claude_AI_symbol.svg
+ *   https://upload.wikimedia.org/wikipedia/commons/b/b0/Claude_AI_symbol.svg
+ * Le trace original est un SEUL <path> avec un seul sous-tracé (un seul "M" au debut,
+ * 159 segments, une seule fermeture "Z") : les 6 rayons ne sont pas des sous-tracés
+ * separes dans le fichier source, donc pas de decoupage "un <path> par rayon" possible
+ * ici sans reconstruire des tracés synthetiques. Conformement à la consigne du brief
+ * pour ce cas ("un seul contour continu impossible a separer proprement"), ClaudeMark
+ * expose `rays: []` et `root` anime en bloc (rotation / echelle / masque).
+ *
+ * Le trace ci-dessous est le trace officiel, translate pour que le centre visuel de
+ * l'etoile (centre de sa bounding box, cx=49.95 cy=50 dans le fichier source, sur un
+ * viewBox 0 0 100 100) tombe exactement sur (0,0). Le viewBox monte par mount() est
+ * donc centre : "-50 -50 100 100".
+ */
+(function (global) {
+  "use strict";
+
+  var PATH_D =
+    "m -30.35,16.5 l 19.7,-11 l 0.3,-1 l -0.3,-0.5 l -1,0 l -3.3,-0.2 l -11.2,-0.3 " +
+    "L -35.95,3 l -9.5,-0.5 l -2.4,-0.5 L -49.95,-1 l 0.2,-1.5 l 2,-1.3 l 2.9,0.2 " +
+    "l 6.3,0.5 l 9.5,0.6 l 6.9,0.4 L -11.95,-0.9 l 1.6,0 l 0.2,-0.7 l -0.5,-0.4 " +
+    "l -0.4,-0.4 L -20.95,-9 l -10.6,-7 l -5.6,-4.1 l -3,-2 l -1.5,-2 l -0.6,-4.2 " +
+    "l 2.7,-3 l 3.7,0.3 l 0.9,0.2 l 3.7,2.9 l 8,6.1 L -12.95,-14 l 1.5,1.2 l 0.6,-0.4 " +
+    "l 0.1,-0.3 l -0.7,-1.1 L -16.95,-25 l -6,-10.4 l -2.7,-4.3 l -0.7,-2.6 " +
+    "c -0.3,-1 -0.4,-2 -0.4,-3 l 3,-4.2 L -21.95,-50 l 4.2,0.6 L -16.15,-48 l 2.6,6 " +
+    "l 4.1,9.3 L -2.95,-20.1 l 2,3.8 l 1,3.4 l 0.3,1 l 0.7,0 l 0,-0.5 l 0.5,-7.2 " +
+    "l 1,-8.7 l 1,-11.2 l 0.3,-3.2 l 1.6,-3.8 l 3,-2 L 11.05,-47.4 l 2,2.9 l -0.3,1.8 " +
+    "l -1.1,7.7 L 9.05,-22.9 l -1.5,8.2 l 0.9,0 l 1,-1.1 l 4.1,-5.4 l 6.9,-8.6 l 3,-3.5 " +
+    "L 27.05,-37 l 2.3,-1.8 l 4.3,0 l 3.1,4.7 l -1.4,4.9 l -4.4,5.6 l -3.7,4.7 l -5.3,7.1 " +
+    "l -3.2,5.7 l 0.3,0.4 l 0.7,0 l 12,-2.6 l 6.4,-1.1 l 7.6,-1.3 l 3.5,1.6 l 0.4,1.6 " +
+    "l -1.4,3.4 l -8.2,2 l -9.6,2 l -14.3,3.3 l -0.2,0.1 l 0.2,0.3 l 6.4,0.6 l 2.8,0.2 " +
+    "l 6.8,0 l 12.6,1 l 3.3,2 l 1.9,2.7 l -0.3,2 l -5.1,2.6 l -6.8,-1.6 l -16,-3.8 " +
+    "l -5.4,-1.3 l -0.8,0 l 0,0.4 l 4.6,4.5 l 8.3,7.5 L 39.05,30.1 l 0.5,2.4 l -1.3,2 " +
+    "l -1.4,-0.2 l -9.2,-7 l -3.6,-3 l -8,-6.8 l -0.5,0 l 0,0.7 l 1.8,2.7 l 9.8,14.7 " +
+    "l 0.5,4.5 l -0.7,1.4 l -2.6,1 l -2.7,-0.6 l -5.8,-8 l -6,-9 l -4.7,-8.2 l -0.5,0.4 " +
+    "l -2.9,30.2 l -1.3,1.5 l -3,1.2 l -2.5,-2 l -1.4,-3 l 1.4,-6.2 l 1.6,-8 l 1.3,-6.4 " +
+    "l 1.2,-7.9 l 0.7,-2.6 l 0,-0.2 L -0.95,13.7 L -6.95,22 l -9,12.3 l -7.2,7.6 " +
+    "l -1.7,0.7 l -3,-1.5 l 0.3,-2.8 L -25.95,36 l 10,-12.8 l 6,-7.9 l 4,-4.6 l -0.1,-0.5 " +
+    "l -0.3,0 L -32.75,27.4 l -4.7,0.6 l -2,-2 l 0.2,-3 l 1,-1 l 8,-5.5 Z";
+
+  var DEFAULT_COLOR = "#D97757";
+  var SVG_NS = "http://www.w3.org/2000/svg";
+
+  function mount(el, opts) {
+    opts = opts || {};
+    var color = opts.color || DEFAULT_COLOR;
+
+    var svg;
+    if (el && el.tagName && el.tagName.toLowerCase() === "svg") {
+      svg = el;
+    } else {
+      svg = document.createElementNS(SVG_NS, "svg");
+      if (el) el.appendChild(svg);
+    }
+
+    svg.setAttribute("viewBox", "-50 -50 100 100");
+    if (!svg.hasAttribute("width") && opts.size) svg.setAttribute("width", opts.size);
+    if (!svg.hasAttribute("height") && opts.size) svg.setAttribute("height", opts.size);
+    svg.setAttribute("aria-hidden", "true");
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+
+    // root : groupe anime en bloc (rotation/echelle/masque), origine CSS forcee a
+    // (0,0) qui correspond deja au centre visuel de l'etoile dans ce viewBox recentre.
+    var root = document.createElementNS(SVG_NS, "g");
+    root.setAttribute("class", "claude-mark-root");
+    root.style.transformOrigin = "0px 0px";
+    root.style.transformBox = "view-box";
+
+    var path = document.createElementNS(SVG_NS, "path");
+    path.setAttribute("d", PATH_D);
+    path.setAttribute("fill", color);
+    path.setAttribute("class", "claude-mark-path");
+    root.appendChild(path);
+    svg.appendChild(root);
+
+    return {
+      svg: svg,
+      root: root,
+      rays: [], // tracé source en un seul sous-chemin : rayons non individualisables
+      core: null, // idem : pas de hub separe dans le tracé source
+      color: color
+    };
+  }
+
+  global.ClaudeMark = { mount: mount, PATH_D: PATH_D, DEFAULT_COLOR: DEFAULT_COLOR };
+})(window);
+</script>
+<script>
+(() => {
+  // Coaching c3, tour 21 : "Branchez Claude à vos outils." Refonte niveau showreel (26/09/2026).
+  // Un schéma de branchement calculé en JS (positions réelles des pastilles et du symbole Claude,
+  // recalculées au redimensionnement), des câbles SVG tracés au survol/focus/clic ET, désormais, un
+  // seul moment fort épinglé au défilement (1 pin ScrollTrigger, .c3-stage) : les 6 outils se
+  // branchent un par un, un compteur avance, le symbole Claude rebondit à chaque branchement, "Claude
+  // s'équipe" allume les 6 briques d'un coup, puis tout le schéma se replie pour laisser place à une
+  // scène de travail réelle (une demande, la réponse de Claude), avec en fond une vidéo motion
+  // design du showreel. Sans JS, sans GSAP ou en prefers-reduced-motion : tout reste visible en flux
+  // normal (aucune information cachée derrière l'animation). Puis les trois formats, repris et
+  // rendus plus nets de outils/t20/k3.js (bouton magnétique, écrasement, prix qui roule).
+  const section = document.querySelector('.c3');
+  if (!section) return;
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const hasGsap = typeof gsap !== 'undefined';
+  if (hasGsap && window.ScrollTrigger) gsap.registerPlugin(ScrollTrigger);
+  const ORANGE = '#D97757';
+  const narrowMQ = matchMedia('(max-width: 860px)');
+
+  // ==================================================================== Le contenu des 12 branches
+  const TOOL_IDS = ['gmail', 'drive', 'agenda', 'notion', 'slack', 'excel'];
+  const BRICK_IDS = ['connecteurs', 'skills', 'cowork', 'projets', 'chrome', 'mcp'];
+  const ALL_IDS = TOOL_IDS.concat(BRICK_IDS);
+  const DATA = {
+    gmail: { label: 'Gmail', l1: "Claude lit vos mails, résume les fils et prépare vos réponses.", l2: "En séance : quels dossiers Gmail ouvrir, quel ton pour répondre à votre place." },
+    drive: { label: 'Google Drive', l1: "Claude retrouve et lit vos documents directement dans Drive.", l2: "En séance : quels dossiers Drive, quels modèles à reprendre." },
+    agenda: { label: 'Google Agenda', l1: "Claude consulte votre agenda et propose des créneaux libres.", l2: "En séance : vos règles de disponibilité, vos réunions types." },
+    notion: { label: 'Notion', l1: "Claude cherche, remplit et met à jour vos pages Notion.", l2: "En séance : quelle base, quel gabarit de page à automatiser." },
+    slack: { label: 'Slack', l1: "Claude lit vos canaux et peut y écrire pour vous.", l2: "En séance : quels canaux, quelles alertes à lui confier." },
+    excel: { label: 'Excel', l1: "L'extension Claude pour Excel remplit et corrige vos classeurs sur place.", l2: "En séance : votre modèle, vos formules, vos onglets à régler." },
+    connecteurs: { label: 'Connecteurs', l1: "Le pont entre Claude et chacun de vos outils, réglé une seule fois.", l2: "En séance : lequel brancher en premier chez vous." },
+    skills: { label: 'Skills', l1: "Des modes d'emploi que Claude suit à l'identique à chaque fois.", l2: "En séance : le skill qui capture votre méthode, pas une méthode générique." },
+    cowork: { label: 'Cowork', l1: "Claude travaille seul sur un dossier entier et revient avec le résultat fini.", l2: "En séance : la première tâche qu'on ose lui laisser sans surveiller." },
+    projets: { label: 'Projets', l1: "Un espace qui garde vos documents et vos règles toujours sous la main.", l2: "En séance : ce qu'on y range pour ne plus jamais le réexpliquer." },
+    chrome: { label: 'Claude in Chrome', l1: "Claude agit dans votre navigateur, comme vous le feriez vous même.", l2: "En séance : le premier parcours qu'il apprend à faire seul." },
+    mcp: { label: 'MCP', l1: "Le protocole ouvert qui relie Claude à n'importe quel outil, même les vôtres.", l2: "En séance : si un de vos outils maison mérite ce pont là." },
+  };
+  const IDLE_LBL = 'À vous de jouer';
+  const IDLE_TXT = 'Survolez, touchez ou appuyez sur Tab pour explorer un outil ou une brique. Ou faites défiler.';
+  const ALL_LBL = 'Tout est branché';
+  const ALL_TXT = 'Douze branchements possibles, un seul geste. En séance, on choisit ensemble lesquels comptent vraiment pour vous.';
+  const EQUIP_LBL = "Claude s'équipe";
+  const EQUIP_TXT = 'Connecteurs, Skills, Cowork, Projets, Claude in Chrome, MCP : les briques qui font tourner tout ça.';
+
+  // ==================================================================== Symbole Claude : le noyau
+  const core = document.getElementById('c3Core');
+  const coreMkHost = document.getElementById('c3CoreMk');
+  let coreMount = null;
+  if (coreMkHost && window.ClaudeMark) coreMount = window.ClaudeMark.mount(coreMkHost, { size: '100%', color: ORANGE });
+  section.querySelectorAll('.c3-key-mk, .c3-msg-mk').forEach(host => { if (window.ClaudeMark) window.ClaudeMark.mount(host, { size: '100%', color: ORANGE }); });
+
+  function bounceCore() {
+    if (reduce || !coreMount) return;
+    const root = coreMount.root;
+    if (hasGsap) {
+      gsap.killTweensOf(root);
+      gsap.fromTo(root, { scale: 1 }, { scale: 1.16, duration: .16, ease: 'power2.out', yoyo: true, repeat: 1 });
+    }
+  }
+
+  function burstAt(cx, cy) {
+    if (reduce || !hasGsap) return;
+    const n = 9;
+    for (let i = 0; i < n; i++) {
+      const s = document.createElement('span');
+      s.className = 'c3-burst';
+      s.style.left = cx + 'px'; s.style.top = cy + 'px';
+      document.body.appendChild(s);
+      if (window.ClaudeMark) window.ClaudeMark.mount(s, { size: '100%', color: ORANGE });
+      const ang = (i / n) * Math.PI * 2 + Math.random() * .3;
+      const dist = 58 + Math.random() * 40;
+      gsap.fromTo(s, { opacity: 1, scale: .4, x: 0, y: 0 }, {
+        opacity: 0, scale: 1, x: Math.cos(ang) * dist, y: Math.sin(ang) * dist,
+        duration: .7, ease: 'power2.out', onComplete: () => s.remove(),
+      });
+    }
+    window.dispatchEvent(new CustomEvent('axem:sound', { detail: { name: 'tick' } }));
+  }
+
+  // ==================================================================== Le schéma : câbles calculés
+  const board = document.getElementById('c3Board');
+  const svg = document.getElementById('c3Cables');
+  const panelLbl = document.getElementById('c3PanelLbl');
+  const panelTxt = document.getElementById('c3PanelTxt');
+  const pillsById = {};
+  const ghostPaths = {};
+  const boldPaths = {};
+  const boldSet = new Set();
+  const pathLen = {};
+
+  ALL_IDS.forEach(id => {
+    const pill = section.querySelector(`.c3-pill[data-id="${id}"]`);
+    pillsById[id] = pill;
+    const g = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    g.setAttribute('class', 'c3-cable-ghost');
+    const b = document.createElementNS('http://www.w3.org/2000/svg', 'path');
+    b.setAttribute('class', 'c3-cable-bold');
+    svg.appendChild(g); svg.appendChild(b);
+    ghostPaths[id] = g; boldPaths[id] = b;
+  });
+
+  function pathH(p1, p2) { const m = (p1.x + p2.x) / 2; return `M ${p1.x} ${p1.y} C ${m} ${p1.y} ${m} ${p2.y} ${p2.x} ${p2.y}`; }
+  function pathV(p1, p2) { const m = (p1.y + p2.y) / 2; return `M ${p1.x} ${p1.y} C ${p1.x} ${m} ${p2.x} ${m} ${p2.x} ${p2.y}`; }
+
+  function setBold(id, on) {
+    if (on) boldSet.add(id); else boldSet.delete(id);
+    const p = boldPaths[id]; if (!p) return;
+    const len = pathLen[id] || 0;
+    p.style.strokeDasharray = len;
+    p.style.strokeDashoffset = on ? 0 : len;
+  }
+
+  function layout() {
+    if (!board.isConnected) return;
+    const bRect = board.getBoundingClientRect();
+    const w = Math.max(1, bRect.width), h = Math.max(1, bRect.height);
+    svg.setAttribute('viewBox', `0 0 ${w} ${h}`);
+    const cRect = core.getBoundingClientRect();
+    const coreX = cRect.left - bRect.left + cRect.width / 2;
+    const coreY = cRect.top - bRect.top + cRect.height / 2;
+    const narrow = narrowMQ.matches;
+    svg.classList.add('c3-no-anim');
+    ALL_IDS.forEach(id => {
+      const pill = pillsById[id];
+      const r = pill.getBoundingClientRect();
+      let px, py, d;
+      if (narrow) {
+        px = r.left - bRect.left + r.width / 2;
+        py = r.top - bRect.top;
+        d = pathV({ x: px, y: py }, { x: coreX, y: coreY });
+      } else {
+        const isTool = TOOL_IDS.indexOf(id) !== -1;
+        px = isTool ? (r.right - bRect.left) : (r.left - bRect.left);
+        py = r.top - bRect.top + r.height / 2;
+        d = pathH({ x: px, y: py }, { x: coreX, y: coreY });
+      }
+      ghostPaths[id].setAttribute('d', d);
+      boldPaths[id].setAttribute('d', d);
+      pathLen[id] = boldPaths[id].getTotalLength ? boldPaths[id].getTotalLength() : 0;
+      setBold(id, boldSet.has(id));
+    });
+    requestAnimationFrame(() => svg.classList.remove('c3-no-anim'));
+  }
+
+  layout();
+  if ('ResizeObserver' in window) new ResizeObserver(() => layout()).observe(board);
+  else window.addEventListener('resize', layout);
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(layout).catch(() => {});
+  narrowMQ.addEventListener ? narrowMQ.addEventListener('change', layout) : narrowMQ.addListener(layout);
+
+  // ==================================================================== Le panneau et l'interaction
+  let lockedId = null;
+  let allOn = false;
+
+  function setPanel(lbl, l1, l2) {
+    panelLbl.textContent = lbl;
+    panelTxt.textContent = l2 ? (l1 + '  ' + l2) : l1;
+  }
+  function idlePanel() { setPanel(allOn ? ALL_LBL : IDLE_LBL, allOn ? ALL_TXT : IDLE_TXT); }
+
+  function activate(id) {
+    setBold(id, true);
+    bounceCore();
+    pillsById[id].classList.add('on');
+    const d = DATA[id];
+    setPanel(d.label, d.l1, d.l2);
+  }
+  function deactivate(id) {
+    if (lockedId === id) return;
+    pillsById[id].classList.remove('on');
+    setBold(id, allOn);
+    if (lockedId) { const d = DATA[lockedId]; setPanel(d.label, d.l1, d.l2); }
+    else idlePanel();
+  }
+
+  ALL_IDS.forEach(id => {
+    const pill = pillsById[id];
+    pill.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') activate(id); });
+    pill.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') deactivate(id); });
+    pill.addEventListener('focus', () => activate(id));
+    pill.addEventListener('blur', () => deactivate(id));
+    pill.addEventListener('click', () => {
+      if (lockedId === id) {
+        lockedId = null;
+        deactivate(id);
+      } else {
+        if (lockedId) { pillsById[lockedId].classList.remove('on'); setBold(lockedId, allOn); }
+        lockedId = id;
+        activate(id);
+      }
+    });
+  });
+
+  // ==================================================================== Tout brancher
+  const allBtn = document.getElementById('c3AllBtn');
+  const allLbl = document.getElementById('c3AllLbl');
+  const ORDER = ['gmail', 'connecteurs', 'drive', 'skills', 'agenda', 'cowork', 'notion', 'projets', 'slack', 'chrome', 'excel', 'mcp'];
+  allBtn.addEventListener('click', () => {
+    allOn = !allOn;
+    allBtn.classList.toggle('on', allOn);
+    allLbl.textContent = allOn ? 'Tout débrancher' : 'Tout brancher';
+    if (allOn) {
+      setPanel(ALL_LBL, ALL_TXT);
+      ORDER.forEach((id, i) => {
+        setTimeout(() => { if (lockedId !== id) setBold(id, true); bounceCore(); }, i * 70);
+      });
+      setTimeout(() => { const r = core.getBoundingClientRect(); burstAt(r.left + r.width / 2, r.top + r.height / 2); }, ORDER.length * 70 + 220);
+    } else {
+      ALL_IDS.forEach(id => { if (lockedId !== id) setBold(id, false); });
+      if (!lockedId) idlePanel();
+    }
+  });
+
+  // ==================================================================== "Ce que ça change" : rallume les câbles au survol
+  section.querySelectorAll('#c3ResultsList li[data-ids]').forEach(li => {
+    const ids = (li.dataset.ids || '').split(',').filter(id => pillsById[id]);
+    if (!ids.length) return;
+    const onGroup = () => { ids.forEach(id => { setBold(id, true); pillsById[id].classList.add('on'); }); bounceCore(); };
+    const offGroup = () => { ids.forEach(id => {
+      if (lockedId === id) return;
+      setBold(id, allOn);
+      pillsById[id].classList.toggle('on', allOn);
+    }); };
+    li.addEventListener('pointerenter', e => { if (e.pointerType === 'mouse') onGroup(); });
+    li.addEventListener('pointerleave', e => { if (e.pointerType === 'mouse') offGroup(); });
+    li.addEventListener('focus', onGroup);
+    li.addEventListener('blur', offGroup);
+  });
+
+  // =========================================================== Le moment fort : le défilement épinglé
+  // Un seul pin. Câbles des 6 outils tracés un par un (compteur "1 outil branché" à "6 outils
+  // branchés"), puis "Claude s'équipe" allume les 6 briques, puis le schéma se replie et laisse la
+  // place à une scène de travail réelle. Entièrement réversible (scrub) : remonter défait l'histoire.
+  const stage = document.getElementById('c3Stage');
+  const boardLayer = document.getElementById('c3BoardLayer');
+  const scene = document.getElementById('c3Scene');
+  const sceneBg = document.getElementById('c3SceneBg');
+  const counterEl = document.getElementById('c3Counter');
+
+  const P_START = 0.05, P_TOOLS_END = 0.55, P_BRICKS_END = 0.68, P_COLLAPSE_END = 0.84;
+  const clamp01 = x => Math.max(0, Math.min(1, x));
+  let lastPhase = -1, burstDone = false, lastConnected = -1, lastBricksOn = null, lastCollapseP = -1, lastSceneP = -1;
+
+  function stageFrame(p) {
+    let connected = 0;
+    if (p > P_START) {
+      connected = p >= P_TOOLS_END
+        ? TOOL_IDS.length
+        : Math.min(TOOL_IDS.length, Math.floor(((p - P_START) / (P_TOOLS_END - P_START)) * TOOL_IDS.length) + 1);
+    }
+    const bricksOn = p >= P_TOOLS_END + 0.01;
+
+    if (connected !== lastConnected) {
+      TOOL_IDS.forEach((id, i) => { const on = i < connected; setBold(id, on); pillsById[id].classList.toggle('on', on); });
+      if (connected <= 0) { counterEl.textContent = 'Faites défiler pour brancher Claude.'; idlePanel(); }
+      else if (connected < TOOL_IDS.length) {
+        counterEl.textContent = connected + (connected > 1 ? ' outils branchés' : ' outil branché');
+        const d = DATA[TOOL_IDS[connected - 1]]; setPanel(d.label, d.l1, d.l2);
+      } else {
+        counterEl.textContent = '6 outils branchés';
+      }
+      lastConnected = connected;
+    }
+    if (bricksOn !== lastBricksOn) {
+      BRICK_IDS.forEach(id => { setBold(id, bricksOn); pillsById[id].classList.toggle('on', bricksOn); });
+      if (bricksOn && p < P_BRICKS_END) setPanel(EQUIP_LBL, EQUIP_TXT);
+      if (bricksOn) counterEl.textContent = p < P_BRICKS_END ? '6 outils branchés' : 'Douze branchements, une séance sur mesure.';
+      lastBricksOn = bricksOn;
+    }
+    if (bricksOn && p >= P_BRICKS_END && counterEl.textContent !== 'Douze branchements, une séance sur mesure.') {
+      counterEl.textContent = 'Douze branchements, une séance sur mesure.';
+    }
+
+    let phase;
+    if (p <= P_START) phase = 0;
+    else if (connected < TOOL_IDS.length) phase = connected;
+    else if (p < P_BRICKS_END) phase = 6;
+    else phase = 7;
+    if (phase !== lastPhase) {
+      if (phase >= 1 && phase <= 6) bounceCore();
+      if (phase === 6 && !burstDone) {
+        burstDone = true;
+        const r = core.getBoundingClientRect();
+        burstAt(r.left + r.width / 2, r.top + r.height / 2);
+      }
+      if (phase === 0) burstDone = false;
+      lastPhase = phase;
+    }
+
+    const collapseP = clamp01((p - P_BRICKS_END) / (P_COLLAPSE_END - P_BRICKS_END));
+    if (collapseP !== lastCollapseP) {
+      if (hasGsap) gsap.set(boardLayer, { opacity: 1 - collapseP, scale: 1 - .08 * collapseP, y: -16 * collapseP });
+      boardLayer.style.pointerEvents = collapseP > 0.5 ? 'none' : '';
+      lastCollapseP = collapseP;
+    }
+
+    const sceneP = clamp01((p - P_COLLAPSE_END) / (1 - P_COLLAPSE_END));
+    if (sceneP !== lastSceneP) {
+      if (hasGsap) gsap.set(scene, { opacity: sceneP, y: (1 - sceneP) * 24 });
+      scene.style.pointerEvents = sceneP > 0.5 ? 'auto' : 'none';
+      if (sceneBg && sceneBg.dataset.ready) {
+        if (sceneP > 0.02 && sceneBg.paused) sceneBg.play().catch(() => {});
+        else if (sceneP <= 0.02 && !sceneBg.paused) sceneBg.pause();
+      }
+      lastSceneP = sceneP;
+    }
+  }
+
+  if (!reduce && hasGsap && window.ScrollTrigger && stage && boardLayer && scene) {
+    stage.classList.add('is-stage');
+    if (sceneBg) {
+      sceneBg.querySelectorAll('source[data-src]').forEach(s => { s.src = s.dataset.src; });
+      sceneBg.load();
+      sceneBg.dataset.ready = '1';
+    }
+    ScrollTrigger.create({
+      trigger: stage, start: 'top top', end: '+=260%', scrub: true, pin: true, anticipatePin: 1,
+      onUpdate: self => stageFrame(self.progress),
+      onLeaveBack: () => stageFrame(0),
+    });
+    stageFrame(0);
+  } else if (scene) {
+    scene.style.opacity = 1;
+    if (counterEl) counterEl.textContent = 'Douze branchements possibles, un par un en séance.';
+  }
+
+  // ==================================================================== Révélations génériques (.rv)
+  const rvEls = [...section.querySelectorAll('.rv')];
+  if (!reduce && 'IntersectionObserver' in window) {
+    rvEls.forEach(el => el.classList.add('c3-hide'));
+    const io = new IntersectionObserver(entries => entries.forEach(e => {
+      if (e.isIntersecting) { e.target.classList.add('on'); io.unobserve(e.target); }
+    }), { threshold: .2 });
+    rvEls.forEach(el => io.observe(el));
+  }
+
+  // ==================================================================== Le coaching en 25 secondes
+  // La vidéo réelle arrive plus tard. On ne la teste (HEAD fetch) qu'au clic sur "Lire", jamais au
+  // chargement de la page : tant que le fichier n'existe pas, aucune requête n'est faite avant que
+  // quelqu'un ne demande vraiment à la voir, donc jamais d'erreur réseau au chargement, et l'affiche
+  // (poster) reste seule et intacte.
+  const explainerVideo = document.getElementById('c3ExplainerVideo');
+  const explainerPlay = document.getElementById('c3ExplainerPlay');
+  const explainerSoon = document.getElementById('c3ExplainerSoon');
+  if (explainerVideo && explainerPlay && explainerVideo.dataset.src) {
+    explainerPlay.addEventListener('click', () => {
+      const src = explainerVideo.dataset.src;
+      fetch(src, { method: 'HEAD' }).then(r => {
+        if (r && r.ok) {
+          explainerVideo.src = src;
+          explainerVideo.controls = true;
+          explainerVideo.muted = false;
+          explainerPlay.remove();
+          explainerVideo.play().catch(() => {});
+        } else if (explainerSoon) {
+          explainerSoon.hidden = false;
+        }
+      }).catch(() => { if (explainerSoon) explainerSoon.hidden = false; });
+    }, { once: true });
+  }
+
+  // ==================================================================== Jamais plus de deux vidéos décodées
+  if ('IntersectionObserver' in window) {
+    const vids = [...section.querySelectorAll('video')];
+    if (vids.length) {
+      const vio = new IntersectionObserver(entries => entries.forEach(e => {
+        if (!e.isIntersecting && !e.target.paused) e.target.pause();
+      }), { threshold: 0 });
+      vids.forEach(v => vio.observe(v));
+    }
+  }
+
+  // ==================================================================== Les trois formats (reprise de k3)
+  const formatsEl = document.getElementById('c3Formats');
+  const keyEls = [...section.querySelectorAll('.c3-key')];
+  const priceEls = [...section.querySelectorAll('.c3-price-num')];
+
+  const buildReel = numEl => {
+    const target = String(numEl.dataset.target || numEl.textContent).trim();
+    const fx = document.createElement('span');
+    fx.className = 'c3-reel-fx';
+    fx.setAttribute('aria-hidden', 'true');
+    const cols = [];
+    for (const ch of target) {
+      const col = document.createElement('span'); col.className = 'c3-reel-col';
+      const strip = document.createElement('span'); strip.className = 'c3-reel-strip';
+      for (let i = 0; i < 30; i++) { const s = document.createElement('span'); s.textContent = String(i % 10); strip.appendChild(s); }
+      col.appendChild(strip);
+      fx.appendChild(col);
+      cols.push({ strip, target: +ch });
+    }
+    numEl.appendChild(fx);
+    return { fx, cols };
+  };
+  const rollPrice = reel => {
+    if (reduce || !hasGsap || !reel) return;
+    gsap.set(reel.fx, { opacity: 1 });
+    const tl = gsap.timeline({ onComplete: () => gsap.to(reel.fx, { opacity: 0, duration: .3, delay: .05 }) });
+    reel.cols.forEach((c, i) => { tl.fromTo(c.strip, { y: '0em' }, { y: -(20 + c.target) + 'em', duration: .7 + i * .22, ease: 'power2.out' }, 0); });
+  };
+  const reels = reduce ? [] : priceEls.map(buildReel);
+
+  if (!reduce && hasGsap && window.ScrollTrigger && formatsEl && keyEls.length) {
+    gsap.set(keyEls, { opacity: 0, y: -30 });
+    ScrollTrigger.create({
+      trigger: formatsEl, start: 'top 84%', once: true,
+      onEnter: () => {
+        const tl = gsap.timeline({ onComplete: () => { keyEls.forEach(k => gsap.set(k, { clearProps: 'transform,opacity' })); reels.forEach(rollPrice); } });
+        keyEls.forEach(k => {
+          const d = (parseFloat(getComputedStyle(k).getPropertyValue('--d')) || 0) / 1000;
+          tl.to(k, { opacity: 1, y: 6, duration: .4, ease: 'power2.out' }, d).to(k, { y: 0, duration: .6, ease: 'elastic.out(1,0.55)' }, d + .4);
+        });
+      },
+    });
+  } else {
+    keyEls.forEach(k => k.style.opacity = 1);
+    reels.forEach(rollPrice);
+  }
+
+  keyEls.forEach(k => {
+    const press = on => () => k.classList.toggle('c3-press', on);
+    k.addEventListener('pointerdown', press(true));
+    ['pointerup', 'pointerleave', 'pointercancel'].forEach(ev => k.addEventListener(ev, press(false)));
+  });
+
+  // ==================================================================== Boutons juicy : magnétiques
+  section.querySelectorAll('[data-magnet]').forEach(btn => {
+    if (reduce || !hasGsap) return;
+    const qx = gsap.quickTo(btn, 'x', { duration: .5, ease: 'power3' });
+    const qy = gsap.quickTo(btn, 'y', { duration: .5, ease: 'power3' });
+    btn.addEventListener('pointermove', e => {
+      const r = btn.getBoundingClientRect();
+      qx((e.clientX - (r.left + r.width / 2)) * .3);
+      qy((e.clientY - (r.top + r.height / 2)) * .3);
+    });
+    btn.addEventListener('pointerenter', () => gsap.to(btn, { scale: 1.05, duration: .35, ease: 'power2.out' }));
+    btn.addEventListener('pointerleave', () => { qx(0); qy(0); gsap.to(btn, { scale: 1, duration: .4, ease: 'power2.out' }); });
+    btn.addEventListener('pointerdown', () => gsap.to(btn, { scale: .9, duration: .12, ease: 'power2.out' }));
+    ['pointerup', 'pointercancel'].forEach(ev => btn.addEventListener(ev, () => gsap.to(btn, { scale: 1.05, duration: .55, ease: 'elastic.out(1,0.5)' })));
+  });
+
+  section.querySelectorAll('a.c3-key-btn[data-burst]').forEach(btn => {
+    btn.addEventListener('click', e => {
+      e.preventDefault();
+      const r = btn.getBoundingClientRect();
+      burstAt(r.left + r.width / 2, r.top + r.height / 2);
+      setTimeout(() => { location.href = btn.href; }, 360);
+    });
+  });
+})();
+</script>
+</body>
+</html>
