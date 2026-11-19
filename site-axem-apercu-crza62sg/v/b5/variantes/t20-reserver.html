@@ -1,0 +1,1115 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Réserver un coaching · AXEM IA</title>
+<script>if (/[?&]pal=blanc\b/.test(location.search)) document.documentElement.classList.add('pal-blanc');</script>
+<meta name="description" content="Deux associés qui déploient l'IA dans vos équipes, sur vos vrais dossiers. Conseil, formation et coaching IA à Paris, sans intermédiaire.">
+<link rel="icon" href="../img/favicon-ax-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../img/favicon-ax-180.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="AXEM IA">
+<meta property="og:title" content="AXEM IA, votre partenaire IA de A à Z">
+<meta property="og:description" content="Clément Predo et Alexis Zeitoun déploient l’IA dans vos équipes, sur vos vrais dossiers. Conseil, formation et coaching IA.">
+<meta property="og:url" content="https://axem-ia.fr/">
+<meta property="og:image" content="https://axem-ia.fr/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://axem-ia.fr/">
+<noscript><style>.fade, .rv { opacity: 1 !important; transform: none !important; }</style></noscript>
+<link href="../vendor/fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="../assets/axem.css">
+<link rel="stylesheet" href="../assets/t2.css">
+<meta name="robots" content="noindex">
+<style>
+/* ---- Tour 16 : fluidite. Plus de flou derriere la barre (il se recalculait a chaque image de
+   defilement), le bandeau clients tourne en CSS sur la carte graphique. ---- */
+.nav.solid { background: rgba(250, 246, 234, .97); backdrop-filter: none; -webkit-backdrop-filter: none; }
+.t2 .mq { animation: mq 42s linear infinite; will-change: transform; }
+.marquee:hover .mq { animation-play-state: paused; }
+.mk-svg .mk { filter: none; }
+
+/* ---- Tour 16 : le logo de la barre = le mot « axem IA » de l'ecran bleu, meme police, meme balisage ---- */
+.nav .logo { display: inline-flex; background: transparent; padding: 0; box-shadow: none; }
+.nav .logo .wm { font-size: 38px; color: var(--blue); transition: color .35s var(--ease); }
+.nav .logo .nl span { display: inline-block; font-weight: 900; font-variation-settings: "SOFT" 100, "WONK" 0, "opsz" 144; letter-spacing: -0.02em; }
+.nav .logo:hover { transform: none; box-shadow: none; }
+.nav .logo:hover .wm { color: var(--ink); }
+@media (max-width: 860px) { .nav .logo .wm { font-size: 30px; } }
+
+/* ---- Tour 16 : liens de la barre = de vrais boutons, comme les lignes d'offres. Au survol, une
+   pastille bleue monte du bas, deborde le mot, le texte passe en creme et une fleche sort. ---- */
+.nav .links { gap: 4px; }
+.nav .links a { position: relative; display: inline-flex; align-items: center; gap: 0; padding: 12px 18px; border-radius: 999px; font-size: 15px; font-weight: 600; isolation: isolate; transition: color .35s var(--ease), padding .45s var(--ease); }
+.nav .links a::after { display: none; }
+.nav .links a::before { content: ""; position: absolute; inset: -3px -4px; margin: 0; width: auto; height: auto; border-radius: 999px; background: var(--blue); z-index: -1; transform: scale(.55, 0); transform-origin: 50% 100%; transition: transform .45s var(--ease); flex: none; }
+.nav .links a .na { display: inline-block; width: 0; overflow: hidden; opacity: 0; font-size: 17px; line-height: 1; transform: translateX(-6px) rotate(0); transition: width .45s var(--ease), opacity .3s var(--ease), transform .45s var(--ease), margin .45s var(--ease); }
+.nav .links a:hover, .nav .links a:focus-visible { color: var(--cream); padding-left: 22px; padding-right: 20px; }
+.nav .links a:hover::before, .nav .links a:focus-visible::before { transform: none; }
+.nav .links a:hover .na, .nav .links a:focus-visible .na { width: 16px; margin-left: 8px; opacity: 1; transform: rotate(-45deg); }
+.nav .links a.on { color: var(--blue); }
+.nav .links a.on:hover { color: var(--cream); }
+
+/* ---- Tour 16 : « Reserver un echange offert », un vrai bouton cale a droite. Une grosse fleche
+   dans une pastille creme apparait apres l'arrivee, rebondit de temps en temps pour attirer l'oeil ;
+   au survol le fond encre entre du cote d'ou vient la souris (reflexe s1 Aimant). ---- */
+.nav .book { position: relative; display: inline-flex; align-items: center; gap: 14px; padding: 7px 7px 7px 24px; border: 0; border-radius: 999px; background: var(--blue); color: var(--cream); font-size: 15px; font-weight: 600; letter-spacing: 0; text-transform: none; overflow: hidden; isolation: isolate; --ex: 0%; --ey: 115%; transition: box-shadow .35s var(--ease); }
+.nav .book::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--ink); z-index: -1; transform: translate(var(--ex), var(--ey)); transition: transform 520ms var(--ease); }
+.nav .book:hover::before, .nav .book:focus-visible::before { transform: none; }
+.nav .book::after { display: none; }
+.nav .book .short { display: none; }
+.nav .book .bk-ar { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--cream); color: var(--blue); transform: scale(0) rotate(-90deg); transition: transform .5s var(--ease), color .35s var(--ease); }
+.nav .book .bk-ar svg { width: 20px; height: 20px; display: block; }
+.ready:not(.hold) .nav .book .bk-ar { transform: none; transition: transform .8s cubic-bezier(.34, 1.8, .5, 1) .9s; }
+.ready:not(.hold) .nav .book .bk-ar svg { animation: bkBounce 3.2s cubic-bezier(.3, 0, .2, 1) 2.2s infinite; }
+@keyframes bkBounce { 0%, 62%, 100% { transform: translateX(0); } 70% { transform: translateX(6px); } 78% { transform: translateX(-2px); } 86% { transform: translateX(4px); } 93% { transform: translateX(0); } }
+.nav .book:hover .bk-ar { transform: rotate(-45deg) scale(1.08); transition-delay: 0s; }
+.nav .book:hover .bk-ar svg { animation: none; }
+@media (max-width: 860px) {
+  .nav .book { gap: 10px; padding: 5px 5px 5px 16px; font-size: 14px; }
+  .nav .book .long { display: none; }
+  .nav .book .short { display: inline; }
+  .nav .book .bk-ar { width: 34px; height: 34px; }
+  .nav .book .bk-ar svg { width: 17px; height: 17px; }
+}
+@media (prefers-reduced-motion: reduce) { .ready .nav .book .bk-ar svg { animation: none !important; } }
+
+/* ---- Tour 16 : hero s1 range. Titre remonte, bouton cale sur le bord droit de la grille, « c'est
+   ici » plus gros, pose sous le bouton et toujours visible, schema et chiffres en pied de hero. ---- */
+@media (min-width: 861px) {
+  .home .hero.mk3 { justify-content: flex-start; padding-top: clamp(112px, 17svh, 176px); }
+  .home .hero.mk3 { min-height: 0; height: auto; padding-bottom: clamp(40px, 6svh, 64px); }
+  .hero.mk3 .mk-row { margin-top: clamp(120px, 19svh, 190px); padding-top: 0; }
+  .hero.mk3 .l2 { justify-content: space-between; }
+  .hero.mk3 .side { margin-left: auto; align-items: flex-end; max-width: none; }
+  .hero.mk3 .side .btn { align-self: flex-end !important; }
+}
+.hero.mk3 .btn { font-size: 17px; padding: 22px 32px; }
+.mk-note-btn { font-size: 30px; }
+@media (max-width: 860px) { .mk-note-btn { font-size: 22px; } }
+
+/* ---- Tour 17 : socle commun aux 6 pages (v1 v2 v3 d1 d2 d3), injecte par le build juste apres
+   nav.css et avant le CSS propre a chaque page. Regle de Clement : un seul bouton Reserver visible
+   a la fois, plus le bouton son, plus l'habillage du pied de page legal. ---- */
+
+/* Reserver un seul a la fois (regle Clement, tour 17). La barre garde un bouton .book (nav.css) ;
+   il est masque tant que le grand bouton du hero est a l'ecran, invisible sur les pages duo car
+   elles n'ont pas de hero : voir base17.js. Aujourd'hui assets/axem.js masque toute la barre au
+   defilement vers le bas (classe .hide, assets/axem.css ligne 39) : on neutralise ce comportement
+   ici, la barre du tour 17 ne se cache plus jamais. */
+.t17 .nav.hide { transform: none; }
+
+.t17 .nav .book[data-book] { transition: opacity .4s var(--ease), transform .4s var(--ease); }
+.t17 .nav .book[data-book].rs-hidden { opacity: 0; transform: translateY(-10px); pointer-events: none; }
+.t17 .nav .book[data-book].rs-show { opacity: 1; transform: none; }
+
+/* Bouton son : egaliseur discret en bas a gauche, coupe par defaut. Barres immobiles quand coupe,
+   ondulent (scaleY, CSS pur) quand actif. Ne tourne jamais tant que le bouton n'est pas active :
+   c'est une animation CSS bornee par la classe .on, pas une boucle JS permanente. */
+.t17 .snd-btn { position: fixed; left: 18px; bottom: 18px; z-index: 56; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: rgba(250, 246, 234, .88); display: grid; place-items: center; cursor: pointer; padding: 0; transition: background-color .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease); }
+.t17 .snd-btn:hover { border-color: var(--blue); transform: translateY(-2px); }
+.t17 .snd-btn:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.t17 .snd-bars { display: flex; align-items: center; justify-content: center; gap: 3px; width: 18px; height: 16px; pointer-events: none; }
+.t17 .snd-bars i { display: block; width: 2.5px; height: 100%; border-radius: 2px; background: var(--ink); transform: scaleY(.28); transform-origin: center; transition: background-color .3s var(--ease); }
+.t17 .snd-btn.on .snd-bars i { background: var(--blue); animation: t17SndWave 1.15s ease-in-out infinite; }
+.t17 .snd-btn.on .snd-bars i:nth-child(1) { animation-delay: 0s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(2) { animation-delay: .18s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(3) { animation-delay: .36s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(4) { animation-delay: .12s; }
+@keyframes t17SndWave { 0%, 100% { transform: scaleY(.28); } 50% { transform: scaleY(1); } }
+/* le bandeau de maquette se range a droite du bouton son, jamais dessous */
+.t17 .proto { left: 76px; bottom: 24px; }
+@media (max-width: 860px) { .t17 .snd-btn { left: 14px; bottom: 14px; width: 40px; height: 40px; } }
+@media (max-width: 860px) and (min-width: 701px) { .t17 .proto { left: 68px; bottom: 20px; } }
+@media (prefers-reduced-motion: reduce) { .t17 .snd-btn.on .snd-bars i { animation: none !important; } }
+
+/* Pied de page legal : une ligne sous le meta existant (axem-ia.fr / Paris / Reserver), au-dessus du
+   mot-symbole geant. Le meta original (footer .meta, assets/axem.css ligne 146) est en position
+   absolue a taille fixe ; sur mobile il retombe sur 2 lignes (peu de largeur pour 3 items), ce qui
+   ferait chevaucher une ligne suivante a decalage fixe. On enveloppe donc meta + legal-links dans un
+   bloc .ft-top en flux normal (empile en colonne), et on neutralise le positionnement absolu du
+   meta a l'interieur : la ligne des liens legaux suit toujours meta, jamais de chevauchement. */
+.t17 footer .ft-top { position: absolute; top: 28px; left: var(--gutter); right: var(--gutter); display: flex; flex-direction: column; gap: 10px; }
+.t17 footer .ft-top .meta { position: static; top: auto; left: auto; right: auto; flex-wrap: wrap; row-gap: 6px; }
+.t17 footer .legal-links { position: static; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 11px; font-weight: 600; letter-spacing: .04em; margin: 0; }
+.t17 footer .legal-links a { color: rgba(250, 246, 234, .62); text-decoration: none; transition: color .25s var(--ease); }
+.t17 footer .legal-links a:hover, .t17 footer .legal-links a:focus-visible { color: var(--blue); }
+@media (max-width: 860px) { .t17 footer .ft-top { gap: 8px; } .t17 footer .legal-links { gap: 5px 16px; } }
+
+/* Pages juridiques (mentions-legales.html, confidentialite.html) : mise en page simple, DA du site. */
+.t17-legal { max-width: 760px; margin: 0 auto; padding: clamp(90px, 12vh, 140px) var(--gutter) 120px; }
+.t17-legal .back { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--blue); margin-bottom: 48px; }
+.t17-legal .back:hover, .t17-legal .back:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.t17-legal h1 { font-size: clamp(32px, 5vw, 48px); margin: 0 0 8px; }
+.t17-legal .maj { font-size: 13px; color: var(--grey); margin: 0 0 48px; }
+.t17-legal h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(20px, 2.4vw, 26px); margin: 44px 0 14px; }
+.t17-legal p { font-size: 16px; line-height: 1.65; color: var(--grey); margin: 0 0 14px; }
+.t17-legal a { color: var(--blue); }
+.t17-legal a:hover, .t17-legal a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.t17-legal .todo { color: var(--blue); font-weight: 600; }
+
+/* Tour 19, commun a toutes les pages : le monogramme ax (enregistre par Clement le 25/09) en logo de la
+   barre des pages duo et reservation, et la barre de prototype en bas a gauche. */
+.axm { display: inline-block; width: 46px; height: 31px; vertical-align: middle; background: var(--blue); -webkit-mask: url(../img/logo-ax-mask.png) center / contain no-repeat; mask: url(../img/logo-ax-mask.png) center / contain no-repeat; transition: transform 0.4s var(--ease); }
+.nav .logo:hover .axm, .nav .logo:focus-visible .axm { transform: rotate(-8deg) scale(1.08); }
+.t19 .proto { position: fixed; left: 76px; bottom: 24px; z-index: 55; margin: 0; font: 500 12px/1 "Instrument Sans", sans-serif; background: var(--ink); color: var(--cream); padding: 8px 12px; }
+.t19 .proto a { margin-left: 12px; color: var(--cream); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+@media (max-width: 700px) {
+  .t19 .proto { position: static; display: block; width: auto; line-height: 1.6; margin: 14px var(--gutter) 18px; }
+}
+
+/* Tour 20 : reglages communs. */
+/* Pages de paiement : le bouton son recouvrait le prix de la barre collante, il n'a pas de role au moment de payer. */
+.t20-r1 .snd-btn, .t20-r2 .snd-btn, .t20-r3 .snd-btn { display: none !important; }
+/* Pages de paiement : le bandeau de maquette masquait le prix de la barre collante du bas, il remonte sous la nav. */
+@media (min-width: 701px) { .t20-r1 .proto, .t20-r2 .proto, .t20-r3 .proto { top: 84px; bottom: auto; left: auto; right: 24px; } }
+
+/* ---- Tour 20, paiement r3 : "Le prix clair", une seule page qui defile, pas d'etape. Reference
+   imposee : Jeton, Site of the Day du 27/01/2025, jeton.com/fees. On lui emprunte la LOGIQUE, pas
+   l'habillage : ouverture en aplat d'une seule couleur pleine (chez nous le bleu de la marque, texte
+   creme), un titre enorme en deux lignes qui dit la promesse de clarte, une courte phrase, puis la
+   page de commande qui arrive en dessous sur fond creme avec des lignes de prix d'une nettete
+   absolue, libelle a gauche, montant a droite, aucune ligne superflue. Notre logique propre, gardee
+   du brief : un ticket de caisse qui vit en direct a droite (HT, TVA, TTC), un bandeau collant qui
+   garde le prix TTC visible en descendant, et un seul moment juicy, le ticket qui se tamponne "Paye"
+   avec le logo Claude qui saute une fois. Tout est scope sous .t20-r3. ---- */
+
+.t20-r3 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+.t20-r3 main, .t20-r3 #main { display: block; }
+.t20-r3 .r3 { position: relative; }
+
+/* Un seul bouton "Reserver" a la fois (regle du site) : cette page a deja son propre bouton Payer. */
+.t20-r3 .nav [data-book], .t20-r3 .nav .book { display: none !important; }
+
+/* La barre reste toujours lisible sur l'aplat bleu du haut de page : jamais de logo bleu sur fond
+   bleu. Le comportement normal (transparente puis solide au scroll) suffit partout ailleurs sur le
+   site, mais ici le tout premier ecran est deja bleu plein. Correctif local, propre a r3. */
+.t20-r3 .nav { background: var(--cream) !important; border-bottom-color: var(--line) !important; }
+
+/* ===== Bandeau Instagram (regle 5) ===== */
+.t20-r3 .r3-ig[hidden] { display: none; }
+.t20-r3 .r3-ig { position: relative; z-index: 30; display: flex; align-items: center; justify-content: center; gap: 16px; padding: 14px var(--gutter); padding-top: calc(76px + 14px); background: var(--ink); color: var(--cream); text-align: center; }
+.t20-r3 .r3-ig p { margin: 0; font-size: 13.5px; line-height: 1.5; max-width: 640px; }
+.t20-r3 .r3-ig b { color: var(--blue); }
+.t20-r3 .r3-ig-close { position: absolute; right: var(--gutter); top: 50%; transform: translateY(-50%); width: 30px; height: 30px; border-radius: 50%; border: 1px solid rgba(250,246,234,0.3); background: none; color: var(--cream); font-size: 18px; line-height: 1; cursor: pointer; }
+.t20-r3 .r3-ig-close:hover, .t20-r3 .r3-ig-close:focus-visible { border-color: var(--cream); }
+
+/* ===== Ouverture, aplat bleu plein (logique Jeton) ===== */
+.t20-r3 .r3-hero[hidden], .t20-r3 .r3-sticky[hidden], .t20-r3 .r3-body[hidden] { display: none; }
+.t20-r3 .r3-hero { position: relative; background: var(--blue); color: var(--cream); display: grid; grid-template-columns: 1.15fr 0.85fr; align-items: end; gap: clamp(24px, 4vw, 64px); padding: 150px var(--gutter) 72px; min-height: 92svh; }
+.t20-r3 .r3-hero-in { display: flex; flex-direction: column; gap: 22px; max-width: 640px; }
+.t20-r3 .r3-back { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: rgba(250,246,234,0.85); width: fit-content; }
+.t20-r3 .r3-back:hover, .t20-r3 .r3-back:focus-visible { color: var(--cream); text-decoration: underline; text-underline-offset: 3px; }
+.t20-r3 .r3-kick { color: rgba(250,246,234,0.72); margin: 0; }
+.t20-r3 .r3-hero h1 { margin: 0; font-size: clamp(46px, 6.6vw, 92px); line-height: 0.98; color: var(--cream); }
+.t20-r3 .r3-phrase { margin: 0; font-size: clamp(16px, 1.6vw, 19px); line-height: 1.5; color: rgba(250,246,234,0.85); max-width: 34em; }
+.t20-r3 .r3-scroll { display: inline-flex; align-items: center; gap: 10px; align-self: flex-start; margin-top: 10px; padding: 10px 18px 10px 10px; border-radius: 999px; border: 1px solid rgba(250,246,234,0.35); background: rgba(11,13,18,0.12); color: var(--cream); font-size: 13px; font-weight: 600; cursor: pointer; transition: border-color 250ms var(--ease), transform 250ms var(--ease); }
+.t20-r3 .r3-scroll:hover, .t20-r3 .r3-scroll:focus-visible { border-color: var(--cream); transform: translateY(2px); }
+.t20-r3 .r3-scroll-dot { width: 20px; height: 20px; border-radius: 50%; background: var(--cream); position: relative; flex: none; }
+.t20-r3 .r3-scroll-dot::before { content: ""; position: absolute; left: 50%; top: 5px; width: 2px; height: 10px; background: var(--blue); transform: translateX(-50%); animation: r3ScrollDot 1.8s var(--ease) infinite; }
+@keyframes r3ScrollDot { 0% { opacity: 1; transform: translate(-50%, 0); } 70%, 100% { opacity: 0; transform: translate(-50%, 8px); } }
+
+/* Carte "au premier coup d'oeil" : format, prix TTC en principal, HT en detail, ce qui est inclus.
+   Satisfait la clarte en 3 secondes des l'arrivee, sans avoir a defiler (regle 1 du brief). */
+.t20-r3 .r3-glance { background: var(--cream); color: var(--ink); padding: 28px; display: flex; flex-direction: column; gap: 10px; box-shadow: 0 30px 60px -30px rgba(11,13,18,0.45); }
+.t20-r3 .r3-glance .cap { color: var(--blue); margin: 0; }
+.t20-r3 .r3-glance-name { margin: 2px 0 0; font-size: clamp(24px, 2.4vw, 30px); }
+.t20-r3 .r3-glance-desc { margin: 0; font-size: 14px; color: var(--grey); line-height: 1.4; }
+.t20-r3 .r3-glance-price { display: flex; align-items: baseline; gap: 8px; margin-top: 10px; padding-top: 14px; border-top: 1px solid var(--line); }
+.t20-r3 .r3-glance-price b { font-size: clamp(34px, 3.4vw, 44px); color: var(--blue); }
+.t20-r3 .r3-glance-price span { font-size: 13px; font-weight: 700; color: var(--grey); }
+.t20-r3 .r3-glance-ht { margin: 0; font-size: 12.5px; color: var(--grey); }
+.t20-r3 .r3-glance-inc { list-style: none; margin: 14px 0 0; padding: 12px 0 0; border-top: 1px solid var(--line); display: flex; flex-direction: column; gap: 6px; }
+.t20-r3 .r3-glance-inc li { font-size: 13px; color: var(--grey); padding-left: 18px; position: relative; }
+.t20-r3 .r3-glance-inc li::before { content: ""; position: absolute; left: 0; top: 6px; width: 8px; height: 8px; background: var(--blue); }
+
+/* ===== Bandeau collant : format + prix TTC visibles pendant toute la commande (regle 1) ===== */
+.t20-r3 .r3-sticky { position: sticky; top: 76px; z-index: 40; display: flex; align-items: center; justify-content: space-between; gap: 16px; padding: 14px var(--gutter); background: var(--cream); border-bottom: 1px solid var(--line); box-shadow: 0 12px 24px -20px rgba(11,13,18,0.3); }
+.t20-r3 .r3-sticky-name { font-size: 13px; font-weight: 700; color: var(--grey); }
+.t20-r3 .r3-sticky-price { font-size: 15px; font-weight: 600; color: var(--ink); display: flex; align-items: baseline; gap: 6px; }
+.t20-r3 .r3-sticky-price b { font-size: 19px; color: var(--blue); }
+.t20-r3 .r3-sticky-cta { display: inline-flex; align-items: center; gap: 8px; padding: 9px 16px; border-radius: 999px; background: var(--ink); color: var(--cream); font-size: 13.5px; font-weight: 600; transition: background-color 250ms var(--ease); }
+.t20-r3 .r3-sticky-cta:hover, .t20-r3 .r3-sticky-cta:focus-visible { background: var(--blue); }
+
+/* ===== Page de commande, fond creme, lignes nettes (logique Jeton) ===== */
+.t20-r3 .r3-body { position: relative; display: grid; grid-template-columns: minmax(0, 1fr); gap: 28px; max-width: 1180px; margin: 0 auto; padding: 64px var(--gutter) 100px; }
+.t20-r3 .r3-main { min-width: 0; display: flex; flex-direction: column; gap: 56px; }
+.t20-r3 .r3-seg, .t20-r3 .r3-seg-opt, .t20-r3 .r3-seg-in { min-width: 0; }
+.t20-r3 .r3-seg-in b, .t20-r3 .r3-seg-in i { min-width: 0; overflow-wrap: break-word; }
+
+.t20-r3 .r3-block { position: relative; padding-top: 6px; }
+.t20-r3 .r3-num { margin: 0 0 10px; font-family: 'Fraunces', serif; font-weight: 700; font-size: 13px; color: var(--blue); border: 1.5px solid var(--blue); width: 26px; height: 26px; border-radius: 50%; display: flex; align-items: center; justify-content: center; }
+.t20-r3 .r3-block h2 { margin: 0 0 8px; font-size: clamp(26px, 2.8vw, 34px); }
+.t20-r3 .r3-lead { margin: 0 0 26px; font-size: 15.5px; color: var(--grey); max-width: 46em; }
+
+/* ===== Selecteur segmente (format, puis particulier/pro) ===== */
+.t20-r3 .r3-seg { border: 0; padding: 0; margin: 0; display: grid; grid-template-columns: repeat(3, 1fr); gap: 12px; }
+.t20-r3 .r3-seg-2 { grid-template-columns: repeat(2, 1fr); max-width: 420px; margin-bottom: 30px; }
+.t20-r3 .r3-seg-opt { position: relative; display: block; cursor: pointer; }
+.t20-r3 .r3-seg-opt input { position: absolute; opacity: 0; width: 1px; height: 1px; overflow: hidden; pointer-events: none; }
+.t20-r3 .r3-seg-in { display: flex; flex-direction: column; gap: 6px; padding: 18px 16px; min-height: 48px; border: 1.5px solid var(--line); background: var(--cream); transition: border-color 160ms, background-color 160ms, transform 160ms var(--ease); }
+.t20-r3 .r3-seg-in b { font-size: 17px; line-height: 1.1; }
+.t20-r3 .r3-seg-in i { font-style: normal; font-size: 12.5px; color: var(--grey); }
+.t20-r3 .r3-seg-opt:hover .r3-seg-in { border-color: var(--ink); }
+.t20-r3 .r3-seg-opt input:checked + .r3-seg-in { border-color: var(--blue); background: var(--blue); color: var(--cream); transform: translateY(-2px); }
+.t20-r3 .r3-seg-opt input:checked + .r3-seg-in i { color: rgba(250,246,234,0.75); }
+.t20-r3 .r3-seg-opt input:focus-visible + .r3-seg-in { outline: 2px solid var(--blue); outline-offset: 3px; }
+
+.t20-r3 .r3-degressive { margin: 4px 0 12px; font-size: 13.5px; line-height: 1.55; color: var(--grey); padding: 14px 16px; background: rgba(35,73,255,0.06); border-left: 2px solid var(--blue); max-width: 46em; }
+.t20-r3 .r3-prereq { margin: 0 0 14px; font-size: 12.5px; line-height: 1.55; color: var(--grey); max-width: 46em; }
+.t20-r3 .r3-human { margin: 0; font-size: 13.5px; color: var(--grey); }
+.t20-r3 .r3-human a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
+.t20-r3 .r3-human[hidden] { display: none; }
+
+/* ===== Champs ===== */
+.t20-r3 .r3-fields { display: grid; grid-template-columns: 1fr 1fr; gap: 16px; max-width: 560px; margin-top: 4px; }
+.t20-r3 .r3-field-w { grid-column: 1 / -1; }
+.t20-r3 .r3-field { display: flex; flex-direction: column; gap: 6px; }
+.t20-r3 .r3-field label { font-size: 12.5px; font-weight: 600; color: var(--grey); }
+.t20-r3 .r3-field input { font: inherit; font-size: 16px; padding: 13px 14px; border: 1.5px solid var(--line); background: var(--cream); color: var(--ink); min-height: 48px; }
+.t20-r3 .r3-field input:hover { border-color: var(--ink); }
+.t20-r3 .r3-field input:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; border-color: var(--blue); }
+.t20-r3 .r3-pro-link { margin: 18px 0 0; }
+.t20-r3 .r3-pro-link a { font-size: 13.5px; font-weight: 600; color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
+.t20-r3 .r3-pro-sim { margin: 12px 0 0; font-size: 13.5px; font-weight: 600; color: var(--blue); background: rgba(35,73,255,0.08); padding: 12px 14px; max-width: 460px; }
+.t20-r3 [data-pro-only][hidden] { display: none; }
+
+/* ===== Cases legales ===== */
+.t20-r3 .r3-checks { display: flex; flex-direction: column; gap: 14px; margin-bottom: 16px; max-width: 620px; }
+.t20-r3 .r3-check { display: flex; align-items: flex-start; gap: 12px; font-size: 14.5px; line-height: 1.5; cursor: pointer; max-width: 620px; }
+.t20-r3 .r3-check input { width: 22px; height: 22px; min-width: 48px; min-height: 22px; flex: none; margin: 0; accent-color: var(--blue); cursor: pointer; }
+.t20-r3 .r3-check span { padding-top: 2px; }
+.t20-r3 .r3-check a { color: var(--blue); text-decoration: underline; text-underline-offset: 2px; }
+.t20-r3 [data-part-only][hidden] { display: none; }
+
+/* ===== Ticket de caisse, vivant, colle a droite en bureau (regle du recap collant) ===== */
+.t20-r3 .r3-ticket { position: relative; }
+.t20-r3 .r3-ticket-in { position: relative; background: var(--cream); border: 1.5px solid var(--ink); padding: 26px; overflow: hidden; }
+.t20-r3 .r3-ticket-head { display: flex; align-items: center; justify-content: space-between; margin-bottom: 6px; }
+.t20-r3 .r3-ticket-head .cap { color: var(--blue); margin: 0; }
+.t20-r3 .r3-mk { width: 26px; height: 26px; display: block; }
+.t20-r3 .r3-mk.jump svg { animation: r3MkJump 700ms cubic-bezier(.34,1.6,.5,1) 1; }
+@keyframes r3MkJump { 0% { transform: translateY(0) scale(1); } 30% { transform: translateY(-16px) scale(1.12, 0.9); } 55% { transform: translateY(0) scale(0.94, 1.08); } 78% { transform: translateY(-5px) scale(1.03, 0.98); } 100% { transform: translateY(0) scale(1); } }
+.t20-r3 .r3-ticket-name { margin: 0 0 14px; font-size: 22px; }
+.t20-r3 .r3-ticket-rows { display: flex; flex-direction: column; gap: 10px; padding: 16px 0; border-top: 1px dashed var(--line); border-bottom: 1px dashed var(--line); margin: 0 0 20px; }
+.t20-r3 .r3-ticket-rows div { display: flex; justify-content: space-between; gap: 12px; font-size: 14.5px; }
+.t20-r3 .r3-ticket-rows dt { color: var(--grey); margin: 0; }
+.t20-r3 .r3-ticket-rows dd { margin: 0; font-weight: 600; }
+.t20-r3 .r3-ticket-total { font-size: 17px !important; padding-top: 6px; }
+.t20-r3 .r3-ticket-total dd { color: var(--blue); font-size: 22px; }
+.t20-r3 .r3-buy { width: 100%; justify-content: center; text-align: center; min-height: 56px; font-size: 15px; }
+.t20-r3 .r3-buy:disabled { opacity: 0.4; cursor: not-allowed; }
+.t20-r3 .r3-buy:disabled::before { display: none; }
+.t20-r3 .r3-buy:not(:disabled):active { transform: scale(0.97); }
+.t20-r3 .r3-buy-hint { margin: 10px 0 0; font-size: 12.5px; color: var(--grey); text-align: center; }
+.t20-r3 .r3-buy:not(:disabled) ~ .r3-buy-hint { display: none; }
+.t20-r3 .r3-ticket-note { margin: 16px 0 0; font-size: 11.5px; line-height: 1.5; color: var(--grey); text-align: center; }
+
+/* Le tampon "Paye" : cache jusqu'a la validation, puis pose en biais sur le ticket. */
+.t20-r3 .r3-stamp { position: absolute; top: 38%; left: 50%; font-family: 'Fraunces', serif; font-weight: 900; font-size: 40px; color: #C4372B; border: 4px solid #C4372B; padding: 6px 22px; border-radius: 10px; text-transform: uppercase; letter-spacing: 0.06em; opacity: 0; transform: translate(-50%, -50%) rotate(-11deg) scale(1.5); transition: opacity 320ms var(--ease), transform 420ms cubic-bezier(.34,1.6,.5,1); pointer-events: none; mix-blend-mode: multiply; }
+.t20-r3 .r3-ticket-in.is-paid .r3-stamp { opacity: 0.92; transform: translate(-50%, -50%) rotate(-11deg) scale(1); }
+
+/* ===== Confirmation, remplace la page (regle 6) ===== */
+.t20-r3 .r3-confirm { max-width: 720px; margin: 0 auto; padding: 96px var(--gutter) 120px; }
+.t20-r3 .r3-confirm .cap { color: var(--blue); margin: 0 0 12px; }
+.t20-r3 .r3-confirm h2 { margin: 0 0 10px; font-size: clamp(32px, 4vw, 48px); outline: none; }
+.t20-r3 .r3-confirm-lead { margin: 0 0 8px; font-size: 16px; color: var(--grey); }
+.t20-r3 .r3-confirm-parcours { margin: 0 0 8px; font-size: 14.5px; color: var(--grey); background: rgba(35,73,255,0.06); border-left: 2px solid var(--blue); padding: 12px 16px; max-width: 46em; }
+.t20-r3 .r3-confirm-parcours[hidden] { display: none; }
+.t20-r3 .r3-slots-note { color: var(--blue); margin: 28px 0 16px; }
+.t20-r3 .r3-slots { display: grid; grid-template-columns: repeat(3, 1fr); gap: 16px; }
+.t20-r3 .r3-day { display: flex; flex-direction: column; gap: 10px; }
+.t20-r3 .r3-day-h { margin: 0; font-size: 13px; font-weight: 700; }
+.t20-r3 .r3-slot { display: block; width: 100%; min-height: 48px; font: inherit; font-size: 14.5px; font-weight: 600; padding: 12px 8px; border: 1.5px solid var(--line); background: var(--cream); color: var(--ink); cursor: pointer; text-align: center; transition: border-color 160ms, background-color 160ms, color 160ms; }
+.t20-r3 .r3-slot:hover { border-color: var(--ink); }
+.t20-r3 .r3-slot:focus-visible { outline: 2px solid var(--blue); outline-offset: 2px; }
+.t20-r3 .r3-slot[aria-pressed="true"] { background: var(--blue); border-color: var(--blue); color: var(--cream); }
+.t20-r3 #r3Slots.r3-leaving { opacity: 0; transition: opacity 260ms var(--ease); }
+.t20-r3 .r3-booked h3 { margin: 0 0 12px; font-size: clamp(26px, 3vw, 34px); outline: none; }
+.t20-r3 .r3-booked p { margin: 0 0 22px; font-size: 15.5px; color: var(--grey); line-height: 1.55; }
+.t20-r3 .r3-home { font-size: 13.5px; font-weight: 600; color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
+
+/* ===== Bureau : deux colonnes, ticket colle ===== */
+@media (min-width: 861px) {
+  .t20-r3 .r3-body { grid-template-columns: minmax(0, 1fr) 340px; align-items: start; gap: 64px; }
+  .t20-r3 .r3-ticket { position: sticky; top: 132px; }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 860px) {
+  .t20-r3 .r3-hero { grid-template-columns: 1fr; align-items: start; padding: 128px var(--gutter) 48px; min-height: 0; }
+  .t20-r3 .r3-hero h1 { font-size: 13vw; }
+  .t20-r3 .r3-glance { order: -1; }
+  .t20-r3 .r3-scroll { display: none; }
+  .t20-r3 .r3-ig { padding-top: calc(76px + 12px); }
+  .t20-r3 .r3-sticky { padding: 12px var(--gutter); }
+  .t20-r3 .r3-sticky-name { display: none; }
+  .t20-r3 .r3-body { padding: 48px var(--gutter) 140px; gap: 44px; }
+  .t20-r3 .r3-main { gap: 44px; }
+  .t20-r3 .r3-seg { grid-template-columns: 1fr; }
+  .t20-r3 .r3-seg-2 { max-width: none; }
+  .t20-r3 .r3-fields { grid-template-columns: 1fr; }
+  .t20-r3 .r3-slots { grid-template-columns: 1fr 1fr 1fr; gap: 8px; }
+  .t20-r3 .r3-slot { padding: 12px 4px; font-size: 13px; }
+
+  /* Le bouton final, plein largeur, colle en bas seulement une fois toutes les cases cochees. */
+  .t20-r3.r3-ready .r3-ticket-in { padding-bottom: 100px; }
+  .t20-r3.r3-ready .r3-buy { position: fixed; left: 0; right: 0; bottom: 0; z-index: 55; border-radius: 0; box-shadow: 0 -16px 32px -18px rgba(11,13,18,0.4); }
+  .t20-r3.r3-ready .r3-buy-hint, .t20-r3.r3-ready .r3-ticket-note { display: none; }
+  .t20-r3.r3-ready .r3-body { padding-bottom: 96px; }
+}
+
+/* ===== Mouvement reduit : tout est present, rien ne joue en boucle ===== */
+@media (prefers-reduced-motion: reduce) {
+  .t20-r3 *, .t20-r3 *::before, .t20-r3 *::after { animation-duration: 0.01ms !important; transition-duration: 0.01ms !important; }
+  .t20-r3 .r3-scroll-dot::before { animation: none; top: 50%; transform: translate(-50%, -50%); opacity: 1; }
+}
+</style>
+</head>
+<body class="t17 t18 t19 t20 t19-r3 t20-r3">
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="nav" id="nav">
+  <a href="../repart/index.html" class="logo" aria-label="AXEM IA, accueil"><span class="axm" aria-hidden="true"></span></a>
+  <nav class="links" aria-label="Navigation principale">
+    <a href="#offres">Conseil<span class="na" aria-hidden="true">→</span></a><a href="#offres">Formation<span class="na" aria-hidden="true">→</span></a><a href="../coaching/">Coaching<span class="na" aria-hidden="true">→</span></a><a href="#duo">Le duo<span class="na" aria-hidden="true">→</span></a>
+  </nav>
+  <a href="#" class="book" data-book><span class="long">Réserver un échange offert</span><span class="short">Réserver</span><span class="bk-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a>
+</header>
+
+<main id="main">
+<section class="r3" aria-labelledby="r3-h">
+  <div class="grid" id="grid" aria-hidden="true"></div>
+
+  <div class="r3-ig" id="r3Ig" hidden role="status">
+    <p><b>Ouvrir dans Safari pour payer en un geste.</b> Appuyez sur les trois points en haut à droite, puis « Ouvrir dans le navigateur ».</p>
+    <button type="button" class="r3-ig-close" id="r3IgClose" aria-label="Fermer ce message">&times;</button>
+  </div>
+
+  <header class="r3-hero">
+    <div class="r3-hero-in">
+      <a class="r3-back" href="t20-k1.html#coaching"><span aria-hidden="true">&larr;</span> Retour à l'accueil</a>
+      <p class="cap r3-kick">Réservation en ligne</p>
+      <h1 class="f" id="r3-h">Un prix clair,<br>réglé en une fois.</h1>
+      <p class="r3-phrase">Le format, le prix TTC et ce qui est inclus, tout de suite. Vous payez, vous choisissez votre créneau, c'est fait.</p>
+      <button type="button" class="r3-scroll" data-scroll-to="#r3-f1"><span class="r3-scroll-dot" aria-hidden="true"></span>Défiler</button>
+    </div>
+
+    <div class="r3-glance" aria-live="polite">
+      <p class="cap">Votre commande</p>
+      <p class="r3-glance-name f" data-name>Séance</p>
+      <p class="r3-glance-desc" data-desc>Une heure, pour juger sur pièce.</p>
+      <div class="r3-glance-price"><b class="f" data-roll="ttc">300 €</b><span>TTC</span></div>
+      <p class="r3-glance-ht"><span data-roll="ht">250 €</span> HT, TVA 20 % incluse</p>
+      <ul class="r3-glance-inc">
+        <li>1 h en visio, écran partagé</li>
+        <li>Avec Clément Predo ou Alexis Zeitoun</li>
+      </ul>
+    </div>
+  </header>
+
+  <div class="r3-sticky" id="r3Sticky">
+    <span class="r3-sticky-name" data-name>Séance</span>
+    <span class="r3-sticky-price"><b data-roll="ttc">300 €</b> TTC</span>
+    <a class="r3-sticky-cta" href="#r3-ticket" data-scroll-to="#r3-ticket">Payer <span aria-hidden="true">&rarr;</span></a>
+  </div>
+
+  <div class="r3-body" id="r3Body">
+    <div class="r3-main">
+
+      <section class="r3-block" id="r3-f1" aria-labelledby="r3-f1h">
+        <p class="r3-num" aria-hidden="true">1</p>
+        <h2 class="f" id="r3-f1h">Votre format.</h2>
+        <p class="r3-lead">Une séance pour juger sur pièce, ou un parcours pour aller jusqu'au bout.</p>
+
+        <fieldset class="r3-seg">
+          <legend class="sr-only">Choisissez votre format</legend>
+
+          <label class="r3-seg-opt">
+            <input type="radio" name="r3-format" value="seance" data-ht="250" data-ttc="300" data-name="Séance" data-desc="Une heure, pour juger sur pièce, en découverte ou en paramétrage.">
+            <span class="r3-seg-in"><b class="f">1 séance</b><i>300 € TTC</i></span>
+          </label>
+          <label class="r3-seg-opt">
+            <input type="radio" name="r3-format" value="p5" data-ht="1100" data-ttc="1320" data-name="Parcours 5 séances" data-desc="Apprendre l'IA, de A à Z, sur vos projets.">
+            <span class="r3-seg-in"><b class="f">Parcours 5</b><i>1 320 € TTC</i></span>
+          </label>
+          <label class="r3-seg-opt">
+            <input type="radio" name="r3-format" value="p10" data-ht="2000" data-ttc="2400" data-name="Parcours 10 séances" data-desc="Mener votre projet au bout, de bout en bout.">
+            <span class="r3-seg-in"><b class="f">Parcours 10</b><i>2 400 € TTC</i></span>
+          </label>
+        </fieldset>
+
+        <p class="r3-degressive">Vous commencez par une séance, puis vous passez à un parcours ? Elle est recalculée au tarif du parcours. Sans engagement.</p>
+        <p class="r3-prereq">1 h en visio, écran partagé, avec Clément Predo ou Alexis Zeitoun. Prérequis, un abonnement Claude Pro, environ 20 € par mois, à votre charge.</p>
+
+        <p class="r3-human" data-human hidden>Une question avant de choisir ? <a href="https://calendly.com/clem-pred">Échangez avec nous</a>.</p>
+      </section>
+
+      <section class="r3-block" id="r3-f2" aria-labelledby="r3-f2h">
+        <p class="r3-num" aria-hidden="true">2</p>
+        <h2 class="f" id="r3-f2h">Vous êtes.</h2>
+        <p class="r3-lead">Le nécessaire pour établir votre facture, rien d'autre.</p>
+
+        <fieldset class="r3-seg r3-seg-2">
+          <legend class="sr-only">Vous êtes</legend>
+          <label class="r3-seg-opt"><input type="radio" name="r3-qui" value="particulier" checked><span class="r3-seg-in"><b class="f">Particulier</b></span></label>
+          <label class="r3-seg-opt"><input type="radio" name="r3-qui" value="pro"><span class="r3-seg-in"><b class="f">Professionnel</b></span></label>
+        </fieldset>
+
+        <div class="r3-fields">
+          <div class="r3-field"><label for="r3-fname">Prénom</label><input id="r3-fname" type="text" autocomplete="given-name"></div>
+          <div class="r3-field"><label for="r3-lname">Nom</label><input id="r3-lname" type="text" autocomplete="family-name"></div>
+          <div class="r3-field r3-field-w"><label for="r3-email">E-mail</label><input id="r3-email" type="email" autocomplete="email"></div>
+          <div class="r3-field r3-field-w" data-pro-only hidden><label for="r3-company">Société (facture à ce nom)</label><input id="r3-company" type="text" autocomplete="organization"></div>
+        </div>
+
+        <p class="r3-pro-link" data-pro-only hidden><a href="#" id="r3Qonto">Payer sur facture ou par virement</a></p>
+        <p class="r3-pro-sim" id="r3ProSim" hidden role="status">Lien de paiement envoyé par e-mail (simulé). Vous pouvez aussi régler par carte ci-dessous.</p>
+      </section>
+
+      <section class="r3-block r3-block-last" id="r3-f3" aria-labelledby="r3-f3h">
+        <p class="r3-num" aria-hidden="true">3</p>
+        <h2 class="f" id="r3-f3h">Votre accord.</h2>
+
+        <div class="r3-checks" data-part-only>
+          <label class="r3-check"><input type="checkbox" id="r3-c1"><span>Je demande que le coaching commence avant la fin du délai de rétractation de 14 jours.</span></label>
+          <label class="r3-check"><input type="checkbox" id="r3-c2"><span>Je reconnais perdre mon droit de rétractation une fois la prestation entièrement exécutée.</span></label>
+        </div>
+        <label class="r3-check"><input type="checkbox" id="r3-cgv"><span>J'accepte les <a href="#cgv">conditions générales de vente</a>.</span></label>
+      </section>
+
+    </div>
+
+    <aside class="r3-ticket" id="r3-ticket" aria-label="Récapitulatif de votre commande">
+      <div class="r3-ticket-in">
+        <div class="r3-ticket-head">
+          <p class="cap">Ticket</p>
+          <span class="r3-mk" id="r3Mk" aria-hidden="true"></span>
+        </div>
+        <p class="r3-ticket-name f" data-name>Séance</p>
+        <dl class="r3-ticket-rows">
+          <div><dt>Prix</dt><dd data-roll="ht">250 €</dd></div>
+          <div><dt>TVA, 20 %</dt><dd data-roll="tva">50 €</dd></div>
+          <div class="r3-ticket-total"><dt>Total TTC</dt><dd data-roll="ttc">300 €</dd></div>
+        </dl>
+
+        <button type="button" class="btn r3-buy" id="r3Buy" disabled>
+          <span id="r3BuyLabel">Payer 300 € TTC, commande avec obligation de paiement</span>
+        </button>
+        <p class="r3-buy-hint" id="r3BuyHint" role="status">Cochez les cases ci-dessus pour activer le paiement.</p>
+        <p class="r3-ticket-note">Paiement simulé pour la démonstration, aucune transaction réelle. Carte bancaire, Apple Pay et Google Pay acceptés.</p>
+
+        <div class="r3-stamp" id="r3Stamp" aria-hidden="true">Payé</div>
+      </div>
+    </aside>
+  </div>
+
+  <section class="r3-confirm" id="r3Confirm" hidden aria-labelledby="r3-confirm-h">
+    <p class="cap">C'est payé</p>
+    <h2 class="f" id="r3-confirm-h" tabindex="-1">Choisissez votre créneau.</h2>
+    <p class="r3-confirm-lead">Une heure, en visio, avec Clément Predo ou Alexis Zeitoun.</p>
+    <p class="r3-confirm-parcours" data-confirm-parcours hidden>Vous recevez par e-mail votre lien pour réserver vos <b data-confirm-n>5</b> séances à votre rythme.</p>
+    <p class="r3-slots-note cap">Créneaux d'exemple, sans date réelle</p>
+
+    <div class="r3-slots" id="r3Slots" role="group" aria-label="Créneaux d'exemple">
+      <div class="r3-day"><p class="r3-day-h">Lun</p>
+        <button type="button" class="r3-slot" data-slot="Lundi, 9 h" aria-pressed="false">9 h</button>
+        <button type="button" class="r3-slot" data-slot="Lundi, 14 h" aria-pressed="false">14 h</button>
+      </div>
+      <div class="r3-day"><p class="r3-day-h">Mar</p>
+        <button type="button" class="r3-slot" data-slot="Mardi, 10 h" aria-pressed="false">10 h</button>
+        <button type="button" class="r3-slot" data-slot="Mardi, 16 h" aria-pressed="false">16 h</button>
+      </div>
+      <div class="r3-day"><p class="r3-day-h">Mer</p>
+        <button type="button" class="r3-slot" data-slot="Mercredi, 11 h" aria-pressed="false">11 h</button>
+        <button type="button" class="r3-slot" data-slot="Mercredi, 15 h" aria-pressed="false">15 h</button>
+      </div>
+    </div>
+
+    <div class="r3-booked" id="r3Booked" hidden>
+      <h3 class="f" id="r3-booked-h" tabindex="-1">C'est réservé.</h3>
+      <p>Vous recevez la confirmation et le lien de la visio par e-mail. Créneau, <span data-booked-slot></span>.</p>
+      <a class="r3-home" href="t20-k1.html#coaching">Retour à l'accueil</a>
+    </div>
+  </section>
+
+</section>
+</main>
+
+<footer>
+  <div class="ft-top">
+    <div class="meta cap"><span>axem-ia.fr</span><span>Paris</span><a href="#" data-book>Réserver un échange offert →</a></div>
+    <div class="legal-links cap"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="mailto:contact@axem-ia.fr">contact@axem-ia.fr</a></div>
+  </div>
+  <div class="wm big" aria-hidden="true">axem<sup>IA</sup></div>
+</footer>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AXEM IA",
+  "url": "https://axem-ia.fr",
+  "email": "contact@axem-ia.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3 rue Françoise Dolto",
+    "postalCode": "75013",
+    "addressLocality": "Paris",
+    "addressCountry": "FR"
+  },
+  "founder": [
+    { "@type": "Person", "name": "Clément Predo", "sameAs": "https://www.linkedin.com/in/clement-predo" },
+    { "@type": "Person", "name": "Alexis Zeitoun", "sameAs": "https://www.linkedin.com/in/alexiszeitoun" }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/clement-predo",
+    "https://www.linkedin.com/in/alexiszeitoun"
+  ]
+}
+</script>
+
+<script src="../vendor/gsap/gsap.min.js"></script>
+<script src="../vendor/gsap/ScrollTrigger.min.js"></script>
+<script src="../vendor/gsap/SplitText.min.js"></script>
+<script src="../assets/abonnes.js"></script>
+<script src="../assets/avis.js"></script>
+<script src="../assets/axem.js"></script>
+<script>
+(() => {
+  // Tour 16 : la couche d'interactions du tour 2, allegee apres mesure (CPU x4, defilement molette).
+  // Retire : le defilement doux Lenis (il gardait la main sur la molette), le bandeau pilote image par
+  // image (il relisait la largeur de la page a chaque image : 1,8 s de mise en page sur 5 s), le
+  // brouillage des lettres. Garde, mais ne calcule plus que quand la souris bouge : le curseur a
+  // etiquette, la graisse du titre, l'apercu des offres, le portrait du duo, le mot du pied de page.
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const still = reduce || /[?&]static\b/.test(location.search);
+  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const hasGsap = typeof gsap !== 'undefined';
+  document.body.classList.add('t2', 't16-lite');
+  if (hasGsap) gsap.registerPlugin(...[window.ScrollTrigger, window.SplitText].filter(Boolean));
+
+  const mouse = { x: innerWidth / 2, y: innerHeight / 2 };
+  const moveFns = [];
+  let mq = 0;
+  addEventListener('pointermove', e => {
+    mouse.x = e.clientX; mouse.y = e.clientY;
+    if (!mq) mq = requestAnimationFrame(() => { mq = 0; moveFns.forEach(f => f()); });
+  }, { passive: true });
+
+  // Curseur a etiquette : la boucle ne tourne que tant qu'il reste du chemin a faire.
+  if (fine && !reduce) {
+    document.documentElement.classList.add('has-cur');
+    const l = document.createElement('div'); l.className = 'cur-l';
+    document.body.append(l);
+    const p = { x: mouse.x, y: mouse.y };
+    let run = 0;
+    const loop = () => {
+      p.x += (mouse.x - p.x) * 0.35; p.y += (mouse.y - p.y) * 0.35;
+      l.style.transform = `translate3d(${p.x.toFixed(1)}px, ${p.y.toFixed(1)}px, 0)`;
+      run = Math.abs(mouse.x - p.x) + Math.abs(mouse.y - p.y) > .4 ? requestAnimationFrame(loop) : 0;
+    };
+    moveFns.push(() => { if (!run) run = requestAnimationFrame(loop); });
+    document.addEventListener('pointerover', e => {
+      const lab = e.target.closest('[data-cursor]');
+      const hide = e.target.closest('[data-cursor-off]');
+      l.textContent = lab && !hide ? lab.dataset.cursor : '';
+      l.classList.toggle('on', !!(lab && !hide));
+    });
+  }
+
+  // Titre du hero : graisse variable selon la distance au curseur. Les centres des lettres sont
+  // mesures une fois (et au redimensionnement), jamais pendant le mouvement.
+  const heroH = document.querySelector('.hero');
+  if (heroH) {
+    document.querySelectorAll('.hero h1 .word > span').forEach(s => { s.innerHTML = [...s.textContent].map(ch => `<span class="ch">${ch}</span>`).join(''); });
+    if (fine && !still && hasGsap) {
+      const chars = [...heroH.querySelectorAll('.ch')];
+      let centers = null, active = false;
+      const measure = () => { centers = chars.map(ch => { const r = ch.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2 + scrollY]; }); };
+      // Changer la graisse d'une police variable oblige le navigateur a remettre en forme les glyphes :
+      // mesure du 24/09, 1,5 s de mise en page sur 5 s de geste, pour 36 objets seulement. Le cout vient
+      // de ce que chaque image demandait une graisse inedite (valeur continue, cache de forme rate).
+      // La graisse suit donc la souris par un amorti maison, mais n'est ecrite que par paliers de 50 :
+      // 13 graisses possibles, toutes deja en cache apres le premier passage.
+      const cur = chars.map(() => 900), tgt = chars.map(() => 900), shown = chars.map(() => 900);
+      let run = 0;
+      const tick = () => {
+        let moving = false;
+        for (let i = 0; i < chars.length; i++) {
+          const d = tgt[i] - cur[i];
+          if (Math.abs(d) > 2) { cur[i] += d * 0.18; moving = true; } else cur[i] = tgt[i];
+          const q = Math.round(cur[i] / 50) * 50;
+          if (q !== shown[i]) { shown[i] = q; chars[i].style.setProperty('--wg', q); }
+        }
+        run = moving ? requestAnimationFrame(tick) : 0;
+      };
+      const kick = () => { if (!run) run = requestAnimationFrame(tick); };
+      heroH.addEventListener('pointerenter', () => { active = true; measure(); });
+      heroH.addEventListener('pointerleave', () => { active = false; tgt.fill(900); kick(); });
+      addEventListener('resize', () => { centers = null; });
+      moveFns.push(() => {
+        if (!active) return;
+        if (!centers) measure();
+        const y = mouse.y + scrollY;
+        centers.forEach(([cx, cy], i) => { tgt[i] = 300 + 600 * Math.min(1, Math.hypot(mouse.x - cx, y - cy) / 420); });
+        kick();
+      });
+    }
+  }
+
+  // Apercu flottant sur les offres
+  const rows = document.querySelectorAll('.row[data-peek]');
+  if (rows.length && fine && !reduce && hasGsap) {
+    const pk = document.createElement('div'); pk.className = 'peek'; pk.setAttribute('aria-hidden', 'true');
+    pk.innerHTML = '<span class="sq"></span><div class="k"></div><div class="v"></div><img class="pi" alt="">';
+    document.body.appendChild(pk);
+    const xTo = gsap.quickTo(pk, 'x', { duration: 0.55, ease: 'power3.out' }), yTo = gsap.quickTo(pk, 'y', { duration: 0.55, ease: 'power3.out' });
+    const rTo = gsap.quickTo(pk, 'rotation', { duration: 0.5, ease: 'power3.out' });
+    let lastX = mouse.x, on = false;
+    moveFns.push(() => { if (!on) return; xTo(mouse.x + 70); yTo(mouse.y + 30); rTo(gsap.utils.clamp(-8, 8, (mouse.x - lastX) * 0.6)); lastX = mouse.x; });
+    rows.forEach(r => {
+      r.addEventListener('pointerenter', () => { on = true; gsap.set(pk, { x: mouse.x + 70, y: mouse.y + 30 }); pk.querySelector('.k').textContent = r.dataset.peekK || ''; pk.querySelector('.v').textContent = r.dataset.peek; const pi = pk.querySelector('.pi'); if (r.dataset.peekImg) { pi.src = new URL(r.dataset.peekImg, document.baseURI).href; } pk.classList.toggle('has-img', !!r.dataset.peekImg); gsap.to(pk, { opacity: 1, scale: 1, duration: 0.45, ease: 'back.out(1.6)' }); });
+      r.addEventListener('pointerleave', () => { on = false; gsap.to(pk, { opacity: 0, scale: 0.6, duration: 0.3 }); });
+    });
+  }
+
+  // Wordmark du pied de page : lettres qui se soulevent pres du curseur (positions mesurees a l'entree).
+  const big = document.querySelector('footer .big');
+  if (big) {
+    const tn = [...big.childNodes].find(n => n.nodeType === 3 && n.textContent.trim());
+    if (tn) { const w = document.createElement('span'); w.innerHTML = [...tn.textContent.trim()].map(ch => `<span class="fl">${ch}</span>`).join(''); big.replaceChild(w, tn); }
+    if (fine && !reduce) {
+      const fls = [...big.querySelectorAll('.fl')], foot = big.closest('footer');
+      let xs = null, inF = false;
+      foot.addEventListener('pointerenter', () => { inF = true; xs = fls.map(f => { const r = f.getBoundingClientRect(); return r.left + r.width / 2; }); });
+      foot.addEventListener('pointerleave', () => { inF = false; fls.forEach(f => { f.style.transform = ''; }); });
+      moveFns.push(() => { if (!inF || !xs) return; fls.forEach((f, i) => { f.style.transform = `translateY(${(-Math.max(0, 1 - Math.abs(mouse.x - xs[i]) / 260) * 0.14).toFixed(3)}em)`; }); });
+    }
+  }
+
+  // Liens forts magnetiques (hors barre du haut, qui a son propre bouton)
+  if (fine && !reduce && hasGsap) document.querySelectorAll('.teaser .more, [data-mag]').forEach(b => {
+    const xTo = gsap.quickTo(b, 'x', { duration: 0.5, ease: 'power3.out' }), yTo = gsap.quickTo(b, 'y', { duration: 0.5, ease: 'power3.out' });
+    b.addEventListener('pointermove', e => { const r = b.getBoundingClientRect(); xTo((e.clientX - r.left - r.width / 2) * 0.3); yTo((e.clientY - r.top - r.height / 2) * 0.4); });
+    b.addEventListener('pointerleave', () => { xTo(0); yTo(0); });
+  });
+
+  // Lignes revelees au defilement
+  if (hasGsap && window.SplitText && window.ScrollTrigger && !still) {
+    document.fonts.ready.then(() => document.querySelectorAll('[data-lines]').forEach(el => {
+      SplitText.create(el, { type: 'lines', mask: 'lines', linesClass: 'ln', autoSplit: true, onSplit: self => gsap.from(self.lines, { yPercent: 105, duration: 1.1, ease: 'expo.out', stagger: 0.09, scrollTrigger: { trigger: el, start: 'top 85%', once: true } }) });
+    }));
+  }
+
+  // Duo : portrait qui suit le curseur sur les noms
+  const dn = document.querySelector('.dn-list');
+  const fl = document.querySelector('.dn-float');
+  if (dn && fl && fine && !reduce && hasGsap) {
+    const xTo = gsap.quickTo(fl, 'x', { duration: 0.7, ease: 'power3.out' }), yTo = gsap.quickTo(fl, 'y', { duration: 0.7, ease: 'power3.out' });
+    const rTo = gsap.quickTo(fl, 'rotation', { duration: 0.6, ease: 'power3.out' });
+    let lx = mouse.x, on = false;
+    moveFns.push(() => { if (!on) return; xTo(mouse.x + 22); yTo(mouse.y + 16); rTo(gsap.utils.clamp(-10, 10, (mouse.x - lx) * 0.5)); lx = mouse.x; });
+    dn.querySelectorAll('.dn-row').forEach(r => {
+      r.addEventListener('pointerenter', () => { on = true; fl.classList.add('on'); fl.querySelectorAll('img').forEach(i => i.classList.toggle('on', i.dataset.who === r.dataset.who)); });
+    });
+    dn.addEventListener('pointerleave', () => { on = false; fl.classList.remove('on'); });
+  }
+})();
+</script>
+<script>(()=>{const m=location.search.match(/[?&]photo=(\d)/), P={1:'1-table',2:'2-scene',3:'3-marches'}; if (m && P[m[1]]) document.querySelectorAll('img[src$="img/duo/duo.jpg"]').forEach(i=>{i.src='../img/duo/propositions/axem-duo-'+P[m[1]]+'.jpg'; i.closest('[hidden]')?.removeAttribute('hidden');});})();</script>
+<p class="proto">Tour 20 : Réserver un coaching <a class="replay" role="button" tabindex="0">Rejouer</a><a href="../tour20.html">Toutes les propositions</a></p>
+<script>
+(() => {
+  // ---- Tour 17 : socle commun (Reserver un seul a la fois, bouton son WebAudio). Charge sur les
+  // 6 pages, avant claude-mark.js et le script propre a chaque page (voir outils/build_t17.py). ----
+
+  // 1) Reserver un seul a la fois. La barre garde .nav .book[data-book] (nav.css). Tant que le grand
+  // bouton du hero (.hero .btn[data-book]) est a l'ecran, celui de la barre reste cache, invisible aux
+  // lecteurs d'ecran et non focusable. Des qu'il en sort, il apparait et reste, meme en remontant. Sur
+  // les pages duo il n'y a pas de hero : le bouton de la barre est visible d'emblee.
+  (() => {
+    const navBook = document.querySelector('#nav .book[data-book]');
+    if (!navBook) return;
+    const heroBook = document.querySelector('.hero .btn[data-book]');
+    if (!heroBook) { navBook.classList.add('rs-show'); return; }
+    navBook.classList.add('rs-hidden');
+    navBook.setAttribute('tabindex', '-1');
+    navBook.setAttribute('aria-hidden', 'true');
+    const reveal = () => {
+      navBook.classList.remove('rs-hidden');
+      navBook.classList.add('rs-show');
+      navBook.removeAttribute('tabindex');
+      navBook.removeAttribute('aria-hidden');
+    };
+    if (!('IntersectionObserver' in window)) { reveal(); return; }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (!entry.isIntersecting) { reveal(); io.disconnect(); } });
+    }, { threshold: 0 });
+    io.observe(heroBook);
+  })();
+
+  // 2) Bouton son : petit egaliseur en bas a gauche, coupe par defaut. Sons synthetises en WebAudio,
+  // aucun fichier. Rien ne joue avant un premier clic (ou une preference deja enregistree). Expose
+  // window.AxemSound = { play(name), on() } et ecoute l'evenement axem:sound emis ailleurs (survols,
+  // ecrans bleus). Chaque lecture/ecriture localStorage est dans un try/catch.
+  (() => {
+    const KEY = 'axem-son';
+    let enabled = false;
+    try { enabled = localStorage.getItem(KEY) === '1'; } catch (e) { enabled = false; }
+
+    let ctx = null;
+    const audioCtx = () => {
+      if (ctx) return ctx;
+      const Ctor = window.AudioContext || window.webkitAudioContext;
+      if (!Ctor) return null;
+      try { ctx = new Ctor(); } catch (e) { ctx = null; }
+      return ctx;
+    };
+
+    const soundWhoosh = c => {
+      const dur = 0.6;
+      const buf = c.createBuffer(1, Math.round(c.sampleRate * dur), c.sampleRate);
+      const d = buf.getChannelData(0);
+      for (let i = 0; i < d.length; i++) { const t = i / d.length; d[i] = (Math.random() * 2 - 1) * Math.pow(1 - t, 2.2); }
+      const src = c.createBufferSource(); src.buffer = buf;
+      const filt = c.createBiquadFilter(); filt.type = 'bandpass'; filt.Q.value = 0.7;
+      filt.frequency.setValueAtTime(500, c.currentTime);
+      filt.frequency.exponentialRampToValueAtTime(2000, c.currentTime + dur * 0.8);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.0001, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.13, c.currentTime + 0.09);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + dur);
+      src.connect(filt).connect(g).connect(c.destination);
+      src.start(); src.stop(c.currentTime + dur + 0.05);
+    };
+
+    const soundTick = c => {
+      const osc = c.createOscillator(); osc.type = 'square'; osc.frequency.setValueAtTime(1900, c.currentTime);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.08, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 0.045);
+      osc.connect(g).connect(c.destination);
+      osc.start(); osc.stop(c.currentTime + 0.06);
+    };
+
+    const soundPop = c => {
+      const osc = c.createOscillator(); osc.type = 'sine';
+      osc.frequency.setValueAtTime(420, c.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(760, c.currentTime + 0.1);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.0001, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.15, c.currentTime + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 0.24);
+      osc.connect(g).connect(c.destination);
+      osc.start(); osc.stop(c.currentTime + 0.26);
+    };
+
+    const SOUNDS = { whoosh: soundWhoosh, tick: soundTick, pop: soundPop };
+
+    const play = name => {
+      if (!enabled || !SOUNDS[name]) return;
+      try {
+        const c = audioCtx();
+        if (!c) return;
+        if (c.state === 'suspended') c.resume().catch(() => {});
+        SOUNDS[name](c);
+      } catch (e) { /* silencieux : le son n'est jamais bloquant */ }
+    };
+
+    window.AxemSound = { play, on: () => enabled };
+    window.addEventListener('axem:sound', e => { try { play(e.detail && e.detail.name); } catch (er) {} });
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'snd-btn';
+    btn.setAttribute('aria-pressed', 'false');
+    btn.setAttribute('aria-label', 'Activer le son');
+    btn.innerHTML = '<span class="snd-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>';
+    document.body.appendChild(btn);
+
+    const sync = () => {
+      btn.classList.toggle('on', enabled);
+      btn.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+      btn.setAttribute('aria-label', enabled ? 'Couper le son' : 'Activer le son');
+    };
+    sync();
+
+    btn.addEventListener('click', () => {
+      enabled = !enabled;
+      try { localStorage.setItem(KEY, enabled ? '1' : '0'); } catch (e) { /* prive ou bloque : tant pis */ }
+      sync();
+      if (enabled) play('pop');
+    });
+  })();
+})();
+</script>
+<script>
+/*
+ * ClaudeMark : trace officiel du symbole Claude (etoile / spark), sans dependance.
+ * Source : Wikimedia Commons, File:Claude_AI_symbol.svg
+ *   https://upload.wikimedia.org/wikipedia/commons/b/b0/Claude_AI_symbol.svg
+ * Le trace original est un SEUL <path> avec un seul sous-tracé (un seul "M" au debut,
+ * 159 segments, une seule fermeture "Z") : les 6 rayons ne sont pas des sous-tracés
+ * separes dans le fichier source, donc pas de decoupage "un <path> par rayon" possible
+ * ici sans reconstruire des tracés synthetiques. Conformement à la consigne du brief
+ * pour ce cas ("un seul contour continu impossible a separer proprement"), ClaudeMark
+ * expose `rays: []` et `root` anime en bloc (rotation / echelle / masque).
+ *
+ * Le trace ci-dessous est le trace officiel, translate pour que le centre visuel de
+ * l'etoile (centre de sa bounding box, cx=49.95 cy=50 dans le fichier source, sur un
+ * viewBox 0 0 100 100) tombe exactement sur (0,0). Le viewBox monte par mount() est
+ * donc centre : "-50 -50 100 100".
+ */
+(function (global) {
+  "use strict";
+
+  var PATH_D =
+    "m -30.35,16.5 l 19.7,-11 l 0.3,-1 l -0.3,-0.5 l -1,0 l -3.3,-0.2 l -11.2,-0.3 " +
+    "L -35.95,3 l -9.5,-0.5 l -2.4,-0.5 L -49.95,-1 l 0.2,-1.5 l 2,-1.3 l 2.9,0.2 " +
+    "l 6.3,0.5 l 9.5,0.6 l 6.9,0.4 L -11.95,-0.9 l 1.6,0 l 0.2,-0.7 l -0.5,-0.4 " +
+    "l -0.4,-0.4 L -20.95,-9 l -10.6,-7 l -5.6,-4.1 l -3,-2 l -1.5,-2 l -0.6,-4.2 " +
+    "l 2.7,-3 l 3.7,0.3 l 0.9,0.2 l 3.7,2.9 l 8,6.1 L -12.95,-14 l 1.5,1.2 l 0.6,-0.4 " +
+    "l 0.1,-0.3 l -0.7,-1.1 L -16.95,-25 l -6,-10.4 l -2.7,-4.3 l -0.7,-2.6 " +
+    "c -0.3,-1 -0.4,-2 -0.4,-3 l 3,-4.2 L -21.95,-50 l 4.2,0.6 L -16.15,-48 l 2.6,6 " +
+    "l 4.1,9.3 L -2.95,-20.1 l 2,3.8 l 1,3.4 l 0.3,1 l 0.7,0 l 0,-0.5 l 0.5,-7.2 " +
+    "l 1,-8.7 l 1,-11.2 l 0.3,-3.2 l 1.6,-3.8 l 3,-2 L 11.05,-47.4 l 2,2.9 l -0.3,1.8 " +
+    "l -1.1,7.7 L 9.05,-22.9 l -1.5,8.2 l 0.9,0 l 1,-1.1 l 4.1,-5.4 l 6.9,-8.6 l 3,-3.5 " +
+    "L 27.05,-37 l 2.3,-1.8 l 4.3,0 l 3.1,4.7 l -1.4,4.9 l -4.4,5.6 l -3.7,4.7 l -5.3,7.1 " +
+    "l -3.2,5.7 l 0.3,0.4 l 0.7,0 l 12,-2.6 l 6.4,-1.1 l 7.6,-1.3 l 3.5,1.6 l 0.4,1.6 " +
+    "l -1.4,3.4 l -8.2,2 l -9.6,2 l -14.3,3.3 l -0.2,0.1 l 0.2,0.3 l 6.4,0.6 l 2.8,0.2 " +
+    "l 6.8,0 l 12.6,1 l 3.3,2 l 1.9,2.7 l -0.3,2 l -5.1,2.6 l -6.8,-1.6 l -16,-3.8 " +
+    "l -5.4,-1.3 l -0.8,0 l 0,0.4 l 4.6,4.5 l 8.3,7.5 L 39.05,30.1 l 0.5,2.4 l -1.3,2 " +
+    "l -1.4,-0.2 l -9.2,-7 l -3.6,-3 l -8,-6.8 l -0.5,0 l 0,0.7 l 1.8,2.7 l 9.8,14.7 " +
+    "l 0.5,4.5 l -0.7,1.4 l -2.6,1 l -2.7,-0.6 l -5.8,-8 l -6,-9 l -4.7,-8.2 l -0.5,0.4 " +
+    "l -2.9,30.2 l -1.3,1.5 l -3,1.2 l -2.5,-2 l -1.4,-3 l 1.4,-6.2 l 1.6,-8 l 1.3,-6.4 " +
+    "l 1.2,-7.9 l 0.7,-2.6 l 0,-0.2 L -0.95,13.7 L -6.95,22 l -9,12.3 l -7.2,7.6 " +
+    "l -1.7,0.7 l -3,-1.5 l 0.3,-2.8 L -25.95,36 l 10,-12.8 l 6,-7.9 l 4,-4.6 l -0.1,-0.5 " +
+    "l -0.3,0 L -32.75,27.4 l -4.7,0.6 l -2,-2 l 0.2,-3 l 1,-1 l 8,-5.5 Z";
+
+  var DEFAULT_COLOR = "#D97757";
+  var SVG_NS = "http://www.w3.org/2000/svg";
+
+  function mount(el, opts) {
+    opts = opts || {};
+    var color = opts.color || DEFAULT_COLOR;
+
+    var svg;
+    if (el && el.tagName && el.tagName.toLowerCase() === "svg") {
+      svg = el;
+    } else {
+      svg = document.createElementNS(SVG_NS, "svg");
+      if (el) el.appendChild(svg);
+    }
+
+    svg.setAttribute("viewBox", "-50 -50 100 100");
+    if (!svg.hasAttribute("width") && opts.size) svg.setAttribute("width", opts.size);
+    if (!svg.hasAttribute("height") && opts.size) svg.setAttribute("height", opts.size);
+    svg.setAttribute("aria-hidden", "true");
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+
+    // root : groupe anime en bloc (rotation/echelle/masque), origine CSS forcee a
+    // (0,0) qui correspond deja au centre visuel de l'etoile dans ce viewBox recentre.
+    var root = document.createElementNS(SVG_NS, "g");
+    root.setAttribute("class", "claude-mark-root");
+    root.style.transformOrigin = "0px 0px";
+    root.style.transformBox = "view-box";
+
+    var path = document.createElementNS(SVG_NS, "path");
+    path.setAttribute("d", PATH_D);
+    path.setAttribute("fill", color);
+    path.setAttribute("class", "claude-mark-path");
+    root.appendChild(path);
+    svg.appendChild(root);
+
+    return {
+      svg: svg,
+      root: root,
+      rays: [], // tracé source en un seul sous-chemin : rayons non individualisables
+      core: null, // idem : pas de hub separe dans le tracé source
+      color: color
+    };
+  }
+
+  global.ClaudeMark = { mount: mount, PATH_D: PATH_D, DEFAULT_COLOR: DEFAULT_COLOR };
+})(window);
+</script>
+<script>
+(() => {
+  // Tour 20, paiement r3, "Le prix clair". Une seule page, aucune etape, aucun rechargement, aucun
+  // reseau. Le format vient de ?f=seance|p5|p10 (defaut seance) et se change sans quitter la page :
+  // bandeau collant, carte d'accueil et ticket se mettent a jour ensemble. Validation des cases
+  // legales uniquement (regle du brief) : les champs texte ne bloquent jamais le bouton. A la
+  // validation, le ticket se tamponne "Paye", le logo Claude saute une fois, puis l'ecran de
+  // creneau remplace la commande.
+  const root = document.querySelector('.t20-r3 .r3');
+  if (!root) return;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+
+  const fmtEUR = n => Math.round(n).toLocaleString('fr-FR') + ' €';
+
+  // ---- Format, presectionne depuis ?f= ----
+  const params = new URLSearchParams(location.search);
+  const wanted = ['seance', 'p5', 'p10'].includes(params.get('f')) ? params.get('f') : 'seance';
+  const formatRadios = [...root.querySelectorAll('input[name="r3-format"]')];
+  const initial = formatRadios.find(r => r.value === wanted) || formatRadios[0];
+  if (initial) initial.checked = true;
+
+  const rollTo = (el, to) => {
+    const from = parseInt((el.textContent || '0').replace(/[^\d]/g, ''), 10) || 0;
+    if (reduce || typeof gsap === 'undefined' || from === to) { el.textContent = fmtEUR(to); return; }
+    const obj = { v: from };
+    gsap.to(obj, { v: to, duration: 0.5, ease: 'power2.out', onUpdate: () => { el.textContent = fmtEUR(Math.round(obj.v)); } });
+  };
+
+  const currentFormat = () => formatRadios.find(r => r.checked) || formatRadios[0];
+  const buyLabel = root.querySelector('#r3BuyLabel');
+  const confirmParcours = root.querySelector('[data-confirm-parcours]');
+  const confirmN = root.querySelector('[data-confirm-n]');
+  const humanLink = root.querySelector('[data-human]');
+
+  const syncFormat = () => {
+    const r = currentFormat();
+    if (!r) return;
+    const { ht, ttc, name, desc } = r.dataset;
+    root.querySelectorAll('[data-name]').forEach(el => { el.textContent = name; });
+    root.querySelectorAll('[data-desc]').forEach(el => { el.textContent = desc; });
+    root.querySelectorAll('[data-roll="ht"]').forEach(el => rollTo(el, +ht));
+    root.querySelectorAll('[data-roll="tva"]').forEach(el => rollTo(el, +ttc - +ht));
+    root.querySelectorAll('[data-roll="ttc"]').forEach(el => rollTo(el, +ttc));
+    if (buyLabel) buyLabel.textContent = `Payer ${fmtEUR(+ttc)} TTC, commande avec obligation de paiement`;
+
+    const isParcours = r.value === 'p5' || r.value === 'p10';
+    if (humanLink) humanLink.hidden = !isParcours;
+    if (confirmParcours) confirmParcours.hidden = !isParcours;
+    if (confirmN) confirmN.textContent = r.value === 'p10' ? '10' : '5';
+  };
+  formatRadios.forEach(r => r.addEventListener('change', syncFormat));
+  syncFormat();
+
+  // ---- Particulier ou professionnel ----
+  const quiRadios = [...root.querySelectorAll('input[name="r3-qui"]')];
+  const partOnly = [...root.querySelectorAll('[data-part-only]')];
+  const proOnly = [...root.querySelectorAll('[data-pro-only]')];
+  const c1 = root.querySelector('#r3-c1');
+  const c2 = root.querySelector('#r3-c2');
+
+  const syncQui = () => {
+    const isPro = quiRadios.find(r => r.checked && r.value === 'pro');
+    partOnly.forEach(el => { el.hidden = !!isPro; });
+    proOnly.forEach(el => { el.hidden = !isPro; });
+    if (isPro) { if (c1) c1.checked = false; if (c2) c2.checked = false; }
+    updateReady();
+  };
+  quiRadios.forEach(r => r.addEventListener('change', syncQui));
+
+  // ---- Lien pro simule, jamais de reseau, jamais de navigation ----
+  const qontoLink = root.querySelector('#r3Qonto');
+  const proSim = root.querySelector('#r3ProSim');
+  if (qontoLink) qontoLink.addEventListener('click', e => {
+    e.preventDefault();
+    if (proSim) proSim.hidden = false;
+  });
+
+  // ---- Cases legales : seules a bloquer le bouton (regle du brief) ----
+  const cgv = root.querySelector('#r3-cgv');
+  const buyBtn = root.querySelector('#r3Buy');
+  const buyHint = root.querySelector('#r3BuyHint');
+
+  const isReady = () => {
+    const isPro = quiRadios.find(r => r.checked && r.value === 'pro');
+    if (!cgv || !cgv.checked) return false;
+    if (isPro) return true;
+    return !!(c1 && c1.checked && c2 && c2.checked);
+  };
+
+  const updateReady = () => {
+    const ready = isReady();
+    if (buyBtn) buyBtn.disabled = !ready;
+    if (buyHint) buyHint.hidden = ready;
+    document.body.classList.toggle('r3-ready', ready);
+  };
+  [cgv, c1, c2].forEach(el => { if (el) el.addEventListener('change', updateReady); });
+  updateReady();
+
+  // ---- Bandeau Instagram (regle 5) : navigateur in app ou ?ig=1 pour la demo ----
+  const igBanner = root.querySelector('#r3Ig');
+  const igClose = root.querySelector('#r3IgClose');
+  const ua = navigator.userAgent || '';
+  const isInApp = /Instagram|FBAN|FBAV/.test(ua) || params.get('ig') === '1';
+  if (igBanner && isInApp) igBanner.hidden = false;
+  if (igClose) igClose.addEventListener('click', () => { if (igBanner) igBanner.hidden = true; });
+
+  // ---- Defilement doux vers une ancre, sans rechargement ----
+  root.querySelectorAll('[data-scroll-to]').forEach(btn => btn.addEventListener('click', e => {
+    const target = document.querySelector(btn.dataset.scrollTo);
+    if (!target) return;
+    e.preventDefault();
+    target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+  }));
+
+  // ---- Logo Claude dans le ticket, decor discret, jamais un jouet sur cette page ----
+  const mkHost = root.querySelector('#r3Mk');
+  if (mkHost && window.ClaudeMark) window.ClaudeMark.mount(mkHost, { size: '100%', color: '#D97757' });
+
+  // ---- Paiement simule (aucun reseau, aucun stockage) : le tampon, le saut, puis le creneau ----
+  const ticketIn = root.querySelector('.r3-ticket-in');
+  const confirmSection = root.querySelector('#r3Confirm');
+  const bodyEls = root.querySelector('#r3Body');
+  const stickyBar = root.querySelector('#r3Sticky');
+  const heroEl = root.querySelector('.r3-hero');
+
+  if (buyBtn) buyBtn.addEventListener('click', () => {
+    if (buyBtn.disabled) return;
+    buyBtn.disabled = true;
+    if (ticketIn) ticketIn.classList.add('is-paid');
+    if (mkHost) {
+      mkHost.classList.add('jump');
+      mkHost.addEventListener('animationend', () => mkHost.classList.remove('jump'), { once: true });
+    }
+    const goConfirm = () => {
+      if (heroEl) heroEl.hidden = true;
+      if (stickyBar) stickyBar.hidden = true;
+      if (bodyEls) bodyEls.hidden = true;
+      if (confirmSection) {
+        confirmSection.hidden = false;
+        const h = confirmSection.querySelector('h2[id]');
+        if (h) h.focus({ preventScroll: true });
+        confirmSection.scrollIntoView({ behavior: 'auto', block: 'start' });
+      }
+      document.body.classList.remove('r3-ready');
+    };
+    setTimeout(goConfirm, reduce ? 0 : 900);
+  });
+
+  // ---- Creneau d'exemple, sans date reelle (regle 6) ----
+  const slotsWrap = root.querySelector('#r3Slots');
+  const bookedBlock = root.querySelector('#r3Booked');
+  const bookedSlot = root.querySelector('[data-booked-slot]');
+
+  if (slotsWrap) slotsWrap.addEventListener('click', e => {
+    const btn = e.target.closest('.r3-slot');
+    if (!btn) return;
+    slotsWrap.querySelectorAll('.r3-slot').forEach(b => b.setAttribute('aria-pressed', String(b === btn)));
+    const label = btn.dataset.slot;
+    if (bookedSlot) bookedSlot.textContent = label;
+    const reveal = () => {
+      slotsWrap.hidden = true;
+      const note = root.querySelector('.r3-slots-note');
+      if (note) note.hidden = true;
+      if (bookedBlock) {
+        bookedBlock.hidden = false;
+        const h = bookedBlock.querySelector('h3[id]');
+        if (h) h.focus({ preventScroll: true });
+      }
+    };
+    if (reduce) { reveal(); return; }
+    slotsWrap.classList.add('r3-leaving');
+    setTimeout(reveal, 260);
+  });
+})();
+</script>
+</body>
+</html>
