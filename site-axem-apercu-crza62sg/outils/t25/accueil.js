@@ -169,7 +169,7 @@
      p = prestation (pastille), b = le détail en gros, w = ce qu'on a fait. */
   const LG = [
     { f: 'carrefour.svg', n: 'Carrefour', p: 'Formation', b: '4 sites', w: 'Ateliers IA sur Gemini, sur plusieurs entités du groupe.' },
-    { f: 'kit.png', n: 'K.I.T. Group', p: 'Conseil', b: '13 entretiens', w: 'Audit IA sur site, puis pilote de trois cas d\u2019usage.' },
+    { f: 'kit.png', n: 'K.I.T. Group', p: 'Conseil', b: '13 entretiens', w: 'Diagnostic IA sur site, puis pilote de trois cas d\u2019usage.' },
     { f: 'geodis.svg', n: 'GEODIS', p: 'Formation', b: 'Équipe RH', w: 'Cadrage, puis une journée IA pour l\u2019équipe RH.' },
     { f: 'puig.svg', n: 'Nina Ricci', p: 'Formation', b: '2 missions', w: 'Formations IA pour les équipes France.' },
     { f: 'my-little-paris.png', n: 'My Little Paris', p: 'Formation', b: '3 sessions', w: 'Formations IA sur Gemini Enterprise.' },
