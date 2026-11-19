@@ -1,0 +1,1051 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le duo · AXEM IA</title>
+<script>if (/[?&]pal=blanc\b/.test(location.search)) document.documentElement.classList.add('pal-blanc');</script>
+<meta name="description" content="Deux associés qui déploient l'IA dans vos équipes, sur vos vrais dossiers. Conseil, formation et coaching IA à Paris, sans intermédiaire.">
+<link rel="icon" href="../img/favicon-ax-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../img/favicon-ax-180.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="AXEM IA">
+<meta property="og:title" content="AXEM IA, votre partenaire IA de A à Z">
+<meta property="og:description" content="Clément Predo et Alexis Zeitoun déploient l’IA dans vos équipes, sur vos vrais dossiers. Conseil, formation et coaching IA.">
+<meta property="og:url" content="https://axem-ia.fr/">
+<meta property="og:image" content="https://axem-ia.fr/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://axem-ia.fr/">
+<noscript><style>.fade, .rv { opacity: 1 !important; transform: none !important; }</style></noscript>
+<link href="../vendor/fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="../assets/axem.css">
+<link rel="stylesheet" href="../assets/t2.css">
+<meta name="robots" content="noindex">
+<style>
+/* ---- Tour 16 : fluidite. Plus de flou derriere la barre (il se recalculait a chaque image de
+   defilement), le bandeau clients tourne en CSS sur la carte graphique. ---- */
+.nav.solid { background: rgba(250, 246, 234, .97); backdrop-filter: none; -webkit-backdrop-filter: none; }
+.t2 .mq { animation: mq 42s linear infinite; will-change: transform; }
+.marquee:hover .mq { animation-play-state: paused; }
+.mk-svg .mk { filter: none; }
+
+/* ---- Tour 16 : le logo de la barre = le mot « axem IA » de l'ecran bleu, meme police, meme balisage ---- */
+.nav .logo { display: inline-flex; background: transparent; padding: 0; box-shadow: none; }
+.nav .logo .wm { font-size: 38px; color: var(--blue); transition: color .35s var(--ease); }
+.nav .logo .nl span { display: inline-block; font-weight: 900; font-variation-settings: "SOFT" 100, "WONK" 0, "opsz" 144; letter-spacing: -0.02em; }
+.nav .logo:hover { transform: none; box-shadow: none; }
+.nav .logo:hover .wm { color: var(--ink); }
+@media (max-width: 860px) { .nav .logo .wm { font-size: 30px; } }
+
+/* ---- Tour 16 : liens de la barre = de vrais boutons, comme les lignes d'offres. Au survol, une
+   pastille bleue monte du bas, deborde le mot, le texte passe en creme et une fleche sort. ---- */
+.nav .links { gap: 4px; }
+.nav .links a { position: relative; display: inline-flex; align-items: center; gap: 0; padding: 12px 18px; border-radius: 999px; font-size: 15px; font-weight: 600; isolation: isolate; transition: color .35s var(--ease), padding .45s var(--ease); }
+.nav .links a::after { display: none; }
+.nav .links a::before { content: ""; position: absolute; inset: -3px -4px; margin: 0; width: auto; height: auto; border-radius: 999px; background: var(--blue); z-index: -1; transform: scale(.55, 0); transform-origin: 50% 100%; transition: transform .45s var(--ease); flex: none; }
+.nav .links a .na { display: inline-block; width: 0; overflow: hidden; opacity: 0; font-size: 17px; line-height: 1; transform: translateX(-6px) rotate(0); transition: width .45s var(--ease), opacity .3s var(--ease), transform .45s var(--ease), margin .45s var(--ease); }
+.nav .links a:hover, .nav .links a:focus-visible { color: var(--cream); padding-left: 22px; padding-right: 20px; }
+.nav .links a:hover::before, .nav .links a:focus-visible::before { transform: none; }
+.nav .links a:hover .na, .nav .links a:focus-visible .na { width: 16px; margin-left: 8px; opacity: 1; transform: rotate(-45deg); }
+.nav .links a.on { color: var(--blue); }
+.nav .links a.on:hover { color: var(--cream); }
+
+/* ---- Tour 16 : « Reserver un echange offert », un vrai bouton cale a droite. Une grosse fleche
+   dans une pastille creme apparait apres l'arrivee, rebondit de temps en temps pour attirer l'oeil ;
+   au survol le fond encre entre du cote d'ou vient la souris (reflexe s1 Aimant). ---- */
+.nav .book { position: relative; display: inline-flex; align-items: center; gap: 14px; padding: 7px 7px 7px 24px; border: 0; border-radius: 999px; background: var(--blue); color: var(--cream); font-size: 15px; font-weight: 600; letter-spacing: 0; text-transform: none; overflow: hidden; isolation: isolate; --ex: 0%; --ey: 115%; transition: box-shadow .35s var(--ease); }
+.nav .book::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--ink); z-index: -1; transform: translate(var(--ex), var(--ey)); transition: transform 520ms var(--ease); }
+.nav .book:hover::before, .nav .book:focus-visible::before { transform: none; }
+.nav .book::after { display: none; }
+.nav .book .short { display: none; }
+.nav .book .bk-ar { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--cream); color: var(--blue); transform: scale(0) rotate(-90deg); transition: transform .5s var(--ease), color .35s var(--ease); }
+.nav .book .bk-ar svg { width: 20px; height: 20px; display: block; }
+.ready:not(.hold) .nav .book .bk-ar { transform: none; transition: transform .8s cubic-bezier(.34, 1.8, .5, 1) .9s; }
+.ready:not(.hold) .nav .book .bk-ar svg { animation: bkBounce 3.2s cubic-bezier(.3, 0, .2, 1) 2.2s infinite; }
+@keyframes bkBounce { 0%, 62%, 100% { transform: translateX(0); } 70% { transform: translateX(6px); } 78% { transform: translateX(-2px); } 86% { transform: translateX(4px); } 93% { transform: translateX(0); } }
+.nav .book:hover .bk-ar { transform: rotate(-45deg) scale(1.08); transition-delay: 0s; }
+.nav .book:hover .bk-ar svg { animation: none; }
+@media (max-width: 860px) {
+  .nav .book { gap: 10px; padding: 5px 5px 5px 16px; font-size: 14px; }
+  .nav .book .long { display: none; }
+  .nav .book .short { display: inline; }
+  .nav .book .bk-ar { width: 34px; height: 34px; }
+  .nav .book .bk-ar svg { width: 17px; height: 17px; }
+}
+@media (prefers-reduced-motion: reduce) { .ready .nav .book .bk-ar svg { animation: none !important; } }
+
+/* ---- Tour 16 : hero s1 range. Titre remonte, bouton cale sur le bord droit de la grille, « c'est
+   ici » plus gros, pose sous le bouton et toujours visible, schema et chiffres en pied de hero. ---- */
+@media (min-width: 861px) {
+  .home .hero.mk3 { justify-content: flex-start; padding-top: clamp(112px, 17svh, 176px); }
+  .home .hero.mk3 { min-height: 0; height: auto; padding-bottom: clamp(40px, 6svh, 64px); }
+  .hero.mk3 .mk-row { margin-top: clamp(120px, 19svh, 190px); padding-top: 0; }
+  .hero.mk3 .l2 { justify-content: space-between; }
+  .hero.mk3 .side { margin-left: auto; align-items: flex-end; max-width: none; }
+  .hero.mk3 .side .btn { align-self: flex-end !important; }
+}
+.hero.mk3 .btn { font-size: 17px; padding: 22px 32px; }
+.mk-note-btn { font-size: 30px; }
+@media (max-width: 860px) { .mk-note-btn { font-size: 22px; } }
+
+/* ---- Tour 17 : socle commun aux 6 pages (v1 v2 v3 d1 d2 d3), injecte par le build juste apres
+   nav.css et avant le CSS propre a chaque page. Regle de Clement : un seul bouton Reserver visible
+   a la fois, plus le bouton son, plus l'habillage du pied de page legal. ---- */
+
+/* Reserver un seul a la fois (regle Clement, tour 17). La barre garde un bouton .book (nav.css) ;
+   il est masque tant que le grand bouton du hero est a l'ecran, invisible sur les pages duo car
+   elles n'ont pas de hero : voir base17.js. Aujourd'hui assets/axem.js masque toute la barre au
+   defilement vers le bas (classe .hide, assets/axem.css ligne 39) : on neutralise ce comportement
+   ici, la barre du tour 17 ne se cache plus jamais. */
+.t17 .nav.hide { transform: none; }
+
+.t17 .nav .book[data-book] { transition: opacity .4s var(--ease), transform .4s var(--ease); }
+.t17 .nav .book[data-book].rs-hidden { opacity: 0; transform: translateY(-10px); pointer-events: none; }
+.t17 .nav .book[data-book].rs-show { opacity: 1; transform: none; }
+
+/* Bouton son : egaliseur discret en bas a gauche, coupe par defaut. Barres immobiles quand coupe,
+   ondulent (scaleY, CSS pur) quand actif. Ne tourne jamais tant que le bouton n'est pas active :
+   c'est une animation CSS bornee par la classe .on, pas une boucle JS permanente. */
+.t17 .snd-btn { position: fixed; left: 18px; bottom: 18px; z-index: 56; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: rgba(250, 246, 234, .88); display: grid; place-items: center; cursor: pointer; padding: 0; transition: background-color .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease); }
+.t17 .snd-btn:hover { border-color: var(--blue); transform: translateY(-2px); }
+.t17 .snd-btn:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.t17 .snd-bars { display: flex; align-items: center; justify-content: center; gap: 3px; width: 18px; height: 16px; pointer-events: none; }
+.t17 .snd-bars i { display: block; width: 2.5px; height: 100%; border-radius: 2px; background: var(--ink); transform: scaleY(.28); transform-origin: center; transition: background-color .3s var(--ease); }
+.t17 .snd-btn.on .snd-bars i { background: var(--blue); animation: t17SndWave 1.15s ease-in-out infinite; }
+.t17 .snd-btn.on .snd-bars i:nth-child(1) { animation-delay: 0s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(2) { animation-delay: .18s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(3) { animation-delay: .36s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(4) { animation-delay: .12s; }
+@keyframes t17SndWave { 0%, 100% { transform: scaleY(.28); } 50% { transform: scaleY(1); } }
+/* le bandeau de maquette se range a droite du bouton son, jamais dessous */
+.t17 .proto { left: 76px; bottom: 24px; }
+@media (max-width: 860px) { .t17 .snd-btn { left: 14px; bottom: 14px; width: 40px; height: 40px; } }
+@media (max-width: 860px) and (min-width: 701px) { .t17 .proto { left: 68px; bottom: 20px; } }
+@media (prefers-reduced-motion: reduce) { .t17 .snd-btn.on .snd-bars i { animation: none !important; } }
+
+/* Pied de page legal : une ligne sous le meta existant (axem-ia.fr / Paris / Reserver), au-dessus du
+   mot-symbole geant. Le meta original (footer .meta, assets/axem.css ligne 146) est en position
+   absolue a taille fixe ; sur mobile il retombe sur 2 lignes (peu de largeur pour 3 items), ce qui
+   ferait chevaucher une ligne suivante a decalage fixe. On enveloppe donc meta + legal-links dans un
+   bloc .ft-top en flux normal (empile en colonne), et on neutralise le positionnement absolu du
+   meta a l'interieur : la ligne des liens legaux suit toujours meta, jamais de chevauchement. */
+.t17 footer .ft-top { position: absolute; top: 28px; left: var(--gutter); right: var(--gutter); display: flex; flex-direction: column; gap: 10px; }
+.t17 footer .ft-top .meta { position: static; top: auto; left: auto; right: auto; flex-wrap: wrap; row-gap: 6px; }
+.t17 footer .legal-links { position: static; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 11px; font-weight: 600; letter-spacing: .04em; margin: 0; }
+.t17 footer .legal-links a { color: rgba(250, 246, 234, .62); text-decoration: none; transition: color .25s var(--ease); }
+.t17 footer .legal-links a:hover, .t17 footer .legal-links a:focus-visible { color: var(--blue); }
+@media (max-width: 860px) { .t17 footer .ft-top { gap: 8px; } .t17 footer .legal-links { gap: 5px 16px; } }
+
+/* Pages juridiques (mentions-legales.html, confidentialite.html) : mise en page simple, DA du site. */
+.t17-legal { max-width: 760px; margin: 0 auto; padding: clamp(90px, 12vh, 140px) var(--gutter) 120px; }
+.t17-legal .back { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--blue); margin-bottom: 48px; }
+.t17-legal .back:hover, .t17-legal .back:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.t17-legal h1 { font-size: clamp(32px, 5vw, 48px); margin: 0 0 8px; }
+.t17-legal .maj { font-size: 13px; color: var(--grey); margin: 0 0 48px; }
+.t17-legal h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(20px, 2.4vw, 26px); margin: 44px 0 14px; }
+.t17-legal p { font-size: 16px; line-height: 1.65; color: var(--grey); margin: 0 0 14px; }
+.t17-legal a { color: var(--blue); }
+.t17-legal a:hover, .t17-legal a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.t17-legal .todo { color: var(--blue); font-weight: 600; }
+
+/* Tour 19, commun a toutes les pages : le monogramme ax (enregistre par Clement le 25/09) en logo de la
+   barre des pages duo et reservation, et la barre de prototype en bas a gauche. */
+.axm { display: inline-block; width: 46px; height: 31px; vertical-align: middle; background: var(--blue); -webkit-mask: url(../img/logo-ax-mask.png) center / contain no-repeat; mask: url(../img/logo-ax-mask.png) center / contain no-repeat; transition: transform 0.4s var(--ease); }
+.nav .logo:hover .axm, .nav .logo:focus-visible .axm { transform: rotate(-8deg) scale(1.08); }
+.t19 .proto { position: fixed; left: 76px; bottom: 24px; z-index: 55; margin: 0; font: 500 12px/1 "Instrument Sans", sans-serif; background: var(--ink); color: var(--cream); padding: 8px 12px; }
+.t19 .proto a { margin-left: 12px; color: var(--cream); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+@media (max-width: 700px) {
+  .t19 .proto { position: static; display: block; width: auto; line-height: 1.6; margin: 14px var(--gutter) 18px; }
+}
+
+/* Tour 20 : reglages communs. */
+/* Pages de paiement : le bouton son recouvrait le prix de la barre collante, il n'a pas de role au moment de payer. */
+.t20-r1 .snd-btn, .t20-r2 .snd-btn, .t20-r3 .snd-btn { display: none !important; }
+/* Pages de paiement : le bandeau de maquette masquait le prix de la barre collante du bas, il remonte sous la nav. */
+@media (min-width: 701px) { .t20-r1 .proto, .t20-r2 .proto, .t20-r3 .proto { top: 84px; bottom: auto; left: auto; right: 24px; } }
+
+/* Tour 21 : reglages communs. */
+.t21 .is-provisoire { position: relative; }
+.t21 .is-provisoire::before { content: "Photo provisoire : la scène arrive"; position: absolute; z-index: 3; top: 10px; left: 10px; padding: 4px 9px; border-radius: 999px; background: #0E0F1A; color: #FBF8F1; font: 600 11px/1.3 "Instrument Sans", system-ui, sans-serif; letter-spacing: .02em; pointer-events: none; }
+
+/* ---- Tour 21, page « Le duo », proposition d7 : « De 2023 à aujourd'hui ». Coeur de la page : un
+   seul pin ScrollTrigger fait defiler horizontalement cinq actes (voir d7.js pour le detail du pin,
+   la fonte des lettres et le compteur de veille). Coupes nettes entre actes : chaque acte porte son
+   propre aplat de couleur, jamais de dégradé qui bave sur le suivant. Sous 861px ou en mouvement
+   reduit, la frise se depile verticalement (.d7-reel:not(.js-pin)), sans pin. Reutilise .f, .i, .cap,
+   .sq, .grid, .rv, .fade, .wm, .mq deja charges par assets/axem.css. Scope : .t21-d7 uniquement. ---- */
+
+.t21-d7 main, .t21-d7 #main { display: block; }
+.t21-d7 section, .t21-d7 article { position: relative; }
+.t21-d7 .sr-only { position: absolute; width: 1px; height: 1px; padding: 0; margin: -1px; overflow: hidden; clip: rect(0,0,0,0); white-space: nowrap; border: 0; }
+
+/* ===== 1. Ouverture, plein ecran des l'arrivee, jamais crème vide ===== */
+.t21-d7 .d7-open { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; gap: 22px; padding: 150px var(--gutter) 90px; overflow: hidden; background: var(--ink); color: var(--cream); }
+.t21-d7 .d7-open .grid i { border-color: rgba(250,246,234,.1); }
+.t21-d7 .d7-open .grid i:last-child { border-right-color: rgba(250,246,234,.1); }
+.t21-d7 .d7-kick { display: flex; gap: 12px; align-items: center; color: var(--cream); }
+.t21-d7 .d7-kick .sq.o { border-color: var(--blue); }
+.t21-d7 .d7-open-title { margin: 0; font-size: clamp(52px, 8.6vw, 148px); max-width: 18em; color: var(--cream); }
+.t21-d7 .d7-open-title .i { color: var(--blue); }
+.t21-d7 .d7-open-tag { margin: 2px 0 0; font-size: clamp(16px, 1.7vw, 21px); max-width: 34em; line-height: 1.5; opacity: .84; }
+.t21-d7 .d7-open-names { display: flex; align-items: center; gap: 14px; margin-top: 6px; font-size: clamp(14px, 1.4vw, 16px); font-weight: 600; }
+.t21-d7 .d7-open-sep { color: var(--blue); }
+.t21-d7 .d7-scroll { position: absolute; left: var(--gutter); bottom: 40px; display: flex; align-items: center; gap: 12px; color: var(--cream); opacity: .7; }
+.t21-d7 .d7-scroll-i { width: 1px; height: 40px; background: var(--cream); transform-origin: top; animation: d7Hint 2.2s cubic-bezier(.65, 0, .35, 1) infinite; }
+@keyframes d7Hint { 0% { transform: scaleY(0); } 45% { transform: scaleY(1); } 55% { transform: scaleY(1); transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+
+/* ===== 2. La frise : un seul pin de la page ===== */
+.t21-d7 .d7-reel { background: var(--ink); color: var(--cream); height: 100svh; overflow: hidden; }
+.t21-d7 .d7-track { position: relative; height: 100%; display: flex; will-change: transform; }
+.t21-d7 .d7-act { flex: none; width: 100vw; height: 100%; display: flex; align-items: center; justify-content: center; padding: 96px var(--gutter) 76px; overflow: hidden; }
+.t21-d7 .d7-act-in { width: 100%; max-width: 1180px; display: flex; flex-direction: column; align-items: center; gap: clamp(16px, 2.4vh, 30px); text-align: center; }
+
+/* Aplats par acte, coupes nettes */
+.t21-d7 .d7-act-open { background: var(--ink); }
+.t21-d7 .d7-act-merge { background: var(--blue); }
+.t21-d7 .d7-act-test, .t21-d7 .d7-act-veille, .t21-d7 .d7-act-preuve { background: var(--ink); }
+
+/* Reveal propre a la frise : cache uniquement quand le pin tient reellement la page. Sur mobile, sans
+   JS, ou en mouvement reduit : jamais masque, la regle ci dessous ne s'applique pas. */
+.t21-d7 .d7-reel.js-pin .d7-reveal { opacity: 0; transform: translateY(30px); }
+
+.t21-d7 .d7-kicker { display: flex; gap: 10px; align-items: center; justify-content: center; color: var(--cream); opacity: .82; }
+.t21-d7 .d7-kicker .sq.o { border-color: var(--blue); }
+.t21-d7 .d7-act-h { margin: 0; font-size: clamp(40px, 6vw, 100px); color: var(--cream); }
+.t21-d7 .d7-act-note { margin: 0; max-width: 34em; font-size: clamp(15px, 1.5vw, 18px); line-height: 1.55; color: var(--cream); opacity: .82; }
+
+/* ===== 2a. Acte 01, 2023 : deux rangees nommees, litterales ===== */
+.t21-d7 .d7-act-open .d7-act-in { height: 100%; justify-content: space-between; gap: clamp(10px, 2vh, 22px); padding: 6px 0; }
+.t21-d7 .d7-row { display: flex; align-items: center; gap: 14px; }
+.t21-d7 .d7-row-clement { align-self: flex-start; }
+.t21-d7 .d7-row-alexis { align-self: flex-end; }
+.t21-d7 .d7-avatar { width: clamp(40px, 4.4vw, 56px); height: clamp(40px, 4.4vw, 56px); border-radius: 50%; object-fit: cover; flex: none; border: 2px solid var(--blue); }
+.t21-d7 .d7-row-name { font-size: clamp(24px, 3.2vw, 40px); color: var(--cream); }
+.t21-d7 .d7-row-tags { display: flex; gap: 10px; flex-wrap: wrap; color: var(--blue); }
+.t21-d7 .d7-row-tags span:not(:last-child)::after { content: "·"; margin-left: 10px; color: var(--cream); opacity: .5; }
+.t21-d7 .d7-open-mid { display: flex; flex-direction: column; align-items: center; gap: clamp(10px, 1.8vh, 18px); }
+.t21-d7 .d7-year { font-size: clamp(72px, 13vw, 220px); line-height: .84; color: var(--blue); margin: 0; }
+
+/* ===== 2b. Acte 02, la fusion : le mot axem se compose ===== */
+.t21-d7 .d7-act-merge .d7-kicker, .t21-d7 .d7-act-merge .d7-act-note { color: var(--cream); }
+.t21-d7 .d7-act-merge .d7-kicker .sq.o { border-color: var(--cream); }
+.t21-d7 .d7-merge-h { margin: 0; display: block; }
+.t21-d7 .d7-merge-word { display: inline-flex; align-items: flex-start; font-size: clamp(80px, 15vw, 240px); line-height: .84; color: var(--cream); }
+.t21-d7 .d7-ml { display: inline-block; }
+.t21-d7 .d7-ml-ia { font-family: 'Instrument Sans', sans-serif; font-weight: 700; font-size: .26em; letter-spacing: .02em; line-height: 1; margin-top: .62em; margin-left: .16em; }
+.t21-d7 .d7-act-merge .d7-act-note { opacity: .92; }
+
+/* ===== 2c. Actes 03 et 04 : video de fond, sourdine visuelle ===== */
+.t21-d7 .d7-bgvid-wrap { position: absolute; inset: 0; z-index: 0; overflow: hidden; }
+.t21-d7 .d7-bgvid { position: absolute; inset: 0; width: 100%; height: 100%; object-fit: cover; opacity: .38; }
+.t21-d7 .d7-bgvid-scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,13,18,.55), rgba(11,13,18,.86)); }
+.t21-d7 .d7-act-test .d7-act-in, .t21-d7 .d7-act-veille .d7-act-in { position: relative; z-index: 1; }
+
+/* ===== 2d. Acte 04, la veille : le compteur decoratif qui se resout en mot ===== */
+.t21-d7 .d7-veille-h { margin: 0; display: flex; flex-direction: column; align-items: center; gap: 14px; }
+.t21-d7 .d7-odo { display: none; gap: 6px; font-variant-numeric: tabular-nums; opacity: .7; }
+.t21-d7 .d7-odo-d { display: inline-block; width: .58em; font-size: clamp(44px, 7vw, 100px); color: var(--blue); overflow: hidden; }
+.t21-d7 .d7-odo-word { font-size: clamp(48px, 7.4vw, 120px); color: var(--cream); }
+
+/* ===== 2e. Acte 05, la preuve : chiffres et logos clients ===== */
+.t21-d7 .d7-act-in-preuve { gap: clamp(20px, 3vh, 34px); }
+.t21-d7 .d7-stats { display: flex; flex-wrap: wrap; align-items: flex-end; justify-content: center; gap: clamp(28px, 5vw, 72px); }
+.t21-d7 .d7-stat { display: flex; flex-direction: column; align-items: center; gap: 8px; }
+.t21-d7 .d7-stat-n { font-size: clamp(40px, 6.4vw, 96px); line-height: .9; color: var(--blue); }
+.t21-d7 .d7-stat:nth-child(3) .d7-stat-n { color: var(--cream); }
+.t21-d7 .d7-stat-l { color: var(--cream); opacity: .78; max-width: 12em; }
+.t21-d7 .d7-proof-logos { width: 100%; max-width: 980px; overflow: hidden; mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); -webkit-mask-image: linear-gradient(90deg, transparent, #000 8%, #000 92%, transparent); }
+.t21-d7 .d7-proof-track.mq { font-size: 26px; gap: 44px; padding-right: 44px; animation-duration: 22s; }
+.t21-d7 .d7-proof-track .lg { background: var(--cream); }
+.t21-d7 .d7-proof-track .lt { color: var(--cream); }
+.t21-d7 .d7-proof-track b { color: var(--blue); }
+
+/* ===== 3. Arrivee : la photo sur scene plein ecran ===== */
+.t21-d7 .d7-arrival { min-height: 100svh; display: flex; align-items: flex-end; overflow: hidden; background: var(--ink); }
+.t21-d7 .d7-arrival-fig { position: absolute; inset: 0; margin: 0; }
+.t21-d7 .d7-arrival-fig img { width: 100%; height: 100%; object-fit: cover; display: block; }
+.t21-d7 .d7-arrival-scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11,13,18,.35) 0%, rgba(11,13,18,.2) 40%, rgba(11,13,18,.92) 100%); }
+.t21-d7 .d7-arrival-in { position: relative; z-index: 1; width: 100%; padding: 0 var(--gutter) 64px; display: flex; flex-direction: column; align-items: center; gap: 16px; text-align: center; }
+.t21-d7 .d7-arrival-mark.wm { font-size: clamp(28px, 3.4vw, 40px); color: var(--cream); }
+.t21-d7 .d7-arrival-mark.wm sup { color: var(--blue); }
+.t21-d7 .d7-arrival-names { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 14px; }
+.t21-d7 .d7-arrival-name { font-family: 'Fraunces', serif; font-weight: 900; font-variation-settings: "SOFT" 100, "WONK" 0, "opsz" 144; font-size: clamp(28px, 4.4vw, 60px); color: var(--cream); }
+.t21-d7 .d7-arrival-cap { color: var(--cream); opacity: .62; }
+
+/* ===== 4. Cloture ===== */
+.t21-d7 .d7-close { padding: clamp(90px, 14vh, 150px) var(--gutter) clamp(70px, 10vh, 110px); display: flex; flex-direction: column; align-items: center; gap: 26px; text-align: center; background: var(--cream); }
+.t21-d7 .d7-close-h { margin: 0; font-size: clamp(34px, 5vw, 62px); max-width: 16em; }
+.t21-d7 .d7-close-h .i { color: var(--blue); }
+.t21-d7 .d7-close-links { display: flex; flex-wrap: wrap; align-items: center; justify-content: center; gap: 26px; }
+.t21-d7 .d7-link { display: inline-flex; align-items: center; gap: 8px; font-size: 15px; font-weight: 600; color: var(--ink); padding-bottom: 3px; border-bottom: 2px solid var(--blue); transition: color .3s var(--ease), gap .3s var(--ease); }
+.t21-d7 .d7-link:hover, .t21-d7 .d7-link:focus-visible { color: var(--blue); gap: 12px; }
+
+@media (prefers-reduced-motion: reduce) {
+  .t21-d7 .d7-reel.js-pin .d7-reveal { opacity: 1 !important; transform: none !important; }
+  .t21-d7 .d7-scroll-i { animation: none; }
+}
+
+/* ===== 5. Version sans pin : mobile, mouvement reduit, ou avant que le JS n'ait pu s'installer ===== */
+.t21-d7 .d7-reel:not(.js-pin) { height: auto; overflow: visible; }
+.t21-d7 .d7-reel:not(.js-pin) .d7-track { flex-direction: column; height: auto; }
+.t21-d7 .d7-reel:not(.js-pin) .d7-act { width: 100%; height: auto; min-height: 88svh; padding: 88px var(--gutter); border-top: 1px solid rgba(250,246,234,.14); }
+.t21-d7 .d7-reel:not(.js-pin) .d7-act-open .d7-act-in { height: auto; gap: clamp(24px, 5vh, 40px); }
+.t21-d7 .d7-reel:not(.js-pin) .d7-row-clement, .t21-d7 .d7-reel:not(.js-pin) .d7-row-alexis { align-self: center; }
+
+@media (max-width: 860px) {
+  .t21-d7 .d7-open { padding: 130px var(--gutter) 76px; }
+  .t21-d7 .d7-stats { gap: 30px; }
+  .t21-d7 .d7-arrival { align-items: center; }
+  .t21-d7 .d7-close-links { flex-direction: column; gap: 16px; }
+}
+
+@media (max-width: 700px) {
+  .t21-d7 .d7-row { flex-direction: column; gap: 8px; text-align: center; }
+  .t21-d7 .d7-row-tags span:not(:last-child)::after { margin-left: 8px; }
+}
+</style>
+</head>
+<body class="t17 t18 t19 t20 t21 t19-d7 t20-d7 t21-d7">
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="nav" id="nav">
+  <a href="../index.html" class="logo" aria-label="AXEM IA, accueil"><span class="axm" aria-hidden="true"></span></a>
+  <nav class="links" aria-label="Navigation principale">
+    <a href="#offres">Conseil<span class="na" aria-hidden="true">→</span></a><a href="#offres">Formation<span class="na" aria-hidden="true">→</span></a><a href="../coaching/">Coaching<span class="na" aria-hidden="true">→</span></a><a href="#duo">Le duo<span class="na" aria-hidden="true">→</span></a>
+  </nav>
+  <a href="#" class="book" data-book><span class="long">Réserver un échange offert</span><span class="short">Réserver</span><span class="bk-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a>
+</header>
+
+<main id="main">
+<!--
+  Tour 21, page « Le duo », proposition d7 : « De 2023 à aujourd'hui ». Un seul pin ScrollTrigger fait
+  defiler horizontalement une frise en cinq actes, de « 2023 » a « aujourd'hui » : deux rangees nommees
+  (Clement en haut, Alexis en bas, litterales, jamais de metaphore) avancent ensemble puis se rejoignent
+  au centre, ou le mot « axem » se compose lettre a lettre (AX d'Alexis, EM de Clement) avec IA en
+  exposant. La frise continue : on teste avant de vendre, la veille quotidienne (un compteur decoratif
+  qui defile puis se resout en « chaque jour », aucun nombre invente), la preuve (chiffres et logos
+  clients). Le pin se relache sur une derniere photo plein ecran (la scene, choix de Clement), puis la
+  page se referme sur la phrase de cloture et les deux liens LinkedIn. Coupes nettes entre chapitres :
+  chaque acte a son propre aplat de couleur, jamais de fondu qui bave sur le suivant. Sur mobile (moins
+  de 861px) ou en mouvement reduit, la frise se depile verticalement, sans pin (voir d7.css et d7.js).
+  Trois photos seulement : img/clement.jpg, img/alexis.jpg, img/duo/propositions/axem-duo-2-scene.jpg.
+  Reutilise .f, .i, .cap, .sq, .grid, .rv, .fade, .wm, .mq deja charges par assets/axem.css et
+  outils/t17-t20/base*.css. Scope : .t21-d7 uniquement, un seul h1.
+-->
+<noscript><style>.t21-d7 .rv,.t21-d7 .fade{opacity:1!important;transform:none!important}.t21-d7 .d7-reveal{opacity:1!important;transform:none!important}.t21-d7 .d7-ml{opacity:1!important;transform:none!important}.t21-d7 .d7-odo{display:none!important}.t21-d7 .d7-odo-word{opacity:1!important;transform:none!important}</style></noscript>
+
+<section class="d7-open" aria-labelledby="d7-h1">
+  <div class="grid" id="grid" aria-hidden="true"></div>
+  <p class="d7-kick cap fade" style="--d: 100"><span class="sq"></span><span class="sq o"></span><span>Axem IA, le duo</span></p>
+  <h1 class="f d7-open-title fade" id="d7-h1" style="--d: 220">De 2023<br>à <span class="i">aujourd'hui.</span></h1>
+  <p class="d7-open-tag fade" style="--d: 420">Clément Predo et Alexis Zeitoun fondent Axem IA, ensemble. Deux trajectoires, une seule équipe, racontées en un seul défilement.</p>
+  <div class="d7-open-names fade" style="--d: 620">
+    <span class="d7-open-name">Clément Predo</span>
+    <span class="d7-open-sep" aria-hidden="true">·</span>
+    <span class="d7-open-name">Alexis Zeitoun</span>
+  </div>
+  <div class="d7-scroll cap fade" style="--d: 900" aria-hidden="true"><span class="d7-scroll-i"></span>Défiler</div>
+</section>
+
+<section class="d7-reel" id="d7Reel" aria-label="Clément Predo et Alexis Zeitoun, de 2023 à aujourd'hui">
+  <div class="d7-track" id="d7Track">
+
+    <article class="d7-act d7-act-open" data-act="1" aria-labelledby="d7-a1h">
+      <div class="d7-act-in">
+        <div class="d7-row d7-row-clement d7-reveal" data-row="clement">
+          <img class="d7-avatar" src="../img/clement.jpg" alt="" width="1400" height="1400" loading="lazy">
+          <span class="d7-row-name f">Clément</span>
+          <span class="d7-row-tags cap"><span>Stratégie</span><span>Conseil</span><span>Formation</span></span>
+        </div>
+        <div class="d7-open-mid">
+          <p class="d7-kicker cap d7-reveal"><span class="sq"></span><span class="sq o"></span><span>01 · Depuis 2023</span></p>
+          <div class="d7-year f" aria-hidden="true">2023</div>
+          <h2 class="f d7-act-h d7-reveal" id="d7-a1h">Deux trajectoires,<br>un même départ.</h2>
+          <p class="d7-act-note d7-reveal">Dans l'IA depuis 2023, pionniers quand beaucoup ne comprenaient pas encore.</p>
+        </div>
+        <div class="d7-row d7-row-alexis d7-reveal" data-row="alexis">
+          <img class="d7-avatar" src="../img/alexis.jpg" alt="" width="1307" height="1600" loading="lazy">
+          <span class="d7-row-name f">Alexis</span>
+          <span class="d7-row-tags cap"><span>Technique</span><span>Automatisation</span></span>
+        </div>
+      </div>
+    </article>
+
+    <article class="d7-act d7-act-merge" data-act="2" aria-labelledby="d7-a2h">
+      <div class="d7-act-in">
+        <p class="d7-kicker cap d7-reveal"><span class="sq"></span><span class="sq o"></span><span>02 · Une seule équipe</span></p>
+        <h2 class="d7-merge-h f" id="d7-a2h">
+          <span class="sr-only">axem IA</span>
+          <span class="d7-merge-word" id="d7Merge" aria-hidden="true"><span class="d7-ml">a</span><span class="d7-ml">x</span><span class="d7-ml">e</span><span class="d7-ml">m</span><sup class="d7-ml d7-ml-ia">IA</sup></span>
+        </h2>
+        <p class="d7-act-note d7-reveal">AX d'Alexis, EM de Clément, et IA. Deux trajectoires qui se rejoignent.</p>
+      </div>
+    </article>
+
+    <article class="d7-act d7-act-test" data-act="3" aria-labelledby="d7-a3h">
+      <div class="d7-bgvid-wrap" aria-hidden="true">
+        <video class="d7-bgvid" id="d7VidTest" muted playsinline loop preload="metadata" poster="../showreel/media/reel-2-champ.jpg">
+          <source src="../showreel/media/reel-2-champ-720.mp4" media="(max-width: 700px)">
+          <source src="../showreel/media/reel-2-champ.mp4">
+        </video>
+        <span class="d7-bgvid-scrim"></span>
+      </div>
+      <div class="d7-act-in">
+        <p class="d7-kicker cap d7-reveal"><span class="sq"></span><span class="sq o"></span><span>03 · Avant de vendre</span></p>
+        <h2 class="f d7-act-h d7-reveal" id="d7-a3h">Ils testent<br>avant de vendre.</h2>
+        <p class="d7-act-note d7-reveal">Ils testent les nouveaux outils en permanence et ne proposent que ce qui a marché chez eux d'abord.</p>
+      </div>
+    </article>
+
+    <article class="d7-act d7-act-veille" data-act="4" aria-labelledby="d7-a4h">
+      <div class="d7-act-in">
+        <p class="d7-kicker cap d7-reveal"><span class="sq"></span><span class="sq o"></span><span>04 · La veille</span></p>
+        <h2 class="f d7-veille-h" id="d7-a4h">
+          <span class="d7-odo" id="d7Odo" aria-hidden="true"><span class="d7-odo-d" data-odo>0</span><span class="d7-odo-d" data-odo>0</span><span class="d7-odo-d" data-odo>0</span></span>
+          <span class="d7-odo-word" id="d7OdoWord">Chaque jour.</span>
+        </h2>
+        <p class="d7-act-note d7-reveal">Veille sur les nouveautés de l'IA. Ils publient plusieurs fois par semaine sur LinkedIn, surtout sur Claude.</p>
+      </div>
+    </article>
+
+    <article class="d7-act d7-act-preuve" data-act="5" aria-labelledby="d7-a5h">
+      <div class="d7-act-in d7-act-in-preuve">
+        <p class="d7-kicker cap d7-reveal"><span class="sq"></span><span class="sq o"></span><span>05 · La preuve</span></p>
+        <h2 class="f d7-act-h d7-reveal" id="d7-a5h">La preuve.</h2>
+        <div class="d7-stats" id="d7Stats">
+          <div class="d7-stat"><span class="f d7-stat-n" data-stat="200" data-prefix="+">+200</span><span class="cap d7-stat-l">Entreprises accompagnées</span></div>
+          <div class="d7-stat"><span class="f d7-stat-n" data-stat="3000" data-prefix="+">+3&#8239;000</span><span class="cap d7-stat-l">Collaborateurs formés</span></div>
+          <div class="d7-stat"><span class="f d7-stat-n" data-stat="94292">94&#8239;292</span><span class="cap d7-stat-l">Abonnés LinkedIn cumulés</span></div>
+        </div>
+        <div class="d7-proof-logos" aria-label="Entreprises accompagnées">
+          <div class="d7-proof-track mq f" id="d7ProofTrack">
+            <span class="lg" role="img" aria-label="Carrefour" style="height:38px;aspect-ratio:1000/802.207;-webkit-mask-image:url(../img/logos/carrefour.svg);mask-image:url(../img/logos/carrefour.svg)"></span><b aria-hidden="true">■</b><span class="lt">Nina Ricci</span><b aria-hidden="true">□</b><span class="lt">Crédit Agricole Assurances</span><b aria-hidden="true">□</b><span class="lg" role="img" aria-label="BlackFin Capital Partners" style="height:22px;aspect-ratio:413/63;-webkit-mask-image:url(../img/logos/blackfin.png);mask-image:url(../img/logos/blackfin.png)"></span><b aria-hidden="true">■</b><span class="lg" role="img" aria-label="K.I.T. Group France" style="height:34px;aspect-ratio:2184/821;-webkit-mask-image:url(../img/logos/kit.png);mask-image:url(../img/logos/kit.png)"></span><b aria-hidden="true">□</b><span class="lt">Zoetis</span><b aria-hidden="true">■</b><span class="lt">Gecina</span><b aria-hidden="true">□</b><span class="lt">GEODIS</span><b aria-hidden="true">■</b><span class="lg" role="img" aria-label="Avantis Group" style="height:26px;aspect-ratio:1578/330;-webkit-mask-image:url(../img/logos/avantis.png);mask-image:url(../img/logos/avantis.png)"></span><b aria-hidden="true">□</b><span class="lt">My Little Paris</span><b aria-hidden="true">■</b><span class="lg" role="img" aria-label="Gravotech" style="height:30px;aspect-ratio:300/118;-webkit-mask-image:url(../img/logos/gravotech.png);mask-image:url(../img/logos/gravotech.png)"></span><b aria-hidden="true">□</b><span class="lg" role="img" aria-label="Espace 2" style="height:38px;aspect-ratio:132/192;-webkit-mask-image:url(../img/logos/espace2.png);mask-image:url(../img/logos/espace2.png)"></span><b aria-hidden="true">■</b><span class="lt">Viverde Group</span><b aria-hidden="true">□</b><span class="lg" aria-hidden="true" style="height:38px;aspect-ratio:1000/802.207;-webkit-mask-image:url(../img/logos/carrefour.svg);mask-image:url(../img/logos/carrefour.svg)"></span><b aria-hidden="true">■</b><span class="lt" aria-hidden="true">Nina Ricci</span><b aria-hidden="true">□</b><span class="lt" aria-hidden="true">Crédit Agricole Assurances</span><b aria-hidden="true">□</b><span class="lg" aria-hidden="true" style="height:22px;aspect-ratio:413/63;-webkit-mask-image:url(../img/logos/blackfin.png);mask-image:url(../img/logos/blackfin.png)"></span><b aria-hidden="true">■</b><span class="lg" aria-hidden="true" style="height:34px;aspect-ratio:2184/821;-webkit-mask-image:url(../img/logos/kit.png);mask-image:url(../img/logos/kit.png)"></span><b aria-hidden="true">□</b><span class="lt" aria-hidden="true">Zoetis</span><b aria-hidden="true">■</b><span class="lt" aria-hidden="true">Gecina</span><b aria-hidden="true">□</b><span class="lt" aria-hidden="true">GEODIS</span><b aria-hidden="true">■</b><span class="lg" aria-hidden="true" style="height:26px;aspect-ratio:1578/330;-webkit-mask-image:url(../img/logos/avantis.png);mask-image:url(../img/logos/avantis.png)"></span><b aria-hidden="true">□</b><span class="lt" aria-hidden="true">My Little Paris</span><b aria-hidden="true">■</b><span class="lg" aria-hidden="true" style="height:30px;aspect-ratio:300/118;-webkit-mask-image:url(../img/logos/gravotech.png);mask-image:url(../img/logos/gravotech.png)"></span><b aria-hidden="true">□</b><span class="lg" aria-hidden="true" style="height:38px;aspect-ratio:132/192;-webkit-mask-image:url(../img/logos/espace2.png);mask-image:url(../img/logos/espace2.png)"></span><b aria-hidden="true">■</b><span class="lt" aria-hidden="true">Viverde Group</span><b aria-hidden="true">□</b>
+          </div>
+        </div>
+      </div>
+    </article>
+
+  </div>
+</section>
+
+<section class="d7-arrival" aria-labelledby="d7-ah">
+  <figure class="d7-arrival-fig">
+    <img src="../img/duo/propositions/axem-duo-2-scene.jpg" alt="Clément Predo et Alexis Zeitoun, ensemble, sur scène" loading="lazy">
+    <span class="d7-arrival-scrim" aria-hidden="true"></span>
+  </figure>
+  <div class="d7-arrival-in">
+    <div class="d7-arrival-mark wm" aria-hidden="true">axem<sup>IA</sup></div>
+    <h2 class="sr-only" id="d7-ah">Clément Predo et Alexis Zeitoun</h2>
+    <div class="d7-arrival-names">
+      <span class="d7-arrival-name">Clément Predo</span>
+      <span class="d7-arrival-name">Alexis Zeitoun</span>
+    </div>
+    <p class="d7-arrival-cap cap">Photo générée par IA à partir de nos vraies photos.</p>
+  </div>
+</section>
+
+<section class="d7-close" aria-labelledby="d7-ch">
+  <h2 class="f d7-close-h rv" id="d7-ch">Et on ne compte pas <span class="i">s'arrêter</span> là.</h2>
+  <div class="d7-close-links rv" style="--d: 140">
+    <a class="d7-link" href="https://www.linkedin.com/in/clement-predo" target="_blank" rel="noopener">Clément Predo <span aria-hidden="true">→</span></a>
+    <a class="d7-link" href="https://www.linkedin.com/in/alexiszeitoun" target="_blank" rel="noopener">Alexis Zeitoun <span aria-hidden="true">→</span></a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="ft-top">
+    <div class="meta cap"><span>axem-ia.fr</span><span>Paris</span><a href="#" data-book>Réserver un échange offert →</a></div>
+    <div class="legal-links cap"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="mailto:contact@axem-ia.fr">contact@axem-ia.fr</a></div>
+  </div>
+  <div class="wm big" aria-hidden="true">axem<sup>IA</sup></div>
+</footer>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AXEM IA",
+  "url": "https://axem-ia.fr",
+  "email": "contact@axem-ia.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3 rue Françoise Dolto",
+    "postalCode": "75013",
+    "addressLocality": "Paris",
+    "addressCountry": "FR"
+  },
+  "founder": [
+    { "@type": "Person", "name": "Clément Predo", "sameAs": "https://www.linkedin.com/in/clement-predo" },
+    { "@type": "Person", "name": "Alexis Zeitoun", "sameAs": "https://www.linkedin.com/in/alexiszeitoun" }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/clement-predo",
+    "https://www.linkedin.com/in/alexiszeitoun"
+  ]
+}
+</script>
+
+<script src="../vendor/gsap/gsap.min.js"></script>
+<script src="../vendor/gsap/ScrollTrigger.min.js"></script>
+<script src="../vendor/gsap/SplitText.min.js"></script>
+<script src="../assets/abonnes.js"></script>
+<script src="../assets/avis.js"></script>
+<script src="../assets/axem.js"></script>
+<script>
+(() => {
+  // Tour 16 : la couche d'interactions du tour 2, allegee apres mesure (CPU x4, defilement molette).
+  // Retire : le defilement doux Lenis (il gardait la main sur la molette), le bandeau pilote image par
+  // image (il relisait la largeur de la page a chaque image : 1,8 s de mise en page sur 5 s), le
+  // brouillage des lettres. Garde, mais ne calcule plus que quand la souris bouge : le curseur a
+  // etiquette, la graisse du titre, l'apercu des offres, le portrait du duo, le mot du pied de page.
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const still = reduce || /[?&]static\b/.test(location.search);
+  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const hasGsap = typeof gsap !== 'undefined';
+  document.body.classList.add('t2', 't16-lite');
+  if (hasGsap) gsap.registerPlugin(...[window.ScrollTrigger, window.SplitText].filter(Boolean));
+
+  const mouse = { x: innerWidth / 2, y: innerHeight / 2 };
+  const moveFns = [];
+  let mq = 0;
+  addEventListener('pointermove', e => {
+    mouse.x = e.clientX; mouse.y = e.clientY;
+    if (!mq) mq = requestAnimationFrame(() => { mq = 0; moveFns.forEach(f => f()); });
+  }, { passive: true });
+
+  // Curseur a etiquette : la boucle ne tourne que tant qu'il reste du chemin a faire.
+  if (fine && !reduce) {
+    document.documentElement.classList.add('has-cur');
+    const l = document.createElement('div'); l.className = 'cur-l';
+    document.body.append(l);
+    const p = { x: mouse.x, y: mouse.y };
+    let run = 0;
+    const loop = () => {
+      p.x += (mouse.x - p.x) * 0.35; p.y += (mouse.y - p.y) * 0.35;
+      l.style.transform = `translate3d(${p.x.toFixed(1)}px, ${p.y.toFixed(1)}px, 0)`;
+      run = Math.abs(mouse.x - p.x) + Math.abs(mouse.y - p.y) > .4 ? requestAnimationFrame(loop) : 0;
+    };
+    moveFns.push(() => { if (!run) run = requestAnimationFrame(loop); });
+    document.addEventListener('pointerover', e => {
+      const lab = e.target.closest('[data-cursor]');
+      const hide = e.target.closest('[data-cursor-off]');
+      l.textContent = lab && !hide ? lab.dataset.cursor : '';
+      l.classList.toggle('on', !!(lab && !hide));
+    });
+  }
+
+  // Titre du hero : graisse variable selon la distance au curseur. Les centres des lettres sont
+  // mesures une fois (et au redimensionnement), jamais pendant le mouvement.
+  const heroH = document.querySelector('.hero');
+  if (heroH) {
+    document.querySelectorAll('.hero h1 .word > span').forEach(s => { s.innerHTML = [...s.textContent].map(ch => `<span class="ch">${ch}</span>`).join(''); });
+    if (fine && !still && hasGsap) {
+      const chars = [...heroH.querySelectorAll('.ch')];
+      let centers = null, active = false;
+      const measure = () => { centers = chars.map(ch => { const r = ch.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2 + scrollY]; }); };
+      // Changer la graisse d'une police variable oblige le navigateur a remettre en forme les glyphes :
+      // mesure du 24/09, 1,5 s de mise en page sur 5 s de geste, pour 36 objets seulement. Le cout vient
+      // de ce que chaque image demandait une graisse inedite (valeur continue, cache de forme rate).
+      // La graisse suit donc la souris par un amorti maison, mais n'est ecrite que par paliers de 50 :
+      // 13 graisses possibles, toutes deja en cache apres le premier passage.
+      const cur = chars.map(() => 900), tgt = chars.map(() => 900), shown = chars.map(() => 900);
+      let run = 0;
+      const tick = () => {
+        let moving = false;
+        for (let i = 0; i < chars.length; i++) {
+          const d = tgt[i] - cur[i];
+          if (Math.abs(d) > 2) { cur[i] += d * 0.18; moving = true; } else cur[i] = tgt[i];
+          const q = Math.round(cur[i] / 50) * 50;
+          if (q !== shown[i]) { shown[i] = q; chars[i].style.setProperty('--wg', q); }
+        }
+        run = moving ? requestAnimationFrame(tick) : 0;
+      };
+      const kick = () => { if (!run) run = requestAnimationFrame(tick); };
+      heroH.addEventListener('pointerenter', () => { active = true; measure(); });
+      heroH.addEventListener('pointerleave', () => { active = false; tgt.fill(900); kick(); });
+      addEventListener('resize', () => { centers = null; });
+      moveFns.push(() => {
+        if (!active) return;
+        if (!centers) measure();
+        const y = mouse.y + scrollY;
+        centers.forEach(([cx, cy], i) => { tgt[i] = 300 + 600 * Math.min(1, Math.hypot(mouse.x - cx, y - cy) / 420); });
+        kick();
+      });
+    }
+  }
+
+  // Apercu flottant sur les offres
+  const rows = document.querySelectorAll('.row[data-peek]');
+  if (rows.length && fine && !reduce && hasGsap) {
+    const pk = document.createElement('div'); pk.className = 'peek'; pk.setAttribute('aria-hidden', 'true');
+    pk.innerHTML = '<span class="sq"></span><div class="k"></div><div class="v"></div><img class="pi" alt="">';
+    document.body.appendChild(pk);
+    const xTo = gsap.quickTo(pk, 'x', { duration: 0.55, ease: 'power3.out' }), yTo = gsap.quickTo(pk, 'y', { duration: 0.55, ease: 'power3.out' });
+    const rTo = gsap.quickTo(pk, 'rotation', { duration: 0.5, ease: 'power3.out' });
+    let lastX = mouse.x, on = false;
+    moveFns.push(() => { if (!on) return; xTo(mouse.x + 70); yTo(mouse.y + 30); rTo(gsap.utils.clamp(-8, 8, (mouse.x - lastX) * 0.6)); lastX = mouse.x; });
+    rows.forEach(r => {
+      r.addEventListener('pointerenter', () => { on = true; gsap.set(pk, { x: mouse.x + 70, y: mouse.y + 30 }); pk.querySelector('.k').textContent = r.dataset.peekK || ''; pk.querySelector('.v').textContent = r.dataset.peek; const pi = pk.querySelector('.pi'); if (r.dataset.peekImg) { pi.src = new URL(r.dataset.peekImg, document.baseURI).href; } pk.classList.toggle('has-img', !!r.dataset.peekImg); gsap.to(pk, { opacity: 1, scale: 1, duration: 0.45, ease: 'back.out(1.6)' }); });
+      r.addEventListener('pointerleave', () => { on = false; gsap.to(pk, { opacity: 0, scale: 0.6, duration: 0.3 }); });
+    });
+  }
+
+  // Wordmark du pied de page : lettres qui se soulevent pres du curseur (positions mesurees a l'entree).
+  const big = document.querySelector('footer .big');
+  if (big) {
+    const tn = [...big.childNodes].find(n => n.nodeType === 3 && n.textContent.trim());
+    if (tn) { const w = document.createElement('span'); w.innerHTML = [...tn.textContent.trim()].map(ch => `<span class="fl">${ch}</span>`).join(''); big.replaceChild(w, tn); }
+    if (fine && !reduce) {
+      const fls = [...big.querySelectorAll('.fl')], foot = big.closest('footer');
+      let xs = null, inF = false;
+      foot.addEventListener('pointerenter', () => { inF = true; xs = fls.map(f => { const r = f.getBoundingClientRect(); return r.left + r.width / 2; }); });
+      foot.addEventListener('pointerleave', () => { inF = false; fls.forEach(f => { f.style.transform = ''; }); });
+      moveFns.push(() => { if (!inF || !xs) return; fls.forEach((f, i) => { f.style.transform = `translateY(${(-Math.max(0, 1 - Math.abs(mouse.x - xs[i]) / 260) * 0.14).toFixed(3)}em)`; }); });
+    }
+  }
+
+  // Liens forts magnetiques (hors barre du haut, qui a son propre bouton)
+  if (fine && !reduce && hasGsap) document.querySelectorAll('.teaser .more, [data-mag]').forEach(b => {
+    const xTo = gsap.quickTo(b, 'x', { duration: 0.5, ease: 'power3.out' }), yTo = gsap.quickTo(b, 'y', { duration: 0.5, ease: 'power3.out' });
+    b.addEventListener('pointermove', e => { const r = b.getBoundingClientRect(); xTo((e.clientX - r.left - r.width / 2) * 0.3); yTo((e.clientY - r.top - r.height / 2) * 0.4); });
+    b.addEventListener('pointerleave', () => { xTo(0); yTo(0); });
+  });
+
+  // Lignes revelees au defilement
+  if (hasGsap && window.SplitText && window.ScrollTrigger && !still) {
+    document.fonts.ready.then(() => document.querySelectorAll('[data-lines]').forEach(el => {
+      SplitText.create(el, { type: 'lines', mask: 'lines', linesClass: 'ln', autoSplit: true, onSplit: self => gsap.from(self.lines, { yPercent: 105, duration: 1.1, ease: 'expo.out', stagger: 0.09, scrollTrigger: { trigger: el, start: 'top 85%', once: true } }) });
+    }));
+  }
+
+  // Duo : portrait qui suit le curseur sur les noms
+  const dn = document.querySelector('.dn-list');
+  const fl = document.querySelector('.dn-float');
+  if (dn && fl && fine && !reduce && hasGsap) {
+    const xTo = gsap.quickTo(fl, 'x', { duration: 0.7, ease: 'power3.out' }), yTo = gsap.quickTo(fl, 'y', { duration: 0.7, ease: 'power3.out' });
+    const rTo = gsap.quickTo(fl, 'rotation', { duration: 0.6, ease: 'power3.out' });
+    let lx = mouse.x, on = false;
+    moveFns.push(() => { if (!on) return; xTo(mouse.x + 22); yTo(mouse.y + 16); rTo(gsap.utils.clamp(-10, 10, (mouse.x - lx) * 0.5)); lx = mouse.x; });
+    dn.querySelectorAll('.dn-row').forEach(r => {
+      r.addEventListener('pointerenter', () => { on = true; fl.classList.add('on'); fl.querySelectorAll('img').forEach(i => i.classList.toggle('on', i.dataset.who === r.dataset.who)); });
+    });
+    dn.addEventListener('pointerleave', () => { on = false; fl.classList.remove('on'); });
+  }
+})();
+</script>
+<script>(()=>{const m=location.search.match(/[?&]photo=(\d)/), P={1:'1-table',2:'2-scene'}; if (m && P[m[1]]) document.querySelectorAll('img[src$="img/duo/duo.jpg"]').forEach(i=>{i.src='../img/duo/propositions/axem-duo-'+P[m[1]]+'.jpg'; i.closest('[hidden]')?.removeAttribute('hidden');});})();</script>
+<p class="proto">Tour 21 : Le duo, proposition 7 <a class="replay" role="button" tabindex="0">Rejouer</a><a href="../tour21.html">Toutes les propositions</a></p>
+<script>
+(() => {
+  // ---- Tour 17 : socle commun (Reserver un seul a la fois, bouton son WebAudio). Charge sur les
+  // 6 pages, avant claude-mark.js et le script propre a chaque page (voir outils/build_t17.py). ----
+
+  // 1) Reserver un seul a la fois. La barre garde .nav .book[data-book] (nav.css). Tant que le grand
+  // bouton du hero (.hero .btn[data-book]) est a l'ecran, celui de la barre reste cache, invisible aux
+  // lecteurs d'ecran et non focusable. Des qu'il en sort, il apparait et reste, meme en remontant. Sur
+  // les pages duo il n'y a pas de hero : le bouton de la barre est visible d'emblee.
+  (() => {
+    const navBook = document.querySelector('#nav .book[data-book]');
+    if (!navBook) return;
+    const heroBook = document.querySelector('.hero .btn[data-book]');
+    if (!heroBook) { navBook.classList.add('rs-show'); return; }
+    navBook.classList.add('rs-hidden');
+    navBook.setAttribute('tabindex', '-1');
+    navBook.setAttribute('aria-hidden', 'true');
+    const reveal = () => {
+      navBook.classList.remove('rs-hidden');
+      navBook.classList.add('rs-show');
+      navBook.removeAttribute('tabindex');
+      navBook.removeAttribute('aria-hidden');
+    };
+    if (!('IntersectionObserver' in window)) { reveal(); return; }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (!entry.isIntersecting) { reveal(); io.disconnect(); } });
+    }, { threshold: 0 });
+    io.observe(heroBook);
+  })();
+
+  // 2) Bouton son : petit egaliseur en bas a gauche, coupe par defaut. Sons synthetises en WebAudio,
+  // aucun fichier. Rien ne joue avant un premier clic (ou une preference deja enregistree). Expose
+  // window.AxemSound = { play(name), on() } et ecoute l'evenement axem:sound emis ailleurs (survols,
+  // ecrans bleus). Chaque lecture/ecriture localStorage est dans un try/catch.
+  (() => {
+    const KEY = 'axem-son';
+    let enabled = false;
+    try { enabled = localStorage.getItem(KEY) === '1'; } catch (e) { enabled = false; }
+
+    let ctx = null;
+    const audioCtx = () => {
+      if (ctx) return ctx;
+      const Ctor = window.AudioContext || window.webkitAudioContext;
+      if (!Ctor) return null;
+      try { ctx = new Ctor(); } catch (e) { ctx = null; }
+      return ctx;
+    };
+
+    const soundWhoosh = c => {
+      const dur = 0.6;
+      const buf = c.createBuffer(1, Math.round(c.sampleRate * dur), c.sampleRate);
+      const d = buf.getChannelData(0);
+      for (let i = 0; i < d.length; i++) { const t = i / d.length; d[i] = (Math.random() * 2 - 1) * Math.pow(1 - t, 2.2); }
+      const src = c.createBufferSource(); src.buffer = buf;
+      const filt = c.createBiquadFilter(); filt.type = 'bandpass'; filt.Q.value = 0.7;
+      filt.frequency.setValueAtTime(500, c.currentTime);
+      filt.frequency.exponentialRampToValueAtTime(2000, c.currentTime + dur * 0.8);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.0001, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.13, c.currentTime + 0.09);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + dur);
+      src.connect(filt).connect(g).connect(c.destination);
+      src.start(); src.stop(c.currentTime + dur + 0.05);
+    };
+
+    const soundTick = c => {
+      const osc = c.createOscillator(); osc.type = 'square'; osc.frequency.setValueAtTime(1900, c.currentTime);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.08, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 0.045);
+      osc.connect(g).connect(c.destination);
+      osc.start(); osc.stop(c.currentTime + 0.06);
+    };
+
+    const soundPop = c => {
+      const osc = c.createOscillator(); osc.type = 'sine';
+      osc.frequency.setValueAtTime(420, c.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(760, c.currentTime + 0.1);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.0001, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.15, c.currentTime + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 0.24);
+      osc.connect(g).connect(c.destination);
+      osc.start(); osc.stop(c.currentTime + 0.26);
+    };
+
+    const SOUNDS = { whoosh: soundWhoosh, tick: soundTick, pop: soundPop };
+
+    const play = name => {
+      if (!enabled || !SOUNDS[name]) return;
+      try {
+        const c = audioCtx();
+        if (!c) return;
+        if (c.state === 'suspended') c.resume().catch(() => {});
+        SOUNDS[name](c);
+      } catch (e) { /* silencieux : le son n'est jamais bloquant */ }
+    };
+
+    window.AxemSound = { play, on: () => enabled };
+    window.addEventListener('axem:sound', e => { try { play(e.detail && e.detail.name); } catch (er) {} });
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'snd-btn';
+    btn.setAttribute('aria-pressed', 'false');
+    btn.setAttribute('aria-label', 'Activer le son');
+    btn.innerHTML = '<span class="snd-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>';
+    document.body.appendChild(btn);
+
+    const sync = () => {
+      btn.classList.toggle('on', enabled);
+      btn.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+      btn.setAttribute('aria-label', enabled ? 'Couper le son' : 'Activer le son');
+    };
+    sync();
+
+    btn.addEventListener('click', () => {
+      enabled = !enabled;
+      try { localStorage.setItem(KEY, enabled ? '1' : '0'); } catch (e) { /* prive ou bloque : tant pis */ }
+      sync();
+      if (enabled) play('pop');
+    });
+  })();
+})();
+</script>
+<script>
+/*
+ * ClaudeMark : trace officiel du symbole Claude (etoile / spark), sans dependance.
+ * Source : Wikimedia Commons, File:Claude_AI_symbol.svg
+ *   https://upload.wikimedia.org/wikipedia/commons/b/b0/Claude_AI_symbol.svg
+ * Le trace original est un SEUL <path> avec un seul sous-tracé (un seul "M" au debut,
+ * 159 segments, une seule fermeture "Z") : les 6 rayons ne sont pas des sous-tracés
+ * separes dans le fichier source, donc pas de decoupage "un <path> par rayon" possible
+ * ici sans reconstruire des tracés synthetiques. Conformement à la consigne du brief
+ * pour ce cas ("un seul contour continu impossible a separer proprement"), ClaudeMark
+ * expose `rays: []` et `root` anime en bloc (rotation / echelle / masque).
+ *
+ * Le trace ci-dessous est le trace officiel, translate pour que le centre visuel de
+ * l'etoile (centre de sa bounding box, cx=49.95 cy=50 dans le fichier source, sur un
+ * viewBox 0 0 100 100) tombe exactement sur (0,0). Le viewBox monte par mount() est
+ * donc centre : "-50 -50 100 100".
+ */
+(function (global) {
+  "use strict";
+
+  var PATH_D =
+    "m -30.35,16.5 l 19.7,-11 l 0.3,-1 l -0.3,-0.5 l -1,0 l -3.3,-0.2 l -11.2,-0.3 " +
+    "L -35.95,3 l -9.5,-0.5 l -2.4,-0.5 L -49.95,-1 l 0.2,-1.5 l 2,-1.3 l 2.9,0.2 " +
+    "l 6.3,0.5 l 9.5,0.6 l 6.9,0.4 L -11.95,-0.9 l 1.6,0 l 0.2,-0.7 l -0.5,-0.4 " +
+    "l -0.4,-0.4 L -20.95,-9 l -10.6,-7 l -5.6,-4.1 l -3,-2 l -1.5,-2 l -0.6,-4.2 " +
+    "l 2.7,-3 l 3.7,0.3 l 0.9,0.2 l 3.7,2.9 l 8,6.1 L -12.95,-14 l 1.5,1.2 l 0.6,-0.4 " +
+    "l 0.1,-0.3 l -0.7,-1.1 L -16.95,-25 l -6,-10.4 l -2.7,-4.3 l -0.7,-2.6 " +
+    "c -0.3,-1 -0.4,-2 -0.4,-3 l 3,-4.2 L -21.95,-50 l 4.2,0.6 L -16.15,-48 l 2.6,6 " +
+    "l 4.1,9.3 L -2.95,-20.1 l 2,3.8 l 1,3.4 l 0.3,1 l 0.7,0 l 0,-0.5 l 0.5,-7.2 " +
+    "l 1,-8.7 l 1,-11.2 l 0.3,-3.2 l 1.6,-3.8 l 3,-2 L 11.05,-47.4 l 2,2.9 l -0.3,1.8 " +
+    "l -1.1,7.7 L 9.05,-22.9 l -1.5,8.2 l 0.9,0 l 1,-1.1 l 4.1,-5.4 l 6.9,-8.6 l 3,-3.5 " +
+    "L 27.05,-37 l 2.3,-1.8 l 4.3,0 l 3.1,4.7 l -1.4,4.9 l -4.4,5.6 l -3.7,4.7 l -5.3,7.1 " +
+    "l -3.2,5.7 l 0.3,0.4 l 0.7,0 l 12,-2.6 l 6.4,-1.1 l 7.6,-1.3 l 3.5,1.6 l 0.4,1.6 " +
+    "l -1.4,3.4 l -8.2,2 l -9.6,2 l -14.3,3.3 l -0.2,0.1 l 0.2,0.3 l 6.4,0.6 l 2.8,0.2 " +
+    "l 6.8,0 l 12.6,1 l 3.3,2 l 1.9,2.7 l -0.3,2 l -5.1,2.6 l -6.8,-1.6 l -16,-3.8 " +
+    "l -5.4,-1.3 l -0.8,0 l 0,0.4 l 4.6,4.5 l 8.3,7.5 L 39.05,30.1 l 0.5,2.4 l -1.3,2 " +
+    "l -1.4,-0.2 l -9.2,-7 l -3.6,-3 l -8,-6.8 l -0.5,0 l 0,0.7 l 1.8,2.7 l 9.8,14.7 " +
+    "l 0.5,4.5 l -0.7,1.4 l -2.6,1 l -2.7,-0.6 l -5.8,-8 l -6,-9 l -4.7,-8.2 l -0.5,0.4 " +
+    "l -2.9,30.2 l -1.3,1.5 l -3,1.2 l -2.5,-2 l -1.4,-3 l 1.4,-6.2 l 1.6,-8 l 1.3,-6.4 " +
+    "l 1.2,-7.9 l 0.7,-2.6 l 0,-0.2 L -0.95,13.7 L -6.95,22 l -9,12.3 l -7.2,7.6 " +
+    "l -1.7,0.7 l -3,-1.5 l 0.3,-2.8 L -25.95,36 l 10,-12.8 l 6,-7.9 l 4,-4.6 l -0.1,-0.5 " +
+    "l -0.3,0 L -32.75,27.4 l -4.7,0.6 l -2,-2 l 0.2,-3 l 1,-1 l 8,-5.5 Z";
+
+  var DEFAULT_COLOR = "#D97757";
+  var SVG_NS = "http://www.w3.org/2000/svg";
+
+  function mount(el, opts) {
+    opts = opts || {};
+    var color = opts.color || DEFAULT_COLOR;
+
+    var svg;
+    if (el && el.tagName && el.tagName.toLowerCase() === "svg") {
+      svg = el;
+    } else {
+      svg = document.createElementNS(SVG_NS, "svg");
+      if (el) el.appendChild(svg);
+    }
+
+    svg.setAttribute("viewBox", "-50 -50 100 100");
+    if (!svg.hasAttribute("width") && opts.size) svg.setAttribute("width", opts.size);
+    if (!svg.hasAttribute("height") && opts.size) svg.setAttribute("height", opts.size);
+    svg.setAttribute("aria-hidden", "true");
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+
+    // root : groupe anime en bloc (rotation/echelle/masque), origine CSS forcee a
+    // (0,0) qui correspond deja au centre visuel de l'etoile dans ce viewBox recentre.
+    var root = document.createElementNS(SVG_NS, "g");
+    root.setAttribute("class", "claude-mark-root");
+    root.style.transformOrigin = "0px 0px";
+    root.style.transformBox = "view-box";
+
+    var path = document.createElementNS(SVG_NS, "path");
+    path.setAttribute("d", PATH_D);
+    path.setAttribute("fill", color);
+    path.setAttribute("class", "claude-mark-path");
+    root.appendChild(path);
+    svg.appendChild(root);
+
+    return {
+      svg: svg,
+      root: root,
+      rays: [], // tracé source en un seul sous-chemin : rayons non individualisables
+      core: null, // idem : pas de hub separe dans le tracé source
+      color: color
+    };
+  }
+
+  global.ClaudeMark = { mount: mount, PATH_D: PATH_D, DEFAULT_COLOR: DEFAULT_COLOR };
+})(window);
+</script>
+<script>
+(() => {
+  // Page « Le duo », proposition d7 : « De 2023 à aujourd'hui ». Un seul pin ScrollTrigger fait
+  // defiler horizontalement cinq actes (voir d7.main.html) ; une video de fond (acte 03, champ de
+  // points) joue seulement quand son acte est reellement a l'ecran (reel-3-plan-sequence a ete
+  // ecartee : son plan-sequence typographique affiche par moments un gros texte qui brouillait la
+  // lecture de l'acte 04, verifie en capture le 27/09). Sur mobile (moins de 861px), en mouvement
+  // reduit, ou sans GSAP : pas de pin, la frise se depile verticalement, chaque acte se revele au
+  // defilement via une ScrollTrigger simple, les videos jouent au meme rythme via IntersectionObserver.
+  const root = document.querySelector('.t21-d7');
+  if (!root) return;
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const still = reduce || /[?&]static\b/.test(location.search);
+  const hasGsap = typeof gsap !== 'undefined';
+  if (hasGsap) gsap.registerPlugin(...[window.ScrollTrigger].filter(Boolean));
+  const canAnim = hasGsap && window.ScrollTrigger && !still;
+
+  const reel = document.getElementById('d7Reel');
+  const track = document.getElementById('d7Track');
+  if (!reel || !track) return;
+  const acts = [...track.querySelectorAll('.d7-act')];
+  const videos = [...root.querySelectorAll('.d7-bgvid')];
+
+  const play = v => { if (v && v.paused) v.play().catch(() => {}); };
+  const stop = v => { if (v && !v.paused) v.pause(); };
+
+  // ===== Le compteur de veille : quelques colonnes qui roulent, puis se resolvent en « Chaque jour. »
+  // Jamais de nombre invente : les chiffres ne sont qu'un decor (aria-hidden), le mot reste toujours
+  // dans le DOM pour les lecteurs d'ecran. Duree bornee, jamais de boucle permanente. =====
+  const runOdo = (() => {
+    let done = false;
+    return () => {
+      if (done) return; done = true;
+      const odo = document.getElementById('d7Odo');
+      const word = document.getElementById('d7OdoWord');
+      if (!odo || !word) return;
+      if (still) { odo.style.display = 'none'; word.style.opacity = '1'; return; }
+      const digits = [...odo.querySelectorAll('[data-odo]')];
+      odo.style.display = 'inline-flex';
+      if (hasGsap) gsap.set(word, { opacity: 0, y: 16 }); else word.style.opacity = '0';
+      let ticks = 0;
+      const maxTicks = 26;
+      const speeds = digits.map((_, i) => 60 + i * 22);
+      const timers = digits.map((d, i) => setInterval(() => { d.textContent = String(Math.floor(Math.random() * 10)); }, speeds[i]));
+      setTimeout(() => {
+        timers.forEach(clearInterval);
+        const finish = () => {
+          if (hasGsap) {
+            gsap.to(odo, { opacity: 0, duration: .3, ease: 'power1.in', onComplete: () => { odo.style.display = 'none'; } });
+            gsap.to(word, { opacity: 1, y: 0, duration: .4, ease: 'power2.out' });
+          } else { odo.style.display = 'none'; word.style.opacity = '1'; }
+        };
+        finish();
+      }, 620);
+    };
+  })();
+
+  // ===== Les chiffres de l'acte 05, comptent une seule fois =====
+  const fmtN = n => Math.round(n).toLocaleString('fr-FR');
+  const runStats = (() => {
+    let done = false;
+    return () => {
+      if (done) return; done = true;
+      const stats = [...root.querySelectorAll('[data-stat]')];
+      stats.forEach(el => {
+        const to = +el.dataset.stat, pre = el.dataset.prefix || '';
+        if (still) { el.textContent = pre + fmtN(to); return; }
+        const t0 = performance.now(), dur = 1100;
+        const step = t => {
+          const p = Math.min(1, (t - t0) / dur), e = 1 - Math.pow(1 - p, 4);
+          el.textContent = pre + fmtN(to * e);
+          if (p < 1) requestAnimationFrame(step);
+        };
+        requestAnimationFrame(step);
+      });
+    };
+  })();
+
+  // ===== Sans pin : mobile, mouvement reduit, ou sans ScrollTrigger =====
+  if (!canAnim || !matchMedia('(min-width: 861px)').matches) {
+    if (canAnim) {
+      acts.forEach(act => {
+        const els = act.querySelectorAll('.d7-reveal');
+        if (els.length) {
+          gsap.set(els, { opacity: 0, y: 24 });
+          window.ScrollTrigger.create({ trigger: act, start: 'top 82%', once: true, onEnter: () => gsap.to(els, { opacity: 1, y: 0, duration: .8, ease: 'power2.out', stagger: .08 }) });
+        }
+        const v = act.querySelector('.d7-bgvid');
+        if (v) window.ScrollTrigger.create({ trigger: act, start: 'top 85%', end: 'bottom 15%', onEnter: () => play(v), onEnterBack: () => play(v), onLeave: () => stop(v), onLeaveBack: () => stop(v) });
+        if (act.classList.contains('d7-act-veille')) window.ScrollTrigger.create({ trigger: act, start: 'top 70%', once: true, onEnter: runOdo });
+        if (act.classList.contains('d7-act-preuve')) window.ScrollTrigger.create({ trigger: act, start: 'top 70%', once: true, onEnter: runStats });
+      });
+    } else {
+      // Ni GSAP ni ScrollTrigger : tout reste visible, les chiffres et le mot de veille s'affichent
+      // directement (pas de defilement pilote possible sans la librairie).
+      root.querySelectorAll('[data-stat]').forEach(el => { el.textContent = (el.dataset.prefix || '') + fmtN(+el.dataset.stat); });
+      const odo = document.getElementById('d7Odo'), word = document.getElementById('d7OdoWord');
+      if (odo) odo.style.display = 'none';
+      if (word) word.style.opacity = '1';
+    }
+    return;
+  }
+
+  reel.classList.add('js-pin');
+
+  const buildPin = () => {
+    const scrollTween = gsap.to(track, {
+      x: () => -Math.max(0, track.scrollWidth - innerWidth),
+      ease: 'none',
+      scrollTrigger: {
+        trigger: reel,
+        pin: true,
+        scrub: 0.6,
+        anticipatePin: 1,
+        start: 'top top',
+        end: () => '+=' + Math.max(1, track.scrollWidth - innerWidth),
+        invalidateOnRefresh: true
+      }
+    });
+
+    // Reveal generique des titres, kickers et notes de chaque acte, lie au deroule horizontal via
+    // containerAnimation (jamais un pin de plus : un seul par page). Le premier acte demarre pile a
+    // la position de repos de la frise (x: 0) : son bord gauche est deja a « left 0% » des l'origine,
+    // il ne traverse donc jamais le seuil « left 68% » comme les suivants. Il se revele une seule
+    // fois, des la construction du pin, comme le fait deja la section d'ouverture juste au dessus.
+    acts.forEach(act => {
+      const els = act.querySelectorAll('.d7-reveal');
+      if (!els.length) return;
+      gsap.set(els, { opacity: 0, y: 24 });
+      if (act.classList.contains('d7-act-open')) {
+        gsap.to(els, { opacity: 1, y: 0, duration: .6, ease: 'power2.out', stagger: .08, delay: .15 });
+        return;
+      }
+      gsap.timeline({ scrollTrigger: { containerAnimation: scrollTween, trigger: act, start: 'left 68%', end: 'left 32%', toggleActions: 'play none none reverse' } })
+        .to(els, { opacity: 1, y: 0, duration: .5, ease: 'power2.out', stagger: .07 });
+    });
+
+    // ===== Acte 02 : le mot « axem » se compose, AX depuis Alexis, EM depuis Clément, IA au centre.
+    // Transform et opacity seulement, scrub direct sur la largeur de l'acte (jamais de rAF a part). =====
+    const mergeAct = track.querySelector('.d7-act-merge');
+    const letters = mergeAct ? [...mergeAct.querySelectorAll('.d7-ml')] : [];
+    if (letters.length === 5) {
+      const [a, x, e, m, ia] = letters;
+      gsap.set(a, { opacity: 0, x: -200, y: -46, rotate: -7 });
+      gsap.set(x, { opacity: 0, x: -110, y: -22, rotate: -4 });
+      gsap.set(e, { opacity: 0, x: 110, y: 22, rotate: 4 });
+      gsap.set(m, { opacity: 0, x: 200, y: 46, rotate: 7 });
+      gsap.set(ia, { opacity: 0, scale: .4 });
+      gsap.timeline({ scrollTrigger: { containerAnimation: scrollTween, trigger: mergeAct, start: 'left 94%', end: 'left 6%', scrub: true } })
+        .to(a, { opacity: 1, x: 0, y: 0, rotate: 0, duration: .3 }, 0)
+        .to(x, { opacity: 1, x: 0, y: 0, rotate: 0, duration: .3 }, .06)
+        .to(e, { opacity: 1, x: 0, y: 0, rotate: 0, duration: .3 }, .1)
+        .to(m, { opacity: 1, x: 0, y: 0, rotate: 0, duration: .3 }, .16)
+        .to(ia, { opacity: 1, scale: 1, duration: .3 }, .42);
+    }
+
+    // ===== Acte 03 : la video de fond joue seulement pendant la traversee de son acte =====
+    [['.d7-act-test', 'd7VidTest']].forEach(([sel, vid]) => {
+      const act = track.querySelector(sel), v = document.getElementById(vid);
+      if (!act || !v) return;
+      window.ScrollTrigger.create({
+        containerAnimation: scrollTween, trigger: act, start: 'left 96%', end: 'right 4%',
+        onEnter: () => play(v), onEnterBack: () => play(v), onLeave: () => stop(v), onLeaveBack: () => stop(v)
+      });
+    });
+
+    // ===== Acte 04 : declenche le compteur de veille des que l'acte est bien en vue =====
+    const veilleAct = track.querySelector('.d7-act-veille');
+    if (veilleAct) window.ScrollTrigger.create({ containerAnimation: scrollTween, trigger: veilleAct, start: 'left 60%', once: true, onEnter: runOdo });
+
+    // ===== Acte 05 : declenche les compteurs de chiffres des que l'acte est bien en vue =====
+    const preuveAct = track.querySelector('.d7-act-preuve');
+    if (preuveAct) window.ScrollTrigger.create({ containerAnimation: scrollTween, trigger: preuveAct, start: 'left 60%', once: true, onEnter: runStats });
+  };
+
+  // La police Fraunces (mots geants jusqu'a 240px) change la largeur reelle de la frise : on construit
+  // le pin une fois les polices chargees, sinon la distance de defilement calculee au premier rendu
+  // serait fausse.
+  if (document.fonts && document.fonts.ready) document.fonts.ready.then(buildPin);
+  else buildPin();
+})();
+</script>
+<script>
+/* Tour 21 : marque les photos de repli (la scène IA prévue n'est pas encore livrée). */
+(() => {
+  const mark = () => document.querySelectorAll('img[data-fallback]').forEach(i => {
+    const f = i.getAttribute('data-fallback').replace(/^(\.\.\/)+/, '');
+    const shown = i.currentSrc || i.src || '';
+    if (shown.endsWith(f) || (i.complete && i.naturalWidth === 0)) (i.closest('figure') || i.parentElement).classList.add('is-provisoire');
+  });
+  document.addEventListener('error', e => { if (e.target.matches && e.target.matches('img[data-fallback]')) setTimeout(mark, 50); }, true);
+  addEventListener('load', () => { mark(); setTimeout(mark, 800); });
+})();
+</script>
+</body>
+</html>
