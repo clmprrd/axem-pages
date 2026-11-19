@@ -1,0 +1,191 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>AXEM, tour 20</title>
+<link rel="icon" href="img/favicon-ax-64.png" type="image/png">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="stylesheet" href="https://fonts.googleapis.com/css2?family=Fraunces:opsz,wght,SOFT@9..144,900,100&family=Instrument+Sans:wght@400;500;600&display=swap">
+<style>
+  :root {
+    --blue: #2349FF;
+    --blue-soft: #8FA2FF;
+    --cream: #FAF6EA;
+    --ink: #0B0D12;
+    --ink-2: #161A24;
+    --line: #262B38;
+    --muted: #A7ADBD;
+    color-scheme: dark;
+  }
+  * { box-sizing: border-box; }
+  body {
+    margin: 0;
+    background: var(--ink);
+    color: var(--cream);
+    font-family: "Instrument Sans", "Helvetica Neue", Arial, sans-serif;
+    font-size: 16px;
+    line-height: 1.5;
+    padding-inline: clamp(16px, 4vw, 56px);
+    padding-block: 0 64px;
+  }
+  .f { font-family: "Fraunces", Georgia, "Times New Roman", serif; font-weight: 900; font-variation-settings: "SOFT" 100; }
+  header {
+    display: grid;
+    grid-template-columns: 1fr auto;
+    gap: 24px;
+    align-items: end;
+    padding-block: 40px 36px;
+    border-bottom: 1px solid var(--line);
+    margin-bottom: 12px;
+  }
+  .brand { display: inline-block; background: transparent; color: var(--blue-soft); padding: 0; font-size: 22px; line-height: 1; margin-bottom: 22px; }
+  h1 { margin: 0; font-size: clamp(34px, 5.4vw, 72px); line-height: .98; letter-spacing: -.01em; text-wrap: balance; }
+  h1 span { color: var(--blue-soft); }
+  .lede { margin: 16px 0 0; max-width: 62ch; color: var(--muted); }
+  .count { text-align: right; color: var(--muted); font-size: 14px; }
+  .count b { display: block; font-size: 64px; line-height: 1; color: var(--cream); }
+
+  .grid { display: grid; grid-template-columns: repeat(auto-fill, minmax(min(100%, 400px), 1fr)); gap: 36px 28px; }
+  .item { display: flex; flex-direction: column; gap: 14px; color: inherit; text-decoration: none; }
+  .shot { position: relative; aspect-ratio: 16 / 10; overflow: hidden; background: var(--ink-2); outline: 1px solid var(--line); outline-offset: -1px; }
+  .shot img { width: 100%; height: 100%; object-fit: cover; object-position: top center; display: block; transition: transform .7s cubic-bezier(.16,1,.3,1); }
+  .shot img.vig { object-fit: contain; object-position: center; background: #0B0D12; }
+  .shot .go { position: absolute; right: 14px; bottom: 14px; background: var(--blue); color: var(--cream); font-size: 14px; font-weight: 600; padding: 9px 14px; transform: translateY(8px); opacity: 0; transition: opacity .35s ease, transform .35s cubic-bezier(.16,1,.3,1); }
+  .item:hover .shot img, .item:focus-visible .shot img { transform: scale(1.035); }
+  .item:hover .go, .item:focus-visible .go { opacity: 1; transform: none; }
+  .item:focus-visible { outline: 2px solid var(--blue-soft); outline-offset: 6px; }
+  .meta { display: grid; grid-template-columns: auto 1fr; gap: 4px 14px; align-items: baseline; }
+  .num { font-size: 34px; line-height: 1; color: var(--blue-soft); grid-row: span 2; min-width: 1ch; }
+  .name { font-size: 22px; line-height: 1.15; }
+  .what { color: var(--muted); font-size: 15px; }
+  .tag { display: inline-block; font-size: 12px; font-weight: 600; letter-spacing: .04em; color: var(--ink); background: var(--cream); padding: 2px 8px; margin-left: 8px; vertical-align: 3px; font-family: "Instrument Sans", Arial, sans-serif; }
+  .tag.sans { background: transparent; color: var(--muted); outline: 1px solid var(--line); }
+  .tag.base { background: var(--blue); color: var(--cream); }
+  h2.fam { margin: 56px 0 6px; font-size: clamp(26px,3.4vw,40px); }
+  p.fam { margin: 0 0 22px; color: var(--muted); max-width: 72ch; }
+  footer { margin-top: 48px; padding-top: 22px; border-top: 1px solid var(--line); color: var(--muted); font-size: 13px; max-width: 80ch; }
+  @media (hover: none) { .shot .go { opacity: 1; transform: none; } }
+  @media (max-width: 640px) {
+    header { grid-template-columns: 1fr; }
+    .count { text-align: left; }
+    .count b { font-size: 44px; }
+  }
+  @media (prefers-reduced-motion: reduce) { .shot img, .shot .go { transition: none; } }
+  .item .anc { font-size: 13px; color: var(--blue-soft); }
+  nav.toc { display: flex; flex-wrap: wrap; gap: 8px 18px; margin: 18px 0 0; font-size: 14px; }
+  nav.toc a { color: var(--cream); text-decoration: none; border-bottom: 1px solid var(--line); }
+  nav.toc a:hover { border-color: var(--blue-soft); }
+</style>
+</head>
+<body>
+<header>
+  <div>
+    <span class="brand f">axem</span>
+    <h1 class="f">Tour 21</h1>
+    <p class="lede">Trois showreels pour vous faire plaisir. Trois nouvelles pages duo qui racontent votre histoire en motion. La page coaching retravaillée pour l'effet au défilement, la page de paiement, et les nouvelles sections : méthode A à Z, cas clients, FAQ.</p>
+    <nav class="toc"><a href="#showreel">Le showreel</a><a href="#duo-neuf">Le duo, nouvelle série</a><a href="#paiement">La page de paiement</a><a href="#coaching">La page coaching</a><a href="#duo">Ancienne série duo</a><a href="#sections">Sections à ajouter</a></nav>
+  </div>
+  <div class="count"><b class="f">6</b>sections</div>
+</header>
+<main>
+<h2 class="fam f" id="showreel">Le showreel, trois directions</h2>
+<p class="fam">Trois sites complets pour vous faire plaisir, à partir de la nouvelle DA, avec les trois films motion design de 15 secondes. Chacun a son parti pris et un moment fort. Ouvrez-les sur ordinateur, avec le son.</p>
+<div class="grid">
+  <a class="item" href="showreel/s1/">
+    <div class="shot"><img src="variantes/captures/showreel-s1.jpg" alt="Le générique"><span class="go">Ouvrir</span></div>
+    <div class="meta"><span class="num f">1</span><span class="name f">Le générique</span><span class="what">Le site comme un film. Les trois films s'enchaînent au défilement comme un générique de cinéma.</span></div>
+  </a>
+  <a class="item" href="showreel/s2/">
+    <div class="shot"><img src="variantes/captures/showreel-s2.jpg" alt="L'affiche vivante"><span class="go">Ouvrir</span></div>
+    <div class="meta"><span class="num f">2</span><span class="name f">L'affiche vivante</span><span class="what">Une typographie géante, avec la vidéo qui joue à l'intérieur des lettres « axem ». Puis A et Z plein écran, l'index des offres, et AX + EM + IA qui raconte le nom.</span></div>
+  </a>
+  <a class="item" href="showreel/s3/">
+    <div class="shot"><img src="variantes/captures/showreel-s3.jpg" alt="Le plan de travail"><span class="go">Ouvrir</span></div>
+    <div class="meta"><span class="num f">3</span><span class="name f">Le plan de travail</span><span class="what">Un grand plan de travail à explorer : films, photo de scène, offres et logos posés côte à côte, reliés par un fil qui va de A à Z.</span></div>
+  </a>
+</div>
+
+<h2 class="fam f" id="paiement">La page de paiement, la 1 et la 3 réunies</h2>
+<p class="fam">En haut, « Choisissez votre format » avec les trois cartes, toutes visibles sur téléphone. En dessous, tout se fait sur la même page : vous, le créneau, les cases, le ticket, le bouton final. C'est la page branchée derrière tous les boutons du coaching.</p>
+<div class="grid">
+  <a class="item" href="variantes/t21-r4.html?f=p5">
+    <div class="shot"><img src="variantes/captures/t21-paiement-r4.png" alt="Un choix, un paiement"><span class="go">Ouvrir</span></div>
+    <div class="meta"><span class="num f">4</span><span class="name f">Un choix, un paiement</span><span class="what">Aplat bleu court, les trois formats de la 1, puis le one-pager de la 3. Zéro écran avant la confirmation : 4 gestes pour un parcours, 5 pour une séance (créneau compris).</span></div>
+  </a>
+</div>
+
+<h2 class="fam f" id="coaching">La page coaching, refaite de zéro</h2>
+<p class="fam">Trois pages entières, chacune construite autour du vocabulaire de Claude : Cowork, connecteurs, skills, projets. Chaque terme est vérifié sur les pages officielles d'Anthropic. Toutes se terminent sur les trois formats côte à côte, le bloc que vous aviez aimé.</p>
+<div class="grid">
+  <a class="item" href="variantes/t21-c1.html">
+    <div class="shot"><img src="variantes/captures/t21-coaching-c1.png" alt="Votre poste Claude, équipé"><span class="go">Ouvrir</span></div>
+    <div class="meta"><span class="num f">1</span><span class="name f">Votre poste Claude, équipé</span><span class="what">L'écran de Claude tel qu'il sera chez vous après le coaching. On survole chaque zone (Projets, Connecteurs, Skills, Cowork, Artefacts) : elle s'allume et dit ce qu'on y règle en séance.</span></div>
+  </a>
+  <a class="item" href="variantes/t21-c2.html">
+    <div class="shot"><img src="variantes/captures/t21-coaching-c2.png" alt="Parlez Claude, couramment"><span class="go">Ouvrir</span></div>
+    <div class="meta"><span class="num f">2</span><span class="name f">Parlez Claude, couramment</span><span class="what">Un index de douze mots de Claude, net comme un dictionnaire. Chaque mot se retourne au survol : sa définition, et ce qu'on en fait en séance. Un compteur de mots maîtrisés mène aux formats.</span></div>
+  </a>
+  <a class="item" href="variantes/t21-c3.html">
+    <div class="shot"><img src="variantes/captures/t21-coaching-c3.png" alt="Branchez Claude à vos outils"><span class="go">Ouvrir</span></div>
+    <div class="meta"><span class="num f">3</span><span class="name f">Branchez Claude à vos outils</span><span class="what">Refaite pour l'effet au défilement : les câbles se branchent un à un sur Claude, puis le schéma se replie sur une vraie scène de travail avec le film en fond. Un emplacement attend la vidéo coaching de 25 secondes.</span></div>
+  </a>
+</div>
+
+<h2 class="fam f" id="duo-neuf">Le duo, l'histoire racontée en motion</h2>
+<p class="fam">Votre trame, dans l'ordre : le nom (AX d'Alexis, EM de Clément, et IA), depuis 2023, deux trajectoires, on teste avant de vendre, la veille quotidienne, puis la preuve. Trois photos au plus par page, la photo sur scène à la place d'honneur. Fin sur « Et on ne compte pas s'arrêter là. ».</p>
+<div class="grid">
+  <a class="item" href="variantes/t21-d6.html">
+    <div class="shot"><img src="variantes/captures/t21-duo-d6.png" alt="Le nom en mouvement"><span class="go">Ouvrir</span></div>
+    <div class="meta"><span class="num f">6</span><span class="name f">Le nom en mouvement</span><span class="what">AX et EM glissent l'un vers l'autre et forment « axem », IA se pose. Puis chaque lettre porte un chapitre : a pour 2023, x pour les deux trajectoires qui se croisent, e pour « on teste », m pour la veille.</span></div>
+  </a>
+  <a class="item" href="variantes/t21-d7.html">
+    <div class="shot"><img src="variantes/captures/t21-duo-d7.png" alt="De 2023 à aujourd'hui"><span class="go">Ouvrir</span></div>
+    <div class="meta"><span class="num f">7</span><span class="name f">De 2023 à aujourd'hui</span><span class="what">Une frise qui défile à l'horizontale en cinq actes : deux trajectoires, la fusion en « axem IA » sur fond bleu, on teste avant de vendre, la veille, la preuve. Puis la photo de scène plein écran.</span></div>
+  </a>
+  <a class="item" href="variantes/t21-d8.html">
+    <div class="shot"><img src="variantes/captures/t21-duo-d8.png" alt="Le labo"><span class="go">Ouvrir</span></div>
+    <div class="meta"><span class="num f">8</span><span class="name f">Le labo</span><span class="what">On arrive sur la photo de scène, « axem IA » s'écrit lettre à lettre. Moment fort : sept outils (Claude, Claude Code, ChatGPT…) se font tamponner « testé », « gardé » ou « enseigné » au défilement.</span></div>
+  </a>
+</div>
+
+<h2 class="fam f" id="duo">Ancienne série duo (refusée le 27/09)</h2>
+<p class="fam">Plus aucune métaphore : deux personnes, leurs noms, ce qu'elles font ensemble, dès le premier écran. La photo de conférence est au premier plan, celle dans les bras est retirée. Douze emplacements de photos d'ateliers, d'audits et de scène : vos vraies photos les remplacent tant que les photos IA ne sont pas générées, avec l'étiquette « Photo provisoire » pour ne pas les juger sur ces doublons.</p>
+<div class="grid">
+  <a class="item" href="variantes/t21-d3.html">
+    <div class="shot"><img src="variantes/captures/t21-duo-d3.png" alt="Le reportage"><span class="go">Ouvrir</span></div>
+    <div class="meta"><span class="num f">3</span><span class="name f">Le reportage</span><span class="what">Un reportage photo rangé par scène : en atelier, en audit, sur scène, en veille, sur LinkedIn. Qui fait quoi, les chiffres, les logos des entreprises accompagnées.</span></div>
+  </a>
+  <a class="item" href="variantes/t21-d4.html">
+    <div class="shot"><img src="variantes/captures/t21-duo-d4.png" alt="Pionniers depuis 2023"><span class="go">Ouvrir</span></div>
+    <div class="meta"><span class="num f">4</span><span class="name f">Pionniers depuis 2023</span><span class="what">L'histoire dans l'ordre, du premier test à aujourd'hui, en cinq chapitres courts et plein cadre. Une frise fine en haut montre où on en est. « Et on ne compte pas s'arrêter là. »</span></div>
+  </a>
+  <a class="item" href="variantes/t21-d5.html">
+    <div class="shot"><img src="variantes/captures/t21-duo-d5.png" alt="Deux profils, un seul duo"><span class="go">Ouvrir</span></div>
+    <div class="meta"><span class="num f">5</span><span class="name f">Deux profils, un seul duo</span><span class="what">L'écran coupé en deux, Clément et Alexis, réunis au centre par la photo de conférence. Puis ce qu'ils font ensemble, en photos, et « on teste avant de vendre ».</span></div>
+  </a>
+</div>
+
+<h2 class="fam f" id="sections">Sections à ajouter au site, repérées chez les autres</h2>
+<p class="fam">Huit organisations lues (Mister IA, AI Sisters, Synapse IA, France IA, Slalom, Publicis Sapient, ThoughtWorks, Accenture), quinze pages. Ce qui revient partout, et ce qu'on peut faire à notre manière.</p>
+<ol class="fam">
+  <li><b>Le duo raconté</b> : aucun des organismes français lus ne raconte le lien de ses fondateurs, même AI Sisters. C'est la place à prendre (les trois pages ci-dessus).</li>
+  <li><b>Un cas client raconté en détail</b>, chiffré, plutôt qu'un volume : plus crédible à notre taille.</li>
+  <li><b>Un bandeau de logos et de badges de sérieux</b> sous le hero : présent sur les huit sites, sans exception.</li>
+  <li><b>Une section reconnaissance</b>, des preuves nommées et datées : partenariat Claude, post à forte traction, presse.</li>
+  <li><b>Une FAQ sur les vraies objections</b> (« consultant IA égale buzzwords ») : présente sur sept sites sur huit.</li>
+  <li><b>Une méthode nommée</b>, de l'audit à l'autonomie, sous un mot simple, comme les grandes maisons américaines.</li>
+  <li><b>Un diagnostic en entrée</b> (quiz de maturité avec résultat immédiat), le mécanisme le plus fréquent dans la veille du 07/09.</li>
+  <li><b>Des témoignages nommés</b> : nom, fonction, entreprise, photo, plutôt qu'un chiffre de volume.</li>
+</ol>
+<div class="grid">
+  <a class="item" href="variantes/t21-x1.html">
+    <div class="shot"><img src="variantes/captures/t21-sections-x1.png" alt="Méthode, cas clients, FAQ"><span class="go">Ouvrir</span></div>
+    <div class="meta"><span class="num f">1</span><span class="name f">Méthode, cas clients, FAQ</span><span class="what">La méthode A à Z (un tracé qui se dessine de A à Z en quatre étapes), trois cas clients (K.I.T. Group France, Nina Ricci, Carrefour, plus Crédit Agricole Assurances), et la FAQ des objections.</span></div>
+  </a>
+</div>
+
+</main>
+<footer>Maquettes locales, rien n'est en ligne. index.html n'est pas modifié.</footer>
+</body>
+</html>
