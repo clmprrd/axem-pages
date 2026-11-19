@@ -1,0 +1,949 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Le duo · AXEM IA</title>
+<script>if (/[?&]pal=blanc\b/.test(location.search)) document.documentElement.classList.add('pal-blanc');</script>
+<meta name="description" content="Deux associés qui déploient l'IA dans vos équipes, sur vos vrais dossiers. Conseil, formation et coaching IA à Paris, sans intermédiaire.">
+<link rel="icon" href="../img/favicon-ax-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../img/favicon-ax-180.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="AXEM IA">
+<meta property="og:title" content="AXEM IA, votre partenaire IA de A à Z">
+<meta property="og:description" content="Clément Predo et Alexis Zeitoun déploient l’IA dans vos équipes, sur vos vrais dossiers. Conseil, formation et coaching IA.">
+<meta property="og:url" content="https://axem-ia.fr/">
+<meta property="og:image" content="https://axem-ia.fr/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://axem-ia.fr/">
+<noscript><style>.fade, .rv { opacity: 1 !important; transform: none !important; }</style></noscript>
+<link href="../vendor/fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="../assets/axem.css">
+<link rel="stylesheet" href="../assets/t2.css">
+<meta name="robots" content="noindex">
+<style>
+/* ---- Tour 16 : fluidite. Plus de flou derriere la barre (il se recalculait a chaque image de
+   defilement), le bandeau clients tourne en CSS sur la carte graphique. ---- */
+.nav.solid { background: rgba(250, 246, 234, .97); backdrop-filter: none; -webkit-backdrop-filter: none; }
+.t2 .mq { animation: mq 42s linear infinite; will-change: transform; }
+.marquee:hover .mq { animation-play-state: paused; }
+.mk-svg .mk { filter: none; }
+
+/* ---- Tour 16 : le logo de la barre = le mot « axem IA » de l'ecran bleu, meme police, meme balisage ---- */
+.nav .logo { display: inline-flex; background: transparent; padding: 0; box-shadow: none; }
+.nav .logo .wm { font-size: 38px; color: var(--blue); transition: color .35s var(--ease); }
+.nav .logo .nl span { display: inline-block; font-weight: 900; font-variation-settings: "SOFT" 100, "WONK" 0, "opsz" 144; letter-spacing: -0.02em; }
+.nav .logo:hover { transform: none; box-shadow: none; }
+.nav .logo:hover .wm { color: var(--ink); }
+@media (max-width: 860px) { .nav .logo .wm { font-size: 30px; } }
+
+/* ---- Tour 16 : liens de la barre = de vrais boutons, comme les lignes d'offres. Au survol, une
+   pastille bleue monte du bas, deborde le mot, le texte passe en creme et une fleche sort. ---- */
+.nav .links { gap: 4px; }
+.nav .links a { position: relative; display: inline-flex; align-items: center; gap: 0; padding: 12px 18px; border-radius: 999px; font-size: 15px; font-weight: 600; isolation: isolate; transition: color .35s var(--ease), padding .45s var(--ease); }
+.nav .links a::after { display: none; }
+.nav .links a::before { content: ""; position: absolute; inset: -3px -4px; margin: 0; width: auto; height: auto; border-radius: 999px; background: var(--blue); z-index: -1; transform: scale(.55, 0); transform-origin: 50% 100%; transition: transform .45s var(--ease); flex: none; }
+.nav .links a .na { display: inline-block; width: 0; overflow: hidden; opacity: 0; font-size: 17px; line-height: 1; transform: translateX(-6px) rotate(0); transition: width .45s var(--ease), opacity .3s var(--ease), transform .45s var(--ease), margin .45s var(--ease); }
+.nav .links a:hover, .nav .links a:focus-visible { color: var(--cream); padding-left: 22px; padding-right: 20px; }
+.nav .links a:hover::before, .nav .links a:focus-visible::before { transform: none; }
+.nav .links a:hover .na, .nav .links a:focus-visible .na { width: 16px; margin-left: 8px; opacity: 1; transform: rotate(-45deg); }
+.nav .links a.on { color: var(--blue); }
+.nav .links a.on:hover { color: var(--cream); }
+
+/* ---- Tour 16 : « Reserver un echange offert », un vrai bouton cale a droite. Une grosse fleche
+   dans une pastille creme apparait apres l'arrivee, rebondit de temps en temps pour attirer l'oeil ;
+   au survol le fond encre entre du cote d'ou vient la souris (reflexe s1 Aimant). ---- */
+.nav .book { position: relative; display: inline-flex; align-items: center; gap: 14px; padding: 7px 7px 7px 24px; border: 0; border-radius: 999px; background: var(--blue); color: var(--cream); font-size: 15px; font-weight: 600; letter-spacing: 0; text-transform: none; overflow: hidden; isolation: isolate; --ex: 0%; --ey: 115%; transition: box-shadow .35s var(--ease); }
+.nav .book::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--ink); z-index: -1; transform: translate(var(--ex), var(--ey)); transition: transform 520ms var(--ease); }
+.nav .book:hover::before, .nav .book:focus-visible::before { transform: none; }
+.nav .book::after { display: none; }
+.nav .book .short { display: none; }
+.nav .book .bk-ar { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--cream); color: var(--blue); transform: scale(0) rotate(-90deg); transition: transform .5s var(--ease), color .35s var(--ease); }
+.nav .book .bk-ar svg { width: 20px; height: 20px; display: block; }
+.ready:not(.hold) .nav .book .bk-ar { transform: none; transition: transform .8s cubic-bezier(.34, 1.8, .5, 1) .9s; }
+.ready:not(.hold) .nav .book .bk-ar svg { animation: bkBounce 3.2s cubic-bezier(.3, 0, .2, 1) 2.2s infinite; }
+@keyframes bkBounce { 0%, 62%, 100% { transform: translateX(0); } 70% { transform: translateX(6px); } 78% { transform: translateX(-2px); } 86% { transform: translateX(4px); } 93% { transform: translateX(0); } }
+.nav .book:hover .bk-ar { transform: rotate(-45deg) scale(1.08); transition-delay: 0s; }
+.nav .book:hover .bk-ar svg { animation: none; }
+@media (max-width: 860px) {
+  .nav .book { gap: 10px; padding: 5px 5px 5px 16px; font-size: 14px; }
+  .nav .book .long { display: none; }
+  .nav .book .short { display: inline; }
+  .nav .book .bk-ar { width: 34px; height: 34px; }
+  .nav .book .bk-ar svg { width: 17px; height: 17px; }
+}
+@media (prefers-reduced-motion: reduce) { .ready .nav .book .bk-ar svg { animation: none !important; } }
+
+/* ---- Tour 16 : hero s1 range. Titre remonte, bouton cale sur le bord droit de la grille, « c'est
+   ici » plus gros, pose sous le bouton et toujours visible, schema et chiffres en pied de hero. ---- */
+@media (min-width: 861px) {
+  .home .hero.mk3 { justify-content: flex-start; padding-top: clamp(112px, 17svh, 176px); }
+  .home .hero.mk3 { min-height: 0; height: auto; padding-bottom: clamp(40px, 6svh, 64px); }
+  .hero.mk3 .mk-row { margin-top: clamp(120px, 19svh, 190px); padding-top: 0; }
+  .hero.mk3 .l2 { justify-content: space-between; }
+  .hero.mk3 .side { margin-left: auto; align-items: flex-end; max-width: none; }
+  .hero.mk3 .side .btn { align-self: flex-end !important; }
+}
+.hero.mk3 .btn { font-size: 17px; padding: 22px 32px; }
+.mk-note-btn { font-size: 30px; }
+@media (max-width: 860px) { .mk-note-btn { font-size: 22px; } }
+
+/* ---- Tour 17 : socle commun aux 6 pages (v1 v2 v3 d1 d2 d3), injecte par le build juste apres
+   nav.css et avant le CSS propre a chaque page. Regle de Clement : un seul bouton Reserver visible
+   a la fois, plus le bouton son, plus l'habillage du pied de page legal. ---- */
+
+/* Reserver un seul a la fois (regle Clement, tour 17). La barre garde un bouton .book (nav.css) ;
+   il est masque tant que le grand bouton du hero est a l'ecran, invisible sur les pages duo car
+   elles n'ont pas de hero : voir base17.js. Aujourd'hui assets/axem.js masque toute la barre au
+   defilement vers le bas (classe .hide, assets/axem.css ligne 39) : on neutralise ce comportement
+   ici, la barre du tour 17 ne se cache plus jamais. */
+.t17 .nav.hide { transform: none; }
+
+.t17 .nav .book[data-book] { transition: opacity .4s var(--ease), transform .4s var(--ease); }
+.t17 .nav .book[data-book].rs-hidden { opacity: 0; transform: translateY(-10px); pointer-events: none; }
+.t17 .nav .book[data-book].rs-show { opacity: 1; transform: none; }
+
+/* Bouton son : egaliseur discret en bas a gauche, coupe par defaut. Barres immobiles quand coupe,
+   ondulent (scaleY, CSS pur) quand actif. Ne tourne jamais tant que le bouton n'est pas active :
+   c'est une animation CSS bornee par la classe .on, pas une boucle JS permanente. */
+.t17 .snd-btn { position: fixed; left: 18px; bottom: 18px; z-index: 56; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: rgba(250, 246, 234, .88); display: grid; place-items: center; cursor: pointer; padding: 0; transition: background-color .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease); }
+.t17 .snd-btn:hover { border-color: var(--blue); transform: translateY(-2px); }
+.t17 .snd-btn:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.t17 .snd-bars { display: flex; align-items: center; justify-content: center; gap: 3px; width: 18px; height: 16px; pointer-events: none; }
+.t17 .snd-bars i { display: block; width: 2.5px; height: 100%; border-radius: 2px; background: var(--ink); transform: scaleY(.28); transform-origin: center; transition: background-color .3s var(--ease); }
+.t17 .snd-btn.on .snd-bars i { background: var(--blue); animation: t17SndWave 1.15s ease-in-out infinite; }
+.t17 .snd-btn.on .snd-bars i:nth-child(1) { animation-delay: 0s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(2) { animation-delay: .18s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(3) { animation-delay: .36s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(4) { animation-delay: .12s; }
+@keyframes t17SndWave { 0%, 100% { transform: scaleY(.28); } 50% { transform: scaleY(1); } }
+/* le bandeau de maquette se range a droite du bouton son, jamais dessous */
+.t17 .proto { left: 76px; bottom: 24px; }
+@media (max-width: 860px) { .t17 .snd-btn { left: 14px; bottom: 14px; width: 40px; height: 40px; } }
+@media (max-width: 860px) and (min-width: 701px) { .t17 .proto { left: 68px; bottom: 20px; } }
+@media (prefers-reduced-motion: reduce) { .t17 .snd-btn.on .snd-bars i { animation: none !important; } }
+
+/* Pied de page legal : une ligne sous le meta existant (axem-ia.fr / Paris / Reserver), au-dessus du
+   mot-symbole geant. Le meta original (footer .meta, assets/axem.css ligne 146) est en position
+   absolue a taille fixe ; sur mobile il retombe sur 2 lignes (peu de largeur pour 3 items), ce qui
+   ferait chevaucher une ligne suivante a decalage fixe. On enveloppe donc meta + legal-links dans un
+   bloc .ft-top en flux normal (empile en colonne), et on neutralise le positionnement absolu du
+   meta a l'interieur : la ligne des liens legaux suit toujours meta, jamais de chevauchement. */
+.t17 footer .ft-top { position: absolute; top: 28px; left: var(--gutter); right: var(--gutter); display: flex; flex-direction: column; gap: 10px; }
+.t17 footer .ft-top .meta { position: static; top: auto; left: auto; right: auto; flex-wrap: wrap; row-gap: 6px; }
+.t17 footer .legal-links { position: static; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 11px; font-weight: 600; letter-spacing: .04em; margin: 0; }
+.t17 footer .legal-links a { color: rgba(250, 246, 234, .62); text-decoration: none; transition: color .25s var(--ease); }
+.t17 footer .legal-links a:hover, .t17 footer .legal-links a:focus-visible { color: var(--blue); }
+@media (max-width: 860px) { .t17 footer .ft-top { gap: 8px; } .t17 footer .legal-links { gap: 5px 16px; } }
+
+/* Pages juridiques (mentions-legales.html, confidentialite.html) : mise en page simple, DA du site. */
+.t17-legal { max-width: 760px; margin: 0 auto; padding: clamp(90px, 12vh, 140px) var(--gutter) 120px; }
+.t17-legal .back { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--blue); margin-bottom: 48px; }
+.t17-legal .back:hover, .t17-legal .back:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.t17-legal h1 { font-size: clamp(32px, 5vw, 48px); margin: 0 0 8px; }
+.t17-legal .maj { font-size: 13px; color: var(--grey); margin: 0 0 48px; }
+.t17-legal h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(20px, 2.4vw, 26px); margin: 44px 0 14px; }
+.t17-legal p { font-size: 16px; line-height: 1.65; color: var(--grey); margin: 0 0 14px; }
+.t17-legal a { color: var(--blue); }
+.t17-legal a:hover, .t17-legal a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.t17-legal .todo { color: var(--blue); font-weight: 600; }
+
+/* Tour 19, commun a toutes les pages : le monogramme ax (enregistre par Clement le 25/09) en logo de la
+   barre des pages duo et reservation, et la barre de prototype en bas a gauche. */
+.axm { display: inline-block; width: 46px; height: 31px; vertical-align: middle; background: var(--blue); -webkit-mask: url(../img/logo-ax-mask.png) center / contain no-repeat; mask: url(../img/logo-ax-mask.png) center / contain no-repeat; transition: transform 0.4s var(--ease); }
+.nav .logo:hover .axm, .nav .logo:focus-visible .axm { transform: rotate(-8deg) scale(1.08); }
+.t19 .proto { position: fixed; left: 76px; bottom: 24px; z-index: 55; margin: 0; font: 500 12px/1 "Instrument Sans", sans-serif; background: var(--ink); color: var(--cream); padding: 8px 12px; }
+.t19 .proto a { margin-left: 12px; color: var(--cream); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+@media (max-width: 700px) {
+  .t19 .proto { position: static; display: block; width: auto; line-height: 1.6; margin: 14px var(--gutter) 18px; }
+}
+
+/* Tour 20 : reglages communs. */
+/* Pages de paiement : le bouton son recouvrait le prix de la barre collante, il n'a pas de role au moment de payer. */
+.t20-r1 .snd-btn, .t20-r2 .snd-btn, .t20-r3 .snd-btn { display: none !important; }
+/* Pages de paiement : le bandeau de maquette masquait le prix de la barre collante du bas, il remonte sous la nav. */
+@media (min-width: 701px) { .t20-r1 .proto, .t20-r2 .proto, .t20-r3 .proto { top: 84px; bottom: auto; left: auto; right: 24px; } }
+
+/* Tour 21 : reglages communs. */
+.t21 .is-provisoire { position: relative; }
+.t21 .is-provisoire::before { content: "Photo provisoire : la scène arrive"; position: absolute; z-index: 3; top: 10px; left: 10px; padding: 4px 9px; border-radius: 999px; background: #0E0F1A; color: #FBF8F1; font: 600 11px/1.3 "Instrument Sans", system-ui, sans-serif; letter-spacing: .02em; pointer-events: none; }
+
+/* ---- Tour 21, duo, proposition d8 : « Le labo ». Voir le commentaire en tete de d8.main.html pour
+   le parti pris complet. Scope : .t21-d8 uniquement. Transform et opacity seulement (regle dure). ---- */
+
+.t21-d8 main, .t21-d8 #main { display: block; }
+.t21-d8 section { position: relative; }
+.t21-d8 .nav { background: rgba(250, 246, 234, .92); border-bottom: 1px solid var(--line); }
+
+/* ===== Bandeau « fenetre » reutilise (hero + labo) ===== */
+.t21-d8 .d8-dots { display: flex; gap: 6px; flex: none; }
+.t21-d8 .d8-dots i { width: 8px; height: 8px; border-radius: 50%; background: rgba(250, 246, 234, .32); display: block; }
+.t21-d8 .d8-dots i:first-child { background: var(--blue); }
+.t21-d8 .d8-window-label { color: rgba(250, 246, 234, .82); white-space: nowrap; }
+.t21-d8 .d8-window-status { margin-left: auto; display: flex; align-items: center; gap: 8px; color: var(--cream); padding-left: 14px; border-left: 1px solid rgba(250, 246, 234, .22); white-space: nowrap; }
+.t21-d8 [data-status] { transition: opacity .25s var(--ease); }
+.t21-d8 [data-status].is-out { opacity: 0; }
+.t21-d8 .d8-live-dot { width: 7px; height: 7px; border-radius: 50%; background: var(--blue); display: inline-block; flex: none; animation: d8Pulse 1.8s ease-in-out infinite; }
+@keyframes d8Pulse { 0%, 100% { opacity: 1; transform: scale(1); } 50% { opacity: .35; transform: scale(1.4); } }
+
+/* ===== 0. Hero : la photo de scene, la fenetre, le nom qui se construit ===== */
+.t21-d8 .d8-hero { position: relative; min-height: 100svh; display: flex; align-items: flex-end; overflow: hidden; background: var(--ink); }
+.t21-d8 .d8-hero-ph { position: absolute; inset: 0; margin: 0; }
+.t21-d8 .d8-hero-ph img { width: 100%; height: 100%; object-fit: cover; object-position: center 32%; }
+.t21-d8 .d8-hero-scrim { position: absolute; inset: 0; background: linear-gradient(180deg, rgba(11, 13, 18, .1) 0%, rgba(11, 13, 18, .5) 52%, rgba(11, 13, 18, .93) 100%); }
+.t21-d8 .d8-window { position: relative; z-index: 2; width: 100%; padding: 130px var(--gutter) 60px; display: flex; flex-direction: column; gap: 30px; color: var(--cream); }
+.t21-d8 .d8-window-bar { display: flex; align-items: center; gap: 14px; padding: 10px 16px; border: 1px solid rgba(250, 246, 234, .22); border-radius: 12px; background: rgba(11, 13, 18, .5); width: fit-content; }
+.t21-d8 .d8-window-body { display: flex; flex-direction: column; gap: 18px; }
+.t21-d8 .d8-kick { display: flex; align-items: center; gap: 14px; color: rgba(250, 246, 234, .85); }
+.t21-d8 .d8-logo { margin: 0; font-size: clamp(64px, 15vw, 208px); color: var(--cream); white-space: nowrap; }
+.t21-d8 .d8-logo-l { display: inline-block; transition: transform .9s var(--ease), opacity .9s var(--ease); transition-delay: calc(var(--d, 0) * 1ms); opacity: 0; }
+.t21-d8 .d8-logo-l[data-side="a"] { transform: translateX(-.55em); }
+.t21-d8 .d8-logo-l[data-side="c"] { transform: translateX(.55em); }
+.t21-d8 .d8-logo-ia { display: inline-block; font-family: 'Instrument Sans', sans-serif; font-weight: 700; font-size: .24em; color: var(--blue); margin-left: .22em; transition: transform .7s var(--ease), opacity .7s var(--ease); transition-delay: calc(var(--d, 0) * 1ms); transform: translateY(8px); opacity: 0; }
+.ready.t21-d8 .d8-logo-l, .ready.t21-d8 .d8-logo-ia { opacity: 1; transform: none; }
+.t21-d8 .d8-names { margin: 0; font-size: clamp(16px, 1.6vw, 20px); font-weight: 600; color: var(--cream); }
+.t21-d8 .d8-lead { margin: 0; font-size: clamp(15px, 1.3vw, 18px); color: rgba(250, 246, 234, .8); max-width: 520px; }
+.t21-d8 .d8-hero-cred { margin: 2px 0 0; color: rgba(250, 246, 234, .55); }
+.t21-d8 .d8-hero .scroll-hint { position: absolute; right: var(--gutter); bottom: 28px; }
+.t21-d8 .d8-hero .scroll-hint i { background: var(--cream); }
+
+/* ===== 1. Depuis 2023 ===== */
+.t21-d8 .d8-since { padding: 110px var(--gutter) 96px; max-width: 900px; }
+.t21-d8 .d8-tag { color: var(--blue); margin: 0 0 18px; }
+.t21-d8 .d8-tag-light { color: var(--cream); opacity: .85; }
+.t21-d8 .d8-since h2 { margin: 0; font-size: clamp(38px, 5.4vw, 84px); }
+.t21-d8 .d8-since-p { font-size: clamp(17px, 1.6vw, 20px); line-height: 1.55; color: var(--grey); max-width: 640px; margin: 20px 0 50px; }
+.t21-d8 .d8-timeline { display: flex; align-items: center; gap: 18px; }
+.t21-d8 .d8-timeline-a, .t21-d8 .d8-timeline-b { color: var(--ink); flex: none; }
+.t21-d8 .d8-timeline-track { position: relative; flex: 1; height: 2px; background: var(--line); overflow: hidden; }
+.t21-d8 .d8-timeline-fill { position: absolute; inset: 0; background: var(--blue); transform-origin: left; transform: scaleX(0); transition: transform 1.6s var(--ease); transition-delay: 250ms; }
+.t21-d8 .d8-timeline.in .d8-timeline-fill { transform: scaleX(1); }
+
+/* ===== 2. Deux trajectoires ===== */
+.t21-d8 .d8-duo { padding: 96px var(--gutter) 100px; }
+.t21-d8 .d8-duo-head { max-width: 760px; margin-bottom: 56px; }
+.t21-d8 .d8-duo-head h2 { margin: 14px 0 0; font-size: clamp(36px, 4.6vw, 68px); }
+.t21-d8 .d8-panels { position: relative; display: grid; grid-template-columns: 1fr 1fr; gap: 0; border: 1px solid var(--line); }
+.t21-d8 .d8-panel { position: relative; background: var(--cream); padding: 30px; display: flex; flex-direction: column; gap: 14px; transition: transform .8s var(--ease), opacity .8s var(--ease); opacity: 0; }
+.t21-d8 .d8-panel-c { transform: translateX(-36px); border-right: 1px solid var(--line); }
+.t21-d8 .d8-panel-a { transform: translateX(36px); }
+.t21-d8 .d8-panel.in { opacity: 1; transform: none; }
+.t21-d8 .d8-panel-file { color: var(--blue); margin: 0; }
+.t21-d8 .d8-panel-ph { margin: 0; aspect-ratio: 4 / 3; overflow: hidden; background: var(--line); }
+.t21-d8 .d8-panel-ph img { width: 100%; height: 100%; object-fit: cover; }
+.t21-d8 .d8-panel h3 { margin: 0; font-size: clamp(26px, 3vw, 38px); }
+.t21-d8 .d8-panel-bio { margin: 0; font-size: 15px; line-height: 1.5; color: var(--grey); }
+.t21-d8 .d8-panel-li { font-size: 13px; font-weight: 600; color: var(--blue); }
+
+/* ===== 3. Le labo : outils testes, gardes, enseignes ===== */
+.t21-d8 .d8-lab { background: var(--ink); color: var(--cream); padding: 100px var(--gutter) 110px; }
+.t21-d8 .d8-lab-bar { display: flex; align-items: center; gap: 14px; padding: 10px 16px; border: 1px solid rgba(250, 246, 234, .18); border-radius: 12px; background: rgba(250, 246, 234, .06); width: fit-content; margin: 0 0 40px; }
+.t21-d8 .d8-lab-h { margin: 0 0 16px; font-size: clamp(38px, 5.4vw, 86px); color: var(--cream); }
+.t21-d8 .d8-lab-h .i { color: var(--blue); }
+.t21-d8 .d8-lab-lead { margin: 0 0 54px; max-width: 560px; color: rgba(250, 246, 234, .75); font-size: clamp(15px, 1.3vw, 18px); }
+.t21-d8 .d8-lab-list { list-style: none; margin: 0; padding: 0; border-top: 1px solid rgba(250, 246, 234, .14); }
+.t21-d8 .d8-lab-row { display: flex; align-items: center; justify-content: space-between; gap: 24px; padding: 26px 4px; border-bottom: 1px solid rgba(250, 246, 234, .14); flex-wrap: wrap; }
+.t21-d8 .d8-lab-name { font-size: clamp(28px, 3.6vw, 52px); color: var(--cream); }
+.t21-d8 .d8-lab-tags { display: flex; gap: 10px; flex-wrap: wrap; }
+.t21-d8 .d8-tag-pill { opacity: 0; transform: translateY(6px); transition: opacity .5s var(--ease), transform .5s var(--ease); transition-delay: calc(var(--td, 0) * 140ms + 260ms); font-size: 11px; font-weight: 700; letter-spacing: .09em; text-transform: uppercase; padding: 7px 14px; border-radius: 999px; border: 1px solid var(--blue); color: var(--blue); }
+.t21-d8 .d8-lab-row.in .d8-tag-pill { opacity: 1; transform: none; }
+
+/* ===== 4. La veille ===== */
+.t21-d8 .d8-veille { padding: 100px var(--gutter) 100px; }
+.t21-d8 .d8-veille-head { max-width: 720px; margin-bottom: 44px; }
+.t21-d8 .d8-veille-head h2 { margin: 14px 0 12px; font-size: clamp(34px, 4.4vw, 62px); }
+.t21-d8 .d8-veille-lead { margin: 0; color: var(--grey); font-size: clamp(15px, 1.3vw, 18px); }
+.t21-d8 .d8-log { list-style: none; margin: 0 0 46px; padding: 28px 0; border-top: 1px solid var(--line); border-bottom: 1px solid var(--line); display: flex; flex-direction: column; gap: 16px; max-width: 640px; }
+.t21-d8 .d8-log li { display: flex; gap: 14px; font-size: 16px; color: var(--ink); margin: 0; }
+.t21-d8 .d8-log-ar { color: var(--blue); font-weight: 700; flex: none; }
+.t21-d8 .d8-li-cards { display: flex; gap: 16px; flex-wrap: wrap; }
+.t21-d8 .d8-li-card { display: flex; flex-direction: column; gap: 6px; padding: 20px 24px; border: 1px solid var(--line); border-radius: 14px; min-width: 240px; transition: border-color .3s var(--ease); }
+.t21-d8 .d8-li-card:hover, .t21-d8 .d8-li-card:focus-visible { border-color: var(--blue); }
+.t21-d8 .d8-li-card .cap { color: var(--blue); }
+
+/* ===== 5. La preuve ===== */
+.t21-d8 .d8-proof { padding: 100px var(--gutter) 90px; text-align: center; }
+.t21-d8 .d8-proof h2 { margin: 0 0 56px; font-size: clamp(36px, 4.6vw, 68px); }
+.t21-d8 .d8-stats { display: grid; grid-template-columns: repeat(3, 1fr); gap: 32px; margin-bottom: 74px; }
+.t21-d8 .d8-stat { margin: 0; display: flex; flex-direction: column; gap: 8px; }
+.t21-d8 .d8-stat-n { font-size: clamp(46px, 5.6vw, 88px); color: var(--blue); }
+.t21-d8 .d8-stat-l { color: var(--grey); }
+.t21-d8 .d8-logos-kick { color: var(--grey); margin: 0 0 26px; }
+.t21-d8 .d8-logos { list-style: none; margin: 0; padding: 0; display: flex; flex-wrap: wrap; justify-content: center; gap: 34px 44px; align-items: center; }
+.t21-d8 .d8-logos img { height: 28px; width: auto; max-width: 120px; object-fit: contain; filter: grayscale(1); opacity: .6; transition: opacity .3s var(--ease), filter .3s var(--ease); }
+.t21-d8 .d8-logos li:hover img { opacity: 1; filter: none; }
+
+/* ===== 6. Fin ===== */
+.t21-d8 .d8-end { padding: 90px var(--gutter) 150px; text-align: center; }
+.t21-d8 .d8-end h2 { margin: 0 0 40px; font-size: clamp(38px, 5.2vw, 84px); }
+.t21-d8 .d8-end h2 .i { color: var(--blue); }
+.t21-d8 .d8-end-links { display: flex; gap: 20px; justify-content: center; flex-wrap: wrap; }
+.t21-d8 .d8-end-link { display: inline-flex; align-items: center; gap: 10px; padding: 16px 26px; border-radius: 999px; border: 1px solid var(--ink); font-weight: 600; transition: background-color .3s var(--ease), color .3s var(--ease); }
+.t21-d8 .d8-end-link:hover, .t21-d8 .d8-end-link:focus-visible { background: var(--ink); color: var(--cream); }
+
+/* ===== Mobile ===== */
+@media (max-width: 860px) {
+  .t21-d8 .d8-window { padding: 108px var(--gutter) 48px; gap: 22px; }
+  .t21-d8 .d8-hero .scroll-hint { display: none; }
+  .t21-d8 .d8-panels { grid-template-columns: 1fr; }
+  .t21-d8 .d8-panel-c { border-right: none; border-bottom: 1px solid var(--line); transform: translateY(30px); }
+  .t21-d8 .d8-panel-a { transform: translateY(30px); }
+  .t21-d8 .d8-lab-row { flex-direction: column; align-items: flex-start; gap: 12px; }
+  .t21-d8 .d8-stats { grid-template-columns: 1fr; gap: 40px; }
+  .t21-d8 .d8-window-status .cap { display: none; }
+}
+
+/* ===== Mouvement reduit : deja couvert par la regle globale (assets/axem.css), rien de plus a faire
+   pour les transitions, mais les elements a opacite 0 par defaut doivent rester visibles. ===== */
+@media (prefers-reduced-motion: reduce) {
+  .t21-d8 .d8-logo-l, .t21-d8 .d8-logo-ia, .t21-d8 .d8-panel, .t21-d8 .d8-tag-pill { opacity: 1 !important; transform: none !important; }
+  .t21-d8 .d8-timeline-fill { transform: scaleX(1) !important; }
+}
+</style>
+</head>
+<body class="t17 t18 t19 t20 t21 t19-d8 t20-d8 t21-d8">
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="nav" id="nav">
+  <a href="../repart/index.html" class="logo" aria-label="AXEM IA, accueil"><span class="axm" aria-hidden="true"></span></a>
+  <nav class="links" aria-label="Navigation principale">
+    <a href="#offres">Conseil<span class="na" aria-hidden="true">→</span></a><a href="#offres">Formation<span class="na" aria-hidden="true">→</span></a><a href="../coaching/">Coaching<span class="na" aria-hidden="true">→</span></a><a href="#duo">Le duo<span class="na" aria-hidden="true">→</span></a>
+  </nav>
+  <a href="#" class="book" data-book><span class="long">Réserver un échange offert</span><span class="short">Réserver</span><span class="bk-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a>
+</header>
+
+<main id="main">
+<!--
+  Tour 21, duo, proposition d8 (BRIEF-DUO-T22.md) : « Le labo ». Lu en entier avant d'ecrire :
+  BRIEF-DUO-T22.md (la trame validee, remplace le contenu duo de BRIEF-T21.md), BRIEF-T21.md (regles
+  dures, build, controle), GOUT-CLEMENT.md (tours 1 a 21, en particulier le verdict du tour 20 :
+  « trop de photos, pas assez d'histoire », « une metaphore doit se comprendre sans legende »),
+  showreel/BRIEF-SHOWREEL.md, et les pages rejetees d3/d4/d5 (galeries de 9 a 12 photos, refusees).
+
+  Parti pris : la page est le poste de veille d'AXEM. Une petite fenetre d'interface (barre a trois
+  points, libelle, statut « en veille ») sert de fil conducteur visuel et reapparait au chapitre du
+  labo. Le nom se construit lettre a lettre sur la photo de scene (AX cote Alexis, EM cote Clement,
+  IA en dernier), puis l'histoire suit exactement la trame validee : depuis 2023, deux trajectoires
+  nommees et litterales (aucune metaphore a legende), on teste avant de vendre (chaque outil tamponne
+  teste / garde / enseigne au defilement), la veille quotidienne, la preuve. Quatre photos seulement :
+  la scene (place de choix), clement.jpg, alexis.jpg. Aucun chiffre hors ceux autorises.
+
+  Mecanique : tout repose sur les classes globales deja cablees par assets/axem.js (.rv/.in au
+  defilement, .fade lie a .ready, la grille sur les liens forts data-mag) et par outils/t16/lite.js
+  (data-mag, data-lines pour la typographie cinetique). Aucun pin ScrollTrigger : le bandeau du labo
+  utilise une simple position sticky, mesuree a 0 par checkme.py comme tout le reste de la page.
+  Scope CSS : .t21-d8 uniquement. Anime seulement transform et opacity (regle dure du brief).
+-->
+<noscript><style>.t21-d8 .rv,.t21-d8 .fade,.t21-d8 .d8-tag{opacity:1!important;transform:none!important}</style></noscript>
+
+<section class="d8-hero" aria-label="Clément Predo et Alexis Zeitoun, Axem IA, le duo">
+  <div class="grid" id="grid" aria-hidden="true"></div>
+  <figure class="d8-hero-ph">
+    <img src="../img/duo/propositions/axem-duo-2-scene.jpg" alt="Clément Predo et Alexis Zeitoun, ensemble sur scène, en pleine conférence" width="1600" height="1066" loading="eager">
+    <span class="d8-hero-scrim" aria-hidden="true"></span>
+  </figure>
+  <div class="d8-window">
+    <div class="d8-window-bar fade" style="--d:0">
+      <span class="d8-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+      <span class="cap d8-window-label">axem // le labo</span>
+      <span class="cap d8-window-status"><span class="d8-live-dot" aria-hidden="true"></span><span data-status>en veille</span></span>
+    </div>
+    <div class="d8-window-body">
+      <p class="cap d8-kick fade" style="--d:100"><span class="sq"></span><span class="sq o"></span><span>Axem IA, le duo</span></p>
+      <h1 class="f d8-logo" id="d8-h1" aria-label="axem IA">
+        <span class="d8-logo-row" aria-hidden="true"><span class="d8-logo-l" data-side="a" style="--d:200">a</span><span class="d8-logo-l" data-side="a" style="--d:280">x</span><span class="d8-logo-l" data-side="c" style="--d:360">e</span><span class="d8-logo-l" data-side="c" style="--d:440">m</span><sup class="d8-logo-ia" style="--d:680">IA</sup></span>
+      </h1>
+      <p class="d8-names fade" style="--d:820">Clément Predo <span aria-hidden="true">·</span> Alexis Zeitoun</p>
+      <p class="d8-lead fade" style="--d:920">Leur atelier de veille, en direct.</p>
+      <p class="cap d8-hero-cred fade" style="--d:1020">Photo générée par IA à partir de nos vraies photos.</p>
+    </div>
+    <div class="scroll-hint fade" style="--d:1140" aria-hidden="true"><i></i></div>
+  </div>
+</section>
+
+<section class="d8-since rv" aria-labelledby="d8-h-since">
+  <p class="cap d8-tag">01 · Depuis 2023</p>
+  <h2 class="f" id="d8-h-since" data-lines>Pionniers depuis 2023.</h2>
+  <p class="d8-since-p">Ils sont dans l'IA depuis 2023, quand beaucoup ne comprenaient pas encore. Depuis, ils testent en continu, ils font leur veille, et ils ne comptent pas s'arrêter là.</p>
+  <div class="d8-timeline rv" style="--d:120">
+    <span class="cap d8-timeline-a">2023</span>
+    <span class="d8-timeline-track"><span class="d8-timeline-fill"></span></span>
+    <span class="cap d8-timeline-b">Aujourd'hui</span>
+  </div>
+</section>
+
+<section class="d8-duo" aria-labelledby="d8-h-duo">
+  <header class="d8-duo-head">
+    <p class="cap d8-tag rv">02 · Deux trajectoires</p>
+    <h2 class="f rv" id="d8-h-duo" data-lines style="--d:80">Une vision stratégie, une vision technique.</h2>
+  </header>
+  <div class="d8-panels">
+    <article class="d8-panel d8-panel-c rv" data-side="c">
+      <p class="cap d8-panel-file">Clément Predo · Stratégie</p>
+      <figure class="d8-panel-ph"><img src="../img/clement.jpg" alt="Clément Predo" width="1400" height="1045" loading="lazy"></figure>
+      <h3 class="f">Clément Predo</h3>
+      <p class="d8-panel-bio">ESSEC. Conseil, formation, coaching : une vision business, reliée à l'IA.</p>
+      <a class="d8-panel-li" href="https://www.linkedin.com/in/clement-predo" target="_blank" rel="noopener">linkedin.com/in/clement-predo</a>
+    </article>
+    <article class="d8-panel d8-panel-a rv" data-side="a" style="--d:140">
+      <p class="cap d8-panel-file">Alexis Zeitoun · Technique</p>
+      <figure class="d8-panel-ph"><img src="../img/alexis.jpg" alt="Alexis Zeitoun" width="1143" height="1400" loading="lazy"></figure>
+      <h3 class="f">Alexis Zeitoun</h3>
+      <p class="d8-panel-bio">Télécom Paris (Institut Polytechnique de Paris). Systèmes IA et automatisation.</p>
+      <a class="d8-panel-li" href="https://www.linkedin.com/in/alexiszeitoun" target="_blank" rel="noopener">linkedin.com/in/alexiszeitoun</a>
+    </article>
+  </div>
+</section>
+
+<section class="d8-lab" id="d8Lab" aria-labelledby="d8-h-lab">
+  <p class="cap d8-tag d8-tag-light rv">03 · On teste avant de vendre</p>
+  <div class="d8-lab-bar rv" style="--d:60">
+    <span class="d8-dots" aria-hidden="true"><i></i><i></i><i></i></span>
+    <span class="cap d8-window-label">axem // outils testés</span>
+    <span class="cap d8-window-status"><span class="d8-live-dot" aria-hidden="true"></span><span data-status>en veille</span></span>
+  </div>
+  <h2 class="f d8-lab-h rv" id="d8-h-lab" data-lines style="--d:100">On teste avant de <span class="i">vendre</span>.</h2>
+  <p class="d8-lab-lead rv" style="--d:160">Ils testent les nouveaux outils IA en permanence, et ne proposent que ce qui a marché chez eux d'abord.</p>
+  <ul class="d8-lab-list">
+    <li class="d8-lab-row rv" style="--d:0">
+      <span class="d8-lab-name f">Claude</span>
+      <span class="d8-lab-tags"><span class="d8-tag-pill">testé</span><span class="d8-tag-pill" style="--td:1">gardé</span><span class="d8-tag-pill" style="--td:2">enseigné</span></span>
+    </li>
+    <li class="d8-lab-row rv" style="--d:60">
+      <span class="d8-lab-name f">Claude Code</span>
+      <span class="d8-lab-tags"><span class="d8-tag-pill">testé</span><span class="d8-tag-pill" style="--td:1">gardé</span></span>
+    </li>
+    <li class="d8-lab-row rv" style="--d:120">
+      <span class="d8-lab-name f">ChatGPT</span>
+      <span class="d8-lab-tags"><span class="d8-tag-pill">testé</span></span>
+    </li>
+    <li class="d8-lab-row rv" style="--d:180">
+      <span class="d8-lab-name f">Gemini</span>
+      <span class="d8-lab-tags"><span class="d8-tag-pill">testé</span></span>
+    </li>
+    <li class="d8-lab-row rv" style="--d:240">
+      <span class="d8-lab-name f">Copilot</span>
+      <span class="d8-lab-tags"><span class="d8-tag-pill">testé</span></span>
+    </li>
+    <li class="d8-lab-row rv" style="--d:300">
+      <span class="d8-lab-name f">n8n</span>
+      <span class="d8-lab-tags"><span class="d8-tag-pill">testé</span><span class="d8-tag-pill" style="--td:1">gardé</span></span>
+    </li>
+    <li class="d8-lab-row rv" style="--d:360">
+      <span class="d8-lab-name f">Make</span>
+      <span class="d8-lab-tags"><span class="d8-tag-pill">testé</span></span>
+    </li>
+  </ul>
+</section>
+
+<section class="d8-veille" aria-labelledby="d8-h-veille">
+  <header class="d8-veille-head">
+    <p class="cap d8-tag rv">04 · La veille</p>
+    <h2 class="f rv" id="d8-h-veille" data-lines style="--d:80">Chaque jour, une nouveauté à tester.</h2>
+    <p class="d8-veille-lead rv" style="--d:140">Ils publient plusieurs fois par semaine sur LinkedIn, surtout sur Claude, à l'affût des nouvelles technologies.</p>
+  </header>
+  <ul class="d8-log rv" style="--d:100" aria-hidden="true">
+    <li><span class="d8-log-ar">→</span>Un nouvel outil sort, on le teste.</li>
+    <li><span class="d8-log-ar">→</span>Ce qui marche chez nous, on le propose.</li>
+    <li><span class="d8-log-ar">→</span>Ce qui ne marche pas, on l'écarte.</li>
+    <li><span class="d8-log-ar">→</span>On publie sur LinkedIn, surtout sur Claude.</li>
+  </ul>
+  <div class="d8-li-cards rv" style="--d:180">
+    <a class="d8-li-card" data-mag href="https://www.linkedin.com/in/clement-predo" target="_blank" rel="noopener"><span class="cap">Clément Predo</span><span>linkedin.com/in/clement-predo</span></a>
+    <a class="d8-li-card" data-mag href="https://www.linkedin.com/in/alexiszeitoun" target="_blank" rel="noopener"><span class="cap">Alexis Zeitoun</span><span>linkedin.com/in/alexiszeitoun</span></a>
+  </div>
+</section>
+
+<section class="d8-proof" aria-labelledby="d8-h-proof">
+  <p class="cap d8-tag rv">05 · La preuve</p>
+  <h2 class="f rv" id="d8-h-proof" data-lines style="--d:60">La preuve, en chiffres.</h2>
+  <div class="d8-stats">
+    <p class="d8-stat rv"><span class="f d8-stat-n">+200</span><span class="cap d8-stat-l">entreprises accompagnées</span></p>
+    <p class="d8-stat rv" style="--d:80"><span class="f d8-stat-n">+3 000</span><span class="cap d8-stat-l">collaborateurs formés</span></p>
+    <p class="d8-stat rv" style="--d:160"><span class="f d8-stat-n">94 292</span><span class="cap d8-stat-l">abonnés LinkedIn cumulés</span></p>
+  </div>
+  <div class="d8-logos-wrap rv" style="--d:120">
+    <p class="cap d8-logos-kick">Ils nous font confiance</p>
+    <ul class="d8-logos" role="list">
+      <li><img src="../img/logos/carrefour.svg" alt="Carrefour" loading="lazy"></li>
+      <li><img src="../img/logos/credit-agricole-assurances.svg" alt="Crédit Agricole Assurances" loading="lazy"></li>
+      <li><img src="../img/logos/sodexo.svg" alt="Sodexo" loading="lazy"></li>
+      <li><img src="../img/logos/swisslife.svg" alt="SwissLife" loading="lazy"></li>
+      <li><img src="../img/logos/blackfin.png" alt="Blackfin" loading="lazy"></li>
+      <li><img src="../img/logos/geodis.svg" alt="Geodis" loading="lazy"></li>
+      <li><img src="../img/logos/gecina.svg" alt="Gecina" loading="lazy"></li>
+      <li><img src="../img/logos/puig.svg" alt="Puig" loading="lazy"></li>
+      <li><img src="../img/logos/zoetis.svg" alt="Zoetis" loading="lazy"></li>
+      <li><img src="../img/logos/amdocs.svg" alt="Amdocs" loading="lazy"></li>
+      <li><img src="../img/logos/inseec-omnes.svg" alt="Inseec Omnes" loading="lazy"></li>
+      <li><img src="../img/logos/my-little-paris.png" alt="My Little Paris" loading="lazy"></li>
+      <li><img src="../img/logos/ville-de-lyon.png" alt="Ville de Lyon" loading="lazy"></li>
+      <li><img src="../img/logos/gravotech.png" alt="Gravotech" loading="lazy"></li>
+      <li><img src="../img/logos/marlink.svg" alt="Marlink" loading="lazy"></li>
+      <li><img src="../img/logos/17secondes.png" alt="17 Secondes" loading="lazy"></li>
+      <li><img src="../img/logos/avantis.png" alt="Avantis" loading="lazy"></li>
+      <li><img src="../img/logos/careismatic-brands.png" alt="Careismatic Brands" loading="lazy"></li>
+      <li><img src="../img/logos/gestuel-sante.png" alt="Gestuel Santé" loading="lazy"></li>
+      <li><img src="../img/logos/kit.png" alt="Kit" loading="lazy"></li>
+      <li><img src="../img/logos/suricog.png" alt="Suricog" loading="lazy"></li>
+      <li><img src="../img/logos/viverde-group.svg" alt="Viverde Group" loading="lazy"></li>
+      <li><img src="../img/logos/afl-diversity.svg" alt="AFL Diversity" loading="lazy"></li>
+    </ul>
+  </div>
+</section>
+
+<section class="d8-end rv" aria-labelledby="d8-h-end">
+  <h2 class="f" id="d8-h-end">Et on ne compte pas <span class="i">s'arrêter là.</span></h2>
+  <div class="d8-end-links rv" style="--d:120">
+    <a class="d8-end-link" data-mag href="https://www.linkedin.com/in/clement-predo" target="_blank" rel="noopener">Clément Predo <span aria-hidden="true">↗</span></a>
+    <a class="d8-end-link" data-mag href="https://www.linkedin.com/in/alexiszeitoun" target="_blank" rel="noopener">Alexis Zeitoun <span aria-hidden="true">↗</span></a>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="ft-top">
+    <div class="meta cap"><span>axem-ia.fr</span><span>Paris</span><a href="#" data-book>Réserver un échange offert →</a></div>
+    <div class="legal-links cap"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="mailto:contact@axem-ia.fr">contact@axem-ia.fr</a></div>
+  </div>
+  <div class="wm big" aria-hidden="true">axem<sup>IA</sup></div>
+</footer>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AXEM IA",
+  "url": "https://axem-ia.fr",
+  "email": "contact@axem-ia.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3 rue Françoise Dolto",
+    "postalCode": "75013",
+    "addressLocality": "Paris",
+    "addressCountry": "FR"
+  },
+  "founder": [
+    { "@type": "Person", "name": "Clément Predo", "sameAs": "https://www.linkedin.com/in/clement-predo" },
+    { "@type": "Person", "name": "Alexis Zeitoun", "sameAs": "https://www.linkedin.com/in/alexiszeitoun" }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/clement-predo",
+    "https://www.linkedin.com/in/alexiszeitoun"
+  ]
+}
+</script>
+
+<script src="../vendor/gsap/gsap.min.js"></script>
+<script src="../vendor/gsap/ScrollTrigger.min.js"></script>
+<script src="../vendor/gsap/SplitText.min.js"></script>
+<script src="../assets/abonnes.js"></script>
+<script src="../assets/avis.js"></script>
+<script src="../assets/axem.js"></script>
+<script>
+(() => {
+  // Tour 16 : la couche d'interactions du tour 2, allegee apres mesure (CPU x4, defilement molette).
+  // Retire : le defilement doux Lenis (il gardait la main sur la molette), le bandeau pilote image par
+  // image (il relisait la largeur de la page a chaque image : 1,8 s de mise en page sur 5 s), le
+  // brouillage des lettres. Garde, mais ne calcule plus que quand la souris bouge : le curseur a
+  // etiquette, la graisse du titre, l'apercu des offres, le portrait du duo, le mot du pied de page.
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const still = reduce || /[?&]static\b/.test(location.search);
+  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const hasGsap = typeof gsap !== 'undefined';
+  document.body.classList.add('t2', 't16-lite');
+  if (hasGsap) gsap.registerPlugin(...[window.ScrollTrigger, window.SplitText].filter(Boolean));
+
+  const mouse = { x: innerWidth / 2, y: innerHeight / 2 };
+  const moveFns = [];
+  let mq = 0;
+  addEventListener('pointermove', e => {
+    mouse.x = e.clientX; mouse.y = e.clientY;
+    if (!mq) mq = requestAnimationFrame(() => { mq = 0; moveFns.forEach(f => f()); });
+  }, { passive: true });
+
+  // Curseur a etiquette : la boucle ne tourne que tant qu'il reste du chemin a faire.
+  if (fine && !reduce) {
+    document.documentElement.classList.add('has-cur');
+    const l = document.createElement('div'); l.className = 'cur-l';
+    document.body.append(l);
+    const p = { x: mouse.x, y: mouse.y };
+    let run = 0;
+    const loop = () => {
+      p.x += (mouse.x - p.x) * 0.35; p.y += (mouse.y - p.y) * 0.35;
+      l.style.transform = `translate3d(${p.x.toFixed(1)}px, ${p.y.toFixed(1)}px, 0)`;
+      run = Math.abs(mouse.x - p.x) + Math.abs(mouse.y - p.y) > .4 ? requestAnimationFrame(loop) : 0;
+    };
+    moveFns.push(() => { if (!run) run = requestAnimationFrame(loop); });
+    document.addEventListener('pointerover', e => {
+      const lab = e.target.closest('[data-cursor]');
+      const hide = e.target.closest('[data-cursor-off]');
+      l.textContent = lab && !hide ? lab.dataset.cursor : '';
+      l.classList.toggle('on', !!(lab && !hide));
+    });
+  }
+
+  // Titre du hero : graisse variable selon la distance au curseur. Les centres des lettres sont
+  // mesures une fois (et au redimensionnement), jamais pendant le mouvement.
+  const heroH = document.querySelector('.hero');
+  if (heroH) {
+    document.querySelectorAll('.hero h1 .word > span').forEach(s => { s.innerHTML = [...s.textContent].map(ch => `<span class="ch">${ch}</span>`).join(''); });
+    if (fine && !still && hasGsap) {
+      const chars = [...heroH.querySelectorAll('.ch')];
+      let centers = null, active = false;
+      const measure = () => { centers = chars.map(ch => { const r = ch.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2 + scrollY]; }); };
+      // Changer la graisse d'une police variable oblige le navigateur a remettre en forme les glyphes :
+      // mesure du 24/09, 1,5 s de mise en page sur 5 s de geste, pour 36 objets seulement. Le cout vient
+      // de ce que chaque image demandait une graisse inedite (valeur continue, cache de forme rate).
+      // La graisse suit donc la souris par un amorti maison, mais n'est ecrite que par paliers de 50 :
+      // 13 graisses possibles, toutes deja en cache apres le premier passage.
+      const cur = chars.map(() => 900), tgt = chars.map(() => 900), shown = chars.map(() => 900);
+      let run = 0;
+      const tick = () => {
+        let moving = false;
+        for (let i = 0; i < chars.length; i++) {
+          const d = tgt[i] - cur[i];
+          if (Math.abs(d) > 2) { cur[i] += d * 0.18; moving = true; } else cur[i] = tgt[i];
+          const q = Math.round(cur[i] / 50) * 50;
+          if (q !== shown[i]) { shown[i] = q; chars[i].style.setProperty('--wg', q); }
+        }
+        run = moving ? requestAnimationFrame(tick) : 0;
+      };
+      const kick = () => { if (!run) run = requestAnimationFrame(tick); };
+      heroH.addEventListener('pointerenter', () => { active = true; measure(); });
+      heroH.addEventListener('pointerleave', () => { active = false; tgt.fill(900); kick(); });
+      addEventListener('resize', () => { centers = null; });
+      moveFns.push(() => {
+        if (!active) return;
+        if (!centers) measure();
+        const y = mouse.y + scrollY;
+        centers.forEach(([cx, cy], i) => { tgt[i] = 300 + 600 * Math.min(1, Math.hypot(mouse.x - cx, y - cy) / 420); });
+        kick();
+      });
+    }
+  }
+
+  // Apercu flottant sur les offres
+  const rows = document.querySelectorAll('.row[data-peek]');
+  if (rows.length && fine && !reduce && hasGsap) {
+    const pk = document.createElement('div'); pk.className = 'peek'; pk.setAttribute('aria-hidden', 'true');
+    pk.innerHTML = '<span class="sq"></span><div class="k"></div><div class="v"></div><img class="pi" alt="">';
+    document.body.appendChild(pk);
+    const xTo = gsap.quickTo(pk, 'x', { duration: 0.55, ease: 'power3.out' }), yTo = gsap.quickTo(pk, 'y', { duration: 0.55, ease: 'power3.out' });
+    const rTo = gsap.quickTo(pk, 'rotation', { duration: 0.5, ease: 'power3.out' });
+    let lastX = mouse.x, on = false;
+    moveFns.push(() => { if (!on) return; xTo(mouse.x + 70); yTo(mouse.y + 30); rTo(gsap.utils.clamp(-8, 8, (mouse.x - lastX) * 0.6)); lastX = mouse.x; });
+    rows.forEach(r => {
+      r.addEventListener('pointerenter', () => { on = true; gsap.set(pk, { x: mouse.x + 70, y: mouse.y + 30 }); pk.querySelector('.k').textContent = r.dataset.peekK || ''; pk.querySelector('.v').textContent = r.dataset.peek; const pi = pk.querySelector('.pi'); if (r.dataset.peekImg) { pi.src = new URL(r.dataset.peekImg, document.baseURI).href; } pk.classList.toggle('has-img', !!r.dataset.peekImg); gsap.to(pk, { opacity: 1, scale: 1, duration: 0.45, ease: 'back.out(1.6)' }); });
+      r.addEventListener('pointerleave', () => { on = false; gsap.to(pk, { opacity: 0, scale: 0.6, duration: 0.3 }); });
+    });
+  }
+
+  // Wordmark du pied de page : lettres qui se soulevent pres du curseur (positions mesurees a l'entree).
+  const big = document.querySelector('footer .big');
+  if (big) {
+    const tn = [...big.childNodes].find(n => n.nodeType === 3 && n.textContent.trim());
+    if (tn) { const w = document.createElement('span'); w.innerHTML = [...tn.textContent.trim()].map(ch => `<span class="fl">${ch}</span>`).join(''); big.replaceChild(w, tn); }
+    if (fine && !reduce) {
+      const fls = [...big.querySelectorAll('.fl')], foot = big.closest('footer');
+      let xs = null, inF = false;
+      foot.addEventListener('pointerenter', () => { inF = true; xs = fls.map(f => { const r = f.getBoundingClientRect(); return r.left + r.width / 2; }); });
+      foot.addEventListener('pointerleave', () => { inF = false; fls.forEach(f => { f.style.transform = ''; }); });
+      moveFns.push(() => { if (!inF || !xs) return; fls.forEach((f, i) => { f.style.transform = `translateY(${(-Math.max(0, 1 - Math.abs(mouse.x - xs[i]) / 260) * 0.14).toFixed(3)}em)`; }); });
+    }
+  }
+
+  // Liens forts magnetiques (hors barre du haut, qui a son propre bouton)
+  if (fine && !reduce && hasGsap) document.querySelectorAll('.teaser .more, [data-mag]').forEach(b => {
+    const xTo = gsap.quickTo(b, 'x', { duration: 0.5, ease: 'power3.out' }), yTo = gsap.quickTo(b, 'y', { duration: 0.5, ease: 'power3.out' });
+    b.addEventListener('pointermove', e => { const r = b.getBoundingClientRect(); xTo((e.clientX - r.left - r.width / 2) * 0.3); yTo((e.clientY - r.top - r.height / 2) * 0.4); });
+    b.addEventListener('pointerleave', () => { xTo(0); yTo(0); });
+  });
+
+  // Lignes revelees au defilement
+  if (hasGsap && window.SplitText && window.ScrollTrigger && !still) {
+    document.fonts.ready.then(() => document.querySelectorAll('[data-lines]').forEach(el => {
+      SplitText.create(el, { type: 'lines', mask: 'lines', linesClass: 'ln', autoSplit: true, onSplit: self => gsap.from(self.lines, { yPercent: 105, duration: 1.1, ease: 'expo.out', stagger: 0.09, scrollTrigger: { trigger: el, start: 'top 85%', once: true } }) });
+    }));
+  }
+
+  // Duo : portrait qui suit le curseur sur les noms
+  const dn = document.querySelector('.dn-list');
+  const fl = document.querySelector('.dn-float');
+  if (dn && fl && fine && !reduce && hasGsap) {
+    const xTo = gsap.quickTo(fl, 'x', { duration: 0.7, ease: 'power3.out' }), yTo = gsap.quickTo(fl, 'y', { duration: 0.7, ease: 'power3.out' });
+    const rTo = gsap.quickTo(fl, 'rotation', { duration: 0.6, ease: 'power3.out' });
+    let lx = mouse.x, on = false;
+    moveFns.push(() => { if (!on) return; xTo(mouse.x + 22); yTo(mouse.y + 16); rTo(gsap.utils.clamp(-10, 10, (mouse.x - lx) * 0.5)); lx = mouse.x; });
+    dn.querySelectorAll('.dn-row').forEach(r => {
+      r.addEventListener('pointerenter', () => { on = true; fl.classList.add('on'); fl.querySelectorAll('img').forEach(i => i.classList.toggle('on', i.dataset.who === r.dataset.who)); });
+    });
+    dn.addEventListener('pointerleave', () => { on = false; fl.classList.remove('on'); });
+  }
+})();
+</script>
+<script>(()=>{const m=location.search.match(/[?&]photo=(\d)/), P={1:'1-table',2:'2-scene'}; if (m && P[m[1]]) document.querySelectorAll('img[src$="img/duo/duo.jpg"]').forEach(i=>{i.src='../img/duo/propositions/axem-duo-'+P[m[1]]+'.jpg'; i.closest('[hidden]')?.removeAttribute('hidden');});})();</script>
+<p class="proto">Tour 21 : Le duo, proposition 8 <a class="replay" role="button" tabindex="0">Rejouer</a><a href="../tour21.html">Toutes les propositions</a></p>
+<script>
+(() => {
+  // ---- Tour 17 : socle commun (Reserver un seul a la fois, bouton son WebAudio). Charge sur les
+  // 6 pages, avant claude-mark.js et le script propre a chaque page (voir outils/build_t17.py). ----
+
+  // 1) Reserver un seul a la fois. La barre garde .nav .book[data-book] (nav.css). Tant que le grand
+  // bouton du hero (.hero .btn[data-book]) est a l'ecran, celui de la barre reste cache, invisible aux
+  // lecteurs d'ecran et non focusable. Des qu'il en sort, il apparait et reste, meme en remontant. Sur
+  // les pages duo il n'y a pas de hero : le bouton de la barre est visible d'emblee.
+  (() => {
+    const navBook = document.querySelector('#nav .book[data-book]');
+    if (!navBook) return;
+    const heroBook = document.querySelector('.hero .btn[data-book]');
+    if (!heroBook) { navBook.classList.add('rs-show'); return; }
+    navBook.classList.add('rs-hidden');
+    navBook.setAttribute('tabindex', '-1');
+    navBook.setAttribute('aria-hidden', 'true');
+    const reveal = () => {
+      navBook.classList.remove('rs-hidden');
+      navBook.classList.add('rs-show');
+      navBook.removeAttribute('tabindex');
+      navBook.removeAttribute('aria-hidden');
+    };
+    if (!('IntersectionObserver' in window)) { reveal(); return; }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (!entry.isIntersecting) { reveal(); io.disconnect(); } });
+    }, { threshold: 0 });
+    io.observe(heroBook);
+  })();
+
+  // 2) Bouton son : petit egaliseur en bas a gauche, coupe par defaut. Sons synthetises en WebAudio,
+  // aucun fichier. Rien ne joue avant un premier clic (ou une preference deja enregistree). Expose
+  // window.AxemSound = { play(name), on() } et ecoute l'evenement axem:sound emis ailleurs (survols,
+  // ecrans bleus). Chaque lecture/ecriture localStorage est dans un try/catch.
+  (() => {
+    const KEY = 'axem-son';
+    let enabled = false;
+    try { enabled = localStorage.getItem(KEY) === '1'; } catch (e) { enabled = false; }
+
+    let ctx = null;
+    const audioCtx = () => {
+      if (ctx) return ctx;
+      const Ctor = window.AudioContext || window.webkitAudioContext;
+      if (!Ctor) return null;
+      try { ctx = new Ctor(); } catch (e) { ctx = null; }
+      return ctx;
+    };
+
+    const soundWhoosh = c => {
+      const dur = 0.6;
+      const buf = c.createBuffer(1, Math.round(c.sampleRate * dur), c.sampleRate);
+      const d = buf.getChannelData(0);
+      for (let i = 0; i < d.length; i++) { const t = i / d.length; d[i] = (Math.random() * 2 - 1) * Math.pow(1 - t, 2.2); }
+      const src = c.createBufferSource(); src.buffer = buf;
+      const filt = c.createBiquadFilter(); filt.type = 'bandpass'; filt.Q.value = 0.7;
+      filt.frequency.setValueAtTime(500, c.currentTime);
+      filt.frequency.exponentialRampToValueAtTime(2000, c.currentTime + dur * 0.8);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.0001, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.13, c.currentTime + 0.09);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + dur);
+      src.connect(filt).connect(g).connect(c.destination);
+      src.start(); src.stop(c.currentTime + dur + 0.05);
+    };
+
+    const soundTick = c => {
+      const osc = c.createOscillator(); osc.type = 'square'; osc.frequency.setValueAtTime(1900, c.currentTime);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.08, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 0.045);
+      osc.connect(g).connect(c.destination);
+      osc.start(); osc.stop(c.currentTime + 0.06);
+    };
+
+    const soundPop = c => {
+      const osc = c.createOscillator(); osc.type = 'sine';
+      osc.frequency.setValueAtTime(420, c.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(760, c.currentTime + 0.1);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.0001, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.15, c.currentTime + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 0.24);
+      osc.connect(g).connect(c.destination);
+      osc.start(); osc.stop(c.currentTime + 0.26);
+    };
+
+    const SOUNDS = { whoosh: soundWhoosh, tick: soundTick, pop: soundPop };
+
+    const play = name => {
+      if (!enabled || !SOUNDS[name]) return;
+      try {
+        const c = audioCtx();
+        if (!c) return;
+        if (c.state === 'suspended') c.resume().catch(() => {});
+        SOUNDS[name](c);
+      } catch (e) { /* silencieux : le son n'est jamais bloquant */ }
+    };
+
+    window.AxemSound = { play, on: () => enabled };
+    window.addEventListener('axem:sound', e => { try { play(e.detail && e.detail.name); } catch (er) {} });
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'snd-btn';
+    btn.setAttribute('aria-pressed', 'false');
+    btn.setAttribute('aria-label', 'Activer le son');
+    btn.innerHTML = '<span class="snd-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>';
+    document.body.appendChild(btn);
+
+    const sync = () => {
+      btn.classList.toggle('on', enabled);
+      btn.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+      btn.setAttribute('aria-label', enabled ? 'Couper le son' : 'Activer le son');
+    };
+    sync();
+
+    btn.addEventListener('click', () => {
+      enabled = !enabled;
+      try { localStorage.setItem(KEY, enabled ? '1' : '0'); } catch (e) { /* prive ou bloque : tant pis */ }
+      sync();
+      if (enabled) play('pop');
+    });
+  })();
+})();
+</script>
+<script>
+/*
+ * ClaudeMark : trace officiel du symbole Claude (etoile / spark), sans dependance.
+ * Source : Wikimedia Commons, File:Claude_AI_symbol.svg
+ *   https://upload.wikimedia.org/wikipedia/commons/b/b0/Claude_AI_symbol.svg
+ * Le trace original est un SEUL <path> avec un seul sous-tracé (un seul "M" au debut,
+ * 159 segments, une seule fermeture "Z") : les 6 rayons ne sont pas des sous-tracés
+ * separes dans le fichier source, donc pas de decoupage "un <path> par rayon" possible
+ * ici sans reconstruire des tracés synthetiques. Conformement à la consigne du brief
+ * pour ce cas ("un seul contour continu impossible a separer proprement"), ClaudeMark
+ * expose `rays: []` et `root` anime en bloc (rotation / echelle / masque).
+ *
+ * Le trace ci-dessous est le trace officiel, translate pour que le centre visuel de
+ * l'etoile (centre de sa bounding box, cx=49.95 cy=50 dans le fichier source, sur un
+ * viewBox 0 0 100 100) tombe exactement sur (0,0). Le viewBox monte par mount() est
+ * donc centre : "-50 -50 100 100".
+ */
+(function (global) {
+  "use strict";
+
+  var PATH_D =
+    "m -30.35,16.5 l 19.7,-11 l 0.3,-1 l -0.3,-0.5 l -1,0 l -3.3,-0.2 l -11.2,-0.3 " +
+    "L -35.95,3 l -9.5,-0.5 l -2.4,-0.5 L -49.95,-1 l 0.2,-1.5 l 2,-1.3 l 2.9,0.2 " +
+    "l 6.3,0.5 l 9.5,0.6 l 6.9,0.4 L -11.95,-0.9 l 1.6,0 l 0.2,-0.7 l -0.5,-0.4 " +
+    "l -0.4,-0.4 L -20.95,-9 l -10.6,-7 l -5.6,-4.1 l -3,-2 l -1.5,-2 l -0.6,-4.2 " +
+    "l 2.7,-3 l 3.7,0.3 l 0.9,0.2 l 3.7,2.9 l 8,6.1 L -12.95,-14 l 1.5,1.2 l 0.6,-0.4 " +
+    "l 0.1,-0.3 l -0.7,-1.1 L -16.95,-25 l -6,-10.4 l -2.7,-4.3 l -0.7,-2.6 " +
+    "c -0.3,-1 -0.4,-2 -0.4,-3 l 3,-4.2 L -21.95,-50 l 4.2,0.6 L -16.15,-48 l 2.6,6 " +
+    "l 4.1,9.3 L -2.95,-20.1 l 2,3.8 l 1,3.4 l 0.3,1 l 0.7,0 l 0,-0.5 l 0.5,-7.2 " +
+    "l 1,-8.7 l 1,-11.2 l 0.3,-3.2 l 1.6,-3.8 l 3,-2 L 11.05,-47.4 l 2,2.9 l -0.3,1.8 " +
+    "l -1.1,7.7 L 9.05,-22.9 l -1.5,8.2 l 0.9,0 l 1,-1.1 l 4.1,-5.4 l 6.9,-8.6 l 3,-3.5 " +
+    "L 27.05,-37 l 2.3,-1.8 l 4.3,0 l 3.1,4.7 l -1.4,4.9 l -4.4,5.6 l -3.7,4.7 l -5.3,7.1 " +
+    "l -3.2,5.7 l 0.3,0.4 l 0.7,0 l 12,-2.6 l 6.4,-1.1 l 7.6,-1.3 l 3.5,1.6 l 0.4,1.6 " +
+    "l -1.4,3.4 l -8.2,2 l -9.6,2 l -14.3,3.3 l -0.2,0.1 l 0.2,0.3 l 6.4,0.6 l 2.8,0.2 " +
+    "l 6.8,0 l 12.6,1 l 3.3,2 l 1.9,2.7 l -0.3,2 l -5.1,2.6 l -6.8,-1.6 l -16,-3.8 " +
+    "l -5.4,-1.3 l -0.8,0 l 0,0.4 l 4.6,4.5 l 8.3,7.5 L 39.05,30.1 l 0.5,2.4 l -1.3,2 " +
+    "l -1.4,-0.2 l -9.2,-7 l -3.6,-3 l -8,-6.8 l -0.5,0 l 0,0.7 l 1.8,2.7 l 9.8,14.7 " +
+    "l 0.5,4.5 l -0.7,1.4 l -2.6,1 l -2.7,-0.6 l -5.8,-8 l -6,-9 l -4.7,-8.2 l -0.5,0.4 " +
+    "l -2.9,30.2 l -1.3,1.5 l -3,1.2 l -2.5,-2 l -1.4,-3 l 1.4,-6.2 l 1.6,-8 l 1.3,-6.4 " +
+    "l 1.2,-7.9 l 0.7,-2.6 l 0,-0.2 L -0.95,13.7 L -6.95,22 l -9,12.3 l -7.2,7.6 " +
+    "l -1.7,0.7 l -3,-1.5 l 0.3,-2.8 L -25.95,36 l 10,-12.8 l 6,-7.9 l 4,-4.6 l -0.1,-0.5 " +
+    "l -0.3,0 L -32.75,27.4 l -4.7,0.6 l -2,-2 l 0.2,-3 l 1,-1 l 8,-5.5 Z";
+
+  var DEFAULT_COLOR = "#D97757";
+  var SVG_NS = "http://www.w3.org/2000/svg";
+
+  function mount(el, opts) {
+    opts = opts || {};
+    var color = opts.color || DEFAULT_COLOR;
+
+    var svg;
+    if (el && el.tagName && el.tagName.toLowerCase() === "svg") {
+      svg = el;
+    } else {
+      svg = document.createElementNS(SVG_NS, "svg");
+      if (el) el.appendChild(svg);
+    }
+
+    svg.setAttribute("viewBox", "-50 -50 100 100");
+    if (!svg.hasAttribute("width") && opts.size) svg.setAttribute("width", opts.size);
+    if (!svg.hasAttribute("height") && opts.size) svg.setAttribute("height", opts.size);
+    svg.setAttribute("aria-hidden", "true");
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+
+    // root : groupe anime en bloc (rotation/echelle/masque), origine CSS forcee a
+    // (0,0) qui correspond deja au centre visuel de l'etoile dans ce viewBox recentre.
+    var root = document.createElementNS(SVG_NS, "g");
+    root.setAttribute("class", "claude-mark-root");
+    root.style.transformOrigin = "0px 0px";
+    root.style.transformBox = "view-box";
+
+    var path = document.createElementNS(SVG_NS, "path");
+    path.setAttribute("d", PATH_D);
+    path.setAttribute("fill", color);
+    path.setAttribute("class", "claude-mark-path");
+    root.appendChild(path);
+    svg.appendChild(root);
+
+    return {
+      svg: svg,
+      root: root,
+      rays: [], // tracé source en un seul sous-chemin : rayons non individualisables
+      core: null, // idem : pas de hub separe dans le tracé source
+      color: color
+    };
+  }
+
+  global.ClaudeMark = { mount: mount, PATH_D: PATH_D, DEFAULT_COLOR: DEFAULT_COLOR };
+})(window);
+</script>
+<script>
+(() => {
+  // Duo d8, tour 21, « Le labo ». Tout le reveal (.rv/.in), le fondu (.fade/.ready) et les liens
+  // magnetiques (data-mag) sont deja cables par assets/axem.js et outils/t16/lite.js, charges avant ce
+  // fichier (voir outils/build_t21.py). Ce script ne fait qu'une chose en plus : faire vivre le petit
+  // statut de la fenetre (« en veille » / « on teste » / « on garde ce qui marche »), un detail de
+  // decor qui renforce l'idee d'interface. Anime seulement l'opacite, jamais permanent (setInterval
+  // borne, en pause des que l'onglet est cache), et desactive sous prefers-reduced-motion.
+  const root = document.querySelector('.t21-d8');
+  if (!root) return;
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const els = [...root.querySelectorAll('[data-status]')];
+  if (!els.length || reduce) return;
+
+  const statuses = ['en veille', 'on teste', 'on garde ce qui marche'];
+  let i = 0, timer = null;
+
+  const tick = () => {
+    i = (i + 1) % statuses.length;
+    els.forEach(el => {
+      el.classList.add('is-out');
+      setTimeout(() => { el.textContent = statuses[i]; el.classList.remove('is-out'); }, 260);
+    });
+  };
+  const start = () => { if (!timer) timer = setInterval(tick, 3600); };
+  const stop = () => { if (timer) { clearInterval(timer); timer = null; } };
+
+  document.addEventListener('visibilitychange', () => { document.hidden ? stop() : start(); });
+  start();
+})();
+</script>
+<script>
+/* Tour 21 : marque les photos de repli (la scène IA prévue n'est pas encore livrée). */
+(() => {
+  const mark = () => document.querySelectorAll('img[data-fallback]').forEach(i => {
+    const f = i.getAttribute('data-fallback').replace(/^(\.\.\/)+/, '');
+    const shown = i.currentSrc || i.src || '';
+    if (shown.endsWith(f) || (i.complete && i.naturalWidth === 0)) (i.closest('figure') || i.parentElement).classList.add('is-provisoire');
+  });
+  document.addEventListener('error', e => { if (e.target.matches && e.target.matches('img[data-fallback]')) setTimeout(mark, 50); }, true);
+  addEventListener('load', () => { mark(); setTimeout(mark, 800); });
+})();
+</script>
+</body>
+</html>
