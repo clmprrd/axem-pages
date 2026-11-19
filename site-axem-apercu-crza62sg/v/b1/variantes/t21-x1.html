@@ -1,0 +1,939 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Notre méthode · AXEM IA</title>
+<script>if (/[?&]pal=blanc\b/.test(location.search)) document.documentElement.classList.add('pal-blanc');</script>
+<meta name="description" content="Deux associés qui déploient l'IA dans vos équipes, sur vos vrais dossiers. Conseil, formation et coaching IA à Paris, sans intermédiaire.">
+<link rel="icon" href="../img/favicon-ax-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../img/favicon-ax-180.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="AXEM IA">
+<meta property="og:title" content="AXEM IA, votre partenaire IA de A à Z">
+<meta property="og:description" content="Clément Predo et Alexis Zeitoun déploient l’IA dans vos équipes, sur vos vrais dossiers. Conseil, formation et coaching IA.">
+<meta property="og:url" content="https://axem-ia.fr/">
+<meta property="og:image" content="https://axem-ia.fr/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://axem-ia.fr/">
+<noscript><style>.fade, .rv { opacity: 1 !important; transform: none !important; }</style></noscript>
+<link href="../vendor/fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="../assets/axem.css">
+<link rel="stylesheet" href="../assets/t2.css">
+<meta name="robots" content="noindex">
+<style>
+/* ---- Tour 16 : fluidite. Plus de flou derriere la barre (il se recalculait a chaque image de
+   defilement), le bandeau clients tourne en CSS sur la carte graphique. ---- */
+.nav.solid { background: rgba(250, 246, 234, .97); backdrop-filter: none; -webkit-backdrop-filter: none; }
+.t2 .mq { animation: mq 42s linear infinite; will-change: transform; }
+.marquee:hover .mq { animation-play-state: paused; }
+.mk-svg .mk { filter: none; }
+
+/* ---- Tour 16 : le logo de la barre = le mot « axem IA » de l'ecran bleu, meme police, meme balisage ---- */
+.nav .logo { display: inline-flex; background: transparent; padding: 0; box-shadow: none; }
+.nav .logo .wm { font-size: 38px; color: var(--blue); transition: color .35s var(--ease); }
+.nav .logo .nl span { display: inline-block; font-weight: 900; font-variation-settings: "SOFT" 100, "WONK" 0, "opsz" 144; letter-spacing: -0.02em; }
+.nav .logo:hover { transform: none; box-shadow: none; }
+.nav .logo:hover .wm { color: var(--ink); }
+@media (max-width: 860px) { .nav .logo .wm { font-size: 30px; } }
+
+/* ---- Tour 16 : liens de la barre = de vrais boutons, comme les lignes d'offres. Au survol, une
+   pastille bleue monte du bas, deborde le mot, le texte passe en creme et une fleche sort. ---- */
+.nav .links { gap: 4px; }
+.nav .links a { position: relative; display: inline-flex; align-items: center; gap: 0; padding: 12px 18px; border-radius: 999px; font-size: 15px; font-weight: 600; isolation: isolate; transition: color .35s var(--ease), padding .45s var(--ease); }
+.nav .links a::after { display: none; }
+.nav .links a::before { content: ""; position: absolute; inset: -3px -4px; margin: 0; width: auto; height: auto; border-radius: 999px; background: var(--blue); z-index: -1; transform: scale(.55, 0); transform-origin: 50% 100%; transition: transform .45s var(--ease); flex: none; }
+.nav .links a .na { display: inline-block; width: 0; overflow: hidden; opacity: 0; font-size: 17px; line-height: 1; transform: translateX(-6px) rotate(0); transition: width .45s var(--ease), opacity .3s var(--ease), transform .45s var(--ease), margin .45s var(--ease); }
+.nav .links a:hover, .nav .links a:focus-visible { color: var(--cream); padding-left: 22px; padding-right: 20px; }
+.nav .links a:hover::before, .nav .links a:focus-visible::before { transform: none; }
+.nav .links a:hover .na, .nav .links a:focus-visible .na { width: 16px; margin-left: 8px; opacity: 1; transform: rotate(-45deg); }
+.nav .links a.on { color: var(--blue); }
+.nav .links a.on:hover { color: var(--cream); }
+
+/* ---- Tour 16 : « Reserver un echange offert », un vrai bouton cale a droite. Une grosse fleche
+   dans une pastille creme apparait apres l'arrivee, rebondit de temps en temps pour attirer l'oeil ;
+   au survol le fond encre entre du cote d'ou vient la souris (reflexe s1 Aimant). ---- */
+.nav .book { position: relative; display: inline-flex; align-items: center; gap: 14px; padding: 7px 7px 7px 24px; border: 0; border-radius: 999px; background: var(--blue); color: var(--cream); font-size: 15px; font-weight: 600; letter-spacing: 0; text-transform: none; overflow: hidden; isolation: isolate; --ex: 0%; --ey: 115%; transition: box-shadow .35s var(--ease); }
+.nav .book::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--ink); z-index: -1; transform: translate(var(--ex), var(--ey)); transition: transform 520ms var(--ease); }
+.nav .book:hover::before, .nav .book:focus-visible::before { transform: none; }
+.nav .book::after { display: none; }
+.nav .book .short { display: none; }
+.nav .book .bk-ar { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--cream); color: var(--blue); transform: scale(0) rotate(-90deg); transition: transform .5s var(--ease), color .35s var(--ease); }
+.nav .book .bk-ar svg { width: 20px; height: 20px; display: block; }
+.ready:not(.hold) .nav .book .bk-ar { transform: none; transition: transform .8s cubic-bezier(.34, 1.8, .5, 1) .9s; }
+.ready:not(.hold) .nav .book .bk-ar svg { animation: bkBounce 3.2s cubic-bezier(.3, 0, .2, 1) 2.2s infinite; }
+@keyframes bkBounce { 0%, 62%, 100% { transform: translateX(0); } 70% { transform: translateX(6px); } 78% { transform: translateX(-2px); } 86% { transform: translateX(4px); } 93% { transform: translateX(0); } }
+.nav .book:hover .bk-ar { transform: rotate(-45deg) scale(1.08); transition-delay: 0s; }
+.nav .book:hover .bk-ar svg { animation: none; }
+@media (max-width: 860px) {
+  .nav .book { gap: 10px; padding: 5px 5px 5px 16px; font-size: 14px; }
+  .nav .book .long { display: none; }
+  .nav .book .short { display: inline; }
+  .nav .book .bk-ar { width: 34px; height: 34px; }
+  .nav .book .bk-ar svg { width: 17px; height: 17px; }
+}
+@media (prefers-reduced-motion: reduce) { .ready .nav .book .bk-ar svg { animation: none !important; } }
+
+/* ---- Tour 16 : hero s1 range. Titre remonte, bouton cale sur le bord droit de la grille, « c'est
+   ici » plus gros, pose sous le bouton et toujours visible, schema et chiffres en pied de hero. ---- */
+@media (min-width: 861px) {
+  .home .hero.mk3 { justify-content: flex-start; padding-top: clamp(112px, 17svh, 176px); }
+  .home .hero.mk3 { min-height: 0; height: auto; padding-bottom: clamp(40px, 6svh, 64px); }
+  .hero.mk3 .mk-row { margin-top: clamp(120px, 19svh, 190px); padding-top: 0; }
+  .hero.mk3 .l2 { justify-content: space-between; }
+  .hero.mk3 .side { margin-left: auto; align-items: flex-end; max-width: none; }
+  .hero.mk3 .side .btn { align-self: flex-end !important; }
+}
+.hero.mk3 .btn { font-size: 17px; padding: 22px 32px; }
+.mk-note-btn { font-size: 30px; }
+@media (max-width: 860px) { .mk-note-btn { font-size: 22px; } }
+
+/* ---- Tour 17 : socle commun aux 6 pages (v1 v2 v3 d1 d2 d3), injecte par le build juste apres
+   nav.css et avant le CSS propre a chaque page. Regle de Clement : un seul bouton Reserver visible
+   a la fois, plus le bouton son, plus l'habillage du pied de page legal. ---- */
+
+/* Reserver un seul a la fois (regle Clement, tour 17). La barre garde un bouton .book (nav.css) ;
+   il est masque tant que le grand bouton du hero est a l'ecran, invisible sur les pages duo car
+   elles n'ont pas de hero : voir base17.js. Aujourd'hui assets/axem.js masque toute la barre au
+   defilement vers le bas (classe .hide, assets/axem.css ligne 39) : on neutralise ce comportement
+   ici, la barre du tour 17 ne se cache plus jamais. */
+.t17 .nav.hide { transform: none; }
+
+.t17 .nav .book[data-book] { transition: opacity .4s var(--ease), transform .4s var(--ease); }
+.t17 .nav .book[data-book].rs-hidden { opacity: 0; transform: translateY(-10px); pointer-events: none; }
+.t17 .nav .book[data-book].rs-show { opacity: 1; transform: none; }
+
+/* Bouton son : egaliseur discret en bas a gauche, coupe par defaut. Barres immobiles quand coupe,
+   ondulent (scaleY, CSS pur) quand actif. Ne tourne jamais tant que le bouton n'est pas active :
+   c'est une animation CSS bornee par la classe .on, pas une boucle JS permanente. */
+.t17 .snd-btn { position: fixed; left: 18px; bottom: 18px; z-index: 56; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: rgba(250, 246, 234, .88); display: grid; place-items: center; cursor: pointer; padding: 0; transition: background-color .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease); }
+.t17 .snd-btn:hover { border-color: var(--blue); transform: translateY(-2px); }
+.t17 .snd-btn:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.t17 .snd-bars { display: flex; align-items: center; justify-content: center; gap: 3px; width: 18px; height: 16px; pointer-events: none; }
+.t17 .snd-bars i { display: block; width: 2.5px; height: 100%; border-radius: 2px; background: var(--ink); transform: scaleY(.28); transform-origin: center; transition: background-color .3s var(--ease); }
+.t17 .snd-btn.on .snd-bars i { background: var(--blue); animation: t17SndWave 1.15s ease-in-out infinite; }
+.t17 .snd-btn.on .snd-bars i:nth-child(1) { animation-delay: 0s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(2) { animation-delay: .18s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(3) { animation-delay: .36s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(4) { animation-delay: .12s; }
+@keyframes t17SndWave { 0%, 100% { transform: scaleY(.28); } 50% { transform: scaleY(1); } }
+/* le bandeau de maquette se range a droite du bouton son, jamais dessous */
+.t17 .proto { left: 76px; bottom: 24px; }
+@media (max-width: 860px) { .t17 .snd-btn { left: 14px; bottom: 14px; width: 40px; height: 40px; } }
+@media (max-width: 860px) and (min-width: 701px) { .t17 .proto { left: 68px; bottom: 20px; } }
+@media (prefers-reduced-motion: reduce) { .t17 .snd-btn.on .snd-bars i { animation: none !important; } }
+
+/* Pied de page legal : une ligne sous le meta existant (axem-ia.fr / Paris / Reserver), au-dessus du
+   mot-symbole geant. Le meta original (footer .meta, assets/axem.css ligne 146) est en position
+   absolue a taille fixe ; sur mobile il retombe sur 2 lignes (peu de largeur pour 3 items), ce qui
+   ferait chevaucher une ligne suivante a decalage fixe. On enveloppe donc meta + legal-links dans un
+   bloc .ft-top en flux normal (empile en colonne), et on neutralise le positionnement absolu du
+   meta a l'interieur : la ligne des liens legaux suit toujours meta, jamais de chevauchement. */
+.t17 footer .ft-top { position: absolute; top: 28px; left: var(--gutter); right: var(--gutter); display: flex; flex-direction: column; gap: 10px; }
+.t17 footer .ft-top .meta { position: static; top: auto; left: auto; right: auto; flex-wrap: wrap; row-gap: 6px; }
+.t17 footer .legal-links { position: static; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 11px; font-weight: 600; letter-spacing: .04em; margin: 0; }
+.t17 footer .legal-links a { color: rgba(250, 246, 234, .62); text-decoration: none; transition: color .25s var(--ease); }
+.t17 footer .legal-links a:hover, .t17 footer .legal-links a:focus-visible { color: var(--blue); }
+@media (max-width: 860px) { .t17 footer .ft-top { gap: 8px; } .t17 footer .legal-links { gap: 5px 16px; } }
+
+/* Pages juridiques (mentions-legales.html, confidentialite.html) : mise en page simple, DA du site. */
+.t17-legal { max-width: 760px; margin: 0 auto; padding: clamp(90px, 12vh, 140px) var(--gutter) 120px; }
+.t17-legal .back { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--blue); margin-bottom: 48px; }
+.t17-legal .back:hover, .t17-legal .back:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.t17-legal h1 { font-size: clamp(32px, 5vw, 48px); margin: 0 0 8px; }
+.t17-legal .maj { font-size: 13px; color: var(--grey); margin: 0 0 48px; }
+.t17-legal h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(20px, 2.4vw, 26px); margin: 44px 0 14px; }
+.t17-legal p { font-size: 16px; line-height: 1.65; color: var(--grey); margin: 0 0 14px; }
+.t17-legal a { color: var(--blue); }
+.t17-legal a:hover, .t17-legal a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.t17-legal .todo { color: var(--blue); font-weight: 600; }
+
+/* Tour 19, commun a toutes les pages : le monogramme ax (enregistre par Clement le 25/09) en logo de la
+   barre des pages duo et reservation, et la barre de prototype en bas a gauche. */
+.axm { display: inline-block; width: 46px; height: 31px; vertical-align: middle; background: var(--blue); -webkit-mask: url(../img/logo-ax-mask.png) center / contain no-repeat; mask: url(../img/logo-ax-mask.png) center / contain no-repeat; transition: transform 0.4s var(--ease); }
+.nav .logo:hover .axm, .nav .logo:focus-visible .axm { transform: rotate(-8deg) scale(1.08); }
+.t19 .proto { position: fixed; left: 76px; bottom: 24px; z-index: 55; margin: 0; font: 500 12px/1 "Instrument Sans", sans-serif; background: var(--ink); color: var(--cream); padding: 8px 12px; }
+.t19 .proto a { margin-left: 12px; color: var(--cream); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+@media (max-width: 700px) {
+  .t19 .proto { position: static; display: block; width: auto; line-height: 1.6; margin: 14px var(--gutter) 18px; }
+}
+
+/* Tour 20 : reglages communs. */
+/* Pages de paiement : le bouton son recouvrait le prix de la barre collante, il n'a pas de role au moment de payer. */
+.t20-r1 .snd-btn, .t20-r2 .snd-btn, .t20-r3 .snd-btn { display: none !important; }
+/* Pages de paiement : le bandeau de maquette masquait le prix de la barre collante du bas, il remonte sous la nav. */
+@media (min-width: 701px) { .t20-r1 .proto, .t20-r2 .proto, .t20-r3 .proto { top: 84px; bottom: auto; left: auto; right: 24px; } }
+
+/* Tour 21 : reglages communs. */
+.t21 .is-provisoire { position: relative; }
+.t21 .is-provisoire::before { content: "Photo provisoire : la scène arrive"; position: absolute; z-index: 3; top: 10px; left: 10px; padding: 4px 9px; border-radius: 999px; background: #0E0F1A; color: #FBF8F1; font: 600 11px/1.3 "Instrument Sans", system-ui, sans-serif; letter-spacing: .02em; pointer-events: none; }
+
+/* Tour 21, x1 : trois nouvelles sections. Scope .t21-x1 (classe posee sur <body> par build_t21.py).
+   Couleurs et polices : variables du socle (--blue, --cream, --ink, --grey, --gutter, --ease dans
+   assets/axem.css). Bleu profond du trace/des lettres A-Z : #1A38D6 (DA, section "palette" de
+   BRIEF-SHOWREEL.md). Corrige le 27/09 (revue coordinateur sur la planche 1440) : la methode devient
+   un moment fort epingle avec un trace SVG dessine au defilement (voir x1.js) ; 1 pin ScrollTrigger
+   au plus sur toute la page, actif seulement a partir de 861px et hors mouvement reduit (mobile et
+   reduced-motion : mise a plat en CSS pure ci-dessous, sans JS). Animations : transform et opacity
+   uniquement, pas de backdrop-filter. */
+
+.t21-x1 main, .t21-x1 #main { overflow: visible; }
+
+/* ---------- 1) La methode A a Z (moment fort epingle) ---------- */
+
+.t21-x1 .x1-method { position: relative; padding: 150px var(--gutter) 90px; }
+
+.t21-x1 .x1-method-head { position: relative; z-index: 1; max-width: 760px; margin: 0 0 64px; display: flex; align-items: flex-end; gap: 28px; }
+.t21-x1 .x1-method-head .num { flex: none; }
+.t21-x1 .x1-method-headtxt { display: flex; flex-direction: column; gap: 14px; padding-bottom: 6px; }
+.t21-x1 .x1-method-headtxt h2 { margin: 0; font-size: clamp(40px, 5.4vw, 80px); }
+.t21-x1 .x1-method-headtxt h2 .i { color: var(--blue); }
+.t21-x1 .x1-method-sub { margin: 0; font-size: clamp(18px, 1.7vw, 22px); color: var(--grey); }
+
+.t21-x1 .x1-stage { position: relative; min-height: 100vh; display: flex; align-items: center; gap: clamp(32px, 6vw, 88px); padding: 40px 0; }
+
+.t21-x1 .x1-spine { flex: none; width: 140px; display: flex; flex-direction: column; align-items: center; gap: 4px; }
+.t21-x1 .x1-cap-letter { color: var(--blue); font-size: clamp(58px, 6.4vw, 100px); line-height: 0.9; }
+.t21-x1 .x1-path-svg { width: 140px; height: 420px; overflow: visible; }
+.t21-x1 .x1-path { fill: none; stroke: var(--blue); stroke-width: 3; stroke-linecap: round; }
+.t21-x1 .x1-node { fill: var(--cream); stroke: var(--blue); stroke-width: 3; opacity: 0.5; transform-box: fill-box; transform-origin: center; transform: scale(0.72); transition: opacity 400ms var(--ease), transform 400ms var(--ease), fill 400ms var(--ease); }
+.t21-x1 .x1-node.on { fill: var(--blue); opacity: 1; transform: scale(1); }
+
+.t21-x1 .x1-panel { position: relative; flex: 1; min-width: 0; max-width: 620px; min-height: 260px; }
+.t21-x1 .x1-pcard { position: absolute; inset: 0; opacity: 0; transform: translateY(26px); transition: opacity 500ms var(--ease), transform 500ms var(--ease); pointer-events: none; display: flex; flex-direction: column; gap: 10px; }
+.t21-x1 .x1-pcard.on { opacity: 1; transform: none; pointer-events: auto; }
+.t21-x1 .x1-pnum { margin: 0; font-size: clamp(30px, 2.8vw, 42px); color: var(--blue); }
+.t21-x1 .x1-pcap { margin: 0; color: var(--ink); }
+.t21-x1 .x1-ptxt { margin: 0; font-size: clamp(22px, 2.4vw, 32px); line-height: 1.32; font-family: 'Fraunces', serif; font-weight: 500; }
+.t21-x1 .x1-ptag { margin: 0; font-size: 14px; color: var(--grey); }
+
+/* Mise a plat : mobile (pas de pin, contenu qui doit rester atteignable) et mouvement reduit.
+   Regles dupliquees a dessein (pas de combinateur OR entre @media) : meme resultat, deux portes. */
+@media (max-width: 860px) {
+  .t21-x1 .x1-method { padding: 110px var(--gutter) 64px; }
+  .t21-x1 .x1-stage { min-height: 0; flex-direction: column; align-items: stretch; gap: 28px; padding: 0; }
+  .t21-x1 .x1-spine { flex-direction: row; width: auto; justify-content: space-between; }
+  .t21-x1 .x1-cap-letter { font-size: 15vw; }
+  .t21-x1 .x1-path-svg { display: none; }
+  .t21-x1 .x1-panel { max-width: none; min-height: 0; display: flex; flex-direction: column; gap: clamp(28px, 6vw, 44px); }
+  .t21-x1 .x1-pcard { position: static; opacity: 1; transform: none; pointer-events: auto; }
+}
+@media (prefers-reduced-motion: reduce) {
+  .t21-x1 .x1-stage { min-height: 0; flex-direction: column; align-items: stretch; gap: 28px; padding: 0; }
+  .t21-x1 .x1-spine { flex-direction: row; width: auto; justify-content: space-between; }
+  .t21-x1 .x1-path-svg { display: none; }
+  .t21-x1 .x1-panel { max-width: none; min-height: 0; display: flex; flex-direction: column; gap: 32px; }
+  .t21-x1 .x1-pcard { position: static; opacity: 1; transform: none; pointer-events: auto; }
+}
+
+/* ---------- 2) Cas clients ---------- */
+
+.t21-x1 .x1-cases { position: relative; padding-bottom: 40px; }
+.t21-x1 .x1-cases-grid { padding: 0 var(--gutter) 24px; display: grid; grid-template-columns: repeat(3, 1fr); gap: 28px; }
+.t21-x1 .x1-case { border-top: 2px solid var(--blue); padding-top: 24px; display: flex; flex-direction: column; gap: 10px; transition: transform 400ms var(--ease); }
+.t21-x1 .x1-case:hover { transform: translateY(-6px); }
+.t21-x1 .x1-case-logo { display: block; width: 128px; height: 36px; margin-bottom: 6px; background: var(--ink); -webkit-mask: var(--lg) center left / contain no-repeat; mask: var(--lg) center left / contain no-repeat; }
+.t21-x1 .x1-case-logo-spacer { display: block; height: 36px; margin-bottom: 6px; }
+.t21-x1 .x1-case-cap { color: var(--grey); }
+.t21-x1 .x1-case-name { margin: 0; font-size: clamp(34px, 3.2vw, 50px); }
+.t21-x1 .x1-case-body { margin: 0; font-size: 15.5px; line-height: 1.55; color: var(--ink); flex: 1; }
+.t21-x1 .x1-todo { margin: 4px 0 0; font-size: 12.5px; font-style: italic; color: var(--grey); opacity: 0.75; }
+
+/* Logo sans carte detaillee (arbitrage Clement du 27/09, aucun fait a raconter). */
+.t21-x1 .x1-cases-also { padding: 0 var(--gutter); margin: 4px 0 26px; display: flex; align-items: center; gap: 18px; flex-wrap: wrap; }
+.t21-x1 .x1-cases-also-label { color: var(--grey); }
+.t21-x1 .x1-cases-also-logo { width: 168px; height: 30px; margin-bottom: 0; }
+
+.t21-x1 .x1-cases-note { margin: 0; padding: 0 var(--gutter); font-size: 13px; color: var(--grey); }
+
+@media (max-width: 1100px) {
+  .t21-x1 .x1-cases-grid { grid-template-columns: 1fr; }
+}
+
+/* ---------- 3) FAQ ---------- */
+
+.t21-x1 .x1-faq { padding-bottom: 110px; }
+.t21-x1 .x1-faq-list { padding: 0 var(--gutter); border-top: 1px solid var(--ink); max-width: 920px; }
+.t21-x1 .x1-faq-item { border-bottom: 1px solid var(--ink); }
+.t21-x1 .x1-faq-h { margin: 0; }
+.t21-x1 .x1-faq-q { width: 100%; display: flex; align-items: center; justify-content: space-between; gap: 24px; background: none; border: none; padding: 26px 0; text-align: left; font: inherit; color: var(--ink); cursor: pointer; }
+.t21-x1 .x1-faq-q span:first-child { font-family: 'Fraunces', serif; font-weight: 600; font-size: clamp(18px, 1.9vw, 24px); line-height: 1.3; }
+.t21-x1 .x1-faq-ic { flex: none; position: relative; width: 22px; height: 22px; }
+.t21-x1 .x1-faq-ic::before, .t21-x1 .x1-faq-ic::after { content: ""; position: absolute; top: 50%; left: 50%; background: var(--ink); transform: translate(-50%, -50%); transition: transform 350ms var(--ease), opacity 350ms var(--ease); }
+.t21-x1 .x1-faq-ic::before { width: 18px; height: 2px; }
+.t21-x1 .x1-faq-ic::after { width: 2px; height: 18px; }
+.t21-x1 .x1-faq-item.open .x1-faq-ic::after { transform: translate(-50%, -50%) rotate(90deg); opacity: 0; }
+.t21-x1 .x1-faq-item.open .x1-faq-q span:first-child { color: var(--blue); }
+.t21-x1 .x1-faq-wrap { display: grid; grid-template-rows: 0fr; transition: grid-template-rows 420ms var(--ease); }
+.t21-x1 .x1-faq-item.open .x1-faq-wrap { grid-template-rows: 1fr; }
+.t21-x1 .x1-faq-a { overflow: hidden; }
+.t21-x1 .x1-faq-a p { margin: 0 0 22px; max-width: 640px; font-size: 15.5px; line-height: 1.6; color: var(--grey); }
+.t21-x1 .x1-faq-a a { color: var(--blue); text-decoration: underline; text-underline-offset: 3px; }
+</style>
+</head>
+<body class="t17 t18 t19 t20 t21 t19-x1 t20-x1 t21-x1">
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="nav" id="nav">
+  <a href="../index.html" class="logo" aria-label="AXEM IA, accueil"><span class="axm" aria-hidden="true"></span></a>
+  <nav class="links" aria-label="Navigation principale">
+    <a href="#offres">Conseil<span class="na" aria-hidden="true">→</span></a><a href="#offres">Formation<span class="na" aria-hidden="true">→</span></a><a href="../coaching/">Coaching<span class="na" aria-hidden="true">→</span></a><a href="#duo">Le duo<span class="na" aria-hidden="true">→</span></a>
+  </nav>
+  <a href="#" class="book" data-book><span class="long">Réserver un échange offert</span><span class="short">Réserver</span><span class="bk-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a>
+</header>
+
+<main id="main">
+<!--
+  Tour 21, x1 : trois nouvelles sections (methode, cas clients, FAQ), brief lu en entier avant
+  redaction (BRIEF-T21.md, BRIEF-SHOWREEL.md, Benchmark des sites concurrents 26/09,
+  matiere/cas-clients-2026-09-27.md, index.html). Corrige le 27/09 apres revue du coordinateur sur
+  la planche 1440 : (1) la methode devient un moment fort epingle, un trace SVG qui va d'un A geant
+  a un Z geant et se dessine au defilement, quatre stations qui s'allument (1 pin au plus, actif a
+  partir de 861px et hors mouvement reduit ; en dessous, liste normale sans epingle, voir x1.js et
+  le commentaire au sommet de x1.css) ; (2) l'etape Autonomie a une vraie phrase, plus de citation a
+  points de suspension ; (3) les trois sections sont numerotees 01, 02, 03 ; (4) les cartes cas
+  clients ont un logo (img/logos/), un sur-titre de mission et un repere "a completer" discret.
+
+  Section 1 : les quatre etapes reprennent le texte reel d'index.html #offres (lignes Conseil,
+  Formation, Automatisation). "Audit" vient du tarif verbatim de la ligne Conseil ("Audit a partir
+  de 2 500 EUR HT"). "Autonomie" est une phrase courte tenant du meme sens (fiches, modes d'emploi,
+  suivi) que la ligne Formation ("equipes qui repartent autonomes") et la ligne Automatisation
+  ("suivies"), reformulee a la demande du coordinateur du 27/09 (l'ancienne version en citations
+  etait jugee illisible).
+
+  Section 2 : les 3 cartes detaillees, uniquement les faits de matiere/cas-clients-2026-09-27.md.
+  K.I.T. Group France (client direct, audit puis pilote de 3 quick wins, logo img/logos/kit.png),
+  "Nina Ricci" (formation, via un organisme de formation partenaire jamais nomme ; nom ecrit "Nina
+  Ricci" seul, sans "Puig", et sans logo puig.svg : arbitrage explicite de Clement du 27/09,
+  matiere/cas-clients-2026-09-27.md section "Arbitrages de Clement", pas de logo Nina Ricci en
+  fichier), Carrefour (formation recurrente depuis mars 2026, plusieurs sites, logo
+  img/logos/carrefour.svg). Aucun montant. Aucun temoignage trouve pour aucun des trois : ligne "a
+  completer" discrete plutot qu'une citation inventee. En plus, un logo Credit Agricole Assurances
+  (img/logos/credit-agricole-assurances.svg) sans carte detaillee : meme arbitrage du 27/09, "la
+  mission existe meme si on ne la trouve ni dans les mails ni dans le vault" ; aucun fait a raconter,
+  donc juste le logo, pas de recit invente.
+
+  Section 3 : FAQ sur 5 objections reelles, reponses ancrees sur le contenu reel du site (voir
+  commentaires dans x1.js pour le detail des sources par reponse).
+-->
+
+<div class="grid" id="grid" aria-hidden="true"></div>
+
+<section class="x1-method" id="x1Method" aria-labelledby="x1MethodH">
+  <div class="x1-method-head">
+    <div class="num f rv">01</div>
+    <div class="x1-method-headtxt">
+      <p class="cap rv">Notre méthode</p>
+      <h2 class="f" id="x1MethodH" data-lines>La méthode <span class="i">A à Z.</span></h2>
+      <p class="x1-method-sub rv" style="--d:120">Quatre étapes, une seule méthode&#8202;: partir de la tâche réelle.</p>
+    </div>
+  </div>
+
+  <div class="x1-stage" id="x1Stage">
+    <div class="x1-spine" id="x1Spine">
+      <div class="x1-cap-letter x1-cap-a f" aria-hidden="true">A</div>
+      <svg class="x1-path-svg" id="x1PathSvg" viewBox="0 0 140 420" aria-hidden="true">
+        <path class="x1-path" id="x1Path" d="M70 0 C70 35 35 35 35 70 C35 120 105 120 105 170 C105 220 35 220 35 270 C35 320 105 320 105 370 C105 395 70 395 70 420"></path>
+        <g class="x1-nodes" id="x1Nodes">
+          <circle class="x1-node" data-node="0" cx="35" cy="70" r="9"></circle>
+          <circle class="x1-node" data-node="1" cx="105" cy="170" r="9"></circle>
+          <circle class="x1-node" data-node="2" cx="35" cy="270" r="9"></circle>
+          <circle class="x1-node" data-node="3" cx="105" cy="370" r="9"></circle>
+        </g>
+      </svg>
+      <div class="x1-cap-letter x1-cap-z f" aria-hidden="true">Z</div>
+    </div>
+
+    <div class="x1-panel" id="x1Panel">
+      <article class="x1-pcard on" data-step="0">
+        <p class="x1-pnum f">01</p>
+        <p class="cap x1-pcap">Audit</p>
+        <p class="x1-ptxt">Cartographier les usages, choisir les outils, cadrer le déploiement.</p>
+        <p class="x1-ptag">Audit à partir de 2&#8239;500&#8202;€ HT</p>
+      </article>
+      <article class="x1-pcard" data-step="1">
+        <p class="x1-pnum f">02</p>
+        <p class="cap x1-pcap">Formation</p>
+        <p class="x1-ptxt">Des ateliers sur vos cas, pour des équipes qui repartent autonomes.</p>
+        <p class="x1-ptag">À partir de 200&#8202;€ HT par personne</p>
+      </article>
+      <article class="x1-pcard" data-step="2">
+        <p class="x1-pnum f">03</p>
+        <p class="cap x1-pcap">Automatisation</p>
+        <p class="x1-ptxt">Des automatisations construites, testées et déployées chez vous, puis suivies.</p>
+        <p class="x1-ptag">Construite, testée et suivie chez vous</p>
+      </article>
+      <article class="x1-pcard" data-step="3">
+        <p class="x1-pnum f">04</p>
+        <p class="cap x1-pcap">Autonomie</p>
+        <p class="x1-ptxt">Vos équipes continuent seules&#8202;: fiches, modes d'emploi, et on reste en suivi.</p>
+      </article>
+    </div>
+  </div>
+</section>
+
+<section class="x1-cases" id="x1Cases" aria-labelledby="x1CasesH">
+  <div class="sec-head">
+    <div class="num f rv">02</div>
+    <div class="txt rv" style="--d:120">
+      <div class="cap" id="x1CasesH">Cas clients</div>
+      <div>Trois missions, <span class="i" style="font-weight:400;">telles quelles</span>, sans rien enjoliver.</div>
+    </div>
+  </div>
+
+  <div class="x1-cases-grid">
+    <article class="x1-case rv" style="--d:0">
+      <span class="x1-case-logo" style="--lg:url(../img/logos/kit.png)" role="img" aria-label="K.I.T. Group France"></span>
+      <p class="cap x1-case-cap">Audit &amp; pilote IA &middot; client direct</p>
+      <h3 class="f x1-case-name">K.I.T. Group France</h3>
+      <p class="x1-case-body">Un audit, puis un pilote sur trois cas d'usage&#8202;: triage et réponses Outlook automatisés, comptes rendus de réunion automatiques, rapprochement de factures hôtelières avec détection d'anomalies.</p>
+      <p class="x1-todo">Témoignage client &middot; à compléter</p>
+    </article>
+
+    <article class="x1-case rv" style="--d:100">
+      <span class="x1-case-logo-spacer" aria-hidden="true"></span>
+      <p class="cap x1-case-cap">Formation &middot; via un organisme de formation partenaire</p>
+      <h3 class="f x1-case-name">Nina Ricci</h3>
+      <p class="x1-case-body">Des journées de formation, au premier semestre puis à la rentrée 2026.</p>
+      <p class="x1-todo">Témoignage client &middot; à compléter</p>
+    </article>
+
+    <article class="x1-case rv" style="--d:200">
+      <span class="x1-case-logo" style="--lg:url(../img/logos/carrefour.svg)" role="img" aria-label="Carrefour"></span>
+      <p class="cap x1-case-cap">Formation récurrente &middot; plusieurs sites</p>
+      <h3 class="f x1-case-name">Carrefour</h3>
+      <p class="x1-case-body">Des sessions de formation récurrentes depuis mars 2026, reconduites de site en site.</p>
+      <p class="x1-todo">Témoignage client &middot; à compléter</p>
+    </article>
+  </div>
+
+  <div class="x1-cases-also rv" style="--d:260">
+    <span class="cap x1-cases-also-label">Également à nos côtés</span>
+    <span class="x1-case-logo x1-cases-also-logo" style="--lg:url(../img/logos/credit-agricole-assurances.svg)" role="img" aria-label="Crédit Agricole Assurances"></span>
+  </div>
+
+  <p class="x1-cases-note rv" style="--d:280">Maquette&#8202;: éléments manquants et accords de publication à confirmer avant mise en ligne.</p>
+</section>
+
+<section class="x1-faq" id="x1Faq" aria-labelledby="x1FaqH">
+  <div class="sec-head">
+    <div class="num f rv">03</div>
+    <div class="txt rv" style="--d:120">
+      <div class="cap" id="x1FaqH">Vos objections</div>
+      <div>Les questions qu'on nous pose <span class="i" style="font-weight:400;">vraiment</span>.</div>
+    </div>
+  </div>
+
+  <div class="x1-faq-list" id="x1FaqList">
+    <div class="x1-faq-item rv" style="--d:0">
+      <h3 class="x1-faq-h"><button type="button" class="x1-faq-q" aria-expanded="false" aria-controls="x1FaqA0" id="x1FaqQ0">
+        <span>Un consultant IA, ça reste du buzzword&#8202;?</span>
+        <span class="x1-faq-ic" aria-hidden="true"></span>
+      </button></h3>
+      <div class="x1-faq-wrap" id="x1FaqA0" role="region" aria-labelledby="x1FaqQ0">
+        <div class="x1-faq-a"><p>Sans intermédiaire&#8202;: ceux qui forment sont ceux qui font. Clément (ESSEC) et Alexis (Télécom Paris) livrent eux-mêmes, sur vos outils&#8202;: des automatisations construites, testées et déployées chez vous, puis suivies.</p></div>
+      </div>
+    </div>
+
+    <div class="x1-faq-item rv" style="--d:70">
+      <h3 class="x1-faq-h"><button type="button" class="x1-faq-q" aria-expanded="false" aria-controls="x1FaqA1" id="x1FaqQ1">
+        <span>Et nos données&#8202;?</span>
+        <span class="x1-faq-ic" aria-hidden="true"></span>
+      </button></h3>
+      <div class="x1-faq-wrap" id="x1FaqA1" role="region" aria-labelledby="x1FaqQ1">
+        <div class="x1-faq-a"><p>Vos automatisations sont construites et déployées chez vous, sur vos outils&#8202;: rien n'en sort sans votre décision. Le site lui-même ne pose aucun cookie et ne collecte aucune donnée&#8202;: voir notre <a href="../confidentialite.html">page confidentialité</a>.</p></div>
+      </div>
+    </div>
+
+    <div class="x1-faq-item rv" style="--d:140">
+      <h3 class="x1-faq-h"><button type="button" class="x1-faq-q" aria-expanded="false" aria-controls="x1FaqA2" id="x1FaqQ2">
+        <span>On a déjà essayé ChatGPT, ça n'a rien donné.</span>
+        <span class="x1-faq-ic" aria-hidden="true"></span>
+      </button></h3>
+      <div class="x1-faq-wrap" id="x1FaqA2" role="region" aria-labelledby="x1FaqQ2">
+        <div class="x1-faq-a"><p>Notre méthode part de la tâche réelle, pas d'un usage générique&#8202;: cadrer, choisir les outils, puis un usage qui tourne vraiment sur votre poste. Le coaching individuel se fait spécifiquement sur Claude.</p></div>
+      </div>
+    </div>
+
+    <div class="x1-faq-item rv" style="--d:210">
+      <h3 class="x1-faq-h"><button type="button" class="x1-faq-q" aria-expanded="false" aria-controls="x1FaqA3" id="x1FaqQ3">
+        <span>On n'a pas le temps.</span>
+        <span class="x1-faq-ic" aria-hidden="true"></span>
+      </button></h3>
+      <div class="x1-faq-wrap" id="x1FaqA3" role="region" aria-labelledby="x1FaqQ3">
+        <div class="x1-faq-a"><p>Une séance de coaching tient en 1&#8202;h, en visio, à raison d'une ou deux par semaine. L'audit cadre le déploiement en amont&#8202;; l'automatisation, elle, est justement ce qui rend du temps ensuite.</p></div>
+      </div>
+    </div>
+
+    <div class="x1-faq-item rv" style="--d:280">
+      <h3 class="x1-faq-h"><button type="button" class="x1-faq-q" aria-expanded="false" aria-controls="x1FaqA4" id="x1FaqQ4">
+        <span>C'est cher.</span>
+        <span class="x1-faq-ic" aria-hidden="true"></span>
+      </button></h3>
+      <div class="x1-faq-wrap" id="x1FaqA4" role="region" aria-labelledby="x1FaqQ4">
+        <div class="x1-faq-a"><p>Les prix sont affichés&#8202;: formation à partir de 200&#8202;€ HT par personne, audit à partir de 2&#8239;500&#8202;€ HT, coaching à partir de 200&#8202;€ HT la séance. Un premier échange reste offert, sans engagement.</p></div>
+      </div>
+    </div>
+  </div>
+</section>
+</main>
+
+<footer>
+  <div class="ft-top">
+    <div class="meta cap"><span>axem-ia.fr</span><span>Paris</span><a href="#" data-book>Réserver un échange offert →</a></div>
+    <div class="legal-links cap"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="mailto:contact@axem-ia.fr">contact@axem-ia.fr</a></div>
+  </div>
+  <div class="wm big" aria-hidden="true">axem<sup>IA</sup></div>
+</footer>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AXEM IA",
+  "url": "https://axem-ia.fr",
+  "email": "contact@axem-ia.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3 rue Françoise Dolto",
+    "postalCode": "75013",
+    "addressLocality": "Paris",
+    "addressCountry": "FR"
+  },
+  "founder": [
+    { "@type": "Person", "name": "Clément Predo", "sameAs": "https://www.linkedin.com/in/clement-predo" },
+    { "@type": "Person", "name": "Alexis Zeitoun", "sameAs": "https://www.linkedin.com/in/alexiszeitoun" }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/clement-predo",
+    "https://www.linkedin.com/in/alexiszeitoun"
+  ]
+}
+</script>
+
+<script src="../vendor/gsap/gsap.min.js"></script>
+<script src="../vendor/gsap/ScrollTrigger.min.js"></script>
+<script src="../vendor/gsap/SplitText.min.js"></script>
+<script src="../assets/abonnes.js"></script>
+<script src="../assets/avis.js"></script>
+<script src="../assets/axem.js"></script>
+<script>
+(() => {
+  // Tour 16 : la couche d'interactions du tour 2, allegee apres mesure (CPU x4, defilement molette).
+  // Retire : le defilement doux Lenis (il gardait la main sur la molette), le bandeau pilote image par
+  // image (il relisait la largeur de la page a chaque image : 1,8 s de mise en page sur 5 s), le
+  // brouillage des lettres. Garde, mais ne calcule plus que quand la souris bouge : le curseur a
+  // etiquette, la graisse du titre, l'apercu des offres, le portrait du duo, le mot du pied de page.
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const still = reduce || /[?&]static\b/.test(location.search);
+  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const hasGsap = typeof gsap !== 'undefined';
+  document.body.classList.add('t2', 't16-lite');
+  if (hasGsap) gsap.registerPlugin(...[window.ScrollTrigger, window.SplitText].filter(Boolean));
+
+  const mouse = { x: innerWidth / 2, y: innerHeight / 2 };
+  const moveFns = [];
+  let mq = 0;
+  addEventListener('pointermove', e => {
+    mouse.x = e.clientX; mouse.y = e.clientY;
+    if (!mq) mq = requestAnimationFrame(() => { mq = 0; moveFns.forEach(f => f()); });
+  }, { passive: true });
+
+  // Curseur a etiquette : la boucle ne tourne que tant qu'il reste du chemin a faire.
+  if (fine && !reduce) {
+    document.documentElement.classList.add('has-cur');
+    const l = document.createElement('div'); l.className = 'cur-l';
+    document.body.append(l);
+    const p = { x: mouse.x, y: mouse.y };
+    let run = 0;
+    const loop = () => {
+      p.x += (mouse.x - p.x) * 0.35; p.y += (mouse.y - p.y) * 0.35;
+      l.style.transform = `translate3d(${p.x.toFixed(1)}px, ${p.y.toFixed(1)}px, 0)`;
+      run = Math.abs(mouse.x - p.x) + Math.abs(mouse.y - p.y) > .4 ? requestAnimationFrame(loop) : 0;
+    };
+    moveFns.push(() => { if (!run) run = requestAnimationFrame(loop); });
+    document.addEventListener('pointerover', e => {
+      const lab = e.target.closest('[data-cursor]');
+      const hide = e.target.closest('[data-cursor-off]');
+      l.textContent = lab && !hide ? lab.dataset.cursor : '';
+      l.classList.toggle('on', !!(lab && !hide));
+    });
+  }
+
+  // Titre du hero : graisse variable selon la distance au curseur. Les centres des lettres sont
+  // mesures une fois (et au redimensionnement), jamais pendant le mouvement.
+  const heroH = document.querySelector('.hero');
+  if (heroH) {
+    document.querySelectorAll('.hero h1 .word > span').forEach(s => { s.innerHTML = [...s.textContent].map(ch => `<span class="ch">${ch}</span>`).join(''); });
+    if (fine && !still && hasGsap) {
+      const chars = [...heroH.querySelectorAll('.ch')];
+      let centers = null, active = false;
+      const measure = () => { centers = chars.map(ch => { const r = ch.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2 + scrollY]; }); };
+      // Changer la graisse d'une police variable oblige le navigateur a remettre en forme les glyphes :
+      // mesure du 24/09, 1,5 s de mise en page sur 5 s de geste, pour 36 objets seulement. Le cout vient
+      // de ce que chaque image demandait une graisse inedite (valeur continue, cache de forme rate).
+      // La graisse suit donc la souris par un amorti maison, mais n'est ecrite que par paliers de 50 :
+      // 13 graisses possibles, toutes deja en cache apres le premier passage.
+      const cur = chars.map(() => 900), tgt = chars.map(() => 900), shown = chars.map(() => 900);
+      let run = 0;
+      const tick = () => {
+        let moving = false;
+        for (let i = 0; i < chars.length; i++) {
+          const d = tgt[i] - cur[i];
+          if (Math.abs(d) > 2) { cur[i] += d * 0.18; moving = true; } else cur[i] = tgt[i];
+          const q = Math.round(cur[i] / 50) * 50;
+          if (q !== shown[i]) { shown[i] = q; chars[i].style.setProperty('--wg', q); }
+        }
+        run = moving ? requestAnimationFrame(tick) : 0;
+      };
+      const kick = () => { if (!run) run = requestAnimationFrame(tick); };
+      heroH.addEventListener('pointerenter', () => { active = true; measure(); });
+      heroH.addEventListener('pointerleave', () => { active = false; tgt.fill(900); kick(); });
+      addEventListener('resize', () => { centers = null; });
+      moveFns.push(() => {
+        if (!active) return;
+        if (!centers) measure();
+        const y = mouse.y + scrollY;
+        centers.forEach(([cx, cy], i) => { tgt[i] = 300 + 600 * Math.min(1, Math.hypot(mouse.x - cx, y - cy) / 420); });
+        kick();
+      });
+    }
+  }
+
+  // Apercu flottant sur les offres
+  const rows = document.querySelectorAll('.row[data-peek]');
+  if (rows.length && fine && !reduce && hasGsap) {
+    const pk = document.createElement('div'); pk.className = 'peek'; pk.setAttribute('aria-hidden', 'true');
+    pk.innerHTML = '<span class="sq"></span><div class="k"></div><div class="v"></div><img class="pi" alt="">';
+    document.body.appendChild(pk);
+    const xTo = gsap.quickTo(pk, 'x', { duration: 0.55, ease: 'power3.out' }), yTo = gsap.quickTo(pk, 'y', { duration: 0.55, ease: 'power3.out' });
+    const rTo = gsap.quickTo(pk, 'rotation', { duration: 0.5, ease: 'power3.out' });
+    let lastX = mouse.x, on = false;
+    moveFns.push(() => { if (!on) return; xTo(mouse.x + 70); yTo(mouse.y + 30); rTo(gsap.utils.clamp(-8, 8, (mouse.x - lastX) * 0.6)); lastX = mouse.x; });
+    rows.forEach(r => {
+      r.addEventListener('pointerenter', () => { on = true; gsap.set(pk, { x: mouse.x + 70, y: mouse.y + 30 }); pk.querySelector('.k').textContent = r.dataset.peekK || ''; pk.querySelector('.v').textContent = r.dataset.peek; const pi = pk.querySelector('.pi'); if (r.dataset.peekImg) { pi.src = new URL(r.dataset.peekImg, document.baseURI).href; } pk.classList.toggle('has-img', !!r.dataset.peekImg); gsap.to(pk, { opacity: 1, scale: 1, duration: 0.45, ease: 'back.out(1.6)' }); });
+      r.addEventListener('pointerleave', () => { on = false; gsap.to(pk, { opacity: 0, scale: 0.6, duration: 0.3 }); });
+    });
+  }
+
+  // Wordmark du pied de page : lettres qui se soulevent pres du curseur (positions mesurees a l'entree).
+  const big = document.querySelector('footer .big');
+  if (big) {
+    const tn = [...big.childNodes].find(n => n.nodeType === 3 && n.textContent.trim());
+    if (tn) { const w = document.createElement('span'); w.innerHTML = [...tn.textContent.trim()].map(ch => `<span class="fl">${ch}</span>`).join(''); big.replaceChild(w, tn); }
+    if (fine && !reduce) {
+      const fls = [...big.querySelectorAll('.fl')], foot = big.closest('footer');
+      let xs = null, inF = false;
+      foot.addEventListener('pointerenter', () => { inF = true; xs = fls.map(f => { const r = f.getBoundingClientRect(); return r.left + r.width / 2; }); });
+      foot.addEventListener('pointerleave', () => { inF = false; fls.forEach(f => { f.style.transform = ''; }); });
+      moveFns.push(() => { if (!inF || !xs) return; fls.forEach((f, i) => { f.style.transform = `translateY(${(-Math.max(0, 1 - Math.abs(mouse.x - xs[i]) / 260) * 0.14).toFixed(3)}em)`; }); });
+    }
+  }
+
+  // Liens forts magnetiques (hors barre du haut, qui a son propre bouton)
+  if (fine && !reduce && hasGsap) document.querySelectorAll('.teaser .more, [data-mag]').forEach(b => {
+    const xTo = gsap.quickTo(b, 'x', { duration: 0.5, ease: 'power3.out' }), yTo = gsap.quickTo(b, 'y', { duration: 0.5, ease: 'power3.out' });
+    b.addEventListener('pointermove', e => { const r = b.getBoundingClientRect(); xTo((e.clientX - r.left - r.width / 2) * 0.3); yTo((e.clientY - r.top - r.height / 2) * 0.4); });
+    b.addEventListener('pointerleave', () => { xTo(0); yTo(0); });
+  });
+
+  // Lignes revelees au defilement
+  if (hasGsap && window.SplitText && window.ScrollTrigger && !still) {
+    document.fonts.ready.then(() => document.querySelectorAll('[data-lines]').forEach(el => {
+      SplitText.create(el, { type: 'lines', mask: 'lines', linesClass: 'ln', autoSplit: true, onSplit: self => gsap.from(self.lines, { yPercent: 105, duration: 1.1, ease: 'expo.out', stagger: 0.09, scrollTrigger: { trigger: el, start: 'top 85%', once: true } }) });
+    }));
+  }
+
+  // Duo : portrait qui suit le curseur sur les noms
+  const dn = document.querySelector('.dn-list');
+  const fl = document.querySelector('.dn-float');
+  if (dn && fl && fine && !reduce && hasGsap) {
+    const xTo = gsap.quickTo(fl, 'x', { duration: 0.7, ease: 'power3.out' }), yTo = gsap.quickTo(fl, 'y', { duration: 0.7, ease: 'power3.out' });
+    const rTo = gsap.quickTo(fl, 'rotation', { duration: 0.6, ease: 'power3.out' });
+    let lx = mouse.x, on = false;
+    moveFns.push(() => { if (!on) return; xTo(mouse.x + 22); yTo(mouse.y + 16); rTo(gsap.utils.clamp(-10, 10, (mouse.x - lx) * 0.5)); lx = mouse.x; });
+    dn.querySelectorAll('.dn-row').forEach(r => {
+      r.addEventListener('pointerenter', () => { on = true; fl.classList.add('on'); fl.querySelectorAll('img').forEach(i => i.classList.toggle('on', i.dataset.who === r.dataset.who)); });
+    });
+    dn.addEventListener('pointerleave', () => { on = false; fl.classList.remove('on'); });
+  }
+})();
+</script>
+<script>(()=>{const m=location.search.match(/[?&]photo=(\d)/), P={1:'1-table',2:'2-scene'}; if (m && P[m[1]]) document.querySelectorAll('img[src$="img/duo/duo.jpg"]').forEach(i=>{i.src='../img/duo/propositions/axem-duo-'+P[m[1]]+'.jpg'; i.closest('[hidden]')?.removeAttribute('hidden');});})();</script>
+<p class="proto">Tour 21 : Nouvelles sections (FAQ, méthode, cas clients) <a class="replay" role="button" tabindex="0">Rejouer</a><a href="../tour21.html">Toutes les propositions</a></p>
+<script>
+(() => {
+  // ---- Tour 17 : socle commun (Reserver un seul a la fois, bouton son WebAudio). Charge sur les
+  // 6 pages, avant claude-mark.js et le script propre a chaque page (voir outils/build_t17.py). ----
+
+  // 1) Reserver un seul a la fois. La barre garde .nav .book[data-book] (nav.css). Tant que le grand
+  // bouton du hero (.hero .btn[data-book]) est a l'ecran, celui de la barre reste cache, invisible aux
+  // lecteurs d'ecran et non focusable. Des qu'il en sort, il apparait et reste, meme en remontant. Sur
+  // les pages duo il n'y a pas de hero : le bouton de la barre est visible d'emblee.
+  (() => {
+    const navBook = document.querySelector('#nav .book[data-book]');
+    if (!navBook) return;
+    const heroBook = document.querySelector('.hero .btn[data-book]');
+    if (!heroBook) { navBook.classList.add('rs-show'); return; }
+    navBook.classList.add('rs-hidden');
+    navBook.setAttribute('tabindex', '-1');
+    navBook.setAttribute('aria-hidden', 'true');
+    const reveal = () => {
+      navBook.classList.remove('rs-hidden');
+      navBook.classList.add('rs-show');
+      navBook.removeAttribute('tabindex');
+      navBook.removeAttribute('aria-hidden');
+    };
+    if (!('IntersectionObserver' in window)) { reveal(); return; }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (!entry.isIntersecting) { reveal(); io.disconnect(); } });
+    }, { threshold: 0 });
+    io.observe(heroBook);
+  })();
+
+  // 2) Bouton son : petit egaliseur en bas a gauche, coupe par defaut. Sons synthetises en WebAudio,
+  // aucun fichier. Rien ne joue avant un premier clic (ou une preference deja enregistree). Expose
+  // window.AxemSound = { play(name), on() } et ecoute l'evenement axem:sound emis ailleurs (survols,
+  // ecrans bleus). Chaque lecture/ecriture localStorage est dans un try/catch.
+  (() => {
+    const KEY = 'axem-son';
+    let enabled = false;
+    try { enabled = localStorage.getItem(KEY) === '1'; } catch (e) { enabled = false; }
+
+    let ctx = null;
+    const audioCtx = () => {
+      if (ctx) return ctx;
+      const Ctor = window.AudioContext || window.webkitAudioContext;
+      if (!Ctor) return null;
+      try { ctx = new Ctor(); } catch (e) { ctx = null; }
+      return ctx;
+    };
+
+    const soundWhoosh = c => {
+      const dur = 0.6;
+      const buf = c.createBuffer(1, Math.round(c.sampleRate * dur), c.sampleRate);
+      const d = buf.getChannelData(0);
+      for (let i = 0; i < d.length; i++) { const t = i / d.length; d[i] = (Math.random() * 2 - 1) * Math.pow(1 - t, 2.2); }
+      const src = c.createBufferSource(); src.buffer = buf;
+      const filt = c.createBiquadFilter(); filt.type = 'bandpass'; filt.Q.value = 0.7;
+      filt.frequency.setValueAtTime(500, c.currentTime);
+      filt.frequency.exponentialRampToValueAtTime(2000, c.currentTime + dur * 0.8);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.0001, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.13, c.currentTime + 0.09);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + dur);
+      src.connect(filt).connect(g).connect(c.destination);
+      src.start(); src.stop(c.currentTime + dur + 0.05);
+    };
+
+    const soundTick = c => {
+      const osc = c.createOscillator(); osc.type = 'square'; osc.frequency.setValueAtTime(1900, c.currentTime);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.08, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 0.045);
+      osc.connect(g).connect(c.destination);
+      osc.start(); osc.stop(c.currentTime + 0.06);
+    };
+
+    const soundPop = c => {
+      const osc = c.createOscillator(); osc.type = 'sine';
+      osc.frequency.setValueAtTime(420, c.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(760, c.currentTime + 0.1);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.0001, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.15, c.currentTime + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 0.24);
+      osc.connect(g).connect(c.destination);
+      osc.start(); osc.stop(c.currentTime + 0.26);
+    };
+
+    const SOUNDS = { whoosh: soundWhoosh, tick: soundTick, pop: soundPop };
+
+    const play = name => {
+      if (!enabled || !SOUNDS[name]) return;
+      try {
+        const c = audioCtx();
+        if (!c) return;
+        if (c.state === 'suspended') c.resume().catch(() => {});
+        SOUNDS[name](c);
+      } catch (e) { /* silencieux : le son n'est jamais bloquant */ }
+    };
+
+    window.AxemSound = { play, on: () => enabled };
+    window.addEventListener('axem:sound', e => { try { play(e.detail && e.detail.name); } catch (er) {} });
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'snd-btn';
+    btn.setAttribute('aria-pressed', 'false');
+    btn.setAttribute('aria-label', 'Activer le son');
+    btn.innerHTML = '<span class="snd-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>';
+    document.body.appendChild(btn);
+
+    const sync = () => {
+      btn.classList.toggle('on', enabled);
+      btn.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+      btn.setAttribute('aria-label', enabled ? 'Couper le son' : 'Activer le son');
+    };
+    sync();
+
+    btn.addEventListener('click', () => {
+      enabled = !enabled;
+      try { localStorage.setItem(KEY, enabled ? '1' : '0'); } catch (e) { /* prive ou bloque : tant pis */ }
+      sync();
+      if (enabled) play('pop');
+    });
+  })();
+})();
+</script>
+<script>
+/*
+ * ClaudeMark : trace officiel du symbole Claude (etoile / spark), sans dependance.
+ * Source : Wikimedia Commons, File:Claude_AI_symbol.svg
+ *   https://upload.wikimedia.org/wikipedia/commons/b/b0/Claude_AI_symbol.svg
+ * Le trace original est un SEUL <path> avec un seul sous-tracé (un seul "M" au debut,
+ * 159 segments, une seule fermeture "Z") : les 6 rayons ne sont pas des sous-tracés
+ * separes dans le fichier source, donc pas de decoupage "un <path> par rayon" possible
+ * ici sans reconstruire des tracés synthetiques. Conformement à la consigne du brief
+ * pour ce cas ("un seul contour continu impossible a separer proprement"), ClaudeMark
+ * expose `rays: []` et `root` anime en bloc (rotation / echelle / masque).
+ *
+ * Le trace ci-dessous est le trace officiel, translate pour que le centre visuel de
+ * l'etoile (centre de sa bounding box, cx=49.95 cy=50 dans le fichier source, sur un
+ * viewBox 0 0 100 100) tombe exactement sur (0,0). Le viewBox monte par mount() est
+ * donc centre : "-50 -50 100 100".
+ */
+(function (global) {
+  "use strict";
+
+  var PATH_D =
+    "m -30.35,16.5 l 19.7,-11 l 0.3,-1 l -0.3,-0.5 l -1,0 l -3.3,-0.2 l -11.2,-0.3 " +
+    "L -35.95,3 l -9.5,-0.5 l -2.4,-0.5 L -49.95,-1 l 0.2,-1.5 l 2,-1.3 l 2.9,0.2 " +
+    "l 6.3,0.5 l 9.5,0.6 l 6.9,0.4 L -11.95,-0.9 l 1.6,0 l 0.2,-0.7 l -0.5,-0.4 " +
+    "l -0.4,-0.4 L -20.95,-9 l -10.6,-7 l -5.6,-4.1 l -3,-2 l -1.5,-2 l -0.6,-4.2 " +
+    "l 2.7,-3 l 3.7,0.3 l 0.9,0.2 l 3.7,2.9 l 8,6.1 L -12.95,-14 l 1.5,1.2 l 0.6,-0.4 " +
+    "l 0.1,-0.3 l -0.7,-1.1 L -16.95,-25 l -6,-10.4 l -2.7,-4.3 l -0.7,-2.6 " +
+    "c -0.3,-1 -0.4,-2 -0.4,-3 l 3,-4.2 L -21.95,-50 l 4.2,0.6 L -16.15,-48 l 2.6,6 " +
+    "l 4.1,9.3 L -2.95,-20.1 l 2,3.8 l 1,3.4 l 0.3,1 l 0.7,0 l 0,-0.5 l 0.5,-7.2 " +
+    "l 1,-8.7 l 1,-11.2 l 0.3,-3.2 l 1.6,-3.8 l 3,-2 L 11.05,-47.4 l 2,2.9 l -0.3,1.8 " +
+    "l -1.1,7.7 L 9.05,-22.9 l -1.5,8.2 l 0.9,0 l 1,-1.1 l 4.1,-5.4 l 6.9,-8.6 l 3,-3.5 " +
+    "L 27.05,-37 l 2.3,-1.8 l 4.3,0 l 3.1,4.7 l -1.4,4.9 l -4.4,5.6 l -3.7,4.7 l -5.3,7.1 " +
+    "l -3.2,5.7 l 0.3,0.4 l 0.7,0 l 12,-2.6 l 6.4,-1.1 l 7.6,-1.3 l 3.5,1.6 l 0.4,1.6 " +
+    "l -1.4,3.4 l -8.2,2 l -9.6,2 l -14.3,3.3 l -0.2,0.1 l 0.2,0.3 l 6.4,0.6 l 2.8,0.2 " +
+    "l 6.8,0 l 12.6,1 l 3.3,2 l 1.9,2.7 l -0.3,2 l -5.1,2.6 l -6.8,-1.6 l -16,-3.8 " +
+    "l -5.4,-1.3 l -0.8,0 l 0,0.4 l 4.6,4.5 l 8.3,7.5 L 39.05,30.1 l 0.5,2.4 l -1.3,2 " +
+    "l -1.4,-0.2 l -9.2,-7 l -3.6,-3 l -8,-6.8 l -0.5,0 l 0,0.7 l 1.8,2.7 l 9.8,14.7 " +
+    "l 0.5,4.5 l -0.7,1.4 l -2.6,1 l -2.7,-0.6 l -5.8,-8 l -6,-9 l -4.7,-8.2 l -0.5,0.4 " +
+    "l -2.9,30.2 l -1.3,1.5 l -3,1.2 l -2.5,-2 l -1.4,-3 l 1.4,-6.2 l 1.6,-8 l 1.3,-6.4 " +
+    "l 1.2,-7.9 l 0.7,-2.6 l 0,-0.2 L -0.95,13.7 L -6.95,22 l -9,12.3 l -7.2,7.6 " +
+    "l -1.7,0.7 l -3,-1.5 l 0.3,-2.8 L -25.95,36 l 10,-12.8 l 6,-7.9 l 4,-4.6 l -0.1,-0.5 " +
+    "l -0.3,0 L -32.75,27.4 l -4.7,0.6 l -2,-2 l 0.2,-3 l 1,-1 l 8,-5.5 Z";
+
+  var DEFAULT_COLOR = "#D97757";
+  var SVG_NS = "http://www.w3.org/2000/svg";
+
+  function mount(el, opts) {
+    opts = opts || {};
+    var color = opts.color || DEFAULT_COLOR;
+
+    var svg;
+    if (el && el.tagName && el.tagName.toLowerCase() === "svg") {
+      svg = el;
+    } else {
+      svg = document.createElementNS(SVG_NS, "svg");
+      if (el) el.appendChild(svg);
+    }
+
+    svg.setAttribute("viewBox", "-50 -50 100 100");
+    if (!svg.hasAttribute("width") && opts.size) svg.setAttribute("width", opts.size);
+    if (!svg.hasAttribute("height") && opts.size) svg.setAttribute("height", opts.size);
+    svg.setAttribute("aria-hidden", "true");
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+
+    // root : groupe anime en bloc (rotation/echelle/masque), origine CSS forcee a
+    // (0,0) qui correspond deja au centre visuel de l'etoile dans ce viewBox recentre.
+    var root = document.createElementNS(SVG_NS, "g");
+    root.setAttribute("class", "claude-mark-root");
+    root.style.transformOrigin = "0px 0px";
+    root.style.transformBox = "view-box";
+
+    var path = document.createElementNS(SVG_NS, "path");
+    path.setAttribute("d", PATH_D);
+    path.setAttribute("fill", color);
+    path.setAttribute("class", "claude-mark-path");
+    root.appendChild(path);
+    svg.appendChild(root);
+
+    return {
+      svg: svg,
+      root: root,
+      rays: [], // tracé source en un seul sous-chemin : rayons non individualisables
+      core: null, // idem : pas de hub separe dans le tracé source
+      color: color
+    };
+  }
+
+  global.ClaudeMark = { mount: mount, PATH_D: PATH_D, DEFAULT_COLOR: DEFAULT_COLOR };
+})(window);
+</script>
+<script>
+(() => {
+  // Tour 21, x1. Corrige le 27/09 apres revue du coordinateur : la methode est maintenant un moment
+  // fort epingle (1 pin ScrollTrigger au plus sur toute la page), actif seulement a partir de 861px
+  // et hors mouvement reduit. En dessous de 861px, ou en mouvement reduit, x1.css met tout a plat
+  // (pas de pin, cartes toutes visibles) : ce bloc ne fait alors rien, par construction de
+  // gsap.matchMedia (le callback n'est jamais appele si la condition ne matche pas).
+  const hasGsap = typeof gsap !== 'undefined' && window.ScrollTrigger;
+
+  if (hasGsap) {
+    gsap.registerPlugin(ScrollTrigger);
+    const mm = gsap.matchMedia();
+    mm.add('(min-width: 861px) and (prefers-reduced-motion: no-preference)', () => {
+      const path = document.getElementById('x1Path');
+      const nodes = [...document.querySelectorAll('#x1Nodes .x1-node')];
+      const cards = [...document.querySelectorAll('.x1-pcard')];
+      const stage = document.getElementById('x1Stage');
+      if (!path || !stage || !nodes.length || !cards.length) return;
+
+      const len = path.getTotalLength();
+      path.style.strokeDasharray = String(len);
+      path.style.strokeDashoffset = String(len);
+
+      const st = ScrollTrigger.create({
+        trigger: stage,
+        start: 'top top',
+        end: '+=' + Math.round(innerHeight * 2.2),
+        pin: true,
+        anticipatePin: 1,
+        scrub: 0.35,
+        onUpdate(self) {
+          const p = self.progress;
+          path.style.strokeDashoffset = String(len * (1 - p));
+          nodes.forEach((n, i) => n.classList.toggle('on', p >= (i + 0.1) / nodes.length));
+          const idx = Math.min(cards.length - 1, Math.floor(p * cards.length));
+          cards.forEach((c, i) => c.classList.toggle('on', i === idx));
+        },
+      });
+
+      // Nettoyage rendu par gsap.matchMedia quand on quitte la condition (redimensionnement).
+      return () => st.kill();
+    });
+  }
+
+  // ---- FAQ : accordeon, un seul ouvert a la fois ----
+  const items = [...document.querySelectorAll('.x1-faq-item')];
+  items.forEach(item => {
+    const btn = item.querySelector('.x1-faq-q');
+    if (!btn) return;
+    btn.addEventListener('click', () => {
+      const open = item.classList.contains('open');
+      items.forEach(o => { o.classList.remove('open'); o.querySelector('.x1-faq-q')?.setAttribute('aria-expanded', 'false'); });
+      if (!open) { item.classList.add('open'); btn.setAttribute('aria-expanded', 'true'); }
+    });
+  });
+})();
+</script>
+</body>
+</html>
