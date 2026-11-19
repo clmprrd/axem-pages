@@ -4,7 +4,7 @@
   if (BOOKING_URL) document.querySelectorAll('[data-book]').forEach(a => { a.href = BOOKING_URL; a.target = '_blank'; a.rel = 'noopener'; });
 
   const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
-  const fmt = n => Math.round(n).toLocaleString('fr-FR').replace(/ | /g, ' ') + ' €';
+  const fmt = n => Math.round(n).toLocaleString('fr-FR').replace(/ | /g, ' ') + '';
 
   // Grille 12 colonnes
   document.querySelectorAll('.grid').forEach(g => { for (let k = 0; k < 12; k++) { const i = document.createElement('i'); i.style.setProperty('--k', k); g.appendChild(i); } });
