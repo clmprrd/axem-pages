@@ -1,0 +1,1094 @@
+<!doctype html>
+<html lang="fr">
+<head>
+<meta charset="utf-8">
+<meta name="viewport" content="width=device-width, initial-scale=1">
+<title>Coaching Claude · AXEM IA</title>
+<script>if (/[?&]pal=blanc\b/.test(location.search)) document.documentElement.classList.add('pal-blanc');</script>
+<meta name="description" content="Deux associés qui déploient l'IA dans vos équipes, sur vos vrais dossiers. Conseil, formation et coaching IA à Paris, sans intermédiaire.">
+<link rel="icon" href="../img/favicon-ax-64.png" type="image/png">
+<link rel="apple-touch-icon" href="../img/favicon-ax-180.png">
+<meta property="og:type" content="website">
+<meta property="og:locale" content="fr_FR">
+<meta property="og:site_name" content="AXEM IA">
+<meta property="og:title" content="AXEM IA, votre partenaire IA de A à Z">
+<meta property="og:description" content="Clément Predo et Alexis Zeitoun déploient l’IA dans vos équipes, sur vos vrais dossiers. Conseil, formation et coaching IA.">
+<meta property="og:url" content="https://axem-ia.fr/">
+<meta property="og:image" content="https://axem-ia.fr/img/og.png">
+<meta property="og:image:width" content="1200">
+<meta property="og:image:height" content="630">
+<meta name="twitter:card" content="summary_large_image">
+<link rel="canonical" href="https://axem-ia.fr/">
+<noscript><style>.fade, .rv { opacity: 1 !important; transform: none !important; }</style></noscript>
+<link href="../vendor/fonts/fonts.css" rel="stylesheet">
+<link rel="stylesheet" href="../assets/axem.css">
+<link rel="stylesheet" href="../assets/t2.css">
+<meta name="robots" content="noindex">
+<style>
+/* ---- Tour 16 : fluidite. Plus de flou derriere la barre (il se recalculait a chaque image de
+   defilement), le bandeau clients tourne en CSS sur la carte graphique. ---- */
+.nav.solid { background: rgba(250, 246, 234, .97); backdrop-filter: none; -webkit-backdrop-filter: none; }
+.t2 .mq { animation: mq 42s linear infinite; will-change: transform; }
+.marquee:hover .mq { animation-play-state: paused; }
+.mk-svg .mk { filter: none; }
+
+/* ---- Tour 16 : le logo de la barre = le mot « axem IA » de l'ecran bleu, meme police, meme balisage ---- */
+.nav .logo { display: inline-flex; background: transparent; padding: 0; box-shadow: none; }
+.nav .logo .wm { font-size: 38px; color: var(--blue); transition: color .35s var(--ease); }
+.nav .logo .nl span { display: inline-block; font-weight: 900; font-variation-settings: "SOFT" 100, "WONK" 0, "opsz" 144; letter-spacing: -0.02em; }
+.nav .logo:hover { transform: none; box-shadow: none; }
+.nav .logo:hover .wm { color: var(--ink); }
+@media (max-width: 860px) { .nav .logo .wm { font-size: 30px; } }
+
+/* ---- Tour 16 : liens de la barre = de vrais boutons, comme les lignes d'offres. Au survol, une
+   pastille bleue monte du bas, deborde le mot, le texte passe en creme et une fleche sort. ---- */
+.nav .links { gap: 4px; }
+.nav .links a { position: relative; display: inline-flex; align-items: center; gap: 0; padding: 12px 18px; border-radius: 999px; font-size: 15px; font-weight: 600; isolation: isolate; transition: color .35s var(--ease), padding .45s var(--ease); }
+.nav .links a::after { display: none; }
+.nav .links a::before { content: ""; position: absolute; inset: -3px -4px; margin: 0; width: auto; height: auto; border-radius: 999px; background: var(--blue); z-index: -1; transform: scale(.55, 0); transform-origin: 50% 100%; transition: transform .45s var(--ease); flex: none; }
+.nav .links a .na { display: inline-block; width: 0; overflow: hidden; opacity: 0; font-size: 17px; line-height: 1; transform: translateX(-6px) rotate(0); transition: width .45s var(--ease), opacity .3s var(--ease), transform .45s var(--ease), margin .45s var(--ease); }
+.nav .links a:hover, .nav .links a:focus-visible { color: var(--cream); padding-left: 22px; padding-right: 20px; }
+.nav .links a:hover::before, .nav .links a:focus-visible::before { transform: none; }
+.nav .links a:hover .na, .nav .links a:focus-visible .na { width: 16px; margin-left: 8px; opacity: 1; transform: rotate(-45deg); }
+.nav .links a.on { color: var(--blue); }
+.nav .links a.on:hover { color: var(--cream); }
+
+/* ---- Tour 16 : « Reserver un echange offert », un vrai bouton cale a droite. Une grosse fleche
+   dans une pastille creme apparait apres l'arrivee, rebondit de temps en temps pour attirer l'oeil ;
+   au survol le fond encre entre du cote d'ou vient la souris (reflexe s1 Aimant). ---- */
+.nav .book { position: relative; display: inline-flex; align-items: center; gap: 14px; padding: 7px 7px 7px 24px; border: 0; border-radius: 999px; background: var(--blue); color: var(--cream); font-size: 15px; font-weight: 600; letter-spacing: 0; text-transform: none; overflow: hidden; isolation: isolate; --ex: 0%; --ey: 115%; transition: box-shadow .35s var(--ease); }
+.nav .book::before { content: ""; position: absolute; inset: 0; border-radius: inherit; background: var(--ink); z-index: -1; transform: translate(var(--ex), var(--ey)); transition: transform 520ms var(--ease); }
+.nav .book:hover::before, .nav .book:focus-visible::before { transform: none; }
+.nav .book::after { display: none; }
+.nav .book .short { display: none; }
+.nav .book .bk-ar { display: grid; place-items: center; width: 40px; height: 40px; border-radius: 50%; background: var(--cream); color: var(--blue); transform: scale(0) rotate(-90deg); transition: transform .5s var(--ease), color .35s var(--ease); }
+.nav .book .bk-ar svg { width: 20px; height: 20px; display: block; }
+.ready:not(.hold) .nav .book .bk-ar { transform: none; transition: transform .8s cubic-bezier(.34, 1.8, .5, 1) .9s; }
+.ready:not(.hold) .nav .book .bk-ar svg { animation: bkBounce 3.2s cubic-bezier(.3, 0, .2, 1) 2.2s infinite; }
+@keyframes bkBounce { 0%, 62%, 100% { transform: translateX(0); } 70% { transform: translateX(6px); } 78% { transform: translateX(-2px); } 86% { transform: translateX(4px); } 93% { transform: translateX(0); } }
+.nav .book:hover .bk-ar { transform: rotate(-45deg) scale(1.08); transition-delay: 0s; }
+.nav .book:hover .bk-ar svg { animation: none; }
+@media (max-width: 860px) {
+  .nav .book { gap: 10px; padding: 5px 5px 5px 16px; font-size: 14px; }
+  .nav .book .long { display: none; }
+  .nav .book .short { display: inline; }
+  .nav .book .bk-ar { width: 34px; height: 34px; }
+  .nav .book .bk-ar svg { width: 17px; height: 17px; }
+}
+@media (prefers-reduced-motion: reduce) { .ready .nav .book .bk-ar svg { animation: none !important; } }
+
+/* ---- Tour 16 : hero s1 range. Titre remonte, bouton cale sur le bord droit de la grille, « c'est
+   ici » plus gros, pose sous le bouton et toujours visible, schema et chiffres en pied de hero. ---- */
+@media (min-width: 861px) {
+  .home .hero.mk3 { justify-content: flex-start; padding-top: clamp(112px, 17svh, 176px); }
+  .home .hero.mk3 { min-height: 0; height: auto; padding-bottom: clamp(40px, 6svh, 64px); }
+  .hero.mk3 .mk-row { margin-top: clamp(120px, 19svh, 190px); padding-top: 0; }
+  .hero.mk3 .l2 { justify-content: space-between; }
+  .hero.mk3 .side { margin-left: auto; align-items: flex-end; max-width: none; }
+  .hero.mk3 .side .btn { align-self: flex-end !important; }
+}
+.hero.mk3 .btn { font-size: 17px; padding: 22px 32px; }
+.mk-note-btn { font-size: 30px; }
+@media (max-width: 860px) { .mk-note-btn { font-size: 22px; } }
+
+/* ---- Tour 17 : socle commun aux 6 pages (v1 v2 v3 d1 d2 d3), injecte par le build juste apres
+   nav.css et avant le CSS propre a chaque page. Regle de Clement : un seul bouton Reserver visible
+   a la fois, plus le bouton son, plus l'habillage du pied de page legal. ---- */
+
+/* Reserver un seul a la fois (regle Clement, tour 17). La barre garde un bouton .book (nav.css) ;
+   il est masque tant que le grand bouton du hero est a l'ecran, invisible sur les pages duo car
+   elles n'ont pas de hero : voir base17.js. Aujourd'hui assets/axem.js masque toute la barre au
+   defilement vers le bas (classe .hide, assets/axem.css ligne 39) : on neutralise ce comportement
+   ici, la barre du tour 17 ne se cache plus jamais. */
+.t17 .nav.hide { transform: none; }
+
+.t17 .nav .book[data-book] { transition: opacity .4s var(--ease), transform .4s var(--ease); }
+.t17 .nav .book[data-book].rs-hidden { opacity: 0; transform: translateY(-10px); pointer-events: none; }
+.t17 .nav .book[data-book].rs-show { opacity: 1; transform: none; }
+
+/* Bouton son : egaliseur discret en bas a gauche, coupe par defaut. Barres immobiles quand coupe,
+   ondulent (scaleY, CSS pur) quand actif. Ne tourne jamais tant que le bouton n'est pas active :
+   c'est une animation CSS bornee par la classe .on, pas une boucle JS permanente. */
+.t17 .snd-btn { position: fixed; left: 18px; bottom: 18px; z-index: 56; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: rgba(250, 246, 234, .88); display: grid; place-items: center; cursor: pointer; padding: 0; transition: background-color .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease); }
+.t17 .snd-btn:hover { border-color: var(--blue); transform: translateY(-2px); }
+.t17 .snd-btn:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.t17 .snd-bars { display: flex; align-items: center; justify-content: center; gap: 3px; width: 18px; height: 16px; pointer-events: none; }
+.t17 .snd-bars i { display: block; width: 2.5px; height: 100%; border-radius: 2px; background: var(--ink); transform: scaleY(.28); transform-origin: center; transition: background-color .3s var(--ease); }
+.t17 .snd-btn.on .snd-bars i { background: var(--blue); animation: t17SndWave 1.15s ease-in-out infinite; }
+.t17 .snd-btn.on .snd-bars i:nth-child(1) { animation-delay: 0s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(2) { animation-delay: .18s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(3) { animation-delay: .36s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(4) { animation-delay: .12s; }
+@keyframes t17SndWave { 0%, 100% { transform: scaleY(.28); } 50% { transform: scaleY(1); } }
+/* le bandeau de maquette se range a droite du bouton son, jamais dessous */
+.t17 .proto { left: 76px; bottom: 24px; }
+@media (max-width: 860px) { .t17 .snd-btn { left: 14px; bottom: 14px; width: 40px; height: 40px; } }
+@media (max-width: 860px) and (min-width: 701px) { .t17 .proto { left: 68px; bottom: 20px; } }
+@media (prefers-reduced-motion: reduce) { .t17 .snd-btn.on .snd-bars i { animation: none !important; } }
+
+/* Pied de page legal : une ligne sous le meta existant (axem-ia.fr / Paris / Reserver), au-dessus du
+   mot-symbole geant. Le meta original (footer .meta, assets/axem.css ligne 146) est en position
+   absolue a taille fixe ; sur mobile il retombe sur 2 lignes (peu de largeur pour 3 items), ce qui
+   ferait chevaucher une ligne suivante a decalage fixe. On enveloppe donc meta + legal-links dans un
+   bloc .ft-top en flux normal (empile en colonne), et on neutralise le positionnement absolu du
+   meta a l'interieur : la ligne des liens legaux suit toujours meta, jamais de chevauchement. */
+.t17 footer .ft-top { position: absolute; top: 28px; left: var(--gutter); right: var(--gutter); display: flex; flex-direction: column; gap: 10px; }
+.t17 footer .ft-top .meta { position: static; top: auto; left: auto; right: auto; flex-wrap: wrap; row-gap: 6px; }
+.t17 footer .legal-links { position: static; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 11px; font-weight: 600; letter-spacing: .04em; margin: 0; }
+.t17 footer .legal-links a { color: rgba(250, 246, 234, .62); text-decoration: none; transition: color .25s var(--ease); }
+.t17 footer .legal-links a:hover, .t17 footer .legal-links a:focus-visible { color: var(--blue); }
+@media (max-width: 860px) { .t17 footer .ft-top { gap: 8px; } .t17 footer .legal-links { gap: 5px 16px; } }
+
+/* Pages juridiques (mentions-legales.html, confidentialite.html) : mise en page simple, DA du site. */
+.t17-legal { max-width: 760px; margin: 0 auto; padding: clamp(90px, 12vh, 140px) var(--gutter) 120px; }
+.t17-legal .back { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--blue); margin-bottom: 48px; }
+.t17-legal .back:hover, .t17-legal .back:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.t17-legal h1 { font-size: clamp(32px, 5vw, 48px); margin: 0 0 8px; }
+.t17-legal .maj { font-size: 13px; color: var(--grey); margin: 0 0 48px; }
+.t17-legal h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(20px, 2.4vw, 26px); margin: 44px 0 14px; }
+.t17-legal p { font-size: 16px; line-height: 1.65; color: var(--grey); margin: 0 0 14px; }
+.t17-legal a { color: var(--blue); }
+.t17-legal a:hover, .t17-legal a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.t17-legal .todo { color: var(--blue); font-weight: 600; }
+
+/* Tour 19, commun a toutes les pages : le monogramme ax (enregistre par Clement le 25/09) en logo de la
+   barre des pages duo et reservation, et la barre de prototype en bas a gauche. */
+.axm { display: inline-block; width: 46px; height: 31px; vertical-align: middle; background: var(--blue); -webkit-mask: url(../img/logo-ax-mask.png) center / contain no-repeat; mask: url(../img/logo-ax-mask.png) center / contain no-repeat; transition: transform 0.4s var(--ease); }
+.nav .logo:hover .axm, .nav .logo:focus-visible .axm { transform: rotate(-8deg) scale(1.08); }
+.t19 .proto { position: fixed; left: 76px; bottom: 24px; z-index: 55; margin: 0; font: 500 12px/1 "Instrument Sans", sans-serif; background: var(--ink); color: var(--cream); padding: 8px 12px; }
+.t19 .proto a { margin-left: 12px; color: var(--cream); text-decoration: underline; text-underline-offset: 3px; cursor: pointer; }
+@media (max-width: 700px) {
+  .t19 .proto { position: static; display: block; width: auto; line-height: 1.6; margin: 14px var(--gutter) 18px; }
+}
+
+/* Tour 20 : reglages communs. */
+/* Pages de paiement : le bouton son recouvrait le prix de la barre collante, il n'a pas de role au moment de payer. */
+.t20-r1 .snd-btn, .t20-r2 .snd-btn, .t20-r3 .snd-btn { display: none !important; }
+/* Pages de paiement : le bandeau de maquette masquait le prix de la barre collante du bas, il remonte sous la nav. */
+@media (min-width: 701px) { .t20-r1 .proto, .t20-r2 .proto, .t20-r3 .proto { top: 84px; bottom: auto; left: auto; right: 24px; } }
+
+/* Tour 21 : reglages communs. */
+
+/* ---- Tour 21, page coaching, proposition c2 : « PARLEZ CLAUDE, COURAMMENT. » Page typographique et
+   editoriale, rigoureuse : pas de cartes flottantes, pas d'ombre. Un haut de page qui pose la promesse
+   en grand (visio, 1 h, seance ou parcours, prix), puis un index du vocabulaire Claude en douze mots,
+   aligne au cordeau, filets fins comme un index de dictionnaire. Chaque mot se retourne au survol ou au
+   toucher pour montrer sa definition et une ligne "En seance". Le logo Claude sert de curseur de lecture
+   qui saute de mot en mot (survol en fin, defilement seul en mobile, sans boucle permanente). Un compteur
+   "mots maitrises" se remplit a mesure qu'on les ouvre. Puis les trois formats, repris et nets. Scope :
+   .t21-c2 uniquement. Reutilise .f, .i, .cap, .sq, .grid, .rv, .btn deja charges par assets/axem.css. ---- */
+
+.t21-c2 { --c2-rule: rgba(11,13,18,.16); --c2-rule-cream: rgba(250,246,234,.22); }
+.t21-c2 main, .t21-c2 #main { display: block; }
+.t21-c2 section { position: relative; }
+
+/* ===== 0. Ouverture : jamais vide, la promesse en grand ===== */
+.t21-c2 .c2-open { min-height: 100svh; display: flex; flex-direction: column; justify-content: center; gap: 22px; padding: 150px var(--gutter) 90px; overflow: hidden; }
+.t21-c2 .c2-eyebrow { display: flex; align-items: center; gap: 12px; }
+.t21-c2 .c2-h1 { margin: 0; font-size: clamp(48px, 8.6vw, 128px); line-height: 0.92; }
+.t21-c2 .c2-h1 .i { color: var(--blue); }
+.t21-c2 .c2-lead { margin: 6px 0 0; font-size: clamp(18px, 1.9vw, 24px); line-height: 1.4; max-width: 34em; }
+.t21-c2 .c2-sub { margin: 0; font-size: 15px; line-height: 1.6; max-width: 40em; color: var(--grey); }
+.t21-c2 .c2-scroll { position: absolute; left: var(--gutter); bottom: 36px; display: inline-flex; align-items: center; gap: 12px; color: var(--ink); }
+.t21-c2 .c2-scroll-i { width: 1px; height: 38px; background: var(--ink); transform-origin: top; animation: c2Hint 2.2s cubic-bezier(.65,0,.35,1) infinite; }
+@keyframes c2Hint { 0% { transform: scaleY(0); } 45% { transform: scaleY(1); } 55% { transform: scaleY(1); transform-origin: bottom; } 100% { transform: scaleY(0); transform-origin: bottom; } }
+
+/* ===== 1. L'index Claude, en douze mots ===== */
+.t21-c2 .c2-index { padding: clamp(80px, 10vw, 140px) var(--gutter) 60px; max-width: 1320px; margin: 0 auto; }
+.t21-c2 .c2-index-head { max-width: 760px; margin-bottom: clamp(40px, 5vw, 64px); }
+.t21-c2 .c2-index-head h2 { margin: 14px 0 0; font-size: clamp(38px, 5.2vw, 68px); line-height: 0.96; }
+.t21-c2 .c2-lead2 { margin: 18px 0 0; font-size: clamp(16px, 1.5vw, 19px); line-height: 1.5; max-width: 40em; }
+.t21-c2 .c2-counter { display: flex; align-items: center; gap: 16px; margin-top: 26px; }
+.t21-c2 .c2-counter-txt { font: 700 15px "Instrument Sans", sans-serif; font-variant-numeric: tabular-nums; }
+.t21-c2 .c2-counter-txt b { font-size: 20px; color: var(--blue); }
+.t21-c2 .c2-counter-of { color: var(--grey); font-weight: 600; }
+.t21-c2 .c2-counter-bar { position: relative; width: 180px; height: 2px; background: var(--line); flex: none; }
+.t21-c2 .c2-counter-bar i { position: absolute; inset: 0; background: var(--blue); transform-origin: left; transform: scaleX(0); transition: transform .6s var(--ease); }
+
+/* Le logo Claude, curseur de lecture qui saute de mot en mot */
+.t21-c2 .c2-cursor { position: absolute; left: 0; top: 0; width: 30px; height: 30px; pointer-events: none; opacity: 0; z-index: 4; transition: opacity .3s var(--ease); will-change: transform; }
+.t21-c2 .c2-cursor.on { opacity: 1; }
+
+/* La grille, alignee au cordeau comme un index de dictionnaire : filets fins, pas de cartes flottantes */
+.t21-c2 .c2-grid { display: grid; grid-template-columns: repeat(4, 1fr); border-top: 1px solid var(--c2-rule); border-left: 1px solid var(--c2-rule); }
+.t21-c2 .c2-cell {
+  position: relative;
+  display: block;
+  height: clamp(200px, 15vw, 236px);
+  padding: 0; margin: 0; border: 0; background: transparent; text-align: left;
+  font: inherit; color: inherit; cursor: pointer;
+  border-right: 1px solid var(--c2-rule); border-bottom: 1px solid var(--c2-rule);
+  -webkit-tap-highlight-color: transparent;
+}
+.t21-c2 .c2-cell:focus-visible { outline: 2px solid var(--blue); outline-offset: -3px; z-index: 2; }
+.t21-c2 .c2-flip { position: absolute; inset: 0; transform-style: preserve-3d; transition: transform .65s var(--ease); }
+.t21-c2 .c2-cell:hover .c2-flip, .t21-c2 .c2-cell:focus-visible .c2-flip, .t21-c2 .c2-cell.is-open .c2-flip { transform: rotateX(180deg); }
+.t21-c2 .c2-face { position: absolute; inset: 0; backface-visibility: hidden; -webkit-backface-visibility: hidden; display: flex; flex-direction: column; padding: 22px 22px 18px; }
+.t21-c2 .c2-face-f { justify-content: flex-end; background: var(--cream); transition: background-color .3s var(--ease); }
+.t21-c2 .c2-cell:hover .c2-face-f, .t21-c2 .c2-cell.is-open .c2-face-f { background: rgba(35,73,255,.05); }
+.t21-c2 .c2-n { font: 700 12px/1 "Instrument Sans", sans-serif; font-variant-numeric: tabular-nums; color: var(--blue); margin-bottom: 10px; }
+.t21-c2 .c2-term { display: block; font-size: clamp(24px, 2vw, 32px); line-height: 0.94; }
+.t21-c2 .c2-hint { position: absolute; right: 20px; bottom: 18px; color: var(--grey); opacity: .55; }
+.t21-c2 .c2-face-b { transform: rotateX(180deg); background: var(--ink); color: var(--cream); justify-content: center; gap: 12px; }
+.t21-c2 .c2-def { font-size: 13.5px; line-height: 1.48; }
+.t21-c2 .c2-en { font-size: 13px; line-height: 1.48; color: var(--c2-rule-cream); }
+.t21-c2 .c2-en b { color: var(--blue); font-weight: 700; }
+
+.t21-c2 .c2-done { margin: 34px 0 0; text-align: center; color: var(--blue); opacity: 0; transition: opacity .5s var(--ease); }
+.t21-c2 .c2-done.c2-show { opacity: 1; }
+.t21-c2 .c2-done[hidden] { display: none; }
+.t21-c2 .c2-done a { text-decoration: underline; text-underline-offset: 3px; color: var(--ink); margin-left: 6px; }
+
+/* ===== 2. Les trois formats, plus nets ===== */
+.t21-c2 .c2-formats { max-width: 1180px; margin: clamp(70px, 9vw, 120px) auto 0; padding: 0 var(--gutter) 110px; }
+.t21-c2 .c2-formats .c2-eyebrow { justify-content: center; text-align: center; }
+.t21-c2 .c2-formats h2 { margin: 14px 0 40px; text-align: center; font-size: clamp(36px, 4.6vw, 60px); line-height: 0.98; }
+.t21-c2 .c2-formats-grid { display: grid; grid-template-columns: repeat(3, 1fr); border-top: 1px solid var(--c2-rule); }
+.t21-c2 .c2-format { padding: 30px 26px 28px; border-left: 1px solid var(--c2-rule); display: flex; flex-direction: column; gap: 8px; }
+.t21-c2 .c2-format:last-child { border-right: 1px solid var(--c2-rule); }
+.t21-c2 .c2-format-tag { color: var(--blue); }
+.t21-c2 .c2-format-price { display: flex; align-items: baseline; gap: 4px; margin: 10px 0 0; font: 700 clamp(46px, 4.6vw, 60px) "Instrument Sans", sans-serif; font-variant-numeric: tabular-nums; }
+.t21-c2 .c2-format-price small { font-size: 13px; font-weight: 600; color: var(--grey); }
+.t21-c2 .c2-price { position: relative; display: inline-block; }
+.t21-c2 .c2-reel-fx { position: absolute; inset: 0; display: flex; opacity: 0; pointer-events: none; }
+.t21-c2 .c2-reel-col { position: relative; overflow: hidden; height: 1em; }
+.t21-c2 .c2-reel-strip { position: absolute; left: 0; top: 0; display: flex; flex-direction: column; }
+.t21-c2 .c2-reel-strip span { display: block; height: 1em; line-height: 1; }
+.t21-c2 .c2-format-ttc { margin: 0; font-size: 12.5px; color: var(--grey); }
+.t21-c2 .c2-format-line { margin: 14px 0 0; font-size: 18px; font-weight: 600; line-height: 1.3; }
+.t21-c2 .c2-format-detail { margin: 8px 0 0; font-size: 13.5px; line-height: 1.5; color: var(--grey); flex: 1; }
+
+.t21-c2 .c2-cta.btn { align-self: flex-start; margin-top: 18px; padding: 16px 22px; font-size: 14.5px; transition: color .3s var(--ease), opacity 900ms var(--ease); will-change: transform; }
+.t21-c2 .c2-cta.btn .ar svg { display: block; width: 15px; height: 15px; }
+.t21-c2 .c2-burst { position: fixed; z-index: 90; width: 15px; height: 15px; pointer-events: none; opacity: 0; }
+
+.t21-c2 .c2-fine { max-width: 640px; margin: 30px auto 0; text-align: center; font-size: 12.5px; line-height: 1.55; color: var(--grey); }
+
+/* ===== Tablette ===== */
+@media (max-width: 1100px) {
+  .t21-c2 .c2-grid { grid-template-columns: repeat(2, 1fr); }
+}
+
+/* ===== Mobile ===== */
+@media (max-width: 860px) {
+  .t21-c2 .c2-open { padding-top: 122px; }
+  .t21-c2 .c2-scroll { display: none; }
+  .t21-c2 .c2-grid { grid-template-columns: 1fr; }
+  .t21-c2 .c2-cell { height: 248px; }
+  .t21-c2 .c2-formats-grid { grid-template-columns: 1fr; border-top: 0; }
+  .t21-c2 .c2-format { border-left: 0; border-top: 1px solid var(--c2-rule); padding: 26px 4px; }
+  .t21-c2 .c2-format:last-child { border-right: 0; border-bottom: 1px solid var(--c2-rule); }
+  .t21-c2 .c2-cta.btn { align-self: stretch; justify-content: center; min-height: 48px; }
+}
+@media (max-width: 480px) {
+  .t21-c2 .c2-h1 { font-size: 15.5vw; }
+  .t21-c2 .c2-counter { flex-wrap: wrap; }
+}
+
+/* ===== Mouvement reduit : tout reste lisible et complet, sans flip ni curseur ===== */
+@media (prefers-reduced-motion: reduce) {
+  .t21-c2 .c2-scroll-i { animation: none; }
+  .t21-c2 .c2-cursor { display: none; }
+  .t21-c2 .c2-flip { transition: none; }
+}
+</style>
+</head>
+<body class="t17 t18 t19 t20 t21 t19-c2 t20-c2 t21-c2">
+<a class="skip" href="#main">Aller au contenu</a>
+
+<header class="nav" id="nav">
+  <a href="../index.html" class="logo" aria-label="AXEM IA, accueil"><span class="axm" aria-hidden="true"></span></a>
+  <nav class="links" aria-label="Navigation principale">
+    <a href="#offres">Conseil<span class="na" aria-hidden="true">→</span></a><a href="#offres">Formation<span class="na" aria-hidden="true">→</span></a><a href="../coaching/">Coaching<span class="na" aria-hidden="true">→</span></a><a href="#duo">Le duo<span class="na" aria-hidden="true">→</span></a>
+  </nav>
+  <a href="#" class="book" data-book><span class="long">Réserver un échange offert</span><span class="short">Réserver</span><span class="bk-ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span></a>
+</header>
+
+<main id="main">
+<!--
+  c2, tour 21 : « Parlez Claude, couramment. » Page typographique et editoriale du coaching. Sources
+  verifiees le 26/09/2026 pour les douze mots du vocabulaire (aucune fonction inventee) :
+  - Claude Pro : support.claude.com/en/articles/8325606-what-is-the-pro-plan (prix, plus de capacite, Projets, Recherche)
+  - Projet : support.claude.com/en/articles/9517075-projects-faq (espace autonome, historique et base de connaissances propres)
+  - Connecteur : support.claude.com/en/articles/10166901-use-google-workspace-connectors (Gmail, Google Agenda, Google Drive relies a Claude)
+  - Skill : support.claude.com/en/articles/12512176-what-are-skills (dossier d'instructions charge par Claude pour une tache precise)
+  - Cowork : claude.com/cowork et couverture presse du 16/09/2026 (venturebeat.com, 9to5mac.com, engadget.com) : le mode ou Claude
+    travaille en autonomie sur un dossier, integration en cours a la conversation Claude
+  - Artefact : support.claude.com/en/articles/9487310-what-are-artifacts-and-how-do-i-use-them (creation autonome a cote de la conversation)
+  - Recherche : support.claude.com/en/articles/11088861-use-research-on-claude (recherches successives, reponse sourcee)
+  - Claude in Chrome : claude.com/claude-in-chrome et support.claude.com/en/articles/12012173-get-started-with-claude-in-chrome
+    (extension qui agit dans le navigateur a la place de l'utilisateur)
+  - MCP : anthropic.com/news/model-context-protocol et modelcontextprotocol.io (norme ouverte qui relie Claude a un outil ou une donnee)
+  - Claude, Prompt, Contexte : vocabulaire general du produit, verifie sur claude.com et support.claude.com
+-->
+<section class="c2-open" aria-labelledby="c2-h1">
+  <div class="grid" id="grid" aria-hidden="true"></div>
+  <p class="cap c2-eyebrow rv"><span class="sq"></span>Coaching individuel, avec Claude</p>
+  <h1 class="f c2-h1" id="c2-h1">Parlez Claude,<br><span class="i">couramment.</span></h1>
+  <p class="c2-lead rv" style="--d:90">Une heure en visio, écran partagé, avec Clément Predo ou Alexis Zeitoun. Une séance seule, ou un parcours de 5 ou 10, à partir de 200&#8202;€ HT la séance.</p>
+  <p class="c2-sub rv" style="--d:170">Prérequis&#8202;: un abonnement Claude Pro, environ 20&#8202;€ par mois, à votre charge. Deux fondateurs qui pratiquent Claude au quotidien depuis 2023, ESSEC et Télécom Paris (Institut Polytechnique de Paris).</p>
+  <a class="c2-scroll cap" href="#c2Index" data-scrollto>
+    <span class="c2-scroll-i" aria-hidden="true"></span>Le vocabulaire, en douze mots
+  </a>
+</section>
+
+<section class="c2-index" id="c2Index" aria-labelledby="c2-index-h">
+  <div class="c2-index-head">
+    <p class="cap c2-eyebrow rv">L'index Claude</p>
+    <h2 class="f rv" id="c2-index-h">Douze mots.<br>Ensuite, vous parlez Claude.</h2>
+    <p class="c2-lead2 rv" style="--d:90">Ouvrez chaque mot&#8202;: une définition simple, et une ligne « En séance » qui dit ce qu'on en fait avec vous.</p>
+    <div class="c2-counter rv" style="--d:170" aria-live="polite">
+      <span class="c2-counter-txt"><b id="c2CountN">0</b><span class="c2-counter-of"> / 12 mots maîtrisés</span></span>
+      <span class="c2-counter-bar" aria-hidden="true"><i id="c2CountFill"></i></span>
+    </div>
+  </div>
+
+  <span class="c2-cursor" id="c2Cursor" aria-hidden="true"></span>
+
+  <div class="c2-grid" id="c2Grid">
+    <button type="button" class="c2-cell" data-voc data-n="1" aria-expanded="false" aria-controls="c2-def-1">
+      <span class="c2-flip">
+        <span class="c2-face c2-face-f"><span class="c2-n">01</span><span class="c2-term f">Claude</span><span class="c2-hint cap">Voir</span></span>
+        <span class="c2-face c2-face-b" id="c2-def-1">
+          <span class="c2-def">L'assistant IA d'Anthropic avec qui vous travaillez&#8202;: il écrit, résume, code, analyse, discute.</span>
+          <span class="c2-en"><b>En séance</b>&#8202;: c'est l'outil sur lequel toute la séance se joue, en visio et en partage d'écran, du début à la fin.</span>
+        </span>
+      </span>
+    </button>
+
+    <button type="button" class="c2-cell" data-voc data-n="2" aria-expanded="false" aria-controls="c2-def-2">
+      <span class="c2-flip">
+        <span class="c2-face c2-face-f"><span class="c2-n">02</span><span class="c2-term f">Claude Pro</span><span class="c2-hint cap">Voir</span></span>
+        <span class="c2-face c2-face-b" id="c2-def-2">
+          <span class="c2-def">L'abonnement payant de Claude, environ 20&#8202;€ par mois&#8202;: plus de capacité, l'accès aux Projets et à la Recherche.</span>
+          <span class="c2-en"><b>En séance</b>&#8202;: c'est le seul prérequis technique. On vérifie qu'il est actif avant de commencer.</span>
+        </span>
+      </span>
+    </button>
+
+    <button type="button" class="c2-cell" data-voc data-n="3" aria-expanded="false" aria-controls="c2-def-3">
+      <span class="c2-flip">
+        <span class="c2-face c2-face-f"><span class="c2-n">03</span><span class="c2-term f">Projet</span><span class="c2-hint cap">Voir</span></span>
+        <span class="c2-face c2-face-b" id="c2-def-3">
+          <span class="c2-def">Un espace qui range vos conversations et vos documents dans un même dossier de travail, avec sa mémoire propre.</span>
+          <span class="c2-en"><b>En séance</b>&#8202;: on crée votre premier Projet, celui de votre métier, avec vos vrais documents dedans.</span>
+        </span>
+      </span>
+    </button>
+
+    <button type="button" class="c2-cell" data-voc data-n="4" aria-expanded="false" aria-controls="c2-def-4">
+      <span class="c2-flip">
+        <span class="c2-face c2-face-f"><span class="c2-n">04</span><span class="c2-term f">Connecteur</span><span class="c2-hint cap">Voir</span></span>
+        <span class="c2-face c2-face-b" id="c2-def-4">
+          <span class="c2-def">Le fil qui relie Claude à vos outils du quotidien, Gmail, Google Drive, Google Agenda, Notion, Slack, pour qu'il lise et agisse dedans.</span>
+          <span class="c2-en"><b>En séance</b>&#8202;: on branche les connecteurs utiles au dossier que vous traitez.</span>
+        </span>
+      </span>
+    </button>
+
+    <button type="button" class="c2-cell" data-voc data-n="5" aria-expanded="false" aria-controls="c2-def-5">
+      <span class="c2-flip">
+        <span class="c2-face c2-face-f"><span class="c2-n">05</span><span class="c2-term f">Skill</span><span class="c2-hint cap">Voir</span></span>
+        <span class="c2-face c2-face-b" id="c2-def-5">
+          <span class="c2-def">Un dossier d'instructions que Claude charge pour refaire une tâche précise, toujours de la même façon.</span>
+          <span class="c2-en"><b>En séance</b>&#8202;: on écrit votre premier Skill, la méthode figée pour la tâche qui vous prend le plus de temps.</span>
+        </span>
+      </span>
+    </button>
+
+    <button type="button" class="c2-cell" data-voc data-n="6" aria-expanded="false" aria-controls="c2-def-6">
+      <span class="c2-flip">
+        <span class="c2-face c2-face-f"><span class="c2-n">06</span><span class="c2-term f">Cowork</span><span class="c2-hint cap">Voir</span></span>
+        <span class="c2-face c2-face-b" id="c2-def-6">
+          <span class="c2-def">Le mode où Claude travaille en autonomie sur un vrai dossier, dans vos fichiers et vos outils connectés.</span>
+          <span class="c2-en"><b>En séance</b>&#8202;: c'est là qu'on lui confie le dossier réel de votre semaine, du début à la fin.</span>
+        </span>
+      </span>
+    </button>
+
+    <button type="button" class="c2-cell" data-voc data-n="7" aria-expanded="false" aria-controls="c2-def-7">
+      <span class="c2-flip">
+        <span class="c2-face c2-face-f"><span class="c2-n">07</span><span class="c2-term f">Artefact</span><span class="c2-hint cap">Voir</span></span>
+        <span class="c2-face c2-face-b" id="c2-def-7">
+          <span class="c2-def">Un document, un tableau ou un visuel que Claude construit à côté de la conversation, modifiable sans tout réécrire.</span>
+          <span class="c2-en"><b>En séance</b>&#8202;: la fiche réutilisable qui vous reste après la séance prend cette forme.</span>
+        </span>
+      </span>
+    </button>
+
+    <button type="button" class="c2-cell" data-voc data-n="8" aria-expanded="false" aria-controls="c2-def-8">
+      <span class="c2-flip">
+        <span class="c2-face c2-face-f"><span class="c2-n">08</span><span class="c2-term f">Recherche</span><span class="c2-hint cap">Voir</span></span>
+        <span class="c2-face c2-face-b" id="c2-def-8">
+          <span class="c2-def">Claude qui explore le web, par plusieurs recherches qui s'enchaînent, pour construire une réponse sourcée.</span>
+          <span class="c2-en"><b>En séance</b>&#8202;: utile pour préparer un dossier qui demande une vérification extérieure.</span>
+        </span>
+      </span>
+    </button>
+
+    <button type="button" class="c2-cell" data-voc data-n="9" aria-expanded="false" aria-controls="c2-def-9">
+      <span class="c2-flip">
+        <span class="c2-face c2-face-f"><span class="c2-n">09</span><span class="c2-term f">Claude in Chrome</span><span class="c2-hint cap">Voir</span></span>
+        <span class="c2-face c2-face-b" id="c2-def-9">
+          <span class="c2-def">Une extension qui laisse Claude agir dans votre navigateur&#8202;: cliquer, remplir un formulaire, naviguer, à votre place.</span>
+          <span class="c2-en"><b>En séance</b>&#8202;: elle prend le relais sur les tâches qui se font sur un site, pas dans un fichier.</span>
+        </span>
+      </span>
+    </button>
+
+    <button type="button" class="c2-cell" data-voc data-n="10" aria-expanded="false" aria-controls="c2-def-10">
+      <span class="c2-flip">
+        <span class="c2-face c2-face-f"><span class="c2-n">10</span><span class="c2-term f">MCP</span><span class="c2-hint cap">Voir</span></span>
+        <span class="c2-face c2-face-b" id="c2-def-10">
+          <span class="c2-def">La norme ouverte, créée par Anthropic, qui permet à Claude de se connecter à un outil ou une donnée extérieure.</span>
+          <span class="c2-en"><b>En séance</b>&#8202;: c'est ce qui fait marcher vos connecteurs et vos Skills. Vous n'avez rien à en savoir.</span>
+        </span>
+      </span>
+    </button>
+
+    <button type="button" class="c2-cell" data-voc data-n="11" aria-expanded="false" aria-controls="c2-def-11">
+      <span class="c2-flip">
+        <span class="c2-face c2-face-f"><span class="c2-n">11</span><span class="c2-term f">Prompt</span><span class="c2-hint cap">Voir</span></span>
+        <span class="c2-face c2-face-b" id="c2-def-11">
+          <span class="c2-def">La consigne que vous écrivez à Claude, la phrase qui déclenche sa réponse.</span>
+          <span class="c2-en"><b>En séance</b>&#8202;: on retravaille vos prompts jusqu'à ce qu'un seul suffise à lancer toute la tâche.</span>
+        </span>
+      </span>
+    </button>
+
+    <button type="button" class="c2-cell" data-voc data-n="12" aria-expanded="false" aria-controls="c2-def-12">
+      <span class="c2-flip">
+        <span class="c2-face c2-face-f"><span class="c2-n">12</span><span class="c2-term f">Contexte</span><span class="c2-hint cap">Voir</span></span>
+        <span class="c2-face c2-face-b" id="c2-def-12">
+          <span class="c2-def">Tout ce que Claude garde en tête pour répondre&#8202;: la conversation, vos documents, votre Projet.</span>
+          <span class="c2-en"><b>En séance</b>&#8202;: on remplit le contexte une bonne fois, pour ne plus jamais le répéter.</span>
+        </span>
+      </span>
+    </button>
+  </div>
+
+  <p class="c2-done cap" id="c2Done" hidden>Vous parlez Claude. <a href="#c2Formats" data-scrollto>Voir les formats<span aria-hidden="true"> →</span></a></p>
+</section>
+
+<section class="c2-formats" id="c2Formats" aria-labelledby="c2-formats-h">
+  <p class="cap c2-eyebrow rv">Trois formats, un prix qui baisse</p>
+  <h2 class="f rv" id="c2-formats-h">Une séance.<br>Puis un parcours, si vous le décidez.</h2>
+
+  <div class="c2-formats-grid" id="c2FormatsGrid">
+    <article class="c2-format rv" style="--d:0">
+      <p class="c2-format-tag cap">Séance seule</p>
+      <p class="c2-format-price"><b class="c2-price" data-target="250">250</b><small>&#8202;€ HT</small></p>
+      <p class="c2-format-ttc">Soit 300&#8202;€ TTC.</p>
+      <p class="c2-format-line">Une heure, pour juger sur pièce.</p>
+      <p class="c2-format-detail">Séance découverte ou séance paramétrage, sans engagement. Vous commencez par une séance, puis vous passez à un parcours&#8202;? Elle est recalculée au tarif du parcours.</p>
+      <a class="c2-cta btn" href="t21-reserver.html?f=seance" data-magnet data-burst>
+        <span>Choisir et payer ma séance</span>
+        <span class="ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </article>
+
+    <article class="c2-format rv" style="--d:110">
+      <p class="c2-format-tag cap">Parcours 5 séances</p>
+      <p class="c2-format-price"><b class="c2-price" data-target="220">220</b><small>&#8202;€ HT la séance</small></p>
+      <p class="c2-format-ttc">1 100&#8202;€ HT au total, soit 1 320&#8202;€ TTC.</p>
+      <p class="c2-format-line">Apprendre l'IA, de A à Z.</p>
+      <p class="c2-format-detail">Montée en compétences, travail sur vos projets, paramétrage. Cinq séances, de votre poste équipé à votre mode d'emploi.</p>
+      <a class="c2-cta btn" href="t21-reserver.html?f=p5" data-magnet data-burst>
+        <span>Choisir ce parcours</span>
+        <span class="ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </article>
+
+    <article class="c2-format rv" style="--d:220">
+      <p class="c2-format-tag cap">Parcours 10 séances</p>
+      <p class="c2-format-price"><b class="c2-price" data-target="200">200</b><small>&#8202;€ HT la séance</small></p>
+      <p class="c2-format-ttc">2 000&#8202;€ HT au total, soit 2 400&#8202;€ TTC.</p>
+      <p class="c2-format-line">Mener votre projet au bout.</p>
+      <p class="c2-format-detail">Du cadrage au plan à 90 jours&#8202;: un prototype, la chaîne complète, une bibliothèque de modèles, la transmission.</p>
+      <a class="c2-cta btn" href="t21-reserver.html?f=p10" data-magnet data-burst>
+        <span>Choisir ce parcours</span>
+        <span class="ar" aria-hidden="true"><svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round"><path d="M4 12h15M13 6l6 6-6 6"/></svg></span>
+      </a>
+    </article>
+  </div>
+
+  <p class="c2-fine rv">1 h en visio, écran partagé, 1 ou 2 séances par semaine, avec Clément Predo ou Alexis Zeitoun. Prérequis&#8202;: un abonnement Claude Pro, environ 20&#8202;€ par mois, à votre charge. Prix HT, TVA 20&#8202;% en sus. À partir de 200&#8202;€ HT la séance.</p>
+</section>
+</main>
+
+<footer>
+  <div class="ft-top">
+    <div class="meta cap"><span>axem-ia.fr</span><span>Paris</span><a href="#" data-book>Réserver un échange offert →</a></div>
+    <div class="legal-links cap"><a href="mentions-legales.html">Mentions légales</a><a href="confidentialite.html">Confidentialité</a><a href="mailto:contact@axem-ia.fr">contact@axem-ia.fr</a></div>
+  </div>
+  <div class="wm big" aria-hidden="true">axem<sup>IA</sup></div>
+</footer>
+<script type="application/ld+json">
+{
+  "@context": "https://schema.org",
+  "@type": "Organization",
+  "name": "AXEM IA",
+  "url": "https://axem-ia.fr",
+  "email": "contact@axem-ia.fr",
+  "address": {
+    "@type": "PostalAddress",
+    "streetAddress": "3 rue Françoise Dolto",
+    "postalCode": "75013",
+    "addressLocality": "Paris",
+    "addressCountry": "FR"
+  },
+  "founder": [
+    { "@type": "Person", "name": "Clément Predo", "sameAs": "https://www.linkedin.com/in/clement-predo" },
+    { "@type": "Person", "name": "Alexis Zeitoun", "sameAs": "https://www.linkedin.com/in/alexiszeitoun" }
+  ],
+  "sameAs": [
+    "https://www.linkedin.com/in/clement-predo",
+    "https://www.linkedin.com/in/alexiszeitoun"
+  ]
+}
+</script>
+
+<script src="../vendor/gsap/gsap.min.js"></script>
+<script src="../vendor/gsap/ScrollTrigger.min.js"></script>
+<script src="../vendor/gsap/SplitText.min.js"></script>
+<script src="../assets/abonnes.js"></script>
+<script src="../assets/avis.js"></script>
+<script src="../assets/axem.js"></script>
+<script>
+(() => {
+  // Tour 16 : la couche d'interactions du tour 2, allegee apres mesure (CPU x4, defilement molette).
+  // Retire : le defilement doux Lenis (il gardait la main sur la molette), le bandeau pilote image par
+  // image (il relisait la largeur de la page a chaque image : 1,8 s de mise en page sur 5 s), le
+  // brouillage des lettres. Garde, mais ne calcule plus que quand la souris bouge : le curseur a
+  // etiquette, la graisse du titre, l'apercu des offres, le portrait du duo, le mot du pied de page.
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const still = reduce || /[?&]static\b/.test(location.search);
+  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const hasGsap = typeof gsap !== 'undefined';
+  document.body.classList.add('t2', 't16-lite');
+  if (hasGsap) gsap.registerPlugin(...[window.ScrollTrigger, window.SplitText].filter(Boolean));
+
+  const mouse = { x: innerWidth / 2, y: innerHeight / 2 };
+  const moveFns = [];
+  let mq = 0;
+  addEventListener('pointermove', e => {
+    mouse.x = e.clientX; mouse.y = e.clientY;
+    if (!mq) mq = requestAnimationFrame(() => { mq = 0; moveFns.forEach(f => f()); });
+  }, { passive: true });
+
+  // Curseur a etiquette : la boucle ne tourne que tant qu'il reste du chemin a faire.
+  if (fine && !reduce) {
+    document.documentElement.classList.add('has-cur');
+    const l = document.createElement('div'); l.className = 'cur-l';
+    document.body.append(l);
+    const p = { x: mouse.x, y: mouse.y };
+    let run = 0;
+    const loop = () => {
+      p.x += (mouse.x - p.x) * 0.35; p.y += (mouse.y - p.y) * 0.35;
+      l.style.transform = `translate3d(${p.x.toFixed(1)}px, ${p.y.toFixed(1)}px, 0)`;
+      run = Math.abs(mouse.x - p.x) + Math.abs(mouse.y - p.y) > .4 ? requestAnimationFrame(loop) : 0;
+    };
+    moveFns.push(() => { if (!run) run = requestAnimationFrame(loop); });
+    document.addEventListener('pointerover', e => {
+      const lab = e.target.closest('[data-cursor]');
+      const hide = e.target.closest('[data-cursor-off]');
+      l.textContent = lab && !hide ? lab.dataset.cursor : '';
+      l.classList.toggle('on', !!(lab && !hide));
+    });
+  }
+
+  // Titre du hero : graisse variable selon la distance au curseur. Les centres des lettres sont
+  // mesures une fois (et au redimensionnement), jamais pendant le mouvement.
+  const heroH = document.querySelector('.hero');
+  if (heroH) {
+    document.querySelectorAll('.hero h1 .word > span').forEach(s => { s.innerHTML = [...s.textContent].map(ch => `<span class="ch">${ch}</span>`).join(''); });
+    if (fine && !still && hasGsap) {
+      const chars = [...heroH.querySelectorAll('.ch')];
+      let centers = null, active = false;
+      const measure = () => { centers = chars.map(ch => { const r = ch.getBoundingClientRect(); return [r.left + r.width / 2, r.top + r.height / 2 + scrollY]; }); };
+      // Changer la graisse d'une police variable oblige le navigateur a remettre en forme les glyphes :
+      // mesure du 24/09, 1,5 s de mise en page sur 5 s de geste, pour 36 objets seulement. Le cout vient
+      // de ce que chaque image demandait une graisse inedite (valeur continue, cache de forme rate).
+      // La graisse suit donc la souris par un amorti maison, mais n'est ecrite que par paliers de 50 :
+      // 13 graisses possibles, toutes deja en cache apres le premier passage.
+      const cur = chars.map(() => 900), tgt = chars.map(() => 900), shown = chars.map(() => 900);
+      let run = 0;
+      const tick = () => {
+        let moving = false;
+        for (let i = 0; i < chars.length; i++) {
+          const d = tgt[i] - cur[i];
+          if (Math.abs(d) > 2) { cur[i] += d * 0.18; moving = true; } else cur[i] = tgt[i];
+          const q = Math.round(cur[i] / 50) * 50;
+          if (q !== shown[i]) { shown[i] = q; chars[i].style.setProperty('--wg', q); }
+        }
+        run = moving ? requestAnimationFrame(tick) : 0;
+      };
+      const kick = () => { if (!run) run = requestAnimationFrame(tick); };
+      heroH.addEventListener('pointerenter', () => { active = true; measure(); });
+      heroH.addEventListener('pointerleave', () => { active = false; tgt.fill(900); kick(); });
+      addEventListener('resize', () => { centers = null; });
+      moveFns.push(() => {
+        if (!active) return;
+        if (!centers) measure();
+        const y = mouse.y + scrollY;
+        centers.forEach(([cx, cy], i) => { tgt[i] = 300 + 600 * Math.min(1, Math.hypot(mouse.x - cx, y - cy) / 420); });
+        kick();
+      });
+    }
+  }
+
+  // Apercu flottant sur les offres
+  const rows = document.querySelectorAll('.row[data-peek]');
+  if (rows.length && fine && !reduce && hasGsap) {
+    const pk = document.createElement('div'); pk.className = 'peek'; pk.setAttribute('aria-hidden', 'true');
+    pk.innerHTML = '<span class="sq"></span><div class="k"></div><div class="v"></div><img class="pi" alt="">';
+    document.body.appendChild(pk);
+    const xTo = gsap.quickTo(pk, 'x', { duration: 0.55, ease: 'power3.out' }), yTo = gsap.quickTo(pk, 'y', { duration: 0.55, ease: 'power3.out' });
+    const rTo = gsap.quickTo(pk, 'rotation', { duration: 0.5, ease: 'power3.out' });
+    let lastX = mouse.x, on = false;
+    moveFns.push(() => { if (!on) return; xTo(mouse.x + 70); yTo(mouse.y + 30); rTo(gsap.utils.clamp(-8, 8, (mouse.x - lastX) * 0.6)); lastX = mouse.x; });
+    rows.forEach(r => {
+      r.addEventListener('pointerenter', () => { on = true; gsap.set(pk, { x: mouse.x + 70, y: mouse.y + 30 }); pk.querySelector('.k').textContent = r.dataset.peekK || ''; pk.querySelector('.v').textContent = r.dataset.peek; const pi = pk.querySelector('.pi'); if (r.dataset.peekImg) { pi.src = new URL(r.dataset.peekImg, document.baseURI).href; } pk.classList.toggle('has-img', !!r.dataset.peekImg); gsap.to(pk, { opacity: 1, scale: 1, duration: 0.45, ease: 'back.out(1.6)' }); });
+      r.addEventListener('pointerleave', () => { on = false; gsap.to(pk, { opacity: 0, scale: 0.6, duration: 0.3 }); });
+    });
+  }
+
+  // Wordmark du pied de page : lettres qui se soulevent pres du curseur (positions mesurees a l'entree).
+  const big = document.querySelector('footer .big');
+  if (big) {
+    const tn = [...big.childNodes].find(n => n.nodeType === 3 && n.textContent.trim());
+    if (tn) { const w = document.createElement('span'); w.innerHTML = [...tn.textContent.trim()].map(ch => `<span class="fl">${ch}</span>`).join(''); big.replaceChild(w, tn); }
+    if (fine && !reduce) {
+      const fls = [...big.querySelectorAll('.fl')], foot = big.closest('footer');
+      let xs = null, inF = false;
+      foot.addEventListener('pointerenter', () => { inF = true; xs = fls.map(f => { const r = f.getBoundingClientRect(); return r.left + r.width / 2; }); });
+      foot.addEventListener('pointerleave', () => { inF = false; fls.forEach(f => { f.style.transform = ''; }); });
+      moveFns.push(() => { if (!inF || !xs) return; fls.forEach((f, i) => { f.style.transform = `translateY(${(-Math.max(0, 1 - Math.abs(mouse.x - xs[i]) / 260) * 0.14).toFixed(3)}em)`; }); });
+    }
+  }
+
+  // Liens forts magnetiques (hors barre du haut, qui a son propre bouton)
+  if (fine && !reduce && hasGsap) document.querySelectorAll('.teaser .more, [data-mag]').forEach(b => {
+    const xTo = gsap.quickTo(b, 'x', { duration: 0.5, ease: 'power3.out' }), yTo = gsap.quickTo(b, 'y', { duration: 0.5, ease: 'power3.out' });
+    b.addEventListener('pointermove', e => { const r = b.getBoundingClientRect(); xTo((e.clientX - r.left - r.width / 2) * 0.3); yTo((e.clientY - r.top - r.height / 2) * 0.4); });
+    b.addEventListener('pointerleave', () => { xTo(0); yTo(0); });
+  });
+
+  // Lignes revelees au defilement
+  if (hasGsap && window.SplitText && window.ScrollTrigger && !still) {
+    document.fonts.ready.then(() => document.querySelectorAll('[data-lines]').forEach(el => {
+      SplitText.create(el, { type: 'lines', mask: 'lines', linesClass: 'ln', autoSplit: true, onSplit: self => gsap.from(self.lines, { yPercent: 105, duration: 1.1, ease: 'expo.out', stagger: 0.09, scrollTrigger: { trigger: el, start: 'top 85%', once: true } }) });
+    }));
+  }
+
+  // Duo : portrait qui suit le curseur sur les noms
+  const dn = document.querySelector('.dn-list');
+  const fl = document.querySelector('.dn-float');
+  if (dn && fl && fine && !reduce && hasGsap) {
+    const xTo = gsap.quickTo(fl, 'x', { duration: 0.7, ease: 'power3.out' }), yTo = gsap.quickTo(fl, 'y', { duration: 0.7, ease: 'power3.out' });
+    const rTo = gsap.quickTo(fl, 'rotation', { duration: 0.6, ease: 'power3.out' });
+    let lx = mouse.x, on = false;
+    moveFns.push(() => { if (!on) return; xTo(mouse.x + 22); yTo(mouse.y + 16); rTo(gsap.utils.clamp(-10, 10, (mouse.x - lx) * 0.5)); lx = mouse.x; });
+    dn.querySelectorAll('.dn-row').forEach(r => {
+      r.addEventListener('pointerenter', () => { on = true; fl.classList.add('on'); fl.querySelectorAll('img').forEach(i => i.classList.toggle('on', i.dataset.who === r.dataset.who)); });
+    });
+    dn.addEventListener('pointerleave', () => { on = false; fl.classList.remove('on'); });
+  }
+})();
+</script>
+<script>(()=>{const m=location.search.match(/[?&]photo=(\d)/), P={1:'1-table',2:'2-scene',3:'3-marches'}; if (m && P[m[1]]) document.querySelectorAll('img[src$="img/duo/duo.jpg"]').forEach(i=>{i.src='../img/duo/propositions/axem-duo-'+P[m[1]]+'.jpg'; i.closest('[hidden]')?.removeAttribute('hidden');});})();</script>
+<p class="proto">Tour 21 : Page coaching, proposition 2 <a class="replay" role="button" tabindex="0">Rejouer</a><a href="../tour21.html">Toutes les propositions</a></p>
+<script>
+(() => {
+  // ---- Tour 17 : socle commun (Reserver un seul a la fois, bouton son WebAudio). Charge sur les
+  // 6 pages, avant claude-mark.js et le script propre a chaque page (voir outils/build_t17.py). ----
+
+  // 1) Reserver un seul a la fois. La barre garde .nav .book[data-book] (nav.css). Tant que le grand
+  // bouton du hero (.hero .btn[data-book]) est a l'ecran, celui de la barre reste cache, invisible aux
+  // lecteurs d'ecran et non focusable. Des qu'il en sort, il apparait et reste, meme en remontant. Sur
+  // les pages duo il n'y a pas de hero : le bouton de la barre est visible d'emblee.
+  (() => {
+    const navBook = document.querySelector('#nav .book[data-book]');
+    if (!navBook) return;
+    const heroBook = document.querySelector('.hero .btn[data-book]');
+    if (!heroBook) { navBook.classList.add('rs-show'); return; }
+    navBook.classList.add('rs-hidden');
+    navBook.setAttribute('tabindex', '-1');
+    navBook.setAttribute('aria-hidden', 'true');
+    const reveal = () => {
+      navBook.classList.remove('rs-hidden');
+      navBook.classList.add('rs-show');
+      navBook.removeAttribute('tabindex');
+      navBook.removeAttribute('aria-hidden');
+    };
+    if (!('IntersectionObserver' in window)) { reveal(); return; }
+    const io = new IntersectionObserver(entries => {
+      entries.forEach(entry => { if (!entry.isIntersecting) { reveal(); io.disconnect(); } });
+    }, { threshold: 0 });
+    io.observe(heroBook);
+  })();
+
+  // 2) Bouton son : petit egaliseur en bas a gauche, coupe par defaut. Sons synthetises en WebAudio,
+  // aucun fichier. Rien ne joue avant un premier clic (ou une preference deja enregistree). Expose
+  // window.AxemSound = { play(name), on() } et ecoute l'evenement axem:sound emis ailleurs (survols,
+  // ecrans bleus). Chaque lecture/ecriture localStorage est dans un try/catch.
+  (() => {
+    const KEY = 'axem-son';
+    let enabled = false;
+    try { enabled = localStorage.getItem(KEY) === '1'; } catch (e) { enabled = false; }
+
+    let ctx = null;
+    const audioCtx = () => {
+      if (ctx) return ctx;
+      const Ctor = window.AudioContext || window.webkitAudioContext;
+      if (!Ctor) return null;
+      try { ctx = new Ctor(); } catch (e) { ctx = null; }
+      return ctx;
+    };
+
+    const soundWhoosh = c => {
+      const dur = 0.6;
+      const buf = c.createBuffer(1, Math.round(c.sampleRate * dur), c.sampleRate);
+      const d = buf.getChannelData(0);
+      for (let i = 0; i < d.length; i++) { const t = i / d.length; d[i] = (Math.random() * 2 - 1) * Math.pow(1 - t, 2.2); }
+      const src = c.createBufferSource(); src.buffer = buf;
+      const filt = c.createBiquadFilter(); filt.type = 'bandpass'; filt.Q.value = 0.7;
+      filt.frequency.setValueAtTime(500, c.currentTime);
+      filt.frequency.exponentialRampToValueAtTime(2000, c.currentTime + dur * 0.8);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.0001, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.13, c.currentTime + 0.09);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + dur);
+      src.connect(filt).connect(g).connect(c.destination);
+      src.start(); src.stop(c.currentTime + dur + 0.05);
+    };
+
+    const soundTick = c => {
+      const osc = c.createOscillator(); osc.type = 'square'; osc.frequency.setValueAtTime(1900, c.currentTime);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.08, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 0.045);
+      osc.connect(g).connect(c.destination);
+      osc.start(); osc.stop(c.currentTime + 0.06);
+    };
+
+    const soundPop = c => {
+      const osc = c.createOscillator(); osc.type = 'sine';
+      osc.frequency.setValueAtTime(420, c.currentTime);
+      osc.frequency.exponentialRampToValueAtTime(760, c.currentTime + 0.1);
+      const g = c.createGain();
+      g.gain.setValueAtTime(0.0001, c.currentTime);
+      g.gain.exponentialRampToValueAtTime(0.15, c.currentTime + 0.02);
+      g.gain.exponentialRampToValueAtTime(0.0001, c.currentTime + 0.24);
+      osc.connect(g).connect(c.destination);
+      osc.start(); osc.stop(c.currentTime + 0.26);
+    };
+
+    const SOUNDS = { whoosh: soundWhoosh, tick: soundTick, pop: soundPop };
+
+    const play = name => {
+      if (!enabled || !SOUNDS[name]) return;
+      try {
+        const c = audioCtx();
+        if (!c) return;
+        if (c.state === 'suspended') c.resume().catch(() => {});
+        SOUNDS[name](c);
+      } catch (e) { /* silencieux : le son n'est jamais bloquant */ }
+    };
+
+    window.AxemSound = { play, on: () => enabled };
+    window.addEventListener('axem:sound', e => { try { play(e.detail && e.detail.name); } catch (er) {} });
+
+    const btn = document.createElement('button');
+    btn.type = 'button';
+    btn.className = 'snd-btn';
+    btn.setAttribute('aria-pressed', 'false');
+    btn.setAttribute('aria-label', 'Activer le son');
+    btn.innerHTML = '<span class="snd-bars" aria-hidden="true"><i></i><i></i><i></i><i></i></span>';
+    document.body.appendChild(btn);
+
+    const sync = () => {
+      btn.classList.toggle('on', enabled);
+      btn.setAttribute('aria-pressed', enabled ? 'true' : 'false');
+      btn.setAttribute('aria-label', enabled ? 'Couper le son' : 'Activer le son');
+    };
+    sync();
+
+    btn.addEventListener('click', () => {
+      enabled = !enabled;
+      try { localStorage.setItem(KEY, enabled ? '1' : '0'); } catch (e) { /* prive ou bloque : tant pis */ }
+      sync();
+      if (enabled) play('pop');
+    });
+  })();
+})();
+</script>
+<script>
+/*
+ * ClaudeMark : trace officiel du symbole Claude (etoile / spark), sans dependance.
+ * Source : Wikimedia Commons, File:Claude_AI_symbol.svg
+ *   https://upload.wikimedia.org/wikipedia/commons/b/b0/Claude_AI_symbol.svg
+ * Le trace original est un SEUL <path> avec un seul sous-tracé (un seul "M" au debut,
+ * 159 segments, une seule fermeture "Z") : les 6 rayons ne sont pas des sous-tracés
+ * separes dans le fichier source, donc pas de decoupage "un <path> par rayon" possible
+ * ici sans reconstruire des tracés synthetiques. Conformement à la consigne du brief
+ * pour ce cas ("un seul contour continu impossible a separer proprement"), ClaudeMark
+ * expose `rays: []` et `root` anime en bloc (rotation / echelle / masque).
+ *
+ * Le trace ci-dessous est le trace officiel, translate pour que le centre visuel de
+ * l'etoile (centre de sa bounding box, cx=49.95 cy=50 dans le fichier source, sur un
+ * viewBox 0 0 100 100) tombe exactement sur (0,0). Le viewBox monte par mount() est
+ * donc centre : "-50 -50 100 100".
+ */
+(function (global) {
+  "use strict";
+
+  var PATH_D =
+    "m -30.35,16.5 l 19.7,-11 l 0.3,-1 l -0.3,-0.5 l -1,0 l -3.3,-0.2 l -11.2,-0.3 " +
+    "L -35.95,3 l -9.5,-0.5 l -2.4,-0.5 L -49.95,-1 l 0.2,-1.5 l 2,-1.3 l 2.9,0.2 " +
+    "l 6.3,0.5 l 9.5,0.6 l 6.9,0.4 L -11.95,-0.9 l 1.6,0 l 0.2,-0.7 l -0.5,-0.4 " +
+    "l -0.4,-0.4 L -20.95,-9 l -10.6,-7 l -5.6,-4.1 l -3,-2 l -1.5,-2 l -0.6,-4.2 " +
+    "l 2.7,-3 l 3.7,0.3 l 0.9,0.2 l 3.7,2.9 l 8,6.1 L -12.95,-14 l 1.5,1.2 l 0.6,-0.4 " +
+    "l 0.1,-0.3 l -0.7,-1.1 L -16.95,-25 l -6,-10.4 l -2.7,-4.3 l -0.7,-2.6 " +
+    "c -0.3,-1 -0.4,-2 -0.4,-3 l 3,-4.2 L -21.95,-50 l 4.2,0.6 L -16.15,-48 l 2.6,6 " +
+    "l 4.1,9.3 L -2.95,-20.1 l 2,3.8 l 1,3.4 l 0.3,1 l 0.7,0 l 0,-0.5 l 0.5,-7.2 " +
+    "l 1,-8.7 l 1,-11.2 l 0.3,-3.2 l 1.6,-3.8 l 3,-2 L 11.05,-47.4 l 2,2.9 l -0.3,1.8 " +
+    "l -1.1,7.7 L 9.05,-22.9 l -1.5,8.2 l 0.9,0 l 1,-1.1 l 4.1,-5.4 l 6.9,-8.6 l 3,-3.5 " +
+    "L 27.05,-37 l 2.3,-1.8 l 4.3,0 l 3.1,4.7 l -1.4,4.9 l -4.4,5.6 l -3.7,4.7 l -5.3,7.1 " +
+    "l -3.2,5.7 l 0.3,0.4 l 0.7,0 l 12,-2.6 l 6.4,-1.1 l 7.6,-1.3 l 3.5,1.6 l 0.4,1.6 " +
+    "l -1.4,3.4 l -8.2,2 l -9.6,2 l -14.3,3.3 l -0.2,0.1 l 0.2,0.3 l 6.4,0.6 l 2.8,0.2 " +
+    "l 6.8,0 l 12.6,1 l 3.3,2 l 1.9,2.7 l -0.3,2 l -5.1,2.6 l -6.8,-1.6 l -16,-3.8 " +
+    "l -5.4,-1.3 l -0.8,0 l 0,0.4 l 4.6,4.5 l 8.3,7.5 L 39.05,30.1 l 0.5,2.4 l -1.3,2 " +
+    "l -1.4,-0.2 l -9.2,-7 l -3.6,-3 l -8,-6.8 l -0.5,0 l 0,0.7 l 1.8,2.7 l 9.8,14.7 " +
+    "l 0.5,4.5 l -0.7,1.4 l -2.6,1 l -2.7,-0.6 l -5.8,-8 l -6,-9 l -4.7,-8.2 l -0.5,0.4 " +
+    "l -2.9,30.2 l -1.3,1.5 l -3,1.2 l -2.5,-2 l -1.4,-3 l 1.4,-6.2 l 1.6,-8 l 1.3,-6.4 " +
+    "l 1.2,-7.9 l 0.7,-2.6 l 0,-0.2 L -0.95,13.7 L -6.95,22 l -9,12.3 l -7.2,7.6 " +
+    "l -1.7,0.7 l -3,-1.5 l 0.3,-2.8 L -25.95,36 l 10,-12.8 l 6,-7.9 l 4,-4.6 l -0.1,-0.5 " +
+    "l -0.3,0 L -32.75,27.4 l -4.7,0.6 l -2,-2 l 0.2,-3 l 1,-1 l 8,-5.5 Z";
+
+  var DEFAULT_COLOR = "#D97757";
+  var SVG_NS = "http://www.w3.org/2000/svg";
+
+  function mount(el, opts) {
+    opts = opts || {};
+    var color = opts.color || DEFAULT_COLOR;
+
+    var svg;
+    if (el && el.tagName && el.tagName.toLowerCase() === "svg") {
+      svg = el;
+    } else {
+      svg = document.createElementNS(SVG_NS, "svg");
+      if (el) el.appendChild(svg);
+    }
+
+    svg.setAttribute("viewBox", "-50 -50 100 100");
+    if (!svg.hasAttribute("width") && opts.size) svg.setAttribute("width", opts.size);
+    if (!svg.hasAttribute("height") && opts.size) svg.setAttribute("height", opts.size);
+    svg.setAttribute("aria-hidden", "true");
+    while (svg.firstChild) svg.removeChild(svg.firstChild);
+
+    // root : groupe anime en bloc (rotation/echelle/masque), origine CSS forcee a
+    // (0,0) qui correspond deja au centre visuel de l'etoile dans ce viewBox recentre.
+    var root = document.createElementNS(SVG_NS, "g");
+    root.setAttribute("class", "claude-mark-root");
+    root.style.transformOrigin = "0px 0px";
+    root.style.transformBox = "view-box";
+
+    var path = document.createElementNS(SVG_NS, "path");
+    path.setAttribute("d", PATH_D);
+    path.setAttribute("fill", color);
+    path.setAttribute("class", "claude-mark-path");
+    root.appendChild(path);
+    svg.appendChild(root);
+
+    return {
+      svg: svg,
+      root: root,
+      rays: [], // tracé source en un seul sous-chemin : rayons non individualisables
+      core: null, // idem : pas de hub separe dans le tracé source
+      color: color
+    };
+  }
+
+  global.ClaudeMark = { mount: mount, PATH_D: PATH_D, DEFAULT_COLOR: DEFAULT_COLOR };
+})(window);
+</script>
+<script>
+(() => {
+  // Coaching c2, tour 21 : "Parlez Claude, couramment." Page typographique, l'index du vocabulaire
+  // Claude en douze mots (flip 3D transform seul), un curseur (le logo Claude) qui saute de mot en mot
+  // au survol (fin) et tout seul au defilement sur mobile (IntersectionObserver, jamais de boucle
+  // requestAnimationFrame permanente), un compteur "mots maitrises", puis les trois formats avec prix
+  // qui roule et boutons juicy (aimant gsap.quickTo, ecrasement, eclat de petits logos Claude au clic).
+  const root = document.querySelector('.t21-c2');
+  if (!root) return;
+
+  const reduce = matchMedia('(prefers-reduced-motion: reduce)').matches;
+  const fine = matchMedia('(hover: hover) and (pointer: fine)').matches;
+  const hasGsap = typeof gsap !== 'undefined';
+  const ORANGE = '#D97757';
+
+  // ---- Douze scroll-to en douceur (le lien du haut de page, et "voir les formats") ----
+  root.querySelectorAll('[data-scrollto]').forEach(a => {
+    a.addEventListener('click', e => {
+      const id = a.getAttribute('href');
+      const target = id && id.startsWith('#') && document.querySelector(id);
+      if (!target) return;
+      e.preventDefault();
+      target.scrollIntoView({ behavior: reduce ? 'auto' : 'smooth', block: 'start' });
+    });
+  });
+
+  // ==================================================================== L'index du vocabulaire
+  const cells = [...root.querySelectorAll('.c2-cell')];
+  const countN = document.getElementById('c2CountN');
+  const countFill = document.getElementById('c2CountFill');
+  const doneMsg = document.getElementById('c2Done');
+  const seen = new Set();
+
+  const markSeen = cell => {
+    const n = cell.dataset.n;
+    if (seen.has(n)) return;
+    seen.add(n);
+    cell.classList.add('c2-seen');
+    if (countN) countN.textContent = String(seen.size);
+    if (countFill) countFill.style.transform = 'scaleX(' + (seen.size / cells.length).toFixed(3) + ')';
+    if (seen.size === cells.length && doneMsg) {
+      doneMsg.hidden = false;
+      requestAnimationFrame(() => doneMsg.classList.add('c2-show'));
+    }
+  };
+
+  // Clic ou toucher : ouvre / referme, et compte le mot comme lu des la premiere ouverture.
+  cells.forEach(cell => {
+    cell.addEventListener('click', () => {
+      const open = !cell.classList.contains('is-open');
+      cell.classList.toggle('is-open', open);
+      cell.setAttribute('aria-expanded', String(open));
+      if (open) markSeen(cell);
+      window.dispatchEvent(new CustomEvent('axem:sound', { detail: { name: 'tick' } }));
+    });
+  });
+
+  // ---- Le logo Claude, curseur de lecture qui saute de mot en mot ----
+  const cursor = document.getElementById('c2Cursor');
+  const indexSection = document.getElementById('c2Index');
+  if (cursor && window.ClaudeMark) window.ClaudeMark.mount(cursor, { size: '100%', color: ORANGE });
+
+  // Le survol (souris fine) compte toujours un mot comme lu, meme en mouvement reduit : seul le
+  // deplacement anime du curseur est desactive dans ce cas (voir !reduce plus bas).
+  if (fine) cells.forEach(cell => cell.addEventListener('pointerenter', () => markSeen(cell)));
+
+  if (cursor && indexSection && !reduce) {
+    const moveTo = hasGsap
+      ? (() => { const qx = gsap.quickTo(cursor, 'x', { duration: .5, ease: 'power3' }); const qy = gsap.quickTo(cursor, 'y', { duration: .5, ease: 'power3' }); return (x, y) => { qx(x); qy(y); }; })()
+      : (x, y) => { cursor.style.transform = 'translate(' + x + 'px,' + y + 'px)'; };
+
+    const placeOn = cell => {
+      const sr = indexSection.getBoundingClientRect();
+      const cr = cell.getBoundingClientRect();
+      moveTo(cr.left - sr.left + 14, cr.top - sr.top + 14);
+      cursor.classList.add('on');
+    };
+
+    if (fine) {
+      // Bureau : le curseur saute au survol, un ecouteur d'evenement par cellule, aucune boucle.
+      cells.forEach(cell => cell.addEventListener('pointerenter', () => placeOn(cell)));
+      cells.forEach(cell => cell.addEventListener('focus', () => placeOn(cell)));
+    } else {
+      // Mobile : le curseur suit tout seul au defilement, uniquement quand un nouveau mot devient
+      // celui qui compte (bande centrale de l'ecran), jamais de rAF permanent.
+      const io = new IntersectionObserver(entries => {
+        entries.forEach(en => { if (en.isIntersecting) placeOn(en.target); });
+      }, { threshold: 0, rootMargin: '-44% 0px -44% 0px' });
+      cells.forEach(cell => io.observe(cell));
+    }
+  }
+
+  // ==================================================================== Les trois formats
+  const formatsGrid = document.getElementById('c2FormatsGrid');
+  const priceEls = [...root.querySelectorAll('.c2-price')];
+
+  const buildReel = numEl => {
+    const target = String(numEl.dataset.target || numEl.textContent).trim();
+    const fx = document.createElement('span');
+    fx.className = 'c2-reel-fx';
+    fx.setAttribute('aria-hidden', 'true');
+    const cols = [];
+    for (const ch of target) {
+      const col = document.createElement('span'); col.className = 'c2-reel-col';
+      const strip = document.createElement('span'); strip.className = 'c2-reel-strip';
+      for (let i = 0; i < 30; i++) { const s = document.createElement('span'); s.textContent = String(i % 10); strip.appendChild(s); }
+      col.appendChild(strip); fx.appendChild(col);
+      cols.push({ strip, target: +ch });
+    }
+    numEl.appendChild(fx);
+    return { fx, cols };
+  };
+
+  const rollPrice = reel => {
+    if (reduce || !hasGsap || !reel) return;
+    gsap.set(reel.fx, { opacity: 1 });
+    const tl = gsap.timeline({ onComplete: () => gsap.to(reel.fx, { opacity: 0, duration: .3, delay: .05 }) });
+    reel.cols.forEach((c, i) => {
+      tl.fromTo(c.strip, { y: '0em' }, { y: -(20 + c.target) + 'em', duration: .7 + i * .22, ease: 'power2.out' }, 0);
+    });
+  };
+
+  const reels = reduce ? [] : priceEls.map(buildReel);
+  if (formatsGrid) {
+    if (!reduce && 'IntersectionObserver' in window) {
+      const io = new IntersectionObserver(entries => entries.forEach(e => {
+        if (!e.isIntersecting) return;
+        reels.forEach(rollPrice);
+        io.disconnect();
+      }), { threshold: .35 });
+      io.observe(formatsGrid);
+    } else {
+      reels.forEach(rollPrice);
+    }
+  }
+
+  // ---- Boutons juicy : magnetiques, ecrasement au clic, eclat de petits logos Claude ----
+  if (!reduce && hasGsap) {
+    root.querySelectorAll('.c2-cta[data-magnet]').forEach(btn => {
+      const qx = gsap.quickTo(btn, 'x', { duration: .5, ease: 'power3' });
+      const qy = gsap.quickTo(btn, 'y', { duration: .5, ease: 'power3' });
+      if (fine) btn.addEventListener('pointermove', e => {
+        const r = btn.getBoundingClientRect();
+        qx((e.clientX - (r.left + r.width / 2)) * .3);
+        qy((e.clientY - (r.top + r.height / 2)) * .34);
+      });
+      btn.addEventListener('pointerenter', () => gsap.to(btn, { scale: 1.04, duration: .35, ease: 'power2.out' }));
+      btn.addEventListener('pointerleave', () => { qx(0); qy(0); gsap.to(btn, { scale: 1, duration: .4, ease: 'power2.out' }); });
+      btn.addEventListener('pointerdown', () => gsap.to(btn, { scale: .92, duration: .12, ease: 'power2.out' }));
+      ['pointerup', 'pointercancel'].forEach(ev => btn.addEventListener(ev, () => gsap.to(btn, { scale: 1.04, duration: .55, ease: 'elastic.out(1,0.5)' })));
+
+      btn.addEventListener('click', e => {
+        if (!btn.dataset.burst) return;
+        e.preventDefault();
+        const r = btn.getBoundingClientRect();
+        const cx = r.left + r.width / 2, cy = r.top + r.height / 2;
+        const n = 7;
+        for (let i = 0; i < n; i++) {
+          const s = document.createElement('span');
+          s.className = 'c2-burst';
+          s.style.left = cx + 'px'; s.style.top = cy + 'px';
+          document.body.appendChild(s);
+          if (window.ClaudeMark) window.ClaudeMark.mount(s, { size: '100%', color: ORANGE });
+          const ang = (i / n) * Math.PI * 2 + Math.random() * .4;
+          const dist = 42 + Math.random() * 26;
+          gsap.fromTo(s, { opacity: 1, scale: .4, x: 0, y: 0 }, {
+            opacity: 0, scale: 1, x: Math.cos(ang) * dist, y: Math.sin(ang) * dist,
+            duration: .6, ease: 'power2.out', onComplete: () => s.remove(),
+          });
+        }
+        window.dispatchEvent(new CustomEvent('axem:sound', { detail: { name: 'tick' } }));
+        setTimeout(() => { location.href = btn.href; }, 340);
+      });
+    });
+  }
+})();
+</script>
+</body>
+</html>
