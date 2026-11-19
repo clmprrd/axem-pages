@@ -1,0 +1,59 @@
+/* ---- Tour 17 : socle commun aux 6 pages (v1 v2 v3 d1 d2 d3), injecte par le build juste apres
+   nav.css et avant le CSS propre a chaque page. Regle de Clement : un seul bouton Reserver visible
+   a la fois, plus le bouton son, plus l'habillage du pied de page legal. ---- */
+
+/* Reserver un seul a la fois (regle Clement, tour 17). La barre garde un bouton .book (nav.css) ;
+   il est masque tant que le grand bouton du hero est a l'ecran, invisible sur les pages duo car
+   elles n'ont pas de hero : voir base17.js. Aujourd'hui assets/axem.js masque toute la barre au
+   defilement vers le bas (classe .hide, assets/axem.css ligne 39) : on neutralise ce comportement
+   ici, la barre du tour 17 ne se cache plus jamais. */
+.t17 .nav.hide { transform: none; }
+
+.t17 .nav .book[data-book] { transition: opacity .4s var(--ease), transform .4s var(--ease); }
+.t17 .nav .book[data-book].rs-hidden { opacity: 0; transform: translateY(-10px); pointer-events: none; }
+.t17 .nav .book[data-book].rs-show { opacity: 1; transform: none; }
+
+/* Bouton son : egaliseur discret en bas a gauche, coupe par defaut. Barres immobiles quand coupe,
+   ondulent (scaleY, CSS pur) quand actif. Ne tourne jamais tant que le bouton n'est pas active :
+   c'est une animation CSS bornee par la classe .on, pas une boucle JS permanente. */
+.t17 .snd-btn { position: fixed; left: 18px; bottom: 18px; z-index: 56; width: 44px; height: 44px; border-radius: 50%; border: 1px solid var(--line); background: rgba(250, 246, 234, .88); display: grid; place-items: center; cursor: pointer; padding: 0; transition: background-color .3s var(--ease), border-color .3s var(--ease), transform .3s var(--ease); }
+.t17 .snd-btn:hover { border-color: var(--blue); transform: translateY(-2px); }
+.t17 .snd-btn:focus-visible { outline: 2px solid var(--blue); outline-offset: 3px; }
+.t17 .snd-bars { display: flex; align-items: center; justify-content: center; gap: 3px; width: 18px; height: 16px; pointer-events: none; }
+.t17 .snd-bars i { display: block; width: 2.5px; height: 100%; border-radius: 2px; background: var(--ink); transform: scaleY(.28); transform-origin: center; transition: background-color .3s var(--ease); }
+.t17 .snd-btn.on .snd-bars i { background: var(--blue); animation: t17SndWave 1.15s ease-in-out infinite; }
+.t17 .snd-btn.on .snd-bars i:nth-child(1) { animation-delay: 0s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(2) { animation-delay: .18s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(3) { animation-delay: .36s; }
+.t17 .snd-btn.on .snd-bars i:nth-child(4) { animation-delay: .12s; }
+@keyframes t17SndWave { 0%, 100% { transform: scaleY(.28); } 50% { transform: scaleY(1); } }
+/* le bandeau de maquette se range a droite du bouton son, jamais dessous */
+.t17 .proto { left: 76px; bottom: 24px; }
+@media (max-width: 860px) { .t17 .snd-btn { left: 14px; bottom: 14px; width: 40px; height: 40px; } }
+@media (max-width: 860px) and (min-width: 701px) { .t17 .proto { left: 68px; bottom: 20px; } }
+@media (prefers-reduced-motion: reduce) { .t17 .snd-btn.on .snd-bars i { animation: none !important; } }
+
+/* Pied de page legal : une ligne sous le meta existant (axem-ia.fr / Paris / Reserver), au-dessus du
+   mot-symbole geant. Le meta original (footer .meta, assets/axem.css ligne 146) est en position
+   absolue a taille fixe ; sur mobile il retombe sur 2 lignes (peu de largeur pour 3 items), ce qui
+   ferait chevaucher une ligne suivante a decalage fixe. On enveloppe donc meta + legal-links dans un
+   bloc .ft-top en flux normal (empile en colonne), et on neutralise le positionnement absolu du
+   meta a l'interieur : la ligne des liens legaux suit toujours meta, jamais de chevauchement. */
+.t17 footer .ft-top { position: absolute; top: 28px; left: var(--gutter); right: var(--gutter); display: flex; flex-direction: column; gap: 10px; }
+.t17 footer .ft-top .meta { position: static; top: auto; left: auto; right: auto; flex-wrap: wrap; row-gap: 6px; }
+.t17 footer .legal-links { position: static; display: flex; flex-wrap: wrap; gap: 6px 20px; font-size: 11px; font-weight: 600; letter-spacing: .04em; margin: 0; }
+.t17 footer .legal-links a { color: rgba(250, 246, 234, .62); text-decoration: none; transition: color .25s var(--ease); }
+.t17 footer .legal-links a:hover, .t17 footer .legal-links a:focus-visible { color: var(--blue); }
+@media (max-width: 860px) { .t17 footer .ft-top { gap: 8px; } .t17 footer .legal-links { gap: 5px 16px; } }
+
+/* Pages juridiques (mentions-legales.html, confidentialite.html) : mise en page simple, DA du site. */
+.t17-legal { max-width: 760px; margin: 0 auto; padding: clamp(90px, 12vh, 140px) var(--gutter) 120px; }
+.t17-legal .back { display: inline-flex; align-items: center; gap: 8px; font-size: 13px; font-weight: 600; color: var(--blue); margin-bottom: 48px; }
+.t17-legal .back:hover, .t17-legal .back:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.t17-legal h1 { font-size: clamp(32px, 5vw, 48px); margin: 0 0 8px; }
+.t17-legal .maj { font-size: 13px; color: var(--grey); margin: 0 0 48px; }
+.t17-legal h2 { font-family: 'Fraunces', serif; font-weight: 700; font-size: clamp(20px, 2.4vw, 26px); margin: 44px 0 14px; }
+.t17-legal p { font-size: 16px; line-height: 1.65; color: var(--grey); margin: 0 0 14px; }
+.t17-legal a { color: var(--blue); }
+.t17-legal a:hover, .t17-legal a:focus-visible { text-decoration: underline; text-underline-offset: 3px; }
+.t17-legal .todo { color: var(--blue); font-weight: 600; }
