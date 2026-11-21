@@ -204,7 +204,7 @@ details p{padding-top:14px;font-size:17px;max-width:56ch;color:rgba(11,13,18,.82
 .bare .hd,.bare .word,.bare .marks,.bare .hint,.bare .tip{display:none!important}
 /* ---------- téléphone */
 @media (max-width:1000px){
- :root{--pad:24px;--t:150px;--s:14px;--b:36px;--r:20px}
+ :root{--pad:24px;--t:212px;--s:14px;--b:36px;--r:20px}
  .hd{grid-template-columns:1fr auto;padding-top:20px}
  .pitch{grid-column:1/-1;grid-row:2;margin:16px 0 0;font-size:25px;max-width:none}
  .circ{display:none}.ctrl{gap:8px}
@@ -269,7 +269,7 @@ details p{padding-top:14px;font-size:17px;max-width:56ch;color:rgba(11,13,18,.82
    <div class="tip" id="tip"></div>
   </div>
   <div class="sbar" id="sbar" aria-hidden="true"><i></i></div>
-  <div class="hint" id="hint">Passez le pointeur sur les logos</div>
+  <div class="hint" id="hint">Passez le pointeur sur les logos</div><script>if(matchMedia('(pointer:coarse)').matches)document.getElementById('hint').textContent='Les outils sur lesquels nous formons vos équipes'</script>
   <div class="marks" id="marks"><span>+</span><span>+</span><em>Défiler pour explorer</em><span>+</span><span>+</span></div>
  </div>
 </div>
@@ -535,7 +535,7 @@ const FOV=35,CZ=14,cam=new THREE.PerspectiveCamera(FOV,1,.1,60);cam.position.set
 const dl=new THREE.DirectionalLight(0xffffff,1.7);dl.position.set(3,5,7);scene.add(dl);
 const world=new THREE.Group();scene.add(world);
 /* atlas des logos officiels */
-const LG=AX.L,N=LG.length,COLS=8,ROWSN=Math.ceil(N/COLS),CELL=256;
+const LG=innerWidth<820?AX.L.slice(0,22):AX.L,N=LG.length,COLS=8,ROWSN=Math.ceil(N/COLS),CELL=256;
 const cv=document.createElement('canvas');cv.width=COLS*CELL;cv.height=ROWSN*CELL;
 const cx=cv.getContext('2d');cx.fillStyle='#FFFDF7';cx.fillRect(0,0,cv.width,cv.height);
 try{
