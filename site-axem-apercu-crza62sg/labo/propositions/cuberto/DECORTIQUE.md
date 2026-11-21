@@ -20,3 +20,13 @@ Remarque honnête : le cuberto de 2026 est blanc, plus sobre que l'ancien (pas d
 15. Mobile 390 px : titre en 3 lignes alignées à gauche, carte héros pleine largeur, menu burger dans une pilule. Nous : une colonne, pastilles gardées, puces et pointeur retirés, cartes empilées.
 
 Rôle des logos (ajout AXEM) : puces qui fuient le pointeur dans l'en-tête, pastille de titre qui défile les outils, constellation de logos dans chaque carte de service qui suit la souris, scène de curseurs qui cliquent sur les outils, aperçu de liste qui suit la souris (grilles de logos par famille), mur d'outils, flux animé n8n.
+
+## Refonte du 21/11/2026 (nuit)
+
+Mécaniques de cette version : (1) titre géant « Votre partenaire IA, de A à Z » avec deux pastilles dans le texte (portraits Clément/Alexis en fondu, colonne de logos d'outils qui défile) et logos qui fuient la flèche ; (2) parcours en cinq cartes empilées (diagnostic IA par volet métier, déploiement, formation, automatisation, suivi) qui se tassent en défilant ; (3) scène épinglée « Votre métier change, nous aussi » : quatre décors (usine, cabinet, commerce, RH et logistique) se révèlent par un disque qui s'agrandit depuis la flèche de la souris, et quatre cartes (formation, automatisation, tableau de bord, skill) se retournent en 3D pour se recomposer à chaque cran ; (4) bloc « Du concret » en trois visuels réels ; (5) contact en grand disque bleu qui grandit au défilement, pied de page sans rayons.
+
+Flèche native conservée, une étiquette suit la flèche.
+
+Confondable avec cuberto.com ? Non. Le squelette en deux colonnes décalées du travail et le pied de page à rayons sont supprimés ; il reste l'esprit (titre géant, pastilles, cartes empilées) mais le contenu, la scène épinglée et le disque de contact sont propres à AXEM.
+
+Contrôles mesurés : 0 erreur console, 0 requête en échec, pas de débordement à 1440 et 390 px, 60 images/s au défilement, reduced-motion sans épinglage, un seul h1, aucun texte sous 15 px, aucun prix, euro, « audit », Qualiopi, « certifié » ni tiret long ; 1,7 Mo d'images. Attention : la capture de l'application de tri (Gestuel'Santé) est utilisée sans nom, à valider avec le client avant usage public.
