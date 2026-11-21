@@ -30,3 +30,14 @@ Sources : ref/d0 à d8 (9 états desktop), ref/m0 à m3 (mobile), ref/y*.jpg (13
 - Textes de l'interface de la référence à 10 à 13 px : montés à 15 px minimum (consigne), donc cartes un peu plus aérées.
 - Bouton citron et Geist ne sont pas la palette AXEM stricte : gardés pour la ressemblance, le bleu #2349FF porte le mot clé, les poignées et les étiquettes.
 - Images du ciel, des nuages, de l'herbe et de la prairie générées par calcul (bruit fractal), aucune image de la référence reprise.
+
+
+## Refonte de la nuit du 21/11/2026 (version 2 : scène AXEM)
+
+Relecture séparée de départ : 73/100, risque de confusion FORT. Ce qui a changé : héros ciel et herbe remplacé par une scène AXEM (fond blanc, bleu #2349FF, nos cinq personnes et la mascotte Ax en objets flottants, captures floutées du vrai outil de tri et du film de reporting), Fraunces SOFT et Instrument Sans (plus de Geist, plus de bouton citron), tous les textes et titres réécrits, scène épinglée de 5 secteurs clients sans aucun nom (événementiel, santé, grande distribution, logistique, industrie) avec décor SVG qui change au défilement et vraies captures au premier plan, 13 images (760 Ko avec les logos), 18 logos, HTML 68 Ko (était 266 Ko).
+
+Mécaniques gardées de mushrooms.agency (c'est la parenté voulue) : pilule de navigation en verre dépoli, essaim de curseurs nommés qui cliquent, cartes empilées de la méthode, courbes expo.out. Tout le reste est à nous.
+
+| Question | Réponse |
+|---|---|
+| Confondable avec mushrooms.agency ? | Non au premier coup d'œil : ni ciel, ni herbe, ni pastille citron, ni Geist, ni leurs textes ; la scène de secteurs, le héros d'objets AXEM et la palette blanc et bleu n'existent pas chez eux. Reste la parenté de mécanique (navigation en pilule, curseurs, empilement), assumée. |
