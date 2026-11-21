@@ -7,17 +7,17 @@
 <link rel="icon" href="data:,">
 <meta name="description" content="On forme vos équipes à l'IA, puis on automatise, on installe des agents et on livre. Réservez 30 minutes avec Clément et Alexis.">
 <style>
-@font-face{font-family:Geist;src:url(assets/fonts/geist.woff2) format("woff2");font-weight:100 900;font-display:swap}
-@font-face{font-family:"Geist Mono";src:url(assets/fonts/geist-mono.woff2) format("woff2");font-weight:100 900;font-display:swap}
-:root{--ink:#0B0D12;--douce:rgba(11,13,18,.64);--pale:rgba(11,13,18,.42);--blue:#2349FF;--blue-p:#E7ECFF;--cream:#FAF6EA;--paper:#FFFDF7;--lime:#E9FF4D;--lime-d:#D4EA2A;--ligne:#E4E6EC;--violet:#7B5CFF;--claude:#D97757;--ease:cubic-bezier(.16,1,.3,1);--shadow:0 1px 2px rgba(11,13,18,.04),0 8px 24px -12px rgba(11,13,18,.12);--shadow-f:0 2px 6px rgba(11,13,18,.05),0 24px 60px -24px rgba(11,13,18,.22)}
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:300 900;src:url(../../fonts/Fraunces-normal-latin.woff2) format('woff2');font-display:swap}@font-face{font-family:'Fraunces';font-style:italic;font-weight:300 900;src:url(../../fonts/Fraunces-italic-latin.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Instrument Sans';font-weight:400 700;src:url(../../fonts/InstrumentSans-normal-latin.woff2) format('woff2');font-display:swap}
+:root{--ink:#0B0D12;--douce:rgba(11,13,18,.64);--pale:rgba(11,13,18,.42);--blue:#2349FF;--blue-p:#E7ECFF;--cream:#FAF6EA;--paper:#FFFDF7;--lime:#2349FF;--lime-d:#1a38d6;--ligne:#E4E6EC;--violet:#7B5CFF;--claude:#D97757;--ease:cubic-bezier(.16,1,.3,1);--shadow:0 1px 2px rgba(11,13,18,.04),0 8px 24px -12px rgba(11,13,18,.12);--shadow-f:0 2px 6px rgba(11,13,18,.05),0 24px 60px -24px rgba(11,13,18,.22)}
 *{box-sizing:border-box;margin:0}
 html{scroll-behavior:auto}html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
-body{font:400 17px/1.5 Geist,ui-sans-serif,system-ui,sans-serif;letter-spacing:-.01em;color:var(--ink);background:#fff;overflow-x:clip;-webkit-font-smoothing:antialiased}
+body{font:400 17px/1.5 "Instrument Sans",ui-sans-serif,system-ui,sans-serif;letter-spacing:-.01em;color:var(--ink);background:#fff;overflow-x:clip;-webkit-font-smoothing:antialiased}
 a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit;cursor:pointer;border:0;background:none;color:inherit}
-.mono{font-family:"Geist Mono",ui-monospace,monospace}
-.lab{font:400 15px/1.2 "Geist Mono",monospace;letter-spacing:.07em;text-transform:uppercase;color:var(--douce)}
+.mono{font-family:"Instrument Sans",ui-monospace,monospace}
+.lab{font:400 15px/1.2 "Instrument Sans",monospace;letter-spacing:.07em;text-transform:uppercase;color:var(--douce)}
 .wrap{width:min(1216px,100% - 48px);margin-inline:auto}
-h1,h2,h3{font-weight:500}
+h1,h2,h3{font-weight:500;font-family:Fraunces,Georgia,serif;letter-spacing:-.02em}
 h2.t{font-size:clamp(36px,5vw,64px);line-height:1.04;letter-spacing:-.035em}
 .sky-b{color:var(--blue)}
 svg.lg,svg.pi,svg.tl{display:block;flex:none}
@@ -25,13 +25,13 @@ svg.lg,svg.pi,svg.tl{display:block;flex:none}
 /* nav */
 .nav{position:fixed;z-index:60;top:12px;left:50%;transform:translateX(-50%);width:min(1180px,100% - 24px);height:62px;border-radius:999px;display:flex;align-items:center;justify-content:space-between;padding:0 12px 0 22px;background:linear-gradient(180deg,rgba(255,255,255,.55),rgba(190,225,255,.5));backdrop-filter:blur(14px) saturate(1.4);border:1px solid rgba(255,255,255,.7);box-shadow:0 8px 30px -14px rgba(20,60,140,.35);transition:background .5s var(--ease),box-shadow .5s var(--ease)}
 .nav.solid{background:rgba(255,255,255,.88);box-shadow:var(--shadow-f)}
-.logo{font:600 25px/1 Geist;letter-spacing:-.045em;display:flex;align-items:baseline;gap:2px}.logo sup{font:500 15px/1 "Geist Mono";color:var(--blue);letter-spacing:0;top:-.5em;position:relative}
+.logo{font:600 25px/1 "Instrument Sans";letter-spacing:-.045em;display:flex;align-items:baseline;gap:2px}.logo sup{font:500 15px/1 "Instrument Sans";color:var(--blue);letter-spacing:0;top:-.5em;position:relative}
 .nav ul{display:flex;gap:6px;list-style:none;padding:0}.nav ul a{font-size:15.5px;font-weight:500;color:var(--douce);padding:9px 14px;border-radius:999px;transition:background .3s,color .3s}.nav ul a:hover{background:rgba(255,255,255,.7);color:var(--ink)}
-.btn{display:inline-flex;align-items:center;gap:12px;font-weight:500;font-size:17px;padding:14px 14px 14px 24px;border-radius:20px;background:var(--lime);color:var(--ink);box-shadow:0 0 0 1px rgba(11,13,18,.06) inset,0 10px 24px -10px rgba(150,170,0,.6);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
+.btn{display:inline-flex;align-items:center;gap:12px;font-weight:500;font-size:17px;padding:14px 14px 14px 24px;border-radius:20px;background:var(--lime);color:#fff;box-shadow:0 0 0 1px rgba(255,255,255,.08) inset,0 10px 24px -10px rgba(35,73,255,.55);transition:transform .4s var(--ease),box-shadow .4s var(--ease)}
 .btn:hover{transform:translateY(-2px);box-shadow:0 0 0 1px rgba(11,13,18,.06) inset,0 16px 30px -10px rgba(150,170,0,.7)}
 .btn i{display:grid;place-items:center;width:38px;height:38px;border-radius:12px;background:var(--lime-d)}
 .btn.sm{font-size:15.5px;padding:9px 10px 9px 18px;border-radius:999px}.btn.sm i{width:30px;height:30px;border-radius:999px}
-.btn.ghost{background:rgba(255,255,255,.7);box-shadow:0 0 0 1px rgba(11,13,18,.1) inset;backdrop-filter:blur(8px)}.btn.ghost i{background:var(--blue-p)}
+.btn.ghost{color:var(--ink);background:rgba(255,255,255,.7);box-shadow:0 0 0 1px rgba(11,13,18,.1) inset;backdrop-filter:blur(8px)}.btn.ghost i{background:var(--blue-p)}
 .btn svg,.go svg{width:18px;height:18px;stroke:currentColor;fill:none;stroke-width:2;stroke-linecap:round;stroke-linejoin:round}
 /* hero */
 .hero{position:relative;min-height:1097px;overflow:hidden;background:#cfe3f8;isolation:isolate}
@@ -46,7 +46,7 @@ svg.lg,svg.pi,svg.tl{display:block;flex:none}
 .mot .fr{position:absolute;inset:-5px;border:2px solid var(--blue);border-radius:calc(.3em + 5px);opacity:0;pointer-events:none}
 .mot .fr i{position:absolute;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--blue)}
 .mot .fr i:nth-child(1){left:-7px;top:-7px}.mot .fr i:nth-child(2){right:-7px;top:-7px}.mot .fr i:nth-child(3){left:-7px;bottom:-7px}.mot .fr i:nth-child(4){right:-7px;bottom:-7px}
-.mot .fr em{position:absolute;left:50%;bottom:-38px;transform:translateX(-50%);font:500 15px/1 "Geist Mono";font-style:normal;background:var(--blue);color:#fff;border-radius:999px;padding:7px 12px;white-space:nowrap}
+.mot .fr em{position:absolute;left:50%;bottom:-38px;transform:translateX(-50%);font:500 15px/1 "Instrument Sans";font-style:normal;background:var(--blue);color:#fff;border-radius:999px;padding:7px 12px;white-space:nowrap}
 .hero p.sub{margin:28px auto 0;max-width:640px;font-size:clamp(17px,1.5vw,20px);line-height:1.6;color:var(--douce)}
 .cta{display:flex;gap:12px;justify-content:center;flex-wrap:wrap;margin-top:34px}
 .mock{position:relative;z-index:2;width:min(990px,100% - 32px);margin:40px auto 0;border-radius:22px 22px 0 0;background:#f7f8fa;box-shadow:var(--shadow-f);overflow:hidden;text-align:left}
@@ -60,14 +60,14 @@ svg.lg,svg.pi,svg.tl{display:block;flex:none}
 .mk h4{font-size:22px;font-weight:600;letter-spacing:-.02em}.mk .meta{font-size:15px;color:var(--douce);margin-top:4px}
 .kpis{display:grid;grid-template-columns:repeat(3,1fr);gap:0;margin-top:20px;border-top:1px solid var(--ligne)}
 .kpi{padding:16px 16px 4px 0}.kpi+.kpi{padding-left:18px;border-left:1px solid var(--ligne)}
-.kpi small{display:block;font-size:15px;color:var(--douce)}.kpi b{display:block;font-size:30px;font-weight:500;letter-spacing:-.03em;margin-top:6px}.kpi em{font:500 15px/1 Geist;font-style:normal;color:#0a8f5a}
+.kpi small{display:block;font-size:15px;color:var(--douce)}.kpi b{display:block;font-size:30px;font-weight:500;letter-spacing:-.03em;margin-top:6px}.kpi em{font:500 15px/1 "Instrument Sans";font-style:normal;color:#0a8f5a}
 .chart{display:flex;align-items:flex-end;gap:9px;height:104px;margin-top:20px;border-top:1px dashed var(--ligne);padding-top:14px}
 .chart i{flex:1;border-radius:9px 9px 3px 3px;background:linear-gradient(#cfd8ff,#e9edff);height:var(--h)}.chart i.hot{background:linear-gradient(#2349FF,#7e97ff)}
 .grass{position:absolute;z-index:3;left:0;bottom:-130px;width:100%;height:475px;object-fit:cover;object-position:center bottom;pointer-events:none;will-change:transform}
 /* swarm */
 .cur{position:absolute;z-index:8;left:0;top:0;pointer-events:none;will-change:transform}
 .cur svg{width:26px;height:26px;filter:drop-shadow(0 3px 5px rgba(0,0,0,.22))}
-.cur span{position:absolute;left:18px;top:20px;white-space:nowrap;font:600 15px/1 Geist;color:#fff;padding:6px 11px;border-radius:999px;background:var(--c)}
+.cur span{position:absolute;left:18px;top:20px;white-space:nowrap;font:600 15px/1 "Instrument Sans";color:#fff;padding:6px 11px;border-radius:999px;background:var(--c)}
 .cur .rip{position:absolute;left:3px;top:3px;width:18px;height:18px;margin:-9px 0 0 -9px;border:2px solid var(--c);border-radius:50%;opacity:0}
 .cur.fl span{left:auto;right:14px}.press{animation:press .55s var(--ease)}@keyframes press{40%{transform:scale(.965)}}
 /* marquee */
@@ -85,7 +85,7 @@ svg.lg,svg.pi,svg.tl{display:block;flex:none}
 .tg .sel{position:absolute;z-index:3;left:0;top:0;border:2px solid var(--blue);border-radius:22px;pointer-events:none;background:rgba(35,73,255,.04)}
 .tg .sel i{position:absolute;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--blue)}
 .tg .sel i:nth-child(1){left:-7px;top:-7px}.tg .sel i:nth-child(2){right:-7px;top:-7px}.tg .sel i:nth-child(3){left:-7px;bottom:-7px}.tg .sel i:nth-child(4){right:-7px;bottom:-7px}
-.tg .sel em{position:absolute;left:12px;top:-34px;font:500 15px/1 Geist;font-style:normal;color:#fff;background:var(--blue);border-radius:999px;padding:7px 12px;white-space:nowrap}
+.tg .sel em{position:absolute;left:12px;top:-34px;font:500 15px/1 "Instrument Sans";font-style:normal;color:#fff;background:var(--blue);border-radius:999px;padding:7px 12px;white-space:nowrap}
 .statement{text-align:center;padding:96px 0 30px}.statement h2{font-size:clamp(34px,4.6vw,56px);line-height:1.05;letter-spacing:-.035em;max-width:1000px;margin:0 auto}
 /* mur de logos */
 .wall{position:relative;height:340vh}
@@ -98,8 +98,8 @@ svg.tl{width:46%;height:46%}
 .fr2{position:absolute;z-index:4;left:0;top:0;border:2px solid var(--blue);border-radius:26px;pointer-events:none;opacity:0}
 .fr2 i{position:absolute;width:12px;height:12px;border-radius:50%;background:#fff;border:2px solid var(--blue)}
 .fr2 i:nth-child(1){left:-7px;top:-7px}.fr2 i:nth-child(2){right:-7px;top:-7px}.fr2 i:nth-child(3){left:-7px;bottom:-7px}.fr2 i:nth-child(4){right:-7px;bottom:-7px}
-.fr2 em{position:absolute;left:50%;transform:translateX(-50%);top:calc(100% + 12px);font:500 15px/1 Geist;font-style:normal;color:#fff;background:var(--blue);border-radius:999px;padding:7px 13px;white-space:nowrap}
-.count{position:absolute;bottom:7vh;left:0;right:0;text-align:center;font:400 15px/1 "Geist Mono";letter-spacing:.07em;text-transform:uppercase;color:var(--douce)}
+.fr2 em{position:absolute;left:50%;transform:translateX(-50%);top:calc(100% + 12px);font:500 15px/1 "Instrument Sans";font-style:normal;color:#fff;background:var(--blue);border-radius:999px;padding:7px 13px;white-space:nowrap}
+.count{position:absolute;bottom:7vh;left:0;right:0;text-align:center;font:400 15px/1 "Instrument Sans";letter-spacing:.07em;text-transform:uppercase;color:var(--douce)}
 /* offre */
 .offre{padding:110px 0 120px}.offre .head{text-align:center;margin-bottom:48px}.offre .head h2{margin-top:16px}
 .panel{position:relative;border-radius:36px;background:linear-gradient(180deg,#dbe9ff,#cfe0fb);padding:22px;box-shadow:inset 0 0 0 1px rgba(255,255,255,.6)}
@@ -109,10 +109,10 @@ svg.tl{width:46%;height:46%}
 .card.a{grid-column:span 7}.card.b{grid-column:span 5}.card.c{grid-column:span 5}.card.d{grid-column:span 7}
 .card .stage{position:relative;height:270px;border-radius:20px;overflow:hidden;background:linear-gradient(180deg,#f7f8fe,#eef0fc);padding:18px}
 .card h3{margin-top:22px;font-size:22px;line-height:1.2;letter-spacing:-.02em}.card p{margin-top:8px;color:var(--douce);font-size:16.5px;line-height:1.55;max-width:520px}
-.card .no{position:absolute;top:30px;right:32px;z-index:3;font:500 15px/1 "Geist Mono";color:var(--douce);background:#fff;border-radius:999px;padding:7px 12px;border:1px solid var(--ligne)}
+.card .no{position:absolute;top:30px;right:32px;z-index:3;font:500 15px/1 "Instrument Sans";color:var(--douce);background:#fff;border-radius:999px;padding:7px 12px;border:1px solid var(--ligne)}
 .row-u{display:flex;align-items:center;gap:12px;background:#fff;border-radius:14px;padding:10px 14px;font-size:15.5px;margin-bottom:8px;box-shadow:0 1px 0 var(--ligne)}
 .row-u .bar2{flex:1;height:9px;border-radius:9px;background:#e8ebff;overflow:hidden}.row-u .bar2 i{display:block;height:100%;width:var(--w);background:var(--blue);border-radius:9px;transform-origin:left;transform:scaleX(0)}
-.row-u b{font-weight:500;min-width:140px}.row-u em{font:500 15px/1 "Geist Mono";font-style:normal;color:var(--douce)}
+.row-u b{font-weight:500;min-width:140px}.row-u em{font:500 15px/1 "Instrument Sans";font-style:normal;color:var(--douce)}
 .av{display:flex}.av i{width:30px;height:30px;border-radius:50%;border:2px solid #fff;margin-left:-8px;background:var(--c)}.av i:first-child{margin-left:0}
 .tg2{width:44px;height:26px;border-radius:999px;background:#d7dae3;position:relative;flex:none;transition:background .4s var(--ease)}.tg2:after{content:"";position:absolute;left:3px;top:3px;width:20px;height:20px;border-radius:50%;background:#fff;box-shadow:0 1px 3px rgba(0,0,0,.25);transition:transform .4s var(--ease)}.tg2.on{background:var(--blue)}.tg2.on:after{transform:translateX(18px)}
 .srch{display:flex;align-items:center;gap:10px;border-radius:14px;border:1px solid var(--ligne);background:#fff;padding:11px 14px;font-size:15.5px;color:var(--pale);margin-bottom:10px}
@@ -143,7 +143,7 @@ svg.tl{width:46%;height:46%}
 .meth{padding:60px 0 120px;background:linear-gradient(180deg,#fff,#e6f0ff 30%,#dbe9ff)}
 .meth .head{text-align:center;margin-bottom:60px}.meth .head h2{margin-top:16px}
 .stack{position:relative}.sc{position:sticky;top:calc(96px + var(--i)*22px);margin-bottom:36px;display:grid;grid-template-columns:.9fr 1.1fr;gap:34px;align-items:center;min-height:380px;border-radius:32px;background:#fff;padding:34px;box-shadow:var(--shadow-f);transform-origin:center top;will-change:transform}
-.sc .n{font:500 15px/1 "Geist Mono";color:var(--blue);letter-spacing:.06em}.sc h3{font-size:clamp(30px,3.4vw,44px);line-height:1.06;letter-spacing:-.035em;margin:14px 0 14px}.sc p{color:var(--douce);font-size:18px;line-height:1.6;max-width:460px}
+.sc .n{font:500 15px/1 "Instrument Sans";color:var(--blue);letter-spacing:.06em}.sc h3{font-size:clamp(30px,3.4vw,44px);line-height:1.06;letter-spacing:-.035em;margin:14px 0 14px}.sc p{color:var(--douce);font-size:18px;line-height:1.6;max-width:460px}
 .sc .st{position:relative;height:300px;border-radius:22px;background:linear-gradient(180deg,#f6f8ff,#e9edff);overflow:hidden;padding:20px}
 .msg{max-width:78%;border-radius:20px;padding:13px 17px;font-size:16px;line-height:1.4;margin-bottom:10px;background:#fff;box-shadow:var(--shadow)}.msg.me{margin-left:auto;background:var(--blue);color:#fff}
 .vol{display:grid;grid-template-columns:1fr 1fr;gap:10px}.vol div{background:#fff;border-radius:18px;padding:16px;font-size:16px;font-weight:500;box-shadow:var(--shadow)}.vol div small{display:block;margin-top:6px;font-weight:400;color:var(--douce);font-size:15px;line-height:1.35}.vol div i{display:block;width:12px;height:12px;border-radius:50%;margin-bottom:10px;background:var(--c)}
@@ -152,7 +152,7 @@ svg.tl{width:46%;height:46%}
 .faq{padding:110px 0}.faq .wrap{display:grid;grid-template-columns:.8fr 1.2fr;gap:70px}.faq h2{margin-top:16px}
 .q{border-bottom:1px solid var(--ligne)}.q button{width:100%;display:flex;justify-content:space-between;align-items:center;gap:20px;text-align:left;padding:26px 0;font-size:21px;font-weight:500;letter-spacing:-.02em}
 .q button i{flex:none;width:36px;height:36px;border-radius:50%;background:#f1f3f8;display:grid;place-items:center;transition:transform .5s var(--ease),background .3s}.q button i svg{width:16px;height:16px;stroke:var(--ink);stroke-width:2.2;fill:none;stroke-linecap:round}
-.q.open button i{transform:rotate(45deg);background:var(--lime)}.q .a{height:0;overflow:hidden}.q .a p{padding:0 56px 26px 0;color:var(--douce);font-size:18px;line-height:1.6}
+.q.open button i{transform:rotate(45deg);background:var(--lime)}.q.open button i svg{stroke:#fff}.q .a{height:0;overflow:hidden}.q .a p{padding:0 56px 26px 0;color:var(--douce);font-size:18px;line-height:1.6}
 /* contact */
 .contact{position:relative;overflow:hidden;padding:150px 0 340px;isolation:isolate;background:#dcebfb}
 .contact .bg{position:absolute;inset:0;z-index:-2;background:url(assets/photos/ciel.jpg) center 20%/cover}
@@ -164,7 +164,7 @@ svg.tl{width:46%;height:46%}
 .ccard ul{list-style:none;padding:0;display:grid;gap:12px;margin-bottom:26px}.ccard li{display:flex;gap:12px;align-items:center;font-size:17px}.ccard li i{width:26px;height:26px;border-radius:50%;background:var(--blue-p);display:grid;place-items:center;flex:none}.ccard li svg{width:14px;height:14px;stroke:var(--blue);stroke-width:3;fill:none;stroke-linecap:round;stroke-linejoin:round}
 footer{background:#fff;border-top:1px solid var(--ligne);padding:56px 0 44px;position:relative;z-index:3}
 footer .wrap{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:40px}footer p{color:var(--douce);font-size:16px;line-height:1.55;max-width:360px;margin-top:14px}
-footer h4{font:400 15px/1 "Geist Mono";letter-spacing:.07em;text-transform:uppercase;color:var(--douce);margin-bottom:16px}footer a{display:block;font-size:16.5px;padding:5px 0;color:var(--ink)}footer a:hover{color:var(--blue)}
+footer h4{font:400 15px/1 "Instrument Sans";letter-spacing:.07em;text-transform:uppercase;color:var(--douce);margin-bottom:16px}footer a{display:block;font-size:16.5px;padding:5px 0;color:var(--ink)}footer a:hover{color:var(--blue)}
 .copy{width:min(1216px,100% - 48px);margin:36px auto 0;padding-top:22px;border-top:1px solid var(--ligne);color:var(--douce);font-size:15px}
 .rv{opacity:0;transform:translateY(34px)}
 @media(max-width:900px){.nav ul{display:none}.card.a,.card.b,.card.c,.card.d{grid-column:span 12}.qgrid,.faq .wrap,.contact .wrap,footer .wrap,.cbox,.sc{grid-template-columns:1fr}.qgrid{gap:40px}.faq .wrap{gap:30px}.tabs{flex-direction:row;overflow-x:auto}.tabs button{flex:none}.tabs button.on{transform:none}.sc{position:relative;top:auto}.sc .st{height:auto;min-height:260px}.tg{grid-template-columns:repeat(2,1fr)}.tg .c:nth-child(3){border-left:0}.tg .c:nth-child(n+3){border-top:1px solid var(--ligne)}.grid{grid-template-columns:repeat(6,var(--s));gap:10px}}
@@ -259,7 +259,7 @@ footer h4{font:400 15px/1 "Geist Mono";letter-spacing:.07em;text-transform:upper
 
 <section class="qui" id="qui">
   <div class="wrap qgrid">
-    <div class="ph rv"><div><img src="assets/img/clement-800.jpg" alt="Clément Predo"><span>Clément</span></div><div><img src="assets/img/alexis-800.jpg" alt="Alexis Zeitoun"><span>Alexis</span></div></div>
+    <div class="ph rv"><div><img src="assets/img/clement-blanc-800.jpg" alt="Clément Predo"><span>Clément</span></div><div><img src="assets/img/alexis-blanc-800.jpg" alt="Alexis Zeitoun"><span>Alexis</span></div></div>
     <div><div class="lab rv">Qui sommes-nous</div><h2 class="t rv">Deux fondateurs, une méthode.</h2>
       <p class="rv">Clément vient de la stratégie, Alexis de la technique. On forme les équipes nous-mêmes, puis on construit avec elles ce qui leur fait gagner du temps.</p>
       <p class="rv">Pas de grand discours : un premier échange de 30 minutes, puis un parcours clair, volet métier par volet métier.</p>
