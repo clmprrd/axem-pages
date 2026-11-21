@@ -347,8 +347,8 @@ details p{padding-top:14px;font-size:17px;max-width:56ch;color:rgba(11,13,18,.82
  <h2 class="rv">Deux associés, <em>un interlocuteur.</em></h2>
  <p class="lead rv">Clément Predo et Alexis Zeitoun. Vous travaillez directement avec nous, du premier appel au suivi.</p>
  <div class="duo">
-  <div class="person rv"><div class="ph"><img src="../../img/clement-800.jpg" alt="Clément Predo" width="800" height="880" loading="lazy"></div><h3>Clément Predo</h3><span>Cofondateur</span></div>
-  <div class="person rv"><div class="ph"><img src="../../img/alexis-800.jpg" alt="Alexis Zeitoun" width="800" height="880" loading="lazy"></div><h3>Alexis Zeitoun</h3><span>Cofondateur</span></div>
+  <div class="person rv"><div class="ph"><img src="../../img/clement-blanc-800.jpg" alt="Clément Predo" width="800" height="880" loading="lazy"></div><h3>Clément Predo</h3><span>Cofondateur</span></div>
+  <div class="person rv"><div class="ph"><img src="../../img/alexis-blanc-800.jpg" alt="Alexis Zeitoun" width="800" height="880" loading="lazy"></div><h3>Alexis Zeitoun</h3><span>Cofondateur</span></div>
  </div>
 </section>
 
@@ -427,8 +427,10 @@ var field=document.getElementById('field'),discs=[];
  });
  var fp={x:-999,y:-999,on:false},fr={w:0,h:0,l:0,t:0},vis=false;
  function lay(){var r=field.getBoundingClientRect();fr.w=r.width;fr.h=r.height;
-  var cols=Math.max(4,Math.round(fr.w/150)),rowsN=Math.ceil(discs.length/cols);
-  discs.forEach(function(o,i){var c=i%cols,rw=Math.floor(i/cols);o.hx=(c+.5)/cols*fr.w+(o.nx-.5)*(fr.w/cols)*.7-o.sz/2;o.hy=(rw+.5)/rowsN*fr.h+(o.ny-.5)*(fr.h/rowsN)*.6-o.sz/2;if(!o.x&&!o.y){o.x=o.hx;o.y=o.hy}});}
+  var mob=fr.w<820,MAX=mob?12:discs.length,vis2=discs.slice(0,MAX);
+  discs.forEach(function(o,i){if(!o.sz0)o.sz0=o.sz;o.sz=Math.round(o.sz0*(mob?.78:1));o.el.style.setProperty('--d',o.sz+'px');o.el.style.display=i<MAX?'':'none'});
+  var cols=mob?3:Math.max(4,Math.round(fr.w/150)),rowsN=Math.ceil(vis2.length/cols);
+  vis2.forEach(function(o,i){var c=i%cols,rw=Math.floor(i/cols);o.hx=(c+.5)/cols*fr.w+(o.nx-.5)*(fr.w/cols)*.7-o.sz/2;o.hy=(rw+.5)/rowsN*fr.h+(o.ny-.5)*(fr.h/rowsN)*.6-o.sz/2;if(!o.x&&!o.y){o.x=o.hx;o.y=o.hy}});}
  lay();addEventListener('resize',lay);
  addEventListener('pointermove',function(e){var r=field.getBoundingClientRect();fp.x=e.clientX-r.left;fp.y=e.clientY-r.top;fp.on=e.clientY>r.top-120&&e.clientY<r.bottom+120});
  var io=new IntersectionObserver(function(es){vis=es[0].isIntersecting;if(vis)lay()},{rootMargin:'100px'});io.observe(field);
