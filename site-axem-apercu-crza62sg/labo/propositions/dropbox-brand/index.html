@@ -1,0 +1,536 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AXEM IA, votre partenaire IA de A à Z</title>
+<meta name="description" content="AXEM IA vous accompagne de A à Z : diagnostic IA par volet métier, déploiement, formation des équipes, automatisation et suivi.">
+<link rel="icon" href="assets/icone-bleu.png">
+<style>
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:300 900;src:url(fonts/Fraunces-SOFT-normal.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:300 900;src:url(fonts/Fraunces-SOFT-italic.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Instrument Sans';font-weight:400 700;src:url(fonts/InstrumentSans-normal.woff2) format('woff2');font-display:swap}
+:root{--blue:#2349FF;--blue2:#1B38CC;--navy:#0E1A5C;--ice:#EEF2FF;--line:#DCE3FF;--cream:#FAF6EA;--ink:#0B0D12;--grey:#3A3D45;--vio:#7B5CFF;--cl:#D97757;--pad:clamp(20px,5vw,80px);--ease:cubic-bezier(.16,1,.3,1);--f:.8;--tfs:52px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#fff}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{font-family:'Instrument Sans',system-ui,sans-serif;font-size:17px;line-height:1.5;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:clip}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+h1,h2,h3,.f{font-family:'Fraunces',Georgia,serif;font-weight:800;font-variation-settings:"SOFT" 100,"opsz" 144;letter-spacing:-.045em;word-spacing:.14em;line-height:.96}
+em{font-style:italic;font-weight:400;color:var(--blue);letter-spacing:-.03em}
+.dark em{color:#fff}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0);white-space:nowrap}
+.lab{font-size:15px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;color:var(--blue)}
+.dark .lab{color:#B9C6FF}
+.wrap{padding:0 var(--pad);max-width:1480px;margin:0 auto}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:99px;background:var(--blue);color:#fff;font-weight:600;font-size:16px;transition:transform .5s var(--ease),box-shadow .5s var(--ease);box-shadow:0 10px 28px -10px rgba(35,73,255,.7)}
+.btn:hover{transform:translateY(-3px)}.btn.w{background:#fff;color:var(--blue);box-shadow:none}.btn.o{background:transparent;color:var(--ink);box-shadow:inset 0 0 0 1.5px var(--line)}
+/* barre */
+.bar{position:fixed;z-index:50;top:14px;left:50%;transform:translateX(-50%);display:flex;align-items:center;gap:26px;padding:8px 8px 8px 20px;background:rgba(255,255,255,.92);backdrop-filter:blur(14px);border-radius:99px;box-shadow:0 8px 30px -12px rgba(11,13,18,.28),inset 0 0 0 1px var(--line);max-width:calc(100vw - 28px)}
+.bar img{height:24px;width:auto}.bar nav{display:flex;gap:22px;font-size:15px;font-weight:500}.bar nav a:hover{color:var(--blue)}.bar .btn{padding:10px 18px;font-size:15px;box-shadow:none}
+/* hero mosaique */
+.hero{height:100svh;position:relative;overflow:hidden;background:#fff}
+.mosaic{position:absolute;inset:0;padding:14px;display:grid;gap:14px;grid-template-columns:repeat(4,1fr);grid-template-rows:repeat(3,1fr);background:linear-gradient(var(--line) 1px,transparent 1px) 0 0/12.5% 16.666%,linear-gradient(90deg,var(--line) 1px,transparent 1px) 0 0/12.5% 16.666%}
+.tile{position:relative;display:block;border-radius:22px;overflow:hidden;background:#fff;box-shadow:0 1px 0 rgba(11,13,18,.04)}
+.tile>img.bg{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;transition:transform 1s var(--ease)}
+a.tile:hover>img.bg{transform:scale(1.06)}
+.t-title{grid-column:1/3;grid-row:1/3;border:1px solid var(--line);display:flex;align-items:center;justify-content:center}
+.t-title{justify-content:flex-start;align-items:flex-start}.t-title .ti{width:54%;margin-left:5%;margin-top:17%}
+.duo{position:absolute;right:3%;top:19%;bottom:16%;width:41%}
+.du{position:absolute;width:62%;aspect-ratio:1;border-radius:26px;overflow:hidden;background:#fff;box-shadow:0 26px 50px -22px rgba(14,26,92,.55),0 0 0 1px var(--line)}
+.du img{width:100%;height:100%;object-fit:cover}
+.du figcaption{position:absolute;left:10px;bottom:10px;font-size:15px;font-weight:600;line-height:1;padding:7px 11px;border-radius:99px;background:var(--blue);color:#fff}
+.d1{left:0;top:0;transform:rotate(-3deg)}.d2{right:0;bottom:0;transform:rotate(3deg)}
+.t-title h1{font-size:var(--tfs);color:var(--ink);text-wrap:balance}
+.t-title .sub{position:absolute;left:6%;right:50%;bottom:6%;opacity:0}
+.t-title .sub p{font-size:17px;color:var(--grey);max-width:520px;margin-bottom:16px}
+.t-title .sub .row{display:flex;gap:10px;flex-wrap:wrap}.t-title .sub .btn{padding:10px 16px}
+.t-radar{grid-column:3;grid-row:1}.t-dash{grid-column:4;grid-row:1}.t-flow{grid-column:3/5;grid-row:2}
+.t-atelier{grid-column:1;grid-row:3}.t-skill{grid-column:2;grid-row:3}.t-app{grid-column:3;grid-row:3}.t-mascot{grid-column:4;grid-row:3}
+.pill{position:absolute;z-index:3;left:14px;top:14px;font-size:15px;font-weight:600;line-height:1;padding:8px 12px;border-radius:99px;background:#fff;color:var(--blue);box-shadow:0 4px 14px -6px rgba(11,13,18,.35);opacity:0}
+.pill.on{background:#fff}.t-dash .pill,.t-flow .pill{box-shadow:none}
+.t-flow{background:var(--blue2)}
+.fl{position:absolute;inset:0;display:flex;align-items:center;justify-content:center;gap:0;padding:44px 22px 0}
+.nd{width:clamp(48px,5.6vw,76px);aspect-ratio:1;background:#fff;border-radius:18px;display:grid;place-items:center;flex:none;box-shadow:0 10px 24px -10px rgba(0,0,0,.45)}
+.nd img{width:52%}
+.fl i{flex:1;height:3px;min-width:14px;background:repeating-linear-gradient(90deg,#fff 0 8px,transparent 8px 15px);background-size:15px 3px;animation:dash 1s linear infinite;opacity:.9}
+@keyframes dash{to{background-position:15px 0}}
+.t-skill{background:var(--cream);padding:58px 18px 16px}
+.skill b{display:block;font-family:'Fraunces',serif;font-size:21px;line-height:1.1;letter-spacing:-.02em;margin-bottom:8px}
+.skill code{display:inline-block;font:600 15px ui-monospace,Menlo,monospace;background:var(--ink);color:#fff;padding:4px 9px;border-radius:8px;margin-bottom:10px}
+.skill ol{list-style:none;font-size:15px;line-height:1.55;color:var(--grey)}.skill li:before{content:"→ ";color:var(--blue);font-weight:700}
+.t-dash{background:var(--ink);color:#fff;padding:60px 18px 16px;display:flex;flex-direction:column;justify-content:flex-end}
+.bars{display:flex;align-items:flex-end;gap:10px;height:56%;margin-bottom:10px}
+.bars span{flex:1;border-radius:8px 8px 4px 4px;background:var(--blue);height:calc(var(--h)*1%);animation:grow 2.4s var(--ease) infinite alternate}
+.bars span:nth-child(2n){background:#7C93FF}.bars span:nth-child(3){background:#fff}
+@keyframes grow{from{height:calc(var(--h)*.55%)}to{height:calc(var(--h)*1%)}}
+.t-dash small{font-size:15px;color:#B9C6FF}
+.t-mascot{background:var(--blue)}
+.t-mascot .pill{color:var(--blue)}
+.chev{position:absolute;right:28px;bottom:24px;z-index:6;display:flex;align-items:center;gap:8px;font-size:15px;font-weight:600;color:var(--blue)}
+.chev svg{width:22px;height:22px;animation:bob 1.6s var(--ease) infinite}@keyframes bob{50%{transform:translateY(6px)}}
+.cur{position:absolute;left:0;top:0;z-index:20;pointer-events:none;opacity:0;--c:#2349FF}
+.cur svg{width:26px;height:26px;fill:var(--c);filter:drop-shadow(0 4px 6px rgba(0,0,0,.25))}
+.cur span{position:absolute;left:20px;top:22px;padding:5px 11px;border-radius:99px;background:var(--c);color:#fff;font-size:15px;font-weight:600;white-space:nowrap}
+.cur .rip{position:absolute;left:-18px;top:-18px;width:44px;height:44px;border-radius:50%;border:2px solid var(--c);opacity:0}
+/* chiffres */
+.nums{padding:clamp(80px,12vw,170px) 0 clamp(50px,7vw,90px)}
+.nums h2{font-size:clamp(40px,6vw,92px);margin:14px 0 clamp(36px,5vw,70px)}
+.ng{display:grid;grid-template-columns:repeat(3,1fr);gap:clamp(16px,3vw,40px)}
+.ng>div{border-top:2px solid var(--ink);padding-top:18px}
+.ng b{display:block;font-family:'Fraunces',serif;font-weight:800;font-variation-settings:"SOFT" 100,"opsz" 144;font-size:clamp(52px,8.4vw,132px);letter-spacing:-.05em;line-height:1;color:var(--blue);white-space:nowrap}
+.ng span{font-size:18px;color:var(--grey)}
+.trust{display:flex;align-items:center;justify-content:space-between;gap:clamp(20px,4vw,56px);flex-wrap:wrap;margin-top:clamp(40px,6vw,80px);padding-top:26px;border-top:1px solid var(--line)}
+.trust .lab{color:var(--grey)}.trust img{height:44px;width:auto;filter:none;opacity:1}.trust img[alt="Puig"]{filter:brightness(0)}
+/* univers */
+.uni{padding:clamp(40px,6vw,90px) 0 80px;background:#fff}
+.uni-h{margin-bottom:clamp(28px,4vw,56px)}
+.uni-h h2{font-size:clamp(40px,6.4vw,100px);margin-top:14px;max-width:14ch}
+.ucard{position:sticky;top:calc(84px + var(--i)*22px);border-radius:32px;padding:clamp(24px,3.6vw,52px);display:grid;grid-template-columns:1fr 1fr;gap:clamp(24px,4vw,56px);align-items:center;min-height:min(72vh,590px);margin-bottom:26px;overflow:hidden;transform-origin:50% 0}
+.u1{background:var(--blue);color:#fff}.u2{background:var(--blue2);color:#fff}.u3{background:var(--cream)}.u4{background:var(--navy);color:#fff}.u5{background:var(--ice)}
+.ucard .no{font-family:'Fraunces',serif;font-style:italic;font-weight:300;font-size:clamp(70px,9vw,140px);line-height:.8;opacity:.28;margin-bottom:10px}
+.ucard h3{font-size:clamp(32px,4.2vw,62px);margin-bottom:16px}
+.ucard p.d{font-size:19px;max-width:520px;opacity:.92;margin-bottom:20px}
+.ucard ul{list-style:none;display:grid;gap:8px;font-size:17px;font-weight:500}
+.ucard li{display:flex;gap:10px;align-items:center}
+.ucard li:before{content:"";width:22px;height:22px;border-radius:50%;background:currentColor;opacity:.2;flex:none}
+.u3 li:before,.u5 li:before{background:var(--blue);opacity:.9;-webkit-mask:none}
+.ua{position:relative}
+.ua .shot{border-radius:22px;overflow:hidden;box-shadow:0 30px 60px -30px rgba(0,0,0,.5)}.ua .shot img{width:100%;height:auto}
+.chip{display:inline-block;font-size:15px;font-weight:600;padding:8px 14px;border-radius:99px;background:#fff;color:var(--blue);margin:0 8px 8px 0;box-shadow:0 6px 16px -8px rgba(11,13,18,.3)}
+.chips{margin-top:14px}
+.lg9{display:grid;grid-template-columns:repeat(3,1fr);gap:14px}
+.lg{background:#fff;border-radius:24px;aspect-ratio:1;display:grid;place-items:center;box-shadow:0 18px 36px -20px rgba(0,0,0,.55)}.lg img{width:46%}
+.lg:nth-child(3n+2){transform:translateY(22px)}
+.chart{background:#fff;border-radius:24px;padding:22px;box-shadow:0 24px 50px -28px rgba(14,26,92,.45)}
+.chart svg{width:100%;height:auto;display:block;overflow:visible}
+.chart path.l{fill:none;stroke:var(--blue);stroke-width:5;stroke-linecap:round;stroke-dasharray:900;stroke-dashoffset:900;transition:stroke-dashoffset 2.2s var(--ease)}
+.in .chart path.l{stroke-dashoffset:0}
+.chart .a{fill:url(#ga);opacity:0;transition:opacity 1.6s .6s}.in .chart .a{opacity:1}
+.chart circle{fill:#fff;stroke:var(--blue);stroke-width:4}
+.steps{display:grid;grid-template-columns:repeat(3,1fr);gap:10px;margin-top:14px;font-size:15px;font-weight:600;color:var(--grey)}
+.steps div{border-top:3px solid var(--blue);padding-top:8px}
+/* scene secteurs */
+.scene{position:relative;height:100svh;overflow:hidden;background:var(--ice)}
+#decor .d.ph{background-repeat:no-repeat;box-shadow:inset 0 0 0 1px rgba(255,255,255,.35)}#decor .d.ph svg{display:none}
+#decor{position:absolute;inset:0;display:grid;gap:8px;padding:8px;perspective:1100px}
+#decor .d{border-radius:18px;display:grid;place-items:center;background:#fff;transform-origin:50% 50%}
+#decor .d svg{width:38%;height:38%;max-width:56px;stroke:currentColor;fill:none;stroke-width:1.7;stroke-linecap:round;stroke-linejoin:round}
+.scene .veil{position:absolute;inset:0;background:radial-gradient(ellipse at 50% 50%,rgba(255,255,255,.0) 0,rgba(255,255,255,.0) 40%,rgba(14,26,92,.15) 100%);pointer-events:none}
+.scene-top{position:absolute;z-index:6;left:var(--pad);top:124px}
+.scene-top .lab{background:#fff;padding:8px 14px;border-radius:99px;display:inline-block;box-shadow:0 6px 16px -8px rgba(11,13,18,.3)}
+.fgw{position:absolute;inset:0;z-index:5}
+.sx{position:absolute;inset:0;display:grid;grid-template-columns:minmax(0,.9fr) minmax(0,1fr);gap:clamp(20px,3vw,46px);align-items:center;padding:130px var(--pad) 110px;opacity:0;pointer-events:none;transform:translateY(34px);transition:opacity .6s var(--ease),transform .9s var(--ease)}
+.sx.on{opacity:1;pointer-events:auto;transform:none}
+.sx-l{background:#fff;border-radius:30px;padding:clamp(22px,3vw,44px);box-shadow:0 40px 80px -40px rgba(14,26,92,.6)}
+.sx-l .lab{margin-bottom:12px;display:block}
+.sx-l h3{font-size:clamp(38px,5vw,74px);margin-bottom:14px}
+.sx-l p{font-size:18px;color:var(--grey);margin-bottom:16px}
+.tags{display:flex;flex-wrap:wrap;gap:8px;list-style:none}.tags li{font-size:15px;font-weight:600;padding:7px 13px;border-radius:99px;background:var(--ice);color:var(--blue)}
+.tags li.ink{background:var(--ink);color:#fff}
+.sx-r{position:relative;transition:transform 1s .1s var(--ease);justify-self:center;width:100%;max-width:560px}
+.sx:not(.on) .sx-r{transform:translateY(30px)}
+.card{background:#fff;border-radius:26px;box-shadow:0 40px 80px -36px rgba(14,26,92,.65);overflow:hidden}
+.card .hd{display:flex;align-items:center;gap:10px;padding:16px 20px;border-bottom:1px solid var(--line);font-weight:600;font-size:16px}
+.card .hd img{width:24px}.card .hd .chip{margin:0 0 0 auto;background:var(--ice);box-shadow:none}
+.log{padding:12px 20px 18px;position:relative}
+.log:before{content:"";position:absolute;left:41px;top:34px;bottom:34px;width:3px;background:var(--line)}
+.log:after{content:"";position:absolute;left:41px;top:34px;width:3px;height:0;background:var(--blue);transition:height 2s .3s var(--ease)}
+.sx.on .log:after{height:calc(100% - 68px)}
+.lr{display:flex;align-items:center;gap:16px;padding:10px 0;position:relative;z-index:1;opacity:0;transform:translateX(-14px);transition:all .6s var(--ease)}
+.sx.on .lr{opacity:1;transform:none;transition-delay:calc(.25s + var(--k)*.22s)}
+.lr .ic{width:44px;height:44px;border-radius:14px;background:#fff;box-shadow:inset 0 0 0 1.5px var(--line);display:grid;place-items:center;flex:none}.lr .ic img{width:24px}
+.lr span{font-size:16px;font-weight:500;flex:1}
+.lr em.ok{font-style:normal;font-size:15px;font-weight:700;color:#1d9b57;background:#E6F6EC;padding:4px 10px;border-radius:99px;letter-spacing:0}
+.foot{padding:14px 20px;background:var(--ice);font-size:16px;font-weight:600;color:var(--blue2)}
+.photo{position:relative;border-radius:28px;overflow:hidden;box-shadow:0 40px 80px -36px rgba(14,26,92,.65);aspect-ratio:4/4.3;background:var(--navy)}
+.photo>img{position:absolute;inset:0;width:100%;height:100%;object-fit:cover}
+.photo .card{position:absolute;right:14px;bottom:14px;left:22%}
+.dbc{padding:16px 18px 18px}
+.dbc .cols{display:flex;align-items:flex-end;gap:7px;height:120px;margin-bottom:10px}
+.dbc .cols span{flex:1;border-radius:6px 6px 3px 3px;background:var(--blue);height:0;transition:height 1.2s calc(.3s + var(--k)*.08s) var(--ease)}
+.dbc .cols span:nth-child(2n){background:#B7C4FF}
+.sx.on .dbc .cols span{height:calc(var(--h)*1%)}
+.dbc .row{display:flex;justify-content:space-between;font-size:15px;color:var(--grey);font-weight:600}
+.dbc .prog{height:10px;border-radius:99px;background:var(--ice);margin:10px 0;overflow:hidden}.dbc .prog i{display:block;height:100%;width:0;background:var(--blue);border-radius:99px;transition:width 1.5s .6s var(--ease)}
+.sx.on .dbc .prog i{width:var(--w)}
+.phone{border-radius:34px;overflow:hidden;background:#fff;box-shadow:0 40px 80px -36px rgba(14,26,92,.65);max-width:340px;margin:0 auto;border:8px solid var(--ink)}
+.phone img{width:100%}
+.sx-r .cap{margin-top:14px;display:flex;flex-wrap:wrap;gap:8px;justify-content:center}
+.illu{border-radius:28px;overflow:hidden;box-shadow:0 40px 80px -36px rgba(14,26,92,.65);background:#fff}.illu img{width:100%}
+.illu .li{display:grid;gap:6px;padding:16px 20px;font-size:16px;font-weight:600;color:var(--blue2)}
+.sk{position:absolute;left:14px;right:14px;bottom:14px}
+.sk b{font-family:'Fraunces',serif;font-size:21px;letter-spacing:-.02em;display:block;margin-bottom:6px}
+.sk code{display:inline-block;font:600 15px ui-monospace,Menlo,monospace;background:var(--ink);color:#fff;padding:4px 9px;border-radius:8px}
+.sk p{font-size:15px;color:var(--grey);margin-top:8px}
+.sxnav{position:absolute;z-index:8;left:0;right:0;bottom:14px;display:flex;justify-content:center;gap:8px;padding:0 14px;flex-wrap:wrap}
+.sxnav button{font-size:15px;font-weight:600;padding:10px 16px;border-radius:99px;background:#fff;color:var(--ink);box-shadow:0 6px 18px -8px rgba(11,13,18,.4);transition:all .5s var(--ease)}
+.sxnav button.on{background:var(--blue);color:#fff;transform:translateY(-4px)}
+.sxnav .n{display:none}
+/* equipe */
+.team{padding:clamp(40px,5vw,70px) 0 clamp(70px,10vw,140px)}
+.team h2{font-size:clamp(40px,6vw,92px);margin:14px 0 clamp(30px,4vw,56px)}
+.tg{display:grid;grid-template-columns:repeat(6,1fr);gap:16px}
+.tm{grid-column:span 2}.tm.big{grid-column:span 3}
+.tm .ph{background:var(--cream);border-radius:28px;overflow:hidden;aspect-ratio:1;transition:transform .8s var(--ease)}
+.tm.big .ph{background:var(--ice)}
+.tm .ph img{width:100%;height:100%;object-fit:cover;mix-blend-mode:multiply;transition:transform 1s var(--ease)}
+.tm:hover .ph{transform:translateY(-6px)}.tm:hover .ph img{transform:scale(1.04)}
+.tm b{display:block;font-family:'Fraunces',serif;font-size:26px;letter-spacing:-.03em;margin-top:12px;line-height:1.1}
+.tm span{font-size:16px;color:var(--grey)}
+/* faq */
+.faq{padding:clamp(40px,6vw,90px) 0 clamp(60px,8vw,110px);background:var(--cream)}
+.faq h2{font-size:clamp(38px,5.4vw,80px);margin:14px 0 36px}
+details{border-top:1.5px solid var(--ink);padding:22px 0}details:last-child{border-bottom:1.5px solid var(--ink)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;font-family:'Fraunces',serif;font-weight:700;font-size:clamp(22px,2.4vw,32px);letter-spacing:-.025em;line-height:1.15}
+summary::-webkit-details-marker{display:none}
+summary:after{content:"+";font-family:'Instrument Sans';font-weight:400;font-size:34px;color:var(--blue);transition:transform .5s var(--ease)}
+details[open] summary:after{transform:rotate(45deg)}
+details p{max-width:680px;margin-top:12px;font-size:18px;color:var(--grey)}
+/* contact */
+.contact{padding:clamp(20px,3vw,40px) 14px 14px;background:#fff}
+.ct{background:var(--blue);color:#fff;border-radius:36px;padding:clamp(40px,7vw,110px) var(--pad);position:relative;overflow:hidden}
+.ct h2{font-size:clamp(44px,8vw,128px);max-width:13ch}.ct h2 em{color:#fff}
+.ct p{font-size:20px;max-width:540px;margin:22px 0 30px;opacity:.92}
+.ct .mark{position:absolute;right:-4%;bottom:-18%;width:min(46vw,560px);opacity:.14;pointer-events:none}
+.ct .row{display:flex;gap:14px;flex-wrap:wrap;align-items:center}
+.ct .mail{font-size:19px;font-weight:600;border-bottom:2px solid rgba(255,255,255,.5)}
+footer{padding:36px var(--pad) 40px;display:flex;gap:30px;justify-content:space-between;flex-wrap:wrap;font-size:15px;color:var(--grey)}
+footer nav{display:flex;gap:10px 22px;flex-wrap:wrap}footer a:hover{color:var(--blue)}
+/* mobile */
+@media (max-width:900px){
+ .bar nav{display:none}.bar{gap:14px}
+ .ucard{position:relative;top:auto;grid-template-columns:1fr;min-height:0;transform:none!important}
+ .sx{grid-template-columns:1fr;align-content:center;gap:14px;padding:116px 16px 92px}
+ .sx-l h3{font-size:34px}.sx-l p{font-size:16px;margin-bottom:12px}.sx-l{padding:20px}
+ .sx-r{max-width:520px}
+ .photo{aspect-ratio:16/11}.photo .card{left:10%}
+ .phone{max-width:150px;border-width:5px;border-radius:22px;display:none}
+}
+@media (max-width:760px){
+ .mosaic{grid-template-columns:repeat(2,1fr);grid-template-rows:repeat(6,1fr);gap:10px;padding:10px}
+ .t-title{grid-column:1/3;grid-row:1/4}
+ .t-radar{grid-column:1;grid-row:4}.t-dash{grid-column:2;grid-row:4}.t-flow{grid-column:1/3;grid-row:5}
+ .t-atelier{grid-column:1;grid-row:6}.t-app{grid-column:2;grid-row:6}.t-skill,.t-mascot{display:none}
+ .tile{border-radius:18px}
+ .pill{left:8px;top:8px;padding:6px 9px}
+ .t-dash{padding:46px 12px 10px}.t-dash small{display:none}
+ .t-title .sub p{font-size:15px;margin-bottom:10px}.t-title .sub .btn{padding:11px 16px;font-size:15px}
+ .t-title .sub .btn.o{display:none}
+ .chev{right:16px;bottom:14px}
+ .ng{grid-template-columns:1fr}.ng>div{display:flex;align-items:baseline;gap:16px;flex-wrap:wrap}
+ .tg{grid-template-columns:repeat(2,1fr)}.tm,.tm.big{grid-column:span 1}.tm b{font-size:21px}
+ .tm:nth-child(5){grid-column:1/3}
+ .lg9{gap:10px}
+ .sxnav button .t{display:none}.sxnav .n{display:inline}.sxnav button.on .t{display:inline}
+ .sxnav button{padding:10px 14px}
+ .scene-top{top:78px}
+ .ct{border-radius:26px}
+ .t-title{flex-direction:column;justify-content:flex-start;align-items:center;padding-top:7%}
+ .t-title .ti{width:calc(var(--f)*100%);margin:0}
+ .duo{position:relative;right:auto;top:auto;bottom:auto;width:200px;height:112px;margin-top:12px;flex:none}
+ .du{width:112px;border-radius:18px}.du figcaption{left:6px;bottom:6px;padding:5px 8px}
+ .t-title .sub{left:6%;right:6%;bottom:5%}
+}
+html.rm .scene{height:auto;overflow:visible;background:var(--ice)}html.rm #decor,html.rm .sxnav,html.rm .veil{display:none}
+html.rm .fgw{position:static}html.rm .sx{position:relative;opacity:1;transform:none;pointer-events:auto;padding:40px var(--pad)}
+html.rm .scene-top{position:static;padding:50px var(--pad) 0}
+html.rm .ucard{position:relative;top:auto}
+html.rm .fl i,html.rm .bars span,html.rm .chev svg{animation:none}
+html.rm .lr{opacity:1;transform:none}html.rm .dbc .cols span{height:calc(var(--h)*1%)}html.rm .dbc .prog i{width:var(--w)}html.rm .t-title .sub{opacity:1}html.rm .pill{opacity:1}
+html.rm .chart path.l{stroke-dashoffset:0}html.rm .chart .a{opacity:1}
+@media (prefers-reduced-motion:reduce){*{transition-duration:.01ms!important}}
+@media(min-width:761px){.sx{padding-bottom:124px}.phone{width:min(340px,calc((100vh - 400px)*.738 + 16px))}.phone img{height:auto}.illu img{max-height:calc(100vh - 400px);object-fit:cover;object-position:top}.sx-r .cap{margin-bottom:0}.illu.n img{max-height:calc(100vh - 590px)}}
+.t-app .pill{top:auto;bottom:14px}
+.bar .btn{white-space:nowrap}
+@media(max-width:760px){.bar{max-width:calc(100vw - 24px);gap:10px;padding:6px 6px 6px 14px}.bar img{height:20px}.bar .btn{padding:9px 14px}.sx-r .illu img,.sx-r .photo img{height:auto;max-height:27vh;object-fit:cover;object-position:top}.sx-r .scene-top{display:none}}
+.bn{display:flex;align-items:baseline;gap:14px;flex-wrap:wrap;padding:14px 20px 6px;background:var(--blue);color:#fff}
+.bn b{font-family:'Fraunces',serif;font-weight:800;font-variation-settings:"SOFT" 100,"opsz" 144;font-size:clamp(60px,6.4vw,96px);letter-spacing:-.05em;word-spacing:.12em;line-height:1}
+.bn span{font-size:18px;font-weight:600}
+.tagm{display:none}
+@media(max-width:760px){
+ .duo{width:216px;height:140px;margin-top:10px}.du{width:130px;border-radius:18px}
+ .mosaic{padding-top:68px}.t-title{padding-top:4%;justify-content:flex-start}
+ .duo{width:210px;height:128px}.du{width:120px}
+ .tagm{display:block;margin-top:12px;font-size:15px;font-weight:600;color:var(--blue);text-align:center;max-width:210px;line-height:1.3}
+ .bn{padding:8px 16px 4px}.bn b{font-size:52px}.bn span{font-size:15px}
+ .sx-r .illu.n img{max-height:14vh}
+}
+
+.sorter{border-radius:28px;overflow:hidden;background:#fff;box-shadow:0 40px 80px -36px rgba(14,26,92,.65);max-width:520px;margin:0 auto}
+.sorter .stage{position:relative;height:clamp(176px,22vh,210px);margin:0 20px;overflow:hidden}
+.pc{position:absolute;left:8%;right:8%;top:14px;padding:16px 18px;border-radius:20px;background:#fff;box-shadow:0 14px 30px -14px rgba(14,26,92,.55),0 0 0 1.5px var(--line);animation-duration:9s;animation-iteration-count:infinite;animation-timing-function:var(--ease)}
+.pc small{display:block;font-size:15px;font-weight:600;color:var(--blue);letter-spacing:.04em;text-transform:uppercase}
+.pc b{display:block;font-family:'Fraunces',serif;font-weight:800;font-size:21px;line-height:1.15;letter-spacing:-.02em;margin:6px 0}
+.pc p{font-size:15px;color:var(--grey)}
+.pc .st{position:absolute;right:14px;top:14px;font-style:normal;font-size:15px;font-weight:700;padding:6px 12px;border-radius:99px;color:#fff;opacity:0;animation:inherit}
+.st.sg{background:#14935B}.st.sr2{background:#D2453F}.st.sm{background:var(--blue)}
+.pc1{z-index:3;animation-name:k1}.pc2{z-index:2;animation-name:k2;transform:translateY(16px) scale(.96)}.pc3{z-index:1;animation-name:k3;transform:translateY(32px) scale(.92)}
+.pc1 .st{animation-name:s1}.pc2 .st{animation-name:s2}.pc3 .st{animation-name:s3}
+@keyframes k1{0%,12%{transform:none;opacity:1}24%,92%{transform:translateX(120%) rotate(9deg);opacity:0}96%,100%{transform:none;opacity:1}}
+@keyframes k2{0%,12%{transform:translateY(16px) scale(.96);opacity:1}24%,38%{transform:none;opacity:1}50%,92%{transform:translateX(-120%) rotate(-9deg);opacity:0}96%,100%{transform:translateY(16px) scale(.96);opacity:1}}
+@keyframes k3{0%,12%{transform:translateY(32px) scale(.92);opacity:1}24%,38%{transform:translateY(32px) scale(.92);opacity:1}50%,64%{transform:translateY(0) scale(1);opacity:1}76%,92%{transform:translateY(40px) scale(.96);opacity:0}96%,100%{transform:translateY(32px) scale(.92);opacity:1}}
+@keyframes s1{0%,10%{opacity:0}14%,20%{opacity:1}24%,100%{opacity:0}}
+@keyframes s2{0%,36%{opacity:0}40%,46%{opacity:1}50%,100%{opacity:0}}
+@keyframes s3{0%,60%{opacity:0}64%,72%{opacity:1}76%,100%{opacity:0}}
+.sorter .li{display:grid;padding:12px 20px 16px;font-size:16px;font-weight:600;color:var(--blue2)}
+html.rm .pc{animation:none}html.rm .pc .st{display:none}
+.sorter .bn{padding:14px 20px 8px}
+@media(max-width:760px){.sorter .stage{height:158px}.pc{padding:10px 14px}.pc b{font-size:18px;margin:3px 0}.pc p{display:none}.pc small{font-size:15px}.sorter .bn{padding:8px 16px 4px}.sorter .li{padding:8px 16px 12px}.pc .st{padding:4px 10px}}
+.hs{display:none}
+@media(max-width:760px){.hs{display:grid;grid-template-columns:1fr 1fr;gap:0;margin:14px auto 0;width:214px;text-align:center}.hs b{display:block;font-family:'Fraunces',serif;font-weight:800;font-size:26px;letter-spacing:-.04em;color:var(--ink);line-height:1}.hs span{display:block;font-size:15px;font-weight:600;color:var(--grey);line-height:1.2;margin-top:4px;letter-spacing:-.02em}}
+.phone{background:#FFFDF8}
+.ph-top{display:flex;justify-content:space-between;padding:12px 16px 10px;font-size:15px;font-weight:700;color:var(--blue)}.ph-top span:last-child{color:var(--grey)}
+.ph-card{position:relative;margin:0 14px;border-radius:20px;overflow:hidden;box-shadow:0 12px 26px -16px rgba(14,26,92,.5)}.ph-card img{width:100%;height:auto;max-height:calc(100vh - 640px);object-fit:cover;object-position:top}
+.ph-more{position:absolute;left:12px;bottom:12px;font-size:15px;font-weight:700;color:var(--blue);background:var(--ice);padding:6px 12px;border-radius:99px}
+.ph-act{display:flex;justify-content:space-around;align-items:flex-start;padding:14px 8px 14px;font-size:15px;font-weight:700;color:var(--ink)}
+.ph-act span{display:flex;flex-direction:column;align-items:center;gap:6px}
+.ph-act i{font-style:normal;width:46px;height:46px;border-radius:50%;display:grid;place-items:center;background:#fff;box-shadow:0 6px 16px -8px rgba(11,13,18,.45);font-size:20px;color:var(--ink)}.ph-act i.x{color:#d12b2b;font-size:26px}.ph-act i.g{background:var(--blue);color:#fff}
+</style></head><body>
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs>
+<symbol id="i-mail" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="14" rx="2"/><path d="M3 7l9 6 9-6"/></symbol>
+<symbol id="i-cal" viewBox="0 0 24 24"><rect x="3" y="5" width="18" height="16" rx="2"/><path d="M3 10h18M8 3v4M16 3v4"/></symbol>
+<symbol id="i-ticket" viewBox="0 0 24 24"><path d="M3 7h18v3a2 2 0 0 0 0 4v3H3v-3a2 2 0 0 0 0-4z"/><path d="M14 7v10" stroke-dasharray="2 2"/></symbol>
+<symbol id="i-users" viewBox="0 0 24 24"><circle cx="9" cy="8" r="3"/><path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6"/><circle cx="17" cy="9" r="2.5"/><path d="M16 14.2c3 .3 5 2.5 5 5.8"/></symbol>
+<symbol id="i-cross" viewBox="0 0 24 24"><path d="M10 3h4v7h7v4h-7v7h-4v-7H3v-4h7z"/></symbol>
+<symbol id="i-pulse" viewBox="0 0 24 24"><path d="M3 12h4l2-6 4 12 2-6h6"/></symbol>
+<symbol id="i-shield" viewBox="0 0 24 24"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></symbol>
+<symbol id="i-clip" viewBox="0 0 24 24"><rect x="6" y="4" width="12" height="17" rx="2"/><rect x="9" y="2" width="6" height="4" rx="1"/><path d="M9 11h6M9 15h6"/></symbol>
+<symbol id="i-cart" viewBox="0 0 24 24"><path d="M3 4h3l2.5 11h10L21 7H7"/><circle cx="10" cy="19" r="1.5"/><circle cx="17" cy="19" r="1.5"/></symbol>
+<symbol id="i-tag" viewBox="0 0 24 24"><path d="M3 12V4h8l10 10-8 8z"/><circle cx="7.5" cy="8.5" r="1.3"/></symbol>
+<symbol id="i-shelf" viewBox="0 0 24 24"><path d="M4 3v18M20 3v18M4 9h16M4 15h16M4 21h16"/><rect x="7" y="5" width="3" height="4"/><rect x="13" y="11" width="4" height="4"/></symbol>
+<symbol id="i-basket" viewBox="0 0 24 24"><path d="M3 10h18l-2 10H5zM8 10l3-6M16 10l-3-6"/></symbol>
+<symbol id="i-truck" viewBox="0 0 24 24"><rect x="2" y="6" width="12" height="10"/><path d="M14 9h4l3 3v4h-7"/><circle cx="7" cy="18" r="2"/><circle cx="17" cy="18" r="2"/></symbol>
+<symbol id="i-box" viewBox="0 0 24 24"><path d="M12 3l9 4.5v9L12 21l-9-4.5v-9zM3 7.5l9 4.5 9-4.5M12 12v9"/></symbol>
+<symbol id="i-pallet" viewBox="0 0 24 24"><rect x="4" y="6" width="16" height="8"/><path d="M4 18h16M7 14v4M12 14v4M17 14v4"/></symbol>
+<symbol id="i-bars" viewBox="0 0 24 24"><path d="M5 21V11M12 21V4M19 21v-8"/></symbol>
+<symbol id="i-gear" viewBox="0 0 24 24"><circle cx="12" cy="12" r="3"/><circle cx="12" cy="12" r="7"/><path d="M12 2v3M12 19v3M2 12h3M19 12h3M4.9 4.9L7 7M17 17l2.1 2.1M19.1 4.9L17 7M7 17l-2.1 2.1"/></symbol>
+<symbol id="i-factory" viewBox="0 0 24 24"><path d="M3 21V11l6 4v-4l6 4V5h6v16z"/></symbol>
+<symbol id="i-wrench" viewBox="0 0 24 24"><path d="M15 4a5 5 0 0 0-4.5 7L3 18.5 5.5 21 13 13.5A5 5 0 0 0 20 9l-3 3-3-1-1-3z"/></symbol>
+<symbol id="i-folder" viewBox="0 0 24 24"><path d="M3 6h7l2 2h9v11H3z"/></symbol>
+<symbol id="i-calc" viewBox="0 0 24 24"><rect x="5" y="3" width="14" height="18" rx="2"/><rect x="8" y="6" width="8" height="3"/><path d="M8 13h2M14 13h2M8 17h2M14 17h2"/></symbol>
+<symbol id="i-receipt" viewBox="0 0 24 24"><path d="M6 3h12v18l-3-2-3 2-3-2-3 2zM9 8h6M9 12h6"/></symbol>
+<symbol id="i-chart" viewBox="0 0 24 24"><path d="M3 3v18h18M7 15l4-5 3 3 5-7"/></symbol>
+<linearGradient id="ga" x1="0" y1="0" x2="0" y2="1"><stop offset="0" stop-color="#2349FF" stop-opacity=".25"/><stop offset="1" stop-color="#2349FF" stop-opacity="0"/></linearGradient>
+</defs></svg>
+
+<header class="bar"><a href="#top" aria-label="AXEM IA, accueil"><img src="assets/logo-bleu-320.png" alt="AXEM IA" width="107" height="24"></a>
+<nav aria-label="Navigation"><a href="#univers">Le parcours</a><a href="#scene">Chez vous</a><a href="#equipe">Équipe</a><a href="#faq">Questions</a></nav>
+<a class="btn" href="#contact">Réserver 30 minutes</a></header>
+
+<main>
+<section class="hero" id="hero"><div class="mosaic" id="mosaic">
+ <div class="tile t-title"><div class="ti"><h1>Votre partenaire IA, <em>de A à Z</em></h1></div><div class="duo"><figure class="du d1"><img src="visuels/eq-clement.jpg" alt="Clément Predo, cofondateur d'AXEM IA, micro en main" width="480" height="480"><figcaption>Clément Predo</figcaption></figure><figure class="du d2"><img src="visuels/eq-alexis.jpg" alt="Alexis Zeitoun, cofondateur d'AXEM IA, micro en main" width="480" height="480"><figcaption>Alexis Zeitoun</figcaption></figure></div><p class="tagm">Deux associés, un seul interlocuteur</p><div class="hs"><div><b>+300</b><span>entreprises accompagnées</span></div><div><b>+3&nbsp;000</b><span>collaborateurs formés</span></div></div>
+  <div class="sub"><p>Du diagnostic IA par volet métier jusqu'au suivi : déploiement, formation des équipes, automatisation. Deux associés, un seul interlocuteur.</p>
+  <div class="row"><a class="btn" href="#contact">Réserver 30 minutes</a><a class="btn o" href="#scene">Voir chez qui</a></div></div></div>
+ <a class="tile t-radar" href="#u1" aria-label="01 Diagnostic IA par volet métier"><img class="bg" src="../../img/axem/formation/formation-illustration-comite-ia.jpg" alt="Comité de direction autour d'un plan, illustration du diagnostic IA par volet" width="1000" height="666"><span class="pill">01 Diagnostic</span></a>
+ <a class="tile t-dash" href="#u5" aria-label="05 Suivi"><span class="pill">05 Suivi</span><div class="bars" aria-hidden="true"><span style="--h:46"></span><span style="--h:62"></span><span style="--h:54"></span><span style="--h:80"></span><span style="--h:92"></span></div><small>Tableau de suivi des usages</small></a>
+ <a class="tile t-flow" href="#u2" aria-label="02 Accompagnement au déploiement"><span class="pill">02 Déploiement</span><div class="fl" aria-hidden="true"><span class="nd"><img src="logos/googleforms-color.svg" alt=""></span><i></i><span class="nd"><img src="logos/n8n-color.svg" alt=""></span><i></i><span class="nd"><img src="logos/claude-color.svg" alt=""></span><i></i><span class="nd"><img src="logos/gmail-color.svg" alt=""></span><i></i><span class="nd"><img src="logos/googlesheets-color.svg" alt=""></span></div></a>
+ <a class="tile t-atelier" href="#u3" aria-label="03 Formation des équipes"><img class="bg" src="../../img/axem/formation/formation-illustration-atelier.jpg" alt="Atelier de formation : salle, écran et participants" width="1000" height="666"><span class="pill">03 Formation</span></a>
+ <a class="tile t-skill" href="#u4" aria-label="04 Automatisation"><span class="pill">04 Automatisation</span><div class="skill"><b>Note de synthèse client</b><code>/note-client</code><ol><li>Lire le dossier</li><li>Résumer</li><li>Préparer la relance</li></ol></div></a>
+ <a class="tile t-app" href="#u4" aria-label="04 Automatisation, application de tri"><img class="bg" src="visuels/app-tri-geste.jpg" alt="Application de tri construite pour un client : garder ou retirer en un geste" width="630" height="590"><span class="pill">04 Automatisation</span></a>
+ <div class="tile t-mascot"><img class="bg" src="../../img/axem/visuels-posts/post-mascotte-ax-3d.jpg" alt="Ax, la mascotte AXEM en 3D bleue" width="1400" height="788"><span class="pill">Ax</span></div>
+ </div>
+ <div class="cur" style="--c:#2349FF"><svg viewBox="0 0 24 24"><path d="M3 2l17 8-7 2-3 7z"/></svg><i class="rip"></i><span>Clément</span></div>
+ <div class="cur" style="--c:#7B5CFF"><svg viewBox="0 0 24 24"><path d="M3 2l17 8-7 2-3 7z"/></svg><i class="rip"></i><span>Alexis</span></div>
+ <div class="cur" style="--c:#D97757"><svg viewBox="0 0 24 24"><path d="M3 2l17 8-7 2-3 7z"/></svg><i class="rip"></i><span>Claude</span></div>
+ <div class="chev" aria-hidden="true">Défiler <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.2" stroke-linecap="round"><path d="M6 6l6 6 6-6M6 13l6 6 6-6"/></svg></div>
+</section>
+
+<section class="nums" id="chiffres"><div class="wrap">
+ <p class="lab">En chiffres</p><h2>Du <em>concret</em>, pas des promesses.</h2>
+ <div class="ng"><div><b class="cnt" data-to="300" data-pre="+">+300</b><span>entreprises accompagnées</span></div><div><b class="cnt" data-to="3000" data-pre="+">+3 000</b><span>collaborateurs formés</span></div><div><b class="cnt" data-to="100000" data-pre="+">+100 000</b><span>personnes dans notre communauté</span></div></div>
+ <div class="trust"><span class="lab">Ils nous font confiance</span><img src="logos/carrefour.svg" alt="Carrefour"><img src="logos/geodis.svg" alt="Geodis"><img src="logos/puig.svg" alt="Puig"><img class="k" src="logos/kit.png" alt="KIT"></div>
+</div></section>
+
+<section class="uni" id="univers"><div class="wrap">
+ <div class="uni-h"><p class="lab">Le parcours</p><h2>Cinq univers, <em>un seul</em> interlocuteur.</h2></div>
+ <article class="ucard u1 dark" id="u1" style="--i:0"><div><div class="no">01</div><h3>Diagnostic IA <em>par volet métier</em></h3><p class="d">On rencontre chaque volet de l'entreprise, on cartographie les tâches où l'IA fait gagner du temps et on remet un plan clair, par métier.</p><ul><li>Entretiens par volet métier</li><li>Cartographie des tâches</li><li>Plan de déploiement priorisé</li></ul></div>
+  <div class="ua"><div class="shot"><img loading="lazy" src="../../img/axem/formation/formation-illustration-comite-ia.jpg" alt="Comité de direction autour d'un plan, illustration du diagnostic IA par volet" width="1000" height="666"></div><div class="chips"><span class="chip">Restitution à la direction</span><span class="chip">Un plan par volet</span></div></div></article>
+ <article class="ucard u2 dark" id="u2" style="--i:1"><div><div class="no">02</div><h3>Accompagnement <em>au déploiement</em></h3><p class="d">Les bons outils, installés et réglés avec vos équipes : accès, règles d'usage, premiers cas. Un référent AXEM reste à vos côtés.</p><ul><li>Choix des outils avec vous</li><li>Règles d'usage claires</li><li>Premiers cas lancés ensemble</li></ul></div>
+  <div class="ua"><div class="lg9"><div class="lg" data-d="30"><img loading="lazy" src="logos/claude-color.svg" alt="Claude"></div><div class="lg" data-d="-20"><img loading="lazy" src="logos/openai.svg" alt="ChatGPT"></div><div class="lg" data-d="40"><img loading="lazy" src="logos/copilot-color.svg" alt="Copilot"></div><div class="lg" data-d="-30"><img loading="lazy" src="logos/gemini-color.svg" alt="Gemini"></div><div class="lg" data-d="20"><img loading="lazy" src="logos/mistral-color.svg" alt="Mistral"></div><div class="lg" data-d="-40"><img loading="lazy" src="logos/perplexity-color.svg" alt="Perplexity"></div><div class="lg" data-d="35"><img loading="lazy" src="logos/notion.svg" alt="Notion"></div><div class="lg" data-d="-25"><img loading="lazy" src="logos/googledrive-color.svg" alt="Google Drive"></div><div class="lg" data-d="25"><img loading="lazy" src="logos/microsoft-color.svg" alt="Microsoft"></div></div></div></article>
+ <article class="ucard u3" id="u3" style="--i:2"><div><div class="no">03</div><h3>Formation <em>des équipes</em></h3><p class="d">Claude, ChatGPT, Copilot sur vos vrais dossiers. Chaque participant repart avec ses propres usages, pas avec une démonstration.</p><ul><li>Prise en main des outils</li><li>L'IA dans votre métier</li><li>Un parcours pour les dirigeants</li></ul></div>
+  <div class="ua"><div class="shot"><img loading="lazy" src="../../img/axem/formation/formation-illustration-atelier.jpg" alt="Atelier de formation en salle avec écran et participants" width="1000" height="666"></div><div class="chips"><span class="chip">Vos dossiers, pas des exemples</span><span class="chip">En salle ou à distance</span></div></div></article>
+ <article class="ucard u4 dark" id="u4" style="--i:3"><div><div class="no">04</div><h3>Automatisation : <em>workflows, agents, skills</em></h3><p class="d">Relances, comptes rendus, rapports : ce que vos équipes faisaient à la main tourne seul, avec n8n, Make, Zapier ou des skills Claude.</p><ul><li>Workflows branchés sur vos outils</li><li>Agents IA pour les tâches répétitives</li><li>Skills prêts à l'emploi</li></ul></div>
+  <div class="ua"><div class="shot"><img loading="lazy" src="../../img/axem/workflows-dashboards/wf-film-reporting-client-mensuel.jpg" alt="Le reporting client mensuel : tâches regroupées, minutes gagnées" width="1600" height="900"></div><div class="chips"><span class="chip">n8n</span><span class="chip">Make</span><span class="chip">Zapier</span><span class="chip">Skills Claude</span></div></div></article>
+ <article class="ucard u5" id="u5" style="--i:4"><div><div class="no">05</div><h3>Suivi, <em>mois après mois</em></h3><p class="d">Un point régulier : ce qui est utilisé, ce qui marche, ce qu'on automatise ensuite. Vos équipes ne sont jamais seules après la formation.</p><ul><li>Point d'usage régulier</li><li>Nouveaux cas à automatiser</li><li>Équipes autonomes</li></ul></div>
+  <div class="ua"><div class="chart"><svg viewBox="0 0 520 280" role="img" aria-label="Courbe d'adoption de l'IA qui monte mois après mois"><path class="a" d="M10 250 C90 240 120 200 190 190 S300 120 360 100 S470 50 510 30 L510 270 L10 270Z"/><path class="l" d="M10 250 C90 240 120 200 190 190 S300 120 360 100 S470 50 510 30"/><circle cx="10" cy="250" r="8"/><circle cx="190" cy="190" r="8"/><circle cx="360" cy="100" r="8"/><circle cx="510" cy="30" r="8"/></svg><div class="steps"><div>Premiers usages</div><div>Cas automatisés</div><div>Équipes autonomes</div></div></div></div></article>
+</div></section>
+
+<section class="scene" id="scene"><div id="decor" aria-hidden="true"></div><div class="veil"></div>
+ <div class="scene-top"><span class="lab">Chez vous, secteur par secteur</span></div>
+ <h2 class="sr">Ce qu'AXEM a construit dans chaque secteur</h2>
+ <div class="fgw">
+  <!-- Pour un nouveau client : dupliquer un article.sx, changer les icônes (data-icons) et la palette (data-k). Le reste suit tout seul. -->
+  <article class="sx" data-name="Événementiel" data-icons="i-mail,i-cal,i-ticket,i-users" data-k="1"><div class="sx-l"><span class="lab">01 · Événementiel</span><h3>En <em>événementiel</em></h3><p>Un workflow de mails répond à chaque inscription, confirme, met la liste à jour et prévient l'équipe. Fini le copier-coller.</p><ul class="tags"><li>Automatisation</li><li class="ink">Workflow de mails</li></ul></div>
+   <div class="sx-r"><div class="card"><div class="hd"><img src="logos/n8n-color.svg" alt="">Inscription à un événement<span class="chip">workflow</span></div><div class="log">
+    <div class="lr" style="--k:0"><span class="ic"><img src="logos/googleforms-color.svg" alt=""></span><span>Inscription reçue</span><em class="ok">fait</em></div>
+    <div class="lr" style="--k:1"><span class="ic"><img src="logos/gmail-color.svg" alt=""></span><span>Mail de confirmation envoyé</span><em class="ok">fait</em></div>
+    <div class="lr" style="--k:2"><span class="ic"><img src="logos/googlesheets-color.svg" alt=""></span><span>Ligne ajoutée à la liste des inscrits</span><em class="ok">fait</em></div>
+    <div class="lr" style="--k:3"><span class="ic"><img src="logos/slack-color.svg" alt=""></span><span>Équipe prévenue</span><em class="ok">fait</em></div>
+    <div class="lr" style="--k:4"><span class="ic"><img src="logos/claude-color.svg" alt=""></span><span>Relance rédigée avant l'événement</span><em class="ok">fait</em></div></div><div class="foot">Un workflow, zéro saisie à la main</div></div></div></article>
+  <article class="sx" data-name="Santé" data-icons="i-cross,i-pulse,i-shield,i-clip" data-k="2"><div class="sx-l"><span class="lab">02 · Santé</span><h3>Dans la <em>santé</em></h3><p>Une application de tri construite pour un acteur de la santé au travail : chaque contenu se garde, se retire ou se modifie en un geste.</p><ul class="tags"><li>Application</li><li class="ink">Automatisation</li></ul></div>
+   <div class="sx-r"><div class="sorter"><div class="bn"><b>+300</b><span>entreprises accompagnées</span></div><div class="stage" aria-label="Des publications se trient une à une : garder, retirer, modifier"><div class="pc pc3"><small>Publication 3</small><b>Les chiffres de la semaine</b><p>À reformuler avant de partir.</p><em class="st sm">Modifier</em></div><div class="pc pc2"><small>Publication 2</small><b>Rappel d'une visite médicale</b><p>Déjà publié le mois dernier.</p><em class="st sr2">Retirer</em></div><div class="pc pc1"><small>Publication 1</small><b>Trois gestes pour bien régler son poste</b><p>Clair, utile, au bon ton.</p><em class="st sg">Garder</em></div></div><div class="li"><span>Un geste par publication, un tri en quelques minutes</span></div></div></article>
+  <article class="sx" data-name="Grande distribution" data-icons="i-cart,i-tag,i-shelf,i-basket" data-k="3"><div class="sx-l"><span class="lab">03 · Grande distribution</span><h3>En <em>grande distribution</em></h3><p>La formation des équipes magasin et siège à Claude et Copilot, sur leurs vrais cas : relances, fiches produit, comptes rendus.</p><ul class="tags"><li>Formation</li><li class="ink">Équipes magasin et siège</li></ul></div>
+   <div class="sx-r"><div class="illu n"><div class="bn"><b>+3&nbsp;000</b><span>collaborateurs formés</span></div><img loading="lazy" src="../../img/axem/formation/formation-illustration-seminaire.jpg" alt="Séminaire d'équipe autour d'un tableau de schémas" width="1000" height="666"><div class="li"><span>Des cas de vos équipes, pas des exemples</span><span>Un suivi après la formation</span></div></div></div></article>
+  <article class="sx" data-name="Logistique" data-icons="i-truck,i-box,i-pallet,i-bars" data-k="4"><div class="sx-l"><span class="lab">04 · Logistique</span><h3>En <em>logistique</em></h3><p>Un tableau de bord qui suit les quais, les retards et la charge de chaque jour, alimenté sans ressaisie.</p><ul class="tags"><li>Tableau de bord</li><li class="ink">Suivi</li></ul></div>
+   <div class="sx-r"><div class="photo"><img loading="lazy" src="../../img/axem/cas-reels/cas-gestuel-entrepot-ergonomie.jpg" alt="Opérateur qui soulève un carton dans un entrepôt" width="799" height="1000"><div class="card"><div class="hd">Tableau de bord<span class="chip">exemple</span></div><div class="dbc"><div class="cols"><span style="--h:50;--k:0"></span><span style="--h:72;--k:1"></span><span style="--h:60;--k:2"></span><span style="--h:88;--k:3"></span><span style="--h:66;--k:4"></span><span style="--h:94;--k:5"></span></div><div class="row"><span>Quais</span><span>Retards</span><span>Charge</span></div><div class="prog" style="--w:72%"><i></i></div></div></div></div></div></article>
+  <article class="sx" data-name="Industrie" data-icons="i-gear,i-factory,i-wrench,i-shield" data-k="5"><div class="sx-l"><span class="lab">05 · Industrie</span><h3>Dans l'<em>industrie</em></h3><p>Les chefs d'équipe apprennent à utiliser Claude sur leurs rapports de ligne, puis un skill prépare le rapport de production chaque matin.</p><ul class="tags"><li>Formation</li><li class="ink">Skill Claude</li></ul></div>
+   <div class="sx-r"><div class="photo"><img loading="lazy" src="../../img/axem/cas-reels/cas-gestuel-usine-chef-equipe.jpg" alt="Chef d'équipe sur un site industriel" width="800" height="1000"><div class="card sk" style="padding:16px 18px"><b>Rapport de production du matin</b><code>/rapport-production</code><p>Lit les relevés de ligne, résume, signale les écarts.</p></div></div></div></article>
+  <article class="sx" data-name="Cabinet" data-icons="i-folder,i-calc,i-receipt,i-chart" data-k="6"><div class="sx-l"><span class="lab">06 · Cabinet</span><h3>Au <em>cabinet</em></h3><p>Un diagnostic IA par volet : où gagner du temps dossier par dossier, avec un plan priorisé remis à la direction.</p><ul class="tags"><li>Diagnostic</li><li class="ink">Plan par volet</li></ul></div>
+   <div class="sx-r"><div class="illu"><img loading="lazy" src="../../img/axem/formation/formation-illustration-comite-ia.jpg" alt="Comité de direction d'un cabinet autour du plan de déploiement" width="1000" height="666"><div class="li"><span>Restitution à la direction, volet par volet</span></div></div></div></article>
+ </div>
+ <nav class="sxnav" id="sxnav" aria-label="Secteurs"></nav>
+</section>
+
+<section class="team" id="equipe"><div class="wrap"><p class="lab">L'équipe</p><h2>Deux associés, <em>une équipe.</em></h2>
+ <div class="tg">
+  <figure class="tm big"><div class="ph"><img loading="lazy" src="../../img/axem/equipe/equipe-clement-portrait-micro.jpg" alt="Clément Predo" width="800" height="800"></div><b>Clément Predo</b><span>Cofondateur, stratégie</span></figure>
+  <figure class="tm big"><div class="ph"><img loading="lazy" src="../../img/axem/equipe/equipe-alexis-portrait-micro.jpg" alt="Alexis Zeitoun" width="1600" height="1600"></div><b>Alexis Zeitoun</b><span>Cofondateur, technique</span></figure>
+  <figure class="tm"><div class="ph"><img loading="lazy" src="../../img/axem/equipe/equipe-lucien-micro.jpg" alt="Lucien" width="1254" height="1254"></div><b>Lucien</b><span>Business developer</span></figure>
+  <figure class="tm"><div class="ph"><img loading="lazy" src="../../img/axem/equipe/equipe-enzo-micro.jpg" alt="Enzo" width="1254" height="1254"></div><b>Enzo</b><span>Formateur et consultant</span></figure>
+  <figure class="tm"><div class="ph"><img loading="lazy" src="../../img/axem/equipe/equipe-oscar-tshirt-axem.jpg" alt="Oscar" width="900" height="900"></div><b>Oscar</b><span>Équipe AXEM</span></figure>
+ </div></div></section>
+
+<section class="faq" id="faq"><div class="wrap"><p class="lab">Questions fréquentes</p><h2>Les questions <em>qu'on nous pose.</em></h2>
+ <details><summary>Par où commence-t-on ?</summary><p>Par un échange de 30 minutes pour comprendre votre entreprise. Vous recevez ensuite une proposition écrite, avec le diagnostic IA par volet métier comme point de départ.</p></details>
+ <details><summary>Faut-il des compétences techniques dans l'équipe ?</summary><p>Non. La formation part de vos dossiers et de vos outils actuels, avec les mots de votre métier.</p></details>
+ <details><summary>Quels outils utilisez-vous ?</summary><p>Claude, ChatGPT, Copilot, Gemini pour l'usage au quotidien ; n8n, Make ou Zapier pour l'automatisation. On choisit ce qui correspond à vos règles et à votre équipe.</p></details>
+ <details><summary>Qui intervient chez nous ?</summary><p>Les deux associés suivent chaque dossier, avec des formateurs et consultants de l'équipe selon le volet.</p></details>
+</div></section>
+</main>
+
+<section class="contact" id="contact"><div class="ct dark"><img class="mark" src="assets/monogramme-creme.png" alt=""><p class="lab">Contact</p><h2>Parlons de votre <em>partenariat</em> IA.</h2><p>Un échange de 30 minutes pour comprendre votre entreprise. Vous recevez ensuite une proposition écrite.</p><div class="row"><a class="btn w" href="mailto:contact@axem-ia.fr?subject=Réserver%2030%20minutes">Réserver 30 minutes</a><a class="mail" href="mailto:contact@axem-ia.fr">contact@axem-ia.fr</a></div></div></section>
+<footer><span>AXEM IA, SAS, 3 rue Françoise Dolto, 75013 Paris</span><nav><a href="https://axem-ia.fr/formation-ia-equipe-commerciale.html">Programme de formation</a><a href="https://axem-ia.fr/nos-resultats.html">Nos résultats</a><a href="https://axem-ia.fr/accessibilite-handicap.html">Accessibilité</a><a href="https://axem-ia.fr/reclamations.html">Réclamations</a><a href="https://axem-ia.fr/mentions-legales.html">Mentions légales</a><a href="https://www.linkedin.com/company/axem-ia">LinkedIn</a></nav></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script>
+(function(){
+const $=(s,r=document)=>r.querySelector(s),$$=(s,r=document)=>[...r.querySelectorAll(s)];
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+const root=document.documentElement;if(RM)root.classList.add('rm');
+gsap.registerPlugin(ScrollTrigger);
+let lenis=null;
+if(!RM&&window.Lenis){lenis=new Lenis({lerp:.09,smoothWheel:true});lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);window.__lenis=lenis}
+function goTo(sel){const el=$(sel);if(!el)return;if(lenis)lenis.scrollTo(el,{offset:-70,duration:1.5});else el.scrollIntoView()}
+$$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const s=a.getAttribute('href');if(s.length>1&&$(s)){e.preventDefault();goTo(s)}}));
+
+/* ===== 1. Mosaique : dezoom epingle ===== */
+let heroCtx;
+function buildHero(){
+ if(heroCtx)heroCtx.revert();
+ const vw=innerWidth,vh=innerHeight,mob=vw<760;
+ const mosaic=$('#mosaic'),tt=$('.t-title');
+ if(RM){root.style.setProperty('--f','.86');root.style.setProperty('--tfs',(mob?30:Math.min(64,vw*.045))+'px');return}
+ heroCtx=gsap.context(()=>{
+  const tw=tt.offsetWidth,th=tt.offsetHeight,cx=tt.offsetLeft+tw/2,cy=tt.offsetTop+th/2;
+  const f=mob?.52:.8,s0=Math.max(1.5,(mob?.9:.84)*vw/(f*tw));
+  root.style.setProperty('--f',f);root.style.setProperty('--tfs',((mob?.092:.09)*vw/s0)+'px');
+  let oy0=0;if(mob){const tg=$('.hs',tt),tp=$('.ti',tt);oy0=(th/2-(tp.offsetTop+tg.offsetTop+tg.offsetHeight)/2)*s0}
+  const ox=vw/2-cx,oy=vh/2-cy+oy0;gsap.set(mosaic,{transformOrigin:cx+'px '+cy+'px',scale:s0,x:ox,y:oy});
+  const tiles=$$('.tile',mosaic).filter(t=>t!==tt&&t.offsetParent);
+  const dist=t=>Math.hypot(t.offsetLeft+t.offsetWidth/2-cx,t.offsetTop+t.offsetHeight/2-cy);
+  tiles.sort((a,b)=>dist(a)-dist(b));
+  const tl=gsap.timeline({defaults:{ease:'none'},scrollTrigger:{trigger:'#hero',start:'top top',end:'+='+(mob?2400:3000),pin:true,scrub:.8,anticipatePin:1,invalidateOnRefresh:true}});
+  tl.to(mosaic,{scale:1,x:0,y:0,duration:7,ease:'power2.inOut'},0);
+  tiles.forEach((t,i)=>{
+   const mx=t.offsetLeft+t.offsetWidth/2,my=t.offsetTop+t.offsetHeight/2;
+   const dx=Math.abs(mx-vw/2)<8?0:Math.sign(mx-vw/2),dy=Math.abs(my-vh/2)<8?0:Math.sign(my-vh/2);
+   tl.fromTo(t,{x:dx*vw*.75,y:dy*vh*.75},{x:0,y:0,duration:3.4,ease:'power3.out'},.9+i*.5);
+  });
+  tl.to('.chev',{opacity:0,duration:.4},.2);
+  tl.to('.tagm,.hs',{opacity:0,duration:.5},6.2);tl.fromTo('.t-title .sub',{opacity:0,y:24},{opacity:1,y:0,duration:1,ease:'expo.out'},7);
+  tl.fromTo('.pill',{opacity:0,scale:.6},{opacity:1,scale:1,duration:.7,stagger:.12,ease:'expo.out'},7.1);
+  const targets=[$('.t-radar'),$('.t-flow'),mob?$('.t-app'):$('.t-skill')];
+  const spots=[[.62,.55],[.5,.6],[.55,.62]];
+  $$('.cur').forEach((c,i)=>{
+   const t=targets[i],tx=t.offsetLeft+t.offsetWidth*spots[i][0],ty=t.offsetTop+t.offsetHeight*spots[i][1];
+   const at=8+i*.35;
+   tl.fromTo(c,{x:vw+40,y:vh+40,opacity:0},{x:tx,y:ty,opacity:1,duration:1.5,ease:'power3.out'},at);
+   tl.fromTo($('.rip',c),{scale:.2,opacity:.9},{scale:1.6,opacity:0,duration:.7,ease:'expo.out'},at+1.5);
+   tl.to(t,{scale:.965,duration:.2},at+1.5).to(t,{scale:1,duration:.5,ease:'expo.out'},at+1.7);
+  });
+  tl.to({},{duration:1.2},10.3);
+ });
+}
+/* ===== compteurs ===== */
+function counters(){
+ $$('.cnt').forEach(el=>{
+  const to=+el.dataset.to,fmt=n=>'+'+Math.round(n).toLocaleString('fr-FR').replace(/[  ]/g,' ');
+  if(RM){el.textContent=fmt(to);return}
+  const o={v:0};
+  ScrollTrigger.create({trigger:el,start:'top 85%',once:true,onEnter:()=>gsap.to(o,{v:to,duration:2,ease:'expo.out',onUpdate:()=>{el.textContent=fmt(o.v)},onComplete:()=>{el.textContent=fmt(to)}})});
+ });
+}
+/* ===== univers : cartes empilees ===== */
+function univers(){
+ const cards=$$('.ucard');
+ cards.forEach(c=>ScrollTrigger.create({trigger:c,start:'top 72%',once:true,onEnter:()=>c.classList.add('in')}));
+ if(RM)return;
+ const mm=gsap.matchMedia();
+ mm.add('(min-width:901px)',()=>{
+  cards.forEach((c,i)=>{if(i<cards.length-1)gsap.to(c,{scale:.94,ease:'none',scrollTrigger:{trigger:cards[i+1],start:'top 90%',end:'top '+(84+(i+1)*22),scrub:true}})});
+ });
+ $$('.lg').forEach(l=>gsap.fromTo(l,{y:0},{y:+l.dataset.d,ease:'none',scrollTrigger:{trigger:'#u2',start:'top bottom',end:'bottom top',scrub:.6}}));
+}
+/* ===== scene secteurs ===== */
+const SX=$$('.sx'),N=SX.length;let sceneST=null,cur=-1,cols=10,rows=6;
+const PAL=[['#2349FF','#fff'],['#EEF2FF','#2349FF'],['#FAF6EA','#2349FF'],['#DCE3FF','#1B38CC'],['#1B38CC','#fff'],['#0E1A5C','#9FB1FF'],['#FFFFFF','#2349FF']];
+const WGT=[0,1,1,1,2,2,3,3,4,5,6,6];
+const hash=(a,b)=>{let h=(Math.imul(a+1,2654435761)^Math.imul(b+7,40503))>>>0;h^=h>>>13;h=Math.imul(h,1274126177)>>>0;return(h%10007)/10007};
+const DEC={1:['dec-evenement.jpg',.30],2:['dec-sante-app-floutee.jpg',.4],3:['dec-distribution.jpg',.5],4:['dec-logistique.jpg',.5],5:['dec-industrie.jpg',.4],6:['dec-cabinet.jpg',.5]};
+const DIM={};
+function loadDec(){Object.values(DEC).forEach(([f])=>{if(DIM[f])return;const im=new Image();im.onload=()=>{DIM[f]=[im.naturalWidth,im.naturalHeight];if(cur>=0)paintPhotos()};im.src='visuels/'+f})}
+function paintTile(d,i,kk){
+ const dc=DEC[kk],dm=dc&&DIM[dc[0]];
+ if(!dm||hash(i+31,kk)>=.64){d.classList.toggle('ph',false);d.style.backgroundImage='';return false}
+ const dec=$('#decor'),W=dec.clientWidth,H=dec.clientHeight,sc=Math.max(W/dm[0],H/dm[1]),iw=dm[0]*sc,ih=dm[1]*sc;
+ const ox=(W-iw)/2,oy=-(ih-H)*dc[1];
+ d.classList.add('ph');d.style.backgroundImage='url(visuels/'+dc[0]+')';d.style.backgroundSize=iw+'px '+ih+'px';d.style.backgroundPosition=(ox-d.offsetLeft)+'px '+(oy-d.offsetTop)+'px';
+ return true;
+}
+function paintPhotos(){const kk=+SX[Math.max(cur,0)].dataset.k;$$('#decor .d').forEach((d,i)=>paintTile(d,i,kk))}
+function apply(d,i,k){
+ const icons=SX[k].dataset.icons.split(','),kk=+SX[k].dataset.k;
+ const p=PAL[WGT[Math.floor(hash(i,kk)*WGT.length)]];
+ d.style.background=p[0];d.style.color=p[1];
+ const sv=d.firstChild,u=sv.firstChild;
+ if(hash(i+99,kk)<.5&&!(i<cols&&i%cols<4)){sv.style.display='';u.setAttribute('href','#'+icons[Math.floor(hash(i+5,kk)*icons.length)])}else sv.style.display='none';
+ paintTile(d,i,kk);
+}
+function buildDecor(){
+ const dec=$('#decor');dec.textContent='';
+ const mob=innerWidth<700;cols=mob?4:10;rows=mob?8:6;
+ dec.style.gridTemplateColumns='repeat('+cols+',1fr)';dec.style.gridTemplateRows='repeat('+rows+',1fr)';
+ for(let i=0;i<cols*rows;i++){const d=document.createElement('div');d.className='d';d.innerHTML='<svg viewBox="0 0 24 24"><use href="#i-mail"/></svg>';dec.appendChild(d);apply(d,i,Math.max(cur,0))}
+}
+function setStep(k,instant){
+ SX.forEach((e,j)=>e.classList.toggle('on',j===k));
+ $$('#sxnav button').forEach((b,j)=>b.classList.toggle('on',j===k));
+ const ds=$$('#decor .d');
+ ds.forEach((d,i)=>{
+  if(instant||RM){apply(d,i,k);return}
+  gsap.killTweensOf(d);
+  const dd=Math.hypot((i%cols)/cols-.5,Math.floor(i/cols)/rows-.5);
+  gsap.to(d,{rotationX:90,duration:.2,delay:dd*.5,ease:'power2.in',onComplete(){apply(d,i,k);gsap.to(d,{rotationX:0,duration:.6,ease:'expo.out'})}});
+ });
+}
+function scene(){
+ const nav=$('#sxnav');
+ SX.forEach((s,i)=>{const b=document.createElement('button');b.type='button';b.innerHTML='<span class="n">'+(i+1)+'</span><span class="t"> '+s.dataset.name+'</span>';b.addEventListener('click',()=>{if(!sceneST)return;const y=sceneST.start+(i+.5)/N*(sceneST.end-sceneST.start);if(lenis)lenis.scrollTo(y,{duration:1.4});else scrollTo(0,y)});nav.appendChild(b)});
+ cur=0;buildDecor();SX[0].classList.add('on');$$('#sxnav button')[0].classList.add('on');
+ if(RM)return;
+ sceneST=ScrollTrigger.create({trigger:'#scene',start:'top top',end:()=>'+='+(N*innerHeight*.75),pin:true,anticipatePin:1,invalidateOnRefresh:true,onUpdate:s=>{const k=Math.min(N-1,Math.floor(s.progress*N));if(k!==cur){cur=k;setStep(k)}}});
+}
+/* ===== apparitions ===== */
+function reveals(){
+ if(RM)return;
+ $$('.nums h2, .uni-h h2, .team h2, .faq h2').forEach(h=>gsap.from(h,{y:30,opacity:0,duration:1,ease:'expo.out',scrollTrigger:{trigger:h,start:'top 100%',once:true}}));
+ gsap.from('.tm',{y:70,opacity:0,duration:1.1,ease:'expo.out',stagger:.1,scrollTrigger:{trigger:'.tg',start:'top 85%',once:true}});
+ gsap.from('details',{y:30,opacity:0,duration:.9,ease:'expo.out',stagger:.08,scrollTrigger:{trigger:'.faq',start:'top 70%',once:true}});
+ gsap.from('.ct h2, .ct .row',{y:40,opacity:0,duration:1.1,ease:'expo.out',stagger:.12,scrollTrigger:{trigger:'.ct',start:'top 75%',once:true}});
+}
+loadDec();buildHero();univers();scene();counters();reveals();
+let lw=innerWidth;
+addEventListener('resize',()=>{if(innerWidth===lw)return;lw=innerWidth;clearTimeout(window.__rt);window.__rt=setTimeout(()=>{buildHero();buildDecor();ScrollTrigger.refresh()},250)});
+window.__ready=true;
+})();
+</script></body></html>
