@@ -1,0 +1,854 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AXEM IA · Votre partenariat IA, de A à Z</title>
+<meta name="description" content="AXEM IA vous accompagne de A à Z : diagnostic IA par volet métier, déploiement, formation des équipes et automatisations.">
+<link rel="icon" href="assets/icone-bleu.png">
+<style>
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:300 900;src:url(fonts/Fraunces-SOFT-normal.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:300 900;src:url(fonts/Fraunces-SOFT-italic.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Instrument Sans';font-weight:400 700;src:url(fonts/InstrumentSans-normal.woff2) format('woff2');font-display:swap}
+:root{--blue:#2349FF;--ink:#0B0D12;--grey:#3A3D45;--paper:#fff;--cream:#FAF6EA;--ice:#E4EAFF;--soft:#8FA2FF;--line:rgba(11,13,18,.12);--pad:clamp(20px,5vw,72px);--ease:cubic-bezier(.16,1,.3,1);--r:28px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#fff;scroll-behavior:auto;overflow-x:clip}.stage,.app{overflow:hidden}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{font-family:'Instrument Sans',system-ui,sans-serif;font-size:17px;line-height:1.5;color:var(--ink);background:transparent;-webkit-font-smoothing:antialiased;overflow-x:clip;position:relative}
+/* fil conducteur : fines lignes verticales des photos LinkedIn */
+body::before{content:"";position:fixed;inset:0;z-index:-1;pointer-events:none;background-image:repeating-linear-gradient(90deg,transparent 0 118px,rgba(35,73,255,.09) 118px 119px),repeating-linear-gradient(90deg,transparent 0 187px,rgba(35,73,255,.07) 187px 188px),repeating-linear-gradient(90deg,transparent 0 79px,rgba(35,73,255,.045) 79px 80px)}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%}
+button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.f,h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:800;font-variation-settings:"SOFT" 100,"opsz" 144;letter-spacing:-.045em;word-spacing:.12em;line-height:.96}
+em{font-style:italic;font-weight:400;color:var(--blue);letter-spacing:-.03em}
+.on-blue em,.on-ink em{color:#fff}
+.wrap{padding:0 var(--pad);max-width:1600px;margin:0 auto}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:8px}
+.sr{position:absolute;width:1px;height:1px;overflow:hidden;clip:rect(0 0 0 0)}
+/* motif : rond bleu + traits rayonnants */
+.rays{width:68px;height:auto;color:var(--blue);display:block}
+.on-blue .rays,.on-ink .rays{color:#fff}
+.lab{display:inline-flex;align-items:center;gap:10px;font-size:15px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--blue)}
+.lab::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--blue);box-shadow:0 0 0 4px rgba(35,73,255,.16)}
+.on-blue .lab,.on-ink .lab{color:#fff}.on-blue .lab::before,.on-ink .lab::before{background:#fff;box-shadow:0 0 0 4px rgba(255,255,255,.2)}
+.lg{display:inline-block;width:100%;height:100%;object-fit:contain}
+/* curseur de souris AXEM : un rond bleu à la place de la flèche */
+.cur{position:fixed;left:0;top:0;z-index:999;pointer-events:none;display:none;will-change:transform}
+.cur .dot{position:absolute;left:-9px;top:-9px;width:18px;height:18px;border-radius:50%;background:var(--blue);border:2px solid #fff;box-shadow:0 2px 10px rgba(35,73,255,.45);transition:transform .35s var(--ease),background .3s}
+.cur .tg{position:absolute;left:0;top:0;transform:translate(-50%,-50%) scale(.6);font-size:15px;font-weight:600;color:#fff;white-space:nowrap;opacity:0;transition:opacity .25s,transform .45s var(--ease)}
+.cur.hot .dot{transform:scale(3.2);background:var(--blue)}
+.cur.hot.lbl .tg{opacity:1;transform:translate(-50%,-50%) scale(1)}
+.cur.dn .dot{transform:scale(.7)}.cur.hot.dn .dot{transform:scale(2.7)}
+body.has-cur,body.has-cur *{cursor:none!important}
+@media (pointer:fine){.cur{display:block}}
+/* boutons */
+.btn{position:relative;display:inline-flex;align-items:center;gap:12px;min-height:56px;padding:0 30px;border-radius:99px;background:var(--blue);color:#fff;font-size:18px;font-weight:600;transition:transform .5s var(--ease),box-shadow .4s;box-shadow:0 10px 30px -10px rgba(35,73,255,.6)}
+.btn:hover{transform:translateY(-2px)}
+.btn.w{background:#fff;color:var(--blue);box-shadow:none}.btn.k{background:var(--ink);box-shadow:none}
+.btn .ar{width:30px;height:30px;border-radius:50%;background:rgba(255,255,255,.2);display:grid;place-items:center;font-size:16px}
+.btn.w .ar{background:var(--ice)}
+/* navigation en pilule */
+.nav{position:fixed;z-index:100;left:50%;top:16px;transform:translateX(-50%);display:flex;align-items:center;gap:6px;padding:8px 8px 8px 22px;border-radius:99px;background:rgba(255,255,255,.88);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);box-shadow:0 12px 40px -18px rgba(11,13,18,.3);width:min(920px,calc(100vw - 32px));transition:transform .6s var(--ease)}
+.nav .lo{height:28px;width:auto;margin-right:auto}
+.nav a.l{font-size:15px;font-weight:500;padding:10px 14px;border-radius:99px;color:var(--grey);transition:background .3s,color .3s}
+.nav a.l:hover{background:var(--ice);color:var(--blue)}
+.nav .btn{min-height:46px;padding:0 20px;font-size:15px;box-shadow:none}
+@media(max-width:820px){.nav a.l{display:none}}
+/* HERO */
+.hero{padding:132px 0 40px;position:relative}
+.hero-top{display:grid;grid-template-columns:1.25fr .75fr;gap:clamp(24px,5vw,80px);align-items:end}
+h1{font-size:clamp(46px,8.4vw,128px);position:relative}
+h1 .ln{display:block;overflow:hidden;padding-bottom:.08em;margin-bottom:-.08em}
+h1 .ln>span{display:block}
+.hero-side{padding-bottom:12px}
+.lead{font-size:clamp(18px,1.5vw,22px);color:var(--grey);max-width:30em}
+.rot{margin:20px 0 28px;font-size:19px;font-weight:600;display:flex;gap:.4em;flex-wrap:wrap;align-items:baseline}
+.rw{display:inline-block;height:1.4em;overflow:hidden;vertical-align:bottom;position:relative;min-width:8.5em}
+.rw b{display:block;color:var(--blue);font-family:'Fraunces',serif;font-weight:800;font-variation-settings:"SOFT" 100;font-style:italic;font-size:1.15em;height:1.22em;line-height:1.22}
+.stagew{position:relative;margin-top:clamp(34px,5vw,64px);padding:38px 0}
+.cl{position:absolute;font-size:15px;font-weight:600;letter-spacing:.1em;text-transform:uppercase;color:var(--ink);display:flex;align-items:center;gap:8px}
+.cl::before{content:"";width:9px;height:9px;background:var(--blue);border-radius:50%}
+.cl.tl{left:0;top:6px}.cl.tr{right:0;top:6px}.cl.bl{left:0;bottom:6px}.cl.br{right:0;bottom:6px}
+.stage{position:relative;border-radius:var(--r);background:rgba(255,255,255,.7);border:1px solid var(--line)}
+.mos{display:grid;grid-template-columns:repeat(12,1fr);grid-auto-rows:calc((min(100vw,1600px) - 2*var(--pad))/12);grid-auto-flow:dense;gap:0;border-radius:var(--r);overflow:hidden}
+.t{position:relative;overflow:hidden;border:.5px solid rgba(11,13,18,.07);background:rgba(255,255,255,.9);transition:background .5s var(--ease),transform .6s var(--ease)}
+.t.s2{grid-column:span 2;grid-row:span 2}.t.w2{grid-column:span 2}
+.t i{position:absolute;inset:0;display:block}
+.tp img{width:100%;height:100%;object-fit:cover;object-position:center top}
+.t.tl{display:grid;place-items:center}.t.tl img{width:46%;height:46%;object-fit:contain;transition:transform .6s var(--ease)}
+.t:hover.tl img{transform:scale(1.18) rotate(-4deg)}
+.tw{display:grid;place-items:center;background:var(--cream)}.tw span{font-family:'Fraunces',serif;font-weight:800;font-variation-settings:"SOFT" 100;font-size:clamp(17px,2.4vw,34px);letter-spacing:-.03em;font-style:italic;color:var(--blue)}
+.tw.inv{background:var(--blue)}.tw.inv span{color:#fff;font-style:normal}
+.disc i{inset:14%;border-radius:50%;background:var(--blue)}
+.qd{background:var(--ice)}.qd i{background:var(--blue);border-radius:100% 0 0 0;inset:0 0 0 0;transform-origin:100% 100%;width:100%;height:100%}
+.ry{display:grid;place-items:center}.ry .rays{width:56%}
+.kd{background:var(--ink)}.kd i{inset:16%;border-radius:50%;background:var(--blue)}
+.t.bl{background:var(--blue)}.t.bl i{inset:30%;border-radius:50%;background:#fff}
+.t.tr{background:var(--cream)}.t.tr i{background:var(--blue);clip-path:polygon(0 100%,100% 100%,0 0);}
+.t.flip{background:var(--ice)}
+.t.flip.disc i{background:var(--ink)}
+.t.flip.kd i{background:#fff}.t.flip.tr i{transform:rotate(180deg)}
+.t.flip.tl img{transform:scale(1.25)}
+.t.flip.qd i{transform:rotate(90deg)}
+/* acteurs : curseurs nommés qui cliquent */
+.fk{position:absolute;left:0;top:0;z-index:30;pointer-events:none;display:flex;align-items:flex-start;will-change:transform;--c:#2349FF;--tc:#fff}
+.fk[data-who=alexis]{--c:#0B0D12}
+.fk[data-who=equipe]{--c:#FAF6EA;--tc:#0B0D12}
+.fk svg{width:26px;height:26px;fill:var(--c);stroke:#fff;stroke-width:1.4;stroke-linejoin:round;filter:drop-shadow(0 2px 3px rgba(0,0,0,.3));transition:transform .15s}
+.fk[data-who=equipe] svg{stroke:#0B0D12}
+.fk span{margin:18px 0 0 -6px;background:var(--c);color:var(--tc);font-size:15px;font-weight:600;line-height:1;padding:7px 11px;border-radius:99px;white-space:nowrap;box-shadow:0 6px 18px -6px rgba(11,13,18,.45)}
+.fk[data-who=equipe] span{border:1.5px solid var(--ink)}
+.fk.press svg{transform:scale(.82)}
+.rp{position:absolute;z-index:25;pointer-events:none;width:10px;height:10px;margin:-5px 0 0 -5px;border-radius:50%;border:2px solid var(--blue);animation:rp .7s var(--ease) forwards}
+@keyframes rp{to{transform:scale(7);opacity:0}}
+/* texte flou qui devient net */
+.sec{padding:clamp(80px,11vw,170px) 0;position:relative}
+.def{display:grid;grid-template-columns:.8fr 2fr;gap:30px}
+.def .big{font-size:clamp(26px,3.7vw,54px);font-family:'Fraunces',serif;font-weight:700;font-variation-settings:"SOFT" 100;letter-spacing:-.035em;line-height:1.1}
+.def .big .w{display:inline-block;margin-right:.24em;will-change:filter,opacity}
+.def .big em{color:var(--blue)}
+.def .sm{margin-top:44px;font-size:clamp(19px,1.7vw,24px);color:var(--grey);max-width:26em}
+.loop{display:flex;flex-wrap:wrap;gap:12px;margin-top:34px}
+.loop span{display:inline-flex;align-items:center;gap:10px;padding:12px 18px;border-radius:99px;background:#fff;border:1px solid var(--line);font-weight:600;font-size:16px}
+.loop span i{width:22px;height:22px;border-radius:50%;background:var(--blue);color:#fff;display:grid;place-items:center;font-style:normal;font-size:15px}
+/* tension */
+.tens{background:var(--ink);color:#fff;border-radius:46px;margin:0 clamp(8px,1.5vw,24px);overflow:hidden;position:relative;padding:clamp(70px,9vw,130px) 0}
+.tens .bg{position:absolute;right:-12%;top:-30%;width:70vw;height:70vw;max-width:980px;max-height:980px;border-radius:50%;background:var(--blue);opacity:.9;filter:blur(2px)}
+.tens .rays{position:absolute;left:6%;bottom:9%;width:110px;color:var(--soft)}
+.tens-in{position:relative;display:grid;grid-template-columns:1fr 1.6fr 1fr;gap:30px;align-items:center}
+.tens h2{font-size:clamp(34px,4.4vw,64px)}
+.tens h2.rt{text-align:right}
+.pls{display:flex;flex-wrap:wrap;justify-content:center;gap:12px;position:relative}
+.pls{gap:30px 22px}
+.pls::before,.pls::after{content:"(";position:absolute;left:-30px;top:-20px;font-size:230px;line-height:1;font-weight:200;font-family:'Instrument Sans';color:rgba(255,255,255,.55)}
+.pls::after{content:")";left:auto;right:-30px;top:auto;bottom:-110px}
+.pl{background:#fff;color:var(--ink);font-size:16px;font-weight:600;padding:12px 20px;border-radius:99px;display:inline-block;will-change:transform;box-shadow:0 14px 30px -14px rgba(0,0,0,.6)}
+/* pivot */
+.pivot{text-align:center}
+.pivot h2{font-size:clamp(40px,6.6vw,104px);margin:22px auto 34px;max-width:11em}
+.app{position:relative;border-radius:26px;background:#fff;border:1px solid var(--line);box-shadow:0 40px 90px -40px rgba(35,73,255,.55);overflow:hidden;text-align:left}
+.app-bar{display:flex;align-items:center;gap:7px;padding:14px 18px;border-bottom:1px solid var(--line);background:rgba(250,246,234,.7);font-size:15px;font-weight:600;color:var(--grey)}
+.app-bar i{width:12px;height:12px;border-radius:50%;background:var(--ink);opacity:.18}.app-bar i:first-child{background:var(--blue);opacity:1}
+.app-bar span{margin-left:10px}
+.kb{margin-top:46px}
+.kcols{display:grid;grid-template-columns:repeat(3,1fr);gap:18px;padding:22px;min-height:360px;background:linear-gradient(0deg,rgba(228,234,255,.45),rgba(228,234,255,.1))}
+.kc{background:rgba(255,255,255,.6);border-radius:18px;padding:14px;border:1px dashed rgba(35,73,255,.28)}
+.kc h4{font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);margin-bottom:12px;display:flex;align-items:center;gap:8px}
+.kc h4 i{width:10px;height:10px;border-radius:50%;background:var(--blue)}
+.kc:nth-child(2) h4 i{background:var(--ink)}.kc:nth-child(3) h4 i{background:var(--soft)}
+.kcard{background:#fff;border:1px solid var(--line);border-radius:14px;padding:13px 14px;margin-bottom:10px;box-shadow:0 8px 20px -14px rgba(11,13,18,.4);position:relative;transition:box-shadow .3s,border-color .3s}
+.kcard b{display:block;font-size:16px;line-height:1.25}
+.kcard small{display:block;margin-top:6px;font-size:15px;color:var(--blue);font-weight:600}
+.kcard .ok{display:none;position:absolute;right:10px;top:10px;background:var(--blue);color:#fff;border-radius:99px;padding:2px 10px;font-size:15px;font-weight:600}
+.kcard.done{border-color:var(--blue)}.kcard.valid .ok{display:block}
+.kcard.lift{box-shadow:0 22px 40px -14px rgba(35,73,255,.55);border-color:var(--blue)}
+/* tuyauterie : taxe du copier-coller */
+.tax{display:grid;grid-template-columns:1fr 1.15fr;gap:clamp(30px,5vw,80px);align-items:center}
+.tax h2{font-size:clamp(36px,5.2vw,76px);margin:18px 0 22px}
+.tax p{font-size:20px;color:var(--grey);max-width:28em}
+.chain{background:#fff;border:1px solid var(--line);border-radius:var(--r);padding:22px;display:grid;gap:10px}
+.chain .ro{display:flex;align-items:center;gap:14px;padding:12px 14px;border-radius:16px;background:var(--cream)}
+.chain .ro .ic{width:40px;height:40px;border-radius:12px;background:#fff;display:grid;place-items:center;padding:8px;flex:none}
+.chain .ro b{font-size:17px}
+.chain .ro em{margin-left:auto;font-size:15px;color:var(--ink);background:#fff;border-radius:99px;padding:4px 12px;font-style:normal;font-weight:600;border:1px solid var(--line)}
+.chain .ro.g{background:var(--blue);color:#fff}.chain .ro.g .ic{background:rgba(255,255,255,.18)}.chain .ro.g em{background:#fff;color:var(--blue);border:0}
+/* orbite */
+.orb{display:grid;grid-template-columns:1fr auto 1fr;gap:clamp(10px,3vw,50px);align-items:center;margin-top:clamp(40px,6vw,90px)}
+.orb .tx{font-size:clamp(28px,3.4vw,52px)}
+.orb .tx.r{text-align:right}
+.orbit{--s:min(640px,88vw);position:relative;width:var(--s);height:var(--s);margin:0 auto}
+.orbit .core{position:absolute;left:50%;top:50%;width:25%;aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:var(--blue);display:grid;place-items:center;box-shadow:0 0 0 14px rgba(35,73,255,.12),0 0 0 36px rgba(35,73,255,.06)}
+.orbit .core img{width:62%}
+.ring{position:absolute;left:50%;top:50%;border-radius:50%;border:2px dashed rgba(35,73,255,.35);transform:translate(-50%,-50%)}
+.r1{width:46%;height:46%}.r2{width:72%;height:72%}.r3{width:98%;height:98%}
+.spin{position:absolute;inset:0;animation:sp 60s linear infinite}
+.r2 .spin{animation-duration:80s;animation-direction:reverse}.r3 .spin{animation-duration:110s}
+.ob{position:absolute;left:50%;top:50%;width:0;height:0;transform:rotate(var(--a))}
+.ob .un{position:absolute;left:0;top:0;width:clamp(40px,7.5vw,64px);height:clamp(40px,7.5vw,64px);margin:calc(clamp(40px,7.5vw,64px)/-2);transform:translateY(calc(var(--s)*var(--rad,-.23))) rotate(calc(var(--a)*-1));background:#fff;border-radius:50%;border:1px solid var(--line);box-shadow:0 12px 26px -12px rgba(11,13,18,.35);display:grid;place-items:center}
+.r1{--rad:-.23}.r2{--rad:-.36}.r3{--rad:-.49}
+.ob .un img{width:56%;height:56%;object-fit:contain;animation:spb 60s linear infinite}
+.r2 .ob .un img{animation-duration:80s;animation-direction:normal}.r3 .ob .un img{animation-duration:110s;animation-direction:reverse}
+@keyframes sp{to{transform:rotate(360deg)}}
+@keyframes spb{to{transform:rotate(-360deg)}}
+.r2 .ob .un img{animation-name:spb2}@keyframes spb2{to{transform:rotate(360deg)}}
+.r3 .ob .un img{animation-name:spb}
+/* pile de cartes */
+.deck{position:relative}
+.dh{text-align:center;margin-bottom:clamp(40px,6vw,80px)}
+.dh h2{font-size:clamp(38px,5.8vw,88px);margin:20px auto 0;max-width:12em}
+.dc{position:sticky;top:calc(96px + var(--i)*30px);margin-bottom:34px;border-radius:38px;background:#fff;border:1px solid var(--line);box-shadow:0 -22px 50px -30px rgba(11,13,18,.5);display:grid;grid-template-columns:1fr 1.12fr;min-height:560px;--pc:var(--blue)}
+.dc .tab{position:absolute;left:46px;top:-27px;background:var(--pc);color:#fff;font-weight:600;font-size:15px;padding:8px 20px 14px;border-radius:18px 18px 0 0;z-index:-1}
+.dc[data-c=ink]{--pc:var(--ink)}.dc[data-c=ice]{--pc:#C9D4FF}.dc[data-c=ice] .tab{color:var(--ink)}.dc[data-c=cream]{--pc:#E9E0C6}.dc[data-c=cream] .tab{color:var(--ink)}
+.dc .l{padding:clamp(26px,3.6vw,54px);display:flex;flex-direction:column}
+.dc .nn{font-family:'Fraunces',serif;font-style:italic;font-size:22px;color:var(--blue);font-weight:400}
+.dc h3{font-size:clamp(30px,3.6vw,52px);margin:12px 0 16px}
+.dc .l>p{font-size:19px;color:var(--grey);max-width:26em}
+.dc ul{list-style:none;margin-top:26px}
+.dc li{display:flex;align-items:center;gap:14px;padding:13px 0;border-top:1px solid var(--line);font-weight:500;font-size:17px}
+.dc li::before{content:"";width:12px;height:12px;border-radius:50%;background:var(--blue);flex:none}
+.dc .r{position:relative;border-radius:30px;margin:12px;background:var(--pc);display:grid;place-items:center;padding:clamp(18px,3vw,40px);overflow:hidden}
+.dc[data-c=ice] .r{background:#C9D4FF}.dc[data-c=cream] .r{background:#EFE7CF}
+.dc .r>.rays{position:absolute;right:20px;top:18px}
+.dc[data-c=ice] .rays,.dc[data-c=cream] .rays{color:var(--blue)}
+.dc .r .app{width:100%;box-shadow:0 30px 60px -28px rgba(0,0,0,.5)}
+.pn{padding:20px;display:grid;gap:12px;min-height:330px;align-content:start;position:relative}
+.pn h5{font-size:15px;letter-spacing:.08em;text-transform:uppercase;color:var(--grey)}
+/* maquettes */
+.chips{display:grid;grid-template-columns:1fr 1fr;gap:10px}
+.cp{border:1px solid var(--line);border-radius:14px;padding:11px 13px;background:#fff;transition:background .4s,color .4s,border-color .4s}
+.cp b{display:block;font-size:16px}
+.cp .bar{height:8px;border-radius:9px;background:var(--ice);margin-top:9px;overflow:hidden}
+.cp .bar i{display:block;height:100%;width:0;border-radius:9px;background:var(--blue);transition:width 1.1s var(--ease)}
+.cp.sel{background:var(--blue);color:#fff;border-color:var(--blue)}.cp.sel .bar{background:rgba(255,255,255,.25)}.cp.sel .bar i{width:var(--w);background:#fff}
+.bt{display:inline-flex;align-items:center;justify-content:center;gap:10px;min-height:46px;padding:0 20px;border-radius:99px;background:var(--ice);color:var(--blue);font-weight:600;font-size:16px;transition:background .4s,color .4s;width:fit-content}
+.bt.on{background:var(--ink);color:#fff}
+.gain{display:grid;gap:8px;font-size:16px;font-weight:500;opacity:.25;transition:opacity .6s}
+.gain.on{opacity:1}.gain span::before{content:"✓";color:var(--blue);font-weight:700;margin-right:10px}
+.row{display:flex;align-items:center;gap:13px;padding:11px 13px;border:1px solid var(--line);border-radius:16px;background:#fff}
+.row .ic{width:36px;height:36px;border-radius:11px;background:var(--cream);display:grid;place-items:center;padding:7px;flex:none}
+.row b{font-size:16px;font-weight:600}
+.sw{margin-left:auto;width:48px;height:28px;border-radius:99px;background:#d8dce8;position:relative;transition:background .35s;flex:none}
+.sw::after{content:"";position:absolute;left:3px;top:3px;width:22px;height:22px;border-radius:50%;background:#fff;box-shadow:0 2px 6px rgba(0,0,0,.25);transition:transform .45s var(--ease)}
+.row.on .sw,.sw.on{background:var(--blue)}.row.on .sw::after,.sw.on::after{transform:translateX(20px)}
+.prog{height:12px;border-radius:99px;background:var(--ice);overflow:hidden}.prog i{display:block;height:100%;width:calc(var(--p,0)*100%);background:var(--blue);border-radius:99px;transition:width .9s var(--ease)}
+.pgl{display:flex;justify-content:space-between;font-size:15px;font-weight:600;color:var(--grey)}
+.wk{display:grid;grid-template-columns:44px repeat(5,1fr);gap:7px;font-size:15px}
+.wk .h{font-weight:600;color:var(--grey);text-align:center;padding:4px 0}
+.wk .m{font-weight:600;color:var(--grey);display:flex;align-items:center}
+.sl{border:1.5px dashed rgba(35,73,255,.3);border-radius:12px;min-height:64px;display:grid;place-items:center;padding:4px;background:#fff;text-align:center;font-size:15px;font-weight:600;color:transparent;transition:background .4s,color .4s,border-color .4s}
+.sl.on{background:var(--blue);color:#fff;border-style:solid;border-color:var(--blue)}
+.sl.on.k{background:var(--ink);border-color:var(--ink)}
+.sl.on.c{background:var(--cream);color:var(--ink);border-color:var(--ink)}
+.flow{display:grid;gap:0;position:relative}
+.nd{display:flex;align-items:center;gap:13px;padding:11px 14px;border:1px solid var(--line);border-radius:16px;background:#fff;position:relative;transition:border-color .4s,box-shadow .4s,background .4s}
+.nd .ic{width:38px;height:38px;border-radius:11px;background:var(--cream);display:grid;place-items:center;padding:7px;flex:none}
+.nd b{font-size:16px;font-weight:600}.nd small{display:block;font-size:15px;color:var(--grey);font-weight:400;line-height:1.2}
+.nd .st{margin-left:auto;width:14px;height:14px;border-radius:50%;background:#d8dce8;flex:none;transition:background .4s,box-shadow .4s}
+.nd.on{border-color:var(--blue);box-shadow:0 14px 30px -16px rgba(35,73,255,.7)}.nd.on .st{background:var(--blue);box-shadow:0 0 0 5px rgba(35,73,255,.18)}
+.cn{width:2px;height:16px;margin:0 0 0 33px;background:repeating-linear-gradient(180deg,rgba(35,73,255,.5) 0 4px,transparent 4px 8px)}
+.toast{position:absolute;right:16px;bottom:16px;background:var(--ink);color:#fff;font-size:15px;font-weight:600;padding:12px 16px;border-radius:14px;transform:translateY(20px);opacity:0;transition:transform .6s var(--ease),opacity .5s}
+.toast.on{transform:none;opacity:1}
+.act{display:flex;align-items:center;gap:12px;font-weight:600;font-size:16px}
+/* secteurs */
+.sc-h{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:46px}
+.sc-h h2{font-size:clamp(36px,5.2vw,76px);margin-top:18px;max-width:11em}
+.sc-h p{max-width:24em;font-size:19px;color:var(--grey)}
+.sg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.sk{position:relative;border-radius:30px;overflow:hidden;min-height:480px;display:flex;flex-direction:column;justify-content:space-between;padding:22px;color:#fff;isolation:isolate;transition:transform .7s var(--ease)}
+.sk:hover{transform:translateY(-8px) rotate(-.6deg)}
+.sk img.ph{position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:-2;transition:transform 1.2s var(--ease)}
+.sk:hover img.ph{transform:scale(1.07)}
+.sk::after{content:"";position:absolute;inset:0;z-index:-1;background:linear-gradient(180deg,rgba(11,13,18,.0) 35%,rgba(11,13,18,.82) 100%)}
+.sk h3{font-size:clamp(32px,3vw,44px);color:#fff}
+.sk p{font-size:16px;margin-top:10px;opacity:.95}
+.sk .tg{align-self:flex-start;background:#fff;color:var(--ink);font-weight:600;font-size:15px;padding:7px 14px;border-radius:99px}
+.sk.b1{background:var(--blue)}.sk.b2{background:var(--ink)}.sk.b3{background:#C9D4FF;color:var(--ink)}.sk.b4{background:var(--cream);color:var(--ink)}
+.sk.b3::after,.sk.b4::after{background:linear-gradient(180deg,rgba(255,255,255,0) 35%,rgba(11,13,18,.7) 100%)}
+.sk.b3 h3,.sk.b4 h3,.sk.b3 p,.sk.b4 p{color:#fff}
+/* équipe */
+.team{display:grid;grid-template-columns:.9fr 1.1fr;gap:clamp(30px,6vw,100px);align-items:center}
+.team h2{font-size:clamp(38px,5.4vw,80px);margin:20px 0 22px}
+.team p{font-size:20px;color:var(--grey);max-width:26em}
+.duo{display:grid;grid-template-columns:1fr 1fr;gap:20px}
+.pf{position:relative}
+.pf .im{border-radius:30px;overflow:hidden;position:relative;border:1px solid var(--line);background:#fff}
+.pf img{width:100%;aspect-ratio:1;object-fit:cover}
+.pf .fk{left:auto;position:absolute;top:38%;right:6%}
+.pf h3{font-size:30px;margin:16px 0 4px}.pf small{font-size:16px;color:var(--grey);display:block;max-width:15em}
+/* chiffres */
+.nums{display:grid;grid-template-columns:repeat(3,1fr);gap:0;border-top:1px solid var(--ink);border-bottom:1px solid var(--ink)}
+.nm{container-type:inline-size;padding:34px 26px 38px;border-right:1px solid var(--line);position:relative}.nm:last-child{border:0}
+.nm b{white-space:nowrap;font-family:'Fraunces',serif;font-weight:800;font-variation-settings:"SOFT" 100;font-size:min(clamp(54px,7.4vw,120px),21cqw);letter-spacing:-.05em;line-height:1;display:block;color:var(--blue)}
+.nm span{font-size:19px;font-weight:600;display:block;margin-top:10px}
+.cf{display:flex;align-items:center;gap:clamp(24px,5vw,70px);flex-wrap:wrap;margin-top:44px;padding:30px;background:#fff;border:1px solid var(--line);border-radius:var(--r)}
+.cf small{font-size:15px;letter-spacing:.1em;text-transform:uppercase;font-weight:600;color:var(--grey);margin-right:auto}
+.cf img{height:40px;width:auto;filter:grayscale(1);opacity:.75;transition:filter .4s,opacity .4s}.cf img:hover{filter:none;opacity:1}
+/* galerie d'assets */
+.gal{overflow:hidden;padding:clamp(70px,9vw,130px) 0}
+.gal .hd{display:flex;justify-content:space-between;align-items:end;gap:30px;flex-wrap:wrap;margin-bottom:42px}
+.gal h2{font-size:clamp(36px,5vw,72px);margin-top:18px;max-width:12em}
+.strip{overflow:hidden;margin-bottom:16px}
+.mq{display:flex;gap:16px;width:max-content;animation:mq 70s linear infinite}
+.strip.rb .mq{animation-direction:reverse;animation-duration:85s}
+.strip:hover .mq{animation-play-state:paused}
+@keyframes mq{to{transform:translateX(-50%)}}
+.gi{height:clamp(230px,26vw,360px);border-radius:24px;overflow:hidden;border:1px solid var(--line);background:#fff;flex:none;transition:transform .6s var(--ease)}
+.gi:hover{transform:translateY(-6px) rotate(-.8deg)}
+.gi img{height:100%;width:auto;object-fit:cover}
+/* plan */
+.plan-h{text-align:center;margin-bottom:clamp(36px,5vw,70px)}
+.plan-h h2{font-size:clamp(38px,5.6vw,84px);margin:18px auto 0;max-width:11em}
+.pg{display:grid;grid-template-columns:repeat(4,1fr);gap:16px}
+.pc{position:relative;border-radius:30px;padding:26px;min-height:330px;background:#fff;border:1px solid var(--line);display:flex;flex-direction:column;overflow:hidden}
+.pc .no{font-family:'Fraunces',serif;font-weight:900;font-variation-settings:"SOFT" 100;font-size:clamp(100px,11vw,170px);letter-spacing:-.07em;line-height:.8;color:var(--blue);opacity:1;margin-bottom:auto}
+.pc:nth-child(2) .no{color:var(--ink)}.pc:nth-child(3) .no{color:var(--blue)}.pc:nth-child(4) .no{color:var(--ink)}
+.pc:nth-child(2){background:var(--ice)}.pc:nth-child(4){background:var(--cream)}
+.pc h3{font-size:30px;margin:26px 0 10px}.pc p{font-size:17px;color:var(--grey)}
+.pc .rays{position:absolute;right:18px;top:18px;width:56px}
+/* faq */
+.faq{display:grid;grid-template-columns:.8fr 1.4fr;gap:clamp(30px,6vw,100px)}
+.faq h2{font-size:clamp(36px,4.8vw,70px);margin-top:18px}
+details{border-top:1px solid var(--ink);padding:0}
+details:last-child{border-bottom:1px solid var(--ink)}
+summary{list-style:none;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:24px 0;font-size:clamp(20px,1.8vw,26px);font-weight:600;cursor:pointer}
+summary::-webkit-details-marker{display:none}
+summary i{width:44px;height:44px;border-radius:50%;background:var(--ice);flex:none;position:relative;transition:transform .5s var(--ease),background .3s}
+summary i::before,summary i::after{content:"";position:absolute;left:50%;top:50%;width:16px;height:2px;background:var(--blue);transform:translate(-50%,-50%)}
+summary i::after{transform:translate(-50%,-50%) rotate(90deg);transition:transform .4s var(--ease)}
+details[open] summary i{background:var(--blue);transform:rotate(180deg)}details[open] summary i::before,details[open] summary i::after{background:#fff}details[open] summary i::after{transform:translate(-50%,-50%) rotate(0)}
+details p{padding:0 70px 28px 0;font-size:19px;color:var(--grey);max-width:34em}
+details p strong{color:var(--ink)}
+/* final */
+.fin{background:var(--blue);color:#fff;border-radius:46px;margin:0 clamp(8px,1.5vw,24px);position:relative;overflow:hidden;padding:clamp(80px,10vw,150px) 0;text-align:center}
+.fin .d1{position:absolute;left:50%;top:50%;width:min(1100px,130vw);aspect-ratio:1;transform:translate(-50%,-50%);border-radius:50%;background:#1A38D6}
+.fin .rays{position:absolute;width:120px}.fin .rays.a{left:10%;top:14%}.fin .rays.b{right:10%;bottom:14%;transform:rotate(180deg)}
+.fin-in{position:relative}
+.fin h2{font-size:clamp(42px,7vw,112px);max-width:15em;margin:22px auto 32px}
+.fin p{font-size:21px;opacity:.95;max-width:28em;margin:0 auto 34px}
+.fin .row2{display:flex;gap:14px;justify-content:center;flex-wrap:wrap}
+.fin .row2 .btn.g{background:rgba(255,255,255,.14);box-shadow:none}
+footer{padding:60px 0 46px}
+.ft{display:grid;grid-template-columns:1.2fr 1fr 1fr;gap:34px}
+.ft img.lo{height:34px;width:auto;margin-bottom:14px}
+.ft p,.ft a{font-size:16px;color:var(--grey)}
+.ft h4{font-size:15px;letter-spacing:.1em;text-transform:uppercase;margin-bottom:14px}
+.ft a{display:block;padding:5px 0}.ft a:hover{color:var(--blue)}
+/* révélations */
+.rv{opacity:0;transform:translateY(34px)}
+.no-js .rv,.rm .rv{opacity:1;transform:none}
+/* responsive */
+@media(max-width:1000px){
+ .hero-top,.def,.tax,.team,.faq{grid-template-columns:1fr}
+ .tens-in{grid-template-columns:1fr;text-align:left}.tens h2.rt{text-align:left}
+ .pls::before,.pls::after{display:none}
+ .dc{grid-template-columns:1fr;position:relative;top:auto;min-height:0}.dc .tab{display:none}
+ .sg,.pg{grid-template-columns:repeat(2,1fr)}
+ .orb{grid-template-columns:1fr}.orb .tx,.orb .tx.r{text-align:center}
+ .mos{grid-template-columns:repeat(6,1fr);grid-auto-rows:calc((100vw - 2*var(--pad))/6)}
+ .nums{grid-template-columns:1fr}.nm{border-right:0;border-bottom:1px solid var(--line)}
+ .ft{grid-template-columns:1fr}
+ .kcols{grid-template-columns:1fr;min-height:0}
+}
+@media(max-width:560px){
+ .sg,.pg,.duo{grid-template-columns:1fr}
+ .sk{min-height:380px}
+ .chips{grid-template-columns:1fr}
+ .wk{grid-template-columns:36px repeat(5,1fr);gap:4px}
+ details p{padding-right:0}
+ .cl.tr,.cl.br{display:none}
+}
+@media(prefers-reduced-motion:reduce){.mq,.spin,.ob .un img,.stk.tamp{animation:none!important}}
+/* ===== correctifs relecture 9 + éléments Loopsii / Kamal / Autopilot ===== */
+.sec{padding:clamp(56px,7vw,110px) 0}
+#metiers{padding-top:clamp(44px,5.5vw,84px);padding-bottom:clamp(24px,3vw,44px)}
+#equipe{padding-top:clamp(24px,3vw,44px)}
+.sec.preuves{padding-bottom:clamp(20px,2.5vw,36px)}
+.gal{padding:clamp(30px,3.5vw,50px) 0 clamp(40px,5vw,80px)}
+.sec.bnt{padding-top:clamp(40px,5vw,70px)}
+.def-l{display:flex;flex-direction:column;gap:34px;align-items:flex-start}
+.rondes{display:flex;padding-left:6px}
+.rd{width:clamp(120px,11vw,168px);aspect-ratio:1;border-radius:50%;border:7px solid var(--blue);overflow:hidden;background:#fff;box-shadow:0 0 0 6px #fff,0 18px 34px -16px rgba(35,73,255,.55);display:block;flex:none}
+.rd.b{margin-left:-30px;border-color:var(--blue)}
+.rd img{width:100%;height:100%;object-fit:cover;object-position:center 22%}
+.t.pr{background:var(--blue)}.t.pr img{position:absolute;inset:7%;width:86%;height:86%;border-radius:50%;border:3px solid #fff;object-position:center 18%}
+/* post-it façon Just Kamal Things */
+.pit{position:relative;background:var(--cream);border:1px solid var(--line);padding:26px 22px 20px;font-family:'Fraunces',serif;font-weight:700;font-variation-settings:"SOFT" 100;font-size:21px;line-height:1.15;letter-spacing:-.02em;max-width:260px;transform:rotate(var(--rot,-2deg));box-shadow:0 22px 34px -18px rgba(11,13,18,.5),0 2px 0 rgba(11,13,18,.06);color:var(--ink)}
+.pit::before{content:"";position:absolute;left:50%;top:-13px;width:88px;height:26px;margin-left:-44px;background:rgba(143,162,255,.6);transform:rotate(-3deg)}
+.pit em{font-weight:500}
+.plan-h{position:relative}
+.plan-h .pl2{position:absolute;right:0;top:-6px;background:var(--ice);max-width:230px;text-align:left}
+/* autocollants */
+.stk{position:absolute;z-index:6;pointer-events:none}
+.stk.pill{background:var(--blue);color:#fff;border:4px solid #fff;border-radius:16px;padding:9px 18px;font-weight:700;font-size:17px;box-shadow:0 10px 22px -8px rgba(11,13,18,.4),0 0 0 1px var(--line);transform:rotate(-5deg);white-space:nowrap}
+.stk.hp{left:50%;top:-4px;margin-left:-70px}
+.stk.tamp{width:132px;height:132px;filter:drop-shadow(0 12px 18px rgba(11,13,18,.28));animation:tampr 24s linear infinite}
+@keyframes tampr{to{transform:rotate(360deg)}}
+.stk.ht{right:-14px;top:42%}
+.fin .stk.ft{left:auto;right:clamp(10px,5%,90px);top:-70px;animation:none;transform:rotate(-8deg)}
+.fin .stk.ft circle:first-of-type{fill:#fff}.fin .stk.ft text{fill:#2349FF}.fin .stk.ft circle+circle{stroke:#2349FF}.fin .stk.ft g{stroke:#2349FF}
+/* bulles de discussion */
+.pf{padding-top:62px}
+.bub{position:absolute;top:0;background:#fff;border:2px solid var(--ink);border-radius:20px;padding:10px 16px;font-weight:600;font-size:16px;line-height:1.25;box-shadow:4px 4px 0 var(--ink);max-width:90%;z-index:3}
+.bub::after{content:"";position:absolute;bottom:-12px;width:20px;height:20px;background:#fff;border-right:2px solid var(--ink);border-bottom:2px solid var(--ink);transform:rotate(45deg) skew(10deg,10deg)}
+.bub.l{left:0;transform:rotate(-2deg)}.bub.l::after{left:34px}
+.bub.r{right:0;background:var(--blue);color:#fff;transform:rotate(2deg)}.bub.r::after{right:34px;background:var(--blue)}
+.pf .im{overflow:visible;border:0;background:none;border-radius:50%}
+.pf .im img{border-radius:50%;border:8px solid var(--blue);box-shadow:0 0 0 6px #fff,0 20px 40px -20px rgba(35,73,255,.6)}
+.pf:nth-child(2) .im img{border-color:var(--ink)}
+.pf .fk{right:-4%;top:62%}
+/* chiffres : date, bande clients grande */
+.asof{margin-top:14px;font-size:15px;font-weight:600;letter-spacing:.08em;text-transform:uppercase;color:var(--grey);text-align:right}
+.cf{display:grid;grid-template-columns:repeat(4,1fr);gap:26px clamp(18px,3vw,50px);align-items:center;justify-items:center;margin-top:30px;padding:34px clamp(22px,3vw,48px)}
+.cf small{grid-column:1/-1;margin:0;justify-self:start}
+.cf img[alt=Puig]{height:clamp(54px,5.4vw,78px)}
+.cf img{height:clamp(44px,4.4vw,64px);width:auto;max-width:100%;object-fit:contain;filter:none;opacity:1}
+/* tuiles colorées façon Loopsii */
+.bn{display:grid;grid-template-columns:repeat(8,1fr);gap:16px}
+.bq{position:relative;border-radius:30px;padding:28px;min-height:300px;display:flex;flex-direction:column;justify-content:space-between;overflow:hidden;isolation:isolate;transition:transform .7s var(--ease)}
+.bq::after{content:"";position:absolute;right:-46px;top:-46px;width:190px;height:190px;border-radius:50%;background:rgba(255,255,255,.14);z-index:-1}
+.bq:hover{transform:translateY(-8px) rotate(-.6deg)}
+.bq.w5{grid-column:span 5}.bq.w3{grid-column:span 3}.bq.w4{grid-column:span 4}
+.bq .bi{width:68px;height:68px;border-radius:22px;background:#fff;color:var(--blue);display:grid;place-items:center;transition:transform .6s var(--ease)}
+.bq:hover .bi{transform:rotate(-10deg) scale(1.1)}
+.bq h3{font-size:clamp(28px,2.9vw,42px);margin-bottom:10px}
+.bq p{font-size:18px;max-width:24em}
+.bq.b1{background:var(--blue);color:#fff}
+.bq.b2{background:var(--ink);color:#fff}.bq.b2 .bi{background:var(--blue);color:#fff}
+.bq.b3{background:var(--ice)}.bq.b3::after,.bq.b5::after{background:rgba(35,73,255,.12)}
+.bq.b4{background:var(--cream);border:1px solid var(--line)}.bq.b4::after{background:rgba(35,73,255,.1)}
+.bq.b5{background:var(--soft)}.bq.b5 .bi{color:var(--ink)}
+.bq.b6{background:#fff;border:1px solid var(--ink)}.bq.b6::after{background:var(--ice)}
+/* étapes façon Autopilot */
+.rail{position:relative;display:grid;grid-template-columns:repeat(4,1fr);gap:16px;margin-bottom:20px}
+.rail .ln{position:absolute;left:28px;right:calc(25% - 40px);top:27px;height:4px;border-radius:4px;background:rgba(35,73,255,.18)}
+.rail .fl{display:block;height:100%;width:100%;border-radius:4px;background:var(--blue);transform-origin:0 50%;transform:scaleX(0)}
+.rn{position:relative;z-index:1;width:56px;height:56px;border-radius:50%;background:#fff;border:3px solid rgba(35,73,255,.3);display:grid;place-items:center;font-family:'Fraunces',serif;font-weight:800;font-size:24px;color:var(--grey);transition:background .4s,color .4s,border-color .4s,transform .5s var(--ease)}
+.rn.on{background:var(--blue);border-color:var(--blue);color:#fff;transform:scale(1.08)}
+.pc{min-height:390px}
+.pc .ch{align-self:flex-start;font-size:15px;font-weight:600;padding:6px 14px;border-radius:99px;background:#fff;border:1px solid var(--line);margin-bottom:18px}
+.pc.c1{background:var(--blue);color:#fff;border-color:var(--blue)}.pc.c1 .no{color:#fff}.pc.c1 p{color:rgba(255,255,255,.92)}.pc.c1 .rays{color:#fff}.pc.c1 .ch{background:rgba(255,255,255,.18);border-color:transparent}
+.pc.c2{background:var(--ink);color:#fff;border-color:var(--ink)}.pc.c2 .no{color:var(--soft)}.pc.c2 p{color:rgba(255,255,255,.88)}.pc.c2 .ch{background:rgba(255,255,255,.14);border-color:transparent}
+.pc.c3{background:var(--ice)}.pc.c3 .no{color:var(--blue)}
+.pc.c4{background:var(--cream)}.pc.c4 .no{color:var(--ink)}
+.pc .no{margin-bottom:auto;margin-top:auto}
+@media(max-width:1000px){
+ .bn{grid-template-columns:repeat(2,1fr)}.bq.w5,.bq.w3,.bq.w4{grid-column:span 1}
+ .rail{display:none}
+ .plan-h .pl2{position:relative;right:auto;top:auto;margin:26px auto 0;--rot:-2deg}
+ .cf{grid-template-columns:repeat(2,1fr)}
+ .stk.ht{right:-6px;top:30%;width:104px;height:104px}
+}
+@media(max-width:700px){
+ .hero{padding-top:100px}
+ .hero>.wrap{display:flex;flex-direction:column}
+ .hero-top{display:contents}
+ .hero h1{order:1;font-size:clamp(40px,11.4vw,56px)}
+ .hero .stagew{order:2;margin-top:14px}
+ .hero .hero-side{order:3;margin-top:6px}
+ .stk.ht{display:none}
+ .stk.pill{font-size:15px;padding:7px 13px}
+}
+@media(max-width:600px){
+ .bn{grid-template-columns:1fr}
+ .bq{min-height:250px}
+ .tens-in{gap:34px}
+ .pls{gap:10px}
+ .pl{font-size:16px;line-height:1.3;transform:none!important}
+ .tens h2.rt{margin-top:6px}
+ .tens .rays{left:auto;right:22px;bottom:20px;width:60px}
+ .stk.hp{left:auto;right:4px;margin-left:0}
+ .fin .stk.ft{display:none}
+ .fin .rays.a{left:16px;top:16px;width:52px}.fin .rays.b{right:16px;bottom:16px;width:52px}
+ .pf{padding-top:70px}
+ .duo{gap:34px}
+ .rondes{padding-left:0}
+}
+
+
+/* ===== retouches finales relecture 9b ===== */
+@media(min-width:601px){
+ .pl{animation:plf 3.4s ease-in-out infinite alternate;animation-delay:calc(var(--i)*-.45s)}
+}
+@keyframes plf{from{translate:-3px -3px}to{translate:3px 3px}}
+@media(prefers-reduced-motion:reduce){.pl{animation:none}}
+@media(max-width:560px){
+ .wk{grid-template-columns:44px minmax(0,1fr) minmax(0,1fr);grid-template-rows:repeat(6,auto);grid-auto-flow:column;gap:6px}
+ .wk .h{text-align:left;display:flex;align-items:center;padding:0}
+ .wk .m{justify-content:center;padding:0}
+ .wk .sl{min-height:46px;font-size:15px}
+}
+</style>
+</head><body class="no-js">
+<svg width="0" height="0" style="position:absolute" aria-hidden="true"><defs></defs></svg>
+<div class="cur" id="cur" aria-hidden="true"><i class="dot"></i><span class="tg" id="curTag"></span></div>
+
+<header class="nav" id="nav">
+  <a href="#top" aria-label="AXEM IA, accueil" data-cur="Haut"><img class="lo" src="assets/logo-bleu-320.png" alt="AXEM IA" width="320" height="90"></a>
+  <a class="l" href="#parcours">Parcours</a><a class="l" href="#metiers">Métiers</a><a class="l" href="#equipe">Équipe</a><a class="l" href="#faq">Questions</a>
+  <a class="btn" href="https://cal.com/clement-predo-pwh2dk/echange-30min" data-cur="Réserver">Réserver 30 minutes</a>
+</header>
+
+<main id="top">
+<!-- 1. HERO : l'accroche, le mot qui tourne, les quatre mots aux coins -->
+<section class="hero"><div class="wrap">
+  <div class="hero-top">
+    <h1 class="f" id="h1"><span class="ln"><span>Votre partenariat IA,</span></span><span class="ln"><span><em>de A à Z.</em></span></span></h1>
+    <div class="hero-side">
+      <p class="lead">Diagnostic, déploiement, formation, automatisations. Un seul partenaire qui garde tout connecté, de la première question au premier gain.</p>
+      <p class="rot">Un seul partenaire pour votre <span class="rw" aria-live="off"><span class="rwi"><b>diagnostic IA</b><b>déploiement</b><b>formation</b><b>automatisation</b><b>diagnostic IA</b></span></span></p>
+      <a class="btn" href="https://cal.com/clement-predo-pwh2dk/echange-30min" data-cur="Réserver">Réserver 30 minutes <span class="ar">→</span></a>
+    </div>
+  </div>
+  <div class="stagew">
+    <span class="stk pill hp">Pas de jargon</span><span class="cl tl">Diagnostic</span><span class="cl tr">Déploiement</span><span class="cl bl">Formation</span><span class="cl br">Automatisations</span>
+    <div class="stage" id="hs"><div class="mos" id="mos">
+<div data-n="0" class="t tp pr s2" data-k="a"><img src="../../img/axem/equipe/equipe-clement-portrait-micro.jpg" alt="Clément Predo, cofondateur d’AXEM IA, au micro" loading="eager"></div>
+<div data-n="1" class="t ts qd"><i></i></div>
+<div data-n="2" class="t tl"><img src="../../logos/vrais/notion.svg" alt="Notion" loading="eager"></div>
+<div data-n="3" class="t ts disc"><i></i></div>
+<div data-n="4" class="t ts disc"><i></i></div>
+<div data-n="5" class="t tp pr s2" data-k="b"><img src="../../img/axem/equipe/equipe-alexis-profil-micro.jpg" alt="Alexis Zeitoun, cofondateur d’AXEM IA, de profil au micro" loading="eager"></div>
+<div data-n="6" class="t ts ry"><svg class="rays" viewBox="0 0 90 70" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"><path d="M8 40 38 26"/><path d="M14 58 46 52"/><path d="M24 14 40 4"/></g></svg></div>
+<div data-n="7" class="t tw w2 inv"><span>Diagnostic</span></div>
+<div data-n="8" class="t ts tr"><i></i></div>
+<div data-n="9" class="t tl"><img src="../../logos/vrais/googlesheets-color.svg" alt="Google Sheets" loading="eager"></div>
+<div data-n="10" class="t ts ry"><svg class="rays" viewBox="0 0 90 70" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"><path d="M8 40 38 26"/><path d="M14 58 46 52"/><path d="M24 14 40 4"/></g></svg></div>
+<div data-n="11" class="t tp s2" data-k="c"><img src="../../img/axem/visuels-posts/post-ax-salut-moi-c-est-ax.jpg" alt="Ax, la mascotte d’AXEM IA" loading="eager"></div>
+<div data-n="12" class="t tl"><img src="../../logos/vrais/claude-color.svg" alt="Claude" loading="eager"></div>
+<div data-n="13" class="t tw w2"><span>de A à Z</span></div>
+<div data-n="14" class="t tl"><img src="../../logos/vrais/slack-color.svg" alt="Slack" loading="eager"></div>
+<div data-n="15" class="t tl"><img src="../../logos/vrais/openai.svg" alt="OpenAI" loading="eager"></div>
+<div data-n="16" class="t tl"><img src="../../logos/vrais/copilot-color.svg" alt="Copilot" loading="eager"></div>
+<div data-n="17" class="t tp s2" data-k="d"><img src="../../img/axem/formation/formation-illustration-atelier.jpg" alt="Illustration d’un atelier de formation à l’IA" loading="eager"></div>
+<div data-n="18" class="t tl"><img src="../../logos/vrais/make-color.svg" alt="Make" loading="eager"></div>
+<div data-n="19" class="t ts bl"><i></i></div>
+<div data-n="20" class="t tl"><img src="../../logos/vrais/n8n-color.svg" alt="n8n" loading="eager"></div>
+<div data-n="21" class="t ts qd"><i></i></div>
+<div data-n="22" class="t ts disc"><i></i></div>
+<div data-n="23" class="t ts ry"><svg class="rays" viewBox="0 0 90 70" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"><path d="M8 40 38 26"/><path d="M14 58 46 52"/><path d="M24 14 40 4"/></g></svg></div>
+<div data-n="24" class="t tl"><img src="../../logos/vrais/zapier-color.svg" alt="Zapier" loading="eager"></div>
+<div data-n="25" class="t tl"><img src="../../logos/vrais/gmail-color.svg" alt="Gmail" loading="eager"></div>
+<div data-n="26" class="t ts qd"><i></i></div>
+<div data-n="27" class="t ts disc"><i></i></div>
+<div data-n="28" class="t ts kd"><i></i></div>
+<div data-n="29" class="t ts tr"><i></i></div>
+<div data-n="30" class="t ts kd"><i></i></div>
+<div data-n="31" class="t ts disc"><i></i></div>
+<div data-n="32" class="t ts bl"><i></i></div>
+<div data-n="33" class="t ts disc"><i></i></div>
+    </div><div class="fk" data-who="clement" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 3.2 19 11.6l-6.1 1.3-3.2 5.6z"/></svg><span>Clément</span></div><div class="fk" data-who="alexis" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 3.2 19 11.6l-6.1 1.3-3.2 5.6z"/></svg><span>Alexis</span></div><div class="fk" data-who="equipe" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 3.2 19 11.6l-6.1 1.3-3.2 5.6z"/></svg><span>votre équipe</span></div></div>
+    <svg class="stk tamp ht" viewBox="0 0 140 140" role="img" aria-label="Tampon : fait avec vous"><defs><path id="tp1" d="M70 70m-50 0a50 50 0 1 1 100 0a50 50 0 1 1-100 0"/></defs><circle cx="70" cy="70" r="68" fill="#2349FF"/><circle cx="70" cy="70" r="62" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="3 5"/><text font-size="15" font-weight="700" fill="#fff" letter-spacing="1"><textPath href="#tp1" textLength="305">FAIT AVEC VOUS · FAIT AVEC VOUS ·</textPath></text><g transform="translate(46 50) scale(.8)" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none"><path d="M8 40 38 26"/><path d="M14 58 46 52"/><path d="M24 14 40 4"/></g></svg>
+  </div>
+</div></section>
+
+<!-- 2. QU'EST-CE QU'AXEM : texte flou qui devient net, puis la boucle -->
+<section class="sec"><div class="wrap def">
+  <div class="def-l"><span class="lab">Ce qu’est AXEM</span>
+    <div class="rondes rv"><span class="rd"><img src="../../img/axem/equipe/equipe-clement-portrait-micro.jpg" alt="Clément Predo, cofondateur" loading="lazy"></span><span class="rd b"><img src="../../img/axem/equipe/equipe-alexis-portrait-micro.jpg" alt="Alexis Zeitoun, cofondateur" loading="lazy"></span></div>
+    <p class="pit rv" style="--rot:-3deg">Clément et Alexis, <em>deux associés,</em> un seul interlocuteur.</p>
+  </div>
+  <div>
+    <p class="big" id="big">AXEM IA aide les équipes à travailler avec l’IA sur leurs vrais dossiers. Moins de choses à comprendre, <em>plus de temps pour votre métier.</em></p>
+    <p class="sm rv">Chaque projet IA suit la même boucle. On la fait tourner pour vous, vous n’avez pas à vous demander ce qui vient ensuite.</p>
+    <div class="loop rv" aria-label="La boucle AXEM"><span><i>1</i>Voir clair</span><span><i>2</i>Déployer</span><span><i>3</i>Former</span><span><i>4</i>Automatiser</span><span><i>↻</i>Suivre</span></div>
+  </div>
+</div></section>
+
+<!-- 3. TENSION : la douleur en pastilles -->
+<section class="tens on-ink"><div class="bg"></div><svg class="rays" viewBox="0 0 90 70" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"><path d="M8 40 38 26"/><path d="M14 58 46 52"/><path d="M24 14 40 4"/></g></svg><div class="wrap tens-in">
+  <h2 class="f rv">Trop de sujets IA vous éloignent</h2>
+  <div class="pls" id="pls"><span class="pl" style="--i:0">Par où commencer ?</span><span class="pl" style="--i:1">Quel outil pour quel service ?</span><span class="pl" style="--i:2">Mes équipes l’utilisent… mal ?</span><span class="pl" style="--i:3">Qui forme qui ?</span><span class="pl" style="--i:4">Et mes données ?</span><span class="pl" style="--i:5">Un outil de plus, pour quoi faire ?</span><span class="pl" style="--i:6">Les démos sont belles, et après ?</span><span class="pl" style="--i:7">Qui s’en occupe en interne ?</span><span class="pl" style="--i:8">Quel gain, vraiment ?</span><span class="pl" style="--i:9">On a testé, ça n’a pas pris</span><span class="pl" style="--i:10">Chacun fait son truc dans son coin</span><span class="pl" style="--i:11">Trop de promesses, peu de méthode</span></div>
+  <h2 class="f rt rv"><em>du travail qui compte vraiment.</em></h2>
+</div></section>
+
+<!-- 4. PIVOT : la phrase de cinq mots, puis l'écran où l'on clique -->
+<section class="sec pivot"><div class="wrap">
+  <span class="lab">Notre réponse</span>
+  <h2 class="f rv">C’est pour ça qu’AXEM <em>existe.</em></h2>
+  <a class="btn rv" href="https://cal.com/clement-predo-pwh2dk/echange-30min" data-cur="Réserver">Réserver 30 minutes <span class="ar">→</span></a>
+  <div class="app kb" id="kb">
+    <div class="app-bar"><i></i><i></i><i></i><span>AXEM · Votre projet IA, en direct</span></div>
+    <div class="kcols" id="kc">
+      <div class="kc" data-col="a"><h4><i></i>À faire</h4>
+        <div class="kcard" data-id="rh"><b>Diagnostic du volet RH</b><small>Diagnostic IA</small></div>
+        <div class="kcard" data-id="dev"><b>Réponses aux devis</b><small>Automatisation</small></div></div>
+      <div class="kc" data-col="b"><h4><i></i>En cours</h4>
+        <div class="kcard" data-id="cad"><b>Cadre d’usage de l’IA</b><small>Déploiement</small></div>
+        <div class="kcard" data-id="sem"><b>Séminaire d’équipe</b><small>Formation</small></div></div>
+      <div class="kc" data-col="c"><h4><i></i>Fait</h4>
+        <div class="kcard done" data-id="rep"><b>Reporting mensuel</b><small>Automatisation</small><span class="ok">Validé</span></div></div>
+    </div>
+    <div class="fk" data-who="clement" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 3.2 19 11.6l-6.1 1.3-3.2 5.6z"/></svg><span>Clément</span></div><div class="fk" data-who="alexis" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 3.2 19 11.6l-6.1 1.3-3.2 5.6z"/></svg><span>Alexis</span></div><div class="fk" data-who="equipe" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 3.2 19 11.6l-6.1 1.3-3.2 5.6z"/></svg><span>votre équipe</span></div>
+  </div>
+</div></section>
+
+<!-- 5. LE COÛT CACHÉ + l'orbite -->
+<section class="sec"><div class="wrap">
+  <div class="tax">
+    <div><span class="lab">La taxe du copier-coller</span>
+      <h2 class="f rv">Votre quotidien ne devrait pas coûter <em>autant d’heures.</em></h2>
+      <p class="rv">Un mail à lire, un tableau à remplir, un compte rendu à écrire, un message à envoyer. Chaque outil a son onglet, personne n’a la vue d’ensemble. L’IA sait faire ces enchaînements, à condition qu’on l’installe au bon endroit.</p></div>
+    <div class="chain rv" aria-hidden="true">
+      <div class="ro"><span class="ic"><img src="../../logos/vrais/gmail-color.svg" alt=""></span><b>Lire le mail</b><em>copier</em></div>
+      <div class="ro"><span class="ic"><img src="../../logos/vrais/googlesheets-color.svg" alt=""></span><b>Remplir le tableau</b><em>coller</em></div>
+      <div class="ro"><span class="ic"><img src="../../logos/vrais/microsoft-color.svg" alt=""></span><b>Écrire le compte rendu</b><em>copier</em></div>
+      <div class="ro"><span class="ic"><img src="../../logos/vrais/slack-color.svg" alt=""></span><b>Prévenir l’équipe</b><em>coller</em></div>
+      <div class="ro g"><span class="ic"><img src="../../logos/vrais/claude-color.svg" alt=""></span><b>Avec AXEM : tout part tout seul</b><em>fait</em></div>
+    </div>
+  </div>
+  <div class="orb">
+    <h2 class="f tx rv">Toute votre équipe, <em>branchée sur l’IA.</em></h2>
+    <div class="orbit" aria-label="Les outils d’IA et de bureautique reliés autour d’AXEM"><div class="core"><img src="assets/monogramme-creme.png" alt="AXEM IA"></div><div class="ring r3"><div class="spin"><span class="ob" style="--a:0.0deg"><span class="un"><img src="../../logos/vrais/n8n-color.svg" alt="n8n" loading="lazy"></span></span><span class="ob" style="--a:45.0deg"><span class="un"><img src="../../logos/vrais/make-color.svg" alt="Make" loading="lazy"></span></span><span class="ob" style="--a:90.0deg"><span class="un"><img src="../../logos/vrais/zapier-color.svg" alt="Zapier" loading="lazy"></span></span><span class="ob" style="--a:135.0deg"><span class="un"><img src="../../logos/vrais/googlecalendar-color.svg" alt="Google Agenda" loading="lazy"></span></span><span class="ob" style="--a:180.0deg"><span class="un"><img src="../../logos/vrais/hubspot-color.svg" alt="HubSpot" loading="lazy"></span></span><span class="ob" style="--a:225.0deg"><span class="un"><img src="../../logos/vrais/airtable-color.svg" alt="Airtable" loading="lazy"></span></span><span class="ob" style="--a:270.0deg"><span class="un"><img src="../../logos/vrais/whatsapp-color.svg" alt="WhatsApp" loading="lazy"></span></span><span class="ob" style="--a:315.0deg"><span class="un"><img src="../../logos/vrais/canva-color.svg" alt="Canva" loading="lazy"></span></span></div></div><div class="ring r2"><div class="spin"><span class="ob" style="--a:0.0deg"><span class="un"><img src="../../logos/vrais/gmail-color.svg" alt="Gmail" loading="lazy"></span></span><span class="ob" style="--a:60.0deg"><span class="un"><img src="../../logos/vrais/googlesheets-color.svg" alt="Google Sheets" loading="lazy"></span></span><span class="ob" style="--a:120.0deg"><span class="un"><img src="../../logos/vrais/slack-color.svg" alt="Slack" loading="lazy"></span></span><span class="ob" style="--a:180.0deg"><span class="un"><img src="../../logos/vrais/notion.svg" alt="Notion" loading="lazy"></span></span><span class="ob" style="--a:240.0deg"><span class="un"><img src="../../logos/vrais/googledrive-color.svg" alt="Google Drive" loading="lazy"></span></span><span class="ob" style="--a:300.0deg"><span class="un"><img src="../../logos/vrais/microsoft-color.svg" alt="Microsoft 365" loading="lazy"></span></span></div></div><div class="ring r1"><div class="spin"><span class="ob" style="--a:0.0deg"><span class="un"><img src="../../logos/vrais/claude-color.svg" alt="Claude" loading="lazy"></span></span><span class="ob" style="--a:90.0deg"><span class="un"><img src="../../logos/vrais/openai.svg" alt="OpenAI" loading="lazy"></span></span><span class="ob" style="--a:180.0deg"><span class="un"><img src="../../logos/vrais/copilot-color.svg" alt="Copilot" loading="lazy"></span></span><span class="ob" style="--a:270.0deg"><span class="un"><img src="../../logos/vrais/gemini-color.svg" alt="Gemini" loading="lazy"></span></span></div></div></div>
+    <h2 class="f tx r rv">Tous vos outils, <em>reliés.</em></h2>
+  </div>
+</div></section>
+
+<!-- 6. TOUT EST PRIS EN CHARGE : la pile de cartes -->
+<section class="sec deck" id="parcours"><div class="wrap">
+  <div class="dh"><span class="lab">Le parcours complet</span><h2 class="f rv">Tout votre parcours IA, <em>pris en charge.</em></h2></div>
+
+  <article class="dc" style="--i:0" data-c="blue"><span class="tab">Diagnostic</span>
+    <div class="l"><span class="nn">1/4</span><h3 class="f">Voir clair, <em>service par service.</em></h3>
+      <p>Le diagnostic IA par volet métier : on regarde commercial, RH, finance, opérations, un volet après l’autre. Ce qui prend du temps, ce que l’IA sait déjà faire, par où commencer.</p>
+      <ul><li>Les tâches de chaque volet, cartographiées</li><li>Un niveau de maturité IA par volet</li><li>Les gains rapides repérés d’emblée</li><li>Un plan d’action classé par priorité</li></ul></div>
+    <div class="r"><svg class="rays" viewBox="0 0 90 70" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"><path d="M8 40 38 26"/><path d="M14 58 46 52"/><path d="M24 14 40 4"/></g></svg><div class="app" id="s1"><div class="app-bar"><i></i><i></i><i></i><span>Diagnostic IA par volet métier</span></div>
+      <div class="pn"><h5>Volets métier</h5>
+        <div class="chips"><div class="cp" data-v="com" style="--w:72%"><b>Commercial</b><div class="bar"><i></i></div></div><div class="cp" data-v="rh" style="--w:48%"><b>Ressources humaines</b><div class="bar"><i></i></div></div><div class="cp" data-v="fin" style="--w:60%"><b>Finance</b><div class="bar"><i></i></div></div><div class="cp" data-v="ops" style="--w:36%"><b>Opérations</b><div class="bar"><i></i></div></div></div>
+        <div class="gain" id="g1"><span>Gains rapides repérés</span><span>Tâches à automatiser classées</span><span>Formation ciblée par équipe</span></div>
+        <a class="bt" id="b1">Générer le plan d’action</a></div><div class="fk" data-who="clement" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 3.2 19 11.6l-6.1 1.3-3.2 5.6z"/></svg><span>Clément</span></div><div class="fk" data-who="alexis" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 3.2 19 11.6l-6.1 1.3-3.2 5.6z"/></svg><span>Alexis</span></div><div class="fk" data-who="equipe" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 3.2 19 11.6l-6.1 1.3-3.2 5.6z"/></svg><span>votre équipe</span></div></div></div>
+  </article>
+
+  <article class="dc" style="--i:1" data-c="ink"><span class="tab">Déploiement</span>
+    <div class="l"><span class="nn">2/4</span><h3 class="f">Déployer, <em>sans friction.</em></h3>
+      <p>L’accompagnement au déploiement de l’IA : les bons outils installés au bon endroit, des règles d’usage claires, des référents dans vos équipes.</p>
+      <ul><li>Claude, ChatGPT ou Copilot dans vos outils</li><li>Un cadre d’usage écrit, simple à suivre</li><li>Des référents IA désignés chez vous</li><li>Un comité IA qui garde le cap</li></ul></div>
+    <div class="r"><svg class="rays" viewBox="0 0 90 70" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"><path d="M8 40 38 26"/><path d="M14 58 46 52"/><path d="M24 14 40 4"/></g></svg><div class="app" id="s2"><div class="app-bar"><i></i><i></i><i></i><span>Déploiement de l’IA</span></div>
+      <div class="pn"><h5>À mettre en place</h5>
+        <div class="row" data-r="1"><span class="ic"><img src="../../logos/vrais/claude-color.svg" alt=""></span><b>Assistant IA sur les postes</b><span class="sw"></span></div>
+        <div class="row" data-r="2"><span class="ic"><img src="../../logos/vrais/copilot-color.svg" alt=""></span><b>Outils de bureautique reliés</b><span class="sw"></span></div>
+        <div class="row" data-r="3"><span class="ic"><img src="../../logos/vrais/openai.svg" alt=""></span><b>Cadre d’usage rédigé</b><span class="sw"></span></div>
+        <div class="row" data-r="4"><span class="ic"><img src="../../logos/vrais/googlemeet-color.svg" alt=""></span><b>Référents désignés</b><span class="sw"></span></div>
+        <div class="prog" id="pr2"><i></i></div><div class="pgl"><span>Mise en place</span><span id="pt2">en cours</span></div></div><div class="fk" data-who="clement" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 3.2 19 11.6l-6.1 1.3-3.2 5.6z"/></svg><span>Clément</span></div><div class="fk" data-who="alexis" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 3.2 19 11.6l-6.1 1.3-3.2 5.6z"/></svg><span>Alexis</span></div><div class="fk" data-who="equipe" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 3.2 19 11.6l-6.1 1.3-3.2 5.6z"/></svg><span>votre équipe</span></div></div></div>
+  </article>
+
+  <article class="dc" style="--i:2" data-c="ice"><span class="tab">Formation</span>
+    <div class="l"><span class="nn">3/4</span><h3 class="f">Former, <em>sur vos vrais dossiers.</em></h3>
+      <p>Les équipes apprennent avec leurs documents, leurs mails, leurs tableaux. Pas de cours théorique : chaque séance finit avec un usage prêt à servir dès le lendemain.</p>
+      <ul><li>Séminaire d’équipe de lancement</li><li>Ateliers par métier</li><li>Coaching individuel pour les managers</li><li>Supports et guides à garder</li></ul></div>
+    <div class="r"><svg class="rays" viewBox="0 0 90 70" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"><path d="M8 40 38 26"/><path d="M14 58 46 52"/><path d="M24 14 40 4"/></g></svg><div class="app" id="s3"><div class="app-bar"><i></i><i></i><i></i><span>Planning de formation</span></div>
+      <div class="pn"><h5>Semaine type</h5>
+        <div class="wk"><span></span><span class="h">Lun</span><span class="h">Mar</span><span class="h">Mer</span><span class="h">Jeu</span><span class="h">Ven</span>
+          <span class="m">Matin</span><span class="sl" data-s="1">Séminaire</span><span class="sl" data-s="2"></span><span class="sl" data-s="3"></span><span class="sl" data-s="4">Coaching</span><span class="sl" data-s="5"></span>
+          <span class="m">Après</span><span class="sl" data-s="6"></span><span class="sl" data-s="7">Atelier</span><span class="sl" data-s="8"></span><span class="sl" data-s="9"></span><span class="sl" data-s="10"></span></div>
+        <a class="bt" id="b3">Envoyer les invitations</a></div><div class="fk" data-who="clement" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 3.2 19 11.6l-6.1 1.3-3.2 5.6z"/></svg><span>Clément</span></div><div class="fk" data-who="alexis" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 3.2 19 11.6l-6.1 1.3-3.2 5.6z"/></svg><span>Alexis</span></div><div class="fk" data-who="equipe" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 3.2 19 11.6l-6.1 1.3-3.2 5.6z"/></svg><span>votre équipe</span></div></div></div>
+  </article>
+
+  <article class="dc" style="--i:3" data-c="cream"><span class="tab">Automatisations</span>
+    <div class="l"><span class="nn">4/4</span><h3 class="f">Automatiser <em>ce qui se répète.</em></h3>
+      <p>Mails triés, comptes rendus écrits, tableaux remplis, équipes prévenues. On construit les enchaînements avec n8n, Make ou Zapier, et on apprend à vos équipes à les faire évoluer.</p>
+      <ul><li>Les tâches répétitives branchées entre elles</li><li>Des agents IA qui préparent le travail</li><li>Documents, pages et visuels générés</li><li>Un suivi pour que ça tienne dans la durée</li></ul></div>
+    <div class="r"><svg class="rays" viewBox="0 0 90 70" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"><path d="M8 40 38 26"/><path d="M14 58 46 52"/><path d="M24 14 40 4"/></g></svg><div class="app" id="s4"><div class="app-bar"><i></i><i></i><i></i><span>Automatisation : traiter les demandes reçues</span></div>
+      <div class="pn"><div class="flow">
+        <div class="nd" data-n="1"><span class="ic"><img src="../../logos/vrais/gmail-color.svg" alt=""></span><div><b>Un mail arrive</b></div><span class="st"></span></div><div class="cn"></div>
+        <div class="nd" data-n="2"><span class="ic"><img src="../../logos/vrais/claude-color.svg" alt=""></span><div><b>L’IA le résume</b></div><span class="st"></span></div><div class="cn"></div>
+        <div class="nd" data-n="3"><span class="ic"><img src="../../logos/vrais/googlesheets-color.svg" alt=""></span><div><b>Le tableau est mis à jour</b></div><span class="st"></span></div><div class="cn"></div>
+        <div class="nd" data-n="4"><span class="ic"><img src="../../logos/vrais/slack-color.svg" alt=""></span><div><b>L’équipe est prévenue</b></div><span class="st"></span></div></div>
+        <div class="act"><span class="sw" id="sw4"></span><span>Activer l’automatisation</span></div></div>
+      <div class="toast" id="to4">Tâche terminée</div><div class="fk" data-who="clement" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 3.2 19 11.6l-6.1 1.3-3.2 5.6z"/></svg><span>Clément</span></div><div class="fk" data-who="alexis" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 3.2 19 11.6l-6.1 1.3-3.2 5.6z"/></svg><span>Alexis</span></div><div class="fk" data-who="equipe" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 3.2 19 11.6l-6.1 1.3-3.2 5.6z"/></svg><span>votre équipe</span></div></div></div>
+  </article>
+</div></section>
+
+<!-- 7. SECTEURS -->
+<section class="sec" id="metiers"><div class="wrap">
+  <div class="sc-h"><div><span class="lab">Chaque métier a ses dossiers</span><h2 class="f rv">L’IA ne sert pas <em>pareil partout.</em></h2></div>
+    <p class="rv">On part de vos dossiers du quotidien. Quatre univers où nous travaillons, avec la même méthode.</p></div>
+  <div class="sg">
+    <article class="sk b1" data-cur="Voir"><img class="ph" src="../../img/axem/formation/formation-illustration-seminaire.jpg" alt="Illustration d’un séminaire d’équipe" loading="lazy"><span class="tg">Événementiel</span><div><h3 class="f">Événementiel</h3><p>Inscriptions, programmes, relances, comptes rendus : l’IA tient la logistique, vos équipes tiennent l’événement.</p></div></article>
+    <article class="sk b2" data-cur="Voir"><img class="ph" src="../../img/axem/formation/formation-illustration-coaching.jpg" alt="Illustration d’un coaching devant un ordinateur" loading="lazy"><span class="tg">Santé</span><div><h3 class="f">Santé</h3><p>Courriers, comptes rendus, protocoles à mettre à jour : du temps rendu à ceux qui s’occupent des patients.</p></div></article>
+    <article class="sk b3" data-cur="Voir"><img class="ph" src="../../img/axem/formation/formation-illustration-comite-ia.jpg" alt="Illustration d’un comité autour de tableaux de suivi" loading="lazy"><span class="tg">Grande distribution</span><div><h3 class="f">Grande distribution</h3><p>Reportings, commandes, fiches produits : les tâches qui reviennent chaque semaine passent en automatique.</p></div></article>
+    <article class="sk b4" data-cur="Voir"><img class="ph" src="../../img/axem/cas-reels/cas-gestuel-entrepot-ergonomie.jpg" alt="Opérateur en entrepôt qui soulève un carton" loading="lazy"><span class="tg">Logistique</span><div><h3 class="f">Logistique</h3><p>Suivi des flux, mails transporteurs, consignes terrain : moins de saisie, plus de temps sur le terrain.</p></div></article>
+  </div>
+</div></section>
+
+<!-- 8. ÉQUIPE -->
+<section class="sec" id="equipe"><div class="wrap team">
+  <div><span class="lab">Deux associés</span><h2 class="f rv">Vous parlez à ceux <em>qui font.</em></h2>
+    <p class="rv">Pas d’intermédiaire, pas de commercial qui disparaît après la signature. Clément cadre vos usages, Alexis construit les automatisations, et des formateurs experts rejoignent le projet selon le sujet.</p>
+    <p class="rv" style="margin-top:22px"><a class="btn" href="https://cal.com/clement-predo-pwh2dk/echange-30min" data-cur="Réserver">Réserver 30 minutes <span class="ar">→</span></a></p></div>
+  <div class="duo">
+    <figure class="pf rv"><p class="bub l">On commence par vos dossiers ?</p><div class="im"><img src="../../img/axem/equipe/equipe-clement-portrait-micro.jpg" alt="Clément Predo, cofondateur d’AXEM IA, au micro" loading="lazy"><div class="fk fs" data-who="clement" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 3.2 19 11.6l-6.1 1.3-3.2 5.6z"/></svg><span>Clément</span></div></div><h3 class="f">Clément Predo</h3><small>Stratégie : vos usages IA, vos priorités.</small></figure>
+    <figure class="pf rv"><p class="bub r">Je branche les outils.</p><div class="im"><img src="../../img/axem/equipe/equipe-alexis-portrait-micro.jpg" alt="Alexis Zeitoun, cofondateur d’AXEM IA, au micro" loading="lazy"><div class="fk fs" data-who="alexis" aria-hidden="true"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M5.5 3.2 19 11.6l-6.1 1.3-3.2 5.6z"/></svg><span>Alexis</span></div></div><h3 class="f">Alexis Zeitoun</h3><small>Technique : automatisations et agents IA.</small></figure>
+  </div>
+</div></section>
+
+<!-- 9. CHIFFRES + CONFIANCE -->
+<section class="sec preuves" style="padding-top:0"><div class="wrap">
+  <div class="nums">
+    <div class="nm rv"><b data-n="300">+300</b><span>entreprises accompagnées</span></div>
+    <div class="nm rv"><b data-n="3000" data-sp="1">+3 000</b><span>collaborateurs formés</span></div>
+    <div class="nm rv"><b data-n="100000" data-sp="1">+100 000</b><span>personnes dans notre communauté</span></div>
+  </div>
+  <p class="asof rv">Chiffres au 21 novembre 2026</p>
+  <div class="cf rv"><small>Ils nous font confiance</small>
+    <img src="../../img/clients/carrefour.svg" alt="Carrefour" loading="lazy"><img src="../../img/clients/geodis.svg" alt="Geodis" loading="lazy"><img src="../../img/clients/puig.svg" alt="Puig" loading="lazy"><img src="../../img/clients/kit.png" alt="KIT" loading="lazy"></div>
+</div></section>
+
+<!-- 10. GALERIE D'ASSETS -->
+<section class="gal"><div class="wrap hd"><div><span class="lab">Ce qu’on fabrique avec vous</span><h2 class="f rv">Des supports qui servent <em>tous les jours.</em></h2></div></div>
+<div class="strip ra"><div class="mq"><figure class="gi p"><img src="../../img/axem/visuels-posts/post-claude-pour-le-btp.jpg" alt="Guide Claude pour le BTP" loading="lazy"></figure><figure class="gi l"><img src="../../img/axem/visuels-posts/post-mascotte-ax-3d.jpg" alt="La mascotte Ax en 3D bleue" loading="lazy"></figure><figure class="gi l"><img src="../../img/axem/formation/formation-illustration-seminaire.jpg" alt="Illustration d’un séminaire d’équipe autour d’un tableau" loading="lazy"></figure><figure class="gi p"><img src="../../img/axem/visuels-posts/post-claude-pour-les-rh.jpg" alt="Guide Claude pour les RH" loading="lazy"></figure><figure class="gi l"><img src="../../img/axem/workflows-dashboards/wf-film-reporting-client-mensuel.jpg" alt="Film : le reporting client mensuel" loading="lazy"></figure><figure class="gi l"><img src="../../img/axem/visuels-posts/post-coaching-ia-1-1.jpg" alt="Visuel du coaching IA en tête à tête" loading="lazy"></figure><figure class="gi p"><img src="../../img/axem/visuels-posts/post-claude-pour-l-industrie.jpg" alt="Guide Claude pour l’industrie" loading="lazy"></figure><figure class="gi p"><img src="../../img/axem/visuels-posts/post-claude-pour-le-btp.jpg" alt="" aria-hidden="true" data-x="Guide Claude pour le BTP" loading="lazy"></figure><figure class="gi l"><img src="../../img/axem/visuels-posts/post-mascotte-ax-3d.jpg" alt="" aria-hidden="true" data-x="La mascotte Ax en 3D bleue" loading="lazy"></figure><figure class="gi l"><img src="../../img/axem/formation/formation-illustration-seminaire.jpg" alt="" aria-hidden="true" data-x="Illustration d’un séminaire d’équipe autour d’un tableau" loading="lazy"></figure><figure class="gi p"><img src="../../img/axem/visuels-posts/post-claude-pour-les-rh.jpg" alt="" aria-hidden="true" data-x="Guide Claude pour les RH" loading="lazy"></figure><figure class="gi l"><img src="../../img/axem/workflows-dashboards/wf-film-reporting-client-mensuel.jpg" alt="" aria-hidden="true" data-x="Film : le reporting client mensuel" loading="lazy"></figure><figure class="gi l"><img src="../../img/axem/visuels-posts/post-coaching-ia-1-1.jpg" alt="" aria-hidden="true" data-x="Visuel du coaching IA en tête à tête" loading="lazy"></figure><figure class="gi p"><img src="../../img/axem/visuels-posts/post-claude-pour-l-industrie.jpg" alt="" aria-hidden="true" data-x="Guide Claude pour l’industrie" loading="lazy"></figure></div></div><div class="strip rb"><div class="mq"><figure class="gi p"><img src="../../img/axem/visuels-posts/post-tous-vos-outils-multiprise.jpg" alt="Tous vos outils branchés sur Claude" loading="lazy"></figure><figure class="gi l"><img src="../../img/axem/formation/formation-illustration-comite-ia.jpg" alt="Illustration d’un comité IA autour de graphiques" loading="lazy"></figure><figure class="gi l"><img src="../../img/axem/visuels-posts/post-equipe-axem-3d-bureau.jpg" alt="L’équipe AXEM en 3D dans un bureau" loading="lazy"></figure><figure class="gi l"><img src="assets/suivi-broderie.jpg" alt="Plan de suivi brodé : le mot Suivi sur un tissu" loading="lazy"></figure><figure class="gi l"><img src="../../img/axem/workflows-dashboards/wf-film-approche-en-4-mots.jpg" alt="Film : notre approche en 4 mots" loading="lazy"></figure><figure class="gi l"><img src="../../img/axem/visuels-posts/post-ia-de-a-a-z.jpg" alt="Ax et le titre IA de A à Z" loading="lazy"></figure><figure class="gi l"><img src="../../img/axem/workflows-dashboards/wf-page-explicative-personnage.jpg" alt="Une page explicative AXEM" loading="lazy"></figure><figure class="gi l"><img src="../../img/axem/formation/formation-illustration-coaching.jpg" alt="Illustration d’un coaching individuel devant un ordinateur" loading="lazy"></figure><figure class="gi p"><img src="../../img/axem/visuels-posts/post-tous-vos-outils-multiprise.jpg" alt="" aria-hidden="true" data-x="Tous vos outils branchés sur Claude" loading="lazy"></figure><figure class="gi l"><img src="../../img/axem/formation/formation-illustration-comite-ia.jpg" alt="" aria-hidden="true" data-x="Illustration d’un comité IA autour de graphiques" loading="lazy"></figure><figure class="gi l"><img src="../../img/axem/visuels-posts/post-equipe-axem-3d-bureau.jpg" alt="" aria-hidden="true" data-x="L’équipe AXEM en 3D dans un bureau" loading="lazy"></figure><figure class="gi l"><img src="assets/suivi-broderie.jpg" alt="" aria-hidden="true" data-x="Plan de suivi brodé : le mot Suivi sur un tissu" loading="lazy"></figure><figure class="gi l"><img src="../../img/axem/workflows-dashboards/wf-film-approche-en-4-mots.jpg" alt="" aria-hidden="true" data-x="Film : notre approche en 4 mots" loading="lazy"></figure><figure class="gi l"><img src="../../img/axem/visuels-posts/post-ia-de-a-a-z.jpg" alt="" aria-hidden="true" data-x="Ax et le titre IA de A à Z" loading="lazy"></figure><figure class="gi l"><img src="../../img/axem/workflows-dashboards/wf-page-explicative-personnage.jpg" alt="" aria-hidden="true" data-x="Une page explicative AXEM" loading="lazy"></figure><figure class="gi l"><img src="../../img/axem/formation/formation-illustration-coaching.jpg" alt="" aria-hidden="true" data-x="Illustration d’un coaching individuel devant un ordinateur" loading="lazy"></figure></div></div>
+</section>
+
+<!-- 10b. CE QUE VOUS GAGNEZ : tuiles colorées -->
+<section class="sec bnt"><div class="wrap">
+  <div class="plan-h"><span class="lab">Ce que vous gagnez</span><h2 class="f rv">Du concret, dès <em>le premier dossier.</em></h2></div>
+  <div class="bn"><article class="bq b1 w5 rv" data-cur="Voir"><span class="bi"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="12" cy="12" r="9"/><path d="M12 7v5l3 2"/></svg></span><div><h3 class="f">Du temps rendu</h3><p>Courriers, comptes rendus, reportings : les tâches qui reviennent prennent moins de place dans la semaine.</p></div></article><article class="bq b2 w3 rv" data-cur="Voir"><span class="bi"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="12 4 2 9 12 14 22 9"/><path d="M6 11v5c3 3 9 3 12 0v-5"/></svg></span><div><h3 class="f">Des équipes à l’aise</h3><p>Formées sur leurs vrais dossiers, avec leurs mots.</p></div></article><article class="bq b3 w4 rv" data-cur="Voir"><span class="bi"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><polygon points="13 2 4 14 11 14 10 22 20 9 13 9"/></svg></span><div><h3 class="f">Des tâches en automatique</h3><p>n8n, Make ou Zapier font l’enchaînement, vous gardez la main.</p></div></article><article class="bq b4 w4 rv" data-cur="Voir"><span class="bi"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M12 3l8 3v6c0 5-3.5 8-8 9-4.5-1-8-4-8-9V6z"/><path d="M9 12l2 2 4-4"/></svg></span><div><h3 class="f">Des données cadrées</h3><p>Un cadre d’usage écrit : ce qui entre dans un outil d’IA, et ce qui n’y entre pas.</p></div></article><article class="bq b5 w3 rv" data-cur="Voir"><span class="bi"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><circle cx="9" cy="8" r="3.5"/><circle cx="17" cy="9" r="2.5"/><path d="M2.5 20c.5-4 3-6 6.5-6s6 2 6.5 6M16 14c3 0 5 1.6 5.5 5"/></svg></span><div><h3 class="f">Un seul interlocuteur</h3><p>Clément et Alexis, du premier échange au suivi.</p></div></article><article class="bq b6 w5 rv" data-cur="Voir"><span class="bi"><svg viewBox="0 0 24 24" width="30" height="30" fill="none" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round" aria-hidden="true"><path d="M4 20V10M10 20V4M16 20v-8M22 20H2"/></svg></span><div><h3 class="f">Un suivi qui se mesure</h3><p>On regarde ce qui marche, on ajuste, et on automatise la suite.</p></div></article></div>
+</div></section>
+
+<!-- 11. LE PLAN RÉEL -->
+<section class="sec" style="padding-top:clamp(30px,5vw,70px)"><div class="wrap">
+  <div class="plan-h"><span class="lab">Le plan réel</span><h2 class="f rv">Pas de jargon, pas de promesse floue. <em>Quatre étapes.</em></h2><p class="pit pl2 rv" style="--rot:3deg">Vous gardez la main à chaque étape.</p></div>
+  <div class="rail" aria-hidden="true"><i class="ln"><b class="fl"></b></i><span class="rn">1</span><span class="rn">2</span><span class="rn">3</span><span class="rn">4</span></div>
+  <div class="pg">
+    <article class="pc rv c1"><span class="ch">Étape 1 sur 4</span><svg class="rays" viewBox="0 0 90 70" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"><path d="M8 40 38 26"/><path d="M14 58 46 52"/><path d="M24 14 40 4"/></g></svg><div class="no">01</div><h3 class="f">Échange</h3><p>30 minutes pour comprendre vos équipes, vos outils et ce qui vous freine.</p></article>
+    <article class="pc rv c2"><span class="ch">Étape 2 sur 4</span><div class="no">02</div><h3 class="f">Diagnostic</h3><p>Un diagnostic IA par volet métier, avec un plan d’action classé par priorité.</p></article>
+    <article class="pc rv c3"><span class="ch">Étape 3 sur 4</span><div class="no">03</div><h3 class="f">Formation et déploiement</h3><p>Vos équipes se forment sur leurs vrais dossiers, les outils sont installés.</p></article>
+    <article class="pc rv c4"><span class="ch">Étape 4 sur 4</span><div class="no">04</div><h3 class="f">Suivi</h3><p>On mesure, on ajuste, on automatise la suite. Vous gardez la main.</p></article>
+  </div>
+</div></section>
+
+<!-- 12. FAQ -->
+<section class="sec" id="faq" style="padding-top:clamp(30px,5vw,60px)"><div class="wrap faq">
+  <div><span class="lab">Questions</span><h2 class="f rv">Des questions, <em>des réponses directes.</em></h2></div>
+  <div>
+    <details open><summary>Faut-il changer nos outils ?<i></i></summary><p><strong>Non.</strong> On part de ce que vous utilisez déjà : Microsoft 365, Google Workspace, vos logiciels métier. On ajoute Claude, ChatGPT ou Copilot là où ils servent vraiment.</p></details>
+    <details><summary>Nos équipes ne sont pas techniques, est-ce un problème ?<i></i></summary><p><strong>Non.</strong> La formation se fait sur vos vrais dossiers, avec vos mots. Personne n’a besoin de savoir coder.</p></details>
+    <details><summary>Par quoi commence-t-on ?<i></i></summary><p>Par un échange de <strong>30 minutes</strong>. Ensuite, le diagnostic IA par volet métier : on regarde service par service ce qui prend du temps et où l’IA aide vraiment.</p></details>
+    <details><summary>Vous automatisez à notre place ?<i></i></summary><p><strong>Avec vous.</strong> On construit les enchaînements avec n8n, Make ou Zapier, puis on forme vos équipes à les faire évoluer. Vous gardez la main.</p></details>
+    <details><summary>Et nos données ?<i></i></summary><p>On définit avec vous un cadre d’usage écrit : ce qui peut entrer dans un outil d’IA et ce qui ne le doit pas. On en parle dès le premier échange.</p></details>
+    <details><summary>Qui intervient chez nous ?<i></i></summary><p><strong>Clément et Alexis</strong>, les deux associés, avec des formateurs experts selon le sujet.</p></details>
+  </div>
+</div></section>
+
+<!-- 13. APPEL FINAL -->
+<section class="fin on-blue"><div class="d1"></div><svg class="rays a" viewBox="0 0 90 70" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"><path d="M8 40 38 26"/><path d="M14 58 46 52"/><path d="M24 14 40 4"/></g></svg><svg class="rays b" viewBox="0 0 90 70" aria-hidden="true"><g fill="none" stroke="currentColor" stroke-width="6" stroke-linecap="round"><path d="M8 40 38 26"/><path d="M14 58 46 52"/><path d="M24 14 40 4"/></g></svg><div class="wrap fin-in">
+  <svg class="stk tamp ft" viewBox="0 0 140 140" role="img" aria-label="Tampon : premier plan"><defs><path id="tp2" d="M70 70m-50 0a50 50 0 1 1 100 0a50 50 0 1 1-100 0"/></defs><circle cx="70" cy="70" r="68" fill="#2349FF"/><circle cx="70" cy="70" r="62" fill="none" stroke="#fff" stroke-width="2" stroke-dasharray="3 5"/><text font-size="15" font-weight="700" fill="#fff" letter-spacing="1"><textPath href="#tp2" textLength="305">PREMIER PLAN · PREMIER PLAN ·</textPath></text><g transform="translate(46 50) scale(.8)" stroke="#fff" stroke-width="6" stroke-linecap="round" fill="none"><path d="M8 40 38 26"/><path d="M14 58 46 52"/><path d="M24 14 40 4"/></g></svg><span class="lab">Votre premier dossier</span>
+  <h2 class="f rv">Un seul partenaire, <em>de A à Z.</em></h2>
+  <p class="rv">Racontez-nous votre équipe et vos outils. En 30 minutes, on repart avec un premier plan.</p>
+  <div class="row2 rv"><a class="btn w" href="https://cal.com/clement-predo-pwh2dk/echange-30min" data-cur="Réserver">Réserver 30 minutes <span class="ar">→</span></a><a class="btn g" href="mailto:contact@axem-ia.fr" data-cur="Écrire">contact@axem-ia.fr</a></div>
+</div></section>
+</main>
+
+<footer><div class="wrap ft">
+  <div><img class="lo" src="assets/logo-bleu-320.png" alt="AXEM IA" width="320" height="90"><p>AXEM IA, Paris.<br>Votre partenariat IA, de A à Z.</p></div>
+  <div><h4>Programmes</h4><a href="https://axem-ia.fr/formation-ia-equipe-commerciale.html">Formation IA pour les équipes commerciales</a><a href="https://axem-ia.fr/nos-resultats.html">Nos résultats</a></div>
+  <div><h4>Contact et mentions</h4><a href="https://www.linkedin.com/company/axem-ia">LinkedIn</a><a href="mailto:contact@axem-ia.fr">contact@axem-ia.fr</a><a href="https://axem-ia.fr/accessibilite-handicap.html">Accessibilité</a><a href="https://axem-ia.fr/reclamations.html">Réclamations</a><a href="https://axem-ia.fr/mentions-legales.html">Mentions légales</a></div>
+</div></footer>
+
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script src="https://cdn.jsdelivr.net/npm/lenis@1.1.18/dist/lenis.min.js"></script>
+<script>
+(()=>{
+document.body.classList.remove('no-js');
+const RM=matchMedia('(prefers-reduced-motion: reduce)').matches;
+if(RM)document.documentElement.classList.add('rm');
+const $=(s,e=document)=>e.querySelector(s),$$=(s,e=document)=>[...e.querySelectorAll(s)];
+const sleep=ms=>new Promise(r=>setTimeout(r,ms));
+gsap.registerPlugin(ScrollTrigger);
+/* défilement lissé branché sur ScrollTrigger */
+if(!RM&&window.Lenis){const lenis=new Lenis({lerp:.1});lenis.on('scroll',ScrollTrigger.update);gsap.ticker.add(t=>lenis.raf(t*1000));gsap.ticker.lagSmoothing(0);
+ $$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=$(a.getAttribute('href'));if(t){e.preventDefault();lenis.scrollTo(t,{offset:-70})}}));}
+/* curseur de souris : le rond bleu AXEM */
+const cur=$('#cur'),tag=$('#curTag');
+if(matchMedia('(pointer:fine)').matches&&!RM){
+ document.body.classList.add('has-cur');
+ let x=-100,y=-100,tx=x,ty=y,raf=0;
+ const loop=()=>{x+=(tx-x)*.3;y+=(ty-y)*.3;cur.style.transform=`translate(${x}px,${y}px)`;raf=(Math.abs(tx-x)>.05||Math.abs(ty-y)>.05)?requestAnimationFrame(loop):0};
+ addEventListener('pointermove',e=>{tx=e.clientX;ty=e.clientY;if(!raf)raf=requestAnimationFrame(loop)},{passive:true});
+ document.addEventListener('mouseover',e=>{const d=e.target.closest('[data-cur]'),a=e.target.closest('a,button,summary,.t');
+  if(d){tag.textContent=d.dataset.cur;cur.classList.add('hot','lbl')}else if(a){tag.textContent='';cur.classList.add('hot');cur.classList.remove('lbl')}else cur.classList.remove('hot','lbl')});
+ document.addEventListener('pointerdown',()=>cur.classList.add('dn'));document.addEventListener('pointerup',()=>cur.classList.remove('dn'));
+ document.addEventListener('mouseleave',()=>{tx=-100;ty=-100;if(!raf)raf=requestAnimationFrame(loop)});
+}
+/* boutons magnétiques */
+if(matchMedia('(pointer:fine)').matches&&!RM)$$('.btn').forEach(b=>{b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();b.style.transform=`translate(${((e.clientX-r.left)/r.width-.5)*10}px,${((e.clientY-r.top)/r.height-.5)*8-2}px)`});b.addEventListener('pointerleave',()=>b.style.transform='')});
+/* révélations */
+if(!RM){gsap.set('.rv',{opacity:0,y:34});ScrollTrigger.batch('.rv',{start:'top 90%',once:true,onEnter:b=>gsap.to(b,{opacity:1,y:0,duration:1,ease:'expo.out',stagger:.09})});}
+/* hero : titre, mosaïque, mot qui tourne */
+if(!RM){
+ gsap.from('#h1 .ln>span',{yPercent:110,duration:1.2,ease:'expo.out',stagger:.14,delay:.15});
+ gsap.from('#mos .t',{scale:.4,opacity:0,rotate:()=>gsap.utils.random(-14,14),duration:1,ease:'expo.out',stagger:{each:.025,from:'random'},delay:.35,clearProps:'transform,opacity'});
+ gsap.from('.hero-side>*',{y:30,opacity:0,duration:1,ease:'expo.out',stagger:.1,delay:.5});
+ const wi=$('.rwi'),n=4,h=wi.firstElementChild.offsetHeight||27;
+ const tl=gsap.timeline({repeat:-1});for(let i=1;i<=n;i++)tl.to(wi,{y:()=>-i*(wi.firstElementChild.offsetHeight),duration:.9,ease:'expo.inOut'},'+=1.7');
+ tl.set(wi,{y:0});
+}
+/* texte flou qui devient net */
+const big=$('#big');
+(function(){const nodes=[...big.childNodes];big.innerHTML='';
+ nodes.forEach(n=>{const em=n.nodeType===1;(em?n.textContent:n.textContent).split(/(\s+)/).forEach(w=>{if(!w.trim())return;const s=document.createElement('span');s.className='w';s.textContent=w;if(em){const e=document.createElement('em');e.appendChild(s);big.appendChild(e);big.appendChild(document.createTextNode(' '))}else{big.appendChild(s);big.appendChild(document.createTextNode(' '))}})});
+ if(!RM)gsap.fromTo($$('.w',big),{opacity:.12,filter:'blur(9px)'},{opacity:1,filter:'blur(0px)',stagger:.12,ease:'none',scrollTrigger:{trigger:big,start:'top 82%',end:'bottom 45%',scrub:.6}});})();
+/* pastilles de douleur : elles flottent (fixes sur mobile) */
+if(!RM&&innerWidth>600){$$('.pl').forEach((p,i)=>{gsap.from(p,{y:60,opacity:0,rotate:gsap.utils.random(-6,6),duration:1,ease:'expo.out',scrollTrigger:{trigger:'#pls',start:'top 85%'},delay:i*.06});
+})}
+/* compteurs */
+$$('.nm b').forEach(b=>{const v=+b.dataset.n,sp=b.dataset.sp;const fmt=n=>'+'+(sp?Math.round(n).toLocaleString('fr-FR').replace(/ | /g,' '):Math.round(n));
+ if(RM){b.textContent=fmt(v);return}const o={n:0};ScrollTrigger.create({trigger:b,start:'top 88%',once:true,onEnter:()=>gsap.to(o,{n:v,duration:2.2,ease:'expo.out',onUpdate:()=>b.textContent=fmt(o.n),onComplete:()=>b.textContent=fmt(v)})});});
+/* étapes : le rail se remplit au défilement */
+(()=>{const f=$('.rail .fl'),ns=$$('.rail .rn');if(!f)return;const upd=p=>{f.style.transform=`scaleX(${p})`;ns.forEach((n,i)=>n.classList.toggle('on',p>=i/(ns.length-1)-.001))};
+ if(RM){upd(1);return}ScrollTrigger.create({trigger:'.pg',start:'top 78%',end:'top 25%',scrub:.5,onUpdate:s=>upd(s.progress)});})();
+/* FAQ : une réponse ouverte à la fois */
+$$('details').forEach(d=>d.addEventListener('toggle',()=>{if(d.open)$$('details').forEach(o=>{if(o!==d)o.open=false})}));
+
+/* ====== ACTEURS : Clément, Alexis, votre équipe cliquent sur les maquettes ====== */
+function ripple(stage,x,y,who){const r=document.createElement('i');r.className='rp';r.style.left=x+'px';r.style.top=y+'px';if(who==='alexis')r.style.borderColor='#0B0D12';stage.appendChild(r);setTimeout(()=>r.remove(),800)}
+function scenario(stage,steps,o){
+ o=o||{};const A={};$$('.fk',stage).forEach(a=>A[a.dataset.who]=a);
+ const sr=()=>stage.getBoundingClientRect();
+ const pos=(t,fx=.5,fy=.5)=>{const s=sr(),r=t.getBoundingClientRect();return[r.left-s.left+r.width*fx,r.top-s.top+r.height*fy]};
+ const home=()=>{const w=stage.clientWidth,h=stage.clientHeight;const H=o.home||{clement:[.12,.9],alexis:[.5,.94],equipe:[.88,.9]};for(const k in A)gsap.set(A[k],{x:H[k][0]*w,y:H[k][1]*h})};
+ let alive=false,running=false;
+ const last={};steps.forEach(s=>last[s.who]=s);
+ async function loop(){if(running)return;running=true;
+  while(alive){o.reset&&o.reset();home();await sleep(500);
+   for(const s of steps){if(!alive)break;const a=A[s.who],t=$(s.to,stage);if(!t)continue;const[x,y]=pos(t,s.fx,s.fy);
+    await new Promise(r=>gsap.to(a,{x,y,duration:s.dur||1.05,ease:'power3.inOut',onComplete:r}));
+    if(!alive)break;if(s.click!==false){ripple(stage,x,y,s.who);a.classList.add('press');await sleep(150);a.classList.remove('press')}
+    s.do&&s.do(t);await sleep(s.wait??650)}
+   if(!alive)break;await sleep(o.pause||2200);}
+  running=false}
+ if(RM){o.final&&o.final();home();const w=stage.clientWidth;for(const k in last){const t=$(last[k].to,stage);if(t){const[x,y]=pos(t,last[k].fx,last[k].fy);gsap.set(A[k],{x,y})}}return}
+ new IntersectionObserver(es=>es.forEach(e=>{alive=e.isIntersecting;if(alive)loop()}),{threshold:.35}).observe(stage);
+ home();
+}
+const on=(t,c='on')=>t.classList.add(c);
+/* hero : les trois acteurs retournent des tuiles */
+const hs=$('#hs');const tiles=$$('.t',hs);const pick=n=>`.t[data-n="${n}"]`;
+const ts=tiles.filter(t=>!t.classList.contains('tp')).map(t=>t.dataset.n);
+const flipper=t=>t.classList.toggle('flip');
+scenario(hs,[
+ {who:'clement',to:pick(ts[3]),do:flipper},{who:'alexis',to:pick(ts[9]),do:flipper},{who:'equipe',to:pick(ts[14]),do:flipper},
+ {who:'clement',to:pick(ts[20]),do:flipper},{who:'alexis',to:pick(ts[27]),do:flipper},{who:'equipe',to:pick(ts[7]),do:flipper},
+ {who:'alexis',to:pick(ts[33]),do:flipper},{who:'clement',to:pick(ts[12]),do:flipper}
+],{reset:()=>tiles.forEach(t=>t.classList.remove('flip')),home:{clement:[.3,.55],alexis:[.62,.7],equipe:[.8,.35]},pause:1200,final:()=>[3,9,14].forEach(i=>$(pick(ts[i]),hs).classList.add('flip'))});
+/* pivot : tableau de projet */
+const kb=$('#kb'),kcz=$('#kc');const kcSave=kcz.innerHTML;
+function moveCard(card,col){const f=card.getBoundingClientRect();col.appendChild(card);const l=card.getBoundingClientRect();if(!RM)gsap.fromTo(card,{x:f.left-l.left,y:f.top-l.top},{x:0,y:0,duration:.8,ease:'expo.out',clearProps:'transform'})}
+const colOf=k=>$(`.kc[data-col=${k}]`,kcz),cardOf=id=>$(`.kcard[data-id=${id}]`,kcz);
+scenario(kb,[
+ {who:'alexis',to:'.kcard[data-id=rh]',do:t=>t.classList.add('lift'),wait:200},
+ {who:'alexis',to:'.kc[data-col=b] h4',click:false,dur:.8,do:()=>{const c=cardOf('rh');c.classList.remove('lift');moveCard(c,colOf('b'))},wait:700},
+ {who:'clement',to:'.kcard[data-id=cad]',do:t=>t.classList.add('lift'),wait:200},
+ {who:'clement',to:'.kc[data-col=c] h4',click:false,dur:.8,do:()=>{const c=cardOf('cad');c.classList.remove('lift');c.classList.add('done');moveCard(c,colOf('c'))},wait:700},
+ {who:'equipe',to:'.kcard[data-id=rep]',do:t=>t.classList.add('valid'),wait:600},
+ {who:'equipe',to:'.kcard[data-id=cad]',do:t=>t.classList.add('valid'),wait:600},
+ {who:'alexis',to:'.kcard[data-id=dev]',do:t=>t.classList.add('lift'),wait:200},
+ {who:'alexis',to:'.kc[data-col=b] h4',click:false,dur:.8,do:()=>{const c=cardOf('dev');c.classList.remove('lift');moveCard(c,colOf('b'))},wait:800}
+],{reset:()=>{kcz.innerHTML=kcSave},home:{clement:[.1,.85],alexis:[.45,.9],equipe:[.9,.85]},final:()=>{moveCard(cardOf('rh'),colOf('b'));const c=cardOf('cad');c.classList.add('done','valid');moveCard(c,colOf('c'));cardOf('rep').classList.add('valid')}});
+/* carte 1 : diagnostic */
+const s1=$('#s1');const g1=$('#g1'),b1=$('#b1');
+scenario(s1,[
+ {who:'alexis',to:'.cp[data-v=com]',do:t=>on(t,'sel')},{who:'clement',to:'.cp[data-v=fin]',do:t=>on(t,'sel')},{who:'alexis',to:'.cp[data-v=rh]',do:t=>on(t,'sel')},
+ {who:'equipe',to:'#b1',do:t=>{on(t);on(g1)},wait:1200}
+],{reset:()=>{$$('.cp',s1).forEach(c=>c.classList.remove('sel'));g1.classList.remove('on');b1.classList.remove('on')},final:()=>{$$('.cp',s1).slice(0,3).forEach(c=>on(c,'sel'));on(g1);on(b1)}});
+/* carte 2 : déploiement */
+const s2=$('#s2');const rows=$$('.row',s2),pr=$('#pr2'),pt=$('#pt2');
+const upd=()=>{const n=rows.filter(r=>r.classList.contains('on')).length;pr.style.setProperty('--p',n/rows.length);pt.textContent=n===rows.length?'prêt':'en cours'};
+scenario(s2,[
+ {who:'equipe',to:'.row[data-r="1"] .sw',do:()=>{on(rows[0]);upd()}},{who:'clement',to:'.row[data-r="3"] .sw',do:()=>{on(rows[2]);upd()}},
+ {who:'alexis',to:'.row[data-r="2"] .sw',do:()=>{on(rows[1]);upd()}},{who:'equipe',to:'.row[data-r="4"] .sw',do:()=>{on(rows[3]);upd()},wait:1200}
+],{reset:()=>{rows.forEach(r=>r.classList.remove('on'));upd()},final:()=>{rows.forEach(r=>on(r));upd()}});
+/* carte 3 : formation */
+const s3=$('#s3');const sl=$$('.sl',s3),b3=$('#b3');
+scenario(s3,[
+ {who:'clement',to:'.sl[data-s="1"]',do:t=>on(t)},{who:'alexis',to:'.sl[data-s="7"]',do:t=>{on(t);t.classList.add('k')}},
+ {who:'equipe',to:'.sl[data-s="4"]',do:t=>{on(t);t.classList.add('c')}},{who:'alexis',to:'#b3',do:t=>on(t),wait:1200}
+],{reset:()=>{sl.forEach(s=>s.classList.remove('on','k','c'));b3.classList.remove('on')},final:()=>{on(sl[0]);on(sl[6]);sl[6].classList.add('k');on(sl[3]);sl[3].classList.add('c');on(b3)}});
+/* carte 4 : automatisation */
+const s4=$('#s4');const nds=$$('.nd',s4),sw4=$('#sw4'),to4=$('#to4');
+scenario(s4,[
+ {who:'alexis',to:'.nd[data-n="1"]',do:t=>on(t)},{who:'clement',to:'.nd[data-n="2"]',do:t=>on(t)},{who:'alexis',to:'.nd[data-n="3"]',do:t=>on(t)},
+ {who:'equipe',to:'.nd[data-n="4"]',do:t=>on(t)},{who:'clement',to:'#sw4',do:t=>{on(t);on(to4)},wait:1600}
+],{reset:()=>{nds.forEach(n=>n.classList.remove('on'));sw4.classList.remove('on');to4.classList.remove('on')},final:()=>{nds.forEach(n=>on(n));on(sw4);on(to4)}});
+/* portraits : un curseur nommé posé à côté */
+$$('.pf .fk').forEach(f=>{f.style.transform='none'});
+})();
+</script>
+</body></html>
