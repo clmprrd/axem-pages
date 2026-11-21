@@ -1,0 +1,577 @@
+<!doctype html>
+<html lang="fr"><head><meta charset="utf-8"><meta name="viewport" content="width=device-width,initial-scale=1">
+<title>AXEM IA · Votre partenaire IA, de A à Z</title>
+<meta name="description" content="AXEM IA vous accompagne de A à Z : diagnostic IA par volet métier, déploiement, formation des équipes, automatisation et suivi. Un voyage à travers quatre secteurs.">
+<link rel="icon" href="assets/icone-bleu.png">
+<script>(function(){var s=false;try{if(matchMedia('(prefers-reduced-motion: reduce)').matches||innerWidth<768||/[?&]static/.test(location.search))s=true;var c=document.createElement('canvas');if(!(c.getContext('webgl2')||c.getContext('webgl')))s=true}catch(e){s=true}if(s)document.documentElement.classList.add('static')})()</script>
+<link rel="preload" href="fonts/Fraunces-SOFT-normal.woff2" as="font" type="font/woff2" crossorigin>
+<style>
+@font-face{font-family:'Fraunces';font-style:normal;font-weight:300 900;src:url(fonts/Fraunces-SOFT-normal.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Fraunces';font-style:italic;font-weight:300 900;src:url(fonts/Fraunces-SOFT-italic.woff2) format('woff2');font-display:swap}
+@font-face{font-family:'Instrument Sans';font-weight:400 700;src:url(fonts/InstrumentSans-normal.woff2) format('woff2');font-display:swap}
+:root{--blue:#2349FF;--ink:#0B0D12;--grey:#3A3D45;--paper:#FFFFFF;--cream:#FAF6EA;--ice:#EEF2FF;--vio:#7B5CFF;--cl:#D97757;--line:rgba(11,13,18,.10);--pad:clamp(20px,5.5vw,92px);--ease:cubic-bezier(.16,1,.3,1);--hh:72px}
+*{box-sizing:border-box;margin:0;padding:0}
+html{background:#fff}
+html.lenis,html.lenis body{height:auto}.lenis.lenis-smooth{scroll-behavior:auto!important}
+body{font-family:'Instrument Sans',system-ui,sans-serif;font-size:17px;line-height:1.5;color:var(--ink);background:#fff;-webkit-font-smoothing:antialiased;overflow-x:hidden}
+a{color:inherit;text-decoration:none}img{display:block;max-width:100%;height:auto}button{font:inherit;color:inherit;background:none;border:0;cursor:pointer}
+.f,h1,h2,h3{font-family:'Fraunces',Georgia,serif;font-weight:800;font-variation-settings:"SOFT" 100,"opsz" 144;letter-spacing:-.045em;word-spacing:.16em;line-height:.98}
+h1 em,h2 em,h3 em,.f em{font-style:italic;font-weight:400;color:var(--blue);letter-spacing:-.03em}
+.lab{font-size:15px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;color:var(--blue)}
+.wrap{padding:0 var(--pad)}
+:focus-visible{outline:3px solid var(--blue);outline-offset:3px;border-radius:8px}
+.btn{display:inline-flex;align-items:center;gap:10px;padding:14px 24px;border-radius:999px;font-weight:600;font-size:16px;border:1.5px solid var(--ink);background:#fff;transition:background .3s,color .3s}
+.btn:hover{background:var(--ink);color:#fff}.btn.pri{background:var(--blue);border-color:var(--blue);color:#fff}.btn.pri:hover{background:var(--ink);border-color:var(--ink)}
+.skip{position:fixed;left:16px;top:-80px;z-index:500;background:var(--blue);color:#fff;padding:12px 18px;border-radius:999px;font-weight:600}.skip:focus{top:12px}
+/* en-tête */
+header.top{position:fixed;left:0;right:0;top:0;z-index:100;height:var(--hh);display:flex;align-items:center;justify-content:space-between;padding:0 var(--pad);background:linear-gradient(#fff 30%,rgba(255,255,255,0))}
+header.top img{height:30px;width:auto}
+header.top nav{display:flex;gap:28px;align-items:center;font-size:16px;font-weight:500}
+header.top nav a:not(.btn):hover{color:var(--blue)}
+header.top .btn{padding:10px 20px;font-size:15px}
+/* chargement */
+.ld{position:fixed;inset:0;z-index:400;background:#fff;display:grid;place-items:center;transition:opacity .9s var(--ease),visibility .9s}
+.ld div{display:grid;gap:18px;justify-items:center}.ld img{width:84px}.ld b{display:block;width:180px;height:4px;border-radius:4px;background:var(--ice);overflow:hidden}.ld i{display:block;height:100%;background:var(--blue);transform:scaleX(0);transform-origin:left;transition:transform .4s}
+body.ready .ld{opacity:0;visibility:hidden}
+/* voyage */
+#voyage{position:relative;height:880vh}
+.stage{position:sticky;top:0;height:100vh;height:100svh;overflow:hidden;background:#fff}
+#gl{position:absolute;inset:0;width:100%;height:100%;display:block}
+.veil{position:absolute;inset:0;pointer-events:none;background:radial-gradient(130% 100% at 50% 45%,rgba(255,255,255,0) 58%,rgba(255,255,255,.8) 100%)}
+.grain{position:absolute;inset:0;pointer-events:none;opacity:.07;mix-blend-mode:multiply;background-image:url("data:image/svg+xml;utf8,<svg xmlns='http://www.w3.org/2000/svg' width='180' height='180'><filter id='n'><feTurbulence type='fractalNoise' baseFrequency='.9' numOctaves='2'/></filter><rect width='180' height='180' filter='url(%23n)'/></svg>")}
+.panel{position:absolute;inset:0;pointer-events:none;opacity:0;visibility:hidden;will-change:opacity,transform}
+.hero{opacity:1;visibility:visible}
+.panel .txt{position:absolute;left:var(--pad);bottom:clamp(96px,14vh,150px);max-width:min(480px,40vw);background:rgba(255,255,255,.84);backdrop-filter:blur(16px);-webkit-backdrop-filter:blur(16px);border:1px solid var(--line);border-radius:30px;padding:28px 30px;box-shadow:0 30px 80px -30px rgba(35,73,255,.28)}
+.panel .txt h2{font-size:clamp(32px,3.4vw,52px);margin:10px 0 14px}
+.panel .txt p:not(.lab){color:var(--grey);font-size:17px}
+.tgs{display:flex;gap:8px;margin-top:18px;flex-wrap:wrap}.tg{font-size:15px;font-weight:600;padding:5px 13px;border-radius:999px;background:var(--blue);color:#fff}.tg.a{background:var(--ink)}
+.cards{position:absolute;right:var(--pad);top:calc(var(--hh) + 22px);width:min(262px,19vw);display:grid;gap:14px}
+.card{background:#fff;border-radius:22px;overflow:hidden;box-shadow:0 24px 60px -24px rgba(11,13,18,.35);border:1px solid var(--line);pointer-events:auto;transition:transform .5s var(--ease)}
+.card:hover{transform:translateY(-6px) rotate(-1deg)}
+.card img{width:100%;aspect-ratio:16/10;object-fit:cover}
+.card figcaption{padding:11px 16px 14px;font-size:15px;font-weight:600;line-height:1.3}
+.cards .card:nth-child(2){margin-left:-30px}
+@media(max-height:780px){.cards .card:nth-child(n+2){display:none}}
+.hero .txt{background:none;border:0;box-shadow:none;backdrop-filter:none;-webkit-backdrop-filter:none;padding:0;max-width:min(860px,92vw);bottom:clamp(90px,15vh,170px)}
+.hero h1{font-size:clamp(50px,8.4vw,142px);margin:16px 0 22px;line-height:.92;font-weight:900}
+.hero h1 .ln{display:block;overflow:hidden;padding-bottom:.08em}
+.hero h1 .wd{display:inline-block}
+.hero .sub{max-width:520px;color:var(--grey);font-size:18px;text-shadow:0 0 18px #fff,0 0 8px #fff}
+.cta{display:flex;gap:12px;margin-top:26px;flex-wrap:wrap;pointer-events:auto}
+.hint{display:flex;align-items:center;gap:12px;margin-top:26px;font-size:15px;font-weight:600;color:var(--blue)}
+.hint span{width:44px;height:2px;background:var(--blue);transform-origin:left;animation:hint 2.2s var(--ease) infinite}
+@keyframes hint{0%{transform:scaleX(0)}60%{transform:scaleX(1)}100%{transform:scaleX(1);opacity:0}}
+.ring .txt{left:50%;transform:translateX(-50%);bottom:clamp(60px,9vh,100px);text-align:center;max-width:min(560px,90vw)}
+.ring .txt.c .cta{justify-content:center}
+/* repère de progression */
+.prog{position:absolute;left:50%;transform:translateX(-50%);bottom:22px;z-index:20;display:flex;gap:6px;align-items:center;background:rgba(255,255,255,.88);backdrop-filter:blur(12px);border:1px solid var(--line);border-radius:999px;padding:6px;pointer-events:auto}
+.prog button{display:flex;align-items:center;gap:8px;padding:8px 14px;border-radius:999px;font-size:15px;font-weight:600;color:var(--grey);transition:background .3s,color .3s}
+.prog button b{font-family:'Fraunces',serif;font-weight:800}
+.prog button.on{background:var(--blue);color:#fff}
+.prog .bar{position:absolute;left:20px;right:20px;bottom:-9px;height:3px;border-radius:3px;background:rgba(35,73,255,.15);overflow:hidden}.prog .bar i{display:block;height:100%;background:var(--blue);transform:scaleX(0);transform-origin:left}
+.passer{position:absolute;right:var(--pad);bottom:34px;z-index:20;font-size:15px;font-weight:600;color:var(--grey);text-decoration:underline;text-underline-offset:4px;pointer-events:auto}
+.fb{display:none}
+/* sections */
+section.s{padding:clamp(64px,9vw,130px) var(--pad);position:relative;background:#fff}
+section.s.ice{background:linear-gradient(#fff,var(--ice) 18%,var(--ice) 82%,#fff)}
+.s h2.big{font-size:clamp(40px,6.4vw,104px);max-width:14ch}
+.s .lead{max-width:520px;color:var(--grey);margin-top:22px;font-size:18px}
+.steps{list-style:none;margin-top:60px;display:grid;gap:0;position:relative;padding-left:clamp(0px,3vw,48px)}
+.rail{position:absolute;left:0;top:10px;bottom:10px;width:3px;background:var(--line);border-radius:3px;overflow:hidden}.rail i{display:block;width:100%;height:100%;background:var(--blue);transform-origin:top}
+.step{display:grid;grid-template-columns:minmax(80px,170px) 1fr;gap:clamp(12px,3vw,48px);padding:clamp(28px,4vw,56px) 0;border-top:1px solid var(--line);opacity:.55;transition:opacity .5s}
+.step.act{opacity:1}
+.step .n{font-size:clamp(56px,9vw,150px);line-height:.85;color:var(--blue);font-weight:300;font-style:italic}
+.step h3{font-size:clamp(28px,3.6vw,56px);margin-bottom:14px}
+.step p{max-width:620px;color:var(--grey);font-size:18px}
+.lgs{display:flex;gap:10px;margin-top:20px;flex-wrap:wrap}.lgs img{width:48px;height:48px;padding:9px;border-radius:50%;background:#fff;border:1px solid var(--line);box-shadow:0 8px 20px -10px rgba(35,73,255,.35)}
+.si{margin-top:22px;border-radius:22px;max-width:520px;width:100%;box-shadow:0 30px 70px -30px rgba(11,13,18,.4);border:1px solid var(--line)}
+.stats{display:grid;grid-template-columns:repeat(3,1fr);gap:24px;margin-top:56px}
+.stats b{display:block;font-family:'Fraunces',serif;font-weight:900;font-variation-settings:"SOFT" 100,"opsz" 144;font-size:clamp(46px,7.4vw,124px);letter-spacing:-.05em;line-height:.95;color:var(--ink)}
+.stats span{display:block;margin-top:10px;color:var(--grey);font-size:17px;max-width:240px}
+.trust{display:flex;align-items:center;gap:clamp(24px,4vw,64px);flex-wrap:wrap;margin-top:64px;padding-top:30px;border-top:1px solid var(--line)}
+.trust p{font-size:15px;letter-spacing:.09em;text-transform:uppercase;font-weight:600;color:var(--grey)}.trust img{height:44px;width:auto;opacity:.95}
+.team{display:grid;grid-template-columns:repeat(5,1fr);gap:18px;margin-top:56px}
+.pc{background:#fff;border-radius:26px;overflow:hidden;border:1px solid var(--line);box-shadow:0 30px 60px -34px rgba(11,13,18,.4)}
+.pc img{width:100%;aspect-ratio:1;object-fit:cover;background:var(--blue)}
+.pc figcaption{padding:14px 18px 18px;display:grid;gap:2px}.pc b{font-family:'Fraunces',serif;font-weight:800;font-size:20px;letter-spacing:-.02em}.pc span{color:var(--grey);font-size:15px}
+.faq{max-width:900px;margin-top:48px}
+details{border-top:1px solid var(--line);padding:6px 0}details:last-child{border-bottom:1px solid var(--line)}
+summary{list-style:none;cursor:pointer;display:flex;justify-content:space-between;align-items:center;gap:20px;padding:20px 0;font-size:clamp(22px,2.4vw,32px)}
+summary::-webkit-details-marker{display:none}
+summary i{flex:none;width:34px;height:34px;border-radius:50%;border:1.5px solid var(--blue);position:relative;transition:transform .4s var(--ease),background .3s}
+summary i::before,summary i::after{content:"";position:absolute;left:50%;top:50%;width:12px;height:2px;background:var(--blue);transform:translate(-50%,-50%)}summary i::after{transform:translate(-50%,-50%) rotate(90deg)}
+details[open] summary i{transform:rotate(45deg);background:var(--ice)}
+details p{padding:0 54px 24px 0;color:var(--grey);font-size:18px;max-width:700px}
+.contact{background:var(--blue);color:#fff;border-radius:48px 48px 0 0;padding:clamp(70px,10vw,140px) var(--pad) 40px;margin-top:20px;position:relative;overflow:hidden}
+.contact::before{content:"";position:absolute;right:-12%;top:-30%;width:70vw;height:70vw;border-radius:50%;background:radial-gradient(circle,rgba(255,255,255,.18),rgba(255,255,255,0) 65%)}
+.contact h2{font-size:clamp(44px,8vw,140px);max-width:12ch;position:relative}.contact h2 em{color:#fff}
+.contact .btn{background:#fff;color:var(--blue);border-color:#fff;margin-top:36px;font-size:18px;padding:18px 32px;position:relative}.contact .btn:hover{background:var(--ink);color:#fff;border-color:var(--ink)}
+.contact .mail{display:block;margin-top:34px;font-size:22px;font-weight:600;position:relative}
+.contact .foot{margin-top:90px;display:flex;justify-content:space-between;gap:20px;flex-wrap:wrap;font-size:15px;opacity:.92;position:relative}.contact .foot nav{display:flex;gap:18px;flex-wrap:wrap}.contact .foot a{text-decoration:underline;text-underline-offset:3px}
+/* mode statique : image fixe, aucun WebGL, aucun mouvement imposé */
+.static #voyage{height:auto}.static .stage{position:relative;height:auto;overflow:visible}.static #gl,.static .veil,.static .grain,.static .prog,.static .ld{display:none}
+.static .panel{position:relative;overflow:hidden;inset:auto;opacity:1!important;visibility:visible!important;transform:none!important;min-height:92vh;padding:calc(var(--hh) + 20px) var(--pad) 70px;display:grid;gap:22px;align-content:end;pointer-events:auto}
+.static .panel .txt,.static .cards{position:relative;inset:auto;left:auto;right:auto;top:auto;bottom:auto;transform:none;width:auto;max-width:600px;z-index:2}
+.static .cards{display:flex;gap:14px;flex-wrap:wrap}.static .cards .card{width:min(280px,100%);margin:0!important}
+.static .fb{display:block;position:absolute;inset:0;width:100%;height:100%;object-fit:cover;z-index:0}
+.static .fb+.shade{position:absolute;inset:0;background:linear-gradient(rgba(255,255,255,.1),rgba(255,255,255,.4))}
+.static .hero .txt{max-width:860px}
+.static .passer{display:none}
+.shade{display:none}.static .shade{display:block}
+/* chiffre exact en gros (scène grande distribution) */
+.bigfig{position:absolute;right:var(--pad);bottom:clamp(96px,14vh,150px);text-align:right;display:grid;gap:6px;z-index:2;background:rgba(255,255,255,.9);backdrop-filter:blur(14px);-webkit-backdrop-filter:blur(14px);border:1px solid var(--line);border-radius:30px;padding:18px 30px 20px;box-shadow:0 30px 80px -30px rgba(35,73,255,.35)}
+.bigfig b{font-family:'Fraunces',serif;font-weight:900;font-variation-settings:"SOFT" 100,"opsz" 144;font-size:clamp(64px,8.6vw,150px);letter-spacing:-.05em;word-spacing:.12em;line-height:.9;color:var(--blue);}
+.bigfig span{font-size:clamp(20px,1.8vw,26px);font-weight:600;color:var(--ink)}
+.static .bigfig{position:relative;right:auto;bottom:auto;text-align:left;z-index:2;justify-self:start}
+.static .bigfig b{font-size:clamp(64px,22vw,120px)}
+/* les trois curseurs nommés (scène outils) */
+.curs{position:absolute;inset:0;pointer-events:none;overflow:hidden;z-index:1}
+.cu{position:absolute;left:0;top:0;color:var(--c);animation:cmove 13s var(--ease) infinite;transform:translate(var(--x0),var(--y0));will-change:transform}
+.cu svg{width:34px;height:34px;display:block;filter:drop-shadow(0 2px 5px rgba(0,0,0,.3))}
+.cu b{position:absolute;left:24px;top:28px;font:600 16px 'Instrument Sans';color:#fff;background:var(--c);padding:6px 14px;border-radius:0 12px 12px 12px;white-space:nowrap;box-shadow:0 12px 26px -10px var(--c)}
+.cu b em{font-style:normal;font-weight:400;opacity:.92}
+.cu u{position:absolute;left:-12px;top:-12px;width:50px;height:50px;border-radius:50%;border:3px solid var(--c);opacity:0;animation:crip 13s ease-out infinite}
+.cu1{--x0:22vw;--y0:54vh;--x1:36vw;--y1:22vh;--x2:62vw;--y2:36vh;--x3:30vw;--y3:44vh}
+.cu2{--x0:76vw;--y0:50vh;--x1:58vw;--y1:20vh;--x2:34vw;--y2:40vh;--x3:68vw;--y3:30vh;animation-delay:-4.3s}.cu2 u{animation-delay:-4.3s}
+.cu3{--x0:48vw;--y0:56vh;--x1:70vw;--y1:32vh;--x2:28vw;--y2:28vh;--x3:52vw;--y3:18vh;animation-delay:-8.6s}.cu3 u{animation-delay:-8.6s}
+@keyframes cmove{0%{transform:translate(var(--x0),var(--y0))}15%,25%{transform:translate(var(--x1),var(--y1))}40%,50%{transform:translate(var(--x2),var(--y2))}65%,75%{transform:translate(var(--x3),var(--y3))}90%,100%{transform:translate(var(--x0),var(--y0))}}
+@keyframes crip{0%,14%{opacity:0;transform:scale(.4)}16%{opacity:1;transform:scale(.5)}24%{opacity:0;transform:scale(1.7)}39%{opacity:0;transform:scale(.4)}41%{opacity:1;transform:scale(.5)}49%{opacity:0;transform:scale(1.7)}64%{opacity:0;transform:scale(.4)}66%{opacity:1;transform:scale(.5)}74%{opacity:0;transform:scale(1.7)}89%{opacity:0;transform:scale(.4)}91%{opacity:1;transform:scale(.5)}99%,100%{opacity:0;transform:scale(1.7)}}
+@media(prefers-reduced-motion:reduce){.cu,.cu u{animation:none}}
+@media(max-width:760px){.cu1{--x0:8vw;--y0:46vh;--x1:20vw;--y1:20vh;--x2:48vw;--y2:34vh;--x3:14vw;--y3:38vh}.cu2{--x0:50vw;--y0:44vh;--x1:44vw;--y1:16vh;--x2:12vw;--y2:30vh;--x3:46vw;--y3:28vh}.cu3{--x0:30vw;--y0:50vh;--x1:46vw;--y1:26vh;--x2:10vw;--y2:24vh;--x3:34vw;--y3:14vh}}
+@media(max-width:900px){header.top nav a:not(.btn){display:none}.team{grid-template-columns:repeat(2,1fr)}.step{grid-template-columns:1fr}.stats{grid-template-columns:1fr}.stats span{max-width:none}}
+@media(max-width:760px){
+  header.top img{height:26px}
+  .panel .txt{left:12px;right:12px;max-width:none;bottom:84px;padding:18px 20px 20px;border-radius:24px}
+  .panel .txt h2{font-size:30px;margin:6px 0 10px}.panel .txt p:not(.lab){font-size:16px}.tgs{margin-top:12px}
+  .cards{top:calc(var(--hh) + 6px);right:12px;width:142px;gap:10px}.cards .card:nth-child(n+2){display:none}.card figcaption{display:none}.card{border-radius:16px}
+  .hero .txt,.static .hero .txt{left:12px;right:12px;bottom:90px;padding:20px 20px 22px;border-radius:26px;background:rgba(255,255,255,.93);backdrop-filter:blur(10px);-webkit-backdrop-filter:blur(10px);border:1px solid var(--line);box-shadow:0 24px 60px -30px rgba(35,73,255,.35)}.hero h1{font-size:clamp(44px,15vw,72px)}.hero .sub{font-size:17px}
+  .ring .txt{bottom:84px;left:12px;right:12px;transform:none;max-width:none}
+  .prog{bottom:14px;gap:2px;padding:4px}.prog button{padding:8px 10px}.prog button span{display:none}.prog button.on span{display:inline}.passer{display:none}
+  .static .panel .txt,.static .cards{max-width:none}
+  .static .hero .txt{max-width:none}
+}
+</style></head><body>
+<a class="skip" href="#offre">Passer le voyage et aller à l’offre</a>
+<div class="ld" aria-hidden="true"><div><img src="assets/icone-bleu.png" alt=""><b><i></i></b></div></div>
+<header class="top"><a href="#top" aria-label="AXEM IA, accueil"><img src="assets/logo-bleu-320.png" alt="AXEM IA" width="107" height="30"></a>
+<nav aria-label="Navigation"><a href="#voyage">Le voyage</a><a href="#offre">L’offre</a><a href="#equipe">L’équipe</a><a href="#faq">Questions</a><a class="btn pri" href="#contact">Réserver 30 minutes</a></nav></header>
+<main id="top">
+<section id="voyage" aria-label="Le voyage : quatre secteurs, ce qu’AXEM y fait">
+<div class="stage"><canvas id="gl" aria-hidden="true"></canvas><div class="veil"></div><div class="grain"></div>
+<article class="panel hero" data-a="0" data-b="0.094" aria-label="Accueil"><img class="fb" src="fb/hero.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async"><div class="shade"></div><div class="txt">
+<p class="lab">AXEM IA · Paris · Clément Predo et Alexis Zeitoun</p>
+<h1 class="f"><span class="ln"><span class="wd">Votre</span> <span class="wd">partenaire</span></span> <span class="ln"><span class="wd">IA,</span> <span class="wd">de</span> <em class="wd">A à Z</em></span></h1>
+<p class="sub">Du diagnostic IA par volet métier jusqu’au suivi : nous prenons en charge le chemin, déploiement, formation de vos équipes, automatisation. Deux associés, un seul interlocuteur.</p>
+<div class="cta"><a class="btn pri" href="#contact">Réserver 30 minutes</a><a class="btn" href="#offre">Voir l’offre</a></div>
+<p class="hint"><span></span>Défiler pour explorer quatre secteurs</p></div></article>
+<article class="panel world" data-build="events" data-screen="" data-mini="m/approche.jpg,board-eve" data-a="0.086" data-b="0.288" aria-label="Secteur : Événementiel"><img class="fb" src="fb/w1.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async"><div class="shade"></div>
+<div class="txt"><p class="lab">01 · Secteur événementiel</p><h2 class="f">Des <em>inscriptions</em> qui se traitent seules.</h2><p>Mails d'inscription, confirmations, relances : un workflow lit, trie et répond. Les équipes sont formées à le piloter, les organisateurs gardent la main.</p><div class="tgs"><span class="tg ">Formation</span><span class="tg a">Automatisation</span></div></div>
+<div class="cards"><figure class="card"><img src="m/approche.jpg" alt="Support de formation AXEM : construire, former, piloter" width="600" height="400" loading="lazy" decoding="async"><figcaption>Notre approche en quatre mots</figcaption></figure></div></article>
+<article class="panel world" data-build="sante" data-screen="m/app-semaine.jpg" data-mini="m/app-carte.jpg,m/usine.jpg,m/industrie.jpg" data-a="0.276" data-b="0.478" aria-label="Secteur : Santé"><img class="fb" src="fb/w2.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async"><div class="shade"></div>
+<div class="txt"><p class="lab">02 · Secteur santé</p><h2 class="f">Une application qui <em>trie</em> à votre place.</h2><p>Pour un acteur de la santé au travail, nous avons construit une application de tri : un geste, garder ou retirer. Une équipe formée, un outil qui sert chaque semaine.</p><div class="tgs"><span class="tg a">Application</span><span class="tg ">Formation</span></div></div>
+<div class="cards"><figure class="card"><img src="m/app-carte.jpg" alt="Capture de l’application de tri" width="600" height="400" loading="lazy" decoding="async"><figcaption>L’application construite : un post, un geste</figcaption></figure><figure class="card"><img src="m/usine.jpg" alt="Chef d’équipe sur un site industriel" width="600" height="400" loading="lazy" decoding="async"><figcaption>Prévention sur site industriel</figcaption></figure></div></article>
+<article class="panel world" data-build="retail" data-screen="m/atelier.jpg" data-mini="m/coaching.jpg,m/maturite.jpg" data-a="0.466" data-b="0.668" aria-label="Secteur : Grande distribution"><img class="fb" src="fb/w3.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async"><div class="shade"></div>
+<div class="txt"><p class="lab">03 · Secteur grande distribution</p><h2 class="f">Des équipes qui <em>maîtrisent</em> l’outil.</h2><p>Vendeurs et managers s’entraînent sur leurs vraies situations : briefer l’IA, préparer un rendez-vous, relancer un client. Atelier après atelier, jusqu’au réflexe.</p><div class="tgs"><span class="tg ">Formation</span><span class="tg ">Suivi</span></div></div>
+<div class="cards"><figure class="card"><img src="m/coaching.jpg" alt="Illustration d’un coaching individuel" width="600" height="400" loading="lazy" decoding="async"><figcaption>Coaching : un formateur, un poste, un cas réel</figcaption></figure><figure class="card"><img src="m/maturite.jpg" alt="Radar de maturité IA, exemple de restitution" width="600" height="400" loading="lazy" decoding="async"><figcaption>Où en est l’équipe : le radar de maturité IA</figcaption></figure></div><p class="bigfig"><b data-n="3000">+3 000</b><span>collaborateurs formés</span></p></article>
+<article class="panel world" data-build="logi" data-screen="m/reporting.jpg" data-mini="m/entrepot.jpg,m/industrie.jpg,m/usine.jpg" data-a="0.656" data-b="0.858" aria-label="Secteur : Logistique"><img class="fb" src="fb/w4.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async"><div class="shade"></div>
+<div class="txt"><p class="lab">04 · Secteur logistique</p><h2 class="f">Un tableau de bord <em>qui tient la route</em>.</h2><p>Flux, retards, relances fournisseurs : les données se rassemblent chaque matin dans un tableau lisible, et les équipes savent le lire et le faire évoluer.</p><div class="tgs"><span class="tg a">Tableau de bord</span><span class="tg a">Automatisation</span></div></div>
+<div class="cards"><figure class="card"><img src="m/entrepot.jpg" alt="Opérateur qui soulève un carton en entrepôt" width="600" height="400" loading="lazy" decoding="async"><figcaption>Prévention des gestes en entrepôt</figcaption></figure><figure class="card"><img src="m/industrie.jpg" alt="Guide AXEM : Claude pour l’industrie" width="600" height="400" loading="lazy" decoding="async"><figcaption>Guide Claude pour l’industrie</figcaption></figure><figure class="card"><img src="m/reporting.jpg" alt="Film de diagnostic : le reporting client mensuel" width="600" height="400" loading="lazy" decoding="async"><figcaption>Le reporting mensuel, avec et sans Claude</figcaption></figure></div></article>
+<article class="panel ring" data-a="0.915" data-b="1.2" aria-label="Les outils"><img class="fb" src="fb/ring.jpg" alt="" width="1280" height="720" loading="lazy" decoding="async"><div class="shade"></div><div class="txt c"><p class="lab">Tous les outils, une seule méthode</p>
+<h2 class="f">Vos outils, <em>une seule méthode</em>.</h2><p>Claude, ChatGPT, Copilot, Mistral, Gemini, n8n, Make, Zapier : nous branchons ceux que vous avez déjà retenus, et nous formons ceux qui s’en servent.</p>
+<div class="cta"><a class="btn pri" href="#offre">Les cinq étapes</a></div></div><div class="curs" aria-hidden="true"><div class="cu cu1" style="--c:#2349FF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2l17 8-7 2-3 7z" fill="#2349FF" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg><b>Clément<em> · forme</em></b><u></u></div><div class="cu cu2" style="--c:#7B5CFF"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2l17 8-7 2-3 7z" fill="#7B5CFF" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg><b>Alexis<em> · automatise</em></b><u></u></div><div class="cu cu3" style="--c:#D97757"><svg viewBox="0 0 24 24" aria-hidden="true"><path d="M3 2l17 8-7 2-3 7z" fill="#D97757" stroke="#fff" stroke-width="1.5" stroke-linejoin="round"/></svg><b>Claude<em> · rédige</em></b><u></u></div></div></article>
+<nav class="prog" aria-label="Progression du voyage">
+<button type="button" data-i="1" data-p="0.205"><b>01</b><span>Événementiel</span></button>
+<button type="button" data-i="2" data-p="0.395"><b>02</b><span>Santé</span></button>
+<button type="button" data-i="3" data-p="0.585"><b>03</b><span>Grande distribution</span></button>
+<button type="button" data-i="4" data-p="0.775"><b>04</b><span>Logistique</span></button>
+<button type="button" data-i="5" data-p="0.97"><b>05</b><span>Outils</span></button>
+<span class="bar"><i></i></span></nav>
+<a class="passer" href="#offre">Passer le voyage ↓</a>
+</div></section>
+
+<section class="s" id="offre"><p class="lab rv">L’offre</p><h2 class="f big rv">De A à Z, <em>cinq étapes.</em></h2>
+<p class="lead rv">Chaque dossier avance dans le même ordre, avec les mêmes deux associés, du premier échange au suivi.</p>
+<ol class="steps"><div class="rail"><i></i></div>
+<li class="step rv"><span class="n f">01</span><div class="sb"><h3 class="f">Diagnostic IA par volet métier</h3><p>On regarde vos tâches volet par volet (commercial, RH, finance, production, logistique). On repère ce que l’IA peut faire tout de suite, ce qu’elle ne doit pas faire, et par où commencer.</p><div class="lgs"><img src="logos/claude-color.svg" alt="" width="40" height="40" loading="lazy"><img src="logos/openai.svg" alt="" width="40" height="40" loading="lazy"><img src="logos/copilot-color.svg" alt="" width="40" height="40" loading="lazy"></div><img class="si" src="m/maturite.jpg" alt="Radar de maturité IA, exemple de restitution" width="600" height="340" loading="lazy" decoding="async"></div></li>
+<li class="step rv"><span class="n f">02</span><div class="sb"><h3 class="f">Accompagnement au déploiement</h3><p>Choix des outils, règles d’usage, référents dans chaque équipe : nous installons ce qui a été retenu et vous avancez avec un cadre clair.</p><div class="lgs"><img src="logos/googledrive-color.svg" alt="" width="40" height="40" loading="lazy"><img src="logos/notion.svg" alt="" width="40" height="40" loading="lazy"><img src="logos/slack-color.svg" alt="" width="40" height="40" loading="lazy"></div></div></li>
+<li class="step rv"><span class="n f">03</span><div class="sb"><h3 class="f">Formation des équipes</h3><p>Claude, ChatGPT, Copilot sur les vrais dossiers de chaque métier. Chaque participant repart avec ce qu’il a traité lui-même, pas avec une démonstration.</p><div class="lgs"><img src="logos/claude-color.svg" alt="" width="40" height="40" loading="lazy"><img src="logos/mistral-color.svg" alt="" width="40" height="40" loading="lazy"><img src="logos/gemini-color.svg" alt="" width="40" height="40" loading="lazy"></div></div></li>
+<li class="step rv"><span class="n f">04</span><div class="sb"><h3 class="f">Automatisation</h3><p>Workflows, agents IA, skills : ce qui se répète chaque semaine tourne tout seul, relié aux outils que vous utilisez déjà.</p><div class="lgs"><img src="logos/n8n-color.svg" alt="" width="40" height="40" loading="lazy"><img src="logos/make-color.svg" alt="" width="40" height="40" loading="lazy"><img src="logos/zapier-color.svg" alt="" width="40" height="40" loading="lazy"><img src="logos/gmail-color.svg" alt="" width="40" height="40" loading="lazy"><img src="logos/googlesheets-color.svg" alt="" width="40" height="40" loading="lazy"></div></div></li>
+<li class="step rv"><span class="n f">05</span><div class="sb"><h3 class="f">Suivi</h3><p>Un point régulier, un tableau de bord, des ajustements : l’usage s’installe et s’améliore, sans perdre l’équipe en route.</p><div class="lgs"><img src="logos/googlecalendar-color.svg" alt="" width="40" height="40" loading="lazy"><img src="logos/hubspot-color.svg" alt="" width="40" height="40" loading="lazy"><img src="logos/linkedin-color.svg" alt="" width="40" height="40" loading="lazy"></div></div></li>
+</ol></section>
+
+<section class="s ice" id="preuves"><p class="lab rv">Les chiffres</p><h2 class="f big rv">Du concret, <em>pas des promesses.</em></h2>
+<div class="stats rv"><div><b class="num" data-n="300">+300</b><span>entreprises accompagnées</span></div><div><b class="num" data-n="3000">+3 000</b><span>collaborateurs formés</span></div><div><b class="num" data-n="100000">+100 000</b><span>personnes dans notre communauté</span></div></div>
+<div class="trust rv"><p>Ils nous font confiance</p><img src="logos/carrefour.svg" alt="Carrefour" height="40"><img src="logos/geodis.svg" alt="Geodis" height="40"><img src="logos/puig.svg" alt="Puig" height="40"><img src="logos/kit.png" alt="KIT" height="40"></div></section>
+
+<section class="s" id="equipe"><p class="lab rv">L’équipe</p><h2 class="f big rv">Deux associés, <em>une équipe.</em></h2>
+<p class="lead rv">Clément Predo et Alexis Zeitoun vous suivent, avec Lucien, Enzo et Oscar.</p>
+<div class="team"><figure class="pc"><img src="m/eq-clement.jpg" alt="Clément Predo, Cofondateur" width="480" height="480" loading="lazy" decoding="async"><figcaption><b>Clément Predo</b><span>Cofondateur</span></figcaption></figure><figure class="pc"><img src="m/eq-alexis.jpg" alt="Alexis Zeitoun, Cofondateur" width="480" height="480" loading="lazy" decoding="async"><figcaption><b>Alexis Zeitoun</b><span>Cofondateur</span></figcaption></figure><figure class="pc"><img src="m/eq-lucien.jpg" alt="Lucien, Business developer" width="480" height="480" loading="lazy" decoding="async"><figcaption><b>Lucien</b><span>Business developer</span></figcaption></figure><figure class="pc"><img src="m/eq-enzo.jpg" alt="Enzo, Formateur et consultant" width="480" height="480" loading="lazy" decoding="async"><figcaption><b>Enzo</b><span>Formateur et consultant</span></figcaption></figure><figure class="pc"><img src="m/eq-oscar.jpg" alt="Oscar, Équipe AXEM" width="480" height="480" loading="lazy" decoding="async"><figcaption><b>Oscar</b><span>Équipe AXEM</span></figcaption></figure></div></section>
+
+<section class="s ice" id="faq"><p class="lab rv">Questions</p><h2 class="f big rv">Les réponses <em>courtes.</em></h2>
+<div class="faq"><details class="rv"><summary class="f">Par où commence-t-on ?<i></i></summary><p>Par un échange de 30 minutes pour comprendre votre entreprise. Vous recevez ensuite une proposition écrite, avec le diagnostic IA par volet métier comme première étape.</p></details><details class="rv"><summary class="f">Faut-il des équipes techniques ?<i></i></summary><p>Non. Nous formons les équipes métier sur leurs vrais dossiers et nous construisons les automatisations avec elles. Le cadre technique reste simple et documenté.</p></details><details class="rv"><summary class="f">Avec quels outils travaillez-vous ?<i></i></summary><p>Claude, ChatGPT, Copilot, Mistral, Gemini pour l’IA, n8n, Make et Zapier pour les workflows. Nous partons de ceux que vous avez déjà retenus.</p></details><details class="rv"><summary class="f">Et la confidentialité de nos données ?<i></i></summary><p>Nous posons avec vous les règles d’usage avant tout déploiement : quels outils, quelles données, quels cas. Les exemples utilisés en formation viennent de vos propres dossiers.</p></details><details class="rv"><summary class="f">Qui sera mon interlocuteur ?<i></i></summary><p>Les deux associés, Clément Predo et Alexis Zeitoun, du premier échange jusqu’au suivi. Un seul interlocuteur du début à la fin.</p></details></div></section>
+</main>
+<footer class="contact" id="contact"><p class="lab" style="color:#fff;opacity:.85;position:relative">Contact</p>
+<h2 class="f">Parlons de votre <em>partenariat IA.</em></h2>
+<a class="btn" href="mailto:contact@axem-ia.fr?subject=R%C3%A9server%2030%20minutes">Réserver 30 minutes</a>
+<a class="mail" href="mailto:contact@axem-ia.fr">contact@axem-ia.fr</a>
+<div class="foot"><span>AXEM IA · SAS · 3 rue Françoise Dolto, 75013 Paris</span><nav aria-label="Pied de page"><a href="https://axem-ia.fr/formation-ia-equipe-commerciale.html">Programme de formation</a><a href="https://axem-ia.fr/nos-resultats.html">Nos résultats</a><a href="https://axem-ia.fr/accessibilite-handicap.html">Accessibilité</a><a href="https://axem-ia.fr/reclamations.html">Réclamations</a><a href="https://axem-ia.fr/mentions-legales.html">Mentions légales</a><a href="https://www.linkedin.com/company/axem-ia">LinkedIn</a></nav></div></footer>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/gsap.min.js"></script>
+<script src="https://cdnjs.cloudflare.com/ajax/libs/gsap/3.12.5/ScrollTrigger.min.js"></script>
+<script type="importmap">{"imports":{"three":"https://cdn.jsdelivr.net/npm/three@0.160.0/build/three.module.js"}}</script>
+<script type="module">
+import * as THREE from 'three';
+const $=(s,r=document)=>r.querySelector(s), $$=(s,r=document)=>[...r.querySelectorAll(s)];
+const STATIC=document.documentElement.classList.contains('static');
+const clamp=(x,a=0,b=1)=>Math.min(b,Math.max(a,x));
+const sm=(a,b,x)=>{x=clamp((x-a)/(b-a));return x*x*(3-2*x)};
+const isMobile=()=>innerWidth<760;
+gsap.registerPlugin(ScrollTrigger);
+
+/* ---------- scroll natif + Lenis ---------- */
+let lenis=null;
+/* scroll natif du navigateur : aucun défilement détourné (pavé tactile, clavier, lecteurs d'écran) */
+const scrollToY=y=>lenis?lenis.scrollTo(y,{duration:1.6}):scrollTo({top:y,behavior:'smooth'});
+$$('a[href^="#"]').forEach(a=>a.addEventListener('click',e=>{const t=$(a.getAttribute('href'));if(t){e.preventDefault();scrollToY(t.getBoundingClientRect().top+scrollY-(a.dataset.off|0))}}));
+
+/* ---------- lower sections (valable aussi en mode statique) ---------- */
+function lowerSections(){
+  if(matchMedia('(prefers-reduced-motion: reduce)').matches) return;
+  $$('.rv').forEach(el=>gsap.from(el,{y:40,opacity:0,duration:1,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 88%'}}));
+  $$('.num').forEach(el=>{const end=+el.dataset.n;const o={v:0};gsap.to(o,{v:end,duration:2.2,ease:'expo.out',scrollTrigger:{trigger:el,start:'top 90%'},onUpdate:()=>el.textContent='+'+Math.round(o.v).toLocaleString('fr-FR').replace(/ /g,' ')})});
+  $$('.step').forEach(st=>ScrollTrigger.create({trigger:st,start:'top 55%',end:'bottom 55%',toggleClass:{targets:st,className:'act'}}));
+  const line=$('.rail i');if(line)gsap.fromTo(line,{scaleY:0},{scaleY:1,ease:'none',scrollTrigger:{trigger:'.steps',start:'top 60%',end:'bottom 60%',scrub:true}});
+  $$('.pc').forEach((c,i)=>gsap.from(c,{y:70,opacity:0,rotate:i%2?2:-2,duration:1.1,ease:'expo.out',scrollTrigger:{trigger:c,start:'top 92%'}}));
+  $$('.btn').forEach(b=>{b.addEventListener('pointermove',e=>{const r=b.getBoundingClientRect();gsap.to(b,{x:(e.clientX-r.left-r.width/2)*.18,y:(e.clientY-r.top-r.height/2)*.28,duration:.4,ease:'expo.out'})});b.addEventListener('pointerleave',()=>gsap.to(b,{x:0,y:0,duration:.6,ease:'expo.out'}))});
+}
+lowerSections();
+if(STATIC){document.body.classList.add('ready');}
+
+/* ---------- scène 3D ---------- */
+const canvas=$('#gl');
+function hasGL(){try{const c=document.createElement('canvas');return !!(c.getContext('webgl2')||c.getContext('webgl'))}catch(e){return false}}
+if(!STATIC && hasGL()) boot(); else if(!STATIC){document.documentElement.classList.add('static');document.body.classList.add('ready');}
+
+function boot(){
+const renderer=new THREE.WebGLRenderer({canvas,antialias:(devicePixelRatio||1)<=1.25,alpha:false,powerPreference:'high-performance'});
+renderer.setClearColor(0xffffff,1);
+const scene=new THREE.Scene();
+scene.fog=new THREE.Fog(0xffffff,48,150);
+const camera=new THREE.PerspectiveCamera(38,1,.1,260);
+scene.add(new THREE.HemisphereLight(0xffffff,0xdfe6ff,1.55));
+const sun=new THREE.DirectionalLight(0xffffff,1.35);sun.position.set(18,34,22);scene.add(sun);
+
+const COL={white:0xffffff,ice:0xe6ebff,blue:0x2349ff,ink:0x0b0d12,cream:0xf3ecd6,vio:0x7b5cff,cl:0xd97757,mid:0xb9c4ff};
+const BLUE=new THREE.Color(0x2349ff);
+
+/* ----- constructeur de monde : tout est fusionné, un monde = 1 ligne + quelques maillages ----- */
+function WB(){return{m:{},l:[]}}
+function put(wb,geo,col,x,y,z,ry=0,rx=0,rz=0,edge=true,ang=28){
+  const M=new THREE.Matrix4().compose(new THREE.Vector3(x,y,z),new THREE.Quaternion().setFromEuler(new THREE.Euler(rx,ry,rz)),new THREE.Vector3(1,1,1));
+  const g=geo.index?geo.toNonIndexed():geo.clone();g.applyMatrix4(M);
+  const o=wb.m[col]||(wb.m[col]={p:[],n:[]});
+  o.p.push(g.attributes.position.array);o.n.push(g.attributes.normal.array);
+  if(edge){const e=new THREE.EdgesGeometry(geo,ang);e.applyMatrix4(M);wb.l.push(e.attributes.position.array)}
+}
+const cat=a=>{const n=a.reduce((s,x)=>s+x.length,0),r=new Float32Array(n);let o=0;a.forEach(x=>{r.set(x,o);o+=x.length});return r};
+const bx=(wb,w,h,d,x,y,z,col,ry=0)=>put(wb,new THREE.BoxGeometry(w,h,d),col,x,y+h/2,z,ry);
+const cy=(wb,r,h,x,y,z,col,seg=18,rz=0,ry=0)=>put(wb,new THREE.CylinderGeometry(r,r,h,seg),col,x,y+(rz?r:h/2),z,ry,0,rz);
+const cone=(wb,r,h,x,y,z,col,rx=0,rz=0)=>put(wb,new THREE.ConeGeometry(r,h,14),col,x,y,z,0,rx,rz);
+const sph=(wb,r,x,y,z,col)=>put(wb,new THREE.SphereGeometry(r,14,10),col,x,y,z,0,0,0,false);
+const tor=(wb,R,r,x,y,z,col,rx=0)=>put(wb,new THREE.TorusGeometry(R,r,8,18),col,x,y,z,0,rx,0,false);
+function finish(wb,group,mats,lineMat){
+  for(const c in wb.m){
+    const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(cat(wb.m[c].p),3));g.setAttribute('normal',new THREE.BufferAttribute(cat(wb.m[c].n),3));
+    const mat=mats[c]||(mats[c]=new THREE.MeshStandardMaterial({color:COL[c],roughness:.62,metalness:0,transparent:true,opacity:0,polygonOffset:true,polygonOffsetFactor:1,polygonOffsetUnits:1}));
+    group.add(new THREE.Mesh(g,mat));
+  }
+  const lg=new THREE.BufferGeometry();lg.setAttribute('position',new THREE.BufferAttribute(cat(wb.l),3));
+  group.add(new THREE.LineSegments(lg,lineMat));
+}
+
+/* ----- textures ----- */
+const loader=new THREE.TextureLoader();
+const texCache={};
+function tex(src){return texCache[src]||(texCache[src]=new Promise(res=>{loader.load(src,t=>{t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=4;res(t)},undefined,()=>res(null))}))}
+function canvasTex(w,h,draw){const c=document.createElement('canvas');c.width=w;c.height=h;const x=c.getContext('2d');draw(x,w,h);const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;t.anisotropy=4;return t}
+const imgCache={};
+function logoImg(src){return imgCache[src]||(imgCache[src]=new Promise(res=>{const i=new Image();i.onload=()=>res(i);i.onerror=()=>res(null);i.src=src}))}
+function rr(x,a,b,w,h,r){x.beginPath();x.moveTo(a+r,b);x.arcTo(a+w,b,a+w,b+h,r);x.arcTo(a+w,b+h,a,b+h,r);x.arcTo(a,b+h,a,b,r);x.arcTo(a,b,a+w,b,r);x.closePath()}
+
+/* ----- écrans (cadre encre + image réelle) ----- */
+const screens=[];  // {g,mat,base,mini}
+function makeScreen(parent,texture,w,h,x,y,z,ry=0,opts={}){
+  const g=new THREE.Group();g.position.set(x,y,z);g.rotation.y=ry;
+  const frame=new THREE.Mesh(new THREE.BoxGeometry(w+.5,h+.5,.35),new THREE.MeshStandardMaterial({color:0x0b0d12,roughness:.4,transparent:true,opacity:0}));
+  const face=new THREE.Mesh(new THREE.PlaneGeometry(w,h),new THREE.MeshBasicMaterial({map:texture,transparent:true,opacity:0,toneMapped:false,fog:false}));
+  face.position.z=.19;g.add(frame,face);
+  if(opts.pole){const p=new THREE.Mesh(new THREE.BoxGeometry(.5,y-.2,.5),new THREE.MeshStandardMaterial({color:0x0b0d12,transparent:true,opacity:0}));p.position.set(0,-(y-.2)/2-h/2,-.2);g.add(p);g.userData.pole=p}
+  parent.add(g);
+  const s={g,frame,face,pole:g.userData.pole,base:g.position.clone(),mini:!!opts.mini,ph:Math.random()*6,ry};
+  screens.push(s);return s;
+}
+
+/* ----- les mondes ----- */
+const DIST=92, worlds=[];
+const lineMatTpl=()=>new THREE.LineBasicMaterial({color:0x2349ff,transparent:true,opacity:1,fog:true});
+function newWorld(i){
+  const g=new THREE.Group();g.position.set(0,0,-DIST*i);scene.add(g);
+  const w={i,g,mats:{},lineMat:lineMatTpl(),anim:[],screens:[],b:0};worlds.push(w);return w;
+}
+function ground(wb,col='ice'){
+  cy(wb,28,.6,0,-.6,0,col,48);
+  const gl=[];for(let k=-28;k<=28;k+=4){gl.push(-28,0.02,k,28,0.02,k,k,0.02,-28,k,0.02,28)}
+  wb.l.push(new Float32Array(gl));
+}
+function blob(w,x,z,s){ /* ombre douce */
+  const m=new THREE.Mesh(new THREE.CircleGeometry(s,28),new THREE.MeshBasicMaterial({color:0x2349ff,transparent:true,opacity:0,depthWrite:false}));
+  m.rotation.x=-Math.PI/2;m.position.set(x,.03,z);w.g.add(m);w.anim.push(b=>{m.material.opacity=.07*b});
+}
+const rnd=(()=>{let s=7;return()=>(s=(s*16807)%2147483647)/2147483647})();
+
+/* 1. événementiel */
+function buildEvents(w,T){
+  const wb=WB();ground(wb);
+  bx(wb,20,1.2,9,0,0,-10,'white');bx(wb,20,.35,.35,0,1.2,-5.6,'blue');bx(wb,20,.35,.35,0,0,-5.5,'blue');
+  [-9.5,9.5].forEach(x=>bx(wb,.7,13,.7,x,0,-13.5,'ink'));bx(wb,20.4,.7,.7,0,13,-13.5,'ink');bx(wb,20,.5,.5,0,10.2,-13.5,'mid');
+  for(let k=-3;k<=3;k++){cone(wb,.8,2.2,k*3,12,-12.4,'blue',.5)}
+  for(let r=0;r<5;r++)for(let c=-4;c<=4;c++){if(c===0)continue;const x=c*2.3+(c>0?-1.1:1.1),z=r*2.4+1;bx(wb,1.2,.9,1.1,x,0,z,(r+c)%3?'blue':'white');bx(wb,1.2,1.3,.2,x,.9,z+.5,(r+c)%3?'blue':'white')}
+  bx(wb,4.4,2.1,1.5,-15,0,4,'white');bx(wb,4.6,.3,1.7,-15,2.1,4,'blue');bx(wb,4.4,2.1,1.5,-15,0,8,'white');bx(wb,4.6,.3,1.7,-15,2.1,8,'blue');
+  [[-16,-3],[16,-3],[18,3]].forEach(([x,z],k)=>{bx(wb,2.4,7,.3,x,0,z,'cream');bx(wb,2.4,1.1,.4,x,6,z,'blue')});
+  for(let k=0;k<6;k++)put(wb,new THREE.CylinderGeometry(.45,.45,3.4,10),'white',-22+k*8.8,1.7,-17,0,0,0,true);
+  finish(wb,w.g,w.mats,w.lineMat);blob(w,0,-8,13);
+  /* faisceaux */
+  const beams=[];for(let k=-2;k<=2;k++){const m=new THREE.Mesh(new THREE.ConeGeometry(3,13,20,1,true),new THREE.MeshBasicMaterial({color:0x2349ff,transparent:true,opacity:0,depthWrite:false,side:THREE.DoubleSide}));m.position.set(k*3.6,6.1,-11);m.userData.k=k;w.g.add(m);beams.push(m)}
+  w.anim.push((b,t)=>beams.forEach(m=>{m.material.opacity=.07*b;m.rotation.z=Math.sin(t*.9+m.userData.k)*.22;m.rotation.x=Math.cos(t*.7+m.userData.k)*.12}));
+  /* écrans */
+  w.screens.push(makeScreen(w.g,T.main,14,7.9,0,6.4,-12.6,0));
+  w.screens.push(makeScreen(w.g,T.mini[0],5.2,3.25,-11,6.5,-3,.5,{mini:1}));
+  w.screens.push(makeScreen(w.g,T.mini[1],5.2,3.25,11,7.2,-2,-.5,{mini:1}));
+  /* enveloppes qui volent du bureau d'accueil vers l'écran */
+  const env=[];for(let k=0;k<9;k++){const m=new THREE.Mesh(new THREE.BoxGeometry(1.5,.12,1),new THREE.MeshStandardMaterial({color:0xffffff,transparent:true,opacity:0}));const e=new THREE.LineSegments(new THREE.EdgesGeometry(m.geometry),new THREE.LineBasicMaterial({color:0x2349ff,transparent:true,opacity:0}));m.add(e);w.g.add(m);env.push(m)}
+  w.anim.push((b,t)=>env.forEach((m,k)=>{const u=((t*.11+k/9)%1);const x=-15+u*15,y=3+Math.sin(u*Math.PI)*5+u*3,z=6-u*17;m.position.set(x,y,z);m.rotation.set(u*3,u*5,0);const o=b*Math.sin(u*Math.PI);m.material.opacity=o;m.children[0].material.opacity=o}));
+}
+/* 2. santé */
+function buildSante(w,T){
+  const wb=WB();ground(wb);
+  bx(wb,19,9,9,0,0,-13,'white');bx(wb,8,6,8,-14,0,-11,'ice');bx(wb,8,6,8,14,0,-11,'ice');bx(wb,19.6,.5,9.6,0,9,-13,'blue');
+  for(let r=0;r<2;r++)for(let c=-4;c<=4;c++)bx(wb,1.5,1.7,.2,c*2,2.1+r*3.2,-8.4,'mid');
+  bx(wb,2.6,4,.3,0,0,-8.4,'blue');
+  bx(wb,1.5,5.4,.7,0,9.5,-13,'blue');bx(wb,5.4,1.5,.7,0,11.4,-13,'blue');
+  for(let k=0;k<3;k++){bx(wb,4.4,.9,2.1,-12+k*0,0,4+k*3.4,'white');bx(wb,1.2,2.2,2.1,-14.6,0,4+k*3.4,'blue');}
+  for(let k=0;k<6;k++){cy(wb,.25,2.4,-24+k*0,0,0,'ink',6)}
+  const wb2=WB();
+  for(let k=0;k<7;k++){const x=15+Math.cos(k)*5,z=3+k*1.3;cy(wb,.9,3,x,0,z,'blue',12);sph(wb,1.1,x,3.7,z,k%2?'white':'blue')}
+  finish(wb,w.g,w.mats,w.lineMat);blob(w,0,-9,13);
+  w.screens.push(makeScreen(w.g,T.main,12,7.5,0,6.2,-5.6,0,{}));
+  w.screens.push(makeScreen(w.g,T.mini[0],6.2,3.9,-11,5.8,2,.6,{mini:1}));
+  w.screens.push(makeScreen(w.g,T.mini[1],3.8,4.8,11.5,5.6,-2,-.6,{mini:1}));
+  if(T.mini[2])w.screens.push(makeScreen(w.g,T.mini[2],3.6,4.5,-17.5,4.8,9,.9,{mini:1}));
+  /* gélules qui flottent */
+  const pills=[];const cols=[0x2349ff,0xffffff,0xd97757,0x7b5cff];
+  for(let k=0;k<14;k++){const m=new THREE.Mesh(new THREE.CapsuleGeometry(.5,1.3,4,10),new THREE.MeshStandardMaterial({color:cols[k%4],roughness:.4,transparent:true,opacity:0}));m.userData={a:rnd()*6,r:9+rnd()*10,h:3+rnd()*9,s:.12+rnd()*.15};w.g.add(m);pills.push(m)}
+  w.anim.push((b,t)=>pills.forEach(m=>{const u=m.userData;m.position.set(Math.cos(u.a+t*u.s)*u.r,u.h+Math.sin(t*.8+u.a)*.8,Math.sin(u.a+t*u.s)*u.r*.55-4);m.rotation.set(t*.5+u.a,t*.3,u.a);m.material.opacity=b}));
+}
+/* 3. grande distribution */
+function buildRetail(w,T){
+  const wb=WB();ground(wb,'cream');
+  bx(wb,40,11,1,0,0,-19,'white');bx(wb,16,2.6,.7,0,11,-19,'blue');
+  const pal=['blue','ink','cream','cl','vio','white'];
+  [-13,13].forEach((x0,si)=>{for(let l=0;l<4;l++){bx(wb,12,.35,2.4,x0,.3+l*2.2,-11,'white');for(let k=0;k<9;k++)bx(wb,1,1.5+rnd()*.4,1.2,x0-5.2+k*1.3,.65+l*2.2,-11,pal[(k+l+si)%6])}[-6.2,6.2].forEach(dx=>bx(wb,.3,9.2,2.4,x0+dx,0,-11,'ink'))});
+  for(let l=0;l<4;l++){bx(wb,12,.35,2.4,0,.3+l*2.2,-17.2,'white');for(let k=0;k<9;k++)bx(wb,1,1.5,1.2,-5.2+k*1.3,.65+l*2.2,-17.2,pal[(k*2+l)%6])}
+  [[-14,5],[-10.5,7.5]].forEach(([x,z])=>{bx(wb,3.4,.2,2.2,x,1.2,z,'ink');bx(wb,3.4,1.9,2.2,x,1.4,z,'ice');tor(wb,.45,.14,x-1.1,.5,z+1.2,'ink');tor(wb,.45,.14,x+1.1,.5,z+1.2,'ink');bx(wb,.2,1.5,.2,x-1.6,3.3,z,'ink')});
+  bx(wb,7,2.2,2.6,15,0,5,'white');bx(wb,7.2,.3,2.8,15,2.2,5,'blue');bx(wb,5,.25,1.4,15,2.5,5,'ink');
+  for(let k=0;k<9;k++){const a=-1.35+k*.34,x=Math.sin(a)*9.5,z=7.5-Math.cos(a)*4.2+2;cy(wb,.55,2.1,x,0,z,['blue','ink','white'][k%3],10);sph(wb,.62,x,2.75,z,['blue','ink','white'][k%3])}
+  finish(wb,w.g,w.mats,w.lineMat);blob(w,0,-8,14);
+  w.screens.push(makeScreen(w.g,T.main,12.4,8.3,0,6.6,-5.4,0));
+  w.screens.push(makeScreen(w.g,T.mini[0],5.8,3.6,-12,6.2,3,.55,{mini:1}));
+  w.screens.push(makeScreen(w.g,T.mini[1],5.8,3.6,12,6.9,0,-.55,{mini:1}));
+  /* étiquettes : petits ronds qui tournent au-dessus des rayons */
+  const tags=[];for(let k=0;k<12;k++){const m=new THREE.Mesh(new THREE.TorusGeometry(.5,.12,8,16),new THREE.MeshStandardMaterial({color:k%2?0x2349ff:0x0b0d12,transparent:true,opacity:0}));m.userData={x:-18+k*3.3,s:.6+rnd()};w.g.add(m);tags.push(m)}
+  w.anim.push((b,t)=>tags.forEach(m=>{m.position.set(m.userData.x,12+Math.sin(t*m.userData.s+m.userData.x)*.6,-12);m.rotation.y=t*m.userData.s;m.material.opacity=b}));
+}
+/* 4. logistique */
+function buildLogi(w,T){
+  const wb=WB();ground(wb);
+  bx(wb,42,12,1.2,0,0,-21,'white');bx(wb,42,1.1,1.4,0,12,-21,'blue');
+  for(let k=-3;k<=3;k++){bx(wb,4.4,6.5,.4,k*5.6,0,-20.2,'ink');bx(wb,4.8,.6,.5,k*5.6,6.5,-20.1,'blue')}
+  const cc=['blue','white','ink','cream','cl','vio'];
+  [-19,19].forEach((x0,s)=>{for(let l=0;l<3;l++)for(let k=0;k<2;k++){bx(wb,7.6,3,3.2,x0+(s?-1:1)*k*0.8,l*3.05,-9+k*3.6,cc[(l*2+k+s*3)%6])}});
+  for(let k=0;k<3;k++){bx(wb,7.6,3,3.2,-8+k*8.2,0,-16.5,cc[(k+2)%6]);bx(wb,7.6,3,3.2,-8+k*8.2,3.05,-16.5,cc[(k+4)%6])}
+  bx(wb,18,.9,2.6,-1,0,10,'ink');bx(wb,18.4,.25,3,-1,.9,10,'blue');
+  [-9,7].forEach(x=>{bx(wb,.5,5,.5,x,0,-5,'ink');});bx(wb,16.6,.5,.5,-1,5,-5,'ink');
+  finish(wb,w.g,w.mats,w.lineMat);blob(w,0,-8,15);
+  w.screens.push(makeScreen(w.g,T.main,13,7.3,-1,9.6,-5.2,0));
+  w.screens.push(makeScreen(w.g,T.mini[0],4.6,5.7,-13.5,5.4,6,.7,{mini:1}));
+  w.screens.push(makeScreen(w.g,T.mini[1],4.6,5.75,13,6.3,6,-.6,{mini:1}));
+  if(T.mini[2])w.screens.push(makeScreen(w.g,T.mini[2],4.4,5.5,-21,5.2,-4,.7,{mini:1}));
+  /* camion qui traverse, colis sur le tapis */
+  const tw=WB(),tg=new THREE.Group();bx(tw,3.4,3.6,3.4,-5.2,.8,0,'blue');bx(tw,9.4,4.4,3.6,1,.8,0,'white');bx(tw,9.6,.35,3.8,1,.8,0,'ink');
+  [-4.6,-1.6,1.6,4.6].forEach(x=>cy(tw,.9,.8,x,0,1.7,'ink',14,Math.PI/2));[-4.6,-1.6,1.6,4.6].forEach(x=>cy(tw,.9,.8,x,0,-1.7,'ink',14,Math.PI/2));
+  finish(tw,tg,w.mats,w.lineMat);tg.position.set(0,0,14);w.g.add(tg);
+  const parcels=[];for(let k=0;k<8;k++){const m=new THREE.Mesh(new THREE.BoxGeometry(1.5,1.2,1.4),new THREE.MeshStandardMaterial({color:[0x2349ff,0xd97757,0xffffff,0x0b0d12][k%4],transparent:true,opacity:0}));w.g.add(m);parcels.push(m)}
+  w.anim.push((b,t)=>{tg.position.x=((t*2.2+26)%64)-32;tg.children.forEach(c=>c.material&&c.material.transparent&&0);parcels.forEach((m,k)=>{const u=(t*.07+k/8)%1;m.position.set(-9+u*16,1.6+.6,10);m.material.opacity=b})});
+}
+
+/* ----- textures dessinées (aucun chiffre, aucun nom) ----- */
+async function drawWorkflow(){
+  await document.fonts.load('800 40px Fraunces');await document.fonts.load('600 26px "Instrument Sans"');
+  const L=await Promise.all(['logos/gmail-color.svg','logos/make-color.svg','logos/googlesheets-color.svg','logos/slack-color.svg'].map(logoImg));
+  return canvasTex(1024,576,(x,w,h)=>{
+    x.fillStyle='#fff';x.fillRect(0,0,w,h);const gr=x.createLinearGradient(0,0,w,h);gr.addColorStop(0,'#EEF2FF');gr.addColorStop(1,'#fff');x.fillStyle=gr;x.fillRect(0,0,w,h);
+    x.fillStyle='#0B0D12';x.font='800 50px Fraunces';x.fillText('Inscriptions : ',48,86);const tw=x.measureText('Inscriptions : ').width;x.fillStyle='#2349FF';x.font='italic 400 50px Fraunces';x.fillText('le workflow',48+tw,86);
+    const lab=['Mail reçu','Tri et réponse','Liste des inscrits','Alerte équipe'];
+    L.forEach((im,i)=>{const cx=130+i*255,cy=300;x.fillStyle='#fff';x.shadowColor='rgba(35,73,255,.18)';x.shadowBlur=26;x.shadowOffsetY=10;rr(x,cx-84,cy-84,168,168,40);x.fill();x.shadowColor='transparent';x.lineWidth=3;x.strokeStyle='#2349FF';x.stroke();if(im)x.drawImage(im,cx-44,cy-44,88,88);
+      x.fillStyle='#0B0D12';x.font='600 26px "Instrument Sans"';x.textAlign='center';x.fillText(lab[i],cx,cy+130);x.textAlign='left';
+      if(i<3){x.strokeStyle='#2349FF';x.lineWidth=5;x.setLineDash([2,12]);x.lineCap='round';x.beginPath();x.moveTo(cx+96,cy);x.lineTo(cx+160,cy);x.stroke();x.setLineDash([]);x.fillStyle='#2349FF';x.beginPath();x.moveTo(cx+168,cy);x.lineTo(cx+150,cy-11);x.lineTo(cx+150,cy+11);x.fill()}});
+    x.fillStyle='#3A3D45';x.font='400 26px "Instrument Sans"';x.fillText('Un workflow, des équipes formées pour le piloter.',48,h-48);
+  });
+}
+async function drawBoard(title,rows,accent=['#2349FF','#7B5CFF','#D97757']){
+  await document.fonts.load('800 40px Fraunces');
+  return canvasTex(1024,640,(x,w,h)=>{
+    x.fillStyle='#fff';x.fillRect(0,0,w,h);x.fillStyle='#0B0D12';x.font='800 54px Fraunces';x.fillText(title,48,90);
+    rows.forEach((r,i)=>{const y=170+i*130;x.fillStyle='#3A3D45';x.font='600 30px "Instrument Sans"';x.fillText(r[0],48,y);x.fillStyle='#EEF2FF';rr(x,48,y+22,w-96,36,18);x.fill();x.fillStyle=accent[i%3];rr(x,48,y+22,(w-96)*r[1],36,18);x.fill()});
+  });
+}
+
+const BUILD={events:buildEvents,sante:buildSante,retail:buildRetail,logi:buildLogi};
+const panels=$$('.panel.world');
+const MAIN_EXTRA={events:drawWorkflow};
+
+/* ----- anneau de logos + bokeh ----- */
+const ringZ=-DIST*4, ring=new THREE.Group();ring.position.set(0,11,ringZ);scene.add(ring);
+const ringItems=[];
+async function buildRing(){
+  const names=['claude-color','openai','copilot-color','mistral-color','gemini-color','n8n-color','make-color','zapier-color','notion','perplexity-color','gmail-color','googledrive-color','googlesheets-color','slack-color','hubspot-color','canva-color','linkedin-color','googlecalendar-color'];
+  const imgs=await Promise.all(names.map(n=>logoImg('logos/'+n+'.svg')));
+  imgs.forEach((im,i)=>{
+    const c=document.createElement('canvas');c.width=c.height=256;const x=c.getContext('2d');
+    x.fillStyle='#fff';x.beginPath();x.arc(128,128,122,0,7);x.fill();x.lineWidth=7;x.strokeStyle='#2349FF';x.stroke();
+    if(im)x.drawImage(im,64,64,128,128);
+    const t=new THREE.CanvasTexture(c);t.colorSpace=THREE.SRGBColorSpace;
+    const sp=new THREE.Sprite(new THREE.SpriteMaterial({map:t,transparent:true,opacity:0,depthWrite:false}));sp.scale.set(2.5,2.5,1);
+    const a=i/names.length*Math.PI*2,sc=new THREE.Vector3((rnd()-.5)*60,(rnd()-.5)*40,(rnd()-.5)*40);
+    sp.userData={a,sc};ring.add(sp);ringItems.push(sp);
+    /* bokeh de respiration entre les mondes */
+    if(i<14){const b=document.createElement('canvas');b.width=b.height=256;const y=b.getContext('2d');y.filter='blur(7px)';y.globalAlpha=.9;y.fillStyle='#fff';y.beginPath();y.arc(128,128,100,0,7);y.fill();if(im)y.drawImage(im,70,70,116,116);
+      const bt=new THREE.CanvasTexture(b);bt.colorSpace=THREE.SRGBColorSpace;
+      const bs=new THREE.Sprite(new THREE.SpriteMaterial({map:bt,transparent:true,opacity:.34,depthWrite:false,fog:true}));
+      const wi=Math.floor(i/3.5),z=-DIST*wi-52-rnd()*14;bs.position.set((rnd()-.5)*34,2+rnd()*14,z);const s=4+rnd()*6;bs.scale.set(s,s,1);bs.userData={bk:1,y0:bs.position.y,ph:rnd()*6};scene.add(bs);ringItems.push(bs)}
+  });
+}
+/* poussière */
+{const n=450,p=new Float32Array(n*3);for(let i=0;i<n;i++){p[i*3]=(rnd()-.5)*70;p[i*3+1]=rnd()*26;p[i*3+2]=20-rnd()*(DIST*4.6)}const g=new THREE.BufferGeometry();g.setAttribute('position',new THREE.BufferAttribute(p,3));scene.add(new THREE.Points(g,new THREE.PointsMaterial({color:0x2349ff,size:.16,transparent:true,opacity:.45,sizeAttenuation:true})))}
+
+/* ----- caméra : clés ----- */
+const V=(x,y,z)=>new THREE.Vector3(x,y,z);
+const W0=.11,WL=.19,N=4;
+const keys=[{p:0,c:V(38,21,62),l:V(-27,3,-6)}];
+for(let i=0;i<N;i++){const o=-DIST*i,a=W0+WL*i,s=i%2?-1:1;
+  keys.push({p:a,c:V(26*s,14,o+46),l:V(0,3.6,o-6)});
+  keys.push({p:a+WL*.5,c:V(7*s,9.4,o+34),l:V(0,5,o-8)});
+}
+keys.push({p:W0+WL*N,c:V(7,8,ringZ+40),l:V(0,6,ringZ)});
+keys.push({p:.945,c:V(0,6,ringZ+30),l:V(0,6,ringZ)});
+keys.push({p:1,c:V(0,6,ringZ+25),l:V(0,6,ringZ)});
+const cr=(a,b,c,d,t,o)=>{const t2=t*t,t3=t2*t;return o.set(0,0,0).addScaledVector(a,-.5*t3+t2-.5*t).addScaledVector(b,1.5*t3-2.5*t2+1).addScaledVector(c,-1.5*t3+2*t2+.5*t).addScaledVector(d,.5*t3-.5*t2)};
+const tc=new THREE.Vector3(),tl=new THREE.Vector3();
+function evalCam(p){
+  let k=0;while(k<keys.length-2&&p>keys[k+1].p)k++;
+  const s0=clamp((p-keys[k].p)/(keys[k+1].p-keys[k].p)),s=s0*.35+(s0*s0*(3-2*s0))*.65;
+  const g=i=>keys[clamp(i,0,keys.length-1)];
+  cr(g(k-1).c,g(k).c,g(k+1).c,g(k+2).c,s,tc);cr(g(k-1).l,g(k).l,g(k+1).l,g(k+2).l,s,tl);
+}
+/* ----- taille ----- */
+function resize(){
+  const w=innerWidth,h=innerHeight,dpr=Math.min(devicePixelRatio||1,1.5);
+  renderer.setPixelRatio(dpr);renderer.setSize(w,h,false);camera.aspect=w/h;camera.updateProjectionMatrix();
+  const rad=Math.min(6.6,(26*Math.tan(THREE.MathUtils.degToRad(19))*2*camera.aspect)*.4);
+  ring.userData.rad=rad;
+}
+addEventListener('resize',resize);resize();
+
+/* ----- progression ----- */
+const vo=$('#voyage');let P=0,Ps=0;
+ScrollTrigger.create({trigger:vo,start:'top top',end:'bottom bottom',onUpdate:s=>{P=s.progress}});
+const panelsAll=$$('.panel');
+const dots=$$('.prog button');
+const ranges=panelsAll.map((p,i)=>[i?+p.dataset.a:-1,+p.dataset.b]);
+dots.forEach(d=>d.addEventListener('click',()=>{const p=+d.dataset.p;const top=vo.getBoundingClientRect().top+scrollY;scrollToY(top+p*(vo.offsetHeight-innerHeight))}));
+let lastAct=-2;
+
+/* ----- chargement ----- */
+(async()=>{
+  const prog=$('.ld i');
+  const jobs=[];let done=0;const tick=p=>{p.then(()=>{done++;prog.style.transform='scaleX('+done/jobs.length+')'});jobs.push(p);return p};
+  await document.fonts.ready;
+  const built=[];
+  for(const [i,pn] of panels.entries()){
+    const key=pn.dataset.build;const T={mini:[]};
+    const mainP=MAIN_EXTRA[key]?MAIN_EXTRA[key]():tex(pn.dataset.screen);
+    tick(mainP);T.mainP=mainP;
+    T.miniP=(pn.dataset.mini||'').split(',').filter(Boolean).map(s=>s==='board-eve'?drawBoard('Inscriptions',[['Confirmées',.78],['À relancer',.42],['Sans réponse',.2]]):tick(tex(s)));
+    built.push([i,key,T]);
+  }
+  tick(buildRing());
+  await Promise.race([Promise.all(jobs),new Promise(r=>setTimeout(r,6000))]);
+  for(const [i,key,T] of built){T.main=await T.mainP;T.mini=await Promise.all(T.miniP);const w=newWorld(i);BUILD[key](w,T)}
+  window.__ready=true;
+  document.body.classList.add('ready');
+  gsap.from('.hero h1 .wd',{yPercent:110,opacity:0,duration:1.3,ease:'expo.out',stagger:.07,delay:.35});
+  gsap.from('.hero .sub,.hero .cta,.hero .hint',{y:30,opacity:0,duration:1.1,ease:'expo.out',stagger:.12,delay:.9});
+  requestAnimationFrame(loop);
+})();
+
+/* ----- boucle ----- */
+const clock=new THREE.Clock();let fr=0;let inView=true;
+new IntersectionObserver(e=>{inView=e[0].isIntersecting},{rootMargin:'100px'}).observe($('.stage'));
+window.__setP=p=>{P=p;Ps=p};window.__info=()=>({calls:renderer.info.render.calls,tris:renderer.info.render.triangles,tex:renderer.info.memory.textures});
+function loop(){
+  requestAnimationFrame(loop);
+  if(document.hidden||!inView)return;
+  const t=clock.getElapsedTime();
+  Ps+=(P-Ps)*.09;if(Math.abs(P-Ps)<1e-4)Ps=P;
+  evalCam(Ps);
+  const asp=camera.aspect,k=1+Math.max(0,1.25-asp)*.8;
+  camera.position.copy(tl).add(tc.clone().sub(tl).multiplyScalar(k));
+  const look=tl.clone();if(asp<1.1)look.y-=1.6*k;
+  camera.lookAt(look);
+  worlds.forEach(w=>{
+    const cz=-DIST*w.i,d=Math.hypot(camera.position.x,camera.position.z-cz,(camera.position.y-5)*.6);
+    const b=1-sm(30,74,d/k);w.b=b;w.g.visible=d<104;
+    if(!w.g.visible)return;
+    w.lineMat.opacity=1-.78*b;
+    for(const c in w.mats)w.mats[c].opacity=b;
+    screens.forEach(s=>{if(s.g.parent!==w.g)return;
+      const e=s.mini?sm(.15,.9,b):sm(.05,.7,b);
+      s.frame.material.opacity=e;s.face.material.opacity=e;if(s.pole)s.pole.material.opacity=e;
+      if(s.mini){const sp=(1-e);s.g.position.set(s.base.x*(1-sp*.9),s.base.y+Math.sin(t*.8+s.ph)*.35+sp*6,s.base.z-sp*10);s.g.rotation.y=s.ry+sp*2.2+Math.sin(t*.4+s.ph)*.06;s.g.scale.setScalar(.4+.6*e)}
+    });
+    w.anim.forEach(f=>f(b,t));
+  });
+  /* anneau + bokeh */
+  const asm=sm(.88,.95,Ps),rad=ring.userData.rad;
+  ringItems.forEach(s=>{
+    if(s.userData.bk){s.position.y=s.userData.y0+Math.sin(t*.5+s.userData.ph)*.8;return}
+    const u=s.userData,a=u.a+t*.12,tx=Math.cos(a)*rad,ty=Math.sin(a)*rad*.72;
+    s.position.set(THREE.MathUtils.lerp(u.sc.x,tx,asm),THREE.MathUtils.lerp(u.sc.y,ty,asm),THREE.MathUtils.lerp(u.sc.z,0,asm));
+    s.material.opacity=sm(.84,.9,Ps)*(1-.0*asm);
+  });
+  /* panneaux */
+  let act=-1;
+  panelsAll.forEach((p,i)=>{
+    const [a,b]=ranges[i],f=.016;
+    const o=Math.min(sm(a,a+f,Ps),1-sm(b-f,b,Ps));
+    p.style.opacity=o.toFixed(3);p.style.visibility=o>.01?'visible':'hidden';p.style.pointerEvents=o>.5?'auto':'none';
+    p.style.transform='translate3d(0,'+((1-o)*(Ps<(a+b)/2?40:-40)).toFixed(1)+'px,0)';
+    if(o>.5)act=i;
+  });
+  if(act!==lastAct){lastAct=act;const bf=act>=0&&$('.bigfig b',panelsAll[act]);if(bf&&!bf.dataset.d){bf.dataset.d=1;const o={v:0};gsap.to(o,{v:3000,duration:2.2,ease:'expo.out',onUpdate:()=>bf.textContent='+'+Math.round(o.v).toLocaleString('fr-FR').replace(/\s/g,' '),onComplete:()=>bf.textContent='+3 000'})}dots.forEach(d=>d.classList.toggle('on',+d.dataset.i===act));}
+  $('.prog .bar i').style.transform='scaleX('+Ps.toFixed(4)+')';
+  if(inView)renderer.render(scene,camera);
+  fr++;
+}
+}
+
+</script>
+</body></html>
