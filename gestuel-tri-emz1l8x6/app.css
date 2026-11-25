@@ -483,5 +483,7 @@ dialog .tc{display:none}
 @media(max-width:560px){#toast .motifs{flex-wrap:nowrap;overflow-x:auto;margin:0 -8px;padding:0 24px 0 8px;-webkit-mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent);mask-image:linear-gradient(90deg,#000 calc(100% - 28px),transparent)}}
 
 /* téléphone : le bouton du post d'origine sur deux lignes nettes (libellé, puis réactions) */
-@media(max-width:560px){.comparer{flex-direction:column;align-items:flex-start;gap:2px;border-radius:18px;padding:10px 18px;text-align:left}}
+/* téléphone : libellé court, tout tient sur une ligne */
+.comparer .l-court{display:none}
+@media(max-width:560px){.comparer .l-long{display:none}.comparer .l-court{display:inline}.comparer{white-space:nowrap;padding:0 16px}}
 .comparer,.carte .lire{flex-shrink:0}
