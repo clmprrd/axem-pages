@@ -437,3 +437,12 @@ dialog .tc{display:none}
 @media(max-width:560px){.pips{gap:4px}.pips i{height:6px;border-radius:3px;background:rgba(11,13,18,.13);box-shadow:none}.pips i.now{background:var(--bleu);opacity:.45;box-shadow:none}}
 /* 25/11 : en modification, seul le champ reste (le bouton du modèle restait en haut) */
 .carte.editing .comparer{display:none}
+
+/* relecteur 6 (25/11) : le visuel se voit en entier sur la carte (fond flouté de la même image), le texte se lit quand on déplie */
+.carte .c-visuel{overflow:hidden;background:#0B0D12}
+.carte .c-visuel img.flou{position:absolute;inset:0;width:100%;height:100%;max-height:none;aspect-ratio:auto;object-fit:cover;filter:blur(22px) brightness(.62) saturate(1.1);transform:scale(1.2)}
+.carte .c-visuel img.net{position:relative;width:100%;aspect-ratio:4/3;object-fit:contain;object-position:50% 50%}
+.carte.ouvert .c-visuel{display:none}
+.pane .mvis{aspect-ratio:auto;max-height:380px;object-fit:contain;background:#0B0D12}
+#toast .motifs{flex-wrap:wrap;overflow:visible;margin:0;padding:0;-webkit-mask-image:none;mask-image:none}
+#toast .motifs button{min-height:40px;padding:0 13px}
