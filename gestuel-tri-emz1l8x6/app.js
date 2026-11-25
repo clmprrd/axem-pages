@@ -206,7 +206,7 @@
     var nl = t.lastIndexOf('\n', LIM); if (nl >= 60) return nl;
     var k = t.lastIndexOf(' ', LIM); return k < 60 ? LIM : k;
   }
-  var VOIR = '<span class="coupe" title="Dans le fil LinkedIn, le texte s\'arrête ici (environ)">…voir plus</span>';
+  var VOIR = '<span class="coupe" title="Dans le fil LinkedIn, le texte s\'arrête ici (environ)">…voir plus</span><small class="coupe-l">ici, LinkedIn coupe le texte dans le fil</small>';
   function br(s) { return esc(s).replace(/(^|\n)([•▪◦])[ ]?/g, '$1<span class="puce">•</span> ').replace(/\n/g, '<br>'); }
   function corpsHtml(t) {
     var cut = cutIndex(t), paras = t.split(/\n\s*\n/), pos = 0, out = '', marked = false;
@@ -239,7 +239,8 @@
     var parts = String(t).split(/(?:^|\.\s+)(Accroche|Structure|Levier|Chute et visuel|Visuel)\s*:\s*/).filter(function (x) { return x && x.trim(); });
     if (parts.length < 2) return esc(t);
     var out = '';
-    for (var k = 0; k + 1 < parts.length; k += 2) out += '<dt>' + esc(parts[k]) + '</dt><dd>' + esc((function (v) { v = v.replace(/\.?\s*$/, '.'); return v.charAt(0).toUpperCase() + v.slice(1); })(parts[k + 1])) + '</dd>';
+    var MOTS = { 'Accroche': 'Comment il commence', 'Structure': 'Comment il est construit', 'Levier': 'Ce qui fait réagir', 'Chute et visuel': 'Comment il finit', 'Visuel': 'L\'image' };
+    for (var k = 0; k + 1 < parts.length; k += 2) out += '<dt>' + esc(MOTS[parts[k]] || parts[k]) + '</dt><dd>' + esc((function (v) { v = v.replace(/\.?\s*$/, '.'); return v.charAt(0).toUpperCase() + v.slice(1); })(parts[k + 1])) + '</dd>';
     return '<dl>' + out + '</dl>';
   }
   function openSplit(p) {
@@ -250,7 +251,7 @@
       (stats ? '<div class="stats">' + stats + '</div>' : '') + (m.visuel ? '<img class="mvis" alt="" src="' + esc(m.visuel) + '">' : '') +
       '<div class="corps">' + paras(m.texte_fr || m.texte) + '</div>' +
       (m.texte_fr ? '<details class="vo"><summary>Lire le texte original (' + esc(m.langue || 'anglais') + ')</summary><div class="corps" lang="en">' + paras(m.texte) + '</div></details>' : '') +
-      (m.pourquoi ? '<div class="bloc pq"><b>Pourquoi il marche</b>' + pourquoiHtml(m.pourquoi) + '</div>' : '') +
+      (m.pourquoi ? '<div class="bloc pq"><b>Ce qui a fonctionné</b>' + pourquoiHtml(m.pourquoi) + '</div>' : '') +
       (m.url ? '<a class="lien-ext" href="' + esc(m.url) + '" target="_blank" rel="noopener">Voir le post d\'origine ↗</a>' : '');
     $('.pane.cd', d).innerHTML = '<p class="kick">La version de Cédric</p><div class="aut2"><b>Cédric Golfier</b><small>' + esc(quand(p.publish_at)) + '</small></div>' +
       '<img class="mvis" alt="' + esc(p.alt || '') + '" src="' + esc(p.visuel) + '">' + '<div class="corps">' + paras(p.texte) + '</div>' +
@@ -306,6 +307,7 @@
     var plus = s.scrollHeight - s.scrollTop - s.clientHeight > 6;
     s.classList.toggle('reste', plus);
     var ap = $('.apercu', c); if (ap && ap.offsetHeight) ap.classList.toggle('plein', ap.scrollHeight <= ap.clientHeight + 2 && !ap.dataset.coupe); ap.classList.toggle('mini', ap.clientHeight < 38);
+    var li = $('.lire', c); if (li && ap && !c.classList.contains('ouvert')) li.textContent = ap.classList.contains('plein') ? 'Sources et détails ↓' : 'Lire la suite ↓';
     var on = plus && s.scrollTop < 12 && c.dataset.top === '1' && !c.classList.contains('editing') && !c.classList.contains('vole');
     pl.classList.toggle('on', on); pl.tabIndex = on ? 0 : -1; pl.setAttribute('aria-hidden', on ? 'false' : 'true');
   }
@@ -374,10 +376,11 @@
     var dbt = '«' + NB + court(typo(p.hook).replace(/^«\s*/, '').replace(/\s*»$/, ''), 34) + NB + '»';
     var head = kind === 'garder' ? '<b>Gardé</b> · ' + esc(quand(p.publish_at)) : '<b>Retiré</b> · ' + esc(dbt);
     var sec = esc(typo(sub));
-    el.innerHTML = '<div class="l1"><img alt="" src="' + esc(p.visuel) + '"><div class="tt"><div class="t1">' + head + '</div><div class="t2">' + sec + '</div><div class="t3">Touchez le post suivant pour continuer.</div></div><button type="button" class="t-undo">Défaire</button></div>' +
-      (motifs ? '<div class="motifs" role="group" aria-label="Pourquoi retirer ce post (facultatif, ça aide AXEM à réécrire)"><span class="q">Pourquoi' + NB + '? (facultatif)</span>' + MOTIFS.map(function (m) { return '<button type="button" data-m="' + esc(m) + '">' + m + '</button>'; }).join('') + '</div>' : '');
+    el.innerHTML = '<div class="l1"><img alt="" src="' + esc(p.visuel) + '"><div class="tt"><div class="t1">' + head + '</div><div class="t2">' + sec + '</div><div class="t3">Glissez le post suivant pour continuer.</div></div><button type="button" class="t-undo">Défaire</button></div>' +
+      (motifs ? '<div class="motifs" role="group" aria-label="Pourquoi retirer ce post (facultatif, ça aide AXEM à réécrire)"><button type="button" class="q" aria-expanded="false">Dire pourquoi' + NB + '? (facultatif)</button>' + MOTIFS.map(function (m) { return '<button type="button" data-m="' + esc(m) + '">' + m + '</button>'; }).join('') + '</div>' : '');
     var id = p.id;
     $('.t-undo', el).onclick = function () { undo(); };
+    var qb = $('.motifs .q', el); if (qb) qb.onclick = function () { var m = qb.parentNode, o = !m.classList.contains('ouvert'); m.classList.toggle('ouvert', o); qb.setAttribute('aria-expanded', o ? 'true' : 'false'); clearTimeout(tToast); tToast = setTimeout(hideToast, 9000); placeToast(); };
     $$('.motifs button', el).forEach(function (b) { b.onclick = function () { $$('.motifs button', el).forEach(function (x) { x.classList.remove('sel'); }); b.classList.add('sel'); Store.update(id, { motif: b.dataset.m }); clearTimeout(tToast); tToast = setTimeout(hideToast, 3200); }; });
     placeToast(); el.classList.add('on'); $('#barre').classList.add('toast-on');
     if (window.gsap) { gsap.killTweensOf(el); gsap.set(el, { opacity: 1 }); gsap.fromTo(el, { y: 14 }, { y: 0, duration: dur(.45), ease: 'expo.out' }); } else el.style.opacity = '1';
