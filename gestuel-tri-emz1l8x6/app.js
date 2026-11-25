@@ -454,6 +454,10 @@
   }
   function setOuvert(c, o) {
     c.classList.toggle('ouvert', o); var l = $('.lire', c); l.setAttribute('aria-expanded', o ? 'true' : 'false'); l.textContent = o ? 'Replier ↑' : 'Lire la suite ↓';
+    /* relecteur 6 (25/11) : à l'ouverture, le texte du post arrive tout de suite à l'écran */
+    var sc = $('.c-defil', c), cib = $('.c-texte .seg', c) || $('.c-texte .corps', c);
+    if (!sc) return; if (!o || !cib) { sc.scrollTop = 0; return; }
+    requestAnimationFrame(function () { var y = cib.getBoundingClientRect().top - sc.getBoundingClientRect().top + sc.scrollTop - 10; sc.scrollTo({ top: Math.max(0, y), behavior: reduit ? 'auto' : 'smooth' }); });
   }
   function counter(c) {
     var ta = $('.edit', c), n = ta.value.length, el = $('.edit-pied .n', c);
