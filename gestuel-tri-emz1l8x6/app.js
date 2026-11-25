@@ -415,7 +415,7 @@
     if (rest) { show('home'); renderHome(false); return; }
     var P = Store.posts(), K = P.filter(function (p) { return p.statut === 'programme'; }), tout = !K.length;
     show('fin'); $('#gros').textContent = '0'; $('#gros-wrap').classList.remove('on');
-    $('#fin-h').innerHTML = tout ? 'Tout est <em>retiré.</em>' : 'Votre semaine est <em>prête.</em>';
+    $('#fin-h').innerHTML = tout ? 'Tout est <em>retiré.</em>' : 'Vos posts sont <em>prêts.</em>';
     $('#gros-wrap').hidden = tout; $('#fin-pict').hidden = !tout; if (tout) setPict('#fin-pict', 'refaire');
     $('#fin-sous').textContent = typo(tout ? 'Aucun post gardé : AXEM les réécrit et vous les remet ici.' : 'post' + (K.length > 1 ? 's' : '') + ' programmé' + (K.length > 1 ? 's' : '') + (isLocal() ? ' (mode essai : rien n\'est publié).' : '. Chacun part sur le LinkedIn de Cédric à 8 h.'));
     $('#fin-liste').innerHTML = '<h3>Le calendrier</h3><div class="rail">' + pleins(weekDays(P)).map(function (w) {
