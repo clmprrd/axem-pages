@@ -22,13 +22,14 @@ em{font-style:italic;font-weight:400;color:var(--bleu);word-spacing:.04em;letter
 .wm{font-family:'Fraunces',serif;font-weight:900;font-variation-settings:'SOFT' 100,'opsz' 144;font-size:34px;letter-spacing:-.05em;color:var(--bleu);line-height:1}
 .wm sup{font:700 11px 'Instrument Sans';letter-spacing:0;margin-left:2px;vertical-align:top}
 /* ouverture */
+.rep{background:#fff;border-left:5px solid var(--bleu);border-radius:16px;padding:16px 20px;margin:0 0 22px;max-width:640px;box-shadow:0 14px 34px -24px rgba(11,13,18,.5)}.rep b{display:block;font:700 13px 'Instrument Sans';letter-spacing:.1em;text-transform:uppercase;color:var(--bleu);margin-bottom:6px}.rep p{margin:0 0 8px;font-size:17px;line-height:1.4}.rep p:last-child{margin:0}
 #ouverture{padding:22px 0 90px}
 .hd{display:flex;align-items:center;justify-content:space-between;gap:12px 28px;flex-wrap:wrap;margin:0 0 30px}
 .pill{display:inline-flex;align-items:center;gap:18px;background:#fff;border-radius:99px;padding:10px 26px;box-shadow:0 10px 24px -16px rgba(11,13,18,.45);font-weight:700;font-size:16px}
 .pill i{font:600 22px 'Instrument Sans';font-style:normal;color:#8a8576}
 .hero{display:grid;grid-template-columns:1.15fr .85fr;gap:30px;align-items:center}
 .hero h1{font-size:clamp(44px,6vw,86px)}
-.resume{font-size:clamp(20px,2vw,25px);max-width:640px;margin:26px 0 24px;color:#23252e}
+.resume{font-size:clamp(20px,2vw,25px);max-width:640px;margin:22px 0 18px;color:#23252e}
 .chipx{display:inline-flex;align-items:center;min-height:48px;padding:0 22px;border-radius:99px;background:var(--bleu);color:#fff;font-weight:700;font-size:17px}
 .orb{position:relative;aspect-ratio:1;max-width:470px;margin:0 auto;width:100%}
 .orb svg.ring{position:absolute;inset:0;width:100%;height:100%}
@@ -122,6 +123,8 @@ html:not(.anim) .sc{height:auto}
 html:not(.anim) .pin{position:static;height:auto;display:block;padding:70px 28px}
 html:not(.anim) .right{margin-top:30px}
 @media(max-width:899px){.hero{grid-template-columns:1fr}.frise{grid-template-columns:1fr 1fr}.frise li:after{display:none}.docs{grid-template-columns:1fr}.doc{min-height:0}.pn{height:auto}.pa{position:relative;margin-bottom:14px}.wrap{padding:0 20px}.lr{grid-template-columns:44px 1fr 48px}}
+@media(max-width:600px){#ouverture .wrap,.hero>div{min-width:0}.hero h1{font-size:34px;overflow-wrap:anywhere;word-spacing:.05em}.resume{font-size:18px}.kick{flex-wrap:wrap}.hd{margin-bottom:20px}.pill{padding:8px 14px;gap:10px;font-size:13px;max-width:100%}.pill .wm{display:none}.frise{grid-template-columns:1fr}.mots{font-size:20px}.rep p{font-size:16px}html:not(.anim) .pin{padding:48px 20px}.pa .big{font-size:44px}.pa .ic{width:60px;height:60px}.left h2,#fin h2{overflow-wrap:anywhere}#fin h2{font-size:38px}.qq{grid-template-columns:40px 1fr}.cta{padding:0 22px;font-size:17px;text-align:center}.docs,.lk,.tlc,.stage{max-width:100%}}
+@media(prefers-reduced-motion:reduce){html.anim .sc{height:auto}}
 </style>
 </head>
 <body>
@@ -140,7 +143,7 @@ html:not(.anim) .right{margin-top:30px}
 <div class="kick">Pour José Martinho · suite de notre échange du 16 novembre</div>
 <h1>Claude, Mistral, Copilot : <em>lequel pour la Région ?</em></h1>
 <p class="resume">Où vont vos données, ce que le droit public demande, et ce que nous préparons pour un centre de gestion. En six écrans.</p>
-<span class="chipx">Voir la comparaison en six écrans</span>
+<div class="rep"><b>Ma réponse</b><p><strong>Deux usages, pas un seul outil :</strong> Claude pour construire l'outil, Copilot pour le travail de bureau si la Région en dispose, Mistral en repli si l'Europe est exigée. Hypothèse de départ, que confirmera un test sur cinq documents anonymisés.</p><p><strong>Pas suivant :</strong> 20 minutes la semaine prochaine pour cadrer ce test. Répondez au mail qui accompagne cette page, un mot suffit.</p></div><span class="chipx">Voir la comparaison en six écrans</span>
 </div>
 <div class="orb">
 <svg class="ring" viewBox="0 0 100 100"><circle cx="50" cy="50" r="38" fill="none" stroke="#2349FF" stroke-opacity=".25" stroke-width=".5" stroke-dasharray="1.5 2"/><path d="M50 12 L50 50 M16 70 L50 50 M84 70 L50 50" stroke="#2349FF" stroke-width=".7" stroke-opacity=".5"/></svg>
@@ -154,7 +157,7 @@ html:not(.anim) .right{margin-top:30px}
 <li><b>3</b>outils comparés<small>Claude, Mistral, Microsoft 365 Copilot</small></li>
 <li><b>6</b>écrans à parcourir<small>données, entraînement, contrat, droit, chantier, test</small></li>
 <li><b>4</b>cadres du secteur public<small>RGPD, AI Act, SecNumCloud, marchés</small></li>
-<li><b>1</b>chantier en cours<small>le centre de gestion de la Drôme</small></li>
+<li><b>1</b>chantier en cours<small>un centre de gestion territorial</small></li>
 </ul>
 <p class="mots">Données <span>•</span> Sécurité <span>•</span> Marchés publics <span>•</span> Chantier en cours</p>
 <div class="defil">DÉFILEZ</div>
@@ -226,18 +229,18 @@ html:not(.anim) .right{margin-top:30px}
 
 <section class="sc" id="s5"><div class="pin">
 <div class="left"><div class="kick"><b>5</b>Un chantier en cours</div>
-<h2>Un centre de gestion <em>de la Drôme</em></h2>
-<p class="leg">Le CDG 26, centre de gestion de la fonction publique territoriale, et non le Conseil départemental.</p>
-<ul class="lines"><li><i class="d"></i>Une équipe pilote, pas tout le monde d'un coup</li><li><i class="d"></i>Des guides pratiques remis aux participants</li><li><i class="d"></i>Des ateliers à distance, fin novembre</li></ul>
-<p class="src">Retour d'AXEM sur l'un de ses chantiers en cours, au 18/11/2026.</p></div>
+<h2>Un centre de gestion <em>territorial</em></h2>
+<p class="leg">Un centre de gestion de la fonction publique territoriale, client d'AXEM, présenté sans son nom.</p>
+<ul class="lines"><li><i class="d"></i>Une équipe pilote, pas tout le monde d'un coup</li><li><i class="d"></i>Des guides pratiques remis aux participants</li><li><i class="d"></i>Deux ateliers à distance, tenus les 24 et 25 novembre</li></ul>
+<p class="src">Retour d'AXEM sur l'un de ses chantiers en cours, au 25/11/2026.</p></div>
 <div class="right"><div class="tlc">
-<div class="tlh"><svg><use href="#cl"/></svg>CDG 26 · Claude Team, équipe pilote</div>
-<div class="tr" id="r1"><div class="ck"><svg><use href="#ok"/></svg></div><div><b>Cadrage</b><small>Échange, puis ateliers confirmés</small></div></div>
+<div class="tlh"><svg><use href="#cl"/></svg>Centre de gestion · Claude Team, équipe pilote</div>
+<div class="tr" id="r1"><div class="ck"><svg><use href="#ok"/></svg></div><div><b>Cadrage</b><small>Échange, puis ateliers fixés</small></div></div>
 <div class="tr" id="r2"><div class="ck"><svg><use href="#ok"/></svg></div><div><b>Compte Claude Team</b><small>Propriété de l'établissement, qui garde l'accès</small></div></div>
 <div class="tr" id="r3"><div class="ck"><svg><use href="#ok"/></svg></div><div><b>Deux guides</b><small>Démarrage ; projets, agents et compétences</small></div></div>
 <div class="tr" id="r4"><div class="ck"><svg><use href="#ok"/></svg></div><div><b>Questionnaire préalable</b><small>Pour adapter les ateliers aux tâches réelles</small></div></div>
-<div class="tr fut" id="r5"><div class="ck"></div><div><b>Ateliers, fin novembre</b><small>À distance, puis attestations de suivi</small></div></div>
-<div class="tnote">Cas d'usage de départ : le suivi d'échéances, une date, un responsable, un rappel. Aucun chiffre de gain avant les ateliers.</div>
+<div class="tr" id="r5"><div class="ck"><svg><use href="#ok"/></svg></div><div><b>Deux ateliers, 24 et 25 novembre</b><small>Tenus à distance ; attestations de suivi ensuite</small></div></div>
+<div class="tnote">Cas d'usage de départ : le suivi d'échéances, une date, un responsable, un rappel. Aucun chiffre de gain à ce stade : les premiers retours d'usage restent à mesurer.</div>
 </div></div>
 </div></section>
 
@@ -344,7 +347,7 @@ mk('s3',function(tl,sc){lines(tl,sc,[0,1.6,3.2],true);
 mk('s4',function(tl,sc){lines(tl,sc,[0,1.6,3.2,4.8],'blue');
  ['a1','a2','a3','a4'].forEach(function(id,i){gsap.set('#'+id,{opacity:i?0:1,y:i?50:0,scale:i?.96:1})});
  for(var i=1;i<4;i++){var t=i*1.6;tl.to('#a'+i,{opacity:0,y:-40,duration:.5},t-.1).to('#a'+(i+1),{opacity:1,y:0,scale:1,duration:.8},t)}});
-/* 5 : CDG */
+/* 5 : centre de gestion */
 mk('s5',function(tl,sc){lines(tl,sc,[0,1.8,3.6]);
  for(var i=1;i<=5;i++){gsap.set('#r'+i,{opacity:.25,x:20});gsap.set('#r'+i+' .ck svg',{scale:0})}
  var ts=[0,.7,1.8,2.7,3.6];
