@@ -278,7 +278,7 @@
       '<p class="quand-c">' + quand(p.publish_at) + ' · ' + esc(p.format) + '</p><h2 class="accroche">' + esc(typo(p.hook)) + '</h2>' +
       (function () { var h = apercuHtml(p); return '<div class="apercu"' + (apercuCoupe ? ' data-coupe="1"' : '') + '><div class="corps">' + h + '</div></div>'; })() +
       '<button type="button" class="lire" data-lire="1" aria-expanded="false">Lire la suite ↓</button>' +
-      (p.modele ? '<button type="button" class="comparer" data-split="1">' + ('Voir le post qui l\'a inspiré' + (p.modele.reactions ? ' <span class="nb">' + nbr(p.modele.reactions) + '\u00a0réactions</span>' : '')) + '</button>' : '') +
+      (p.modele ? '<button type="button" class="comparer" data-split="1">' + ('<span class="l-long">Voir le post qui l\'a inspiré</span><span class="l-court">Voir l\'original</span>' + (p.modele.reactions ? ' <span class="nb">' + nbr(p.modele.reactions) + '\u00a0réactions</span>' : '')) + '</button>' : '') +
       '<div class="c-texte"><div class="aut"><span class="av">' + (photo ? '<img alt="" src="' + esc(photo) + '">' : 'CG') + '</span><div><b>Cédric Golfier</b><small>Dirigeant · Gestuel\'Santé</small><small class="quand">' + quand(p.publish_at) + '</small></div><span class="etq">' + esc(p.format) + '</span></div>' +
       '<div class="chips-m">' + (p.sources && p.sources.length ? '<a href="' + esc(p.sources[0].url) + '" target="_blank" rel="noopener">Source du chiffre ↗</a>' : '') + '<button type="button" data-bas="1">Pourquoi ce post ↓</button></div>' +
       '<div class="seg" role="group" aria-label="Affichage du texte"><button type="button" class="on" data-v="plein" aria-pressed="true">Post complet</button><button type="button" data-v="fil" aria-pressed="false">Dans le fil</button></div>' +
