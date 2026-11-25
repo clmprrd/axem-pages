@@ -97,6 +97,10 @@
     out.forEach(function (w, i) { w.first = i === 0 || out[i - 1].label !== w.label; });
     return out;
   }
+  function pleins(D) {  /* relecteur 6 (25/11) : seuls les jours qui ont un post */
+    var o = D.filter(function (w) { return w.post; }); if (!o.length) return D;
+    o.forEach(function (w, i) { w.first = i === 0 || o[i - 1].label !== w.label; }); return o;
+  }
   function semaineLabel(P) {
     var D = weekDays(P); if (!D.length) return 'Cette semaine';
     return D[0].multi ? 'Du ' + fr(D[0].date, { day: 'numeric', month: 'long' }) + ' au ' + fr(D[D.length - 1].date, { day: 'numeric', month: 'long' }) : D[0].label;
@@ -146,7 +150,7 @@
       $('#go-t').textContent = 'Revoir la semaine'; $('#go').hidden = false;
     }
     var ol = $('#liste');
-    ol.innerHTML = weekDays(P).map(function (w) {
+    ol.innerHTML = pleins(weekDays(P)).map(function (w) {
       var p = w.post, sep = (w.first && w.multi) ? '<li class="sem-sep">' + esc(w.label) + '</li>' : '', dt = '<div class="date"><b>' + parts(w.iso, { day: 'numeric' }) + '</b><small>' + parts(w.iso, { weekday: 'short' }).replace('.', '') + '</small></div>';
       if (!p) return sep + '<li class="pos vide">' + dt + '<div class="corps-l"><span class="fmt">Pas de post prévu</span></div></li>';
       var lbl = ETAT[p.statut] + (p.statut === 'programme' ? ' · ' + heure(p.publish_at) : p.statut === 'retire' ? ' · AXEM réécrit' : '');
@@ -234,7 +238,7 @@
     var m = p.modele || {}, d = $('#split');
     var who = m.auteur || 'Un dirigeant de la niche';
     var stats = (m.reactions != null ? '<span class="stat"><b>' + esc(nbr(m.reactions)) + '</b> réaction' + (m.reactions > 1 ? 's' : '') + '</span>' : '') + (m.commentaires ? '<span class="stat"><b>' + esc(nbr(m.commentaires)) + '</b> commentaire' + (m.commentaires > 1 ? 's' : '') + '</span>' : '');
-    $('.pane.mod', d).innerHTML = '<p class="kick">Le post qui a marché</p><div class="aut2"><b>' + esc(who) + '</b>' + (m.date ? '<small>' + esc(quand(m.date)) + '</small>' : '') + '</div>' +
+    $('.pane.mod', d).innerHTML = '<p class="kick">Le modèle, tel que publié</p><div class="aut2"><b>' + esc(who) + '</b>' + (m.date ? '<small>' + esc(quand(m.date)) + '</small>' : '') + '</div>' +
       (stats ? '<div class="stats">' + stats + '</div>' : '') + (m.visuel ? '<img class="mvis" alt="" src="' + esc(m.visuel) + '">' : '') +
       '<div class="corps">' + paras(m.texte) + '</div>' +
       (m.pourquoi ? '<div class="bloc"><b>Pourquoi il marche</b>' + esc(m.pourquoi) + '</div>' : '') +
@@ -260,7 +264,7 @@
     return '<article class="carte" data-id="' + esc(p.id) + '" role="group" aria-label="Post ' + (k + 1) + ' sur ' + N + '">' +
       '<div class="stamp k" aria-hidden="true">GARDER</div><div class="stamp r" aria-hidden="true">RETIRER</div>' +
       '<div class="c-defil"><div class="c-gauche">' +
-      '<div class="c-visuel"><img alt="' + esc(p.alt || '') + '" src="' + esc(p.visuel) + '" draggable="false"></div>' +
+      '<div class="c-visuel"><img class="flou" alt="" aria-hidden="true" src="' + esc(p.visuel) + '" draggable="false"><img class="net" alt="' + esc(p.alt || '') + '" src="' + esc(p.visuel) + '" draggable="false"></div>' +
       '<p class="quand-c">' + quand(p.publish_at) + ' · ' + esc(p.format) + '</p><h2 class="accroche">' + esc(typo(p.hook)) + '</h2>' +
       (function () { var h = apercuHtml(p); return '<div class="apercu"' + (apercuCoupe ? ' data-coupe="1"' : '') + '><div class="corps">' + h + '</div></div>'; })() +
       '<button type="button" class="lire" data-lire="1" aria-expanded="false">Lire la suite ↓</button>' +
@@ -414,8 +418,8 @@
     $('#fin-h').innerHTML = tout ? 'Tout est <em>retiré.</em>' : 'Votre semaine est <em>prête.</em>';
     $('#gros-wrap').hidden = tout; $('#fin-pict').hidden = !tout; if (tout) setPict('#fin-pict', 'refaire');
     $('#fin-sous').textContent = typo(tout ? 'Aucun post gardé : AXEM les réécrit et vous les remet ici.' : 'post' + (K.length > 1 ? 's' : '') + ' programmé' + (K.length > 1 ? 's' : '') + (isLocal() ? ' (mode essai : rien n\'est publié).' : '. Chacun part sur le LinkedIn de Cédric à 8 h.'));
-    $('#fin-liste').innerHTML = '<h3>La semaine</h3><div class="rail">' + weekDays(P).map(function (w) {
-      var p = w.post, jr = '<div class="jr"><span>' + parts(w.iso, { day: 'numeric' }) + '</span><b>' + parts(w.iso, { weekday: 'short' }).replace('.', '') + '</b></div>';
+    $('#fin-liste').innerHTML = '<h3>Le calendrier</h3><div class="rail">' + pleins(weekDays(P)).map(function (w) {
+      var p = w.post, jr = '<div class="jr"><span>' + parts(w.iso, { day: 'numeric' }) + '</span><b>' + parts(w.iso, { weekday: 'short' }).replace('.', '') + ' ' + parts(w.iso, { month: 'short' }).replace('.', '') + '</b></div>';
       if (!p) return '<div class="slot vide">' + jr + '<div class="txt"><p>Pas de post</p></div></div>';
       var ok = p.statut === 'programme';
       return '<div class="slot ' + (ok ? 'ok' : 'r') + '">' + jr + '<div class="thumb"><img alt="" src="' + esc(p.visuel) + '"></div><div class="txt"><p>' + esc(typo(p.hook)) + '</p><span class="etat ' + p.statut + '">' + (ok ? 'Programmé ' + heure(p.publish_at) : 'Retiré' + (p.motif ? ' · ' + esc(p.motif) : ' · AXEM le réécrit')) + '</span></div></div>';
@@ -446,7 +450,7 @@
     var cut = cutIndex(t);
     if (cut === null) return 'Tout le texte est visible dans le fil&nbsp;: <b>' + t.length.toLocaleString('fr-FR') + ' caractères</b>, pas de «' + NB + '…voir plus' + NB + '».';
     var n = t.slice(0, cut).replace(/\s+$/, '').length;
-    return 'Visible avant «' + NB + '…voir plus' + NB + '»' + NB + ': <b>' + n.toLocaleString('fr-FR') + ' caractères</b>';
+    return 'Sur LinkedIn, on lit les <b>' + n.toLocaleString('fr-FR') + ' premiers caractères</b> avant «' + NB + '…voir plus' + NB + '»';
   }
   function setOuvert(c, o) {
     c.classList.toggle('ouvert', o); var l = $('.lire', c); l.setAttribute('aria-expanded', o ? 'true' : 'false'); l.textContent = o ? 'Replier ↑' : 'Lire la suite ↓';
