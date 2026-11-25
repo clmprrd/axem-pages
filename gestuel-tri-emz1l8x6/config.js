@@ -1,0 +1,2 @@
+/* Réglage du projet Supabase réel (axem-gestuel-tri). La clé anonyme est publique par conception : seul le code d'accès, dans le lien, ouvre les données. */
+window.GESTUEL_CONFIG = {"backend": "rest", "url": "https://jkrmecazsrxnyljngyuy.supabase.co", "key": "eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJzdXBhYmFzZSIsInJlZiI6Imprcm1lY2F6c3J4bnlsam5neXV5Iiwicm9sZSI6ImFub24iLCJpYXQiOjE3OTQ5MjcxNTcsImV4cCI6MjExMDUwMzE1N30.-ucKmkIZblCQWCZ3P2xG30BI5T_wBFllSanCTzGjoxo"};
