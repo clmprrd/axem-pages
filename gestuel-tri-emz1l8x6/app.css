@@ -504,3 +504,21 @@ dialog .tc{display:none}
 @media(min-width:980px){.home-grid:not(.ecran) .hero{position:sticky;top:24px}}
 /* calendrier sur téléphone : date lisible, étiquette « Retiré » qui tient dans sa case */
 @media(max-width:560px){.slot{grid-template-columns:50px 84px 1fr}.slot .jr b{font-size:12px;letter-spacing:.03em;line-height:1.25}.slot .etat{display:flex;width:fit-content;max-width:100%;white-space:normal;line-height:1.25;border-radius:12px;padding:5px 10px;font-size:14px}.slot .etat:before{flex:none}}
+
+/* relecteur 9 (25/11) */
+/* message de choix : compact ; les raisons s'ouvrent d'un toucher sur téléphone */
+#toast .motifs .q{background:none;border:0;color:#fff;opacity:.82;font:inherit;font-size:15px;padding:0;min-height:40px;cursor:pointer;text-decoration:underline;text-underline-offset:3px}
+@media(min-width:900px){#toast .motifs .q{text-decoration:none;cursor:default;pointer-events:none}}
+@media(max-width:899px){#toast .motifs:not(.ouvert) button[data-m]{display:none}#toast .t2{-webkit-line-clamp:1}#toast .motifs .q{width:auto}}
+/* téléphone : le thème de la série se lit en entier */
+@media(max-width:560px){.carte .quand-c{white-space:normal;overflow:visible;font-size:14px;line-height:1.35}}
+/* le repère « …voir plus » expliqué, et pas pris pour un bouton */
+.coupe{cursor:default}
+.coupe-l{font-size:13px;color:var(--gris);margin-left:8px;vertical-align:2px}
+/* pile de cartes : au repos, seule la carte du dessus montre son visuel (plus de bande sombre sous la carte) */
+.carte .c-visuel{transition:opacity .25s}
+#scene:not(:has(.carte.drag, .carte.vole)) .carte:not([data-top="1"]) .c-visuel{opacity:0}
+/* volet du post d'origine : les chiffres sont des informations, pas des boutons */
+.pane .stat{background:none;color:var(--encre);padding:0 12px 0 0;border-radius:0}.pane .stat b{color:var(--bleu)}
+/* déjà publiés, téléphone : étiquette et lien alignés sur la même colonne */
+@media(max-width:560px){.parch .etat{font-size:13px;padding:4px 10px}.parch .acts{display:flex;margin:8px 0 0}}
