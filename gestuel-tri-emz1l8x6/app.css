@@ -522,3 +522,18 @@ dialog .tc{display:none}
 .pane .stat{background:none;color:var(--encre);padding:0 12px 0 0;border-radius:0}.pane .stat b{color:var(--bleu)}
 /* déjà publiés, téléphone : étiquette et lien alignés sur la même colonne */
 @media(max-width:560px){.parch .etat{font-size:13px;padding:4px 10px}.parch .acts{display:flex;margin:8px 0 0}}
+
+/* relecteur 10 (25/11) */
+/* téléphone : le message après un choix se lit en entier, « Dire pourquoi ? » est une vraie pastille */
+@media(max-width:899px){#toast .t1,#toast .t2{white-space:normal;display:block;-webkit-line-clamp:unset;overflow:visible}
+ #toast .motifs .q{text-decoration:none;border:1.5px solid rgba(255,255,255,.4);border-radius:99px;padding:0 14px;opacity:1;font-weight:600}}
+/* ordinateur : avec les raisons, le message reste bas (une consigne de moins, pastilles plus fines) */
+@media(min-width:900px){#toast:has(.motifs) .t3{display:none}#toast .motifs button{min-height:34px}}
+/* téléphone : plus de lignes du post avant d'ouvrir (visuel un peu plus bas) */
+@media(max-width:560px){.c-visuel img{max-height:max(118px,calc(100vh - 690px));max-height:max(118px,calc(100dvh - 690px))}.carte .c-visuel img.net{aspect-ratio:auto;height:max(118px,calc(100dvh - 690px));object-fit:contain}}
+/* le repère « …voir plus » : sa légende tient sur une ligne, jamais un mot isolé */
+.coupe-l{display:inline-block;white-space:nowrap}
+@media(max-width:560px){.coupe-l{display:block;margin:2px 0 0}}
+/* téléphone : « avec axemIA » comme sur ordinateur */
+@media(max-width:560px){.marque .av2{display:block;font-size:12px;line-height:1;opacity:.7;margin-bottom:2px}.marque .tx{line-height:1.05}}
+@media(max-width:899px){#toast:has(.motifs) .t3{display:none}}
