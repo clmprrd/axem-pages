@@ -77,7 +77,7 @@
   function fr(x, o) { return new Intl.DateTimeFormat('fr-FR', Object.assign({ timeZone: TZ }, o)).format(x); }
   function wdIdx(d) { return ['Sun', 'Mon', 'Tue', 'Wed', 'Thu', 'Fri', 'Sat'].indexOf(new Intl.DateTimeFormat('en-US', { timeZone: TZ, weekday: 'short' }).format(d)); }
   function lundiDe(d) { return new Date(d.getTime() - ((wdIdx(d) + 6) % 7) * 86400000); }
-  function labelLundi(lun) { return 'Semaine du ' + fr(lun, { day: 'numeric' }) + ' au ' + fr(new Date(lun.getTime() + 4 * 86400000), { day: 'numeric', month: 'long' }); }
+  function labelLundi(lun) { var ven = new Date(lun.getTime() + 4 * 86400000); return 'Semaine du ' + fr(lun, ven.getMonth() !== lun.getMonth() ? { day: 'numeric', month: 'long' } : { day: 'numeric' }) + ' au ' + fr(new Date(lun.getTime() + 4 * 86400000), { day: 'numeric', month: 'long' }); }
   /* les jours ouvrés, semaine par semaine ; sur plusieurs semaines, on retire les jours vides avant le premier post et après le dernier */
   function weekDays(P) {
     var A = aVenir(P); if (!A.length) return [];
@@ -154,7 +154,7 @@
       var p = w.post, sep = (w.first && w.multi) ? '<li class="sem-sep">' + esc(w.label) + '</li>' : '', dt = '<div class="date"><b>' + parts(w.iso, { day: 'numeric' }) + '</b><small>' + parts(w.iso, { weekday: 'short' }).replace('.', '') + '</small></div>';
       if (!p) return sep + '<li class="pos vide">' + dt + '<div class="corps-l"><span class="fmt">Pas de post prévu</span></div></li>';
       var lbl = ETAT[p.statut] + (p.statut === 'programme' ? ' · ' + heure(p.publish_at) : p.statut === 'retire' ? ' · AXEM réécrit' : '');
-      var act = p.statut === 'a_trier' ? '<span class="lien">Trier ce post</span>' : p.statut === 'retire' ? '<button class="lien" data-remettre="' + esc(p.id) + '" type="button">Redemander une version</button>' : p.statut === 'programme' ? '<span class="lien">Revoir ou modifier</span>' : '';
+      var act = p.statut === 'retire' ? '<button class="lien" data-remettre="' + esc(p.id) + '" type="button">Redemander une version</button>' : '';
       return sep + '<li class="pos" data-id="' + esc(p.id) + '">' + (p.statut !== 'publie' ? '<button class="tap" type="button" aria-label="Ouvrir : ' + esc(typo(p.hook)) + '"></button>' : '') + dt +
         '<div class="mini"><img alt="" src="' + esc(p.visuel) + '" loading="lazy"></div>' +
         '<div class="corps-l"><span class="fmt">' + esc(p.format) + '</span><h3>' + esc(typo(p.hook)) + '</h3><span class="etat ' + p.statut + '">' + lbl + '</span>' + (act ? '<div class="acts">' + act + '</div>' : '') + '</div></li>';
@@ -234,14 +234,23 @@
   /* ---------- split screen : le post qui a marché à côté de celui de Cédric ---------- */
   function paras(t) { return String(t || '').split(/\n\s*\n/).filter(Boolean).map(function (x) { return '<p>' + br(x.replace(/^\s+|\s+$/g, '')) + '</p>'; }).join(''); }
   function nbr(n) { return n == null ? '' : String(n).replace(/\B(?=(\d{3})+(?!\d))/g, NB); }
+  /* relecteur 7 : « Pourquoi il marche » en points (Accroche, Structure, Levier, Chute), plus un bloc de texte */
+  function pourquoiHtml(t) {
+    var parts = String(t).split(/(?:^|\.\s+)(Accroche|Structure|Levier|Chute et visuel|Visuel)\s*:\s*/).filter(function (x) { return x && x.trim(); });
+    if (parts.length < 2) return esc(t);
+    var out = '';
+    for (var k = 0; k + 1 < parts.length; k += 2) out += '<dt>' + esc(parts[k]) + '</dt><dd>' + esc(parts[k + 1].replace(/\.?\s*$/, '.')) + '</dd>';
+    return '<dl>' + out + '</dl>';
+  }
   function openSplit(p) {
     var m = p.modele || {}, d = $('#split');
     var who = m.auteur || 'Un dirigeant de la niche';
     var stats = (m.reactions != null ? '<span class="stat"><b>' + esc(nbr(m.reactions)) + '</b> réaction' + (m.reactions > 1 ? 's' : '') + '</span>' : '') + (m.commentaires ? '<span class="stat"><b>' + esc(nbr(m.commentaires)) + '</b> commentaire' + (m.commentaires > 1 ? 's' : '') + '</span>' : '');
-    $('.pane.mod', d).innerHTML = '<p class="kick">Le modèle, tel que publié</p><div class="aut2"><b>' + esc(who) + '</b>' + (m.date ? '<small>' + esc(quand(m.date)) + '</small>' : '') + '</div>' +
+    $('.pane.mod', d).innerHTML = '<p class="kick">' + (m.texte_fr ? 'Le post d\'origine, traduit de l\'' + esc(m.langue || 'anglais') : 'Le post d\'origine, tel que publié') + '</p><div class="aut2"><b>' + esc(who) + '</b>' + (m.date ? '<small>' + esc(quand(m.date)) + '</small>' : '') + '</div>' +
       (stats ? '<div class="stats">' + stats + '</div>' : '') + (m.visuel ? '<img class="mvis" alt="" src="' + esc(m.visuel) + '">' : '') +
-      '<div class="corps">' + paras(m.texte) + '</div>' +
-      (m.pourquoi ? '<div class="bloc"><b>Pourquoi il marche</b>' + esc(m.pourquoi) + '</div>' : '') +
+      '<div class="corps">' + paras(m.texte_fr || m.texte) + '</div>' +
+      (m.texte_fr ? '<details class="vo"><summary>Lire le texte original (' + esc(m.langue || 'anglais') + ')</summary><div class="corps" lang="en">' + paras(m.texte) + '</div></details>' : '') +
+      (m.pourquoi ? '<div class="bloc pq"><b>Pourquoi il marche</b>' + pourquoiHtml(m.pourquoi) + '</div>' : '') +
       (m.url ? '<a class="lien-ext" href="' + esc(m.url) + '" target="_blank" rel="noopener">Voir le post d\'origine ↗</a>' : '');
     $('.pane.cd', d).innerHTML = '<p class="kick">La version de Cédric</p><div class="aut2"><b>Cédric Golfier</b><small>' + esc(quand(p.publish_at)) + '</small></div>' +
       '<img class="mvis" alt="' + esc(p.alt || '') + '" src="' + esc(p.visuel) + '">' + '<div class="corps">' + paras(p.texte) + '</div>' +
@@ -249,6 +258,7 @@
     $$('.split-tabs [role=tab]', d).forEach(function (b) { b.setAttribute('aria-selected', b.dataset.pane === 'mod' ? 'true' : 'false'); });
     d.dataset.pane = 'mod';
     if (d.showModal) d.showModal(); else d.setAttribute('open', '');
+    var hh = $('#split-h'); hh.tabIndex = -1; hh.style.outline = 'none'; hh.focus({ preventScroll: true });   /* relecteur 7 : pas d'anneau sur Fermer à la souris */
   }
   document.addEventListener('click', function (e) {
     var sp = e.target.closest('[data-split]');
@@ -268,7 +278,7 @@
       '<p class="quand-c">' + quand(p.publish_at) + ' · ' + esc(p.format) + '</p><h2 class="accroche">' + esc(typo(p.hook)) + '</h2>' +
       (function () { var h = apercuHtml(p); return '<div class="apercu"' + (apercuCoupe ? ' data-coupe="1"' : '') + '><div class="corps">' + h + '</div></div>'; })() +
       '<button type="button" class="lire" data-lire="1" aria-expanded="false">Lire la suite ↓</button>' +
-      (p.modele ? '<button type="button" class="comparer" data-split="1">' + (p.modele.reactions ? 'Le modèle\u00a0: ' + nbr(p.modele.reactions) + ' réactions ⇄' : 'Voir l\'inspiration ⇄') + '</button>' : '') +
+      (p.modele ? '<button type="button" class="comparer" data-split="1">' + ('Voir le post qui l\'a inspiré' + (p.modele.reactions ? ' <span class="nb">' + nbr(p.modele.reactions) + '\u00a0réactions</span>' : '')) + '</button>' : '') +
       '<div class="c-texte"><div class="aut"><span class="av">' + (photo ? '<img alt="" src="' + esc(photo) + '">' : 'CG') + '</span><div><b>Cédric Golfier</b><small>Dirigeant · Gestuel\'Santé</small><small class="quand">' + quand(p.publish_at) + '</small></div><span class="etq">' + esc(p.format) + '</span></div>' +
       '<div class="chips-m">' + (p.sources && p.sources.length ? '<a href="' + esc(p.sources[0].url) + '" target="_blank" rel="noopener">Source du chiffre ↗</a>' : '') + '<button type="button" data-bas="1">Pourquoi ce post ↓</button></div>' +
       '<div class="seg" role="group" aria-label="Affichage du texte"><button type="button" class="on" data-v="plein" aria-pressed="true">Post complet</button><button type="button" data-v="fil" aria-pressed="false">Dans le fil</button></div>' +
@@ -345,21 +355,23 @@
      Fond opaque dès la première image (seule la position bouge, jamais l'opacité à l'entrée). Défaire reste dans la barre d'actions, actif. */
   function hideToast(vite) { var el = $('#toast'); clearTimeout(tToast); el.classList.remove('on'); $('#barre').classList.remove('toast-on'); if (window.gsap) { gsap.killTweensOf(el); if (vite) gsap.set(el, { opacity: 0, y: 16 }); else gsap.to(el, { y: 16, opacity: 0, duration: dur(.25), ease: 'power2.in' }); } else el.style.opacity = '0'; }
   function placeToast() {
-    var el = $('#toast'), r = $('#scene').getBoundingClientRect();
-    el.style.left = (r.left + 8) + 'px'; el.style.width = Math.max(240, r.width - 16) + 'px'; el.style.bottom = Math.max(8, innerHeight - r.bottom + 24) + 'px';
+    /* relecteur 7 : le message prend la place de la barre d'actions, il ne couvre plus la carte suivante */
+    var el = $('#toast'), r = $('#scene').getBoundingClientRect(), b = $('#barre').getBoundingClientRect(), w = Math.min(r.width - 16, 640);
+    el.style.left = (r.left + (r.width - w) / 2) + 'px'; el.style.width = Math.max(240, w) + 'px'; el.style.bottom = Math.max(8, innerHeight - b.bottom + 10) + 'px';
   }
   function toast(kind, p, sub, motifs) {
     var el = $('#toast'); clearTimeout(tToast);
     var dbt = '«' + NB + court(typo(p.hook).replace(/^«\s*/, '').replace(/\s*»$/, ''), 34) + NB + '»';
     var head = kind === 'garder' ? '<b>Gardé</b> · ' + esc(quand(p.publish_at)) : '<b>Retiré</b> · ' + esc(dbt);
     var sec = esc(typo(sub));
-    el.innerHTML = '<div class="l1"><img alt="" src="' + esc(p.visuel) + '"><div class="tt"><div class="t1">' + head + '</div><div class="t2">' + sec + '</div></div></div>' +
+    el.innerHTML = '<div class="l1"><img alt="" src="' + esc(p.visuel) + '"><div class="tt"><div class="t1">' + head + '</div><div class="t2">' + sec + '</div></div><button type="button" class="t-undo">Défaire</button></div>' +
       (motifs ? '<div class="motifs" role="group" aria-label="Pourquoi retirer ce post (facultatif, ça aide AXEM à réécrire)"><span class="q">Pourquoi' + NB + '? (facultatif)</span>' + MOTIFS.map(function (m) { return '<button type="button" data-m="' + esc(m) + '">' + m + '</button>'; }).join('') + '</div>' : '');
     var id = p.id;
+    $('.t-undo', el).onclick = function () { undo(); };
     $$('.motifs button', el).forEach(function (b) { b.onclick = function () { $$('.motifs button', el).forEach(function (x) { x.classList.remove('sel'); }); b.classList.add('sel'); Store.update(id, { motif: b.dataset.m }); clearTimeout(tToast); tToast = setTimeout(hideToast, 3200); }; });
     placeToast(); el.classList.add('on'); $('#barre').classList.add('toast-on');
     if (window.gsap) { gsap.killTweensOf(el); gsap.set(el, { opacity: 1 }); gsap.fromTo(el, { y: 14 }, { y: 0, duration: dur(.45), ease: 'expo.out' }); } else el.style.opacity = '1';
-    tToast = setTimeout(hideToast, motifs ? 9000 : 6000);
+    tToast = setTimeout(hideToast, motifs ? 7000 : 4500);
   }
   /* le tampon bleu « PROGRAMMÉ » avec le jour et l'heure : il tombe SUR la carte gardée et part avec elle (19/11 : il restait sur la carte suivante) */
   function cachetRange() { var el = $('#cachet'); if (el.parentNode !== document.body) document.body.appendChild(el); el.classList.remove('sur-carte'); if (window.gsap) gsap.killTweensOf(el); el.style.opacity = '0'; }
@@ -417,12 +429,13 @@
     show('fin'); $('#gros').textContent = '0'; $('#gros-wrap').classList.remove('on');
     $('#fin-h').innerHTML = tout ? 'Tout est <em>retiré.</em>' : 'Vos posts sont <em>prêts.</em>';
     $('#gros-wrap').hidden = tout; $('#fin-pict').hidden = !tout; if (tout) setPict('#fin-pict', 'refaire');
-    $('#fin-sous').textContent = typo(tout ? 'Aucun post gardé : AXEM les réécrit et vous les remet ici.' : 'post' + (K.length > 1 ? 's' : '') + ' programmé' + (K.length > 1 ? 's' : '') + (isLocal() ? ' (mode essai : rien n\'est publié).' : '. Chacun part sur le LinkedIn de Cédric à 8 h.'));
+    var RR = P.filter(function (p) { return p.statut === 'retire'; }).length;
+    $('#fin-sous').textContent = typo(tout ? 'Aucun post gardé : AXEM les réécrit et vous les remet ici.' : 'post' + (K.length > 1 ? 's' : '') + ' gardé' + (K.length > 1 ? 's' : '') + (RR ? ', ' + RR + (RR > 1 ? ' reviennent réécrits' : ' revient réécrit') + ' par AXEM' : '') + '.' + (isLocal() ? ' Mode essai : rien ne part sur LinkedIn.' : ' Chacun part sur le LinkedIn de Cédric à 8 h, le jour prévu.'));
     $('#fin-liste').innerHTML = '<h3>Le calendrier</h3><div class="rail">' + pleins(weekDays(P)).map(function (w) {
       var p = w.post, jr = '<div class="jr"><span>' + parts(w.iso, { day: 'numeric' }) + '</span><b>' + parts(w.iso, { weekday: 'short' }).replace('.', '') + ' ' + parts(w.iso, { month: 'short' }).replace('.', '') + '</b></div>';
       if (!p) return '<div class="slot vide">' + jr + '<div class="txt"><p>Pas de post</p></div></div>';
       var ok = p.statut === 'programme';
-      return '<div class="slot ' + (ok ? 'ok' : 'r') + '">' + jr + '<div class="thumb"><img alt="" src="' + esc(p.visuel) + '"></div><div class="txt"><p>' + esc(typo(p.hook)) + '</p><span class="etat ' + p.statut + '">' + (ok ? 'Programmé ' + heure(p.publish_at) : 'Retiré' + (p.motif ? ' · ' + esc(p.motif) : ' · AXEM le réécrit')) + '</span></div></div>';
+      return '<div class="slot ' + (ok ? 'ok' : 'r') + '">' + jr + '<div class="thumb"><img alt="" src="' + esc(p.visuel) + '"></div><div class="txt"><p>' + esc(typo(p.hook)) + '</p><span class="etat ' + p.statut + '">' + (ok ? 'Gardé · ' + heure(p.publish_at) : 'Retiré' + (p.motif ? ' · ' + esc(p.motif) : ' · AXEM le réécrit')) + '</span></div></div>';
     }).join('') + '</div>';
     var o = { n: 0 };
     if (window.gsap && !reduit) {
@@ -498,6 +511,7 @@
   /* ---------- geste : glisser la carte ---------- */
   var drag = null;
   $('#scene').addEventListener('pointerdown', function (e) {
+    if ($('#toast').classList.contains('on')) hideToast();   /* relecteur 7 : toucher la carte suivante rend la barre d'actions */
     var c = cards[queue[0]]; if (!c || busy || editing || e.button > 0 || !c.contains(e.target)) return;
     if (e.target.closest('a,button,textarea,.edit-wrap')) return;
     drag = { x: e.clientX, y: e.clientY, id: e.pointerId, c: c, go: false, dx: 0, v: 0, lx: e.clientX, lt: performance.now() };
