@@ -268,6 +268,16 @@
     if (e.target.closest('#split-x')) { var dd = $('#split'); if (dd.close) dd.close(); else dd.removeAttribute('open'); }
   });
 
+  /* relecteur 8 (25/11) : sur ordinateur large, le visuel est posé à côté de la zone qui défile, pas dedans */
+  var mqLarge = window.matchMedia('(min-width:1100px) and (min-height:640px)');
+  function placeVisuels() {
+    Array.prototype.forEach.call(document.querySelectorAll('#scene .carte'), function (c) {
+      var v = c.querySelector('.c-visuel'), g = c.querySelector('.c-gauche'); if (!v || !g) return;
+      if (mqLarge.matches) { if (v.parentNode !== c) c.insertBefore(v, c.firstChild); }
+      else if (v.parentNode !== g) g.insertBefore(v, g.firstChild);
+    });
+  }
+  if (mqLarge.addEventListener) mqLarge.addEventListener('change', placeVisuels);
   function cardHtml(p, k, N) {
     var src = (p.sources || []).map(function (s) { return '<a href="' + esc(s.url) + '" target="_blank" rel="noopener">' + esc(s.label) + '</a>'; }).join('<br>');
     var photo = window.GESTUEL_CONFIG && window.GESTUEL_CONFIG.photo;
@@ -311,7 +321,7 @@
     ids = list.slice(); queue = list.slice(); dec = {}; hist = []; lastDir = {}; editing = false; busy = false;
     if (startId) { queue = [startId].concat(queue.filter(function (i) { return i !== startId; })); ids = queue.slice(); }
     cachetRange();
-    var sc = $('#scene'); sc.innerHTML = ids.map(function (id, k) { return cardHtml(Store.get(id), k, ids.length); }).join('');
+    var sc = $('#scene'); sc.innerHTML = ids.map(function (id, k) { return cardHtml(Store.get(id), k, ids.length); }).join(''); placeVisuels();
     cards = {}; $$('.carte', sc).forEach(function (c) { cards[c.dataset.id] = c; brancheCarte(c); gsap.set(c, { transformOrigin: '50% 100%' }); });
     $('#pips').innerHTML = ids.map(function () { return '<i></i>'; }).join('');
     $('#legende').hidden = ids.length < 2;
@@ -364,7 +374,7 @@
     var dbt = '«' + NB + court(typo(p.hook).replace(/^«\s*/, '').replace(/\s*»$/, ''), 34) + NB + '»';
     var head = kind === 'garder' ? '<b>Gardé</b> · ' + esc(quand(p.publish_at)) : '<b>Retiré</b> · ' + esc(dbt);
     var sec = esc(typo(sub));
-    el.innerHTML = '<div class="l1"><img alt="" src="' + esc(p.visuel) + '"><div class="tt"><div class="t1">' + head + '</div><div class="t2">' + sec + '</div></div><button type="button" class="t-undo">Défaire</button></div>' +
+    el.innerHTML = '<div class="l1"><img alt="" src="' + esc(p.visuel) + '"><div class="tt"><div class="t1">' + head + '</div><div class="t2">' + sec + '</div><div class="t3">Touchez le post suivant pour continuer.</div></div><button type="button" class="t-undo">Défaire</button></div>' +
       (motifs ? '<div class="motifs" role="group" aria-label="Pourquoi retirer ce post (facultatif, ça aide AXEM à réécrire)"><span class="q">Pourquoi' + NB + '? (facultatif)</span>' + MOTIFS.map(function (m) { return '<button type="button" data-m="' + esc(m) + '">' + m + '</button>'; }).join('') + '</div>' : '');
     var id = p.id;
     $('.t-undo', el).onclick = function () { undo(); };
