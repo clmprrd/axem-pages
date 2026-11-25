@@ -239,7 +239,7 @@
     var parts = String(t).split(/(?:^|\.\s+)(Accroche|Structure|Levier|Chute et visuel|Visuel)\s*:\s*/).filter(function (x) { return x && x.trim(); });
     if (parts.length < 2) return esc(t);
     var out = '';
-    for (var k = 0; k + 1 < parts.length; k += 2) out += '<dt>' + esc(parts[k]) + '</dt><dd>' + esc(parts[k + 1].replace(/\.?\s*$/, '.')) + '</dd>';
+    for (var k = 0; k + 1 < parts.length; k += 2) out += '<dt>' + esc(parts[k]) + '</dt><dd>' + esc((function (v) { v = v.replace(/\.?\s*$/, '.'); return v.charAt(0).toUpperCase() + v.slice(1); })(parts[k + 1])) + '</dd>';
     return '<dl>' + out + '</dl>';
   }
   function openSplit(p) {
@@ -356,7 +356,7 @@
   function hideToast(vite) { var el = $('#toast'); clearTimeout(tToast); el.classList.remove('on'); $('#barre').classList.remove('toast-on'); if (window.gsap) { gsap.killTweensOf(el); if (vite) gsap.set(el, { opacity: 0, y: 16 }); else gsap.to(el, { y: 16, opacity: 0, duration: dur(.25), ease: 'power2.in' }); } else el.style.opacity = '0'; }
   function placeToast() {
     /* relecteur 7 : le message prend la place de la barre d'actions, il ne couvre plus la carte suivante */
-    var el = $('#toast'), r = $('#scene').getBoundingClientRect(), b = $('#barre').getBoundingClientRect(), w = Math.min(r.width - 16, 640);
+    var el = $('#toast'), r = $('#scene').getBoundingClientRect(), b = $('#barre').getBoundingClientRect(), w = Math.min(r.width - 16, innerWidth >= 1100 ? 900 : 640);
     el.style.left = (r.left + (r.width - w) / 2) + 'px'; el.style.width = Math.max(240, w) + 'px'; el.style.bottom = Math.max(8, innerHeight - b.bottom + 10) + 'px';
   }
   function toast(kind, p, sub, motifs) {
