@@ -64,7 +64,7 @@
     if (editing[p.id]) return '<span class="msg">Vous modifiez ce post.</span>' +
       (p.texte !== p.texte_origine ? '<button class="btn" data-act="origine">Revenir au texte proposé</button>' : '') +
       '<button class="btn" data-act="annuler">Annuler</button><button class="btn oui" data-act="enregistrer">Enregistrer</button>';
-    if (p.statut === 'programme') return '<span class="msg"><b>Gardé.</b> Il part le ' + esc(quand) + '.</span><button class="btn" data-act="modifier">Modifier</button><button class="btn" data-act="remettre">Annuler</button>';
+    if (p.statut === 'programme') return '<span class="msg"><b>Gardé.</b> Il part le ' + esc(quand) + '.</span><button class="btn" data-act="modifier">Modifier</button><button class="btn" data-act="remettre">Remettre à trier</button>';
     if (p.statut === 'retire') return '<span class="msg"><b>Retiré.</b> Pourquoi ? (facultatif)</span><button class="btn" data-act="remettre">Le remettre</button>' +
       '<div class="motifs">' + MOTIFS.map(function (x) { return '<button data-motif="' + esc(x) + '" aria-pressed="' + (p.motif === x) + '">' + esc(x) + '</button>'; }).join('') + '</div>';
     return '<span class="msg q">Ce post vous ressemble ?</span><button class="btn non" data-act="retirer">Retirer</button><button class="btn" data-act="modifier">Modifier</button><button class="btn oui" data-act="garder">Garder</button>';
