@@ -84,7 +84,7 @@
   function majHaut(s) {
     var L = liste(), c = function (st) { return L.filter(function (p) { return p.statut === st; }).length; };
     $('#n-trier').textContent = c('a_trier'); $('#n-garde').textContent = c('programme'); $('#n-retire').textContent = c('retire');
-    if (L.length) $('#periode').textContent = 'Du ' + fJour.format(new Date(L[0].publish_at)).replace(/^\S+ /, '') + ' au ' + fJour.format(new Date(L[L.length - 1].publish_at)).replace(/^\S+ /, '');
+    if (L.length) { var d1 = fJour.format(new Date(L[0].publish_at)).replace(/^\S+ /, ''), d2 = fJour.format(new Date(L[L.length - 1].publish_at)).replace(/^\S+ /, ''); $('#periode').textContent = d1 === d2 ? 'Prévu le ' + fJour.format(new Date(L[0].publish_at)) : 'Du ' + d1 + ' au ' + d2; }
     var y = $('#sync'), t = 'Enregistré', cl = '';
     if (s.mode === 'local') { t = 'Mode essai'; cl = 'attente'; }
     else if (s.error) { t = 'Lien incomplet'; cl = 'err'; }
