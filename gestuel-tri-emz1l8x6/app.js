@@ -196,8 +196,8 @@
     $('#aide-mode').textContent = typo(s.mode === 'local'
       ? 'Mode essai : vos choix restent sur cet appareil. Rien n\'est envoyé à AXEM et rien n\'est publié sur LinkedIn.'
       : (s.error || !Store.posts().length) ? 'Aucun post n\'est visible : soit il n\'y a rien à trier, soit le code d\'accès manque. Ouvrez le lien exact envoyé par AXEM.'
-      : !s.online ? 'Hors ligne : vos choix sont gardés sur cet appareil et partent vers AXEM dès que le réseau revient. Un post qui n\'est pas arrivé chez AXEM avant 8 h ne sera pas publié.'
-      : 'Vos choix partent chez AXEM dès que vous les faites. Un post gardé est publié sur LinkedIn à 8 h le jour prévu ; vous pouvez le retirer ou le modifier jusqu\'à cette heure.');
+      : !s.online ? 'Hors ligne : vos choix sont gardés sur cet appareil et partent vers AXEM dès que le réseau revient. Un post qui n\'est pas arrivé chez AXEM avant 8 h 15 ne sera pas publié.'
+      : 'Vos choix partent chez AXEM dès que vous les faites. Un post gardé est publié sur LinkedIn à 8 h 15 le jour prévu ; vous pouvez le retirer ou le modifier jusqu\'à cette heure.');
   }
 
   /* ---------- cartes ---------- */
@@ -443,7 +443,7 @@
     $('#fin-h').innerHTML = tout ? 'Tout est <em>retiré.</em>' : 'Vos posts sont <em>prêts.</em>';
     $('#gros-wrap').hidden = tout; $('#fin-pict').hidden = !tout; if (tout) setPict('#fin-pict', 'refaire');
     var RR = P.filter(function (p) { return p.statut === 'retire'; }).length;
-    $('#fin-sous').textContent = typo(tout ? 'Aucun post gardé : AXEM les réécrit et vous les remet ici.' : 'post' + (K.length > 1 ? 's' : '') + ' gardé' + (K.length > 1 ? 's' : '') + (RR ? ', ' + RR + (RR > 1 ? ' reviennent réécrits' : ' revient réécrit') + ' par AXEM' : '') + '.' + (isLocal() ? ' Mode essai : rien ne part sur LinkedIn.' : ' Chacun part sur le LinkedIn de Cédric à 8 h, le jour prévu.'));
+    $('#fin-sous').textContent = typo(tout ? 'Aucun post gardé : AXEM les réécrit et vous les remet ici.' : 'post' + (K.length > 1 ? 's' : '') + ' gardé' + (K.length > 1 ? 's' : '') + (RR ? ', ' + RR + (RR > 1 ? ' reviennent réécrits' : ' revient réécrit') + ' par AXEM' : '') + '.' + (isLocal() ? ' Mode essai : rien ne part sur LinkedIn.' : ' Chacun part sur le LinkedIn de Cédric à 8 h 15, le jour prévu.'));
     $('#fin-liste').innerHTML = '<h3>Le calendrier</h3><div class="rail">' + pleins(weekDays(P)).map(function (w) {
       var p = w.post, jr = '<div class="jr"><span>' + parts(w.iso, { day: 'numeric' }) + '</span><b>' + parts(w.iso, { weekday: 'short' }).replace('.', '') + ' ' + parts(w.iso, { month: 'short' }).replace('.', '') + '</b></div>';
       if (!p) return '<div class="slot vide">' + jr + '<div class="txt"><p>Pas de post</p></div></div>';
